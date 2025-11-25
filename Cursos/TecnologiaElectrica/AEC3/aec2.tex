@@ -1,0 +1,455 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{geometry}
+\usepackage{graphicx}
+\geometry{margin=1in}
+\title{Actividad de Evaluación Continua 3\\Diseño de una instalación en baja tensión}
+\author{Alexander Sebastián Kalis}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\newpage
+\tableofcontents
+\newpage
+
+\section{Ejercicio 1: Cálculo de las intensidades circulantes}
+
+Se debe diseñar una instalación eléctrica trifásica en baja tensión de una nave industrial que 
+alimenta a tres cargas principales cuyo diagrama unifilar se muestra en la siguiente figura.  
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{image.png}
+    \caption{Esquema eléctrico de la instalación.}
+    \label{fig:esquema-electrico}
+\end{figure} 
+
+\subsection{Revisión del enunciado}
+Debemos calcular las intensidades circulantes por las líneas asociadas a las cargas indicadas. Los datos proporcionados son:
+\begin{itemize}
+    \item \textbf{Motor C1:} Potencia 10 CV, $cos\phi = 0.8$, rendimiento $\eta = 0.87$.
+    \item \textbf{Motor C2:} Potencia 20 CV, $cos\phi = 0.86$, rendimiento $\eta = 0.89$.
+    \item \textbf{Alumbrado C3:} Potencia 18.25 kW, $cos\phi = 0.95$.
+\end{itemize}
+
+Además, el enunciado indica que debemos prever un incremento del 25\% en el consumo del motor alimentado por cada línea para las líneas que alimentan a los motores.
+
+\subsection{Fórmula utilizada}
+La intensidad de una carga trifásica se calcula con la fórmula:
+\[
+I = \frac{P}{\sqrt{3} \cdot V \cdot \cos\phi \cdot \eta}
+\]
+Donde:
+\begin{itemize}
+    \item $P$: Potencia activa de la carga (kW).
+    \item $V$: Tensión de línea (V).
+    \item $\cos\phi$: Factor de potencia.
+    \item $\eta$: Rendimiento del motor (para motores).
+\end{itemize}
+
+Para el caso del alumbrado, al no tener rendimiento (\(\eta\)), se utiliza directamente:
+\[
+I = \frac{P}{\sqrt{3} \cdot V \cdot \cos\phi}
+\]
+
+\subsection{Conversión de potencias}
+Para convertir las potencias de los motores de caballos de vapor (CV) a kilovatios (kW), se utiliza la relación:
+\[
+P_{\text{kW}} = P_{\text{CV}} \cdot 0.7355
+\]
+\begin{itemize}
+    \item Motor C1: $10 \cdot 0.7355 = 7.355 \, \text{kW}$.
+    \item Motor C2: $20 \cdot 0.7355 = 14.710 \, \text{kW}$.
+    \item Alumbrado C3: Ya está dado en kilovatios, $18.25 \, \text{kW}$.
+\end{itemize}
+
+
+\subsection{Resultados finales}
+Las intensidades circulantes para cada carga son:
+\begin{itemize}
+    \item \textbf{Motor C1:} $I_{1,\text{nominal}} = 13.80 \, \text{A}$, $I_{1,\text{incrementado}} = 17.25 \, \text{A}$.
+    \item \textbf{Motor C2:} $I_{2,\text{nominal}} = 27.20 \, \text{A}$, $I_{2,\text{incrementado}} = 34.00 \, \text{A}$.
+    \item \textbf{Alumbrado C3:} $I_{3} = 28.00 \, \text{A}$.
+\end{itemize}
+
+
+\section{Ejercicio 2: Dimensionamiento de las secciones de las líneas}
+
+\subsection{Revisión del enunciado}
+El objetivo es dimensionar las secciones de las líneas considerando:
+\begin{itemize}
+    \item La caída de tensión permitida (\( \Delta U_{\text{máx}} = 5\% \, \text{de} \, 380 \, \text{V} = 19 \, \text{V}\)).
+    \item La condición adicional del proyectista:
+    \[
+    0.9 \cdot I_z > I_B
+    \]
+    \item El cálculo del conductor de protección (\( S_{\text{PE}} \)) en cada línea, siguiendo el criterio:
+    \[
+    S_{\text{PE}} =
+    \begin{cases}
+    S_{\text{Fase}}, & \text{si } S_{\text{Fase}} \leq 16 \, \text{mm}^2, \\
+    16 \, \text{mm}^2, & \text{si } S_{\text{Fase}} > 16 \, \text{mm}^2 \, \text{y} \, S_{\text{Fase}} \leq 35 \, \text{mm}^2, \\
+    0.5 \cdot S_{\text{Fase}}, & \text{si } S_{\text{Fase}} > 35 \, \text{mm}^2.
+    \end{cases}
+    \]
+\end{itemize}
+
+\subsection{Cálculo de las secciones de las líneas}
+
+\subsubsection{Línea Acometida (LA)}
+\textbf{Conductor activo:}
+\[
+I_{\text{LA}} = 79.25 \, \text{A}, \quad S_{\text{LA}} = 16 \, \text{mm}^2 \, \text{(comercial)}.
+\]
+
+\textbf{Conductor de protección:}
+\[
+S_{\text{PE,LA}} = 16 \, \text{mm}^2 \, \text{(por ser igual a \( S_{\text{Fase}} \))}.
+\]
+
+\subsubsection{Línea L1}
+\textbf{Conductor activo:}
+\[
+I_{\text{L1}} = 17.25 \, \text{A}, \quad S_{\text{L1}} = 6 \, \text{mm}^2 \, \text{(comercial)}.
+\]
+
+\textbf{Conductor de protección:}
+\[
+S_{\text{PE,L1}} = 6 \, \text{mm}^2 \, \text{(por ser igual a \( S_{\text{Fase}} \))}.
+\]
+
+\subsubsection{Línea L2}
+\textbf{Conductor activo:}
+\[
+I_{\text{L2}} = 34.00 \, \text{A}, \quad S_{\text{L2}} = 10 \, \text{mm}^2 \, \text{(comercial)}.
+\]
+
+\textbf{Conductor de protección:}
+\[
+S_{\text{PE,L2}} = 10 \, \text{mm}^2 \, \text{(por ser igual a \( S_{\text{Fase}} \))}.
+\]
+
+\subsubsection{Línea LC1}
+\textbf{Conductor activo:}
+\[
+I_{\text{LC1}} = 17.25 \, \text{A}, \quad S_{\text{LC1}} = 2.5 \, \text{mm}^2 \, \text{(comercial)}.
+\]
+
+\textbf{Conductor de protección:}
+\[
+S_{\text{PE,LC1}} = 2.5 \, \text{mm}^2 \, \text{(por ser igual a \( S_{\text{Fase}} \))}.
+\]
+
+\subsubsection{Línea LC2}
+\textbf{Conductor activo:}
+\[
+I_{\text{LC2}} = 34.00 \, \text{A}, \quad S_{\text{LC2}} = 6 \, \text{mm}^2 \, \text{(comercial)}.
+\]
+
+\textbf{Conductor de protección:}
+\[
+S_{\text{PE,LC2}} = 6 \, \text{mm}^2 \, \text{(por ser igual a \( S_{\text{Fase}} \))}.
+\]
+
+\subsubsection{Línea LC3}
+\textbf{Conductor activo:}
+\[
+I_{\text{LC3}} = 28.00 \, \text{A}, \quad S_{\text{LC3}} = 4 \, \text{mm}^2 \, \text{(comercial)}.
+\]
+
+\textbf{Conductor de protección:}
+\[
+S_{\text{PE,LC3}} = 4 \, \text{mm}^2 \, \text{(por ser igual a \( S_{\text{Fase}} \))}.
+\]
+
+\subsection{Resultados finales}
+Las secciones finales, incluyendo el conductor de protección, son:
+\begin{itemize}
+    \item \textbf{Acometida (LA):} $S_{\text{Fase}} = 16 \, \text{mm}^2, \, S_{\text{PE}} = 16 \, \text{mm}^2$.
+    \item \textbf{Línea L1:} $S_{\text{Fase}} = 6 \, \text{mm}^2, \, S_{\text{PE}} = 6 \, \text{mm}^2$.
+    \item \textbf{Línea L2:} $S_{\text{Fase}} = 10 \, \text{mm}^2, \, S_{\text{PE}} = 10 \, \text{mm}^2$.
+    \item \textbf{Línea LC1:} $S_{\text{Fase}} = 2.5 \, \text{mm}^2, \, S_{\text{PE}} = 2.5 \, \text{mm}^2$.
+    \item \textbf{Línea LC2:} $S_{\text{Fase}} = 6 \, \text{mm}^2, \, S_{\text{PE}} = 6 \, \text{mm}^2$.
+    \item \textbf{Línea LC3:} $S_{\text{Fase}} = 4 \, \text{mm}^2, \, S_{\text{PE}} = 4 \, \text{mm}^2$.
+\end{itemize}
+\section{Ejercicio 3: Cálculo de intensidades de cortocircuito}
+
+\subsection{Enunciado}
+El objetivo es calcular las intensidades de cortocircuito en cada línea de la instalación eléctrica. Se debe determinar:
+\begin{itemize}
+    \item La intensidad máxima de cortocircuito (\( I_{\text{cc,max}} \)).
+    \item La intensidad mínima de cortocircuito (\( I_{\text{cc,min}} \)).
+\end{itemize}
+Para ello, se considera la impedancia total de cada línea:
+\[
+Z = R + jX
+\]
+Donde:
+\begin{itemize}
+    \item \( R \): Resistencia de la línea, calculada como:
+    \[
+    R = \frac{\rho \cdot L}{S}
+    \]
+    \item \( X \): Reactancia de la línea, calculada como:
+    \[
+    X = \frac{x' \cdot L}{1000}
+    \]
+\end{itemize}
+La intensidad de cortocircuito se calcula como:
+\[
+I_{\text{cc}} = \frac{V}{Z}
+\]
+
+\subsection{Datos iniciales}
+\begin{itemize}
+    \item Tensión nominal: \( V = 380 \, \text{V} \).
+    \item Resistividad del cobre: \( \rho = 0.02198 \, \Omega \cdot \text{mm}^2/\text{m} \).
+    \item Reactancia de los cables: \( x' = 0.08 \, \Omega/\text{km} \).
+    \item Secciones comerciales obtenidas en el ejercicio anterior:
+    \begin{itemize}
+        \item Acometida (LA): \( 16 \, \text{mm}^2 \).
+        \item Línea L1: \( 6 \, \text{mm}^2 \).
+        \item Línea L2: \( 10 \, \text{mm}^2 \).
+        \item Línea LC1: \( 2.5 \, \text{mm}^2 \).
+        \item Línea LC2: \( 6 \, \text{mm}^2 \).
+        \item Línea LC3: \( 4 \, \text{mm}^2 \).
+    \end{itemize}
+    \item Longitudes de las líneas:
+    \begin{itemize}
+        \item Acometida (LA): \( 5 \, \text{m} \).
+        \item Línea L1: \( 83 \, \text{m} \).
+        \item Línea L2: \( 25 \, \text{m} \).
+        \item Línea LC1: \( 7 \, \text{m} \).
+        \item Línea LC2: \( 7 \, \text{m} \).
+        \item Línea LC3: \( 23 \, \text{m} \).
+    \end{itemize}
+\end{itemize}
+
+\subsection{Cálculos}
+
+\subsubsection{Línea Acometida (LA)}
+\[
+R_{\text{LA}} = \frac{\rho \cdot L}{S} = \frac{0.02198 \cdot 5}{16} = 0.00687 \, \Omega
+\]
+\[
+X_{\text{LA}} = \frac{x' \cdot L}{1000} = \frac{0.08 \cdot 5}{1000} = 0.0004 \, \Omega
+\]
+\[
+Z_{\text{máx}} = R_{\text{LA}} + X_{\text{LA}} = 0.00687 + 0.0004 = 0.00727 \, \Omega
+\]
+\[
+Z_{\text{mín}} = R_{\text{LA}} = 0.00687 \, \Omega
+\]
+\[
+I_{\text{cc,max}} = \frac{V}{Z_{\text{mín}}} = \frac{380}{0.00687} = 55,323.02 \, \text{A}
+\]
+\[
+I_{\text{cc,min}} = \frac{V}{Z_{\text{máx}}} = \frac{380}{0.00727} = 52,278.59 \, \text{A}
+\]
+
+\subsubsection{Línea L1}
+\[
+R_{\text{L1}} = \frac{\rho \cdot L}{S} = \frac{0.02198 \cdot 83}{6} = 0.3039 \, \Omega
+\]
+\[
+X_{\text{L1}} = \frac{x' \cdot L}{1000} = \frac{0.08 \cdot 83}{1000} = 0.00664 \, \Omega
+\]
+\[
+Z_{\text{máx}} = R_{\text{L1}} + X_{\text{L1}} = 0.3039 + 0.00664 = 0.31054 \, \Omega
+\]
+\[
+Z_{\text{mín}} = R_{\text{L1}} = 0.3039 \, \Omega
+\]
+\[
+I_{\text{cc,max}} = \frac{V}{Z_{\text{mín}}} = \frac{380}{0.3039} = 1,249.77 \, \text{A}
+\]
+\[
+I_{\text{cc,min}} = \frac{V}{Z_{\text{máx}}} = \frac{380}{0.31054} = 1,223.06 \, \text{A}
+\]
+
+\subsubsection{Línea L2}
+\[
+R_{\text{L2}} = \frac{\rho \cdot L}{S} = \frac{0.02198 \cdot 25}{10} = 0.05495 \, \Omega
+\]
+\[
+X_{\text{L2}} = \frac{x' \cdot L}{1000} = \frac{0.08 \cdot 25}{1000} = 0.002 \, \Omega
+\]
+\[
+Z_{\text{máx}} = R_{\text{L2}} + X_{\text{L2}} = 0.05495 + 0.002 = 0.05695 \, \Omega
+\]
+\[
+Z_{\text{mín}} = R_{\text{L2}} = 0.05495 \, \Omega
+\]
+\[
+I_{\text{cc,max}} = \frac{V}{Z_{\text{mín}}} = \frac{380}{0.05495} = 6,915.38 \, \text{A}
+\]
+\[
+I_{\text{cc,min}} = \frac{V}{Z_{\text{máx}}} = \frac{380}{0.05695} = 6,672.52 \, \text{A}
+\]
+
+\subsubsection{Línea LC1}
+\[
+R_{\text{LC1}} = \frac{\rho \cdot L}{S} = \frac{0.02198 \cdot 7}{2.5} = 0.06154 \, \Omega
+\]
+\[
+X_{\text{LC1}} = \frac{x' \cdot L}{1000} = \frac{0.08 \cdot 7}{1000} = 0.00056 \, \Omega
+\]
+\[
+Z_{\text{máx}} = R_{\text{LC1}} + X_{\text{LC1}} = 0.06154 + 0.00056 = 0.0621 \, \Omega
+\]
+\[
+Z_{\text{mín}} = R_{\text{LC1}} = 0.06154 \, \Omega
+\]
+\[
+I_{\text{cc,max}} = \frac{V}{Z_{\text{mín}}} = \frac{380}{0.06154} = 6,174.44 \, \text{A}
+\]
+\[
+I_{\text{cc,min}} = \frac{V}{Z_{\text{máx}}} = \frac{380}{0.0621} = 6,118.77 \, \text{A}
+\]
+
+\subsubsection{Línea LC2}
+\[
+R_{\text{LC2}} = \frac{\rho \cdot L}{S} = \frac{0.02198 \cdot 7}{6} = 0.02564 \, \Omega
+\]
+\[
+X_{\text{LC2}} = \frac{x' \cdot L}{1000} = \frac{0.08 \cdot 7}{1000} = 0.00056 \, \Omega
+\]
+\[
+Z_{\text{máx}} = R_{\text{LC2}} + X_{\text{LC2}} = 0.02564 + 0.00056 = 0.0262 \, \Omega
+\]
+\[
+Z_{\text{mín}} = R_{\text{LC2}} = 0.02564 \, \Omega
+\]
+\[
+I_{\text{cc,max}} = \frac{V}{Z_{\text{mín}}} = \frac{380}{0.02564} = 14,818.67 \, \text{A}
+\]
+\[
+I_{\text{cc,min}} = \frac{V}{Z_{\text{máx}}} = \frac{380}{0.0262} = 14,501.97 \, \text{A}
+\]
+
+\subsubsection{Línea LC3}
+\[
+R_{\text{LC3}} = \frac{\rho \cdot L}{S} = \frac{0.02198 \cdot 23}{4} = 0.12639 \, \Omega
+\]
+\[
+X_{\text{LC3}} = \frac{x' \cdot L}{1000} = \frac{0.08 \cdot 23}{1000} = 0.00184 \, \Omega
+\]
+\[
+Z_{\text{máx}} = R_{\text{LC3}} + X_{\text{LC3}} = 0.12639 + 0.00184 = 0.12823 \, \Omega
+\]
+\[
+Z_{\text{mín}} = R_{\text{LC3}} = 0.12639 \, \Omega
+\]
+\[
+I_{\text{cc,max}} = \frac{V}{Z_{\text{mín}}} = \frac{380}{0.12639} = 3,006.69 \, \text{A}
+\]
+\[
+I_{\text{cc,min}} = \frac{V}{Z_{\text{máx}}} = \frac{380}{0.12823} = 2,963.54 \, \text{A}
+\]
+
+\subsection{Resultados finales}
+\begin{itemize}
+    \item Línea LA: $I_{\text{cc,max}} = 55,323.02 \, \text{A}$, $I_{\text{cc,min}} = 52,278.59 \, \text{A}$.
+    \item Línea L1: $I_{\text{cc,max}} = 1,249.77 \, \text{A}$, $I_{\text{cc,min}} = 1,223.06 \, \text{A}$.
+    \item Línea L2: $I_{\text{cc,max}} = 6,915.38 \, \text{A}$, $I_{\text{cc,min}} = 6,672.52 \, \text{A}$.
+    \item Línea LC1: $I_{\text{cc,max}} = 6,174.44 \, \text{A}$, $I_{\text{cc,min}} = 6,118.77 \, \text{A}$.
+    \item Línea LC2: $I_{\text{cc,max}} = 14,818.67 \, \text{A}$, $I_{\text{cc,min}} = 14,501.97 \, \text{A}$.
+    \item Línea LC3: $I_{\text{cc,max}} = 3,006.69 \, \text{A}$, $I_{\text{cc,min}} = 2,963.54 \, \text{A}$.
+\end{itemize}
+
+\section{Ejercicio 4: Diseño de la protección contra cortocircuitos y sobrecargas}
+
+\subsection{Enunciado}
+El diseño de la protección contra cortocircuitos y sobrecargas se realizará mediante:
+\begin{itemize}
+    \item Interruptores automáticos en las líneas de acometida (LA), L1 y L2.
+    \item Interruptores magnetotérmicos en las líneas LC1, LC2 y LC3.
+\end{itemize}
+Se tendrán en cuenta las siguientes consideraciones:
+\begin{itemize}
+    \item Tanto en los interruptores automáticos como en los magnetotérmicos, se cumple la condición:
+    \[
+    I_2 = 1.45 \cdot I_n
+    \]
+    \item En la protección contra cortocircuitos, no es necesario comprobar la condición \( I_{\text{cc,max}} < I_B \), ya que se cumple siempre para la aparamenta indicada.
+\end{itemize}
+
+\subsection{Datos iniciales}
+Los modelos disponibles para los dispositivos de protección son los siguientes:
+\begin{itemize}
+    \item \textbf{Interruptores automáticos (IA):}
+    \begin{itemize}
+        \item Modelo 3VF5: \( I_a = 1575 - 3150 \, \text{A}, \, I_n = 315 \, \text{A}, \, \text{Poder de corte} = 20 \, \text{kA} \).
+        \item Modelo 3VF4: \( I_a = 500 - 1000 \, \text{A}, \, I_n = 90 \, \text{A}, \, \text{Poder de corte} = 18 \, \text{kA} \).
+        \item Modelo 3VF3: \( I_a = 500 \, \text{A}, \, I_n = 63 \, \text{A}, \, \text{Poder de corte} = 18 \, \text{kA} \).
+    \end{itemize}
+    \item \textbf{Interruptores magnetotérmicos:}
+    \begin{itemize}
+        \item Modelo 5SN3: \( I_a = 5 \cdot I_n, \, I_n = 20 \, \text{A}, \, \text{Poder de corte} = 6 \, \text{kA} \).
+        \item Modelo 5SN4: \( I_a = 5 \cdot I_n, \, I_n = 40 \, \text{A}, \, \text{Poder de corte} = 4.5 \, \text{kA} \).
+    \end{itemize}
+\end{itemize}
+
+\subsection{Selección de dispositivos}
+
+\subsubsection{Línea Acometida (LA)}
+\begin{itemize}
+    \item \textbf{Intensidad nominal} (\( I_B \)): \( 79.25 \, \text{A} \).
+    \item Se selecciona el interruptor automático \textbf{3VF4}, con:
+    \[
+    I_n = 90 \, \text{A}, \, I_a = 500 - 1000 \, \text{A}, \, \text{Poder de corte} = 18 \, \text{kA}.
+    \]
+\end{itemize}
+
+\subsubsection{Línea L1}
+\begin{itemize}
+    \item \textbf{Intensidad nominal} (\( I_B \)): \( 17.25 \, \text{A} \).
+    \item Se selecciona el interruptor automático \textbf{3VF3}, con:
+    \[
+    I_n = 63 \, \text{A}, \, I_a = 500 \, \text{A}, \, \text{Poder de corte} = 18 \, \text{kA}.
+    \]
+\end{itemize}
+
+\subsubsection{Línea L2}
+\begin{itemize}
+    \item \textbf{Intensidad nominal} (\( I_B \)): \( 34.00 \, \text{A} \).
+    \item Se selecciona el interruptor automático \textbf{3VF3}, con:
+    \[
+    I_n = 63 \, \text{A}, \, I_a = 500 \, \text{A}, \, \text{Poder de corte} = 18 \, \text{kA}.
+    \]
+\end{itemize}
+
+\subsubsection{Línea LC1}
+\begin{itemize}
+    \item \textbf{Intensidad nominal} (\( I_B \)): \( 17.25 \, \text{A} \).
+    \item Se selecciona el interruptor magnetotérmico \textbf{5SN3}, con:
+    \[
+    I_n = 20 \, \text{A}, \, I_a = 5 \cdot I_n = 100 \, \text{A}, \, \text{Poder de corte} = 6 \, \text{kA}.
+    \]
+\end{itemize}
+
+\subsubsection{Línea LC2}
+\begin{itemize}
+    \item \textbf{Intensidad nominal} (\( I_B \)): \( 34.00 \, \text{A} \).
+    \item Se selecciona el interruptor magnetotérmico \textbf{5SN4}, con:
+    \[
+    I_n = 40 \, \text{A}, \, I_a = 5 \cdot I_n = 200 \, \text{A}, \, \text{Poder de corte} = 4.5 \, \text{kA}.
+    \]
+\end{itemize}
+
+\subsubsection{Línea LC3}
+\begin{itemize}
+    \item \textbf{Intensidad nominal} (\( I_B \)): \( 28.00 \, \text{A} \).
+    \item Se selecciona el interruptor magnetotérmico \textbf{5SN4}, con:
+    \[
+    I_n = 40 \, \text{A}, \, I_a = 5 \cdot I_n = 200 \, \text{A}, \, \text{Poder de corte} = 4.5 \, \text{kA}.
+    \]
+\end{itemize}
+
+
+
+\end{document}

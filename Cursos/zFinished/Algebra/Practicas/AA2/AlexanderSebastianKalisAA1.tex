@@ -1,0 +1,185 @@
+\documentclass{article}
+\usepackage{lipsum}
+\usepackage[backend=biber]{biblatex}
+\addbibresource{aec2.bib}
+\usepackage{authoraftertitle}
+\usepackage[top=2cm,bottom=1.5cm,left=1.5cm, right=3cm,includeheadfoot]{geometry}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage[spanish]{babel}
+\usepackage{mathtools}
+\usepackage{csquotes}
+\usepackage{amssymb}
+\usepackage{fancybox, graphicx}
+\usepackage{array}
+\usepackage{hhline}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{caption}
+\usepackage{esvect}
+\usepackage{siunitx}
+\usepackage{commath}
+\usepackage{tcolorbox}
+\makeatletter
+\renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
+   \hskip -\arraycolsep
+   \let\@ifnextchar\new@ifnextchar
+   \array{#1}}
+\makeatother
+
+%Header & Footer
+\pagestyle{fancy}
+%\fancyhead[LE]{\MyTitle}
+\fancyhead[LO]{Álgebra Lineal}
+\fancyhead[RO]{\leftmark}
+%\fancyhead[RE]{\leftmark}
+\fancyfoot[L]{\raisebox{-1cm}{\includegraphics[height=2cm]{C:/Users/XYZ/Dropbox/DocumentGraphics/LOGOUDIMA.jpg}}}
+\fancyfoot[R]{Corregido:\\ Dr. Juan José Moreno García}
+%\fancyfoot[RO]{07/12/2018}
+%Vars
+\author{Alexander Sebastian Kalis}
+\title{Actividad de Aprendizaje 2}
+
+
+%DOC
+
+\begin{document}
+
+\begin{titlepage}
+
+    \begin{center}
+
+        \line(1,0){300}\\
+        [0.2in]
+        \huge{\bfseries {\MyTitle}}\\
+        [1mm]
+        \line(2,0){200}\\
+        [0.75cm]
+        \textsc{\LARGE Álgebra Lineal}\\
+        [2cm]
+        \includegraphics[height=10cm]{C:/Users/XYZ/Dropbox/DocumentGraphics/Calculus.png}\\
+        [3cm]
+
+    \end{center}
+
+    \begin{flushright}
+
+        Autor: {\MyAuthor}\\
+        Profesor: Dr. Juan José Moreno García\\
+        Curso: 1o, Ingeniería de Organización Industrial\\
+        UDIMA\\
+        Domingo, 28 de Abril de 2019         
+
+    \end{flushright}
+    
+\end{titlepage}
+
+%\tableofcontents \thispagestyle{empty}
+
+\newpage
+
+\section{Problema 1}
+
+Proporcionar las corrientes I1, I2 y I3 que circulan según el esquema de figura aplicando la ley de Ohm
+y las reglas de Kirchhoff. Para ello guiarse por la página 83 del manual.
+
+\begin{center}
+    \includegraphics{D:/KUKADisk/UDIMA/Algebra/Practicas/AA2/problema1enun.png}\\
+\end{center}
+
+Apoyándonos del problema resuelto del manual, que es exactamente el mismo problema con diferentes valores, representamos las ecuaciones lineales y las introducimos en variables en Octave:\\
+
+\includegraphics[height=5cm]{D:/KUKADisk/UDIMA/Algebra/Practicas/AA2/problema1a.png}\\
+
+\newpage
+
+Posteriormente podemos asignar estas ecuaciones a una matriz aumentada:\\
+
+\includegraphics[height=3cm]{D:/KUKADisk/UDIMA/Algebra/Practicas/AA2/problema1b.png}\\
+
+Finalmente hacemos una reducción y obtenemos los resultados para $I_1$, $I_2$, $I_3$:\\
+
+\includegraphics[height=3cm]{D:/KUKADisk/UDIMA/Algebra/Practicas/AA2/problema1c.png}\\
+
+\section{Problema 2}
+
+Usar el método de valores singulares descrito en el apédice para calcular la solución del sistema:\\
+
+\begin{center}
+    \includegraphics[height=2cm]{D:/KUKADisk/UDIMA/Algebra/Practicas/AA2/problema2enun.png}\\    
+\end{center}
+
+Siguiendo el procedimiento del apéndice:\\
+
+Introducimos la matriz A y b en Octave:
+
+\includegraphics[height=4cm]{D:/KUKADisk/UDIMA/Algebra/Practicas/AA2/problema2a.png}\\ 
+
+\newpage
+
+Realizamos la descomposición en valores singulares de la matriz A:\\
+
+
+\includegraphics[height=5cm]{D:/KUKADisk/UDIMA/Algebra/Practicas/AA2/problema2b.png}\\ 
+
+
+Observamos el valor singular $0.014$ y consideramos $\beta=0.1$ entonces el rango de $A$
+ sería $q=2$ y podemos truncar la matriz y guardarla en la variable Dt:\\
+
+\includegraphics[height=3cm]{D:/KUKADisk/UDIMA/Algebra/Practicas/AA2/problema2c.png}\\
+
+\includegraphics[height=3cm]{D:/KUKADisk/UDIMA/Algebra/Practicas/AA2/problema2d.png}\\
+
+Calculamos la pseudoinversa invirtenido los valores de la diagonal de Dt:\\
+
+\includegraphics[height=3cm]{D:/KUKADisk/UDIMA/Algebra/Practicas/AA2/problema2e.png}\\
+
+\newpage
+Finalmente calculamos la matriz pseudo-inversa truncada:\\
+
+\includegraphics[height=2.5cm]{D:/KUKADisk/UDIMA/Algebra/Practicas/AA2/problema2f.png}\\
+
+Y resolvemos el sistema $Ax=b$ utilizando la descomposición en valores singulares:\\
+
+\includegraphics[height=2.5cm]{D:/KUKADisk/UDIMA/Algebra/Practicas/AA2/problema2g.png}\\
+
+\newpage
+
+\section{Problema 3}
+
+\includegraphics[width=\textwidth]{D:/KUKADisk/UDIMA/Algebra/Practicas/AA2/problema3enun.png}\\
+
+Considerando cada habitante y sus porcentajes de consumición, creamos una matriz aumentada con éstos datos
+conocidos:\\
+
+\includegraphics[height=3.5cm]{D:/KUKADisk/UDIMA/Algebra/Practicas/AA2/problema3a.png}\\
+
+Seguidamente aplicamos $\lambda=1$:\\
+
+\includegraphics[height=3.5cm]{D:/KUKADisk/UDIMA/Algebra/Practicas/AA2/problema3b.png}\\
+
+\newpage
+
+Creamos un vector 0 $b$ y lo añadimos a la matriz de aldeab. Reducimos a forma escalonada:
+
+\includegraphics[height=7cm]{D:/KUKADisk/UDIMA/Algebra/Practicas/AA2/problema3c.png}\\
+
+Con lo que podemos observar que el producto más caro será el aguardiente que denotaremos con $t$ y este producto se utiliza como 
+referencia para calcular los precios de los demás productos:
+
+\[
+  \begin{cases}
+      x (comida) = 0.67932t\\
+      y (ropa) = 0.62561t\\
+      z (vivienda) = 0.68785t\\
+      u (energia) = 0.73754t\\
+      w (aguardiente) = t  
+  \end{cases}  
+\]
+
+Con lo cual concluimos que el tercer producto más caro es la vivienda.
+\end{document}

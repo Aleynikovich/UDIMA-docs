@@ -1,0 +1,1685 @@
+\documentclass{article}
+\usepackage{lipsum}
+\usepackage[backend=biber]{biblatex}
+\addbibresource{aec2.bib}
+\usepackage{authoraftertitle}
+\usepackage[top=2cm,bottom=1.5cm,left=1.5cm, right=3cm,includeheadfoot]{geometry}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage[spanish]{babel}
+\usepackage{mathtools}
+\usepackage{csquotes}
+\usepackage{amssymb}
+\usepackage{fancybox, graphicx}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{hhline}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{caption}
+\usepackage{esvect}
+\usepackage{siunitx}
+\usepackage{commath}
+\usepackage{tcolorbox}
+\usepackage{multirow}
+\makeatletter
+\renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
+  \hskip -\arraycolsep
+  \let\@ifnextchar\new@ifnextchar
+  \array{#1}}
+\makeatother
+
+%Header & Footer
+\pagestyle{fancy}
+\fancyhead[LE]{\MyTitle}
+\fancyhead[LO]{Álgebra Lineal}
+\fancyhead[RO]{\leftmark}
+\fancyhead[RE]{\leftmark}
+\fancyfoot[L]{\raisebox{-1cm}{\includegraphics[height=2cm]{C:/Users/XYZ/Dropbox/DocumentGraphics/LOGOUDIMA.jpg}}}
+\fancyfoot[R]{Corregido:\\ Dr. Juan José Moreno García}
+%\fancyfoot[RO]{07/12/2018}
+%Vars
+\author{Alexander Sebastian Kalis}
+\title{Actividad de Evaluación Continua 2}
+
+
+%DOC
+
+\begin{document}
+
+\begin{titlepage}
+
+    \begin{center}
+
+        \line(1,0){300}\\
+        [0.2in]
+        \huge{\bfseries {\MyTitle}}\\
+        [1mm]
+        \line(2,0){200}\\
+        [0.75cm]
+        \textsc{\LARGE Álgebra Lineal}\\
+        [2cm]
+        \includegraphics[height=10cm]{C:/Users/XYZ/Dropbox/DocumentGraphics/Calculus.png}\\
+        [3cm]
+
+    \end{center}
+
+    \begin{flushright}
+
+        Autor: {\MyAuthor}\\
+        Profesor: Dr. Juan José Moreno García\\
+        Curso: 1o, Ingeniería de Organización Industrial\\
+        UDIMA         
+
+    \end{flushright}
+    
+\end{titlepage}
+
+\newpage
+
+\section*{Actividades}
+
+\subsection*{Problema 1}
+
+¿Son linealmente independientes los vectores del siguiente conjunto?\\
+$C={2x^3-4x^2+2x,2x^3-3x^2-2x+7,x^3-3x^2-2x+2,-2x^2+x-5}$\\\\
+
+Podemos representar el conjunto C de forma matricial:\\
+
+\[
+C=
+\begin{bmatrix*}[r]
+    2  & 2  & 1  & 0\\
+    -4 & -3 & -3 & -2\\
+    2  & -2 & -2 &  1\\
+    0  & 7  & 2  & -5
+\end{bmatrix*}
+\]
+
+Para que los vectores de C sean linealmente independientes, entre otros, se debe cumplir que $Null(C)$ tenga
+una única solución, el vector $\textbf{0}$.
+
+Sabiendo que $Null(C)=Null(rref(C))$ primero obtenemos $rref(C)$ ayudándonos de Octave:
+
+\[
+    rref(C)=
+    \begin{bmatrix*}[r]
+        1 & 0 & 0 & .5\\
+        0 & 0 & 0 & -1\\
+        0 & 0 & 1 & 1 \\
+        0 & 0 & 0 & 0 
+    \end{bmatrix*}
+\]
+
+Viendo esto inmediatamente podemos deducir que los vectores del conjunto $C$ \textbf{no son linealmente independientes} ya que $c_2$
+se puede producir mediante la combinación lineal de las otras columnas escalándolas con coeficientes diferentes a $0$.\\\\
+
+
+\subsection*{Problema 2}
+
+Encuentra una base del espacio columna y una para el espacio fila de A. Si esta matriz corresponde a una aplicación $Tx=Ax$ hallar
+una base para la imagen y otra para el núcleo. ¿Es la transformación inyectiva, sobreyectiva o biyectiva?
+
+
+\[
+    A=
+    \begin{bmatrix*}[r]
+        1 & 1 & 3 & 1 & 6\\
+        -3 & 2 & 1 & -2 & 1\\
+        4 & -2 & 0 & 2 & -2\\
+        2 & 1 & 4 & 1 & 5
+    \end{bmatrix*}
+\]
+
+\[
+    rref(A)=
+    \begin{bmatrix*}[r]
+        \textbf{1} & \textbf{0} & 1 & \textbf{0} & -1\\
+        \textbf{0} & \textbf{1} & 2 & \textbf{0} & 3\\
+        \textbf{0} & \textbf{0} & 0 & \textbf{1} & 4\\
+        \textbf{0} & \textbf{0} & 0  & \textbf{0} & 0
+    \end{bmatrix*}
+\]\\
+
+Tras haber encontrado la forma escalonada reducida, simplemente seleccionamos las columnas pivote para obtener la base del espacio columna y
+las filas no nulas para la base del espacio fila:
+
+\[
+    \mathcal{B}_c(A) =
+    \left\{
+        \begin{bmatrix*}[r]
+            1\\
+            -3\\
+            4\\
+            2
+        \end{bmatrix*}
+        ,
+        \begin{bmatrix*}[r]
+            1\\
+            2\\
+            -2\\
+            1
+        \end{bmatrix*}
+        ,
+        \begin{bmatrix*}[r]
+            1\\
+            -2\\
+            2\\
+            1
+        \end{bmatrix*}
+    \right\}  
+\]
+
+\[
+    \mathcal{B}_f(A) =
+    \left\{
+        \begin{bmatrix*}[r]
+            1 & 0 & 1 & 0 & -1\\
+        \end{bmatrix*}
+        ,
+        \begin{bmatrix*}[r]
+            0 & 1 & 2 & 0 & 3\\
+        \end{bmatrix*}
+        ,
+        \begin{bmatrix*}[r]
+            0 & 0 & 0 & 1 & 4\\
+        \end{bmatrix*}
+    \right\}  
+\]\\
+
+Para determinar el núcleo o espacio nulo de $A$, debemos resolver el sistema $Ax=0$:
+
+\[
+    \begin{bmatrix*}[r]
+        1 & 0 & 1 & 0 & -1\\
+        0 & 1 & 2 & 0 & 3\\
+        0 & 0 & 0 & 1 & 4\\
+        0 & 0 & 0 & 0 & 0
+    \end{bmatrix*}
+    \begin{bmatrix*}[r]
+        x_1 \\
+        x_2\\
+        x_3\\
+        x_4\\
+        x_5
+    \end{bmatrix*}
+    =
+    \begin{bmatrix}
+        0\\
+        0\\
+        0\\
+        0
+    \end{bmatrix}
+\]
+
+Representado en forma de matriz aumentada:
+
+\begin{equation}
+    \begin{bmatrix}[ccccc|c]
+        1 & 0 & 1 & 0 & -1 & 0\\
+        0 & 1 & 2 & 0 & 3 & 0\\
+        0 & 0 & 0 & 1 & 4 & 0\\
+        0 & 0 & 0 &0 & 0 & 0
+    \end{bmatrix}
+\end{equation}
+
+Obtenemos el conjunto de soluciones:
+
+\[
+    \begin{bmatrix*}[r]
+        x_1 \\
+        x_2\\
+        x_3\\
+        x_4\\
+        x_5
+    \end{bmatrix*}
+    =
+    x_3
+    \begin{bmatrix*}[r]
+        -1\\
+        -2\\
+        1\\
+        0\\
+        0
+    \end{bmatrix*}
+    +
+    x_5    
+    \begin{bmatrix*}[r]
+        1\\
+        -3\\
+        0\\
+        -4\\
+        1
+    \end{bmatrix*}
+\]
+
+Entonces:
+
+\[
+    \mathcal{B}(Null(A))=
+    \left\{
+        \begin{bmatrix*}[r]
+            -1\\
+            -2\\
+            1\\
+            0\\
+            0
+        \end{bmatrix*}
+        ,
+        \begin{bmatrix*}[r]
+            1\\
+            -3\\
+            0\\
+            -4\\
+            1
+        \end{bmatrix*}
+    \right\}  
+\]
+
+Y recuperando del apartado anterior:
+
+
+\[
+    \mathcal{B}_c(A) =
+    \mathcal{B}_c(T) =
+    \left\{
+        \begin{bmatrix*}[r]
+            1\\
+            -3\\
+            4\\
+            2
+        \end{bmatrix*}
+        ,
+        \begin{bmatrix*}[r]
+            1\\
+            2\\
+            -2\\
+            1
+        \end{bmatrix*}
+        ,
+        \begin{bmatrix*}[r]
+            1\\
+            -2\\
+            2\\
+            1
+        \end{bmatrix*}
+    \right\}  
+\]
+
+Para determinar qué tipo de aplicación es, recuperamos el conjunto solución: 
+
+\[
+    \begin{bmatrix*}[r]
+        x_1 \\
+        x_2\\
+        x_3\\
+        x_4\\
+        x_5
+    \end{bmatrix*}
+    =
+    x_3
+    \begin{bmatrix*}[r]
+        -1\\
+        -2\\
+        1\\
+        0\\
+        0
+    \end{bmatrix*}
+    +
+    x_5    
+    \begin{bmatrix*}[r]
+        1\\
+        -3\\
+        0\\
+        -4\\
+        1
+    \end{bmatrix*}
+\]
+
+Sabemos que no será inyectiva ni biyectiva ya que el espacio nulo son todas las combinaciones lineales para cualquier $\left\{x_3, x_5 \in \mathbb{R} \right\}$.
+
+Por otro lado la aplicación tampoco será sobreyectiva ya que la imagen está en $\mathbb{R}^3$ mientras que el codominio está en $\mathbb{R}^4$.
+
+\newpage
+
+
+
+\subsection*{Problema 3}
+
+Sea en $\mathbb{R}$ las bases siguientes: 
+
+\[
+    B=
+    \left\{
+        \begin{pmatrix}
+            1\\
+            0\\
+            0
+        \end{pmatrix},
+        \begin{pmatrix}
+            0\\
+            1\\
+            0
+        \end{pmatrix},
+        \begin{pmatrix}
+            0\\
+            0\\
+            1
+        \end{pmatrix}   
+    \right\}
+    \]
+    \[
+    C=
+    \left\{
+        \begin{pmatrix*}
+            0\\
+            2\\
+            1
+        \end{pmatrix*},
+        \begin{pmatrix*}
+            1\\
+            1\\
+            -2
+        \end{pmatrix*},
+        \begin{pmatrix*}
+            1\\
+            4\\
+            -1
+        \end{pmatrix*}   
+    \right\}  
+\]
+
+Sea además en dicho espacio el vector $v=(1,2,-3)^T$. Calcular lo siguiente:\\
+-La matriz de cambio de base que pasa de B a C.\\
+
+Podemos encontrar la matriz de cambio de base tomando la inversa de $C$ mediante Gauss-Jordan:\\
+
+\[
+    rref
+    \left(
+        \begin{bmatrix}[ccc|ccc]
+            0 & 1 & 1 & 1 & 0 & 0\\
+            2 & 1 & 4 & 0 & 1 & 0\\
+            1 & -2 & -1 & 0 & 0 & 1 \\
+       \end{bmatrix} 
+    \right)
+    =
+    \begin{bmatrix}[ccc|ccc]
+        1 & 0 & 0 & 7 & -1 & 3\\
+        0 & 1 & 0 & 6 & -1 & 2\\
+        0 & 0 & 1 & -5 & 1 & -2 \\
+   \end{bmatrix}
+\]
+
+Entonces la matriz utilizada para hacer el cambio de base es:
+
+\[
+    M=
+    \begin{bmatrix*}[r]
+        7 & -1 & 3\\
+        6 & -1 & 2\\
+        -5 & 1 & -2 \\
+    \end{bmatrix*}
+\]\\
+
+
+-El vector de coordenadas de \textbf{v} en la base $B$. El vector de coordenadas de \textbf{v} en C usando la matriz de
+cambios de base y \textbf{comprobar los resultados}.\\
+
+El vector $\textbf{v}$ en base $B$ será el mismo, ya que $B$ es la base canónica en $\mathbb{R}^3$.
+Para encontrar las coordenadas de $\textbf{v}$ tras aplicarle el cambio de base en $C$, multiplicamos $M\textbf{v}$:
+
+\[
+    M\textbf{v}=
+    \begin{bmatrix*}[r]
+        7 & -1 & 3\\
+        6 & -1 & 2\\
+        -5 & 1 & -2 \\
+    \end{bmatrix*}
+    \begin{bmatrix*}[r]
+        1\\
+        2\\
+        -3
+    \end{bmatrix*}
+    =
+    \begin{bmatrix*}[r]
+        -4\\
+        -2\\
+        3
+    \end{bmatrix*}
+\]\\
+
+Para comoprobar los resultados, multiplicamos cada vector por su base y el resultado final debería ser el mismo:
+
+\[
+    \textbf{v}=
+     \begin{bmatrix}
+        1 & 0 & 0\\
+        0 & 1 & 0\\
+        0 & 0 & 1
+     \end{bmatrix}
+     \begin{bmatrix*}[r]
+        1\\
+        2\\
+        -3
+    \end{bmatrix*}
+    =
+    \begin{bmatrix*}[r]
+        0 & 1 & 1\\
+        2 & 1 & 4\\
+        1 & -2 & -1
+    \end{bmatrix*}
+    \begin{bmatrix*}[r]
+        -4\\
+        -2\\
+        3
+    \end{bmatrix*}
+    =
+    \begin{bmatrix*}[r]
+        1\\
+        2\\
+        -3
+    \end{bmatrix*}
+    =
+    \textbf{v}
+\]
+
+\newpage
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\subsection*{Problema 4}
+
+Sea $f:\mathbb{R}^4 \rightarrow \mathbb{R}^4$ una transformación definida por
+
+\[
+    f
+    \begin{pmatrix}
+        a\\
+        b\\
+        c\\
+        d
+    \end{pmatrix}
+    =
+    \begin{bmatrix}
+        a+b+3c-4d\\
+        6a+4b+8c-10d\\
+        -8a-6b-14c+18d\\
+        -7a-5b-11c+14d
+    \end{bmatrix}
+\]
+
+Calcular su matriz asociada respecto a la base estandar o canónica, una base de su núcleo y una base de su imagen.\\
+
+La matriz asociada respecto a $I_4$ es la propia transformación que aplica $f$ sobre los vectores:
+
+\[
+    B=
+    \begin{bmatrix*}[r]
+        1  & 1  &  3  & -4\\
+        6  & 4  &  8  & -10\\
+        -8 & -6 & -14 & 18\\
+        -7 & -5 & -11 & 14
+    \end{bmatrix*}  
+\]
+
+Para obtener la base de su núcleo resolvemos $Bx=0$:
+
+\[
+    Bx=
+    \begin{bmatrix*}[r]
+        1  & 1  &  3  & -4\\
+        6  & 4  &  8  & -10\\
+        -8 & -6 & -14 & 18\\
+        -7 & -5 & -11 & 14
+    \end{bmatrix*} 
+    \begin{bmatrix}
+        x_1\\
+        x_2\\
+        x_3\\
+        x_4
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+        0\\
+        0\\
+        0\\
+        0
+    \end{bmatrix} 
+\]\\
+
+\[
+    rref
+    \left(
+        \begin{bmatrix}[cccc|c]
+            1  & 1  &  3  & -4 & 0\\
+            6  & 4  &  8  & -10 & 0\\
+            -8 & -6 & -14 & 18 & 0\\
+            -7 & -5 & -11 & 14 & 0
+        \end{bmatrix}  
+    \right)
+    =
+    \begin{bmatrix}[cccc|c]
+        1  & 0  & -2  & 3  & 0      \\
+        0  & 1  & 5   & -7 & 0      \\
+        0  & 0  & 0   & 0  & 0      \\
+        0  & 0  & 0   & 0  & 0
+    \end{bmatrix}  
+\]\\
+
+Obtenemos entonces como solución:
+
+
+\[
+    \begin{bmatrix}
+        x_1\\
+        x_2\\
+        x_3\\
+        x_4
+    \end{bmatrix}
+    =
+    x_3
+    \begin{bmatrix}
+        2\\
+        -5\\
+        1\\
+        0        
+    \end{bmatrix}
+    +
+    x_4
+    \begin{bmatrix}
+        -3\\
+        7\\
+        0\\
+        1        
+    \end{bmatrix}
+\]
+
+Siendo $x_3$ y $x_4$ variables libres. Y por lo tanto:
+
+
+\[
+    \mathcal{B}(Null(B))=
+    \left\{
+        \begin{bmatrix}
+            2\\
+            -5\\
+            1\\
+            0        
+        \end{bmatrix}
+        ,
+        \begin{bmatrix}
+            -3\\
+            7\\
+            0\\
+            1        
+        \end{bmatrix}
+    \right\}  
+\]
+
+Y la base de la imagen serán las columnas pivote de $B$, dicho de otra forma, $C(B)$:
+
+\[
+    \mathcal{C}(B)=
+    \left\{
+        \begin{bmatrix}
+            1\\
+            6\\
+            -8\\
+            -7       
+        \end{bmatrix}
+        ,
+        \begin{bmatrix}
+            1\\
+            4\\
+            -6\\
+            -5       
+        \end{bmatrix}
+    \right\}  
+\]
+
+
+
+
+
+
+
+
+
+
+
+
+\newpage
+
+
+
+
+\subsection*{Problema 5}
+
+Demostrar si el siguiente conjunto de vectores en $\mathcal{P}_2(\mathbb{R})$ es linealmente independiente: 
+
+\[
+    p_1(x)=1+3x+2x^2,p_2(x)=2+4x,p_3(x)=3+6x-x^2  
+\]
+
+Si es así formar la base de $\mathcal{P}_2(\mathbb{R}) siguiente:$
+
+\[
+    C=\left\{p_1,p_2,p_3\right\}    
+\]
+
+Siendo la base canónica de $\mathcal{P}_2(\mathbb(R))$:
+
+Sea en dicho espacio el vector $p(x)=2+6x+8x^2$. Calcular el vector de coordenadas de p en la base $C$ usando una matriz de cambio base y comprobar el resultado.\\\\
+
+
+Para comprobar si el conjunto es linealmente independiente resolvemos:
+\[
+    rref
+    \left(
+        \begin{bmatrix}[ccc|c]
+            1 & 2 & 3 &0\\
+            3 & 4 & 6 & 0\\
+            2 & 0 & -1 & 0
+        \end{bmatrix}
+    \right)
+    =
+    \begin{bmatrix}[ccc|c]
+        1 & 0 & 0 & 0\\
+        0 & 1 & 0 & 0\\
+        0 & 0 & 1 & 0
+    \end{bmatrix}
+\]
+
+Ya que la única solución a $Ax=0$ es $\textbf{x}=0$, sabemos que el conjunto $\mathcal{P}_2$ es linealmente independiente. \\\\
+
+
+
+
+Ya que los 3 vectores son linealmente independientes o columnas pivote, forman la base de $\mathcal{P}_2(\mathbb{R})$:
+
+\[
+    C=
+    \left\{
+        \begin{bmatrix*}[r]
+            1\\
+            3\\
+            2
+        \end{bmatrix*} 
+        ,
+        \begin{bmatrix*}[r]
+            2 \\
+             4 \\
+             0
+        \end{bmatrix*} 
+        ,\begin{bmatrix*}[r]
+            3\\
+             6 \\
+            -1
+        \end{bmatrix*} 
+    \right\}
+\]
+
+Para hacer la transformación primero necesitamos encontrar la matriz de cambio $M$, que lo haremos como en los problemas anteriores
+utilizando Gauss-Jordan:
+
+\[
+    rref
+    \left(
+        \begin{bmatrix}[ccc|ccc]
+            1 & 2 & 3 & 1 & 0 & 0\\
+            3 & 4 & 6 & 0 & 1 & 0 \\
+            2 & 0 & -1 & 0 & 0 & 1
+        \end{bmatrix}
+    \right)
+    =
+    \begin{bmatrix}[ccc|ccc]
+         1 & 0 & 0 & -2 & 1 & 0\\
+         0 & 1 & 0 & 7.5 & -3.5 & 1.5\\
+         0 & 0 & 1 & -4 & 2 & -1
+    \end{bmatrix}
+\]
+
+\[
+    M=
+    \begin{bmatrix}
+        -2 & 1 & 0\\
+        7.5 & -3.5 & 1.5\\
+        -4 & 2 & -1
+    \end{bmatrix}  
+\]
+Aplicamos la transformación a $p(x)$:
+
+\[
+    Mp(x)=
+      \begin{bmatrix*}[r]
+        -2 & 1 & 0\\
+        7.5 & -3.5 & 1.5\\
+        -4 & 2 & -1
+    \end{bmatrix*}
+    \begin{bmatrix}
+        2\\
+        6\\
+        8
+    \end{bmatrix}  
+    =
+    \begin{bmatrix*}[r]
+        2\\
+        6\\
+        -4
+    \end{bmatrix*}
+\]
+
+Finalmente comprobamos el resultado:
+
+\[
+    \begin{bmatrix*}[r]
+        1 & 2 & 3\\ 
+        3 & 4 & 6\\
+        2 & 0 & -1 
+    \end{bmatrix*}
+    \begin{bmatrix*}[r]
+        2\\
+        6\\
+        -4
+    \end{bmatrix*}
+    =
+    \begin{bmatrix}
+        2\\
+        6\\
+        8
+    \end{bmatrix}  
+    =p(x)
+\]
+
+
+
+\newpage
+
+
+\subsection*{Problema 6}
+
+Estudia si la matriz
+
+\[
+    A=
+    \begin{bmatrix}
+        4 & -3 & 1\\
+        5 & -4 & 1\\
+        4 & -3 & 1
+    \end{bmatrix}
+\]  
+
+es o no diagonalizable. En caso afirmativo:
+
+\begin{enumerate}[label=(\alph*)]
+    \item  Escribe explícitamente una matriz diagonal $D$ y dos matrices $P$ y $P^{-1}$ tales que $D=P^{-1}AP$. Ordenar las entradas de $D$ de menor a mayor según se lee de izquierda a derecha.
+    \item  Calcular no explícitamente y sin usar fuerza bruta $A^{5050}$.\\
+\end{enumerate}
+
+Para determinar si $A$ es diagonalizable, encontramos sus autovalores y auto vectores:
+
+\[
+   \left(\lambda I_3-A\right)\textbf{v}=\textbf{0}
+   \iff 
+   det \left(\lambda I_3-A\right)=0
+\]
+
+\[
+    det
+    \left(
+        \begin{bmatrix}
+            4 & -3 & 1\\
+            5 & -4 & 1\\
+            4 & -3 & 1
+        \end{bmatrix}      
+        -
+        \begin{bmatrix}
+            \lambda & 0 & 0\\
+            0 & \lambda & 0\\
+            0 & 0 & \lambda
+        \end{bmatrix}
+    \right)
+    =
+    0
+    \rightarrow
+    det
+    \left(
+    \begin{bmatrix}
+        4 - \lambda   & -3 & 1\\
+        5 &  - 4 -\lambda & 1\\
+        4 & -3 &   1 -\lambda
+    \end{bmatrix}
+    \right)
+    =
+    0
+    \rightarrow
+    -\lambda^3+\lambda^2+2\lambda=0
+\]
+
+Resolviendo $-\lambda^3+\lambda^2+2\lambda=0$ obtenemos $\lambda_1=0$,$\lambda_2=2$,$\lambda_3=-1$ lo que significa
+que la matriz \textbf{es diagnoalizable} pues obtenemos 3 autovalores distintos.
+
+Podemos representar la matriz diagonal $D=P^{-1}AP$:
+
+\[
+    D=
+    \begin{bmatrix}
+        \textbf{-1} & 0 & 0\\
+        0 & \textbf{0} & 0\\
+        0 & 0 & \textbf{2}
+    \end{bmatrix}  
+\]
+
+Para encontrar las columnas de $P$ necesitamos primero encontrar los auto vectores para cada valor en:
+
+\[
+    \begin{bmatrix}
+        4 - \lambda   & -3 & 1\\
+        5 &  - 4 -\lambda & 1\\
+        4 & -3 &   1 -\lambda
+    \end{bmatrix}
+    \begin{bmatrix}
+        v_1\\
+        v_2\\
+        v_3
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+        0\\
+        0\\
+        0
+    \end{bmatrix}
+\]
+
+Para $\lambda_1=-1$:
+
+
+\[
+    rref
+    \left(
+        \begin{bmatrix}[ccc|c]
+            5 & -3 & 1 & 0\\
+            5 & -3 & 1 & 0\\
+            4 & -3 & 2 & 0
+        \end{bmatrix}
+    \right)
+    =
+    \begin{bmatrix}[ccc|c]
+        1 & 0 & -1 & 0\\
+        0 & 1 & -2 & 0\\
+        0 & 0 & 0 & 0
+    \end{bmatrix}
+    \rightarrow
+    \begin{bmatrix}
+        v_1\\
+        v_2\\
+        v_3
+    \end{bmatrix}
+    =
+    v_3
+    \begin{bmatrix}
+       1\\
+       2\\
+       1 
+    \end{bmatrix}
+\]
+
+Para $\lambda_2=0$:
+
+\[
+    rref
+    \left(
+        \begin{bmatrix}[ccc|c]
+            4 & -3 & 1 & 0\\
+            5 & -4 & 1 & 0\\
+            4 & -3 & 1 & 0
+        \end{bmatrix}
+    \right)
+    =
+    \begin{bmatrix}[ccc|c]
+        1 & 0 & 1 & 0\\
+        0 & 1 & 1 & 0\\
+        0 & 0 & 0 & 0
+    \end{bmatrix}
+    \rightarrow
+    \begin{bmatrix}
+        v_1\\
+        v_2\\
+        v_3
+    \end{bmatrix}
+    =
+    v_3
+    \begin{bmatrix}
+       -1\\
+       -1\\
+       1 
+    \end{bmatrix}
+\]
+
+
+Para $\lambda_3=2$:
+
+\[
+    rref
+    \left(
+        \begin{bmatrix}[ccc|c]
+            2 & -3 & 1 & 0\\
+            5 & -6 & 1 & 0\\
+            4 & -3 & -1 & 0
+        \end{bmatrix}
+    \right)
+    =
+    \begin{bmatrix}[ccc|c]
+        1 & 0 & -1 & 0\\
+        0 & 1 & -1 & 0\\
+        0 & 0 & 0 & 0
+    \end{bmatrix}
+    \rightarrow
+    \begin{bmatrix}
+        v_1\\
+        v_2\\
+        v_3
+    \end{bmatrix}
+    =
+    v_3
+    \begin{bmatrix}
+       1\\
+       1\\
+       1 
+    \end{bmatrix}
+\]
+
+\newpage
+
+Dejando la variable libre $v_3=1$, podemos construir la matriz $P$:
+
+\[
+    P
+    =
+    \begin{bmatrix}
+       1 & -1 & 1\\
+       2 & -1 & 1\\
+       1 & 1 & 1 
+    \end{bmatrix}  
+\]
+
+y su matriz inversa:
+
+\[
+    P^{-1}
+    =
+    \begin{bmatrix}
+        -1 & 1 & 0\\
+        -.5 & 0 & .5\\
+        1.5 & -1 & .5
+    \end{bmatrix}  
+\]
+
+Sabiendo que $A=PDP^{-1}$, podemos calcular $(PDP^{-1})^{5050}$, que resultará mucho más sencillo a nivel computacional pues $P$ y $P^{-1}$ se irán
+cancelando a medida que evolucione la série y nos quedamos con:
+
+\[
+    A=PD^{5050}P^{-1}
+    =
+    \begin{bmatrix}
+        1 & -1 & 1\\
+        2 & -1 & 1\\
+        1 & 1 & 1 
+     \end{bmatrix} 
+     \begin{bmatrix}
+        (-1)^{5050} & 0 & 0\\
+        0 & 0 & 0\\
+        0 & 0 & 2^{5050}
+     \end{bmatrix}
+     \begin{bmatrix}
+        -1 & 1 & 0\\
+        -.5 & 0 & .5\\
+        1.5 & -1 & .5
+    \end{bmatrix} 
+\]\\\\
+
+
+
+
+
+
+
+
+
+\subsection*{Problema 7}
+
+Dada la matriz:
+
+\[
+    A=
+    \begin{bmatrix}
+        6 & -1 & 3\\
+        -10 & 3 & -6\\
+        -10 & 2 & -5
+    \end{bmatrix}
+\]
+
+Calcula los autovalores de A, sus autovectores correspondintes y argumentar por qué la matriz es o no es diagonalziable. En caso positivo hallar $D,P,P^{-1}$ y la diagonalización. Ordenar los autovalores
+en $D$ de menor a mayor en sentido de lectura.
+
+\[
+    det
+    \left(
+        A-\lambda I_3
+    \right)
+    =0
+    \rightarrow
+    det 
+    \left(
+        \begin{bmatrix}
+            6 - \lambda & -1 & 3\\
+            -10 & 3 - \lambda & -6\\
+            -10 & 2 & -5- \lambda
+        \end{bmatrix}
+    \right)
+    =
+    0
+    \rightarrow
+    -(\lambda-2)(\lambda-1)^2=0
+\]
+
+Lo que nos otorga los valores $\lambda_1=1$ con multiplicidad 2 y $\lambda_2=2$ con multiplicidad 1 con los que procederemos a calcular los auto vectores:
+
+
+
+Para $\lambda_1=1$:
+
+\[
+    rref
+    \left(
+        \begin{bmatrix}[ccc|c]
+            5 & -1  & 3 & 0\\
+            -10 & 2 & -6 & 0\\
+            -10 & 2 & -6 & 0
+        \end{bmatrix}
+    \right)
+    =
+    \begin{bmatrix}[ccc|c]
+        5 & -1 & 3 & 0\\
+        0 & 0 & 0 & 0\\
+        0 & 0 & 0 & 0
+    \end{bmatrix}
+    \rightarrow
+    \begin{bmatrix}
+        v_1\\
+        v_2\\
+        v_3
+    \end{bmatrix}
+    =
+    v_2
+    \begin{bmatrix}
+       1\\
+       5\\
+       0 
+    \end{bmatrix}
+    +
+    v_3
+    \begin{bmatrix}
+       -3\\
+       0\\
+       5 
+    \end{bmatrix}
+\]
+
+Para $\lambda_2=2$:
+
+\[
+    rref
+    \left(
+        \begin{bmatrix}[ccc|c]
+            4 & -1  & 3 & 0\\
+            -10 & 1 & -6 & 0\\
+            -10 & 2 & -7 & 0
+        \end{bmatrix}
+    \right)
+    =
+    \begin{bmatrix}[ccc|c]
+        2 & 0 & 1 & 0\\
+        0 & 2 & -2 & 0\\
+        0 & 0 & 0 & 0
+    \end{bmatrix}
+    \rightarrow
+    \begin{bmatrix}
+        v_1\\
+        v_2\\
+        v_3
+    \end{bmatrix}
+    =
+    v_3
+    \begin{bmatrix}
+       -1\\
+       2\\
+       2 
+    \end{bmatrix}
+\]
+
+Ya que las dimensiones de ambos espacios coinciden con la multiplicidad de sus autovalores, sabemos que la matriz
+es diagonizable:
+
+\[  
+    P=
+    \begin{bmatrix}
+        1 & -3 & -1\\
+        5 & 0 & 2\\
+        0 & 5 & 2
+    \end{bmatrix}
+    \rightarrow
+    P^{-1}=
+    \begin{bmatrix}
+        10 & 1 & 6\\
+        10 & -2 & 7\\
+        -10 & 2 & -6
+    \end{bmatrix}
+    \rightarrow
+    D=P^{-1}AP=
+    \begin{bmatrix}
+    1 & 0 & 0\\
+    0 & 1 & 0\\
+    0 & 2 & 2   
+    \end{bmatrix}
+\]
+
+
+
+
+
+
+
+\subsection*{Problema 8}
+
+Resuélvase el siguiente sistema incompatible por mínimos cuadrados:
+
+\[
+    \begin{matrix}
+        x+3y & = & 1\\
+        3x+4y & = & 0\\
+        x+2y & = & -8
+    \end{matrix}
+\]
+
+Ya que no hay ningún punto que cumple el sistema de ecuaciones anterior, podemos buscar el punto más cercano a todas
+las rectas trazadas por el sistema mediante el método de mínimos cuadrados.
+
+\[
+    A^TAx=A^Tb
+    \rightarrow
+    \begin{bmatrix}
+        1 & 3 & 1\\
+        3 & 4 & 2
+    \end{bmatrix}
+    \begin{bmatrix}
+        1 & 3\\
+        3 & 4\\
+        1 & 2
+    \end{bmatrix}
+    \begin{bmatrix}
+        x\\
+        y
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+        1 & 3 & 1\\
+        3 & 4 & 2
+    \end{bmatrix}
+    \begin{bmatrix}
+        1\\
+        0\\
+        -8
+    \end{bmatrix}
+    \rightarrow
+    \begin{bmatrix}
+        11 & 17\\
+        17 & 29
+    \end{bmatrix}
+    \begin{bmatrix}
+        x\\
+        y
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+        -7\\
+        -13
+    \end{bmatrix}
+\]  
+
+Que tiene forma $Ax=b$ y se puede resolver mediante Gauss-Jordan:
+\[
+    rref
+    \left(
+        \begin{bmatrix}[cc|c]
+            11 & 17 & -7\\
+            17 & 29 & -13
+        \end{bmatrix} 
+    \right)
+   =
+   \begin{bmatrix}
+       1 & 0 & .6\\
+       0 & 1 & -.8
+   \end{bmatrix}
+\]
+
+Por lo tanto la solución más cercana, mediante el método de mínimos cuadrados es $x=0.6$ e $y=-0.8$:\\
+
+\includegraphics[height=10cm]{C:/Users/XYZ/Dropbox/DocumentGraphics/AEC2Algebra/problema8.png}\\
+
+\newpage
+
+\subsection*{Problema 9}
+
+Calcula la descomposición QR de la siguiente matriz:
+
+\[
+    A=
+    \begin{bmatrix}
+        0 & 1 & 1\\
+        1 & -1 & 1\\
+        1 & 1 & 0
+    \end{bmatrix}
+\]
+
+Nota importante: conservar los números en forma de raíces cuadradas y sus combinaciones y no explicitar
+sus valores en forma decimal. Si se da en forma decimal se calificará con un cero.\\
+
+Procedemos a descomponer $A$ en $Q$, una matriz ortonormal y $R$, una matriz triangular superior:
+
+\[
+    A=
+     \begin{bmatrix}
+        0 & 1 & 1\\
+        1 & -1 & 1\\
+        1 & 1 & 0
+    \end{bmatrix}=
+    QR  
+\]
+
+Para encontrar las columnas de Q, podemos utilizar la ortogonalización Gram-Schmidt:
+
+\[
+    u_1=
+    \begin{bmatrix}
+        0\\
+        1\\
+        1
+    \end{bmatrix}  
+    \rightarrow
+    e_1=
+    \frac{1}{\| \mathbf{v_1} \|} v_1=
+    \frac{1}{\sqrt{2}}
+    \begin{bmatrix}
+        0\\
+        1\\
+        1
+    \end{bmatrix} 
+    =
+    \begin{bmatrix}
+        0\\
+        \frac{1}{\sqrt{2}}\\
+        \frac{1}{\sqrt{2}}
+    \end{bmatrix}
+\]
+
+\[
+    u_2=
+    \begin{bmatrix}
+        1\\
+        -1\\
+        1
+    \end{bmatrix}
+    -0e_1
+    \rightarrow
+    e_2
+    \frac{1}{\| \mathbf{v_2} \|} v_2=
+    \frac{1}{\sqrt{3}}
+    \begin{bmatrix}
+        1\\
+        -1\\
+        1
+    \end{bmatrix}  
+    =
+    \begin{bmatrix}
+        \frac{1}{\sqrt{3}}\\
+        -\frac{1}{\sqrt{3}}\\
+        \frac{1}{\sqrt{3}}
+    \end{bmatrix}
+\]
+
+\[
+    u_3=
+    \begin{bmatrix}
+        1\\
+        1\\
+        0
+    \end{bmatrix} 
+    -\frac{1}{\sqrt{2}}e_1
+    -0e_2
+    \rightarrow
+    e_3=
+    \frac{1}{\| \mathbf{v_3} \|} v_3=
+    \frac{\sqrt{6}}{2}
+    \begin{bmatrix}
+        1\\
+        \frac{1}{2}\\
+        -\frac{1}{2}
+    \end{bmatrix}  
+    =
+    \begin{bmatrix}
+        \frac{2}{\sqrt{6}}\\
+        \frac{1}{\sqrt{6}}\\
+        -\frac{1}{\sqrt{6}}
+    \end{bmatrix}
+\]
+
+
+Recopilamos todos los vectores en la matriz $Q$:
+
+\[
+    Q=
+    \begin{bmatrix}
+        0 & \frac{1}{\sqrt{3}}& \frac{2}{\sqrt{6}}\\
+        \frac{1}{\sqrt{2}} & -\frac{1}{\sqrt{3}}& \frac{1}{\sqrt{6}}\\
+        \frac{1}{\sqrt{2}} & \frac{1}{\sqrt{3}} & -\frac{1}{\sqrt{6}}
+    \end{bmatrix}  
+\]
+
+Y finalmente:
+
+\[
+    R=Q^TA=
+    \begin{bmatrix}
+        0 & \frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}}\\
+        \frac{1}{\sqrt{3}} & -\frac{1}{\sqrt{3}}& \frac{1}{\sqrt{3}} &\\
+        \frac{2}{\sqrt{6}} &  \frac{1}{\sqrt{6}} & -\frac{1}{\sqrt{6}}
+    \end{bmatrix}  
+    \begin{bmatrix}
+        0 & 1 & 1\\
+        1 & -1 & 1\\
+        1 & 1 & 0
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+        \sqrt{2} & -\frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}}\\
+        0 & \sqrt{3} & 0\\
+        0 & 0 & \frac{\sqrt{6}}{2}
+    \end{bmatrix}
+\]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\newpage
+
+
+\subsection*{Problema 10}
+
+Dada la matriz simétrica
+
+\[
+    \begin{bmatrix}
+        -1 & 1 & 1\\
+        1 & 0 & 1\\
+        1 & 1 & -1
+    \end{bmatrix},
+\]
+
+calcular los autovalores y autovectores. ¿Es diagonalizable? Obtener un conjunto de autovectores ortogonales a partir de los autovectores
+asociados. Escribe explícitamente una matriz diagonal $D$ (con autovalores de menor a mayor leídos de izquierda a derecha) y dos matrices $Q$ y $Q^T$ tales
+que $D=Q^T AQ$. Es decir, realiza la diagonalización ortogonal de esa matriz simétrica.\\
+
+Encontramos los autovalores:
+
+\[
+    det
+    \left(
+    \begin{bmatrix}
+        -1 - \lambda & 1 & 1\\
+        1 & 0- \lambda & 1\\
+        1 & 1 & -1 - \lambda
+    \end{bmatrix}    
+    \right) 
+    =
+    0
+    \rightarrow
+    \lambda^3+2\lambda^2-2\lambda-4=0 
+\]
+
+Y obtenemos: $\lambda_1=-2$, $\lambda_2=\sqrt{2}$ y $\lambda_3=-\sqrt{2}$. La matriz es diagnoalizable pues los 3 valores son 
+únicos.
+
+Procedemos a computar los autovectores y dividimos por su módulo para obtener los autovectores ortogonales:
+
+Para $\lambda_1=-2$:
+
+\[
+    rref
+    \left(
+        \begin{bmatrix}[ccc|c]
+            1 & 1 & 1 & 0\\
+            1 & 2 & 1 & 0\\
+            1 & 1 & 1 & 0
+        \end{bmatrix}
+    \right)
+    =
+    \begin{bmatrix}[ccc|c]
+        1 & 0 & 1 & 0\\
+        0 & 1 & 0 & 0\\
+        0 & 0 & 0 & 0
+    \end{bmatrix}
+    \rightarrow
+    \begin{bmatrix}
+        v_1\\
+        v_2\\
+        v_3
+    \end{bmatrix}
+    =
+    v_3
+    \begin{bmatrix}
+       -1\\
+       0\\
+       1 
+    \end{bmatrix}
+\]
+
+Normalizado:
+
+\[
+    \frac{1}{\sqrt{2}}
+    \begin{bmatrix}
+        -1\\
+        0\\
+        1 
+     \end{bmatrix}
+     =
+     \begin{bmatrix}
+        \frac{-1}{\sqrt{2}}\\
+        0\\
+        \frac{1}{\sqrt{2}} 
+     \end{bmatrix}
+\]
+
+
+
+
+Para $\lambda_2=\sqrt{2}$:
+
+\[
+    rref
+    \left(
+        \begin{bmatrix}[ccc|c]
+            -1-\sqrt{2} & 1 & 1 & 0\\
+            1 & -\sqrt{2} & 1 & 0\\
+            1 & 1 & -1-\sqrt{2} & 0
+        \end{bmatrix}
+    \right)
+    =
+    \begin{bmatrix}[ccc|c]
+        1 & 0 & -1 & 0\\
+        0 & 1 & -\sqrt{2} & 0\\
+        0 & 0 & 0 & 0
+    \end{bmatrix}
+    \rightarrow
+    \begin{bmatrix}
+        v_1\\
+        v_2\\
+        v_3
+    \end{bmatrix}
+    =
+    v_3
+    \begin{bmatrix}
+       1\\
+       \sqrt{2}\\
+       1 
+    \end{bmatrix}
+\]
+
+Normalizado:
+
+\[
+    \frac{1}{2}
+    \begin{bmatrix}
+        1\\
+        \sqrt{2}\\
+        1 
+     \end{bmatrix}
+     =
+     \begin{bmatrix}
+        \frac{1}{2}\\
+        \frac{\sqrt{2}}{2}\\
+        \frac{1}{2} 
+     \end{bmatrix}
+\]
+
+Para $\lambda_3=-\sqrt{2}$:
+
+\[
+    rref
+    \left(
+        \begin{bmatrix}[ccc|c]
+            -1+\sqrt{2} & 1 & 1 & 0\\
+            1 & \sqrt{2} & 1 & 0\\
+            1 & 1 & -1+\sqrt{2} & 0
+        \end{bmatrix}
+    \right)
+    =
+    \begin{bmatrix}[ccc|c]
+        1 & 0 & -1 & 0\\
+        0 & 1 & \sqrt{2} & 0\\
+        0 & 0 & 0 & 0
+    \end{bmatrix}
+    \rightarrow
+    \begin{bmatrix}
+        v_1\\
+        v_2\\
+        v_3
+    \end{bmatrix}
+    =
+    v_3
+    \begin{bmatrix}
+       1\\
+       -\sqrt{2}\\
+       1 
+    \end{bmatrix}
+\]\\
+
+\newpage 
+
+
+Normalizado:
+
+\[
+    \frac{1}{2}
+    \begin{bmatrix}
+        1\\
+        -\sqrt{2}\\
+        1 
+     \end{bmatrix}
+     =
+     \begin{bmatrix}
+        \frac{1}{2}\\
+        -\frac{\sqrt{2}}{2}\\
+        \frac{1}{2} 
+     \end{bmatrix}
+\]
+
+Finalmente podemos formar la matriz $Q$ con los vecotres ortonormales:
+
+\[
+    Q=
+    \begin{bmatrix}
+        \frac{-1}{\sqrt{2}}     &  \frac{1}{2}          & \frac{1}{2}\\
+        0                       & \frac{\sqrt{2}}{2}    &  -\frac{\sqrt{2}}{2}\\
+        \frac{1}{\sqrt{2}}      & \frac{1}{2}           & \frac{1}{2} 
+    \end{bmatrix}     
+\]
+
+Y su traspuesta:
+
+\[
+    Q^T=
+    \begin{bmatrix}
+        \frac{-1}{\sqrt{2}}     & 0                       & \frac{1}{\sqrt{2}}\\
+        \frac{1}{2}          & \frac{\sqrt{2}}{2}    &   \frac{1}{2}         \\
+        \frac{1}{2} &  -\frac{\sqrt{2}}{2} & \frac{1}{2} 
+    \end{bmatrix}     
+\]
+
+Podemos entonces computar $D$:
+
+\[
+    D=Q^TAQ
+    =
+    \begin{bmatrix}
+        \frac{-1}{\sqrt{2}}     & 0                       & \frac{1}{\sqrt{2}}\\
+        \frac{1}{2}          & \frac{\sqrt{2}}{2}    &   \frac{1}{2}         \\
+        \frac{1}{2} &  -\frac{\sqrt{2}}{2} & \frac{1}{2} 
+    \end{bmatrix}   
+    \begin{bmatrix}
+        -1 & 1 & 1\\
+        1 & 0 & 1\\
+        1 & 1 & -1
+    \end{bmatrix}
+    \begin{bmatrix}
+        \frac{-1}{\sqrt{2}}     &  \frac{1}{2}          & \frac{1}{2}\\
+        0                       & \frac{\sqrt{2}}{2}    &  -\frac{\sqrt{2}}{2}\\
+        \frac{1}{\sqrt{2}}      & \frac{1}{2}           & \frac{1}{2} 
+    \end{bmatrix}  
+    =
+    \begin{bmatrix}
+        -2 & 0 & 0\\
+        0 & -\sqrt{2} & 0\\
+        0 & 0 & \sqrt{2}
+    \end{bmatrix}
+\]
+\end{document}

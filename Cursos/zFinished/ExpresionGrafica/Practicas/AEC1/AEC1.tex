@@ -1,0 +1,175 @@
+\documentclass{article}
+\usepackage{lipsum}
+\usepackage[backend=biber]{biblatex}
+\addbibresource{aec2.bib}
+\usepackage{authoraftertitle}
+\usepackage[top=2cm,bottom=1.5cm,left=1.5cm, right=3cm,includeheadfoot]{geometry}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage[spanish]{babel}
+\usepackage{mathtools}
+\usepackage{csquotes}
+\usepackage{amssymb}
+\usepackage{fancybox, graphicx}
+\usepackage{array}
+\usepackage{hhline}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{caption}
+\usepackage{esvect}
+\usepackage{siunitx}
+\usepackage{commath}
+\usepackage{tcolorbox}
+\usepackage{listings}
+\makeatletter
+\renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
+   \hskip -\arraycolsep
+   \let\@ifnextchar\new@ifnextchar
+   \array{#1}}
+\makeatother
+
+%Header & Footer
+\pagestyle{fancy}
+\fancyhead[LE]{\MyTitle}
+\fancyhead[LO]{Expresión Gráfica}
+\fancyhead[RO]{\leftmark}
+\fancyhead[RE]{\leftmark}
+\fancyfoot[L]{\raisebox{-1cm}{\includegraphics[height=2cm]{C:/Users/XYZ/Dropbox/DocumentGraphics/LOGOUDIMA.jpg}}}
+\fancyfoot[R]{Corregido:\\ Dra. Isabel Cristina Gil García}
+%\fancyfoot[RO]{07/12/2018}
+%Vars
+\author{Alexander Sebastian Kalis}
+\title{ Actividad 2. AEC. Ejercicios propuestos Unidades 1-3}
+
+
+%DOC
+
+\begin{document}
+
+\begin{titlepage}
+
+    \begin{center}
+
+        \line(1,0){300}\\
+        [0.2in]
+        \huge{\bfseries {\MyTitle}}\\
+        [1mm]
+        \line(2,0){200}\\
+        [0.75cm]
+        \textsc{\LARGE Expresión Gráfica}\\
+        [2cm]
+        \includegraphics[height=10cm]{C:/Users/XYZ/Dropbox/DocumentGraphics/AEC1ExpresionGrafica/expresiongrafica.jpg}\\
+        [2.5cm]
+
+    \end{center}
+
+    \begin{flushright}
+
+        Autor: {\MyAuthor}\\
+        Profesora: Dra. Isabel Cristina Gil García\\
+        Curso: 1o, Ingeniería de Organización Industrial\\
+        UDIMA\\         
+        \today
+    \end{flushright}
+    
+\end{titlepage}
+
+\newpage 
+
+\section*{Ejercicio 1}
+
+\subsection*{Imagen}
+
+\includegraphics[height=10cm]{C:/Users/XYZ/Dropbox/DocumentGraphics/AEC1ExpresionGrafica/Ejercicio1.png}\\
+
+\subsection*{Descripción}
+
+Para realizar el ejercicio 1, primeramente se han definido los límites en A4 de forma horizontal del dibujo con los comandos
+\begin{lstlisting}[backgroundcolor = \color{lightgray}]
+    LIMITS(0,0)(297,210)
+    GRID Limits No
+\end{lstlisting}
+
+Para el trazado de las líneas se ha utilizado líneas relativas. Para el chaflán de la parte superior de la pieza, se han utilizado líneas auxiliares que la profesora puede consultar 
+haciendo visible la capa Aux (color lila).
+
+El dibujo no está acotado ya que así está explicitado en el enunciado.
+
+\newpage
+
+
+\section*{Ejercicio 2}
+
+\subsection*{Imagen}
+\includegraphics[height=8cm]{C:/Users/XYZ/Dropbox/DocumentGraphics/AEC1ExpresionGrafica/Ejercicio2.png}\\
+\subsection*{Descripción}
+Para realizar el ejercicio 2, similarmente se han definido los límites en A3 de forma horizontal del dibujo con los comandos
+\begin{lstlisting}[backgroundcolor = \color{lightgray}]
+    LIMITS(0,0)(420,297)
+    GRID Limits No
+\end{lstlisting}
+
+Se ha empezado trazando las líneas conocidas. Posteriormente se han utilizado líneas auxiliares para determinar el centro de los círculos. Una vez dibujados los círculos se ha utilizado
+la herramienta \textit{Snap on Tangent} para dibujar las líneas que se juntan con la tangente del círculo de radio 10. Finalmente se ha utilizado la herramienta \textit{trim} para recortar
+el sobrante del círculo.
+
+Se ha copiado el dibujo original (esquina inferior izquierda) 3 veces y se han escalado las copias a factores 1:2.5, 1:5, 2:1.
+
+Se ha realizado la comprobación de las medidas y son correctas ya que son la escala del original (15):
+
+15/2.5=6
+
+15/5=3
+
+15*2=30
+
+\newpage
+
+\section*{Ejercicio 3}
+
+\subsection*{Imagen}
+\includegraphics[height=8cm]{C:/Users/XYZ/Dropbox/DocumentGraphics/AEC1ExpresionGrafica/Ejercicio3.png}\\
+\subsection*{Descripción}
+En este ejercicio la principal dificultad fue deducir el tamaño de los chaflanados ya que no tenemos acotaciones disponibles y el dibujo propocionado por el enunciado tiene una resolución muy baja. De nuevo se ha limitado el espacio de trabajo a formato A4 
+vertical utilizando los comandos
+\begin{lstlisting}[backgroundcolor = \color{lightgray}]
+    LIMITS(0,0)(210,297)
+    GRID Limits No
+\end{lstlisting}
+
+Al ser dibujos simétricos se ha construído un lado del dibujo y luego se ha creado un espejo con la función \textit{mirror} para ahorrarse algo de tiempo.
+
+En el primer dibujo, para las puntas redondeadas se ha utilizado la función de arco (principio, fin, ángulo) ya que no conocemos el radio. 
+
+
+\newpage
+\section*{Ejercicio tuberias}
+
+\subsection*{Imagen}
+\includegraphics[height=7cm]{C:/Users/XYZ/Dropbox/DocumentGraphics/AEC1ExpresionGrafica/Ejercicio_tuberias.png}\\
+\subsection*{Descripción}
+Para este ejercicio se han puesto como límites el tamaño del papel A3 horizontal. El dibujo está escalado a 1:2 ya que a escala original se sale de los límites.
+
+Se ha tomado como $k$ el valor 6 siendo la tabla:
+
+\[
+    \begin{cases}
+        K=6\\
+        L1=90\\
+        L2=210\\
+        L3=110\\
+        L4=55\\
+        \beta=60º\\
+        \sphericalangle L1L2 = 210º\\
+        \sphericalangle L2L3 = 150º\\
+        Hb=32.5
+    \end{cases}  
+\]
+
+
+\end{document}
+

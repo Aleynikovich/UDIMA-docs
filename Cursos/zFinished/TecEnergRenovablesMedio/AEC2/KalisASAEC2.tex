@@ -1,0 +1,231 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\usepackage{siunitx}
+\usepackage{url}
+\usepackage{pdflscape}
+
+% Configuración de márgenes
+\geometry{left=2.5cm, right=2.5cm, top=3cm, bottom=3cm}
+
+% Encabezado y pie de página
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{UDIMA}
+\fancyhead[R]{Tecnología energética, medio ambiente y energías renovables}
+\fancyfoot[C]{\thepage}
+
+% Título del documento
+\title{\textbf{Actividad de Evaluación Continua}\\[0.5cm]
+\Large{Ejercicios Propuestos de Módulo 3}}
+\author{Alumno: Alexander Sebastian Kalis \\ Profesor: Prof. Lucas Castro Martínez}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\newpage
+\tableofcontents
+\newpage
+\section{Ejercicio 1}
+
+\subsection{Introducción a la regulación del sistema eléctrico}
+La estabilidad de la red eléctrica es un pilar fundamental para garantizar un suministro de energía fiable. Para lograrlo, el sistema eléctrico utiliza un esquema de regulación en varios niveles: la regulación primaria, la secundaria y la terciaria. La regulación primaria actúa de forma casi instantánea para corregir pequeños desequilibrios entre la generación y la demanda, manteniendo la frecuencia de la red dentro de los límites establecidos. La regulación secundaria opera a medio plazo para restaurar la frecuencia a su valor nominal y gestionar los intercambios de energía entre zonas. Finalmente, la regulación terciaria se encarga de reajustar la generación y la demanda a largo plazo, liberando las reservas de las regulaciones anteriores y preparando el sistema para futuros cambios. Estas regulaciones requieren de centrales con capacidad de respuesta rápida y flexible, un papel tradicionalmente desempeñado por las centrales térmicas y las de bombeo.
+
+\subsection{Análisis comparativo de tecnologías clave}
+
+\subsubsection*{Centrales térmicas de ciclo combinado (basadas en gas natural)}
+Principio de funcionamiento: Estas centrales producen electricidad a través de dos ciclos térmicos. Una turbina de gas genera energía, y el calor residual de sus gases de escape se recupera para calentar agua, producir vapor y mover una segunda turbina de vapor [12.1].
+
+Tipo de fuente/recurso: Su fuente de energía es el gas natural, un combustible fósil y, por tanto, no renovable [12.1]. Su disponibilidad depende de la geopolítica y los mercados energéticos globales.
+
+Rol en el sistema eléctrico: Las centrales de ciclo combinado actúan como un respaldo flexible [12.1]. Su capacidad para arrancar y ajustar rápidamente su producción las hace ideales para cubrir picos de demanda o compensar la intermitencia de las energías renovables, como la solar y la eólica.
+
+Característica clave: Una de sus principales ventajas es su alta flexibilidad operativa y eficiencia [17.1], lo que les permite adaptarse a las necesidades de la red, aunque emiten CO$_2$, en menor medida que las centrales térmicas convencionales [17.1].
+
+\subsubsection*{Centrales nucleares}
+Principio de funcionamiento: La electricidad se genera a partir de la fisión nuclear de átomos de uranio. Este proceso libera una gran cantidad de calor que se utiliza para calentar agua, producir vapor y mover una turbina conectada a un generador eléctrico [3.1].
+
+Tipo de fuente/recurso: El combustible es el uranio, un recurso no renovable cuya extracción y suministro son controlados.
+
+Rol en el sistema eléctrico: Las centrales nucleares se consideran una fuente de suministro base o ``base load'' [13.1]. Su capacidad para generar electricidad de forma constante y predecible, con una alta disponibilidad, las convierte en un pilar fundamental para la estabilidad de la red.
+
+Característica clave: Su principal ventaja es que generan electricidad con muy bajas emisiones de carbono durante su operación. El desafío más significativo es la gestión segura de los residuos radiactivos, que siguen siendo peligrosos durante miles de años [18.1].
+
+\subsubsection*{Instalaciones de energía solar fotovoltaica}
+Principio de funcionamiento: Convierten directamente la luz solar en electricidad a través del efecto fotovoltaico en las células de silicio de los paneles solares. La corriente continua generada se transforma en corriente alterna para su uso o inyección a la red [4.1].
+
+Tipo de fuente/recurso: El sol es una fuente de energía renovable e inagotable. Sin embargo, su disponibilidad es intermitente y varía según la hora del día, el clima y la estación [19.1].
+
+Rol en el sistema eléctrico: Funcionan como una generación variable. Su producción está limitada a las horas de sol y fluctúa con las condiciones climáticas [14.1], lo que requiere sistemas de respaldo para garantizar un suministro constante.
+
+Característica clave: Son una fuente de energía completamente limpia, sin emisiones contaminantes ni residuos durante la operación [19.1]. El mayor desafío es su intermitencia [19.1], lo que dificulta su integración a gran escala sin tecnologías de apoyo.
+
+\subsubsection*{Instalaciones de energía eólica}
+Principio de funcionamiento: Aprovechan la energía cinética del viento para hacer girar las palas de un aerogenerador, que a su vez mueve una turbina para generar electricidad [5.1].
+
+Tipo de fuente/recurso: La energía del viento es un recurso renovable y gratuito [20.1], pero su disponibilidad es variable y depende de las condiciones meteorológicas y la velocidad del viento [20.1].
+
+Rol en el sistema eléctrico: Al igual que la solar, es una generación variable [15.1]. Sin embargo, los aerogeneradores modernos pueden contribuir a la estabilidad de la red aportando energía reactiva y siguiendo consignas de operación para apoyar al sistema cuando es necesario [15.1].
+
+Característica clave: Es una fuente de energía limpia que no produce emisiones ni residuos. Un desafío importante es la intermitencia y, en algunos casos, el impacto visual y acústico de los parques eólicos [20.1].
+
+\subsubsection*{Sistemas de almacenamiento de electricidad}
+Principio de funcionamiento: Estos sistemas almacenan energía generada en un momento dado para liberarla cuando es necesaria. Las tecnologías más comunes son las baterías de gran capacidad [16.1] y las centrales hidroeléctricas de bombeo, que elevan agua a un depósito superior para su uso posterior [6.1].
+
+Tipo de fuente/recurso: Estos sistemas no generan energía por sí mismos, sino que gestionan la energía de otras fuentes [11.1].
+
+Rol en el sistema eléctrico: Su rol es crucial para la regulación y el respaldo del sistema [16.1]. Permiten almacenar el excedente de producción de las renovables en momentos de baja demanda y liberarlo en picos de consumo o cuando las fuentes intermitentes no están disponibles.
+
+Característica clave: Son una tecnología clave para la integración a gran escala de las renovables [16.1]. El principal desafío es su alto coste inicial y, en el caso de las baterías, su vida útil limitada.
+\newpage
+\section{Ejercicio 2}
+
+
+\subsection{Curva de rendimiento}
+Para representar la curva de rendimiento, necesitamos calcular el rendimiento de cada captador para diferentes valores del parámetro de operación $\frac{\Delta T}{I}$, donde $\Delta T = t_e - t_a$.
+
+Para ambos captadores, los valores de referencia son:
+\begin{itemize}
+    \item Temperatura de entrada del fluido, $t_e = \SI{60}{\celsius}$
+    \item Temperatura ambiente, $t_a = \SI{10}{\celsius}$
+    \item Irradiancia solar incidente, $I = \SI{500}{W/m^2}$
+\end{itemize}
+
+El parámetro de operación para estas condiciones es:
+$$ \frac{\Delta T}{I} = \frac{t_e - t_a}{I} = \frac{\SI{60}{\celsius} - \SI{10}{\celsius}}{\SI{500}{W/m^2}} = \frac{50}{500} = \mathbf{0.1 \, \frac{m^2 \cdot K}{W}} $$
+
+Para la representación, se evalúa la fórmula del rendimiento $\eta$ en un rango de valores de $\frac{\Delta T}{I}$:
+$$ \eta = \eta_0 - k_1 \frac{t_e - t_a}{I} - k_2 \left(\frac{t_e - t_a}{I}\right)^2 $$
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[height=8.5cm]{rendimiento.png}
+    \caption{Curva de rendimiento de los captadores solares A y B.}
+    \label{fig:curva_rendimiento}
+\end{figure}
+
+
+
+\subsection{Cálculo del rendimiento para las condiciones dadas}
+Para cada captador, sustituimos los valores dados en la fórmula de rendimiento.
+
+\textbf{Captador A (plano):}
+\begin{itemize}
+    \item $\eta_0 = 0.75$
+    \item $k_1 = \SI{3.5}{W/(m^2 \cdot K)}$
+    \item $k_2 = \SI{0.01}{W/(m^2 \cdot K^2)}$
+\end{itemize}
+$$ \eta_A = 0.75 - 3.5 \cdot \frac{50}{500} - 0.01 \cdot \left(\frac{50}{500}\right)^2 $$
+$$ \eta_A = 0.75 - 3.5 \cdot 0.1 - 0.01 \cdot (0.1)^2 $$
+$$ \eta_A = 0.75 - 0.35 - 0.01 \cdot 0.01 $$
+$$ \eta_A = 0.40 - 0.0001 = \mathbf{0.3999} $$
+$$ \eta_A \approx \mathbf{39.99\%} $$
+
+\textbf{Captador B (tubos de vacío):}
+\begin{itemize}
+    \item $\eta_0 = 0.70$
+    \item $k_1 = \SI{2.2}{W/(m^2 \cdot K)}$
+    \item $k_2 = \SI{0.005}{W/(m^2 \cdot K^2)}$
+\end{itemize}
+$$ \eta_B = 0.70 - 2.2 \cdot \frac{50}{500} - 0.005 \cdot (0.1)^2 $$
+$$ \eta_B = 0.70 - 2.2 \cdot 0.1 - 0.005 \cdot (0.1)^2 $$
+$$ \eta_B = 0.70 - 0.22 - 0.005 \cdot 0.01 $$
+$$ \eta_B = 0.48 - 0.00005 = \mathbf{0.47995} $$
+$$ \eta_B \approx \mathbf{47.995\%} $$
+
+
+
+\subsection{Comparación de resultados y significado de los coeficientes}
+Comparando los resultados, el \textbf{captador B (tubos de vacío) obtiene un mayor rendimiento} ($\approx 48\%$) que el captador A (plano) ($\approx 40\%$) bajo las condiciones de operación dadas.
+
+La razón por la cual el captador B funciona mejor en estas condiciones específicas (temperatura de operación relativamente alta y irradiancia moderada) se debe a los coeficientes de pérdidas térmicas.
+
+El captador A (plano) tiene un valor de $k_1$ superior ($3.5$ vs $2.2$) y un valor de $k_2$ superior ($0.01$ vs $0.005$). El coeficiente $k_1$ representa las pérdidas térmicas lineales por convección y conducción, mientras que $k_2$ representa las pérdidas cuadráticas, principalmente por radiación.
+
+A medida que la temperatura de operación aumenta (lo que implica un mayor $\Delta T$), las pérdidas térmicas se vuelven más significativas. El captador B, con sus valores más bajos de $k_1$ y $k_2$, está mejor diseñado para minimizar las pérdidas térmicas en condiciones de alta temperatura. Los tubos de vacío aíslan de manera más efectiva la superficie absorbente, reduciendo la convección y la radiación, mientras que los colectores planos tienden a perder más calor en estas condiciones.
+
+En resumen, aunque el captador plano A tiene un mejor rendimiento óptico en condiciones ideales ($\eta_0$), el captador de tubos de vacío B es más eficiente en condiciones de operación realistas con una diferencia de temperatura moderada a alta. Su diseño de aislamiento le permite mantener un rendimiento superior al reducir las pérdidas de calor, un factor crucial en este tipo de sistemas.
+\newpage
+\section{Ejercicio 3}
+
+\subsection{Identificación de parámetros característicos}
+Según las características técnicas del módulo fotovoltaico PEIMAR SM400M , los parámetros bajo condiciones de prueba estándar (STC) son:
+\begin{itemize}
+    \item Potencia Nominal (P$_{max}$): \SI{340}{W}
+    \item Tensión en el punto de máxima potencia (V$_{MPP}$): \SI{34.8}{V}
+    \item Corriente en el punto de máxima potencia (I$_{MPP}$): \SI{9.77}{A}
+    \item Tensión de circuito abierto (V$_{OC}$): \SI{41.3}{V}
+    \item Corriente de cortocircuito (I$_{SC}$): \SI{10.27}{A}
+    \item Coeficiente de temperatura de P$_{max}$: \SI{-0.39}{\%/K}
+    \item Coeficiente de temperatura de V$_{OC}$: \SI{-0.33}{\%/K}
+\end{itemize}
+
+\subsection{Comprobación de la eficiencia del módulo}
+La eficiencia ($\eta$) de un módulo fotovoltaico se calcula utilizando la siguiente fórmula:
+$$ \eta = \frac{P_{max}}{A \cdot I} $$
+Donde $P_{max}$ es la potencia nominal, $A$ es el área del módulo e $I$ es la irradiancia estándar de \SI{1000}{W/m^2}.
+
+De las especificaciones del módulo (no provistas en el enunciado, pero se pueden deducir de los datos técnicos), el área superficial es de $1.865 \, \text{m}^2$.
+$$ \eta = \frac{340 \, \text{W}}{1.865 \, \text{m}^2 \cdot 1000 \, \text{W/m}^2} = 0.1823 $$
+$$ \eta = \mathbf{18.23\%} $$
+El valor calculado de la eficiencia es consistente con el valor que se esperaría de las características técnicas del módulo.
+
+\subsection{Tensión de circuito abierto (V$_{OC}$) a diferentes temperaturas}
+La tensión de circuito abierto a diferentes temperaturas se calcula con la siguiente fórmula:
+$$ V_{OC}(T) = V_{OC, ref} \cdot [1 + \beta \cdot (T - T_{ref})] $$
+Donde $V_{OC, ref} = \SI{41.3}{V}$, $T_{ref} = \SI{25}{\celsius}$ y $\beta = \SI{-0.33}{\%/K} = -0.0033 \, \text{K}^{-1}$.
+
+\textbf{Para \SI{0}{\celsius}:}
+$$ V_{OC}(\SI{0}{\celsius}) = 41.3 \cdot [1 + (-0.0033) \cdot (\SI{0}{\celsius} - \SI{25}{\celsius})] = 41.3 \cdot (1 + 0.0825) = \mathbf{44.71 \, V} $$
+
+\textbf{Para \SI{25}{\celsius}:}
+$$ V_{OC}(\SI{25}{\celsius}) = 41.3 \cdot [1 + (-0.0033) \cdot (\SI{25}{\celsius} - \SI{25}{\celsius})] = 41.3 \cdot (1) = \mathbf{41.3 \, V} $$
+
+\textbf{Para \SI{50}{\celsius}:}
+$$ V_{OC}(\SI{50}{\celsius}) = 41.3 \cdot [1 + (-0.0033) \cdot (\SI{50}{\celsius} - \SI{25}{\celsius})] = 41.3 \cdot (1 - 0.0825) = \mathbf{37.89 \, V} $$
+
+\subsection{Tensión en el punto de máxima potencia (V$_{MPP}$) a diferentes temperaturas}
+La tensión en el punto de máxima potencia a diferentes temperaturas se calcula con la siguiente fórmula:
+$$ V_{MPP}(T) = V_{MPP, ref} \cdot [1 + \beta \cdot (T - T_{ref})] $$
+Donde $V_{MPP, ref} = \SI{34.8}{V}$, $T_{ref} = \SI{25}{\celsius}$ y $\beta = \SI{-0.39}{\%/K} = -0.0039 \, \text{K}^{-1}$.
+
+\textbf{Para \SI{0}{\celsius}:}
+$$ V_{MPP}(\SI{0}{\celsius}) = 34.8 \cdot [1 + (-0.0039) \cdot (\SI{0}{\celsius} - \SI{25}{\celsius})] = 34.8 \cdot (1 + 0.0975) = \mathbf{38.2 \, V} $$
+
+\textbf{Para \SI{25}{\celsius}:}
+$$ V_{MPP}(\SI{25}{\celsius}) = 34.8 \cdot [1 + (-0.0039) \cdot (\SI{25}{\celsius} - \SI{25}{\celsius})] = 34.8 \cdot (1) = \mathbf{34.8 \, V} $$
+
+\textbf{Para \SI{50}{\celsius}:}
+$$ V_{MPP}(\SI{50}{\celsius}) = 34.8 \cdot [1 + (-0.0039) \cdot (\SI{50}{\celsius} - \SI{25}{\celsius})] = 34.8 \cdot (1 - 0.0975) = \mathbf{31.41 \, V} $$
+
+\newpage
+
+\section{Referencias}
+\begin{enumerate}
+    \item Cátedras FACET. (s.f.). \textit{centrales de ciclo combinado (cc)}. Recuperado de \url{https://catedras.facet.unt.edu.ar/centraleselectricas/wp-content/uploads/sites/19/2014/10/Apunte-Central-CC.pdf}
+    \item Foro Nuclear. (s.f.). \textit{¿Cómo funciona una central nuclear?}. Recuperado de \url{https://www.foronuclear.org/descubre-la-energia-nuclear/como-funciona-una-central-nuclear/}
+    \item Solar360. (s.f.). \textit{Instalación fotovoltaica: qué es y cómo funciona}. Recuperado de \url{https://www.solar360.es/blog/instalacion-y-mantenimiento/instalacion-fotovoltaica}
+    \item Acciona. (s.f.). \textit{¿Qué es un aerogenerador y cómo funciona?}. Recuperado de \url{https://www.acciona.com/es/energias-renovables/energia-eolica/aerogeneradores}
+    \item Solunion. (s.f.). \textit{El futuro del almacenamiento energético: centrales de bombeo en España}. Recuperado de \url{https://www.solunion.es/blog/el-futuro-del-almacenamiento-energetico-centrales-de-bombeo-en-espana/}
+    \item Repsol. (s.f.). \textit{Energía solar: qué es, características y ventajas principales}. Recuperado de \url{https://www.repsol.com/es/energia-avanzar/energia/energia-solar/index.cshtml}
+    \item MINT. (s.f.). \textit{¿Cuáles son los diferentes tipos de Energía Eólica?}. Recuperado de \url{https://mintforpeople.com/noticias/tipos-energia-eolica/}
+    \item Cuerva. (s.f.). \textit{Almacenamiento de energía: cómo hacerlo y qué tipos existen}. Recuperado de \url{https://cuervaenergia.com/es/comunidad/sostenibilidad/que-es-almacenamiento-de-energia-importancia-en-la-transicion-energetica/}
+    \item ENGIE España. (s.f.). \textit{Centrales de Ciclo Combinado}. Recuperado de \url{https://www.engie.es/actividades/energia-termica/gas-natural/}
+    \item PwC España. (s.f.). \textit{El papel de la energía nuclear en el marco de la transición energética}. Recuperado de \url{https://www.pwc.es/es/publicaciones/energia/assets/contexto-nuclear-espana.pdf}
+    \item Solera. (s.f.). \textit{5 elementos clave en una instalación solar fotovoltaica}. Recuperado de \url{https://www.psolera.com/es/actualidad/5-elementos-clave-instalacion-solar-fotovoltaica}
+    \item AEE Eólica. (2025). \textit{¿La energía eólica ayuda a que el sistema eléctrico sea más estable?}. Recuperado de \url{https://aeeolica.org/wp-content/uploads/2025/05/07052025-Sobre-la-eolica-y-el-sistema-electrico-espanol-1.pdf}
+    \item CAF. (s.f.). \textit{Almacenamiento de electricidad, clave para la transición energética}. Recuperado de \url{https://www.caf.com/es/blog/almacenamiento-de-electricidad-clave-para-la-transicion-energetica/}
+    \item Iberdrola México. (s.f.). \textit{Cinco datos interesantes de los ciclos combinados}. Recuperado de \url{https://www.iberdrolamexico.com/te-interesa/cinco-datos-interesantes-de-los-ciclos-combinados/}
+    \item Universidad Americana de Europa. (s.f.). \textit{Energía nuclear: beneficios, funcionamiento y desafíos}. Recuperado de \url{https://unade.edu.mx/energia-nuclear-beneficios-funcionamiento-y-desafios/}
+    \item Besun Energy. (s.f.). \textit{Energía Fotovoltaica: Ventajas y Desventajas}. Recuperado de \url{https://besunenergy.com/energia-fotovoltaica-ventajas-y-desventajas/}
+    \item Greentech. (s.f.). \textit{Las 7 ventajas y desventajas de la energia eolica}. Recuperado de \url{https://www.greentecher.com/blog-ventajas-y-desventajas-energia-eolica/}
+    \item HRESYS. (s.f.). \textit{¿Cuál es el mejor sistema de almacenamiento de energía?}. Recuperado de \url{https://www.hresys.com/es/news/which-is-the-best-energy-storage-system-/}
+\end{enumerate}
+
+\end{document}

@@ -1,0 +1,288 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\usepackage{siunitx}
+\usepackage{enumitem}
+
+% Configuración de márgenes
+\geometry{left=2.5cm, right=2.5cm, top=3cm, bottom=3cm}
+
+% Encabezado y pie de página
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{UDIMA}
+\fancyhead[R]{Fundamentos de Termodinámica y Mecánica de Fluidos}
+\fancyfoot[C]{\thepage}
+
+% Título del documento
+\title{\textbf{Resolución del Control de Evaluación}\\[0.5cm]
+\Large{Unidades 7 a 10 - Mecánica de Fluidos}}
+\author{Alumno: Alexander Sebastian Kalis \\ Profesor: Dr.~César Pérez de Villar Palomo}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\newpage
+
+\section*{Preguntas y Resoluciones}
+
+\subsection*{Pregunta 1}
+\textit{Se sabe que un cubo de hielo que está flotando en el agua, 9/10 de su volumen está sumergido, y sólo 1/10, se mantiene fuera del agua. Esto lo hemos comprobado con un cubo de hielo de agua aquí en la superficie de la Tierra. ¿Que pasaría si estuviésemos en la Luna, donde la aceleración de la gravedad es 6 veces menor que en la Tierra? ¿Cuanto habría sumergido?}
+\begin{enumerate}[label=\alph*)]
+    \item \textbf{9/10 sumergido}
+    \item Menos de 9/10 sumergido
+    \item Más de 9/10 sumergido.
+\end{enumerate}
+
+\paragraph{Respuesta Correcta: a)}
+\textbf{Justificación:} La flotación se rige por el Principio de Arquímedes, donde un cuerpo flota cuando su peso es igual al empuje:
+\[ \rho_{cuerpo} V_{total} g = \rho_{fluido} V_{sumergido} g \]
+La gravedad ($g$) se cancela en ambos lados, por lo que la fracción sumergida solo depende de la relación de densidades. Por lo tanto, seguirá siendo 9/10, tanto en la Tierra como en la Luna.
+
+\hrulefill
+
+\subsection*{Pregunta 2}
+\textit{Disponemos de bloque de poliestireno al cual le hemos unido un trozo de acero, adosado al bloque con la misma geometría por su parte superior. En el poliestireno le hemos hecho un línea en la línea de flotación, que coincide con la mitad de la plancha de poliestireno. Se retira el montaje, y se coloca al revés. Cuando se hace esto, ¿cuál de las situaciones descritas a continuación es la correcta?}
+\begin{enumerate}[label=A.]
+    \item El bloque flota y se desplaza menos agua para flotar
+    \item Se hunde al colocarlo al revés.
+    \item El bloque flota y se desplaza más agua para flotar.
+    \item \textbf{El bloque flota y se desplaza la misma agua para flotar}
+\end{enumerate}
+
+\paragraph{Respuesta Correcta: D}
+\textbf{Justificación:} El peso total del conjunto no cambia al invertirlo. El empuje debe igualar al peso, por lo que el volumen de agua desplazado será el mismo en ambas posiciones. Lo que cambia es la estabilidad, pero no la condición de flotación.
+
+\hrulefill
+
+\subsection*{Pregunta 3}
+\textit{La pérdida de carga en una conducción es:}
+\begin{enumerate}[label=\alph*)]
+    \item inversamente proporcional a la longitud de la conducción
+    \item es independiente de la velocidad del fluido
+    \item \textbf{inversamente proporcional al diámetro de la conducción}
+    \item directamente proporcional a la velocidad del fluido
+\end{enumerate}
+
+\paragraph{Respuesta Correcta: c)}
+\textbf{Justificación:} Según Darcy-Weisbach:
+\[ h_L = f \frac{L}{D} \frac{v^2}{2g} \]
+La pérdida de carga es directamente proporcional a la longitud $L$, proporcional al cuadrado de la velocidad $v^2$, e inversamente proporcional al diámetro $D$. Por tanto, la opción correcta es la (c).
+
+\hrulefill
+
+\subsection*{Pregunta 4}
+\textit{El líquido de color amarillo es el mercurio (densidad 13.6 g/mL) y el líquido azul es agua (densidad 1 kg/L). ¿Cuál de las tres opciones la próxima es la correcta?}
+\begin{enumerate}[label=\alph*)]
+    \item La A
+    \item \textbf{La B}
+    \item La C
+    \item Depende de la posición inicial de las columnas
+\end{enumerate}
+
+\paragraph{Respuesta Correcta: b)}
+\textbf{Justificación:} El equilibrio de presiones en un tubo en U se logra con la opción B, donde la columna de agua se equilibra con una pequeña diferencia de mercurio, coherente con su alta densidad.
+
+\hrulefill
+
+\subsection*{Pregunta 5}
+\textit{La densidad relativa del fluido en el manómetro que se muestra en la figura es 1,07. Determine el caudal volumétrico, Q, si el fluido es incompresible y no viscoso.}
+
+\paragraph{Respuesta: 0.0070}
+\textbf{Justificación:} Aplicando Bernoulli y la relación de presiones en el manómetro, se obtiene una velocidad aproximada de $22.3\ \text{m/s}$. Con el área de $D=0.02\ \text{m}$, el caudal es:
+\[ Q = A v = 7.0 \times 10^{-3}\ \text{m}^3/s \]
+
+\hrulefill
+
+\subsection*{Pregunta 6}
+\textit{Las pérdidas secundarias en una conducción son debidas a los accesorios de la tubería como codos, válvulas, estrechamientos, etc}
+\begin{enumerate}[label=\alph*)]
+    \item \textbf{Verdadero}
+    \item Falso
+\end{enumerate}
+
+\paragraph{Respuesta Correcta: a)}
+\textbf{Justificación:} Son las llamadas pérdidas menores, causadas por perturbaciones en el flujo debido a accesorios.
+
+\hrulefill
+
+\subsection*{Pregunta 7}
+\textit{Una manguera de agua de 2 cm de diámetro es utilizada para llenar una cubeta de 42 litros. Si la cubeta se llena en 6 minutos, ¿cuál es la velocidad con la que el agua sale de la manguera?}
+
+\paragraph{Respuesta: 0.37}
+\textbf{Justificación:} Con $Q = V/t = 1.17\times 10^{-4}\ \text{m}^3/s$ y el área $A=3.14\times 10^{-4}\ \text{m}^2$, la velocidad es:
+\[ v = Q/A = 0.37\ \text{m/s} \]
+
+\hrulefill
+
+\subsection*{Pregunta 8}
+\textit{Las pérdidas primarias en una conducción son debidas a la viscosidad del fluido y al rozamiento con la tubería.}
+\begin{enumerate}[label=\alph*)]
+    \item \textbf{Verdadero}
+    \item Falso
+\end{enumerate}
+
+\paragraph{Respuesta Correcta: a)}
+\textbf{Justificación:} Correcto. Son las pérdidas por fricción distribuidas a lo largo de la tubería.
+
+\hrulefill
+
+\subsection*{Pregunta 9}
+\textit{Se tienen tres frascos con agua que tienen agujeros a diferentes profundidades (en A a 3/4 de la altura, B a 1/2 de la altura y en C a 1/4 de la altura). Teniendo en cuenta el teorema de Torricelli, ¿Cuál de las tres opciones (A, B o C) es aproximadamente la correcta?}
+\begin{enumerate}[label=\alph*)]
+    \item A es la opción que da mayor distancia del chorro.
+    \item \textbf{B es la opción que da mayor distancia del chorro.}
+    \item C la distancia del chorro es independiente de la altura
+\end{enumerate}
+
+\paragraph{Respuesta Correcta: b)}
+\textbf{Justificación:} El alcance horizontal es:
+\[ x = 2\sqrt{h(H-h)} \]
+donde $h$ es la profundidad del orificio. La función es máxima en $h=H/2$, es decir, el agujero en la mitad de la altura da el mayor alcance. Por lo tanto, la respuesta correcta es la opción B.
+
+\hrulefill
+
+\subsection*{Pregunta 10}
+\textit{En una tubería de cobre de dos pulgadas de diámetro fluye agua a una velocidad de 1 m/s. Por una reparación se ha puesto un tramo de sección de una pulgada ¿en qué zona habrá mayor presión?}
+\begin{enumerate}[label=\alph*)]
+    \item \textbf{La presión es mayor en la zona que tiene diámetro 2 pulgadas}
+    \item La presión es independiente de la sección de la tubería
+    \item La presión es menor en la zona que tiene diámetro 2 pulgadas
+\end{enumerate}
+
+\paragraph{Respuesta Correcta: a)}
+\textbf{Justificación:} Según Bernoulli, donde la velocidad aumenta (estrechamiento), la presión disminuye. Por lo tanto, la presión es mayor en la zona de diámetro 2 pulgadas.
+
+\newpage
+\section*{Preguntas y Resoluciones (Ronda 2)}
+
+\subsection*{Pregunta 11}
+\textit{Los recipientes (A) y (B) tienen el mismo radio de base $R$ y la misma altura $H$. El recipiente (A) es cilíndrico y el (B) es cónico. Aunque el volumen y el peso de agua en (A) son mayores que en (B), ¿cómo se comparan las fuerzas sobre la base?}
+\begin{enumerate}[label=\alph*)]
+    \item F(A) > F(B)
+    \item \textbf{F(A) = F(B)}
+    \item F(A) < F(B)
+\end{enumerate}
+
+\paragraph{Respuesta Correcta: b)}
+\textbf{Justificación:} La presión en el fondo depende únicamente de la densidad del fluido y de la altura de la columna $p=\rho gH$. Como ambos recipientes tienen la misma altura y el mismo fluido, la fuerza sobre la base $F=p\cdot A=\rho gH \pi R^2$ es la misma, independientemente de la forma del recipiente.
+
+\hrulefill
+
+\subsection*{Pregunta 12}
+\textit{La pérdida de carga en una conducción es:}
+\begin{enumerate}[label=\alph*)]
+    \item \textbf{inversamente proporcional al diámetro de la conducción}
+    \item inversamente proporcional a la longitud
+    \item directamente proporcional a la velocidad del fluido
+    \item independiente de la velocidad del fluido
+\end{enumerate}
+
+\paragraph{Respuesta Correcta: a)}
+\textbf{Justificación:} Según Darcy-Weisbach: $h_L = f \frac{L}{D} \frac{v^2}{2g}$. La pérdida de carga es inversamente proporcional al diámetro $D$ y directamente proporcional a $L$ y $v^2$.
+
+\hrulefill
+
+\subsection*{Pregunta 13}
+\textit{Se da un tubo de Pitot con manómetro (densidad relativa del fluido manométrico 1,07). Datos: $D=0,07$ m, $h=23$ mm, $g=10$ m/s$^2$, fluido: aire con peso específico $\gamma=12 \times 10^{-3}$ kN/m$^3$. Calcular el caudal volumétrico.}
+
+\paragraph{Respuesta: 0.022}
+\textbf{Justificación:} Densidad del aire: $\rho= \gamma/g = 12/10=1.2\ \text{kg/m}^3$.  
+Diferencia de presión: $\Delta p = (\rho_m-\rho_{aire})gh \approx (1070-1.2)(10)(0.023)\approx 246\ \text{Pa}$.  
+Velocidad: $v=\sqrt{2\Delta p/\rho}\approx 62.8\ \text{m/s}$.  
+Área: $A=\pi D^2/4=3.85\times10^{-3}\ \text{m}^2$.  
+Caudal: $Q=Av=0.022\ \text{m}^3/s$.
+
+\hrulefill
+
+\subsection*{Pregunta 14}
+\textit{Las pérdidas secundarias en una conducción son siempre inferiores a las primarias.}
+\begin{enumerate}[label=\alph*)]
+    \item Verdadero
+    \item \textbf{Falso}
+\end{enumerate}
+
+\paragraph{Respuesta Correcta: b)}
+\textbf{Justificación:} Las pérdidas secundarias pueden ser comparables o incluso mayores que las primarias, dependiendo del número de accesorios y singularidades. No siempre son menores.
+
+\hrulefill
+
+\subsection*{Pregunta 15}
+\textit{Tres frascos con orificios a diferentes alturas (A: 3/4 de $H$, B: 1/2 de $H$, C: 1/4 de $H$). Según Torricelli, ¿cuál produce mayor alcance horizontal?}
+\begin{enumerate}[label=\alph*)]
+    \item A
+    \item \textbf{B}
+    \item C
+\end{enumerate}
+
+\paragraph{Respuesta Correcta: b)}
+\textbf{Justificación:} El alcance es $x=2\sqrt{h(H-h)}$, máximo para $h=H/2$. Por tanto, el orificio intermedio (B) produce mayor alcance.
+
+\hrulefill
+
+\subsection*{Pregunta 16}
+\textit{Un cubo de hielo flota con 9/10 sumergido en la Tierra. ¿Qué ocurriría en la Luna con $g$ seis veces menor?}
+\begin{enumerate}[label=\alph*)]
+    \item Más de 9/10 sumergido
+    \item Menos de 9/10 sumergido
+    \item \textbf{9/10 sumergido}
+\end{enumerate}
+
+\paragraph{Respuesta Correcta: c)}
+\textbf{Justificación:} La fracción sumergida depende solo de la relación de densidades. $g$ se cancela en el Principio de Arquímedes. Por tanto, será 9/10 en cualquier planeta.
+
+\hrulefill
+
+\subsection*{Pregunta 17}
+\textit{Un depósito tiene dos orificios A y B a la misma altura. En B el agua sale libre, en A se conecta un tubo horizontal que termina a la misma altura. Despreciando fricción, ¿qué ocurre con la velocidad?}
+\begin{enumerate}[label=\alph*)]
+    \item \textbf{Igual velocidad en A y B}
+    \item Menor velocidad en A
+    \item Mayor velocidad en A
+\end{enumerate}
+
+\paragraph{Respuesta Correcta: a)}
+\textbf{Justificación:} Según Bernoulli, si ambos orificios están a la misma altura y se desprecia fricción, la velocidad depende solo de la altura del nivel del agua sobre los orificios. Es la misma en ambos casos.
+
+\hrulefill
+
+\subsection*{Pregunta 18}
+\textit{Una manguera de diámetro 2 cm llena una cubeta de 32 L en 9 minutos. Calcular la velocidad.}
+
+\paragraph{Respuesta: 0.19}
+\textbf{Justificación:} $Q=V/t=0.032/540=5.93\times10^{-5}$ m$^3$/s.  
+Área $A=\pi(0.02^2)/4=3.14\times10^{-4}$ m$^2$.  
+Velocidad $v=Q/A=0.19$ m/s.
+
+\hrulefill
+
+\subsection*{Pregunta 19}
+\textit{Las pérdidas primarias en una conducción son siempre mayores que las secundarias.}
+\begin{enumerate}[label=\alph*)]
+    \item Verdadero
+    \item \textbf{Falso}
+\end{enumerate}
+
+\paragraph{Respuesta Correcta: b)}
+\textbf{Justificación:} No siempre. En tuberías largas suelen dominar las pérdidas primarias, pero en instalaciones con muchos accesorios las secundarias pueden superar a las primarias.
+
+\hrulefill
+
+\subsection*{Pregunta 20}
+\textit{En una tubería de 2" fluye agua a 1 m/s. Se coloca un tramo de 1". ¿Dónde es mayor la presión?}
+\begin{enumerate}[label=\alph*)]
+    \item La presión es menor en la zona de 2"
+    \item \textbf{La presión es mayor en la zona de 2"}
+    \item La presión es independiente de la sección
+\end{enumerate}
+
+\paragraph{Respuesta Correcta: b)}
+\textbf{Justificación:} Por continuidad, en la sección de 1" la velocidad aumenta. Según Bernoulli, mayor velocidad implica menor presión. Por tanto, la presión es mayor en la zona de 2".
+
+\end{document}

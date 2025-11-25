@@ -1,0 +1,312 @@
+\documentclass{article}
+\usepackage[utf8x]{inputenc}
+\usepackage{lmodern,textcomp}
+\usepackage{lipsum}
+\usepackage{authoraftertitle}
+\usepackage[top=2cm,bottom=1.5cm,left=1.5cm, right=3cm,includeheadfoot]{geometry}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+%\usepackage[spanish]{babel}
+\usepackage{mathtools}
+\usepackage{nicefrac}
+\usepackage{csquotes}
+\usepackage{amssymb}
+\usepackage{fancybox, graphicx}
+\usepackage{array}
+\usepackage{hhline}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{esint}
+\usepackage{caption}
+\usepackage[]{ucs}
+\usepackage{esvect}
+\usepackage{siunitx}
+\usepackage{commath}
+\newcommand{\ihat}{\textbf{\^\i}}
+\newcommand{\jhat}{\textbf{\^\j}}
+%Header & Footer
+
+\pagestyle{fancy}
+%\fancyhead[LE]{\MyTitle}
+\fancyhead[LO]{Investigación Operativa}
+\fancyhead[RO]{Actividad de Evaluación Contínua 2}
+%\fancyhead[RE]{\leftmark}
+\fancyfoot[L]{\raisebox{-1cm}{\includegraphics[height=1.5cm]{D:/KUKADisk/OneDrive - KUKA AG/UDIMA/DocumentGraphics/LOGOUDIMA.jpg}}}
+\fancyfoot[R]{Corregido:\\ Dr. Fco. David de la Peña Esteban}
+%\fancyfoot[RO]{07/12/2018}
+
+
+%Vars
+\author{Alexander Sebastian Kalis}
+\title{Actividad de Evaluación Contínua 2}
+
+
+%DOC
+
+
+\begin{document}
+
+\begin{titlepage}
+
+    \begin{center}
+
+        \line(1,0){300}\\
+        [0.2in]
+        \huge{\bfseries {\MyTitle}}\\
+        [1mm]
+        \line(2,0){200}\\
+        [0.75cm]
+        \textsc{\LARGE Investigación Operativa}\\
+        [2cm]
+        \includegraphics[height=10cm]{D:/KUKADisk/OneDrive - KUKA AG/UDIMA/InvOP/AEC/AEC1/img/portada.png}\\
+        [3cm]
+
+    \end{center}
+
+    \begin{flushright}
+
+        Autor: {\MyAuthor}\\
+        Profesor: Dr. Fco. David de la Peña Esteban\\
+        Ingeniería de Organización Industrial\\
+        UDIMA         
+
+    \end{flushright}
+    
+\end{titlepage}
+
+\newpage
+
+\section*{Caso 1}
+
+Se tienen cinco recursos (A, B, C, D, E) para realizar cuatro actividades (1, 2, 3, 4). En
+la siguiente tabla están los tiempos estimados de realización de cada una de las
+actividades por los recursos. Existe la restricción de que el Recurso B no puede
+realizar la Actividad 3.
+
+\begin{center}
+    \includegraphics[width=.5\textwidth]{D:/KUKADisk/OneDrive - KUKA AG/UDIMA/InvOP/AEC/AEC2/imgs/c1e1.PNG}\\
+\end{center}
+
+a-Identificar el tipo de problema por sus características y especificar cuál es la tećnica
+de resolución que vais a emplear.\\
+
+Se trata de un problema de asignación imposible por lo cual realizamos una tarea ficticia.\\
+
+
+b-Especificar qué tareas hace cada recurso si se quiere minimizar el tiempo total.
+Calcular dicho tiempo.\\
+
+\begin{center}
+    \includegraphics[width=.8\textwidth]{D:/KUKADisk/OneDrive - KUKA AG/UDIMA/InvOP/AEC/AEC2/imgs/c1r1.PNG}\\
+\end{center}
+
+\begin{center}
+    \includegraphics[width=.8\textwidth]{D:/KUKADisk/OneDrive - KUKA AG/UDIMA/InvOP/AEC/AEC2/imgs/c1r2.PNG}\\
+\end{center}
+
+Calulando el tiempo obtenemos:
+
+\[
+    Tiempo = 22+42+70+56+0=190s
+\]
+
+\newpage
+
+\section*{Caso 2}
+
+Una empresa que se dedica a la fabricación y distribución de productos, tiene 2
+fábricas (O1 y O2) que deben dar servicio a 3 localidades (D1, D2 y D3). La demanda
+prevista que como mínimo hay que cubrir en cada una de las localidades es la
+siguiente para la semana que viene:
+
+\begin{center}
+    \includegraphics[width=.5\textwidth]{D:/KUKADisk/OneDrive - KUKA AG/UDIMA/InvOP/AEC/AEC2/imgs/c2e1.PNG}\\
+\end{center}
+
+Los costes unitarios (en euros) de transporte desde cada una de las fábricas a las
+localidades son los siguientes:
+
+\begin{center}
+    \includegraphics[width=.5\textwidth]{D:/KUKADisk/OneDrive - KUKA AG/UDIMA/InvOP/AEC/AEC2/imgs/c2e2.PNG}\\
+\end{center}
+
+Está la restricción de que no puede haber transporte desde O1 a D2.
+Las capacidades de producción de las fábricas para la semana que viene son de 550
+unidades para O1, y de 375 unidades para O2.
+
+
+a-Identificar el tipo de problema por sus características y especificar cuál es la tećnica
+de resolución que vais a emplear.\\
+
+En este caso estamos ante un problema de transporte imposible en el que nos encontramos con más demanda que oferta. Generaremos entronces un origen ficticio y aplicaremos 
+el método de costes mínimos para ir rellenando la tabla.
+
+
+b-Cuantificar las unidades de producto que deben ir, la semana que viene, desde cada
+una de las fábricas a cada de las localidades a las que se da servicio, buscando
+minimizar los costes totales.\\
+
+Podemos observar como queda la tabla paso a paso al aplicar el método de costes mínimos:
+
+Con los recursos de O1 cumplimos toda la demanda de D1 y nos quedan 150 recursos sobrantes que aplicaremos a D3 ya que D2 no es un destino posible desde O1:
+\begin{center}
+    \includegraphics[width=.9\textwidth]{D:/KUKADisk/OneDrive - KUKA AG/UDIMA/InvOP/AEC/AEC2/imgs/c2r1.PNG}\\
+\end{center}
+
+Luego utilizamos los recursos de O2 para terminar de cumplir con la demanda de D3 (125) ya que es el coste mínimo. Con los recursos sobrantes sólo podemos asignarlos a D2 ya que en D1
+ya no hay demanda pendiente:
+
+\begin{center}
+    \includegraphics[width=.9\textwidth]{D:/KUKADisk/OneDrive - KUKA AG/UDIMA/InvOP/AEC/AEC2/imgs/c2r2.PNG}\\
+\end{center}
+
+Finalmente nos quedan 75 recursos para la demanda de 75 en D2:
+
+\begin{center}
+    \includegraphics[width=.9\textwidth]{D:/KUKADisk/OneDrive - KUKA AG/UDIMA/InvOP/AEC/AEC2/imgs/c2r3.PNG}\\
+\end{center}
+
+
+
+
+\section*{Caso 3}
+Una empresa que se dedica a la fabricación y distribución de productos, tiene 3
+fabricas (O1, O2, O3) que deben dar servicio a 2 localidades (D1 y D2). La demandar
+prevista que como mínimo hay que cubrir en cada una de las localidades es la
+siguiente para la semana que viene:
+
+\begin{center}
+    \includegraphics[width=.5\textwidth]{D:/KUKADisk/OneDrive - KUKA AG/UDIMA/InvOP/AEC/AEC2/imgs/c3e1.PNG}\\
+\end{center}
+
+Los costes unitarios (en euros) de transporte desde cada una de las fábricas a las
+localidades son los siguientes:
+
+
+\begin{center}
+    \includegraphics[width=.5\textwidth]{D:/KUKADisk/OneDrive - KUKA AG/UDIMA/InvOP/AEC/AEC2/imgs/c3e2.PNG}\\
+\end{center}
+
+Está la restricción de que no puede haber transporte desde O1 a D2.
+Las capacidades de producción de las fábricas para la semana que viene son de 700
+unidades para O1, de 400 unidades para O2 y de 375 unidades para O3.
+
+a-Identificar el tipo de problema por sus características y especificar cuál es la tećnica
+de resolución que vais a emplear.\\
+
+Tenemos el mismo caso que en el anterior, pero ahora hay más oferta que demanda. Sabiendo esto, generamos un destino ficticio para equilibrarlo. Por otro lado,
+optimizaremos los costes con el método de costes mínimos.
+
+
+
+b-Cuantificar las unidades de producto que deben ir, la semana que viene, desde cada
+una de las fábricas a cada de las localidades a las que se da servicio, buscando
+minimizar los costes totales.\\
+
+Volvemos a realizar la tabla paso a paso utilizando el método de costes mínimos:
+
+Primero adjudicamos todos los recursos posibles de O3 a D2 y por tanto 0 a D1 y DF:
+
+
+\begin{center}
+    \includegraphics[width=.9\textwidth]{D:/KUKADisk/OneDrive - KUKA AG/UDIMA/InvOP/AEC/AEC2/imgs/c3r1.PNG}\\
+\end{center}
+
+Para asegurar la demanda de D2, utilizamos 375 recursos de O2:
+
+\begin{center}
+    \includegraphics[width=.9\textwidth]{D:/KUKADisk/OneDrive - KUKA AG/UDIMA/InvOP/AEC/AEC2/imgs/c3r2.PNG}\\
+\end{center}
+
+Ahora el siguiente coste mínimo que podemos aplicar es O1:D1 ya que en O3 no nos quedan recursos:
+
+\begin{center}
+    \includegraphics[width=.9\textwidth]{D:/KUKADisk/OneDrive - KUKA AG/UDIMA/InvOP/AEC/AEC2/imgs/c3r3.PNG}\\
+\end{center}
+
+Finalmente nos queda por cubrir con los recursos sobrantes el destino ficticio:
+
+\begin{center}
+    \includegraphics[width=.9\textwidth]{D:/KUKADisk/OneDrive - KUKA AG/UDIMA/InvOP/AEC/AEC2/imgs/c3r4.PNG}\\
+\end{center}
+
+
+
+
+\section*{Caso 4}
+
+Dada la siguiente red de flujo, se quiere saber cuál será el flujo máximo que puede ir
+desde el origen O hasta el destino T, y cuáles van a ser las capacidades que se van a
+utilizar de cada uno de los arcos:
+
+\begin{center}
+    \includegraphics[width=.7\textwidth]{D:/KUKADisk/OneDrive - KUKA AG/UDIMA/InvOP/AEC/AEC2/imgs/c4e1.PNG}\\
+\end{center}
+
+a-Identificar el tipo de problema por sus características y especificar cuál es la tećnica
+de resolución que vais a emplear.
+
+Se trata de un problema de Flujo máximo entre dos nodos. Para resolverlo, preparamos el grafo, obtenemos la trayectoria de aumento, determinamos el flujo de la misma, actualizamos
+el grafo y repetimos hasta que no existan más trayectorias de aumento.
+
+b-Identificar las trayectorias de aumento y el flujo de cada una.
+
+c-Calcular el flujo máximo total.
+
+
+d-Especificar la capacidad residual y utilizada de cada arco
+
+\begin{center}
+    \includegraphics[width=.7\textwidth]{D:/KUKADisk/OneDrive - KUKA AG/UDIMA/InvOP/AEC/AEC2/imgs/c4r1.PNG}\\
+\end{center}
+
+
+
+
+TA1:
+
+\begin{center}
+    \includegraphics[width=.7\textwidth]{D:/KUKADisk/OneDrive - KUKA AG/UDIMA/InvOP/AEC/AEC2/imgs/c4r2.PNG}\\
+\end{center}
+
+\begin{center}
+    \includegraphics[width=.7\textwidth]{D:/KUKADisk/OneDrive - KUKA AG/UDIMA/InvOP/AEC/AEC2/imgs/c4r3.PNG}\\
+\end{center}
+
+TA2:
+
+\begin{center}
+    \includegraphics[width=.7\textwidth]{D:/KUKADisk/OneDrive - KUKA AG/UDIMA/InvOP/AEC/AEC2/imgs/c4r11.PNG}\\
+\end{center}
+
+\begin{center}
+    \includegraphics[width=.7\textwidth]{D:/KUKADisk/OneDrive - KUKA AG/UDIMA/InvOP/AEC/AEC2/imgs/c2r22.PNG}\\
+\end{center}
+
+TA3:
+
+\begin{center}
+    \includegraphics[width=.7\textwidth]{D:/KUKADisk/OneDrive - KUKA AG/UDIMA/InvOP/AEC/AEC2/imgs/c4r31.PNG}\\
+\end{center}
+
+\begin{center}
+    \includegraphics[width=.7\textwidth]{D:/KUKADisk/OneDrive - KUKA AG/UDIMA/InvOP/AEC/AEC2/imgs/c4r32.PNG}\\
+\end{center}
+
+Por lo tanto si sumamos todos los flujos obtenemos:
+
+\[
+    Fmax = 18
+\]
+
+
+
+
+
+
+
+\end{document}

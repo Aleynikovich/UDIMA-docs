@@ -1,0 +1,215 @@
+\documentclass{article}
+\usepackage{lipsum}
+\usepackage[backend=biber]{biblatex}
+\addbibresource{aec2.bib}
+\usepackage{authoraftertitle}
+\usepackage[top=2cm,bottom=1.5cm,left=1.5cm, right=3cm,includeheadfoot]{geometry}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage[spanish]{babel}
+\usepackage{mathtools}
+\usepackage{csquotes}
+\usepackage{amssymb}
+\usepackage{fancybox, graphicx}
+\usepackage{array}
+\usepackage{hhline}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{caption}
+\usepackage{esvect}
+\usepackage{siunitx}
+\usepackage{commath}
+\usepackage{tcolorbox}
+\usepackage{listings}
+\makeatletter
+\renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
+   \hskip -\arraycolsep
+   \let\@ifnextchar\new@ifnextchar
+   \array{#1}}
+\makeatother
+
+%Header & Footer
+\pagestyle{fancy}
+\fancyhead[LE]{\MyTitle}
+\fancyhead[LO]{Expresión Gráfica}
+\fancyhead[RO]{\leftmark}
+\fancyhead[RE]{\leftmark}
+\fancyfoot[L]{\raisebox{-1cm}{\includegraphics[height=2cm]{C:/Users/alexk/Dropbox/DocumentGraphics/LOGOUDIMA.jpg}}}
+\fancyfoot[R]{Corregido:\\ Dra. Isabel Cristina Gil García}
+%\fancyfoot[RO]{07/12/2018}
+%Vars
+\author{Alexander Sebastian Kalis}
+\title{ Actividad 5. AEC. Ejercicios propuestos Unidades 4-5}
+
+
+%DOC
+
+\begin{document}
+
+\begin{titlepage}
+
+    \begin{center}
+
+        \line(1,0){300}\\
+        [0.2in]
+        \huge{\bfseries {\MyTitle}}\\
+        [1mm]
+        \line(2,0){200}\\
+        [0.75cm]
+        \textsc{\LARGE Expresión Gráfica}\\
+        [2cm]
+        \includegraphics[height=10cm]{C:/Users/alexk/Dropbox/DocumentGraphics/AEC1ExpresionGrafica/expresiongrafica.jpg}\\
+        [2.5cm]
+
+    \end{center}
+
+    \begin{flushright}
+
+        Autor: {\MyAuthor}\\
+        Profesora: Dra. Isabel Cristina Gil García\\
+        Curso: 1o, Ingeniería de Organización Industrial\\
+        UDIMA\\         
+        \today
+    \end{flushright}
+    
+\end{titlepage}
+
+\newpage 
+
+\section*{Ejercicio 1. Bloques}
+
+\subsection*{Apartado a}
+
+\subsubsection*{Imagen}
+
+\includegraphics[height=10cm]{C:/Users/alexk/Dropbox/DocumentGraphics/AEC2ExpresionGrafica/Ejercicio1a.png}\\
+
+\subsection*{Descripción}
+
+Para la creación de éstos bloques sencillos se han utilizado las medidas proporcionadas por los enunciados. Las medidas que no estaban
+explícitas se han deducido o aproximado para crear una representación parecida a la del enunciado.
+
+La base de la centrifugadora se ha realizado con la función de ayuda perpendicular. El tanque se ha dibujados
+mediante la utilización de la función para crear círculos tangentes (se pueden consultar las líneas auxiliares en la capa aux).
+
+Finalmente se ha separado cada elemento en archivos .dwg distintos y se ha comprimido en bloques.rar.
+
+\subsection*{Apartado b}
+
+\subsubsection*{Imagen}
+
+\includegraphics[height=10cm]{C:/Users/alexk/Dropbox/DocumentGraphics/AEC2ExpresionGrafica/Ejercicio1b.png}\\
+
+\subsection*{Descripción}
+
+
+Se ha abierto el ejercicio 1 de la primera AEC. Seguidamente se ha descargado el cajetín del moodle de la
+asignatura. Se ha utilizado el modelo horizontal ya que es el que corresponde con las tuberías. Para insertar el bloque
+del cajetín, simplemente se ha arrastrado el archivo del cajetín hacia la pestaña de autoCad del ejercicio. 
+
+Posteriormente se ha arrastrado hacia el ejercicio cada bloque necesario creados en el apartado a. En el caso de las válvulas se ha utilizado
+la función de copiar para insertar una válvula en cada punto.
+
+\newpage
+
+
+\section*{Ejercicio 2. Sólidos}
+
+\subsection*{Imagen}
+\includegraphics[height=8cm]{C:/Users/alexk/Dropbox/DocumentGraphics/AEC2ExpresionGrafica/Ejercicio2.png}\\
+\subsection*{Descripción}
+
+Para el ejercicio 2, se han seguido al pie de la letra las instrucciones prestadas en vídeo por la profesora de cómo dibujar el elemento en 2D.
+
+Una vez terminado el modelo en 2D, se ha utilizado la herramienta "Extrude" para crear un sólido a partir del dibujo en 2D. Primero se ha levantado 21 unidades la
+superfície del contorno dentado. Posteriormente se ha utilizado de nuevo la herramienta "Extrude" para levantar y crear un sólido de los elementos interiores, los cuales
+se han levantado 21+30 unidades. 
+
+Para conseguir que quede hueca la parte más interna de la pieza se ha utilizado la herramienta "Subtract". El procedimiento fue seleccionar
+el cilindro exterior, enter, seleccionar el elemento interior, enter.
+
+Finalmente se ha representado las varias vistas isométricas utilizando la herramienta "Viewport Configuration" de la pestaña "View". Ésta nos 
+permite visualizar varias vistas a la vez, según la configuremos. 
+
+\newpage
+
+\section*{Ejercicio 3}
+
+\subsection*{Imagen}
+\includegraphics[height=8cm]{C:/Users/alexk/Dropbox/DocumentGraphics/AEC2ExpresionGrafica/Ejercicio3.png}\\
+\subsection*{Descripción}
+En este ejercicio la principal dificultad fue deducir el tamaño de los chaflanados ya que no tenemos acotaciones disponibles y el dibujo propocionado por el enunciado tiene una resolución muy baja. De nuevo se ha limitado el espacio de trabajo a formato A4 
+vertical utilizando los comandos
+\begin{lstlisting}[backgroundcolor = \color{lightgray}]
+    LIMITS(0,0)(210,297)
+    GRID Limits No
+\end{lstlisting}
+
+Al ser dibujos simétricos se ha construído un lado del dibujo y luego se ha creado un espejo con la función \textit{mirror} para ahorrarse algo de tiempo.
+
+
+
+Para la representación del sistema diédrico se han seguido los pasos siguientes:
+
+\begin{enumerate}
+    \item Colocación de la vista en sistema europeo
+    \item Selección de alzado.
+    \item El croquis no se ha dibujado ya que se dispone de la pieza en 3D previamente.
+    \item No se requieren vistas especiales.
+    \item Ajuste de la escala:
+    
+    Para calcular las escalas:
+
+\[
+    \begin{cases}
+        120+100Eh+20Eh=210\\
+        120+45Ev+22.5Ev=297  
+    \end{cases} 
+\]
+
+Obtenemos que $Eh=\frac{3}{4}$ y $Ev=2.6$ con lo cual escogemos la óptima $\frac{3}{4}$. Hubiese sido mejor utilizar el
+cajetín horizontal.
+
+    \item Insertar el cajetín A4 Vertical.
+\end{enumerate}
+
+
+
+\newpage
+\section*{Ejercicio 4. Vistas diédricas 2}
+
+\subsection*{Imagen}
+\includegraphics[height=7cm]{C:/Users/alexk/Dropbox/DocumentGraphics/AEC2ExpresionGrafica/Ejercicio4.png}\\
+\subsection*{Descripción}
+
+Para la realización del ejercicio 4 se han seguido los pasos descritos en el manual de la asignatura
+\begin{enumerate}
+    \item Se escoge el sistema Europeo de represetación.
+    \item El alzado fue proporcionado por el enunciado.
+    \item Se realiza un croquis de las 3 visas principales:\\
+    \includegraphics[height=7cm]{C:/Users/alexk/Dropbox/DocumentGraphics/AEC2ExpresionGrafica/croquis4.png}\\
+    \item No se definen vistas auxiliares.
+    \item Se calcula la escala óptima teniendo en cuenta las medidas del cajetín.
+    \[
+    \begin{cases}
+        30+40Eh+20Eh=277\\
+        30+20Ev+8Ev=135  
+    \end{cases} 
+    \]
+
+    Con la que obtenemos una escala 2:1.
+
+    \item Se definen las diversas capas (Objeto principal, auxiliares, aristas invisibles, cotas, etc).
+
+
+\end{enumerate}
+
+Para trazar los dibujos simplemente se ha seguido los datos proporcionados por el enunciado para hacer el contrno de las piezas. Posteriormente se han ido trazando
+lineas rectas con medidas aproximadas. Los arcos fueron realizados con la herramienta "Fillet" o "Chaflán" ajustando a radio 0.5.
+
+\end{document}
+

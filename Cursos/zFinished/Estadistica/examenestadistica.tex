@@ -1,0 +1,112 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{geometry}
+\geometry{left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm}
+\usepackage{graphicx}
+
+\title{Guía de Probabilidad y Estadística}
+\author{Preparado por ChatGPT}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{Introducción}
+Este documento es una guía para comprender los conceptos fundamentales de probabilidad y estadística, aplicada a los ejercicios de la actividad de evaluación continua.
+
+\section{Conceptos Básicos}
+
+\subsection{Probabilidad}
+La probabilidad mide qué tan probable es que ocurra un evento. Se expresa como un número entre 0 y 1:
+\begin{itemize}
+    \item Si un evento es imposible, su probabilidad es 0.
+    \item Si un evento es seguro, su probabilidad es 1.
+    \item Si hay un 50\% de posibilidad, su probabilidad es 0.5.
+\end{itemize}
+Ejemplo: Si en una bolsa hay 3 pelotas rojas y 7 azules (10 en total), la probabilidad de sacar una roja es:
+\[
+P(A) = \frac{\text{Número de pelotas rojas}}{\text{Total de pelotas}} = \frac{3}{10} = 0.3
+\]
+
+\subsection{Probabilidad de Unión}
+La probabilidad de que ocurra al menos uno de dos eventos $A$ o $B$ se calcula con:
+\[
+P(A \cup B) = P(A) + P(B) - P(A \cap B)
+\]
+Donde:
+\begin{itemize}
+    \item $P(A)$: Probabilidad de que ocurra el evento A.
+    \item $P(B)$: Probabilidad de que ocurra el evento B.
+    \item $P(A \cap B)$: Probabilidad de que ocurran ambos eventos a la vez.
+\end{itemize}
+
+Ejemplo: Si el 50\% de los estudiantes tienen beca y el 30\% estudia, pero el 10\% tiene beca y estudia:
+\[
+P(B \cup E) = 0.5 + 0.3 - 0.1 = 0.7
+\]
+
+\subsection{Probabilidad Condicional}
+La probabilidad de que ocurra $A$ dado que ocurrió $B$ se calcula con:
+\[
+P(A | B) = \frac{P(A \cap B)}{P(B)}
+\]
+Ejemplo: Si el 30\% de los estudiantes tienen beca y estudian, pero solo el 50\% tienen beca, la probabilidad de que estudie sabiendo que tiene beca es:
+\[
+P(E | B) = \frac{P(B \cap E)}{P(B)} = \frac{0.1}{0.5} = 0.2
+\]
+
+\subsection{Teorema de Bayes}
+Se usa para invertir probabilidades condicionales:
+\[
+P(A | B) = \frac{P(B | A) P(A)}{P(B)}
+\]
+
+Ejemplo en una urna:
+Si hay 7 bolas blancas y 12 negras, y sacamos una bola y la reemplazamos con dos del otro color, queremos saber la probabilidad de que la primera bola haya sido negra dado que la segunda fue blanca:
+\[
+P(B_1 | W_2) = \frac{P(W_2 | B_1) P(B_1)}{P(W_2)}
+\]
+
+\subsection{Independencia de Eventos}
+Dos eventos son independientes si:
+\[
+P(A \cap B) = P(A) P(B)
+\]
+Si esto no se cumple, los eventos son dependientes.
+
+\section{Ejercicios Resueltos}
+
+\subsection{Ejercicio 1}
+Datos:
+\begin{itemize}
+    \item $P(B) = 0.5$
+    \item $P(E) = 0.3$
+    \item $P(B \cap E) = 0.1$
+\end{itemize}
+
+Calculamos $P(B \cup E)$:
+\[
+P(B \cup E) = P(B) + P(E) - P(B \cap E) = 0.5 + 0.3 - 0.1 = 0.7
+\]
+
+\subsection{Ejercicio 2}
+Se extrae una bola de una urna y se reemplaza con dos del otro color.
+
+\textbf{Paso 1: Posibilidades}
+\begin{itemize}
+    \item Si la primera bola es blanca, la segunda extracción se hace con 6 blancas y 14 negras.
+    \item Si la primera bola es negra, la segunda extracción se hace con 9 blancas y 10 negras.
+\end{itemize}
+
+\textbf{Paso 2: Aplicar probabilidad total}
+\[
+P(W_2) = P(W_2 | W_1) P(W_1) + P(W_2 | B_1) P(B_1)
+\]
+
+\section{Conclusión}
+Con esta guía, puedes resolver problemas de probabilidad paso a paso, aplicando las fórmulas clave y verificando la coherencia de los resultados.
+
+\end{document}

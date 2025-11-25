@@ -1,0 +1,345 @@
+\documentclass{article}
+\usepackage{lipsum}
+\usepackage{authoraftertitle}
+\usepackage[top=2cm,bottom=1.5cm,left=1.5cm, right=3cm,includeheadfoot]{geometry}
+\usepackage{graphicx}
+\usepackage[parfill]{parskip}
+\usepackage{fancyhdr}
+\usepackage[spanish]{babel}
+\usepackage{mathtools}
+\usepackage{csquotes}
+\usepackage{amssymb}
+\usepackage[shortlabels]{enumitem}
+\usepackage{fancybox, graphicx}
+\usepackage[figuresleft]{rotating}
+\usepackage{array}
+\usepackage{hhline}
+\usepackage{subfigure}
+\usepackage{lscape}
+\usepackage{gensymb}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{amsmath} 
+\usepackage{caption}
+\usepackage{esvect}
+\usepackage{siunitx}
+\usepackage{commath}
+%Header & Footer
+
+\pagestyle{fancy}
+%\fancyhead[LE]{}
+\fancyhead[L]{Bases de Datos}
+\fancyhead[R]{Diseño Lógico de bases de datos}
+%\fancyhead[RO]{\leftmark}
+%\fancyhead[RE]{\leftmark}
+\fancyfoot[L]{\raisebox{-1cm}{\includegraphics[height=2cm]{D:/KUKADisk/UDIMA/DocumentGraphics/LOGOUDIMA.jpg}}}
+\fancyfoot[R]{\small Universidad a Distancia de Madrid}
+%\fancyfoot[RO]{07/12/2018}
+
+%Vars
+\author{Alexander Sebastian Kalis}
+\title{Actividad 8. AEC: Caso práctico II: Diseño Lógico}
+
+
+%DOC
+
+
+\begin{document}
+
+\begin{titlepage}
+
+    \begin{center}
+
+        \line(1,0){300}\\
+        [0.2in]
+        \huge{\bfseries {\MyTitle}}\\
+        [1mm]
+        \line(2,0){200}\\
+        [0.75cm]
+        \textsc{\LARGE Bases de Datos}\\
+        [2cm]
+            \includegraphics[width=.9\textwidth]{D:/KUKADisk/UDIMA/BBDD/portada.png}\\    
+        [3cm]
+
+    \end{center}
+
+    \begin{flushright}
+
+        Líder: Alexander Sebastian Kalis\\
+        José María Quintanilla Alonso\\
+        Raúl ALonso Crespo\\
+        %Profesora: Dra. Isabel Cristina Gil García\\
+        Ingeniería de Organización Industrial\\
+        %UDIMA\\
+        \today        
+
+    \end{flushright}
+    
+\end{titlepage}
+
+\tableofcontents % \thispagestyle{empty}
+\newpage
+
+\section{Introducción}
+
+El objetivo de la presente actividad es la transformación del modelo Entidad-Relación, que ha sido
+corregido por el profesor, en un modelo lógico.
+
+Para ello se procederá presentando el modelo E-R corregido por el profesor, el procedimiento 
+de paso a tablas y las tablas con registros de ejemplo.
+
+\newpage
+
+
+\section{Modelo ER base corregido}
+
+\begin{figure}[!htb]
+    \centering
+        \includegraphics[angle=90,scale=.85]{D:/KUKADisk/UDIMA/BBDD/AEC2/ER.png}\\
+\end{figure}
+
+        
+\newpage
+
+
+\section{Eliminación de atributos compuestos}
+
+Existen varios atributos que se pueden descomponer para que representen de forma más precisa la información. En nuestro caso hemos encontrado los siguientes atributos compuestos:
+
+\begin{itemize}
+    \item  \fbox{Editor}
+    \begin{itemize}
+      \item  Nombre
+      \begin{itemize}
+        \item  Nombre\_Pila
+        \item Prime\_Apellido
+        \item Segundo\_Apellido
+      \end{itemize}
+    \end{itemize}
+    \item \fbox{Investigador}
+    \begin{itemize}
+        \item  Nombre
+        \begin{itemize}
+          \item  Nombre\_Pila
+          \item Prime\_Apellido
+          \item Segundo\_Apellido
+        \end{itemize}
+      \end{itemize}
+  \end{itemize}
+
+Con esta descomposición se pretende hacer estos datos más accesibles para su tratamiento. Se representa el resultado de la descomposición en el diagrama E-R de la página siguiente.
+
+
+\newpage
+\begin{figure}[!htb]
+    \centering
+        \includegraphics[angle=90,scale=.85]{D:/KUKADisk/UDIMA/BBDD/AEC2/ERec.png}\\
+\end{figure}
+
+\newpage 
+\section{Eliminación de atributos multivalorados}
+
+Los atributos multivalorados son aquellos que pueden tomar más de un valor. Estos mismos no son válidos en el modelo relacional. Sin embargo, no nos vale con simplemente eliminarlos ya que pueden contener
+información importante para las BBDD. Para mantener esa información se procederá a crear una nueva entidad que represente este atributo multivalorado, y crear una relación entre estas nuevas entidades y las
+de origen.
+
+Podemos poner como ejemplo los siguientes atributos multivalorados:
+
+\begin{itemize}
+  \item \fbox{Editor}
+  \begin{itemize}
+    \item Institución: Ya que puede pertenecer a varias instituciones.
+    \item País: Ya que puede tener doble nacionalidad.
+    \item E-mail: Podrían guardar el personal y el profesional.
+  \end{itemize}
+  \item \fbox{Journal}
+  \begin{itemize}
+    \item Temática: Podría hablar de más de un tema.
+  \end{itemize}
+  \item \fbox{Investigador}
+  \begin{itemize}
+    \item Institución
+    \item País
+    \item Título\_Universitario
+    \item E-mail
+  \end{itemize}
+\end{itemize}
+
+
+Para simplificar la actividad, como sugerido por el profesor, se seguirá considerando los atributos multivalorados como monovalorados.
+
+
+\section{Eliminación de redundancia}
+
+Las relaciones redundantes serán aquellas que nos aporten información que ya podemos conseguir con otras relaciones presentes en el modelo.
+
+Analizamos en cada caso las relaciones (representadas en itálico) de nuestro modelo:
+
+\begin{itemize}
+  \item \fbox{Editor} - \textit{Gestiona} - \fbox{Journal} y \fbox{Editor}-Es Jefe-\fbox{Journal}: no es redundante pues puede haber más de un editor gestor de ese journal y no podríamos saber cuál es el jefe del mismo sólo con saber si es gestor o no.
+  \item \fbox{Journal} - \textit{Publica} - \fbox{Número}: No disponemos de otra relación que nos facilite esta información.
+  \item \fbox{Artículo Investigación} - \textit{Contiene} - \fbox{Número}: No disponemos de otra relación que nos facilite esta información.
+  \item \fbox{Investigador} - \textit{Realiza} - \fbox{Artículo Investigación}: De nuevo no disponemos de otra relación que nos facilite esta información.
+\end{itemize}
+
+Con lo cual no existe ninguna relación redundante en nuestro modelo.
+
+\newpage
+
+\section{Representación del modelo lógico}
+
+\subsection{Transformación de Entidades}
+
+Cada entidad del modelo será transformada en una tabla con una estructura relacional. La clave primaria de la entidad pasa a ser la clave primaria de la tabla.
+
+\begin{itemize}
+  \item \fbox{\textbf{EDITOR}} (\underline{Pasaporte}(PK), Nombre\_Pila, Primer\_Apellido, Segundo\_Apellido, Fecha\_Nacimiento, Institución, Sueldo, E-mail, País, Journal\_Gestionado (FK))
+  \item \fbox{\textbf{JOURNAL}} (\underline{ISSN}(PK), Nombre, Temática, Último\_Índice\_Impacto, Periodicidad, Permitir\_Publicaciones\_Open\_Access, E-mail\_Contacto, Instrucciones\_Envío, Pasaporte\_Editor\_Jefe (FK))
+  \item \fbox{\textbf{NUMERO}} (\underline{Identificador}(PK), Título, Fecha\_Publicación, Número\_Páginas, Número\_Especial, ISSN\_Journal\_Publicado (FK))
+  \item \fbox{\textbf{ARTICULO INVESTIGACION}} (\underline{Identificador}(PK), Título, Número\_Página\_Inicial, Número\_Página\_Final, DOI, Resumen, Publicado\_Open\_Access, Fecha\_Recepción, Fecha\_Revisión, Fecha\_Aceptación, Fecha\_Disponible\_Online, Identificador\_Número\_Contiene (FK))
+  \item \fbox{\textbf{INVESTIGADOR}} (\underline{ORCID}(PK), Nombre\_Pila, Primer\_Apellido, Segundo\_Apellido, Institución, País, E-mail, Título\_Universitario)
+\end{itemize}
+
+\subsection{Transformación de Relaciones}
+
+\textbf{Relación \textit{Es Jefe} y \textit{Gestiona}}
+
+Que son relaciones entre \fbox{JOURNAL} y \fbox{EDITOR} y tienen las siguientes características:
+
+\begin{itemize}
+  \item \textit{Es Jefe}, que tiene cardinalidad de 1:1 y grados de participación (0,1) de parte de \fbox{JOURNAL} y (1,1) de parte de \fbox{EDITOR}. En este caso existirá una Foreign Key(FK). Se propagará el pasaporte del Editor Jefe a cada Journal.
+  \item \textit{Gestiona}, que tiene cardinalidad 1:N y grados de participación (1,1) en \fbox{JOURNAL} y (1,n) de parte de \fbox{EDITOR}.
+\end{itemize}
+
+Podemos representar las entidades y sus tablas de la siguiente forma:
+
+\begin{figure}[htb!]
+  \centering
+  {\includegraphics[width=.8\textwidth]{D:/KUKADisk/UDIMA/BBDD/AEC2/editorjefejournal.png}}
+  \caption{Relaciones Journal - Editor}
+  \label{}
+\end{figure}
+
+\begin{itemize}
+  \item \fbox{\textbf{EDITOR}} (\underline{Pasaporte}(PK), Nombre\_Pila, Primer\_Apellido, Segundo\_Apellido, Fecha\_Nacimiento, Institución, Sueldo, E-mail, País,Journal\_Gestionado (FK))
+  \item \fbox{\textbf{JOURNAL}} (\underline{ISSN}(PK), Nombre, Temática, Último\_Índice\_Impacto, Periodicidad, Permitir\_Publicaciones\_Open\_Access, E-mail\_Contacto, Instrucciones\_Envío, Pasaporte\_Editor\_Jefe (FK))
+\end{itemize}
+\newpage
+
+\textbf{Relación \textit{Publica}}
+
+La relación \textit{Publica}, tiene cardinalidad 1:N y los grados de participación son (1,1) en \fbox{JOURNAL} y (0,n) en \fbox{NUMERO}:
+
+\begin{figure}[htb!]
+  \centering
+  {\includegraphics[width=.8\textwidth]{D:/KUKADisk/UDIMA/BBDD/AEC2/journalpublicanumero.png}}
+  \caption{Relaciones Journal - Número}
+  \label{}
+\end{figure}
+
+\begin{itemize}
+  \item \fbox{\textbf{JOURNAL}} (\underline{ISSN}(PK), Nombre, Temática, Último\_Índice\_Impacto, Periodicidad, Permitir\_Publicaciones\_Open\_Access, E-mail\_Contacto, Instrucciones\_Envío, Pasaporte\_Editor\_Jefe (FK))
+  \item \fbox{\textbf{NUMERO}} (\underline{Identificador}(PK), Título, Fecha\_Publicación, Número\_Páginas, Número\_Especial, ISSN\_Journal\_Publicado (FK))
+\end{itemize}
+
+\textbf{Relación \textit{Es responsable}}
+
+Esta relación tiene cardinalidad (1,N) y grados de participación (1,1) por parte de \fbox{EDITOR} y (0,n) por parte de \fbox{NUMERO} entonces 
+la relación se representa de la siguiente forma:
+
+\begin{figure}[htb!]
+  \centering
+  {\includegraphics[width=.8\textwidth]{D:/KUKADisk/UDIMA/BBDD/AEC2/editoresresponsablenumero.png}}
+  \caption{Relaciones Editor - Número}
+  \label{}
+\end{figure}
+
+Y sus tablas:
+
+\begin{itemize}
+  \item \fbox{\textbf{EDITOR}} (\underline{Pasaporte}(PK), Nombre\_Pila, Primer\_Apellido, Segundo\_Apellido, Fecha\_Nacimiento, Institución, Sueldo, E-mail, País,Journal\_Gestionado (FK))
+  \item \fbox{\textbf{NUMERO}} (\underline{Identificador}(PK), Título, Fecha\_Publicación, Número\_Páginas, Número\_Especial, ISSN\_Journal\_Publicado (FK), Editor\_Responsable (FK))
+\end{itemize}
+
+
+\textbf{Relación \textit{Contiene}}
+
+En esta relación existe una cardinalidad 1:N y grados de participación (1,1) en la entidad \fbox{NUMERO} y (1,n) en \fbox{ARTICULO INVESTIGACION} entonces lo representamos:
+
+\begin{figure}[htb!]
+  \centering
+  {\includegraphics[width=.8\textwidth]{D:/KUKADisk/UDIMA/BBDD/AEC2/numerocontienearticulo.png}}
+  \caption{Relaciones Editor - Número}
+  \label{}
+\end{figure}
+
+En este caso tenemos la FK Identificador\_Número\_Contiene ya que queremos saber en cada momento a qué número pertenece cada artículo.
+
+\begin{itemize}
+  \item \fbox{\textbf{NUMERO}} (\underline{Identificador}(PK), Título, Fecha\_Publicación, Número\_Páginas, Número\_Especial, ISSN\_Journal\_Publicado (FK), Editor\_Responsable (FK))
+  \item \fbox{\textbf{ARTICULO INVESTIGACION}} (\underline{Identificador}(PK), Título, Número\_Página\_Inicial, Número\_Página\_Final, DOI, Resumen, Publicado\_Open\_Access, Fecha\_Recepción, Fecha\_Revisión, Fecha\_Aceptación, Fecha\_Disponible\_Online, Identificador\_Número\_Contiene (FK))
+\end{itemize}
+
+\newpage
+
+\textbf{Relación \textit{Realiza}}
+
+En este caso, al tener una cardinalidad (N,M), se crea una tabla como consecuencia de la relación y que contendrá como clave primaria la concatenación de los Identificadores de las 
+entidades relacionadas. Además se representan las relaciones con grado de participación (1,n) de parte de \fbox{ARTICULO INVESTIGACION} y (1,n) de \fbox{INVESTIGADOR} de la siguiente forma:
+
+\begin{figure}[htb!]
+  \centering
+  {\includegraphics[height=14cm]{D:/KUKADisk/UDIMA/BBDD/AEC2/investigadorrealizaarticulo.png}}
+  \caption{Diseño lógico final}
+  \label{}
+\end{figure}
+
+Y las tablas tendrán el siguiente aspecto:
+
+\begin{itemize}
+  \item \fbox{\textbf{ARTICULO INVESTIGACION}} (\underline{Identificador}(PK), Título, Número\_Página\_Inicial, Número\_Página\_Final, DOI, Resumen, Publicado\_Open\_Access, Fecha\_Recepción, Fecha\_Revisión, Fecha\_Aceptación, Fecha\_Disponible\_Online, Identificador\_Número\_Contiene (FK))
+  \item \fbox{\textbf{INVESTIGADOR}} (\underline{ORCID}(PK), Nombre\_Pila, Primer\_Apellido, Segundo\_Apellido, Institución, País, E-mail, Título\_Universitario)
+  \item \fbox{\textbf{REALIZAR}} (\underline{Identificador\_Artículo }(FK), \underline{ORCID\_Investigador }(FK))
+\end{itemize}
+
+\section{Ejemplo de la base de datos}
+
+En esta sección se rellenarán los campos de las tablas con datos ejemplo. El objetivo es mejorar la comprensibilidad del modelo.
+
+\begin{itemize}
+  \item \fbox{\textbf{EDITOR}} (\underline{Pasaporte}(PK), Nombre\_Pila, Primer\_Apellido, Segundo\_Apellido, Fecha\_Nacimiento, Institución, Sueldo, E-mail, País, Journal\_Gestionado (FK))
+  \begin{itemize}
+    \item (615313585, Sarah,  P., McIver, May 28, 1940, Hollywood Video, \$50000,SarahPMcIver@dayrep.com, USA, 2049-3630)
+    \item (739560423,  Ion , Medrano, Molina, Sep 16, 1986, Shoe Pavilion, \$30000, IonMedranoMolina@dayrep.com, España,2049-3630 )
+  \end{itemize}
+  \item \fbox{\textbf{JOURNAL}} (\underline{ISSN}(PK), Nombre, Temática, Último\_Índice\_Impacto, Periodicidad, Permitir\_Publicaciones\_Open\_Access, E-mail\_Contacto, Instrucciones\_Envío, Pasaporte\_Editor\_Jefe (FK))
+  \begin{itemize}
+    \item (2049-3630, Immunology, Salud, 243/34, mensual, true, immunology@science.com, 200 New York Ave NWWashington DC20005, 615313585)
+    \item (2043-5839, Robotics, Ingeniería, 43/4, trimestral, false, robotics@science.com, 200 New York Ave NWWashington DC20005, 739560423)
+  \end{itemize}
+  \item \fbox{\textbf{NUMERO}} (\underline{Identificador}(PK), Título, Fecha\_Publicación, Número\_Páginas, Número\_Especial, ISSN\_Journal\_Publicado (FK),Editor\_Responsable (FK))
+  \begin{itemize}
+    \item (892355, Los efectos de las vacunas, 23/04/2019,42,2,2049-3630, 615313585)
+    \item (543563, La IA en robótica, 03/11/2018, 53, 4, 2043-5839,739560423 )
+  \end{itemize}
+  \item \fbox{\textbf{ARTICULO INVESTIGACION}} (\underline{Identificador}(PK), Título, Número\_Página\_Inicial, Número\_Página\_Final, DOI, Resumen, Publicado\_Open\_Access, Fecha\_Recepción, Fecha\_Revisión, Fecha\_Aceptación, Fecha\_Disponible\_Online, Identificador\_Número\_Contiene (FK))
+  \begin{itemize}
+    \item (08572089, Vacuna Hepatitis-B, 4, 5, http://dx.doi.org/10.1145/1067268.1067287, Lorem Ipsum, true, 23/05/2017, 04/09/2018,04/09/2018, 06/03/2019,892355  )
+    \item (08596880, Robots Scara, 7, 10, http://dx.doi.org/11.1145/1067268.6349863, Lorem Ipsum, true, 29/07/2017, 04/10/2019,02/11/2020, 06/03/2020,543563  )
+  \end{itemize}
+  \item \fbox{\textbf{INVESTIGADOR}} (\underline{ORCID}(PK), Nombre\_Pila, Primer\_Apellido, Segundo\_Apellido, Institución, País, E-mail, Título\_Universitario)
+  \begin{itemize}
+    \item (0000-0002-1825-0097, Josiah, Carberry, Stinkey, Brown University, USA, jc.stinkey@brownuniversity.com, PhD Psychoceramics)
+    \item (0000-0012-2825-0043, Berta, South, Arrow, Harvard University, USA, bs.arrow@harvard.com, PhD Mechatronics)
+  \end{itemize}
+  \item \fbox{\textbf{REALIZAR}} (\underline{Identificador\_Artículo }(FK), \underline{ORCID\_Investigador }(FK))
+  \begin{itemize}
+    \item (08572089, 0000-0002-1825-0097)
+    \item (543563, 0000-0012-2825-0043)
+  \end{itemize}
+\end{itemize}
+
+\end{document}

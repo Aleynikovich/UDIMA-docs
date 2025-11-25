@@ -1,0 +1,721 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\usepackage{siunitx}
+
+% Configuración de márgenes
+\geometry{left=2.5cm, right=2.5cm, top=3cm, bottom=3cm}
+
+% Encabezado y pie de página
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{UDIMA}
+\fancyhead[R]{Termodinámica y mecánica de fluidos}
+\fancyfoot[C]{\thepage}
+
+% Título del documento
+\title{\textbf{Actividad de Evaluación Contínua 1}\\[0.5cm]
+\Large{Termodinámica y mecánica de fluidos}}
+\author{Alumno: Alexander Sebastian Kalis \\ Profesor: Dr.~César Pérez de Villar Palomo}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\newpage
+\tableofcontents
+\newpage
+
+\section{Ejercicio 1}
+
+Disponemos de un mol de un gas ideal que es \textbf{diatómico} y que se encuentra en el estado inicial 
+con presión \(p_1 = 5\,\text{bar}\) y temperatura \(T_1 = 1075\,\text{K}\). 
+A partir de este estado:
+
+\begin{enumerate}
+    \item El gas sufre \textbf{una compresión isoterma} hasta que su presión se multiplica por \(2{,}3\) veces. 
+          (Es decir, \(p_2 = 2{,}3\,p_1\).)
+    \item A continuación, el gas \textbf{se expande de manera adiabática} hasta alcanzar de nuevo los \(5\,\text{bar}\) de presión. 
+          (Segundo estado intermedio: \(p_3 = 5\,\text{bar}\).)
+    \item Finalmente, el gas \textbf{vuelve a su estado inicial} mediante un proceso isobaro a \(5\,\text{bar}\).
+\end{enumerate}
+
+Se sabe que todas las transformaciones son reversibles y que se trata de un gas diatómico con:
+\[
+R = 8,31 \,\text{J/(mol\,K)}, 
+\quad
+C_{v} = \tfrac{5}{2}\,R,
+\quad
+(\text{y por tanto } C_{p} = C_{v} + R = \tfrac{7}{2}\,R).
+\]
+
+Se pide:
+
+\begin{enumerate}
+    \item[(a)] Dibujar el ciclo en el \textbf{diagrama \(p\text{-}V\)} y en el \textbf{diagrama \(p\text{-}T\)}.
+    \item[(b)] Calcular el \textbf{volumen}, así como la \textbf{temperatura} y la \textbf{presión} después de cada etapa.
+    \item[(c)] Calcular para cada transformación la \textbf{variación de energía interna} (\(\Delta U\)), el \textbf{trabajo} (\(W\)) y el \textbf{calor} (\(Q\)).
+\end{enumerate}
+
+\textit{(a) Diagramas \(p\text{-}V\) y \(p\text{-}T\)}: 
+
+\begin{figure}[htbp]
+    \centering
+    \begin{minipage}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{diagramaPv.png}
+        \caption{Diagrama \(p\text{-}V\)}
+        \label{fig:pv}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{diagramaPt.png}
+        \caption{Diagrama \(p\text{-}T\)}
+        \label{fig:pt}
+    \end{minipage}
+\end{figure}
+
+\textit{(b) Cálculo del volumen, temperatura y presión tras cada etapa:}
+
+Para cada estado (2 y 3), se aplican las leyes de los gases ideales y las relaciones específicas (isotermo y adiabático):
+
+\paragraph{Estado 2 (tras la compresión isoterma 1\(\to\)2):}
+\[
+\begin{aligned}
+p_2 &= 2{,}3\,p_1 
+     = 2{,}3 \times 5\,\text{bar} 
+     = 11{,}5\,\text{bar},\\[6pt]
+T_2 &= T_1 
+     = 1075\,\text{K}
+     \quad\text{(isoterma)},\\[6pt]
+V_2 &= \frac{p_1}{p_2}\,V_1 
+     = \frac{5}{11{,}5}\,V_1 
+     \approx 0{,}43478\,V_1 
+     \;\;\Longrightarrow\;\; 
+     V_2 \approx 0{,}00778\,\text{m}^3.
+\end{aligned}
+\]
+
+\paragraph{Estado 3 (tras la expansión adiabática 2\(\to\)3):}
+\[
+\begin{aligned}
+p_3 &= 5\,\text{bar},\\[4pt]
+\text{(relación adiabática)}&:\;\; p_2\,V_2^\gamma 
+           = p_3\,V_3^\gamma 
+\;\Longrightarrow\; 
+V_3 
+= V_2 \Bigl(\tfrac{p_2}{p_3}\Bigr)^{\!\!1/\gamma}
+\approx 0{,}0141\,\text{m}^3,\\[6pt]
+T_3 &= T_2\,\Bigl(\tfrac{V_2}{V_3}\Bigr)^{(\gamma-1)}
+     \approx 848\,\text{K}.
+\end{aligned}
+\]
+
+\paragraph{Regreso al estado 1 (3\(\to\)1, isobara a \(5\,\text{bar}\)):}
+\[
+\begin{aligned}
+p_1 &= p_3 = 5\,\text{bar},\\
+T_1 &= 1075\,\text{K},\\
+V_1 &\approx 0{,}0179\,\text{m}^3 \quad
+\text{(el mismo estado inicial, ya conocido)}.
+\end{aligned}
+\]
+
+\noindent
+Por tanto, \textbf{después de cada etapa} se tienen (en unidades SI y bar):
+
+\[
+\begin{aligned}
+&\text{Estado 2: }
+  p_2 = 11{,}5\,\text{bar},\ 
+  T_2 = 1075\,\text{K},\ 
+  V_2 \approx 0{,}00778\,\text{m}^3,\\
+&\text{Estado 3: }
+  p_3 = 5\,\text{bar},\ 
+  T_3 \approx 848\,\text{K},\ 
+  V_3 \approx 0{,}0141\,\text{m}^3.
+\end{aligned}
+\]
+
+\noindent
+El \textbf{estado final} (1) coincide con el inicial, cumpliendo el ciclo completo.
+
+
+\medskip
+\noindent
+\textit{(c) Cálculo de \(\Delta U\), \(W\) y \(Q\)}:  
+\[
+\Delta U_{1\to 2} 
+  = n\,C_{v}\,(T_2 - T_1) 
+  = 0 \quad (\text{pues }T_2=T_1).
+\]
+El trabajo (convención: \(W>0\) lo realiza el sistema al expandirse) en un proceso isotermo reversible es
+\[
+W_{1\to 2} 
+  = n\,R\,T_1 \,\ln\!\Bigl(\frac{V_2}{V_1}\Bigr).
+\]
+Dado que \(V_2<V_1\), este trabajo será negativo (compresión). Numéricamente,
+\[
+W_{1\to 2} 
+ = (1)(8,31\,\text{J/(mol\,K)})(1075\,\text{K})\,
+   \ln\!\bigl(0,00778/0,0179\bigr)
+ \;\approx\; 8933\,\ln(0,43478)
+\]
+\[
+    \;\approx\; 8933 \times (-0,834)
+    \;\approx\; -7444\,\text{J}.
+\]
+Por la Primera Ley, \(\,Q_{1\to 2} = \Delta U_{1\to 2} + W_{1\to 2}\). Como \(\Delta U_{1\to 2}=0\),
+\[
+Q_{1\to 2} \;=\; W_{1\to 2} \;\approx\; -7444\,\text{J}.
+\]
+El sistema, por tanto, \textit{cede calor} al entorno durante la compresión isoterma (calor negativo).
+
+\bigskip
+
+\textbf{Transformación \(2\to 3\): Adiabática reversible}
+
+\[
+p_3 = 5\,\text{bar}, 
+\quad Q_{2\to 3} = 0 \quad (\text{adiabático}).
+\]
+Las relaciones adiabáticas para un gas ideal dan:
+\[
+p_2\,V_2^\gamma 
+ = 
+ p_3\,V_3^\gamma,
+\quad\text{y}\quad
+ T_2\,V_2^{\gamma-1}
+ = 
+ T_3\,V_3^{\gamma-1}.
+\]
+De la primera, se obtiene
+\[
+V_{3} 
+ = 
+ V_{2}\,\Bigl(\frac{p_{2}}{p_{3}}\Bigr)^{\!\!\frac{1}{\gamma}}
+ = 
+ V_2\,(2{,}3)^{\tfrac{1}{1{,}4}}
+ \;\approx\; 1,81\,V_2
+ \;\approx\; 0,0141\,\text{m}^3.
+\]
+La temperatura \(T_3\) se puede hallar de la segunda relación (o empleando \(T\,p^{\tfrac{1-\gamma}{\gamma}}=\text{cte}\)):
+\[
+T_3
+ =
+ T_2\,\Bigl(\tfrac{V_2}{V_3}\Bigr)^{\gamma-1}
+ =
+ T_2\,(0,43478)^{\tfrac{\gamma-1}{\gamma}}
+ \;\approx\;
+ 848\,\text{K}.
+\]
+(Obsérvese que \(T_3 < T_2\), al expandir adiabáticamente.)
+
+\medskip
+\noindent
+\textit{(c) Cálculo de \(\Delta U\), \(W\) y \(Q\)}:  
+Dado que \(Q_{2\to 3}=0\) (adiabático), por Primera Ley
+\[
+\Delta U_{2\to 3}
+ = 
+ n\,C_{v}\,(T_{3}-T_{2})
+ =
+ 1 \times \tfrac{5}{2}R \,(848 - 1075)
+ =
+ \tfrac{5}{2}\,(8,31)\,(-227)
+ \;\approx\; -4715\,\text{J}.
+\]
+Luego
+\[
+W_{2\to 3} 
+ = 
+ -\,\Delta U_{2\to 3}
+ = 
+ 4715\,\text{J}.
+\]
+Trabajo positivo significa que el gas realiza trabajo (se expande), a costa de reducir su energía interna (\(\Delta U<0\)).
+
+\bigskip
+
+\textbf{Transformación \(3\to 1\): Isobara a \(5\,\text{bar}\)}
+
+Finalmente, el gas pasa de \((p_3=5\,\text{bar},V_3,T_3=848\,\text{K})\) a \((p_1=5\,\text{bar},V_1,T_1=1075\,\text{K})\).  
+A \textbf{presión constante}, el trabajo es
+\[
+W_{3\to 1}
+ =
+ \int_{V_3}^{V_1} p\,\mathrm{d}V
+ =
+ p_3\,(V_1 - V_3)
+ =
+ n\,R\,(T_1 - T_3)
+ \;\approx\;
+ 8,31\,\bigl(1075 - 848\bigr)
+ \;\approx\;
+ 1886\,\text{J}.
+\]
+El cambio de energía interna:
+\[
+\Delta U_{3\to 1}
+ =
+ n\,C_v\,(T_1 - T_3)
+ =
+ \tfrac{5}{2}\,R\,(1075 - 848)
+ \;\approx\;
+ 4715\,\text{J}.
+\]
+Por tanto,
+\[
+Q_{3\to 1}
+ =
+ \Delta U_{3\to 1} + W_{3\to 1}
+ \;\approx\;
+ 4715 + 1886
+ \;=\;
+ 6601\,\text{J}.
+\]
+Se trata de un calor positivo (\(Q>0\)), pues el gas recibe energía para aumentar su temperatura a presión constante.
+
+\bigskip
+\noindent
+\textbf{Resumen de resultados numéricos:}
+\[
+\begin{aligned}
+&\text{Estado 1: } p_1=5\,\text{bar},\; T_1=1075\,\text{K},\; V_1\approx 0,0179\,\text{m}^3,\\
+&\text{Estado 2: } p_2=11{,}5\,\text{bar},\; T_2=1075\,\text{K},\; V_2\approx 0,00778\,\text{m}^3,\\
+&\text{Estado 3: } p_3=5\,\text{bar},\quad T_3\approx 848\,\text{K},\quad V_3\approx 0,0141\,\text{m}^3.
+\end{aligned}
+\]
+
+\[
+\begin{array}{c|ccc}
+\hline
+\textbf{Proceso} & \Delta U \,(\text{J}) & W\,(\text{J}) & Q\,(\text{J}) \\ \hline
+1\to 2 \;(\text{isoterma}) & 0 & -7444 & -7444 \\
+2\to 3 \;(\text{adiab})    & -4715 & +4715 & 0 \\
+3\to 1 \;(\text{isobara})  & +4715 & +1886 & +6601 \\ \hline
+\end{array}
+\]
+
+\noindent
+Para el \textbf{ciclo completo} se verifica que \(\sum \Delta U = 0\) y \(\sum Q = \sum W\).
+
+
+\newpage
+
+\section{Ejercicio 2}
+
+Tenemos un ciclo de Otto ideal con aire, partiendo de una presión \(p_1=100\,\text{kPa}\) y una 
+temperatura \(T_1=36^\circ\text{C}\) y una relación de compresión \(V_1/V_2=7{,}6\). 
+Estudiaremos el ciclo desde el momento en el que el cilindro ya está lleno con la mezcla de aire 
+y gasolina, y que el proceso de compresión se aproxima a un proceso adiabático, la explosión 
+de la mezcla a una compresión a volumen constante en el que se suministran 1200 kJ de calor, 
+la expansión o descompresión se asemeja a otro proceso adiabático, y la salida de gases de 
+combustión a un proceso isócoro donde se cede calor al foco frío. Realizar los cálculos para 
+1 kg del gas.
+
+Datos: Coeficiente de dilatación adiabática del aire = 1,4; 
+\quad Masa molar del aire = 28,97 g/mol.
+
+\[
+R = 8{,}31 \,\text{J/(K·mol)}, 
+\quad
+C_v\text{(aire)} = 717{,}62 \,\text{J/(kg·K)}
+\]
+
+\noindent
+\textbf{a)} Dibuje el ciclo en un diagrama p-V.\\
+\textbf{b)} Muéstrese la presión, volumen y temperatura de cada uno de los 4 estados en una tabla.\\
+\textbf{c)} Calcúlense el calor cedido y el trabajo útil.\\
+\textbf{d)} Hálle el rendimiento del ciclo y compárelo con el de una máquina de Carnot en las 
+mismas condiciones de temperatura.
+
+\bigskip
+
+
+\noindent\textit{(a) Diagrama p--V}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.5\textwidth]{diagramaOtto.png}
+    \caption{Diagrama \(p\text{-}V\)}
+    \label{fig:pv}
+\end{figure}
+
+\medskip
+\noindent
+
+\newpage
+
+\textit{(b) Tabla de presiones, volúmenes y temperaturas en cada estado}
+
+    \begin{table}[h!] % [h!] sugiere a LaTeX poner la tabla "aquí" si es posible
+        \centering % Centra la tabla en la página
+        \caption{Estados termodinámicos del ciclo Otto ideal y origen de los valores.} % Título de la tabla
+        \label{tab:estados_otto_explicado} % Etiqueta para referencias cruzadas
+        \begin{tabular}{ccccl} % Define 5 columnas: 4 centradas (c) y la última alineada a la izquierda (l)
+        \hline % Línea horizontal superior
+        % Encabezados de columna en negrita
+        \textbf{E} & \textbf{P} & \textbf{V} & \textbf{T} & \textbf{Datos} \\
+        % Unidades debajo de los encabezados correspondientes
+         & \textbf{[kPa]} & \textbf{[m$^3$/kg]} & \textbf{[K]} & \\
+        \hline\hline % Doble línea horizontal para separar encabezado y datos
+        % Fila para el Estado 1
+        1 & 100.0  & 0.8873 & 309.1  & ($p_1, T_1$). $v_1 = R_{esp} T_1 / p_1$. \\ % '&' separa columnas, '\\' termina la fila
+        % Fila para el Estado 2
+        2 & 1788.3 & 0.1168 & 692.5  &  $v_2 = v_1 / r$; $p_2 = p_1 r^\gamma$; $T_2 = T_1 r^{\gamma-1}$. \\
+        % Fila para el Estado 3
+        3 & 6106.1 & 0.1168 & 2364.6 &  $v_3 = v_2$; $T_3 = T_2 + Q_{in} / C_v$; $p_3 = p_2 (T_3/T_2)$. \\
+        % Fila para el Estado 4
+        4 & 341.4  & 0.8873 & 1055.6 &  $v_4 = v_1$; $p_4 = p_3 (v_3/v_4)^\gamma$; $T_4 = T_3 (v_3/v_4)^{\gamma-1}$. \\
+        \hline % Línea horizontal inferior
+        % Nota al pie explicando las constantes usadas, usando multicolumn para abarcar todas las columnas
+        \multicolumn{5}{l}{\footnotesize Nota: Se usó $r=7.6$, $\gamma=1.4$, $R_{esp} \approx 0.287$ kJ/kg·K, $C_v \approx 0.718$ kJ/kg·K, $Q_{in}=1200$ kJ/kg.} \\
+        \end{tabular}
+\end{table}
+
+
+\textit{(c) Cálculo del Calor Cedido y Trabajo Útil}
+
+A continuación, se calcula el calor cedido al foco frío ($Q_{cedido}$) y el trabajo neto o útil ($W_{neto}$) realizado por el ciclo Otto ideal por unidad de masa (1 kg) de aire. Se utilizan los valores de temperatura de los estados previamente calculados (ver Tabla~\ref{tab:estados_otto_explicado}): $T_1 \approx 309.1$~K, $T_4 \approx 1055.6$~K, y la capacidad calorífica a volumen constante $C_v \approx 0.718$~kJ/kg·K. El calor añadido durante el proceso isócoro 2-3 fue $Q_{in} = 1200$~kJ/kg.
+
+\subsubsection*{Calor Cedido ($Q_{cedido}$)}
+
+El calor se cede al foco frío durante el proceso de enfriamiento a volumen constante (isócoro) que lleva del estado 4 al estado 1. La fórmula para el calor transferido a volumen constante es $Q = m C_v \Delta T$. Como estamos interesados en el calor cedido (una cantidad positiva por convenio en este contexto), calculamos:
+\[ Q_{cedido} = |Q_{41}| = |- m C_v (T_1 - T_4)| = m C_v (T_4 - T_1) \]
+Considerando $m=1$~kg:
+\[ Q_{cedido} = (1 \text{ kg}) \times (0.71762 \text{ kJ/kg·K}) \times (1055.6 \text{ K} - 309.1 \text{ K}) \]
+\[ Q_{cedido} = 0.71762 \times (746.5) \text{ kJ} \]
+El resultado es:
+\[ {Q_{cedido} \approx 535.7 \text{ kJ/kg}} \]
+Este es el calor liberado por el sistema al entorno (foco frío) en cada ciclo por kilogramo de aire.
+
+\subsubsection*{Trabajo Neto Útil ($W_{neto}$)}
+
+El Primer Principio de la Termodinámica establece que para un ciclo completo, la variación de la energía interna es cero ($\Delta U_{ciclo} = 0$), ya que la energía interna es una función de estado. Por lo tanto, el trabajo neto realizado por el sistema durante el ciclo ($W_{neto}$) es igual al calor neto absorbido por el sistema ($Q_{neto}$):
+\[ \Delta U_{ciclo} = Q_{neto} - W_{neto} = 0 \implies W_{neto} = Q_{neto} \]
+El calor neto es la diferencia entre el calor que entra al sistema (absorbido, $Q_{in}$) y el calor que sale del sistema (cedido, $Q_{cedido}$):
+\[ Q_{neto} = Q_{in} - Q_{cedido} \]
+Así, el trabajo neto útil del ciclo es:
+\[ W_{neto} = Q_{in} - Q_{cedido} \]
+Sustituyendo los valores conocidos:
+\[ W_{neto} = 1200 \text{ kJ/kg} - 535.7 \text{ kJ/kg} \]
+El resultado es:
+\[ {W_{neto} \approx 664.3 \text{ kJ/kg}} \]
+Este valor representa el trabajo mecánico que se puede extraer del ciclo por cada kilogramo de aire que lo recorre.
+
+\textit{(d) Rendimiento del Ciclo Otto y Comparación con Carnot}
+
+Para calcular el rendimiento del ciclo Otto ideal y compararlo con el de una máquina de Carnot operando entre las mismas temperaturas extremas, seguimos los siguientes pasos:
+
+El rendimiento teórico ($\eta_{Otto}$) de un ciclo Otto ideal depende únicamente de la relación de compresión ($r = V_1/V_2$) y del coeficiente adiabático ($\gamma$) del gas de trabajo. La fórmula, es:
+\[
+\eta_{Otto} = 1 - \frac{1}{r^{\gamma-1}}
+\]
+Datos proporcionados:
+\begin{itemize}
+    \item Relación de compresión, $r = V_1/V_2 = 7.6$
+    \item Coeficiente adiabático del aire, $\gamma = 1.4$
+\end{itemize}
+Sustituyendo los valores:
+
+\[
+\eta_{Otto} = 1 - \frac{1}{2.248} \approx 1 - 0.4448 = 0.5552
+\]
+El rendimiento del ciclo Otto ideal es aproximadamente \textbf{55.52\%}.
+
+
+El rendimiento de una máquina de Carnot ($\eta_{Carnot}$) que opera entre dos focos térmicos a temperaturas $T_{frio}$ (temperatura mínima del ciclo) y $T_{caliente}$ (temperatura máxima del ciclo) viene dado por :
+\[
+\eta_{Carnot} = 1 - \frac{T_{frio}}{T_{caliente}}
+\]
+Necesitamos determinar las temperaturas mínima y máxima del ciclo Otto.
+Datos iniciales:
+\begin{itemize}
+    \item $T_1 = 36^\circ \text{C} = 36 + 273.15 = 309.15 \text{ K}$ (Temperatura mínima, $T_{frio}$)
+    \item Calor suministrado por kg, $q_{in} = 1200 \text{ kJ/kg} = 1,200,000 \text{ J/kg}$
+    \item Capacidad calorífica a volumen constante, $C_v = 717.62 \text{ J/kg·K}$ 
+\end{itemize}
+Calculamos las temperaturas en los otros estados del ciclo:
+\begin{itemize}
+    \item \textbf{Estado 2 (fin de compresión adiabática):} Usamos la relación adiabática $T V^{\gamma-1} = \text{constante}$
+    \[
+    T_1 V_1^{\gamma-1} = T_2 V_2^{\gamma-1} \implies T_2 = T_1 \left(\frac{V_1}{V_2}\right)^{\gamma-1} = T_1 r^{\gamma-1}
+    \]
+    \[
+    T_2 = 309.15 \times (7.6)^{0.4} \approx 309.15 \times 2.248 \approx 694.97 \text{ K}
+    \]
+    \item \textbf{Estado 3 (fin de adición de calor isócora):} El calor se añade a volumen constante ($V_2 = V_3$). Para $m=1$ kg, $Q_{in} = m C_v (T_3 - T_2)$ 
+    \[
+    q_{in} = C_v (T_3 - T_2) \implies T_3 = T_2 + \frac{q_{in}}{C_v}
+    \]
+    \[
+    T_3 = 694.97 + \frac{1,200,000}{717.62} \approx 694.97 + 1672.20 \approx 2367.17 \text{ K}
+    \]
+    Esta es la temperatura máxima del ciclo ($T_{caliente}$).
+    \item \textbf{Estado 4 (fin de expansión adiabática):} (Cálculo no estrictamente necesario para $\eta_{Carnot}$, pero útil para completar el ciclo)
+    \[
+    T_3 V_3^{\gamma-1} = T_4 V_4^{\gamma-1} \implies T_4 = T_3 \left(\frac{V_3}{V_4}\right)^{\gamma-1} = T_3 \left(\frac{V_2}{V_1}\right)^{\gamma-1} = T_3 \left(\frac{1}{r}\right)^{\gamma-1}
+    \]
+     \[
+     T_4 = \frac{T_3}{r^{\gamma-1}} \approx \frac{2367.17}{2.248} \approx 1052.9 \text{ K}
+     \]
+\end{itemize}
+Las temperaturas extremas del ciclo son $T_{frio} = T_1 = 309.15 \text{ K}$ y $T_{caliente} = T_3 = 2367.17 \text{ K}$.
+Ahora calculamos el rendimiento de Carnot:
+\[
+\eta_{Carnot} = 1 - \frac{T_1}{T_3} = 1 - \frac{309.15}{2367.17} \approx 1 - 0.1306 = 0.8694
+\]
+El rendimiento de la máquina de Carnot operando entre las mismas temperaturas extremas es aproximadamente \textbf{86.94\%}.
+
+El rendimiento del ciclo Otto ideal es $\eta_{Otto} \approx 55.52\%$.
+El rendimiento de una máquina de Carnot operando entre la temperatura mínima ($T_1$) y máxima ($T_3$) del ciclo Otto es $\eta_{Carnot} \approx 86.94\%$.
+
+Como se esperaba según el Teorema de Carnot, el rendimiento del ciclo Otto es inferior al rendimiento de una máquina de Carnot que opera entre las mismas temperaturas extremas:
+$$ \eta_{Otto} < \eta_{Carnot} $$
+$$ 55.52\% < 86.94\% $$
+Esto se debe a que los procesos de adición y cesión de calor en el ciclo Otto no ocurren a temperatura constante, a diferencia del ciclo de Carnot.
+
+
+\section{Ejercicio 3}
+
+\textbf{Enunciado:}
+Un ciclo refrigerador reversible de Carnot se emplea para mantener a \SI{-18}{\celsius} el congelador de un frigorífico instalado en un local donde la temperatura es \SI{20}{\celsius}. En este ciclo termodinámico, se realiza cada \SI{2}{\second}, y en él se emplea \SI{1}{\mole} de un gas ideal diatómico ($C_v = 5/2 R$). Por las especificaciones técnicas se sabe que consume una potencia de \SI{50}{\kilo\watt}.
+
+Datos: $R = \SI{8,31}{\joule\per\kelvin\per\mole}$
+
+a) Dibújese el ciclo en un diagrama p-V y especifíquese cada una de las transformaciones que lo componen. Calcúlese su eficiencia.
+
+b) Calcúlese el calor que se intercambia en cada una de las etapas.
+
+c) Calcúlese la variación de entropía del gas en cada transformación y para el ciclo completo. Calcúlese también la variación de entropía del Universo.
+
+d) Si tras la compresión isotérmica el volumen del gas es igual a \SI{5}{\litre}, calcúlese el volumen y la presión tras la expansión adiabática.
+
+\vspace{1em} % Espacio vertical
+\bigskip
+%-----------------------------------------------------
+\textit{(a) Diagrama P-V, Transformaciones y Eficiencia}
+\bigskip
+%-----------------------------------------------------
+Las transformaciones del ciclo refrigerador de Carnot son (en orden):
+\begin{enumerate}
+    \item $1 \to 2$: Expansión adiabática reversible (el gas se enfría de $T_H$ a $T_C$).
+    \item $2 \to 3$: Expansión isotérmica reversible a $T_C$ (el gas absorbe calor $Q_C$ del foco frío).
+    \item $3 \to 4$: Compresión adiabática reversible (el gas se calienta de $T_C$ a $T_H$).
+    \item $4 \to 1$: Compresión isotérmica reversible a $T_H$ (el gas cede calor $Q_H$ al foco caliente).
+\end{enumerate}
+\textbf{Diagrama P-V:} No he encontrado la forma de generar una representación gráfica estándar y visualmente útil con los parámetros dados. Hay combinación de un trabajo de entrada muy alto (\SI{100}{\kilo\joule}) para una cantidad pequeña de gas (\SI{1}{\mole}) partiendo de un volumen $V_1=\SI{5}{\litre}$ (asumiendo por el apartado d). Esto distorsiona completamente la escala del eje de volúmenes.
+
+\textbf{Eficiencia:}( $\beta$). Para un ciclo de Carnot reversible, depende solo de las temperaturas:
+\[
+    \beta_{\text{Carnot}} = \frac{T_C}{T_H - T_C} = \frac{\SI{255,15}{\kelvin}}{\SI{293,15}{\kelvin} - \SI{255,15}{\kelvin}} = \frac{255,15}{38} \approx 6,714
+\]
+
+\bigskip
+%-----------------------------------------------------
+\textit{(b) Calor intercambiado en cada etapa}
+\bigskip
+%-----------------------------------------------------
+Calculamos los calores intercambiados por el gas (el sistema):
+\begin{itemize}
+    \item \textbf{Etapa $1 \to 2$} (Adiabática): $Q_{12} = \SI{0}{\joule}$
+    \item \textbf{Etapa $2 \to 3$} (Isotérmica a $T_C$): Se absorbe calor $Q_C$. $Q_C = \beta \times W_{in}$.
+        \[
+            Q_{23} = Q_C \approx 6,714 \times \SI{100000}{\joule} \approx \SI{+671400}{\joule}
+        \]
+    \item \textbf{Etapa $3 \to 4$} (Adiabática): $Q_{34} = \SI{0}{\joule}$
+    \item \textbf{Etapa $4 \to 1$} (Isotérmica a $T_H$): Se cede calor $Q_H$. Por el primer principio para el ciclo, $Q_{neto} = Q_C + Q_{41} = -W_{in}$.
+        \[
+            Q_{41} = -W_{in} - Q_C = \SI{-100000}{\joule} - \SI{671400}{\joule} = \SI{-771400}{\joule}
+        \]
+        El calor cedido al foco caliente es $|Q_H| = \SI{771400}{\joule}$.
+\end{itemize}
+
+%-----------------------------------------------------
+\bigskip
+\textit{(c) Variación de entropía}\\
+\bigskip
+%-----------------------------------------------------
+\textbf{Variación de entropía del gas ($\Delta S_{gas}$):}
+\begin{itemize}
+    \item \textbf{Etapa $1 \to 2$} (Adiabática Reversible): $\Delta S_{12} = \SI{0}{\joule\per\kelvin}$
+    \item \textbf{Etapa $2 \to 3$} (Isotérmica Reversible a $T_C$):
+        \[
+            \Delta S_{23} = \frac{Q_{23}}{T_C} = \frac{\SI{671400}{\joule}}{\SI{255,15}{\kelvin}} \approx \SI{+2631,4}{\joule\per\kelvin}
+        \]
+    \item \textbf{Etapa $3 \to 4$} (Adiabática Reversible): $\Delta S_{34} = \SI{0}{\joule\per\kelvin}$
+    \item \textbf{Etapa $4 \to 1$} (Isotérmica Reversible a $T_H$):
+        \[
+            \Delta S_{41} = \frac{Q_{41}}{T_H} = \frac{\SI{-771400}{\joule}}{\SI{293,15}{\kelvin}} \approx \SI{-2631,4}{\joule\per\kelvin}
+        \]
+\end{itemize}
+\textbf{Variación de entropía del gas en el ciclo completo:}
+\[
+    \Delta S_{\text{ciclo}} = \Delta S_{12} + \Delta S_{23} + \Delta S_{34} + \Delta S_{41} \approx 0 + 2631,4 + 0 - 2631,4 = \SI{0}{\joule\per\kelvin}
+\]
+\textbf{Variación de entropía del Universo ($\Delta S_{Universo}$):}
+Para un proceso reversible, la variación de entropía del universo es siempre cero. Comprobación:
+$\Delta S_{\text{Universo}} = \Delta S_{\text{ciclo}} + \Delta S_{\text{foco frío}} + \Delta S_{\text{foco caliente}}$
+$\Delta S_{\text{foco frío}} = -Q_C / T_C \approx \SI{-2631,4}{\joule\per\kelvin}$
+$\Delta S_{\text{foco caliente}} = |Q_H| / T_H = -Q_{41} / T_H \approx \SI{+2631,4}{\joule\per\kelvin}$
+\[
+    \Delta S_{\text{Universo}} \approx 0 - 2631,4 + 2631,4 = \SI{0}{\joule\per\kelvin}
+\]
+\bigskip
+%-----------------------------------------------------
+\textit{(d) Volumen y Presión tras la expansión adiabática}
+%-----------------------------------------------------
+Se pide el estado 2 ($V_2, P_2$) que se alcanza tras la expansión adiabática $1 \to 2$.
+Estado 1: $T_1 = T_H = \SI{293,15}{\kelvin}$, $V_1 = \SI{0,005}{\cubic\metre}$.
+Estado 2: $T_2 = T_C = \SI{255,15}{\kelvin}$.
+Relación adiabática $T V^{\gamma-1} = \text{constante}$: $T_1 V_1^{\gamma-1} = T_2 V_2^{\gamma-1}$.
+\[
+    V_2 = V_1 \left( \frac{T_1}{T_2} \right)^{\frac{1}{\gamma-1}} = \SI{0,005}{\cubic\metre} \times \left( \frac{293,15}{255,15} \right)^{\frac{1}{1,4-1}} = \SI{0,005}{\cubic\metre} \times \left( 1,1489... \right)^{2,5}
+\]
+\[
+    V_2 \approx \SI{0,005}{\cubic\metre} \times 1,3976 \approx \SI{0,006988}{\cubic\metre} \quad (\approx \SI{6,99}{\litre})
+\]
+Ley del gas ideal para $P_2$: $P_2 V_2 = n R T_2$.
+\[
+    P_2 = \frac{n R T_2}{V_2} = \frac{\SI{1}{\mole} \times \SI{8,31}{\joule\per\kelvin\per\mole} \times \SI{255,15}{\kelvin}}{\SI{0,006988}{\cubic\metre}} \approx \frac{2119,30}{0,006988} \approx \SI{303277}{\pascal}
+\]
+Tras la expansión adiabática, el volumen es $\mathbf{V_2 \approx \SI{0,00699}{\cubic\metre}}$ y la presión es $\mathbf{P_2 \approx \SI{303,3}{\kilo\pascal}}$.
+
+
+\section{Ejercicio 4}
+
+\textbf{Enunciado:}
+Disponemos de una máquina térmica que trabaja entre dos focos térmicos, cuyas temperaturas son la del foco caliente \SI{500}{\kelvin} y la del frío \SI{100}{\kelvin}, y además sabemos que en cada ciclo se absorben del foco caliente \SI{1000}{\joule}. Si el rendimiento es del 20\%,
+
+a) ¿Cómo funciona la máquina térmica, reversible o irreversiblemente? Explique por qué.
+
+b) Determínese la variación de entropía del gas de trabajo de la máquina térmica, así como de sus alrededores y la del universo en cada ciclo.
+
+c) Repítase los cálculos realizados en el apartado anterior para una máquina térmica de Carnot que funcionase entre los dos mismos focos.
+
+d) Calcúlese el trabajo que se obtiene de la máquina en un ciclo, y la potencia que puede desarrollar si se completa un ciclo cada \SI{500}{\milli\second}.
+
+\vspace{1em} % Espacio vertical
+
+\bigskip
+%-----------------------------------------------------
+\textit{(a) ¿Cómo funciona la máquina térmica, reversible o irreversiblemente? Explique por qué.}
+%-----------------------------------------------------
+\bigskip
+
+Para determinar si la máquina funciona reversible o irreversiblemente, comparamos su rendimiento real con el rendimiento máximo posible entre esas temperaturas, que es el rendimiento de una máquina de Carnot.
+El rendimiento de Carnot ($\eta_{\text{Carnot}}$) es:
+\[
+\eta_{\text{Carnot}} = 1 - \frac{T_C}{T_H} = 1 - \frac{\SI{100}{\kelvin}}{\SI{500}{\kelvin}} = 1 - 0,2 = 0,80 \quad (\text{o } 80\%)
+\]
+El rendimiento dado de la máquina es $\eta = 0,20$ (o 20\%).
+Como el rendimiento real de la máquina ($\eta = 0,20$) es menor que el rendimiento máximo posible o de Carnot ($\eta_{\text{Carnot}} = 0,80$), la máquina funciona \textbf{irreversiblemente}. El Teorema de Carnot establece que ninguna máquina térmica real puede tener un rendimiento mayor que el de una máquina de Carnot operando entre las mismas temperaturas, y solo una máquina reversible alcanza dicho rendimiento.
+
+\bigskip
+%-----------------------------------------------------
+\textit{(b) Determínese la variación de entropía del gas de trabajo de la máquina térmica, así como de sus alrededores y la del universo en cada ciclo.}
+%-----------------------------------------------------
+\bigskip
+
+
+\textit{Variación de entropía del gas de trabajo ($\Delta S_{\text{gas}}$):}
+La entropía es una función de estado. Como la máquina opera en un ciclo, el estado final del gas de trabajo es idéntico a su estado inicial. Por lo tanto, la variación de entropía del gas en un ciclo completo es cero.
+\[
+\Delta S_{\text{gas}} = \SI{0}{\joule\per\kelvin}
+\]
+
+\textit{Variación de entropía de los alrededores ($\Delta S_{\text{alr}}$):}
+Los alrededores son los focos térmicos.
+Primero calculamos el trabajo neto ($W_{\text{net}}$) y el calor cedido al foco frío ($|Q_C|$).
+\[
+W_{\text{net}} = \eta \times Q_H = 0,20 \times \SI{1000}{\joule} = \SI{200}{\joule}
+\]
+Por el primer principio para el ciclo ($\Delta U = 0$), $W_{\text{net}} = Q_H - |Q_C|$.
+\[
+|Q_C| = Q_H - W_{\text{net}} = \SI{1000}{\joule} - \SI{200}{\joule} = \SI{800}{\joule}
+\]
+El foco caliente cede $Q_H = \SI{1000}{\joule}$, su cambio de entropía es:
+\[
+\Delta S_{H} = \frac{-Q_H}{T_H} = \frac{-\SI{1000}{\joule}}{\SI{500}{\kelvin}} = \SI{-2,0}{\joule\per\kelvin}
+\]
+El foco frío recibe $|Q_C| = \SI{800}{\joule}$, su cambio de entropía es:
+\[
+\Delta S_{C} = \frac{+|Q_C|}{T_C} = \frac{+\SI{800}{\joule}}{\SI{100}{\kelvin}} = \SI{+8,0}{\joule\per\kelvin}
+\]
+La variación de entropía total de los alrededores es:
+\[
+\Delta S_{\text{alr}} = \Delta S_{H} + \Delta S_{C} = \SI{-2,0}{\joule\per\kelvin} + \SI{8,0}{\joule\per\kelvin} = \SI{+6,0}{\joule\per\kelvin}
+\]
+
+\textit{Variación de entropía del Universo ($\Delta S_{\text{uni}}$):}
+\[
+\Delta S_{\text{uni}} = \Delta S_{\text{gas}} + \Delta S_{\text{alr}} = \SI{0}{\joule\per\kelvin} + \SI{6,0}{\joule\per\kelvin} = \SI{+6,0}{\joule\per\kelvin}
+\]
+Como $\Delta S_{\text{uni}} > 0$, se confirma que el proceso es irreversible.
+
+\bigskip
+%-----------------------------------------------------
+\textit{(c) Repítase los cálculos realizados en el apartado anterior para una máquina térmica de Carnot que funcionase entre los dos mismos focos.}
+%-----------------------------------------------------
+\bigskip
+
+Consideramos una máquina de Carnot reversible operando entre $T_H = \SI{500}{\kelvin}$ y $T_C = \SI{100}{\kelvin}$, absorbiendo $Q_H = \SI{1000}{\joule}$.
+
+\textit{Variación de entropía del gas de trabajo ($\Delta S_{\text{gas, Carnot}}$):}
+Sigue siendo un ciclo, por lo que:
+\[
+\Delta S_{\text{gas, Carnot}} = \SI{0}{\joule\per\kelvin}
+\]
+
+\textit{Variación de entropía de los alrededores ($\Delta S_{\text{alr, Carnot}}$):}
+Para una máquina de Carnot, la relación de calores es $\frac{|Q_C|}{Q_H} = \frac{T_C}{T_H}$.
+\[
+|Q_{C, \text{Carnot}}| = Q_H \frac{T_C}{T_H} = \SI{1000}{\joule} \times \frac{\SI{100}{\kelvin}}{\SI{500}{\kelvin}} = \SI{1000}{\joule} \times 0,2 = \SI{200}{\joule}
+\]
+El cambio de entropía del foco caliente es:
+\[
+\Delta S_{H, \text{Carnot}} = \frac{-Q_H}{T_H} = \frac{-\SI{1000}{\joule}}{\SI{500}{\kelvin}} = \SI{-2,0}{\joule\per\kelvin}
+\]
+El cambio de entropía del foco frío es:
+\[
+\Delta S_{C, \text{Carnot}} = \frac{+|Q_{C, \text{Carnot}}|}{T_C} = \frac{+\SI{200}{\joule}}{\SI{100}{\kelvin}} = \SI{+2,0}{\joule\per\kelvin}
+\]
+La variación de entropía total de los alrededores para la máquina de Carnot es:
+\[
+\Delta S_{\text{alr, Carnot}} = \Delta S_{H, \text{Carnot}} + \Delta S_{C, \text{Carnot}} = \SI{-2,0}{\joule\per\kelvin} + \SI{2,0}{\joule\per\kelvin} = \SI{0}{\joule\per\kelvin}
+\]
+
+\textit{Variación de entropía del Universo ($\Delta S_{\text{uni, Carnot}}$):}
+\[
+\Delta S_{\text{uni, Carnot}} = \Delta S_{\text{gas, Carnot}} + \Delta S_{\text{alr, Carnot}} = \SI{0}{\joule\per\kelvin} + \SI{0}{\joule\per\kelvin} = \SI{0}{\joule\per\kelvin}
+\]
+Como se esperaba para un proceso reversible.
+
+\bigskip
+%-----------------------------------------------------
+\textit{(d) Calcúlese el trabajo que se obtiene de la máquina en un ciclo, y la potencia que puede desarrollar si se completa un ciclo cada \SI{500}{\milli\second}.}
+%-----------------------------------------------------
+\bigskip
+
+\textit{Trabajo por ciclo ($W_{\text{net}}$) (para la máquina real con $\eta=0,20$):}
+El trabajo neto obtenido se calcula a partir del rendimiento y el calor absorbido:
+\[
+W_{\text{net}} = \eta \times Q_H = 0,20 \times \SI{1000}{\joule} = \SI{200}{\joule}
+\]
+El trabajo obtenido en cada ciclo es $\mathbf{\SI{200}{\joule}}$.
+
+\textit{Potencia desarrollada ($P$):}
+La potencia es el trabajo realizado por unidad de tiempo. El tiempo por ciclo es $\Delta t = \SI{0,5}{\second}$.
+\[
+P = \frac{W_{\text{net}}}{\Delta t} = \frac{\SI{200}{\joule}}{\SI{0,5}{\second}} = \SI{400}{\joule\per\second} = \SI{400}{\watt}
+\]
+La potencia que puede desarrollar la máquina es $\mathbf{\SI{400}{\watt}}$.
+
+\end{document}

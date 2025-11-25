@@ -1,0 +1,121 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{siunitx}
+\usepackage{geometry}
+\geometry{margin=1in}
+
+\title{Ejercicios Resueltos de Análisis de Circuitos Trifásicos}
+\author{Estudio Personal}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\newpage
+
+\section{Formulario y Buenas Prácticas}
+
+\subsection{Fórmulas Útiles}
+\begin{itemize}
+    \item \textbf{Transformación de Impedancia de Triángulo a Estrella}:
+    \[
+    Z_Y = \frac{Z_\Delta}{3}
+    \]
+    donde \( Z_Y \) es la impedancia en estrella y \( Z_\Delta \) es la impedancia en triángulo.
+
+    \item \textbf{Tensión de Fase a partir de la Tensión de Línea} en una conexión estrella:
+    \[
+    U_{\text{fase}} = \frac{U_{\text{línea}}}{\sqrt{3}}
+    \]
+
+    \item \textbf{Corriente de Línea y de Fase en una Carga en Triángulo}:
+    La corriente de línea es \(\sqrt{3}\) veces la corriente de fase en triángulo y está desfasada \(30^\circ\).
+    \[
+    I_{\text{línea}} = I_{\text{fase}} \cdot \sqrt{3} \angle \pm 30^\circ
+    \]
+
+    \item \textbf{Conversión de Impedancia Compleja a Forma Polar}:
+    Para un número complejo \( Z = x + jy \),
+    \[
+    |Z| = \sqrt{x^2 + y^2}, \quad \theta = \tan^{-1}\left(\frac{y}{x}\right)
+    \]
+\end{itemize}
+
+\subsection{Buenas Prácticas}
+\begin{itemize}
+    \item Cuando la carga está en triángulo y el generador en estrella, \textbf{transformar la carga a estrella} facilita los cálculos.
+    \item En sistemas de \textbf{secuencia inversa}, desfasar las corrientes en 120° en dirección opuesta a la secuencia directa.
+    \item Realizar cálculos de impedancias y tensiones en \textbf{forma polar} para simplificar operaciones de división y multiplicación.
+\end{itemize}
+
+\newpage
+
+\section{Ejercicio 1}
+\textbf{Enunciado:} Determinar las corrientes de línea en un circuito trifásico de secuencia directa de tensión de línea 380 V, alimentando una carga equilibrada de impedancia \( Z_Y = 1 + j \, \Omega \).
+
+\textbf{Solución:}
+\begin{align*}
+    U_{\text{fase}} &= \frac{380}{\sqrt{3}} = 219 \, \text{V} \\
+    Z_Y &= 1 + j = \sqrt{2} \angle 45^\circ \\
+    I_a &= \frac{219 \angle 0^\circ}{\sqrt{2} \angle 45^\circ} = 155.56 \angle -45^\circ \, \text{A} \\
+    I_b &= 155.56 \angle -165^\circ \, \text{A} \\
+    I_c &= 155.56 \angle 75^\circ \, \text{A}
+\end{align*}
+
+\newpage
+
+\section{Ejercicio 2}
+\textbf{Enunciado:} Calcular el factor de potencia y la potencia absorbida por la carga del ejercicio 1.
+
+\textbf{Solución:}
+\begin{align*}
+    \text{Factor de Potencia (FP)} &= \cos(45^\circ) = 0.707 \\
+    S &= \sqrt{3} \cdot U_{\text{línea}} \cdot I_{\text{línea}} = \sqrt{3} \cdot 380 \cdot 155.56 = 102,460 \, \text{VA} \\
+    P &= S \cdot \text{FP} = 102,460 \cdot 0.707 = 72,480 \, \text{W} \\
+    Q &= S \cdot \sin(45^\circ) = 72,480 \, \text{VAR}
+\end{align*}
+
+\newpage
+
+\section{Ejercicio 3}
+\textbf{Enunciado:} Un generador trifásico con \( U_{\text{fase}} = 12 \, \text{kV} \) está conectado en estrella y alimenta una carga en triángulo de \( Z = 30 + 15j \, \Omega \). Determinar la tensión en los bornes de la carga.
+
+\textbf{Solución:}
+\begin{align*}
+    Z_Y &= \frac{30 + 15j}{3} = 10 + 5j \, \Omega \\
+    U_{\text{fase}} &= \frac{12,000}{\sqrt{3}} = 12,000 \, \text{V} \\
+    Z_{\text{total}} &= Z_Y + Z_1 = 11 + 6j \\
+    I_a &= \frac{12,000 \angle 0^\circ}{12.53 \angle 28.61^\circ} = 957.70 \angle -28.61^\circ \\
+    U_{Z_{\Delta a}} &= \sqrt{3} \cdot 10,707.1 \approx 18,545.21 \, \text{V}
+\end{align*}
+
+\newpage
+
+\section{Ejercicio 4}
+\textbf{Enunciado:} Generador en triángulo de \( U_{\text{línea}} = 400 \, \text{V} \) alimenta una carga en triángulo \( Z = 3 + 6j \, \Omega \) a través de \( Z_1 = 0.5 + 1j \, \Omega \).
+
+\textbf{Solución:}
+\begin{align*}
+    Z_Y &= \frac{3 + 6j}{3} = 1 + 2j \\
+    I_a &= \frac{231 \angle 0^\circ}{3.35 \angle 63.43^\circ} = 68.95 \angle -63.43^\circ \\
+    U_{\Delta a} &= \sqrt{3} \cdot 154.45 = 267.52 \, \text{V}
+\end{align*}
+
+\newpage
+
+\section{Ejercicio 5}
+\textbf{Enunciado:} Carga en triángulo de \( Z = 9 + 3j \, \text{k}\Omega \), alimentada por un generador estrella con \( U_{\text{línea}} = 30 \, \text{kV} \). Determinar las intensidades de línea y de fase.
+
+\textbf{Solución:}
+\begin{align*}
+    Z_Y &= \frac{9 + 3j}{3} = 3 + 1j \, \text{k}\Omega \\
+    U_{\text{fase}} &= \frac{30,000}{\sqrt{3}} = 17,320.51 \, \text{V} \\
+    I_a &= \frac{17,320.51 \angle 0^\circ}{3162 \angle 18.43^\circ} = 5.48 \angle -18.43^\circ \\
+    I_{ab} &= 3.16 \angle -48.43^\circ
+\end{align*}
+
+\end{document}

@@ -1,0 +1,1040 @@
+\documentclass{article}
+\usepackage{lipsum}
+\usepackage[backend=biber]{biblatex}
+\addbibresource{aec2.bib}
+\usepackage{authoraftertitle}
+\usepackage[top=2cm,bottom=1.5cm,left=1.5cm, right=3cm,includeheadfoot]{geometry}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage[spanish]{babel}
+\usepackage{mathtools}
+\usepackage{csquotes}
+\usepackage{amssymb}
+\usepackage{fancybox, graphicx}
+\usepackage{array}
+\usepackage{hhline}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{caption}
+\usepackage{esvect}
+\usepackage{siunitx}
+\usepackage{commath}
+\newcommand{\ihat}{\textbf{\^\i}}
+\newcommand{\jhat}{\textbf{\^\j}}
+%Header & Footer
+
+\pagestyle{fancy}
+%\fancyhead[LE]{\MyTitle}
+\fancyhead[LO]{Análisis Matemático}
+%\fancyhead[RO]{\leftmark}
+%\fancyhead[RE]{\leftmark}
+\fancyfoot[L]{\raisebox{-1cm}{\includegraphics[height=1.5cm]{}}}
+\fancyfoot[R]{Corregido:\\ Dr. Juan José Moreno García}
+%\fancyfoot[RO]{07/12/2018}
+
+
+%Vars
+\author{Alexander Sebastian Kalis}
+\title{Actividad de Evaluación Continua 1}
+
+
+%DOC
+
+
+\begin{document}
+
+\begin{titlepage}
+
+    \begin{center}
+
+        \line(1,0){300}\\
+        [0.2in]
+        \huge{\bfseries {\MyTitle}}\\
+        [1mm]
+        \line(2,0){200}\\
+        [0.75cm]
+        \textsc{\LARGE Análisis Matemático}\\
+        [2cm]
+        \includegraphics[height=10cm]{}\\
+        [3cm]
+
+    \end{center}
+
+    \begin{flushright}
+
+        Autor: {\MyAuthor}\\
+        Profesor: Dr. Juan José Moreno García\\
+        Curso: Ingeniería de Organización Industrial\\
+        UDIMA         
+
+    \end{flushright}
+    
+\end{titlepage}
+
+\section*{Problema 1}
+
+Resolver los siguientes problemas:\\
+
+a) Halla el siguiente límite:\\
+
+\[
+    \lim_{x\to 2} \cfrac[]{x^2+x-6}{2-x}
+\]
+
+Factorizamos la cuadrática para simplificar el problema:\\
+
+\[
+    \lim_{x\to 2} \cfrac[]{x^2+x-6}{2-x} \implies
+    \lim_{x\to 2} \frac{(x-2)(x+3)(-1)}{(2-x)(-1)} \implies 
+    \lim_{x\to 2} (-x-3) = -2 -3 = 5
+\]
+
+b) Calcular este límite:\\
+
+\[
+    \lim_{x\to 7} \frac{x-7}{\sqrt{x-4}-\sqrt{3}}
+\]
+
+Para resolver este problema haremos uso de la razionalización del denominador:\\
+
+\[
+    \frac{x-7}{\sqrt{x-4}-\sqrt{3}} = 
+    \frac{(x-7)(\sqrt{x-4}+\sqrt{3})}{(\sqrt{x-4}-\sqrt{3})(\sqrt{x-4}+\sqrt{3})} =
+    \sqrt{x-4}+\sqrt{3}
+\]
+
+\[
+    \lim_{x\to 7} \sqrt{x-4}+\sqrt{3}=\sqrt{7-4}+\sqrt{3}=2\sqrt{3}
+\]
+
+c) Determinar el siguiente límite sin usar Hôpital:\\
+
+\[
+    \lim_{x\to \infty} \frac{2x^3}{2+x^5}
+\]
+
+Podemos deducir que el límite será 0 pues valores cada vez más altos de x, el denominador resultará más grande
+que el numerador y por lo tanto tenderá a 0.\\
+
+d) Hallar este límite:\\
+
+\[
+    \lim_{x\to \infty} \ln \left(e^{\frac{x^2-1}{2x^2-x+1}}\right)
+\]
+
+En este caso podemos sacar factor común para simplificar la expresión:
+
+
+\[
+    \ln \left(e^{\frac{x^2-1}{2x^2-x+1}}\right)=
+    \ln \left(e^{\frac{x^2\left(1-\frac{1}{x^2}\right)}{x^2\left(2-\frac{1}{x}+\frac{1}{x^2}\right)}}\right)
+\]
+
+\[
+    \ln \left(e\left(\lim_{x\to \infty} \left(\frac{1-\frac{1}{x^2}}{2-\frac{1}{x}+\frac{1}{x^2}}\right)\right)\right) \implies
+    \lim _{x\to \infty \:}\left(\frac{1-\frac{1}{x^2}}{2-\frac{1}{x}+\frac{1}{x^2}}\right)
+\]
+
+Entonces:
+
+\[
+    \frac{\lim _{x\to \infty \:}\left(1-\frac{1}{x^2}\right)}{\lim _{x\to \infty \:}\left(2-\frac{1}{x}+\frac{1}{x^2}\right)} \implies
+\]
+
+\[
+    \lim_{x\to\infty\:}\left(1-\frac{1}{x^2}\right)=1
+\]
+
+\[
+    \lim_{x\to\infty\:}\left(2-\frac{1}{x}+\frac{1}{x^2}\right)=2
+\]
+
+Entonces el límite es $\frac{1}{2}$\\
+
+e) Resolver el siguiente límite:
+
+\[
+    \lim _{x\to \infty \:}\frac{\sin ^2x}{x^2}
+\]
+
+En este caso podemos aplicar Hôpital. Derivamos la expresión del numerador y denominador y aplicamos límites de nuevo:
+
+\[
+    \lim _{x\to \:0}\left(\frac{\cos \left(2x\right)\cdot \:2}{2}\right) \implies
+    \lim _{x\to \:0}\left(\cos \left(2x\right)\right) =
+    \cos \left(2\cdot \:0\right) =
+    1
+\]
+
+
+\section*{Problema 2}
+Un fabricante de latas de refresco desea optimizar la construcción de las mismas. Asumamos que dichas
+latas tienen forma cilíndrica y que la chapa de aluminio con la que se hacen tiene el mismo grosor en
+todas las piezas y que este es despreciable a la hora de calcular el volumen. El costo de material
+dependerá de la cantidad de chapa de aluminio que se use para confeccionar la lata. Teniendo en
+cuenta que las latas tienen que contener 330 $cm^3$ ,cuánto tienen que valer el radio y altura de la lata
+para que el coste de material sea mínimo?
+
+En este caso tenemos un problema de optimización. Debemos tener en cuenta el área de las dos tapas circulares y
+luego el área radial del cilindro.
+
+\[
+    A_b=\pi r^2
+\]
+
+\[
+    A_L=2\pi r h
+\]
+
+Entonces el área total:
+
+\[
+    A_t=\pi r^2+2\pi r h
+\]
+
+Sabiendo que el volumen del cilindro es $V=Ab \cdot h$ y que éste debe ser de 0.33L:
+
+\[
+    \pi r^2=0.33
+\]
+
+\[
+  h=\frac{0.33}{\pi r^2}  
+\]
+
+Entonces nos queda que:
+
+\[
+    A_t=2\pi r^2 + 2 \pi r \frac{0.33}{\pi r^2}=
+    2\pi r^2 + \frac{0.66}{r}
+\]
+
+Derivando el área total obtenemos:
+
+\[
+    A'=4\pi r - \frac{0.66}{r^2}
+\]
+
+Con esto obtenemos los mínimos. Entonces igualamos a 0:
+
+\[
+    4\pi r - \frac{0.66}{r^2}=0 \implies
+    r=\sqrt[3]{0.053}
+\]
+
+Para encontrar la altura $h$ sustituyo:
+
+\[
+    h=\frac{0.33}{\pi r^2} \implies
+    h=0.28052 m
+\]
+
+
+
+
+\section*{Problema 3}
+
+a) Hallar dominio y asíntotas de la siguiente función:
+
+\[
+    f\left(x\right)=\frac{x^2}{\left(x^2+x-2\right)}
+\]
+
+El dominio es el conjunto de inputs que hacen que la función sea real y definida. Entonces Los puntos $x$ no definidos serán aquellas
+que cumplan que $x^2+x-2=0$. Y en este caso es $x=1$ y $x=-2$. Por tanto el dominio es:\\
+
+\[
+    \:\left(-\infty \:,\:-2\right)\cup \left(-2,\:1\right)\cup \left(1,\:\infty \:\right)
+)\]
+
+Las asíntotas verticales serán $x=1$ y $x=-2$. Como ambas funciones son del mismo grado, la asíntota horizontal será $y=1$.\\
+
+b) Hallar dominio y asíntotas de:
+
+\[
+    f\left(x\right)=\frac{2x^2+x}{\left(x-1\right)}
+\]
+
+De la misma forma el valor de $x=1$ hace que la función no esté definida y por tanto es asíntota vertical. Esto hace que el dominio sea:
+
+\[
+    \left(-\infty \:,\:1\right)\cup \left(1,\:\infty \:\right)
+\]
+
+Como el numerador es un grado superior al denominador, nos encontraremos con una asíntota oblícua. Para encontrarla hacemos la división 
+y nos queda que la asíntota oblícua es de la forma:
+
+\[
+    y=2x+3
+\]
+
+
+c) Hallar dominio y asíntotas de la función logística:
+
+\[
+    f\left(x\right)=ln\:\frac{1}{x}
+\]
+
+La funcion de un logaritmo sólo está definida para valores positivos por tanto debe cumplirse que $\frac{1}{x}>0$.
+
+Esto hace que la asíntota vertical esté en $x=0$ y el dominio sea $\left(0,\:\infty \:\right)$. No tiene asíntotas horizontales.\\
+
+d) Estudiar la continuidad de la función
+
+\[
+    f\left(x\right)=
+    \begin{cases}
+        \cos x \ si \ x \le 0 \\
+        x+1 \ si \ x>0
+    \end{cases}
+\]
+
+Para que la funcion sea contínua se debe cumplir que $\lim_{x\to 0} \cos x = \lim_{x \to 0} x+1$. Si los igualamos obtenemos que:
+
+\[
+    1=1
+\]
+
+Por lo tanto la función es contínua en el punto $(0,1)$.
+
+e) Estudiar el dominio y continuidad de la función f(x).
+
+Evaluamos el dominio para cada función:
+
+\[
+    x\le \:1
+\]
+
+Que no tiene puntos indefinidos por tanto es su dominio.
+
+\[
+    \frac{-1}{x-2}
+\]
+
+Para su dominio $x>1$ tiene como puntos no definidos $x=2$ y por tanto su dominio es $\frac{-1}{x-2}$.
+
+
+De la misma forma igualamos los ímites de las funciones y evaluamos si son iguales.
+
+\[
+    \lim_{x\to 1} e^{1-x} = \lim_{x\to 1} \frac{-1}{x-2} \implies
+    1 = 1
+\]
+
+Entonces la función es contínua.
+
+
+\section*{Problema 4}
+
+Calcular la ecuación de la recta tangente en el punto $(x, y) = (1, 1)$ a la función $y = y(x)$ definida
+implícitamente por la relación $x^2+xy+y^2=3$.\\
+
+Sabemos que la ecuación de la recta tangente es  $y-y_0=m(x-x_0)$ donde $y_0=y(x_0 )$.\\
+
+Ya tenemos el punto de la función, nos faltaría la pendiente $m$. La podremos encontrar derivando implícitamente la expresión
+$x^2+xy+y^2=3$.\\
+
+\[
+    \frac{d}{dx}\left(x^2+xy+y^2\right)=\frac{d}{dx}\left(3\right)
+\]
+
+Nos quedaría que:
+
+\[
+    \frac{dy}{dx} = \frac{-2x-y}{x+2y}
+\]
+
+Si sustituimos x e y por nuestro punto obtenemos:
+
+\[
+    \frac{dy}{dx} = \frac{-2(1)-(1)}{(1)+2(1)}
+\]
+
+Y por tanto la pendiente es $m=-1$.
+
+
+\section*{Problema 5}
+
+Descomponer en fracciones simples las siguientes expresiones:\\
+
+\[
+    - \frac{2x^3+3x^2-49x+56}{x^4-5x^3+x^2+21x-1} 
+\]
+
+Factorizamos denominador utilizando ruffini:
+
+\[
+    x^4-5x^3+x^2+21x-18 = \left(x-1\right)\left(x+2\right)\left(x-3\right)^2
+\]
+
+Igualamos la expresión a la nueva expresión que utilizará fracciones simples:
+
+\[
+    -\left(\frac{2x^3+3x^2-49x+56}{\left(x-1\right)\left(x+2\right)\left(x-3\right)^2}\right)=-\left(\frac{a}{x-1}+\frac{b}{x+2}+\frac{c}{x-3}+\frac{d}{\left(x-3\right)^2}\right)
+\]
+
+Multiplicamos la ecuación por el denominador:
+
+\[
+    \frac{\left(2x^3+3x^2-49x+56\right)\left(x-1\right)\left(x+2\right)\left(x-3\right)^2}{\left(x-1\right)\left(x+2\right)\left(x-3\right)^2}=
+\]
+
+\[
+    \frac{a\left(x-1\right)\left(x+2\right)\left(x-3\right)^2}{x-1}+\frac{b\left(x-1\right)\left(x+2\right)\left(x-3\right)^2}{x+2}+\frac{c\left(x-1\right)\left(x+2\right)\left(x-3\right)^2}{x-3}+\frac{d\left(x-1\right)\left(x+2\right)\left(x-3\right)^2}{\left(x-3\right)^2}
+\]
+
+Simplificamos:
+
+\[
+    2x^3+3x^2-49x+56=a\left(x+2\right)\left(x-3\right)^2+b\left(x-1\right)\left(x-3\right)^2+c\left(x-1\right)\left(x+2\right)\left(x-3\right)+d\left(x-1\right)\left(x+2\right)
+\]
+
+Resolvemos la ecuacion para cada raíz. Para $x=1$:
+
+\[
+    2\cdot \:1^3+3\cdot \:1^2-49\cdot \:1+56=a\left(1+2\right)\left(1-3\right)^2+b\left(1-1\right)\left(1-3\right)^2+c\left(1-1\right)\left(1+2\right)\left(1-3\right)+d\left(1-1\right)\left(1+2\right)
+\]
+
+Obtenemos $12=12a \implies a=1$.
+
+Para $x=-2$ obtenemos $b=-2$.
+
+Para $x=3$ obtenemos $d=-1$
+
+Finalmente resolvemos con los valoes de $a,b,d$:
+
+\[
+    2x^3+3x^2-49x+56=x^3\left(c-1\right)+x^2\left(-2c+9\right)+x\left(-5c-34\right)+\left(6c+38\right)
+\]
+
+Agrupamos los elementos por potencia y resolvemos:
+
+\[
+    2x^3+3x^2-49x+56=x^3\left(c-1\right)+x^2\left(-2c+9\right)+x\left(-5c-34\right)+\left(6c+38\right)
+\]
+
+\[
+    6c+38=56 \implies c=3
+\]
+
+Y entonces nos quedaría la decomposición de esta forma:
+
+\[
+    -\frac{1}{x-1}+\frac{2}{x+2}-\frac{3}{x-3}+\frac{1}{\left(x-3\right)^2}
+\]
+
+\newpage
+
+\[
+    \frac{3x^4-2x^3-31x^2+60x-16}{x^4-12x^2+16x}
+\]
+
+En este caso puesto que ambas expresiones son del mismo grado podemos simplifiar el proceso haciendo directamente
+la división.
+
+Nos quedaria entonces la expresiones simplificada:
+
+\[
+    3+\frac{-2x^3+5x^2+12x-16}{x^4-12x^2+16x}
+\]
+
+A partir de aquí dejamos la constante 3 de lado y procedemos a hacer la decomposición:
+
+\[
+    \frac{-2x^3+5x^2+12x-16}{x^4-12x^2+16x}=\frac{-2x^3+5x^2+12x-16}{x\left(x-2\right)^2\left(x+4\right)}=\frac{a}{x}+\frac{b}{x-2}+\frac{c}{\left(x-2\right)^2}+\frac{d}{x+4}
+\]
+
+Multipicamos por el denominador y simplificamos:
+
+\[
+    \frac{x\left(-2x^3+5x^2+12x-16\right)\left(x-2\right)^2\left(x+4\right)}{x\left(x-2\right)^2\left(x+4\right)}=\frac{ax\left(x-2\right)^2\left(x+4\right)}{x}+\frac{bx\left(x-2\right)^2\left(x+4\right)}{x-2}+\frac{cx\left(x-2\right)^2\left(x+4\right)}{\left(x-2\right)^2}+\frac{dx\left(x-2\right)^2\left(x+4\right)}{x+4}
+\]
+
+\[
+    2x^3+5x^2+12x-16=a\left(x-2\right)^2\left(x+4\right)+bx\left(x-2\right)\left(x+4\right)+cx\left(x+4\right)+dx\left(x-2\right)^2
+\]
+
+Procedemos a solucionar la ecuación para cada raíz y obtenemos:
+
+Para $x=0, \ a=-1$.
+
+Para $x=2, \ c=1$.
+
+Para $x=-4, \ d=-1$.
+
+
+Entonces solucionamos:
+
+\[
+    -2x^3+5x^2+12x-16=\left(-1\right)\left(x-2\right)^2\left(x+4\right)+bx\left(x-2\right)\left(x+4\right)+1\cdot \:x\left(x+4\right)+\left(-1\right)x\left(x-2\right)^2
+\]
+
+\[
+    -2x^3+5x^2+12x-16=bx^3-2x^3+2bx^2+5x^2-8bx+12x-16
+\]
+
+\[
+    -2x^3+5x^2+12x-16=x^3\left(b-2\right)+x^2\left(2b+5\right)+x\left(-8b+12\right)-16
+\]
+
+\[
+    -8b+12=12 \implies b=0
+\]
+
+Entonces nos queda:
+
+\[
+    -\frac{1}{x}+\frac{1}{\left(x-2\right)^2}-\frac{1}{x+4}
+\]
+
+\newpage
+
+
+\section*{Problema 6}
+
+Resolver la siguiente integral:
+
+\[
+    \int \frac{2x^2-17x+29}{x^3-10x^2+31x-30}dx
+\]
+
+Aplicamos la regla de la suma de integrales:
+
+\[
+    \int \frac{2x^2}{x^3-10x^2+31x-30}dx-\int \frac{17x}{x^3-10x^2+31x-30}dx+\int \frac{29}{x^3-10x^2+31x-30}dx
+\]
+
+Resolvemos cada integral por separado:
+
+\[
+    \int \frac{2x^2}{x^3-10x^2+31x-30}dx
+    =2\cdot \int \frac{x^2}{x^3-10x^2+31x-30}dx =
+\]
+
+Simplificamos en fracciones simples como hemos hecho en la actividad anterior y nos queda:
+
+
+\[
+    =2\cdot \int \frac{4}{3\left(x-2\right)}-\frac{9}{2\left(x-3\right)}+\frac{25}{6\left(x-5\right)}dx
+\]
+
+Volvemos a aplicar la regla de la suma y resolvemos cada integral por separado:
+
+
+\[
+    \int \frac{4}{3\left(x-2\right)}dx=\frac{4}{3}\cdot \int \frac{1}{x-2}dx
+\]
+
+Hacemos un cambio de variable $u=x-2$:
+
+\[
+    \frac{4}{3}\cdot \int \frac{1}{u}du =\frac{4}{3}\ln \left|u\right|
+\]
+
+Sustituimos u por su valor original.
+
+\[
+    =\frac{4}{3}\ln \left|x-2\right|
+\]
+
+La siguiente integral:
+
+\[
+    \int \frac{9}{2\left(x-3\right)}dx =\frac{9}{2}\cdot \int \frac{1}{x-3}dx =\frac{9}{2}\cdot \int \frac{1}{u}du =\frac{9}{2}\ln \left|u\right|   =\frac{9}{2}\ln \left|x-3\right|
+\]
+
+Y la última:
+
+\[
+    \int \frac{25}{6\left(x-5\right)}dx =\frac{25}{6}\cdot \int \frac{1}{x-5}dx =\frac{25}{6}\cdot \int \frac{1}{u}du =\frac{25}{6}\ln \left|u\right| =\frac{25}{6}\ln \left|x-5\right|
+\]
+
+Sustituimos los resultados en la integral original:
+
+\[
+    2\left(\frac{4}{3}\ln \left|x-2\right|-\frac{9}{2}\ln \left|x-3\right|+\frac{25}{6}\ln \left|x-5\right|\right)
+\]
+
+Que simplificado quedaría tal que así:
+
+\[
+    \frac{8}{3}\ln \left|x-2\right|-9\ln \left|x-3\right|+\frac{25}{3}\ln \left|x-5\right|
+\]
+
+
+Ahora resolvemos:
+
+\[
+    \int \frac{17x}{x^3-10x^2+31x-30}dx =17\cdot \int \frac{x}{x^3-10x^2+31x-30}dx
+\]
+
+Volvemos a descomponer en fracciones simples y queda:
+
+\[
+    =17\cdot \int \frac{2}{3\left(x-2\right)}-\frac{3}{2\left(x-3\right)}+\frac{5}{6\left(x-5\right)}dx
+\]
+
+Aplicamos regla de la suma y resolvemos cada integral por separado (los pasos intermedios son iguales a la anterior integral):
+
+\[
+    =17\left(\int \frac{2}{3\left(x-2\right)}dx-\int \frac{3}{2\left(x-3\right)}dx+\int \frac{5}{6\left(x-5\right)}dx\right)
+\]
+
+\[
+    \int \frac{2}{3\left(x-2\right)}dx=\frac{2}{3}\ln \left|x-2\right|
+\]
+
+\[
+    \int \frac{3}{2\left(x-3\right)}dx=\frac{3}{2}\ln \left|x-3\right|
+\]
+
+\[
+    \int \frac{5}{6\left(x-5\right)}dx=\frac{5}{6}\ln \left|x-5\right|
+\]
+
+Y nos quedará, simplificada:
+
+\[
+    17\left(\frac{2}{3}\ln \left|x-2\right|-\frac{3}{2}\ln \left|x-3\right|+\frac{5}{6}\ln \left|x-5\right|\right)
+\]
+
+Atacamos la última integral:
+
+\[
+    \int \frac{29}{x^3-10x^2+31x-30}dx =29\cdot \int \frac{1}{x^3-10x^2+31x-30}dx
+\]
+
+Descomponemos y resolvemos cada una por separado:
+
+\[
+    =29\cdot \int \frac{1}{3\left(x-2\right)}-\frac{1}{2\left(x-3\right)}+\frac{1}{6\left(x-5\right)}dx==29\left(\int \frac{1}{3\left(x-2\right)}dx-\int \frac{1}{2\left(x-3\right)}dx+\int \frac{1}{6\left(x-5\right)}dx\right)
+\]
+
+\[
+    \int \frac{1}{3\left(x-2\right)}dx=\frac{1}{3}\ln \left|x-2\right|
+\]
+
+\[
+    \int \frac{1}{2\left(x-3\right)}dx=\frac{1}{2}\ln \left|x-3\right|
+\]
+
+\[
+    \int \frac{1}{6\left(x-5\right)}dx=\frac{1}{6}\ln \left|x-5\right|
+\]
+
+Obtenemos:
+
+\[
+    29\left(\frac{1}{3}\ln \left|x-2\right|-\frac{1}{2}\ln \left|x-3\right|+\frac{1}{6}\ln \left|x-5\right|\right)
+\]
+
+
+Ya tenemos resueltas las 3 integrales iniciales y podemos decir que, tras simplificar la expresión, obtenemos:\\
+
+\[
+    \int \frac{2x^2-17x+29}{x^3-10x^2+31x-30}dx=\ln \left|x-2\right|-\ln \left|x-5\right|+2\ln \left|x-3\right|+C
+\]
+
+
+\section*{Problema 7}
+
+Usar el método de integración por partes para hallar la primitiva de:
+
+\[
+    \int \:arcsin\:x\:dx
+\]
+
+
+Aplicamos la definición de integración por partes.
+
+\[
+    \int \:uv'=uv-\int \:u'v
+\]
+
+Donde $u=\arcsin \left(x\right)$ y $v'=1$
+
+\[
+    \frac{d}{dx}\left(\arcsin \left(x\right)\right)= \frac{1}{\sqrt{1-x^2}}
+\]
+
+\[
+    \int \:1dx=x
+\]
+
+Nos queda:
+
+\[
+    =\arcsin \left(x\right)x-\int \frac{1}{\sqrt{1-x^2}}xdx
+\]
+
+Resolvemos 
+
+\[
+    \int \frac{x}{\sqrt{1-x^2}}dx
+\]
+
+Aplicamos cambio de variable $u=1-x^2$:
+
+\[
+    \int \:-\frac{1}{2\sqrt{u}}du =-\frac{1}{2}\cdot \int \frac{1}{\sqrt{u}}du =-\frac{1}{2}\cdot \int \frac{1}{u^{\frac{1}{2}}}du =-\frac{1}{2}\cdot \int \:u^{-\frac{1}{2}}du
+    =-\frac{1}{2}\cdot \frac{u^{-\frac{1}{2}+1}}{-\frac{1}{2}+1}
+\]
+
+Sustituimos $u$ por su valor original:
+
+\[
+    =-\frac{1}{2}\cdot \frac{\left(1-x^2\right)^{-\frac{1}{2}+1}}{-\frac{1}{2}+1}=-\sqrt{1-x^2}
+\]
+
+Entonces la solución sería:
+
+\[
+    x\arcsin \left(x\right)+\sqrt{1-x^2}
+\]
+
+Y por tanto, añadiendo la constante de integración obtenemos la primitiva:
+
+\[
+    x\arcsin \left(x\right)+\sqrt{1-x^2}+C
+\]
+
+
+\section*{Problema 8}
+
+Hallar la integral:
+
+\[
+    \int \:cos^4x\:sin^3x\:dx
+\]
+
+En este caso podemos resolver la integral utilizando las propiedades trigonométricas:
+
+
+\[
+    \int \:cos^4x\:sin^3x\:dx =\int \cos ^4\left(x\right)\sin ^2\left(x\right)\sin \left(x\right)dx
+\]
+
+Sabemos que $\sin ^2\left(x\right)=1-\cos ^2\left(x\right)$ entonces:
+
+\[
+    =\int \left(1-\cos ^2\left(x\right)\right)\sin \left(x\right)\cos ^4\left(x\right)dx
+\]
+
+Hacemos un cambio de variable: $u=\cos(x)$
+
+\[
+    \frac{d}{dx}\left(\cos \left(x\right)\right) = -\sin \left(x\right)
+\]
+
+\[
+    du=-\sin \left(x\right)dx
+\]
+
+\[
+    dx=\left(-\frac{1}{\sin \left(x\right)}\right)du
+\]
+
+\[
+    =\int \left(1-u^2\right)\sin \left(x\right)u^4\left(-\frac{1}{\sin \left(x\right)}\right)du
+\]
+
+Simplificamos la expresión:
+
+\[
+    \left(1-u^2\right)\sin \left(x\right)u^4\left(-\frac{1}{\sin \left(x\right)}\right) =-\left(1-u^2\right)\sin \left(x\right)u^4\frac{1}{\sin \left(x\right)}
+    =-\frac{1\cdot \left(1-u^2\right)\sin \left(x\right)u^4}{\sin \left(x\right)}
+    =-u^4\left(-u^2+1\right)
+\]
+
+Aplicamos propiedad distributiva:
+
+\[
+    \int \:-u^4+u^6du
+\]
+
+Separamos en dos integrales y resolvemos cada una:
+
+\[
+    -\int \:u^4du+\int \:u^6du
+\]
+
+\[
+    \int \:u^4du=\frac{u^5}{5}
+\]
+
+\[
+    \int \:u^6du=\frac{u^7}{7}
+\]
+
+No debemos olvidar de sustituir u por su valor original:
+
+\[
+    \int \:cos^4x\:sin^3x\:dx=-\frac{\cos ^5\left(x\right)}{5}+\frac{\cos ^7\left(x\right)}{7}+C
+\]
+
+
+
+\section*{Problema 9}
+
+Calcular, si es posible, la siguiente integral:
+
+\[
+    \int _1^{\infty \:}\frac{\ln \left(x\right)}{x^3}dx
+\]
+
+Procedemos a calcular la integral indefinida:
+
+\[
+    \int \frac{\ln \left(x\right)}{x^3}dx
+\]
+
+Aplicamos integración por partes: $\int \:uv'=uv-\int \:u'v$.
+
+\[
+    u=\ln \left(x\right)
+\]
+
+\[
+    v'=\frac{1}{x^3} 
+\]
+
+\[
+    u'=\frac{d}{dx}\left(\ln \left(x\right)\right)=\frac{1}{x}
+\]
+
+\[
+    v=\int \frac{1}{x^3}dx=-\frac{1}{2x^2}
+\]
+
+Obtenemos finalmente:
+
+\[
+    \ln \left(x\right)\left(-\frac{1}{2x^2}\right)-\int \frac{1}{x}\left(-\frac{1}{2x^2}\right)dx
+\]
+
+Que si simplificamos es:
+
+\[
+    -\frac{\ln \left(x\right)}{2x^2}-\int \:-\frac{1}{2x^3}dx
+\]
+
+Resolvemos la integral:
+
+\[
+    \int \:-\frac{1}{2x^3}dx=\frac{1}{4x^2}
+\]
+
+Obtenemos que la integral indefinida sería:
+
+\[
+    \frac{\ln \left(x\right)}{2x^2}-\frac{1}{4x^2}+C
+\]
+
+Ahora debemos calcularla teniendo en cuenta sus límites de integración:
+
+\[
+    \lim _{x\to \:1+}\left(-\frac{\ln \left(x\right)}{2x^2}-\frac{1}{4x^2}\right)=-\frac{1}{4}
+\]
+
+Aplicando Hôpital obtenemos:
+
+\[
+    \lim _{x\to \infty \:}\left(-\frac{\ln \left(x\right)}{2x^2}-\frac{1}{4x^2}\right)=0
+\]
+
+Por tanto:
+
+\[
+    \int _1^{\infty \:}\frac{\ln \left(x\right)}{x^3}dx=0-\left(-\frac{1}{4}\right)=\frac{1}{4}
+\]
+
+
+\section*{Problema 10}
+
+a) Calcula el desarrollo de Taylor en el origen de la función hasta el término de $x^2$:
+
+\[
+    f\left(x\right)=\frac{\sqrt{x+1}}{x+1}
+\]
+
+Por definición, la serie de Taylor tiene la forma:
+
+\[
+    f\left(x\right)=f\left(a\right)+\frac{f'\left(a\right)}{1!}\left(x-a\right)+\frac{f''\left(a\right)}{2!}\left(x-a\right)^2+\frac{f'''\left(a\right)}{3!}\left(x-a\right)^3+\ldots 
+\]
+
+Tomamos $x=0$:
+
+\[
+    f\left(0\right)=  1
+\]
+
+Procedemos a encontrar $f'$ y $f''$ ya que el enunciado nos pide llegar hasta el término $x^2$. 
+
+\[
+    =1+\frac{\frac{d}{dx}\left(\frac{\sqrt{x+1}}{x+1}\right)\left(0\right)}{1!}x+\frac{\frac{d^2}{dx^2}\left(\frac{\sqrt{x+1}}{x+1}\right)\left(0\right)}{2!}x^2
+\]
+
+Evaluamos siempre en el punto $x=0$:
+
+\[
+    \frac{d}{dx}\left(\frac{\sqrt{x+1}}{x+1}\right)=-\frac{1}{2\left(x+1\right)^{\frac{3}{2}}}=-\frac{1}{2}
+\]
+
+\[
+    \frac{d^2}{dx^2}\left(\frac{\sqrt{x+1}}{x+1}\right)=\frac{3}{4\left(x+1\right)^{\frac{5}{2}}} =\frac{3}{4}
+\]
+
+Entonces podemos montar la série:
+\[
+    1+\frac{-\frac{1}{2}}{1!}x+\frac{\frac{3}{4}}{2!}x^2+ \ldots
+\]
+
+Que simplificada queda:
+
+\[
+    1-\frac{1}{2}x+\frac{3}{8}x^2+ \ldots
+\]
+
+
+b) Estudiar el carácter de la serie que tiene como término general el siguiente:
+
+\[
+    a_n=\frac{\left(n+1\right)^n}{n!3^n}
+\]
+
+Estudiaremos la convergencia de la série:
+
+\[
+    \sum _{n=0}^{\infty }\:\frac{\left(n+1\right)^n}{n!3^n}
+\]
+
+
+Para ello podemos hacer uso del criterio de d'Alembert:
+
+Entonces si existe una $N$ que para todo $n\ge N, \ a_n \ \neq 0$ y que $\lim _{n\to \infty }|\frac{a_{n+1}}{a_n}|=L$ se puede dar uno de estos casos:\\
+
+
+Si $L<1$, la serie converge.\\
+
+Si $L>1$, la serie diverge.\\
+
+Si $L=1$, hay que calcular el límite mediante otra forma.\\
+
+Entonces expresamos la serie de la forma:
+
+\[
+    \left|\frac{a_{n+1}}{a_n}\right|=\left|\frac{\frac{\left(\left(n+1\right)+1\right)^{\left(n+1\right)}}{\left(n+1\right)!3^{\left(n+1\right)}}}{\frac{\left(n+1\right)^n}{n!3^n}}\right|
+\]
+
+\[
+    =\left|\frac{\frac{\left(\left(n+1\right)+1\right)^{n+1}}{\left(n+1\right)!\cdot \:3^{n+1}}}{\frac{\left(n+1\right)^n}{n!\cdot \:3^n}}\right|
+\]
+
+\[
+    =\left|\frac{\frac{\left(n+2\right)^{n+1}}{\left(n+1\right)!\cdot \:3^{n+1}}}{\frac{\left(n+1\right)^n}{n!\cdot \:3^n}}\right|
+\]
+
+\[
+    =\left|\frac{\left(n+2\right)^{n+1}n!\cdot \:3^n}{\left(n+1\right)!\cdot \:3^{n+1}\left(n+1\right)^n}\right|
+\]
+
+\[
+    =\frac{\left(n+2\right)^{n+1}}{3\left(n+1\right)\left(n+1\right)^n}
+\]
+
+\[
+    =\frac{\left|\left(n+2\right)^{n+1}\right|}{3\left|\left(n+1\right)^{1+n}\right|}
+\]
+
+Ahora podemos evaluar el límite:
+
+\[
+    \lim _{n\to \infty \:}\left(\frac{\left|\left(n+2\right)^{n+1}\right|}{3\left|\left(n+1\right)^{1+n}\right|}\right)
+\]
+
+\[
+    =\lim _{n\to \infty \:}\left(\frac{\left(n+2\right)^{n+1}}{3\left(n+1\right)^{1+n}}\right)
+\]
+
+\[
+    =\frac{1}{3}\cdot \lim _{n\to \infty \:}\left(\frac{\left(n+2\right)^{n+1}}{\left(n+1\right)^{1+n}}\right)
+\]
+
+\[
+    =\frac{1}{3}\cdot \lim _{n\to \infty \:}\left(\left(\frac{n+2}{n+1}\right)^{n+1}\right)
+\]
+
+\[
+    \frac{1}{3}\cdot \lim _{n\to \infty \:}\left(e^{\left(n+1\right)\ln \left(\frac{n+2}{n+1}\right)}\right)
+\]
+
+Aplicando la regla de la cadena nos queda:
+
+\[
+    =\lim _{n\to \infty \:}\left(\frac{\ln \left(\frac{2+n}{1+n}\right)}{\frac{1}{1+n}}\right)
+\]
+
+Aplicamos Hôpital:
+
+\[
+    =\lim _{n\to \infty \:}\left(\frac{\left(\ln \left(\frac{2+n}{1+n}\right)\right)^{'\:}}{\left(\frac{1}{\left(1+n\right)}\right)^{'\:}}\right)
+\]
+
+\[
+    \left(\ln \left(\frac{2+n}{1+n}\right)\right)'=-\frac{1}{\left(n+2\right)\left(n+1\right)}
+\]
+
+\[
+    \left(\frac{1}{\left(1+n\right)}\right)'=-\frac{1}{\left(1+n\right)^2} \implies
+\]
+
+\[
+    \lim _{n\to \infty \:}\left(\frac{-\frac{1}{\left(n+2\right)\left(n+1\right)}}{-\frac{1}{\left(1+n\right)^2}}\right)
+\]
+
+\[
+    =\lim _{n\to \infty \:}\left(\frac{1+n}{n+2}\right)
+\]
+
+Volvemos a aplicar Hôpital:
+
+\[
+    \lim _{n\to \infty \:}\left(\frac{\left(1+n\right)^{'\:}}{\left(n+2\right)^{'\:}}\right)
+\]
+
+\[
+    \left(1+n\right)'=1
+\]
+
+\[
+    \left(n+2\right)'=1 \implies
+\]
+
+\[
+    =\lim _{n\to \infty \:}\left(\frac{1}{1}\right)=1
+\]
+
+Aplicando la regla de exponentes:
+
+\[
+    \frac{1}{3}\cdot \lim _{n\to \infty \:}\left(e^{\left(n+1\right)\ln \left(\frac{n+2}{n+1}\right)}\right)
+\]
+
+Y la regla de la cadena:
+
+
+\[
+    L = \frac{1}{3}e > 1
+\]
+
+Por lo tanto podemos decir que la serie \textbf{Converge}
+
+
+
+
+\end{document}

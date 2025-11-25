@@ -1,0 +1,385 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{booktabs}
+\usepackage{array}
+
+% Configuración de márgenes
+\geometry{left=2.5cm, right=2.5cm, top=3cm, bottom=3cm}
+
+% Encabezado y pie de página
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Universidad a Distancia de Madrid (UDIMA)}
+\fancyhead[R]{AEC1 - Matemática Discreta}
+\fancyfoot[C]{\thepage}
+
+% Título del documento
+\title{\textbf{Actividad de Evaluación Continua (AEC1)}\\[0.5cm]
+\Large{Matemática Discreta}}
+\author{Alumno: Alexander Sebastian Kalis \\ Profesor: Dr. Juan José Moreno García}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\newpage
+\tableofcontents
+\newpage
+
+
+\section{Problema 1}
+
+En cierto grupo de 23 personas están siguiendo diversas series de televisión. 14 de ellos esta viendo Altered Carbon, 12 está viendo Black Mirror y 13 está viendo Counterpart. Hay 7 que siguen a la vez Altered Carbon y Counterpart y otros 7 Black Mirror y Counterpart. Si hay 4 que siguen a las tres series, ¿Cuántos siguen Altered Carbon y Black Mirror a la vez?
+
+\vspace{0.5em}
+\hrule
+\vspace{0.5em}
+
+Sea $A$, $B$ y $C$ los conjuntos de personas que ven Altered Carbon, Black Mirror y Counterpart, respectivamente. Denotamos $x = |A \cap B|$, la cantidad buscada. Utilizamos el Principio de Inclusión-Exclusión (PIE) asumiendo que el total de 23 personas es la unión de los tres conjuntos, $|A \cup B \cup C| = 23$.
+
+El PIE establece: $|A \cup B \cup C| = |A| + |B| + |C| - (|A \cap B| + |A \cap C| + |B \cap C|) + |A \cap B \cap C|$.
+
+Sustituimos los valores conocidos en la ecuación:
+$$23 = 14 + 12 + 13 - (x + 7 + 7) + 4$$
+
+Simplificamos la suma de los conjuntos individuales y la intersección triple: $14 + 12 + 13 + 4 = 43$. Simplificamos las intersecciones dobles conocidas: $7 + 7 = 14$.
+
+La ecuación queda como:
+$$23 = 43 - (x + 14)$$
+$$23 = 43 - x - 14$$
+$$23 = 29 - x$$
+
+Finalmente, despejamos $x$:
+$$x = 29 - 23$$
+$$x = 6$$
+
+El número de personas que siguen Altered Carbon y Black Mirror a la vez es 6.
+$$|A \cap B| = 6$$
+
+
+\section{Problema 2}
+
+Considérese la relación de orden parcial $\leq$ definida en el conjunto $D$ de los divisores positivos de 90, mediante
+$$a \leq b \iff a \text{ divide a } b.$$
+Dibujar el diagrama de Hasse del orden parcial $(D,\leq)$ incluyendo el 1.
+
+\vspace{0.5em}
+\hrule
+\vspace{0.5em}
+
+Primero, determinamos el conjunto $D$ de los divisores positivos de 90. Dado que $90 = 2^1 \cdot 3^2 \cdot 5^1$, el conjunto de divisores es:
+$$D = \{1, 2, 3, 5, 6, 9, 10, 15, 18, 30, 45, 90\}$$
+
+
+\begin{center}
+    \includegraphics[width=0.6\textwidth]{hasse.png}
+\end{center}
+
+\begin{center}
+
+\end{center}
+
+
+
+\section{Problema 3}
+
+Sobre el caso del ejercicio anterior hallar lo siguiente:
+1. Proporcionar maximales, minimales, máximo y mínimo si existe.
+2. Proporcionar las cotas inferiores del conjunto $A = \{9, 10\}$. ¿Existe el ínfimo? Si existe, ¿cuál es?
+3. Proporcionar las cotas inferiores del conjunto $B = \{6, 9, 18, 90\}$. ¿Existe el ínfimo? Si existe, ¿cuál es?
+4. Proporcionar las cotas superiores del conjunto $C = \{3, 6\}$. ¿Existe el supremo? Si existe, ¿cuál es?
+5. Proporcionar las cotas superiores del conjunto $D = \{3, 6, 15\}$. ¿Existe el supremo? Si existe, ¿cuál es?
+
+\vspace{0.5em}
+\hrule
+\vspace{0.5em}
+
+\begin{table}[h]
+\centering
+\caption{Ínfimo ($\land$) y Supremo ($\lor$)}
+\label{tab:operaciones}
+\begin{tabular}{c c c c}
+\toprule
+\textbf{Conjunto $X$} & \textbf{Operación} & \textbf{Cotas} & \textbf{Resultado} \\
+\midrule
+$A = \{9, 10\}$ & $\mathbf{9 \land 10}$ & $\text{CI}(\{9, 10\}) = \{1\}$ & $\mathbf{\inf(A) = 1}$ \\
+$B = \{6, 9, 18, 90\}$ & $\mathbf{6 \land 9 \land 18 \land 90}$ & $\text{CI}(B) = \{1, 3\}$ & $\mathbf{\inf(B) = 3}$ \\
+\midrule
+$C = \{3, 6\}$ & $\mathbf{3 \lor 6}$ & $\text{CS}(\{3, 6\}) = \{6, 18, 30, 90\}$ & $\mathbf{\sup(C) = 6}$ \\
+$D = \{3, 6, 15\}$ & $\mathbf{3 \lor 6 \lor 15}$ & $\text{CS}(D) = \{30, 90\}$ & $\mathbf{\sup(D) = 30}$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+\newpage
+
+\section{Problema 4}
+
+Sea el conjunto $A = \{0, 1, 2, 3, 4\}$. Sobre este conjunto se define esta relación:
+$$\mathcal{R} = \{(3, 3), (4, 0), (0, 0), (0, 4), (1, 1), (1, 3), (3, 1), (2, 2), (4, 4)\}$$
+Representa mediante diagrama de flechas esta relación de equivalencia. Proporcionar el conjunto cociente.
+
+\vspace{0.5em}
+\hrule
+\vspace{0.5em}
+
+
+
+El \textbf{conjunto cociente} $A / \mathcal{R}$ es el conjunto de todas las clases de equivalencia:
+$$A / \mathcal{R} = \{\overline{0}, \overline{1}, \overline{2}\} = \{\{0, 4\}, \{1, 3\}, \{2\}\}$$
+
+
+
+\section{Problema 5}
+
+Se presentan 500 voluntarios para participar en un experimento médico en cierto país. Por estadística tiene que haber 75 que tengan Rh negativo, que son los únicos que no pueden participar. Asumiendo que todos conocen su factor RH ¿a cuántos tendremos que preguntar para estar seguros de poder formar un grupo preliminar de 100 conejillos de indias humanos? Esos 100 voluntarios son distribuidos al azar entre 5 equipos de investigadores. ¿Cuántos de esos 100 hay que seleccionar finalmente para garantizar que haya al menos un equipo con 12 voluntarios?
+
+\vspace{0.5em}
+\hrule
+\vspace{0.5em}
+
+Este problema utiliza el Principio del Palomar para garantizar resultados bajo la peor distribución posible.
+
+\subsubsection*{Parte 1: Formar un grupo de 100 voluntarios con Rh positivo}
+El total de voluntarios es 500. Los que no pueden participar son los de Rh negativo, que son 75. Por lo tanto, el número de voluntarios aptos (Rh positivo) es $500 - 75 = 425$. Los voluntarios no aptos son 75. Queremos seleccionar un grupo de 100 voluntarios aptos.
+
+La peor situación posible (el peor caso) es preguntar primero a todos los voluntarios no aptos. Para estar completamente seguros de que el grupo preliminar de 100 es apto, debemos considerar que la muestra contiene a todos los no aptos más los 100 aptos necesarios.
+
+$$\text{Número a preguntar} = (\text{Total de no aptos}) + (\text{Número de aptos requeridos})$$
+$$\text{Número a preguntar} = 75 + 100$$
+$$\text{Número a preguntar} = 175$$
+
+Se deberá preguntar a 175 voluntarios para estar seguros de obtener un grupo preliminar de 100 con Rh positivo.
+
+\subsubsection*{Parte 2: Garantizar 12 voluntarios en al menos un equipo}
+Tenemos un grupo de 100 voluntarios distribuidos entre 5 equipos de investigadores Queremos garantizar que al menos un equipo (cajón) tenga 12 voluntarios. Aquí aplicamos la forma generalizada del Principio del Palomar.
+
+Sea $n$ el número de voluntarios seleccionados (palomas). Sea $k=5$ el número de equipos (cajones). Queremos garantizar que $n_i \ge 12$ para al menos un equipo $i$.
+
+La peor situación posible ocurre cuando la distribución de los voluntarios es lo más uniforme posible, sin alcanzar la condición deseada. Es decir, cuando cada equipo tiene exactamente $12 - 1 = 11$ voluntarios.
+
+$$\text{Peor caso} = (\text{Número máximo por equipo que evita la condición}) \times (\text{Número de equipos})$$
+$$\text{Peor caso} = (12 - 1) \times 5 = 55$$
+
+El número de voluntarios que deben seleccionarse para garantizar la condición es uno más que el peor caso.
+
+$$\text{Número a seleccionar} = \text{Peor caso} + 1 =56$$
+
+
+Se deben seleccionar 56 voluntarios de esos 100 para garantizar que al menos un equipo tenga 12 voluntarios.
+
+\section{Problema 6}
+
+Un control de una universidad online consta de varias preguntas elegidas al azar de una base de datos. Sobre la unidad 5 de una asignatura el profesor ha preparado 20 preguntas de las cuales el sistema toma 2 para el control. Si hay 200 alumnos matriculados en esa asignatura, ¿a cuántos como mínimo les ha tocado las mismas dos preguntas del tema 5?
+
+\vspace{0.5em}
+\hrule
+\vspace{0.5em}
+
+Aplicamos el Principio del Palomar Generalizado. Los cajones ($k$) son las posibles combinaciones de 2 preguntas de 20, y las "palomas" ($n$) son los 200 alumnos.
+
+Primero, calculamos el número de combinaciones de preguntas ($k$):
+$$k = \binom{20}{2} = \frac{20 \times 19}{2} = 190$$
+Hay 190 combinaciones distintas de preguntas.
+
+El número mínimo de alumnos que comparten la misma combinación se calcula con la función techo $\lceil n/k \rceil$:
+$$\text{Mínimo de alumnos} = \left\lceil \frac{200}{190} \right\rceil  = 2$$
+
+
+Como mínimo, 2 alumnos les ha tocado las mismas dos preguntas.
+
+\section{Problema 7}
+
+Resolver los siguientes problemas:
+1. ¿De cuántas maneras se pueden ordenar las letras de la palabra 'vieslumbrándote'?
+2. ¿De cuántas maneras se pueden ordenar las letras de la palabra 'esternocleidomastoideo'?
+3. ¿De cuántas maneras se pueden ordenar las letras de la palabra 'acalabraran' de tal modo que todas las vocales estén juntas al final?
+4. ¿De cuántas maneras se pueden ordenar las letras de la palabra 'acurruca' del tal modo que siempre se empiece y termine por A?
+5. ¿De cuántas maneras se pueden ordenar las letras de la palabra palíndroma 'anilina' del tal modo que siempre se obtengan palabras palíndromas?
+
+\vspace{0.5em}
+\hrule
+\vspace{0.5em}
+
+\subsubsection*{1. Ordenar 'vieslumbrándote'}
+
+$$\frac{14!}{2! \cdot 2! \cdot 2!} = \frac{87,178,291,200}{8} = 10,897,286,400$$
+
+
+\subsubsection*{2. Ordenar 'esternocleidomastoideo'}
+$$\frac{22!}{4! \cdot 4! \cdot 2! \cdot 2! \cdot 2! \cdot 2!} = \frac{22!}{24 \cdot 24 \cdot 16} = 19,008,619,531,343,750$$
+
+\subsubsection*{3. Ordenar 'acalabraran' con vocales al final}
+$$= \frac{7!}{2!} \cdot \frac{5!}{5!} = \frac{5040}{2} \cdot 1 = 2520$$
+
+\subsubsection*{4. Ordenar 'acurruca' empezando y terminando por A}
+$$\frac{6!}{2! \cdot 2! \cdot 1! \cdot 1!} = \frac{720}{4} = 180$$
+
+
+\subsubsection*{5. Ordenar 'anilina' para que siempre se obtengan palabras palíndromas}
+
+$$3!=6$$
+
+
+\section{Problema 8}
+
+Un traficante de drogas tiene que repartir 7 paquetes de cocaína iguales entre los 9 camellos que tiene en una ciudad. ¿De cuántas maneras lo podría hacer?
+
+\vspace{0.5em}
+\hrule
+\vspace{0.5em}
+
+Este problema se modela como una combinación con repetición, ya que los 7 paquetes son idénticos (elementos no distinguibles) y se reparten entre 9 camellos distintos (lugares distinguibles), permitiendo que un camello reciba cero o más paquetes.
+
+Sea $n=7$ el número de objetos idénticos (los paquetes) y $k=9$ el número de destinos distinguibles (los camellos).
+
+La fórmula para las combinaciones con repetición es:
+$$CR(k, n) = \binom{k + n - 1}{n} \quad \text{o} \quad \binom{k + n - 1}{k - 1}$$
+
+Sustituimos los valores $n=7$ y $k=9$:
+$$\text{Maneras} = \binom{9 + 7 - 1}{7} = \binom{15}{7}$$
+
+Calculamos el coeficiente binomial:
+$$\binom{15}{7} = \frac{15!}{7!(15-7)!} = \frac{15!}{7!8!} = \frac{15 \times 14 \times 13 \times 12 \times 11 \times 10 \times 9}{7 \times 6 \times 5 \times 4 \times 3 \times 2 \times 1}$$
+
+Simplificamos el cálculo:
+$$7 \times 2 = 14 \quad \implies \frac{14}{7 \times 2} = 1$$
+$$5 \times 3 = 15 \quad \implies \frac{15}{5 \times 3} = 1$$
+$$6 \times 4 = 24$$
+$$\binom{15}{7} = 15 \times \frac{14}{14} \times 13 \times \frac{12}{6 \times 4} \times 11 \times 10 \times 9 = 15 \times 13 \times 11 \times \frac{10}{2} \times 9$$
+$$\binom{15}{7} = 15 \times 13 \times 11 \times 5 \times 3 = 6435$$
+
+El reparto se puede hacer de 6435 maneras diferentes.
+
+
+\section{Problema 9}
+
+Resolver la siguiente ecuación de recurrencia:
+$$a_{n+2} - 5a_{n+1} = 6a_n, \quad a_0 = 1, a_1 = 7$$
+
+\vspace{0.5em}
+\hrule
+\vspace{0.5em}
+
+La ecuación de recurrencia es lineal, homogénea, de segundo orden y con coeficientes constantes. Primero la reescribimos para igualarla a cero:
+$$a_{n+2} - 5a_{n+1} - 6a_n = 0$$
+
+\subsubsection*{Paso 1: Ecuación Característica}
+Sustituimos $a_{n+k}$ por $r^k$ para obtener la ecuación característica:
+$$r^2 - 5r - 6 = 0$$
+
+\subsubsection*{Paso 2: Solución de la Ecuación Característica}
+Factorizamos el polinomio:
+$$(r - 6)(r + 1) = 0$$
+Las raíces (valores propios) son distintas y reales:
+$$r_1 = 6 \quad \text{y} \quad r_2 = -1$$
+
+\subsubsection*{Paso 3: Solución General}
+Dado que las raíces son distintas, la solución general de la ecuación de recurrencia es de la forma:
+$$a_n = C_1 r_1^n + C_2 r_2^n$$
+Sustituyendo $r_1$ y $r_2$:
+$$a_n = C_1 (6)^n + C_2 (-1)^n$$
+
+\subsubsection*{Paso 4: Determinación de las Constantes}
+Usamos las condiciones iniciales dadas para encontrar los valores de las constantes $C_1$ y $C_2$.
+
+Para $n=0$ y $a_0 = 1$:
+$$a_0 = C_1 (6)^0 + C_2 (-1)^0$$
+$$1 = C_1 (1) + C_2 (1) \implies C_1 + C_2 = 1 \quad \text{(Ecuación I)}$$
+
+Para $n=1$ y $a_1 = 7$:
+$$a_1 = C_1 (6)^1 + C_2 (-1)^1$$
+$$7 = 6C_1 - C_2 \quad \text{(Ecuación II)}$$
+
+Sumamos las dos ecuaciones para eliminar $C_2$:
+$$(C_1 + C_2) + (6C_1 - C_2) = 1 + 7$$
+$$7C_1 = 8 \implies C_1 = \frac{8}{7}$$
+
+Sustituimos el valor de $C_1$ en la Ecuación I para hallar $C_2$:
+$$C_1 + C_2 = 1$$
+$$\frac{8}{7} + C_2 = 1$$
+$$C_2 = 1 - \frac{8}{7} = \frac{7}{7} - \frac{8}{7} = -\frac{1}{7}$$
+
+\subsubsection*{Paso 5: Solución Particular}
+Sustituimos los valores de $C_1$ y $C_2$ en la solución general:
+$$a_n = \frac{8}{7} (6)^n - \frac{1}{7} (-1)^n$$
+
+La solución de la ecuación de recurrencia es:
+$$a_n = \frac{8 \cdot 6^n - (-1)^n}{7}$$
+
+
+
+\section{Problema 10}
+
+Resolver la siguiente ecuación de recurrencia:
+$$a_{n+2} + 2a_{n+1} - 24a_n = -3^n; \quad a_0 = 0, a_1 = 1$$
+
+\vspace{0.5em}
+\hrule
+\vspace{0.5em}
+
+La solución general de una ecuación de recurrencia no homogénea, $a_n = a_n^{(h)} + a_n^{(p)}$, se obtiene sumando la solución de la parte homogénea ($a_n^{(h)}$) y una solución particular de la parte no homogénea ($a_n^{(p)}$).
+
+\subsubsection*{Paso 1: Solución de la Parte Homogénea ($a_n^{(h)}$)}
+La ecuación homogénea asociada es $a_{n+2} + 2a_{n+1} - 24a_n = 0$.
+La ecuación característica es:
+$$r^2 + 2r - 24 = 0$$
+Factorizamos la ecuación:
+$$(r + 6)(r - 4) = 0$$
+Las raíces son distintas y reales: $r_1 = 4$ y $r_2 = -6$.
+La solución homogénea es:
+$$a_n^{(h)} = C_1 (4)^n + C_2 (-6)^n$$
+
+\subsubsection*{Paso 2: Solución de la Parte Particular ($a_n^{(p)}$)}
+El término no homogéneo es $f(n) = -3^n$. Como la base de $f(n)$, que es $-3$, no es una raíz de la ecuación característica (es decir, $-3 \neq 4$ y $-3 \neq -6$), proponemos una solución particular de la forma:
+$$a_n^{(p)} = A (-3)^n$$
+Sustituimos $a_n^{(p)}$ en la ecuación no homogénea original:
+$$A(-3)^{n+2} + 2A(-3)^{n+1} - 24A(-3)^n = -3^n$$
+Dividimos toda la ecuación por $(-3)^n$:
+$$A(-3)^2 + 2A(-3)^1 - 24A = -1$$
+$$9A - 6A - 24A = -1$$
+$$-21A = -1$$
+$$A = \frac{1}{21}$$
+La solución particular es:
+$$a_n^{(p)} = \frac{1}{21} (-3)^n$$
+
+\subsubsection*{Paso 3: Solución General}
+La solución general es la suma de las partes homogénea y particular:
+$$a_n = a_n^{(h)} + a_n^{(p)} = C_1 (4)^n + C_2 (-6)^n + \frac{1}{21} (-3)^n$$
+
+\subsubsection*{Paso 4: Determinación de las Constantes}
+Usamos las condiciones iniciales $a_0 = 0$ y $a_1 = 1$ para determinar $C_1$ y $C_2$.
+
+Para $n=0$ y $a_0 = 0$:
+$$0 = C_1 (4)^0 + C_2 (-6)^0 + \frac{1}{21} (-3)^0$$
+$$0 = C_1 + C_2 + \frac{1}{21} \implies C_1 + C_2 = -\frac{1}{21} \quad \text{(I)}$$
+
+Para $n=1$ y $a_1 = 1$:
+$$1 = C_1 (4)^1 + C_2 (-6)^1 + \frac{1}{21} (-3)^1$$
+$$1 = 4C_1 - 6C_2 - \frac{3}{21} \implies 1 = 4C_1 - 6C_2 - \frac{1}{7}$$
+$$4C_1 - 6C_2 = 1 + \frac{1}{7} = \frac{8}{7} \quad \text{(II)}$$
+
+Multiplicamos (I) por 6: $6C_1 + 6C_2 = -\frac{6}{21} = -\frac{2}{7}$.
+Sumamos la nueva Ecuación (I) y (II):
+$$(6C_1 + 6C_2) + (4C_1 - 6C_2) = -\frac{2}{7} + \frac{8}{7}$$
+$$10C_1 = \frac{6}{7} \implies C_1 = \frac{6}{70} = \frac{3}{35}$$
+
+Sustituimos $C_1$ en (I): $C_2 = -\frac{1}{21} - C_1 = -\frac{1}{21} - \frac{3}{35}$.
+Buscamos el denominador común, que es $105$:
+$$C_2 = -\frac{5}{105} - \frac{9}{105} = -\frac{14}{105} = -\frac{2}{15}$$
+
+\subsubsection*{Paso 5: Solución Final}
+Sustituimos $C_1$ y $C_2$ en la solución general:
+$$a_n = \frac{3}{35} (4)^n - \frac{2}{15} (-6)^n + \frac{1}{21} (-3)^n$$
+
+\end{document}
+

@@ -1,0 +1,254 @@
+\documentclass{article}
+\usepackage{lipsum}
+\usepackage{authoraftertitle}
+\usepackage[top=2cm,bottom=1.5cm,left=1.5cm, right=3cm,includeheadfoot]{geometry}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+%\usepackage[spanish]{babel}
+\usepackage{mathtools}
+\usepackage{nicefrac}
+\usepackage{csquotes}
+\usepackage{amssymb}
+\usepackage{fancybox, graphicx}
+\usepackage{array}
+\usepackage{hhline}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{esint}
+\usepackage{caption}
+
+\usepackage{yhmath}
+
+\usepackage{esvect}
+\usepackage{siunitx}
+\usepackage{commath}
+\usepackage{steinmetz}
+\newcommand{\ihat}{\textbf{\^\i}}
+\newcommand{\jhat}{\textbf{\^\j}}
+%Header & Footer
+
+\pagestyle{fancy}
+%\fancyhead[LE]{\MyTitle}
+\fancyhead[LO]{Fundamentos de Electricidad y Electrónica}
+\fancyhead[RO]{Actividad de Evaluación Contínua 3}
+%\fancyhead[RE]{\leftmark}
+\fancyfoot[L]{\raisebox{-1cm}{\includegraphics[height=1.5cm]{D:/KUKADisk/OneDrive - KUKA AG/UDIMA/DocumentGraphics/LOGOUDIMA.jpg}}}
+\fancyfoot[R]{Corregido:\\ Dra. Teresa Magraner Benedicto}
+%\fancyfoot[RO]{07/12/2018}
+
+
+%Vars
+\author{Alexander Sebastian Kalis}
+\title{Actividad de Evaluación Contínua 3}
+
+
+%DOC
+
+
+\begin{document}
+
+\begin{titlepage}
+
+    \begin{center}
+
+        %\line(1,0){300}\\
+        %[0.2in]
+        \huge{\bfseries {\MyTitle}}\\
+        [1mm]
+        %\line(2,0){200}\\
+        %[0.75cm]
+        \textsc{\LARGE Fundamentos de Electricidad y Electrónica}\\
+        [2cm]
+        \includegraphics[height=10cm]{D:/KUKADisk/OneDrive - KUKA AG/UDIMA/EYE/AEC/AEC1/imgs/portada.jpg}\\
+        [3cm]
+
+    \end{center}
+
+    \begin{flushright}
+
+        Autor: {\MyAuthor}\\
+        Profesora: Dra. Teresa Magraner Benedicto\\
+        Ingeniería de Organización Industrial\\
+        UDIMA         
+
+    \end{flushright}
+    
+\end{titlepage}
+
+\section*{Caso 1}
+En el circuito de la figura el voltímetro marca una tensión de 150 V (valor eficaz), se pide:\\
+
+
+\begin{center}
+    \includegraphics[height=3cm]{D:/KUKADisk/OneDrive - KUKA AG/UDIMA/EYE/AEC/AEC3/imgs/c1e1.PNG}\\
+\end{center}
+
+a) Calcular la potencia activa, reactiva y aparente del circuito (1,0 puntos)\\
+
+
+Calculamos la impedancia total del circuito equivalente:
+
+\[
+    Z_T=\cfrac[]{1}{\cfrac[]{1}{20\phase{0^{\circ}}}+\cfrac[]{1}{15\phase{90^{\circ}}}}=12\phase{53^{\circ}} \ \Omega
+\]
+
+Con esto podemos averiguar $I_T$:
+
+\[
+    I_T= \cfrac[]{V}{Z_t} = \cfrac[]{150}{12\phase{53^{\circ}}} = 12.5 \phase{-53^{\circ}} \  A
+\]
+
+A partir de aquí procedemos a calcular las potencias:
+
+\[
+    P=VI\cos\phi = 150 \cdot 12.5 \cdot \cos(53) = 1128.4 \  W
+\]
+
+\[
+    Q=VI\sin\phi = 150 \cdot 12.5 \cdot \sin(53) = 1497.4 \ VAr
+\]
+
+\[
+    S=VI = 150 \cdot 12.5 = 1875 \ VA
+\]
+
+
+
+b) Determinar el factor de potencia (0,5 puntos)\\
+
+\[
+    f.d.p. = \cfrac[]{P}{S}=\cfrac[]{1128.4}{1875}=0.6018 \rightarrow 60.2\%
+\]
+
+c) Calcular la intensidad total circulante IT (0,5 puntos)\\
+
+\[
+    I_T= \cfrac[]{V}{Z_t} = \cfrac[]{150}{12\phase{53^{\circ}}} = 12.5 \phase{-53^{\circ}} \  A
+\]
+
+d) Si se quiere que la potencia activa del circuito P sea igual a la reactiva Q, determinar el
+valor de la resistencia R1 que debe conectarse en paralelo con R (1,0 puntos)\\
+
+En este caso calculamos la intensidad que pasa por la bobina:
+
+\[
+    I_L=\cfrac[]{V}{Z_L}=10 \phase{-90}^{\circ} \ A
+\]
+
+Para que se cumpla $P=Q$, $\phi = 45^{\circ}$, entonces:
+
+
+\[
+    I_R=\cfrac[]{150}{R_T}=10\phase{0}^{\circ} \ A \rightarrow
+    R_T = 0.0\wideparen{6} \ \Omega
+\]
+
+Calculando el paralelo de las resistencias, obtenemos que:
+
+\[
+    R_1 \approx 0.066889... \ \Omega
+\]
+
+
+
+
+
+\section*{Caso 2}
+En el circuito de la figura la lectura del voltímetro V es de 200 V (valor eficaz). Determinar 
+la lectura del resto de elementos de medida representados y dibujar el diagrama fasorial de 
+intensidades.\\
+
+\begin{center}
+    \includegraphics[height=4cm]{D:/KUKADisk/OneDrive - KUKA AG/UDIMA/EYE/AEC/AEC3/imgs/c2e1.PNG}\\
+\end{center}
+
+Calculamos la impedancia total:\\
+
+\[
+    Z_T= \cfrac[]{1}{\cfrac[]{1}{50}+\cfrac[]{1}{40 \phase{90^{\circ}}}+\cfrac[]{1}{100 \phase{-90^{\circ}}}} = 40 \phase{36.9^{\circ}} \ \Omega
+\]\\
+
+Con esto podemos calcular el valor del amperímetro $A_T$:\\
+
+\[
+    A_T=\cfrac[]{V}{Z_T}=\cfrac[]{200}{ 40 \phase{36.9^{\circ}}}=  5 \phase{-36.9^{\circ}} \ A = 4 - 3j \ A
+\]\\
+
+Podemos también averiguar la potencia activa leída por el watimetro  $W$:\\
+
+\[
+    P = W =VI\cos \phi = 200 \cdot 5 \cdot \cos (36.9) = 799.7 \ W
+\]\\
+
+Por último calculamos las intensidades en cada rama:\\
+
+\[
+    A_R = \cfrac[]{200}{50}=4 + 0j \ A, \  A_L = \cfrac[]{200}{40 \phase{90^{\circ}}}= 0 - 5j \ A, \  A_C= \cfrac[]{200}{100 \phase{-90^{\circ}}}= 0 + 2j \ A
+\]\\
+
+\begin{center}
+    \includegraphics[height=20cm]{D:/KUKADisk/OneDrive - KUKA AG/UDIMA/EYE/AEC/AEC3/imgs/c2r1.PNG}\\
+\end{center}
+
+\newpage
+
+
+\section*{Caso 3}
+El circuito de la figura representa el ensayo de un motor M en el que se han obtenido los 
+siguientes datos en los elementos de medida:
+\begin{center}
+    \includegraphics[height=5cm]{D:/KUKADisk/OneDrive - KUKA AG/UDIMA/EYE/AEC/AEC3/imgs/c3e1.PNG}\\
+\end{center}
+
+W = 2208 W
+
+A = 12 A (valor eficaz)
+
+V = 230 V (valor eficaz)
+
+Calcular:
+
+a) El factor de potencia del motor y la potencia reactiva que consume (1,0 puntos)
+
+\[
+    f.d.p. = \cfrac[]{2208}{230 \cdot 12} = 0.8
+\]
+
+\[
+    2760=\sqrt{2208^2+Q^2} \rightarrow Q=1656 \ VAr
+\]
+
+
+
+
+b) El valor de la resistencia R y la reactancia XL que representa el circuito equivalente del 
+motor si se conectan en serie (1,5 puntos)
+
+\[	
+    \phi = \arccos (0.8) = 36.87^\circ
+\]
+
+Obtenemos entonces los valores de $R_s$ (eje real) y $X_s$ (eje imaginario):
+\[
+    Z=\cfrac[]{230}{12}=19.1\widehat{6} \phase{36.87^\circ} \rightarrow 15.3 + 11.5 j \ \Omega
+\]
+
+
+c) El valor de la resistencia R y la reactancia XL que representa el circuito equivalente del 
+motor si se conectan en paralelo (1,5 puntos)\\
+
+Transformamos el circuito anterior a paralelo:
+
+\[
+    X_p=\cfrac[]{X_s^2+R_s^2}{X_s}=31.85 \phase{90^\circ} \Omega
+\]
+
+\[
+    R_p=\cfrac[]{X_s^2+R_s^2}{R_s}=23.94 \ \Omega
+\]
+
+\end{document}

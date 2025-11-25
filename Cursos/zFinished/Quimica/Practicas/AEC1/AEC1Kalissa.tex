@@ -1,0 +1,459 @@
+\documentclass{article}
+\usepackage{lipsum}
+\usepackage{authoraftertitle}
+\usepackage[top=2cm,bottom=1.5cm,left=1.5cm, right=3cm,includeheadfoot]{geometry}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage[spanish]{babel}
+\usepackage{mathtools}
+\usepackage{csquotes}
+\usepackage{amssymb}
+\usepackage{fancybox, graphicx}
+\usepackage{array}
+\usepackage{parskip}
+\usepackage{hhline}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{siunitx}
+\usepackage{amsmath}
+\usepackage{caption}
+\usepackage{esvect}
+\usepackage{stackrel}
+\usepackage{siunitx}
+\usepackage{commath}
+%Header & Footer
+
+\pagestyle{fancy}
+%\fancyhead[LE]{\MyTitle}
+\fancyhead[LO]{Química}
+\fancyhead[RO]{\nouppercase\leftmark}
+%\fancyhead[RE]{\leftmark}
+\fancyfoot[L]{\raisebox{-1cm}{\includegraphics[height=1.5cm]{D:/KUKADisk/UDIMA/DocumentGraphics/LOGOUDIMA.jpg}}}
+\fancyfoot[R]{Corregido:\\ Dr. Lucas Castro Martínez}
+
+
+%Vars
+\author{Alexander Sebastian Kalis}
+\title{AEC 1 - Prácticas de laboratorio}
+
+
+%DOC
+
+
+\begin{document}
+
+\begin{titlepage}
+
+    \begin{center}
+
+        \line(1,0){300}\\
+        [0.2in]
+        \huge{\bfseries {\MyTitle}}\\
+        [1mm]
+        \line(2,0){200}\\
+        [0.75cm]
+        \textsc{\LARGE Química}\\
+        [2cm]
+        \includegraphics[height=10cm]{D:/KUKADisk/UDIMA/Quimica/Practicas/portada.jpg}\\
+        [3cm]
+
+    \end{center}
+
+    \begin{flushright}
+
+        Autor: {\MyAuthor}\\
+        Profesor: Dr. Lucas Castro Martínez\\
+        Curso: Ingeniería de Organización Industrial\\
+        UDIMA\\
+        \today
+
+    \end{flushright}
+    
+\end{titlepage}
+
+\tableofcontents
+
+\newpage
+
+\section{Forma de la molécula}
+
+Los objetivos de esta práctica son:
+
+\begin{itemize}
+    \item Explorar las formas moleculares mediante la construcción de moléculas en 3D empleando el
+    modelo de repulsión de pares de electrones de la capa valencia (RPECV).
+    \item Ver cómo cambia la forma molecular con diferentes números de enlaces y pares de electrones.
+    \item Comparar las simulaciones de moléculas ficticias con moléculas reales.
+\end{itemize}
+
+
+\subsection{Pregunta 1}
+
+\textbf{Explique por qué el ángulo de enlace en una molécula de agua es de 104,5º y no 109,5º como se
+muestra en la pantalla de modelado.}
+
+Este es un caso muy conocido en la geometría molecular. En la pantalla de modelado se representa la molécula en
+la forma tetraédrica. Sin embargo, esta sólo es aplicable en los casos de enlaces ideales.
+
+En realidad lo que sucede, es que, al generar el enlace con los dos átomos de hidrógeno, el oxígeno queda con dos pares
+de electrones solitarios en su capa de valencia. Estos ejercen una fuerza de repulsión mayor sobre los pares enlazados, 
+reduciendo así el ángulo de 109.5º a 104.5º.
+
+\hspace{1cm}
+
+
+\begin{figure}[!htb]
+    \begin{minipage}{0.48\textwidth}
+      \centering
+      \includegraphics[height=7.5cm]{D:/KUKADisk/UDIMA/Quimica/Practicas/AEC1/p1p1e1.PNG}
+      \caption{Modelo, $H_2O$.}
+    \end{minipage}\hfill
+    \begin{minipage}{0.48\textwidth}
+      \centering
+      \includegraphics[height=7.5cm]{D:/KUKADisk/UDIMA/Quimica/Practicas/AEC1/p1p1e2.PNG}
+      \caption{Real, $H_2O$.}
+    \end{minipage}
+\end{figure}
+
+\newpage
+
+\subsection{Pregunta 2}
+
+\textbf{Explique por qué los ángulos de enlace en algunas moléculas reales no coinciden con el ángulo
+proyectado por la teoría RPECV – por ejemplo, $H_2O$, $SO_2$, $ClF_3$, $NH_3$, $SF_4$, $BrF_5$. (Fíjate en la ventana
+moléculas reales la diferencia entre real y modelo).}
+
+En este caso observemos el ejemplo de la molécula de $NH_3$:
+
+\begin{figure}[!htb]
+    \begin{center}
+        \includegraphics[height=6cm]{D:/KUKADisk/UDIMA/Quimica/Practicas/AEC1/p1p2e3.PNG}
+        \caption{Estructura química del Amoníaco, Wikipedia}
+    \end{center}
+\end{figure}
+
+
+Similarmente como sucede en la pregunta 1, todas las moléculas de este apartado tienen la característica de
+tener pares de electrones no enlazados (pares solitarios) que ejercen fuerza de repulsión mayor
+sobre los pares enlazados a los no enlazados y dismunyen los ángulos entre estos enlaces, generando
+la desviación observada.
+
+
+\begin{figure}[!htb]
+    \begin{minipage}{0.48\textwidth}
+      \centering
+      \includegraphics[height=7.5cm]{D:/KUKADisk/UDIMA/Quimica/Practicas/AEC1/p1p2e1.PNG}
+      \caption{Modelo, $NH_3$.}
+    \end{minipage}\hfill
+    \begin{minipage}{0.48\textwidth}
+      \centering
+      \includegraphics[height=7.5cm]{D:/KUKADisk/UDIMA/Quimica/Practicas/AEC1/p1p2e2.PNG}
+      \caption{Real, $NH_3$.}
+    \end{minipage}
+\end{figure}
+
+\newpage
+
+\subsection{Pregunta 3}
+
+\textbf{Construya una molécula que tenga una geometría electrónica octaédrica y una geometría
+molecular cuadrado planar.}
+
+\hspace{1cm}
+
+\begin{figure}[!htb]
+    \begin{center}
+        \includegraphics[height=10cm]{D:/KUKADisk/UDIMA/Quimica/Practicas/AEC1/p1p3e1.PNG}
+        \caption{Molécula }
+    \end{center}
+\end{figure}
+
+En este caso hemos construído la molécula con cuatro enlaces y dos pares de electrones solitarios. Ejemplos de
+moléculas con esta geometría pueden ser el Tetrafloruro de Xenon $XeF_4$ y el Tetracloruro de Platino $[PtCl_4]^{2-}$.
+
+
+\subsection{Pregunta 4}
+
+\textbf{Describa la diferencia entre la geometría molecular y la geometría electrónica.}
+
+La geometría molecular es la disposición tridimensional de los átomos que constituyen una molécula mientras que la
+geometría electrónica describe como se distribuyen los electrones en el espacio.
+
+
+\newpage
+
+\section{Solubilidad}
+
+
+Los objetivos de esta práctica son:
+
+\begin{itemize}
+    \item Relacionar volumen y cantidad de soluto en una concentración.
+    \item Calcular la concentración de las soluciones en unidades de molaridad (mol/L).
+    \item Utilizar la molaridad para calcular la dilución de las soluciones.
+    \item Comparar los límites de solubilidad entre solutos.
+\end{itemize}
+
+\subsection{Pregunta 1}
+
+\textbf{Elige la disolución que quieras, escoge una cantidad de soluto (entre 0,1 y 0,9), un volumen de
+disolución (entre 0,1 y 0,9) siempre que no esté saturada ¿es correcto el valor que proporciona el simulador? ¿Cómo hace el cálculo para obtener el
+valor de concentración?}
+
+\begin{figure}[!htb]
+    \begin{center}
+        \includegraphics[width=\textwidth]{D:/KUKADisk/UDIMA/Quimica/Practicas/AEC1/p2p1e1.PNG}
+        \caption{$KMnO_4$}
+    \end{center}
+\end{figure}
+
+Es correcto aunque redondea al 2o decimal. Haciendo el cálculo manualmente obtenemos el siguiente resultado utilizando la fórmula de la molaridad:
+
+\[
+    M=\frac{n}{v} \rightarrow
+    M=\frac{0.183}{0.701}=0.2610556348\dots \ M
+\]
+
+
+\subsection{Pregunta 2}
+\textbf{Realiza los cálculos para obtener los gramos de sulfato de cobre que hay disueltos en 0,1 L de
+disolución saturada.}
+
+Al ser una soluciona saturada, en este caso esta va a contener $0.1 \ mol$ o más de soluto.
+
+Sabiendo la masa molar:
+
+\[
+    \begin{matrix}
+        Cu && 63.5 \ g/mol\\
+        S && 32 \ g/mol \\
+        O && 16 \ g/mol
+    \end{matrix}
+\]
+
+Calculamos el peso molecular del $CuSO_4$. En total $159.5 \ g/mol$ y por lo tanto en nuestra disolución debe haber
+$15.95g$ de $CuSO_4$ como mínimo para que sea una disolución saturada.
+
+\subsection{Pregunta 3}
+
+
+\textbf{Calcula la solubilidad de las siguientes disoluciones y ponlas en la tabla.}
+
+\hspace{1cm}
+
+\begin{center}
+    \includegraphics[width=.7\textwidth]{D:/KUKADisk/UDIMA/Quimica/Practicas/AEC1/p2p3e1.PNG}
+\end{center}
+
+\textbf{¿Hay algunas que no puedas calcular? Ponlas con una x en tabla anterior.}
+
+
+Debido a que exceden molaridad 5, que es la máxima que permite el simulador, hay dos compuestos de los cuales no se ha podido calcular la solubilidad utilizando
+el simulador.
+
+\textbf{¿Podrías indicar si es mayor o menor de algún valor?}
+
+La solubilidad molar será mayor a 5 mol/L.
+
+\subsection{Pregunta 4}
+
+\textbf{Indica la relación entre las solubilidades y el producto de solubilidad del AuCl3.}
+
+\[
+    AuCl_3(s) \xrightleftharpoons[]{} Au^{3+}(ac) + 3Cl^-(ac)
+\]
+
+Entonces su Kps nos queda de la siguiente forma:
+
+\[
+    Kps=[AU^{3+}][Cl^-]^3=s \cdot (3s)^3=27s^4
+\]
+
+La Kps (constante del producto de solubilidad) nos indica entonces la relación entre la solubilidad y el producto de solubilidad.
+
+\subsection{Pregunta 5}
+
+\textbf{Calcula el producto de solubilidad del AuCl3.}
+
+\[
+    Kps=27(2.25^4)=692
+\]
+
+
+\section{Ácido-base}
+
+El objetivo de esta práctica es entender las distintas variables que influyen en las disoluciones ácido base
+sobre el valor del pH
+
+
+\subsection{Pregunta 1}
+
+\textbf{En la ventana Introducción calcula la constante del ácido débil o de la base débil (con
+uno de los dos es suficiente), necesitaras los valores que se obtienen con la Vistas de la Gráfica.}
+
+\begin{figure}[!htb]
+    \begin{center}
+        \includegraphics[width=.5\textwidth]{D:/KUKADisk/UDIMA/Quimica/Practicas/AEC1/p3p1e1.PNG}
+        \caption{Base Débil}
+    \end{center}
+\end{figure}
+
+
+
+% \[
+%     [B]=9.97 \cdot 10^{-3} \ mol/L
+% \]
+% \[
+%     [H_2O]=55.6 \ mol/L
+% \]
+% \[
+%     [BH^+]=3.16 \cdot 10^{-5} \ mol/L
+% \]
+% \[
+%     [OH^-]=3.16 \cdot 10^{-5} \ mol/L
+% \]
+
+Con los datos proporcionados por el simulador podemos calcular la constante de equilibrio:
+
+\[
+    K_b=\cfrac[]{[BH^+][OH^-]}{[B]}=\cfrac[]{x^2}{c_b}
+\]
+
+Sabiendo que $x=3.16 \cdot 10^{-5}$ y $c_b-x = [B]$:
+
+\[
+    x=9,99 \cdot 10^{-10} mol/L
+\]
+
+\[
+    c_b=9.97 \cdot 10^{-3}+3.16 \cdot 10^{-5}=0.01M
+\]
+
+\[
+    K_b=9,99 \cdot 10^{-8} \ M
+\]
+
+Comparamos el pH del simulador con la formula del pH:
+
+\[
+    pH=14-\frac{1}{2}pK_b+\frac{1}{2}log c_b=14-3.5-1=9.5
+\]
+
+
+\subsection{Pregunta 2}
+
+\textbf{En la ventana Introducción calcula la concentración inicial del ácido fuerte o de la base
+fuerte (con uno de los dos es suficiente), ten en cuenta que necesitaras los valores que se
+obtienen con la Vistas de la Gráfica.}
+
+\begin{figure}[!htb]
+    \begin{center}
+        \includegraphics[width=.5\textwidth]{D:/KUKADisk/UDIMA/Quimica/Practicas/AEC1/p3p2e1.PNG}
+        \caption{Base Fuerte}
+    \end{center}
+\end{figure}
+
+
+Como indica el simulador, al tratarse de una disolucion diluida, se desprecia [MOH] y por lo tanto
+la concentración base es 
+
+\[
+    [OH^-]=[M^+]=c_b \rightarrow c_b=1.00 \cdot 10^{-2} \ M
+\]
+
+Comparamos el pH:
+
+\[
+    14+log c_b=14-2=12
+\]
+
+\newpage
+
+\subsection{Pregunta 3}
+
+
+\textbf{En la ventana Mi disolución tienes que elegir un ácido o una base, una concentración
+inicial que no tenga un valor redondo, es decir que no sea 0,001 o 0,01 …, que sea débil. Una
+vez elegida debes calcular la constante del ácido o de la base que hayas elegido. Debes indicar
+los datos que has elegido, para ello pon un pantallazo de los valores, en los que se vea también
+la gráfica, y el valor del pH.}
+
+\begin{figure}[!htb]
+    \begin{center}
+        \includegraphics[width=.9\textwidth]{D:/KUKADisk/UDIMA/Quimica/Practicas/AEC1/p3p3e1.PNG}
+        \caption{Valores ácido débil}
+    \end{center}
+\end{figure}
+
+
+Podremos calcular la constante del ácido ayudándonos de la tabla ICE:
+
+\[
+    \begin{matrix}
+       I && 0.044 && - && 0 && 0\\
+       C && 0.044 - x && - && x && x\\
+       E && 0.044 - 6.62\cdot10^{-5} && - && 6.62\cdot10^{-5} && 6.62\cdot10^{-5}
+    \end{matrix}
+\]
+
+Calculamos la constante de acidez:
+
+\[
+    K_a=\frac{[H_3O^+][A^-]}{[HA]}=\frac{x^2}{c_a-x}=\frac{(6.62\cdot10^{-5})^2}{0.044-6.62\cdot10^{-5}}=9.975 \cdot 10^{-8}
+\]
+
+Comparamos el pH:
+
+\[
+    pH=\frac{1}{2}pK_a-\frac{1}{2}log c_a \rightarrow
+    pH=\frac{1}{2}7-\frac{1}{2}lg(0.044)=3.5+0.68=4.18
+\]
+
+
+
+\subsection{Pregunta 4}
+
+\textbf{¿Qué iones están presentes en una disolución ácida?}
+
+Siempre debe haber el ión Hidrógeno y el correspondiente del ácido A. Por ejemplo, HF(ac) sería ácido fluorhídrico.
+
+
+\subsection{Pregunta 5}
+
+\textbf{Un compañero afirma en un foro: "Los ácidos fuertes siempre tienen un pH más bajo que los
+ácidos débiles". ¿Estarías de acuerdo o en desacuerdo con esta afirmación? Usa evidencia de la
+simulación para apoyar tu razonamiento.}
+
+No estaría de acuerdo pues dependerá de la concentración del ácido como podemos observar:
+
+
+\begin{figure}[!htb]
+    \begin{center}
+        \includegraphics[height=7cm]{D:/KUKADisk/UDIMA/Quimica/Practicas/AEC1/p3p5e1.PNG}
+        \caption{Valores ácido débil altamente concentrado}
+    \end{center}
+\end{figure}
+
+\begin{figure}[!htb]
+    \begin{center}
+        \includegraphics[height=7cm]{D:/KUKADisk/UDIMA/Quimica/Practicas/AEC1/p3p5e2.PNG}
+        \caption{Valores ácido fuerte poco concentrado}
+    \end{center}
+\end{figure}
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

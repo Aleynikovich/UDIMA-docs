@@ -1,0 +1,90 @@
+\documentclass{article}
+\usepackage{lipsum}
+\usepackage[backend=biber]{biblatex}
+\addbibresource{aec2.bib}
+\usepackage{authoraftertitle}
+\usepackage[top=2cm,bottom=1.5cm,left=1.5cm, right=3cm,includeheadfoot]{geometry}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage[spanish]{babel}
+\usepackage{mathtools}
+\usepackage{csquotes}
+\usepackage{amssymb}
+\usepackage{fancybox, graphicx}
+\usepackage{array}
+\usepackage{hhline}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{caption}
+\usepackage{esvect}
+\usepackage{siunitx}
+\usepackage{commath}
+\newcommand{\ihat}{\textbf{\^\i}}
+\newcommand{\jhat}{\textbf{\^\j}}
+%Header & Footer
+
+\pagestyle{fancy}
+\fancyhead[LE]{\MyTitle}
+\fancyhead[LO]{Mecánica}
+%\fancyhead[RO]{\leftmark}
+%\fancyhead[RE]{\leftmark}
+\fancyfoot[L]{\raisebox{-1cm}{\includegraphics[height=2cm]{D:/KUKADisk/UDIMA/DocumentGraphics/LOGOUDIMA.jpg}}}
+\fancyfoot[R]{Corregido:\\ Dra. Isabel Cristina Gil García}
+%\fancyfoot[RO]{07/12/2018}
+
+
+%Vars
+\author{Alexander Sebastian Kalis}
+\title{asd}
+
+
+%DOC
+
+
+\begin{document}
+
+\begin{titlepage}
+
+    \begin{center}
+
+        \line(1,0){300}\\
+        [0.2in]
+        \huge{\bfseries {\MyTitle}}\\
+        [1mm]
+        \line(2,0){200}\\
+        [0.75cm]
+        \textsc{\LARGE Mecánica}\\
+        [2cm]
+        \includegraphics[height=10cm]{D:/KUKADisk/UDIMA/Mecanica/portada.jpg}\\
+        [3cm]
+
+    \end{center}
+
+    \begin{flushright}
+
+        Autor: {\MyAuthor}\\
+        Profesor: Dra. Isabel Cristina Gil García\\
+        Curso: Ingeniería de Organización Industrial\\
+        UDIMA 
+        \today        
+
+    \end{flushright}
+    
+\end{titlepage}
+
+\tableofcontents \thispagestyle{empty}
+\newpage
+
+\section{Introducción}
+
+
+\newpage
+
+\section{Actividades}
+    
+
+\end{document}

@@ -1,0 +1,783 @@
+\documentclass{article}
+\usepackage{lipsum}
+\usepackage[backend=biber]{biblatex}
+\addbibresource{aec2.bib}
+\usepackage{authoraftertitle}
+\usepackage[top=2cm,bottom=1.5cm,left=1.5cm, right=3cm,includeheadfoot]{geometry}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage[spanish]{babel}
+\usepackage{mathtools}
+\usepackage{csquotes}
+\usepackage{amssymb}
+\usepackage{fancybox, graphicx}
+\usepackage{array}
+\usepackage{hhline}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{caption}
+\usepackage{esvect}
+\usepackage{siunitx}
+\usepackage{commath}
+\newcommand{\ihat}{\textbf{\^\i}}
+\newcommand{\jhat}{\textbf{\^\j}}
+%Header & Footer
+
+\pagestyle{fancy}
+%\fancyhead[LE]{\MyTitle}
+\fancyhead[LO]{Análisis Matemático}
+%\fancyhead[RO]{\leftmark}
+%\fancyhead[RE]{\leftmark}
+\fancyfoot[L]{\raisebox{-1cm}{\includegraphics[height=2cm]{C:/Users/XYZ/Dropbox/DocumentGraphics/LOGOUDIMA.jpg}}}
+\fancyfoot[R]{Corregido:\\ Dr. Juan José Moreno García}
+%\fancyfoot[RO]{07/12/2018}
+
+
+%Vars
+\author{Alexander Sebastian Kalis}
+\title{Actividad de Evaluación Continua 2}
+
+
+%DOC
+
+
+\begin{document}
+
+\begin{titlepage}
+
+    \begin{center}
+
+        \line(1,0){300}\\
+        [0.2in]
+        \huge{\bfseries {\MyTitle}}\\
+        [1mm]
+        \line(2,0){200}\\
+        [0.75cm]
+        \textsc{\LARGE Análisis Matemático}\\
+        [2cm]
+        \includegraphics[height=10cm]{C:/Users/XYZ/Dropbox/DocumentGraphics/Calculus.png}\\
+        [3cm]
+
+    \end{center}
+
+    \begin{flushright}
+
+        Autor: {\MyAuthor}\\
+        Profesor: Dr. Juan José Moreno García\\
+        Curso: 1o, Ingeniería de Organización Industrial\\
+        UDIMA         
+
+    \end{flushright}
+    
+\end{titlepage}
+
+\tableofcontents \thispagestyle{empty}
+\newpage
+
+\section{Introducción}
+
+    Con la realización de esta actividad, se pretende ampliar los conocimientos que se han adquirido
+    durante la primera AEC y aplicarlos al concepto de funciones multivariable. También se trabajarán las 
+    ecuaciones diferenciales.
+
+    Aprovechando la introducción a \LaTeX, el alumno trata de ganar facilidad con esta herramienta desarrollando y presentando la actividad utilizando
+    este sistema.
+
+    Para agilizar el cálculo y la representación de los resultados obtenidos, siempre que sea posible, se ha utilizado el software
+    Wolfram$\vert$Alpha.
+
+\newpage
+
+\section{Actividades}
+    
+    \subsection{Problema 1}
+
+    \textit{Hallar los tres puntos críticos, y determinar su naturaleza, de la función:
+    \[f(x,y)=x^{2}y-x^2-2y^2+2.\]}
+            
+
+            Como visto en la p.249 del manual de la asignatura, \textit{``Sea $f(x,y)$ definida sobre el conjunto abierto $R \subset \mathbb{R}^2$. Se dice que $(a,b) \in R$ es un \textbf{punto crítico} si en $(a,b)$ se anulan las dos derivadas parciales primeras de la función o no existe alguna de ellas."} \cite{AnalisisMatematico} \\
+
+            Con lo cual para llegar a los puntos críticos, primero tomaremos las derivadas parciales $\frac{\partial f}{\partial x}$ y $\frac{\partial f}{\partial y}$:\\
+
+            \[\frac{\partial f}{\partial x}=2x(y-1)\]
+            \[\frac{\partial f}{\partial y}=x^2-4y\]
+
+            Se igualan a 0 para anular las derivadas parciales primeras y las resolvemos como sistema de ecuaciones:\\
+
+            $
+                \begin{cases}
+                    \frac{\partial f}{\partial x}=2x(y-1)=0\\
+                    \frac{\partial f}{\partial y}=x^2-4y=0
+                \end{cases}
+                \xRightarrow{obtenemos}
+            $
+            $
+                \begin{pmatrix*}[l]
+                    x=0 & , & y=0\\
+                    x=2 &, & y=1\\
+                    x=-2 &, & y=1
+                \end{pmatrix*}
+            $\\\\\\
+            Con lo cual los puntos críticos de $f(x,y)=x^{2}y-x^2-2y^2+2$ se encuentran en $(0,0)$, $(-2,1)$ y $(2,1)$. Para clasificar estos puntos, se requiere del uso de la prueba de la segunda derivada parcial: \[D(a,b):=f_{xx}(a,b)f_{yy}(a,b)-[f_{xy}(a,b)]^2\]
+
+            Computando las segundas derivadas parciales se obtiene: $f_{xx}=2y-2,\ f_{yy}=-4,\ f_{xy}=2x$\\
+            Entonces evaluamos los tres puntos críticos en $D(x,y)=-4x^2-8y+8$:\\
+
+            $D(0,0)=8>0$ y $f_{xx}(0,0)=-2<0$ con lo cual $(0,0)$ es un \textbf{máximo relativo}.
+
+            $D(-2,1)=-16<0$ entonces $(-2,1)$ es un \textbf{punto de silla}.
+        
+            $D(2,1)=-16<0$ entonces $(2,1)$ es un \textbf{punto de silla}.
+
+            \begin{figure}[!htb]
+                \begin{minipage}{0.48\textwidth}
+                  \centering
+                  \includegraphics[height=5.5cm]{C:/Users/XYZ/Dropbox/DocumentGraphics/AEC2Mates/problema1max.png}
+                  \caption{Máximo de $f$}
+                \end{minipage}\hfill
+                \begin{minipage}{0.48\textwidth}
+                  \centering
+                  \includegraphics[height=5.5cm]{C:/Users/XYZ/Dropbox/DocumentGraphics/AEC2Mates/problema1saddle.png}
+                  \caption{Puntos de silla de $f$}
+                \end{minipage}
+            \end{figure}
+   
+
+    \newpage
+
+    \subsection{Problema 2}
+
+        \textit{Hallar los máximos y mínimos (hay cuatro en total) que alcanza la función
+        $f(x,y)=3xy$ cuando $(x,y)$ recorre la elipse
+        \[x^2+y^2+xy=3.\]
+}
+        
+        Siguiendo el manual de la asignatura p.253\cite{AnalisisMatematico},  se utilizarán los multiplicadores de Lagrange para encontrar los extremos
+        condicionados.\\
+
+        \textit{``Se considera la función: $F(x,y,\lambda)=f(x,y)+\lambda g(x,y)$ y se resuelve el sistema,\\}
+
+        $\nabla F(x,y,\lambda)=0$\textit{, que es equivalente a:}
+        $
+            \begin{cases}
+                f_x(x,y)+\lambda g_x(x,y)=0\\
+                f_y(x,y)+\lambda g_y(x,y)=0\\
+                g(x,y)=0
+            \end{cases}
+        $"\\\\
+
+
+        Entonces tomamos $f_x(x,y):=3y, \ f_y(x,y):=3x, \ g_x(x,y):=2x+y, \ g_y(x,y):=2y+x$\\\\
+
+            $
+                \nabla F(x,y,\lambda)=0
+                \iff
+            $
+            $
+                \begin{cases}
+                    \lambda 2x+4y=0\\
+                    4x+\lambda 2y=0\\
+                    x^2+y^2+xy-3=0
+                \end{cases}
+                \iff
+            $
+            $
+                \begin{cases}
+                    \lambda =-\frac{2y}{x}=-\frac{2x}{y}\\
+                    x^2+y^2+xy=3
+                \end{cases}
+                \iff
+            $
+            $
+                \begin{cases}
+                    \lambda =-\frac{2y}{x}\\
+                    x^2=y^2\\
+                    x^2+y^2+xy=3
+                \end{cases}
+                \implies
+            $
+            \begin{center}
+            $
+                \implies
+                \begin{pmatrix*}[l]
+                    x=+1 & , & y=+1\\
+                    x=-1 & , & y=-1\\
+                    x=+\sqrt{3} & , & y=+\sqrt{3}\\    
+                    x=-\sqrt{3} & , & y=-\sqrt{3}
+                \end{pmatrix*}
+            $
+            \end{center}
+         
+
+            Con lo cual conseguimos los puntos $P_1\left(1,1\right), \ P_2\left(-1,-1\right), \ P_3\left(\sqrt{3},\sqrt{3}\right), \ P_4\left(-\sqrt{3},-\sqrt{3}\right)$.
+            
+            Se evalúa la función $f(x,y)=3xy$ en esos puntos:
+
+            \[f\left(1,1\right)=3 \ , \ f\left(-1,-1\right)=3 \ , \ f\left(\sqrt{3},\sqrt{3}\right)=9 \ , \ f\left(-\sqrt{3},-\sqrt{3}\right)=9\] 
+
+            Por lo tanto el valor máximo alcanzado por $f$ es 9 en $P_1\left(1,1\right), \ P_2\left(-1,-1\right)$ y su mínimo es 3 en los puntos $P_3\left(\sqrt{3},\sqrt{3}\right), \ P_4\left(-\sqrt{3},-\sqrt{3}\right)$
+            \[\]
+            
+            \begin{figure}[!htb]
+                \begin{minipage}{0.48\textwidth}
+                  \centering
+                  \includegraphics[height=4.5cm]{C:/Users/XYZ/Dropbox/DocumentGraphics/AEC2Mates/problema2max.png}
+                  \caption{Máximos de $f$}
+                \end{minipage}\hfill
+                \begin{minipage}{0.48\textwidth}
+                  \centering
+                  \includegraphics[height=4.5cm]{C:/Users/XYZ/Dropbox/DocumentGraphics/AEC2Mates/problema2min.png}
+                  \caption{Mínimos de $f$}
+                \end{minipage}
+            \end{figure}
+        
+
+            
+
+            
+
+\newpage
+    \subsection{Problema 3}
+
+    \textit{Calcular la siguiente integral:
+    \[I=\int{{\int_S\frac{1}{4}xy\ dy \ dx}}\]   
+    En donde S es la región limitada por las rectas $y=x+1, \ y=3x-1$ y el eje $y$.\\\\}
+    
+
+    \begin{wrapfigure}{r}{0.4\textwidth}
+        \centering
+        \includegraphics[height=4cm]{C:/Users/XYZ/Dropbox/DocumentGraphics/AEC2Mates/problema3vertices.png}
+        \caption{Región S}
+        \label{fig:fig5}
+    \end{wrapfigure}
+
+    Para visualizar el problema de forma gráfica, empezamos por encontrar los vértices del triángulo formado por las rectas $y=x+1, y=3x-1$ y el eje $y$:\\
+
+    $
+        \begin{cases}
+            y=x+1\\
+            y=3x-1   
+        \end{cases}
+        \implies
+    $
+    Vértice A $(1,2)$\\
+    
+    Los puntos de corte con $y$ de $y=x+1$ e $y=3x-1$ proporcionan vértices en B $(0,1)$ y C $(0,-1)$\\\\
+
+    Procedemos a integrar primero y tomando como límites en $y$ con las rectas proporcionadas por el enunciado. Posteriormente
+    se integra en en dominio de $x$ de $0$ a $1$ como se puede observar en la figura \ref{fig:fig5}:
+
+
+    \[
+        \int_{0}^{1}\left(\int_{3x-1}^{x+1}\frac{1}{4}xy \ dy \right) \ dx =
+        \int_{0}^{1}\left[\frac{y^2x}{8}\right]_{y=3x-1}^{x+1} dx =
+        \int_{0}^{1}-x^3+x^2 \ dx = 
+        \left[-\frac{x^4}{4}+\frac{x^3}{3}\right]_{x=0}^1 =
+        \frac{1}{12}
+    \]\\\\
+    
+    \subsection{Problema 4}
+
+    \textit{Calcular la integral
+    \[\int\int_D(4x+2) \ dA\]
+    En donde $D$ es la región encerrada por las curvas $y=x^2$ e $y=2x$.\\\\}
+    
+
+    \begin{wrapfigure}{r}{0.4\textwidth}
+        \centering
+        \includegraphics[height=4cm]{C:/Users/XYZ/Dropbox/DocumentGraphics/AEC2Mates/problema4vertices.png}
+        \caption{Región D}
+        \label{fig:fig6}
+    \end{wrapfigure}
+
+    Como en el problema anterior, se representa D de forma gráfica en la figura \ref{fig:fig6}.
+
+    \[
+        \int_0^2\left(\int_{x^2}^{2x} 4x+2 \ dy \right) \ dx =
+        \int_{0}^{2}\left[4xy+2y\right]_{y=x^2}^{2x} dx =
+    \]
+
+    \[
+        =\int_{0}^{2}-4x^3+6x^2+4x \ dx = 
+        \left[-x^4+2x^3+2x\right]_{x=0}^2 = 8    
+    \]
+
+
+    \newpage
+
+    \subsection{Problema 5}
+
+    \textit{Usando el cambio a coordenadas esféricas, calcular la integral
+    \[I=\iiint_{\si{\ohm}}e^{-\sqrt{(x^2+y^2+z^2)^3}}\ dx \ dy \ dz,\]
+    en donde $\si{\ohm}$ es todo $\mathbb{R}^3$.\\\\}
+    
+
+    Sabiendo que $\si{\ohm}$ es todo $\mathbb{R}^3$ y que $x^2+y^2+z^2=\rho^2$, \si{\ohm} se puede
+    representar en forma de coordenadas esféricas como:
+
+    \[\si{\ohm}=\left\{(\theta,\phi,\rho):0\leq\theta<2\pi,0\leq\phi\leq\pi,0\leq\rho<\infty\right\}\]
+
+    y su integral:
+
+    \[
+        \iiint_{\si{\ohm}}e^{-\sqrt{(x^2+y^2+z^2)^3}}\ dx \ dy \ dz=
+        \iiint_{\si{\ohm}}e^{-\sqrt{(\rho ^2)^3}}\rho^2\sen\phi \ d\theta \ d\phi \ d\rho=  
+        \int_0^\infty\left[\int_0^\pi\left(\int_0^{2\pi} e^{-p^3}\rho^2\sen\phi \ d \theta\right) d\phi\right] d \rho =       
+    \]
+    \[
+        =\int_0^\infty\left[\int_0^\pi 2\pi e^{-p^3}\rho^2\sen\phi \ d\phi\right] d \rho =
+        \int_0^\infty4\pi e^{-\rho^3}\rho^2 \ d \rho =
+        \left[-\frac{4\pi e^{-p^3}}{3}\right]_{\rho=0}^\infty=
+        -\frac{4\pi}{e^\infty 3}+\frac{4\pi}{3}=
+        0+\frac{4\pi}{3}=
+        \frac{4\pi}{3}
+    \]\\
+
+
+
+    \subsection{Problema 6}
+
+    
+    \begin{wrapfigure}{r}{0.4\textwidth}
+        \centering
+        \includegraphics[height=4cm]{C:/Users/XYZ/Dropbox/DocumentGraphics/AEC2Mates/problema6enun.png}
+    \end{wrapfigure}
+    \textit{ Sea \si{\ohm} la región limitada por el plano $z=2$ y por el paraboloide que está en todos los cuadrantes cuya superficie es descrita por}
+    \[2z=x^2+y^2.\]
+
+    \textit{Calcular}
+
+    \[I=\iiint_{\si{\ohm}}\left(x^2+y^2\right)dx \ dy \ dz.\]
+
+    \textit{ La situación está representada en la figura del al lado.}
+   
+
+    Se procederá a resolver el problema mediante conversión a coordenadas cilíndricas tal que $x=\rho\cos\theta, \ y=\rho\sen\theta, \ \rho^2=x^2+y^2, \ dx \ dy \ dz = \rho \ dz \ d\rho \ d\theta $, entonces nos queda la integral:\\
+
+    \[\iiint_{\si{\ohm}}\rho ^3 \ dz \ d\rho \ d\theta\]
+
+    A continuación se evalúan los límites de $\si{\ohm}$:\\
+
+    El paraboloide está en todos los cuadrantes, es decir, hace una revolución completa, por lo cual $\theta$ se evalúa de $0$ a $2\pi$.
+
+    El radio de la circumferencia es 2, por lo que $\rho$ se evalúa de 0 a 2.
+
+    Por último, $z$ está limitada superiormente por el plano $z=2$ e inferiormente por $z=\frac{x^2+y^2}{2}=\frac{\rho^2}{2}$
+
+    \[
+        \iiint_{\si{\ohm}}\rho ^3 \ dz \ d\rho \ d\theta=
+        \int_{0}^{2\pi}\int_{0}^{2}\int_{\frac{\rho^2}{2}}^{2} \rho^3 dz \ d\rho \ d\theta =
+        \int_{0}^{2\pi}\int_{0}^{2} 2\rho^3-\frac{\rho^5}{2} \ d\rho \ d\theta=
+        \int_{0}^{2\pi} \frac{8}{3} \ d\theta=\frac{16\pi}{3}
+    \]
+    
+    \subsection{Problema 7}
+
+    \textit{Hallar la integral curvilínea 
+    \[\oint(x^2+y^2)ds\]
+    sobre la circunferencia $x^2+y^2=ax$ para $a>0$.\\}
+    Hallar la integral curvilínea 
+    \[\oint(x^2+y^2)ds\]
+    sobre la circunferencia $x^2+y^2=ax$ para $a>0$.\\
+
+    Obtenemos que el radio de $x^2+y^2=ax$ es $\frac{a}{2}$, entonces parametrizamos $x$ e $y$ en función de $t$:
+
+    \[x=\frac{a\cos t}{2},y=\frac{a\sen t}{2}\]
+    \[\vec{r(t)}=\frac{a\cos t}{2}\ihat+\frac{a\sen t}{2}\jhat\]
+    \[\vec{r'(t)}=-\frac{a\sen t}{2}\ihat+\frac{a\cos t}{2}\jhat\]
+    \[ 
+        \norm{\vec{r'(t)}} =
+        \sqrt{\left(\frac{a\sen t}{2}\right)^2+\left(\frac{a\cos t}{2}\right)^2} =
+        \frac{a}{2}
+    \]
+    \[
+        \int_0^{2\pi} f\left(x(t),y(t)\right) \norm{\vec{r'(t)}} dt=
+        \int_0^{2\pi} \left(\frac{a\cos t}{2}\right)^2+\left(\frac{a\sen t}{2}\right)^2\frac{a}{2} \ dt=
+        \int_0^{2\pi} \frac{a^3}{8} \ dt =
+        \left[\frac{ta^3}{8}\right]_0^{2\pi}=
+        \frac{a^3\pi}{4}
+    \]\\
+
+    \subsection{Problema 8}
+    
+    \begin{wrapfigure}{l}{0.3\textwidth}
+        \centering
+        \includegraphics[height=4cm]{C:/Users/XYZ/Dropbox/DocumentGraphics/AEC2Mates/problema8enun.png}
+    \end{wrapfigure}
+
+
+    \textit{Calcular el área encerrada por la hipocicloide definida por $x^\frac{2}{3}+y^\frac{2}{3}=1$ 
+    usando la parametrización $x=\cos^3\theta, y=\sen^3\theta$, para $0\leq\theta\leq 2\pi$ y empleando el teorema de Green:
+    \[Area=\iint_S \ dx \ dy=\frac{1}{2}\int_\delta xdy-ydx.\]\\}
+    
+
+    Como ya tenemos $x$ e $y$ en forma parametrizada, y sabemos que vamos a integrar $\theta$ de 0 a $2pi$, solamente falta
+    obtener $dx$ y $dy$ para poder aplicar el teorema y desarrollar la integral:\\
+
+    \[x=\cos^3\theta, y=\sen^3\theta\implies dx=-3\cos^2\theta \sen\theta, \ dy=3\sen^2\theta \cos\theta\]
+
+    \[
+        \frac{1}{2}\int_0^{2\pi}3\cos^2\theta sin^4\theta + 3\cos^4\theta sin^2\theta \ d\theta=   
+        \frac{1}{2}\int_0^{2\pi}3\cos^2\theta \sen^2\theta\left(\sen^2\theta +\cos^2\theta\right)\ d\theta=
+        \frac{1}{2}\int_0^{2\pi}3\cos^2\theta \sen^2\theta \ d\theta=
+    \]
+    \[
+        =\frac{3}{2}\int_0^{2\pi}\frac{sin^2 2\theta}{4} \ d\theta=
+        \frac{3}{8}\int_0^{2\pi}\frac{1-cos4\theta}{2} \ d\theta=
+        \frac{3\pi}{8}
+    \]
+
+    \newpage
+    \subsection{Problema 9}
+
+    \begin{wrapfigure}{r}{0.3\textwidth}
+        \includegraphics[height=4cm]{C:/Users/XYZ/Dropbox/DocumentGraphics/AEC2Mates/problema9enun.png}
+    \end{wrapfigure}
+
+    \textit{Un globo aerostático que parte del nivel del mar a una determinada presión atmosférica y temperatura del aire dada alcanza como máximo 2 kilómetros de altura. Se ha podido determinar que la velocidad con la que sube sigue la ecuación.
+    \[\frac{dh}{dt}=30-15h,\]
+    en donde la altura $h$ está está expresada en kilómetros y el tiempo en horas. ¿Cuánto tarda en ascender hasta los 1000 metros de altura? ¿Qué altura habrá alcanzado al cabo de 6 minutos?\\\\}
+    
+
+    El método escogido para la resolución del problema es el método de diferenciales separables, aunque se puede resolver fácilmente también si se la tratan como
+    ecuaciones lineales:
+
+    \[
+        \frac{dh}{dt}=30-15h\rightarrow
+        \frac{\frac{dh}{dt}}{30-15h}=1\rightarrow
+        \int\frac{\frac{dh}{dt}}{30-15h} \ dt=\int 1 \ dt\rightarrow
+        -\frac{1}{15}ln(30-15h)=t+C_1\rightarrow
+        h(t)=-\frac{1}{15}e^{-15(t+C_1)}+2
+    \]
+    
+    Una vez obtenida $h(t)$ y sabiendo que disponemos de los valores iniciales $h(0)=0$ (instante en el que el globo empieza a ascender), podemos encontrar el valor de $C_1$ que satisface nuestra ecuación:
+
+    \[-\frac{1}{15}e^{-15C_1}+2=0\rightarrow C_1=-\frac{ln30}{15}\implies h(t)=-2e^{-15t}+2\]
+
+    Por último sólo nos queda evaluar $h(\frac{1}{10})$ para obtener la posición del globo al cabo de 6 minutos:
+
+    \[
+        h(t)=-2e^{-15(0.1)}+2\approx 1.55 km
+    \]
+
+    Para obtener el tiempo que tarda en ascender 1000m, se utilizará la función inversa $t(h)=-\frac{1}{15}ln\left(\frac{2-h}{2}\right)$ con $h=1$:
+
+    \[t(1)=-\frac{1}{15}ln\left(\frac{2-1}{2}\right)\approx0.046 \ horas\approx2.77 \ minutos\]
+
+    \newpage 
+
+    \subsection{Problema 10}
+    \textit{(Enunciado del problema 10...)}
+
+    Del extenso enunciado que se plantea en el problema 10, podemos extraer los datos más importantes para la resolución de la actividad planteada:
+
+    \textit{La diferencial que rige la evaporación de un agujero negro:}
+
+    \[-\frac{dM}{dt}=\frac{k}{M^2},\]
+
+    \textit{siendo $M$ la masa del agujero negro y $k$ la constante $k=0.3958\cdot10^{16} \ Kg^3/s$.\\}
+
+    \textit{Teniendo en cuenta todo esto, considérese que una supernova explota y deja como remanente un agujero negro con una masa de $2 \cdot 10^{30} kg$, que es una masa similar a la del Sol.
+    ¿Cuánto tiempo tardaría este agujero negro en evaporarse por completo? Se cree que es posible que en el Big Bang se produjeran agujeros negros primordiales, si se produjo uno con una
+    masa de $1,73 \cdot 10^{11} kg$, ¿cuándo se evaporaría por completo? ¿Cuánta masa pierde en el último segundo?}
+    
+
+    Al igual que en el problema anterior, se nos plantea la resolución de una diferencial ordinaria de primer orden que resolveremos mediante el método de separación
+    de variables:
+
+    \[
+        -\frac{dM}{dt}=\frac{k}{M^2}\rightarrow
+        -\int M^2 \ dM=\int k \ dt\rightarrow
+        M^3=-3(kt+C_1)\rightarrow
+        M=
+       \begin{cases}
+        -\sqrt[3]{-3}\sqrt[3]{-kt+C_1}\\
+        \sqrt[3]{3}\sqrt[3]{-kt+C_1}\\
+        \sqrt[3]{(-1)^2}\sqrt[3]{3}\sqrt[3]{-kt+C_1}
+       \end{cases}
+    \]
+
+    La única solución de M en $\mathbb{R}$ es $M=\sqrt[3]{3}\sqrt[3]{-kt+C_1}$. De modo que utilizaremos el valor inicial proporcionado por el enunciado 
+    $M(0)=2\cdot10^{30}$ (la masa del agujero negro al nacer) para encontrar la constante $C_1$, $M(t)$ y $t(M)$:
+
+    \[
+        2\cdot10^{30}=\sqrt[3]{3}\sqrt[3]{-k(0)+C_1}\rightarrow
+        C_1=\frac{8\cdot10^{90}}{3}\implies
+        \begin{cases}
+            M(t)=\sqrt[3]{3}\sqrt[3]{-kt+\frac{8\cdot10^{90}}{3}}\\
+            t(M)=-\frac{M^3-8\cdot 10^{90}}{3k}
+        \end{cases}        
+    \]
+
+    \textit{Considérese que una supernova explota y deja como remanente un agujero negro con una masa de $2 \cdot 10^{30} kg$, que es una masa similar a la del Sol.
+    ¿Cuánto tiempo tardaría este agujero negro en evaporarse por completo?}\\
+
+    \[
+        t(0)=\frac{8\cdot 10^{90}}{3\cdot 0.3958\cdot 10^{16}}
+        \approx 6.73741\cdot 10^{74} \ segundos \approx 2.135002 \cdot 10^{64} \ milenios
+    \]\\
+    
+    \textit{Se cree que es posible que en el Big Bang se produjeran agujeros negros primordiales, si se produjo uno con una
+    masa de $1.73 \cdot 10^{11} kg$, ¿cuándo se evaporaría por completo? ¿Cuánta masa pierde en el último segundo?}\\
+
+    Considerando que este agujero negro tiene características distintas, y sus valores iniciales son \newline $M(0)=1.73\cdot 10^{11}$, la constante $C$ 
+    también será distinta:
+
+    \[
+        1.73\cdot 10^{11}=\sqrt[3]{3}\sqrt[3]{-k(0)+C_2}\rightarrow
+        C_2=\frac{\left({1.73 \cdot 10^{11}}\right)^3}{3}\implies
+        \begin{cases}
+            M(t)=\sqrt[3]{3}\sqrt[3]{-kt+\frac{\left({1.73 \cdot 10^{11}}\right)^3}{3}}\\
+            t(M)=-\frac{M^3-\frac{\left({1.73 \cdot 10^{11}}\right)^3}{3}}{3k}
+        \end{cases}        
+    \]
+
+    \newpage
+    Tiempo que tardará en evaporarse por completo:\\
+
+    \[
+        t(0)=-\frac{0^3-\frac{\left({1.73 \cdot 10^{11}}\right)^3}{3}}{3k}\approx
+        1.45352\cdot 10 ^{17} \ segundos\approx
+        4\,606\,025 \ milenios
+    \]\\   
+
+    Para evaluar la masa perdida durante el último segundo de su existencia, calculamos la masa justo en el penúltimo segundo, es decir, $t(0)-1$
+
+    \[
+        M(t(0)-1)=
+        \sqrt[3]{3}\sqrt[3]{-k\left(t(0)-1\right)+\frac{\left({1.73 \cdot 10^{11}}\right)^3}{3}}=
+    \]
+    \[
+        \sqrt[3]{3}\sqrt[3]{-0.3958\cdot 10^{16}\left(\frac{\frac{\left(1.73\:\cdot \:\:10^{11}\right)^3}{3}}{3\cdot \:0.3958\cdot \:10^{16}}-1\right)+\frac{\left(1.73\:\cdot \:10^{11}\right)^3}{3}}=
+        151\,129\,420\,399.3795 \ Kg    
+    \]\\
+
+
+    \subsection{Problema 11}
+
+    \textit{Resolver el siguiente problema de valores iniciales:}
+
+    \[y''+4y'-5y=0, \ y(0)=0, y'(0)=6.\]
+    
+
+    Es una ecuación homogénea de coeficientes constantes y su polinomio característico es
+
+    \[\lambda^2+4\lambda-5=0 \]
+
+    Que tiene como raíces: 
+    
+    \[\lambda_1=-5, \ \lambda_2=1\]
+    
+    que son reales y distintas y, por tanto, la solución de la homogénea es:
+    \[y=c_1e^{-5t}+c_2e^{t} \ , \ y'=-5c_1e^{-5t}+c_2e^t\]
+
+
+    \begin{wrapfigure}{r}{0.5\textwidth}
+        \centering
+        \includegraphics[height=4cm]{C:/Users/XYZ/Dropbox/DocumentGraphics/AEC2Mates/problema11fig.png}
+        \caption{Gráficas de $y(t)$ e $y'(t)$}
+        \label{Figura 7}
+    \end{wrapfigure}
+
+
+    Se aplica los valores iniciales para encontrar $c_1$ y $c_2$:\\
+    
+    $
+    \begin{cases}
+        0=c_1+c_2\\
+        6=-5c_1+c_2
+    \end{cases}\implies
+    $
+    $
+    \begin{cases}
+        c_1=-1\\
+        c_2=1
+    \end{cases}
+    $\\\\
+
+    Así que la solución para esos valores iniciales es
+    \[y(t)=e^t-e^{-5t}\]
+
+    \newpage
+
+    \subsection{Problema 12}
+
+    \textit{Resolver el siguiente problema de valores iniciales:}
+
+    \[y''-3y'-18y=18t+6 \ , \ y(0)=0 \ , \ y'(0)=6.\]\\
+    
+
+    En este caso tratamos con una ecuación lineal no homogénea. Con lo cual primero resolvemos la ecuación correspondiente 
+    homogénea:
+    \[y''-3y'-18y=0\]
+
+    Que tiene como polinomio característico
+
+    \[\lambda^2-3\lambda-18=0\]
+
+    Y sus raíces son
+    \[\lambda_1=6, \ \lambda_2=-3\]
+
+    Entonces la ecuación general homogénea $y_h$ es
+
+    \[y_h=c_1e^{6t}+c_2e^{-3t}\]
+
+    Y como $f(t)$ es un polinomio de primer grado, podemos esperar que la solución sea de la forma $y_p=K_1t+K_0$
+
+    \[      \left(\left(K_1t+K_0\right)\right)''-3\left(\left(K_1t+K_0\right)\right)'-18\left(K_1t+K_0\right)=18t+6   \]
+    \[      0-3K_1-18K_1t-18K_0=18t+6  \]
+
+    \begin{center}
+        $
+        -18K_1t+\left(-3K_1-18K_0\right)=18t+6\rightarrow 
+        \begin{cases}
+            -18K_1=18\\
+            -3K_1-18K_0=6
+        \end{cases}
+        \implies
+        K_1=-1$, $K_0=-\frac{1}{6}
+        $
+    \end{center}
+
+    Con lo que nos queda $y_p=-1t-\frac{1}{6}$
+
+    Conocemos la solución general de las ecuaciones no homogéneas:
+
+    \[y(t)=y_h(t)+y_p(t)\]
+
+    \[y(t)=c_1e^{6t}+c_2e^{-3t}-t-\frac{1}{6}\]
+
+    Se aplican el valor inicial conocido $y(0)=0$
+
+    \[0=c_1+c_2-\frac{1}{6}\implies c_1=\frac{1}{6}-c_2\]
+
+    Se sustituye $c_1=\frac{1}{6}-c_2$ y deriva $y$.
+
+    \[y(t)'=-3c_2e^{-3t}+e^{6t}-6c_2e^{6t}-1\]
+
+    Se aplican el valor inicial conocido  $y'(0)=6$
+
+    \[6=-3c_2+1-6c_2-1\rightarrow6=-6c_2\rightarrow c_2=-\frac{2}{3}\]
+
+    Finalmente se expresa $y(t)$ con las constantes obtenidas
+
+    \[y(t)=\left(-\frac{2}{3}+\frac{1}{6}\right)e^{6t}-\frac{2}{3}e^{-3t}-t-\frac{1}{6}\]
+
+ 
+    \newpage
+
+    \subsection{Problema 13}
+
+    \textit{Resolver, usando transformada de Laplace, la siguiente ecuación diferencial:}
+
+    \[y''+25y=0, \ y(0)=1, \ y'(0)=5.\]\\
+    
+
+    Aplicamos la transformada de Laplace y operamos\\
+    \[\mathcal{L}_t\left[f(t)\right](s)=\int_0^\infty f(t)e^{-st} \ ds\]
+
+    \[\mathcal{L}_t\left[y''(t)+25y(t)\right](s)=\mathcal{L}_t[0]ds\]
+
+    \[\mathcal{L}_t\left[y''(t)+25y(t)\right](s)=0\]
+
+    \[s^2\left(\mathcal{L} [y(t)(s)\right) -sy(0) - y'(0) + 25\left(\mathcal{L}_t[y(t)](s)\right)=0\]\\
+
+    Se aplican los valores iniciales conocidos $y(0)=1$ e $y'(0)=5$ y se simplifica la ecuación\\
+    \[-s+(s^2+25)\left(\mathcal{L}_t \left[y(t)\right](s)\right)+s^2 \left(\mathcal{L}_t\left[y(t)\right](s)\right)=0\]
+
+    Se despeja $\mathcal{L}_t\left[y(t)\right](s)$
+
+    \[\mathcal{L}_t\left[y(t)\right](s)=\frac{s+5}{s^2+25}\]\\
+
+    Se descompone la fracción compuesta en fracciones simples
+
+    \[\mathcal{L}_t\left[y(t)\right](s)=\frac{5}{s^2+25}+\frac{s}{s^2+25}\]\\
+
+    Se aplica la antitransformada en ambos lados
+
+    \[y(t)=\mathcal{L}_s^{-1}\left[\frac{5}{s^2+25}\right](t)+\mathcal{L}_s^{-1}\left[\frac{s}{s^2+25}\right](t)\]\\
+
+    Consultando la tabla de las transformadas, podemos deducir fácilmente la antitransformada
+        \[\sen\omega t=\frac{\omega}{s^2+\omega^2}, \ \cos\omega t=\frac{s}{s^2+\omega^2}  \]
+
+    Con lo cual la solución es
+
+    \[y(t)=\sen(5t)+\cos(5t)\]
+    
+    \newpage
+
+
+    \subsection{Problema 14}
+
+    \textit{Resolver, usando transformada de Laplace, la siguiente ecuación diferencial:}
+
+    \[y''-7y'+10y=4e^t, \ y(0)=1, \ y'(0)=3.\]\\
+    
+
+    Aplicamos la transformada de Laplace y operamos\\
+    \[\mathcal{L}_t\left[f(t)\right](s)=\int_0^\infty f(t)e^{-st} \ ds\]
+
+    \[\mathcal{L}_t\left[y''(t)-7y'(t)+10y(t)\right](s)=\mathcal{L}_t\left[4e^t\right](s)\]
+
+    \[\mathcal{L}_t \left[ y''(t)\right] (s) - 7 \left(\mathcal{L}_t\left[y'(t)\right](s)\right) + 10\left(\mathcal{L}_t\left[y(t)\right](s)\right) = 4\left(\mathcal{L}_t\left[e^t\right](s)\right)\]
+
+    \[s^2\left(\mathcal{L}_t \left[y(t)\right](s)\right) - sy(0) - y'(0) - 7s\left(\mathcal{L}_t\left[y(t)\right](s)\right) - y(0) + 10\left(\mathcal{L}_t\left[y(t)\right](s)\right) = \frac{4}{s-1}\]\\
+
+    Sustituimos los valores inicial conocidos $y(0)=1$ e $y'(0)=3$ y simplificamos la ecuación\\
+    \[s^2\left(\mathcal{L}_t \left[y(t)\right](s)\right) - s - 3 - 7s\left(\mathcal{L}_t\left[y(t)\right](s)\right) - 1 + 10\left(\mathcal{L}_t\left[y(t)\right](s)\right) = \frac{4}{s-1}\]
+
+    \[\left(\mathcal{L}_t\left[y(t)\right](s)\right) + \left(s^2-7s+10\right) -s + 4  = \frac{4}{s-1}\]
+
+    Despejamos $\mathcal{L}_t\left[y(t)\right](s)$
+
+    \[\mathcal{L}_t\left[y(t)\right](s)=\frac{s^2-5s+8}{(s^2-7s+10)(s-1)}\]\\
+
+    Descomponemos la fracción compleja en fracciones simples y nos queda
+
+    \[\mathcal{L}_t\left[y(t)\right](s) = \frac{2}{3(s-5)} - \frac{2}{3(s-2)} + \frac{1}{s-1}\]\\
+
+    Aplicamos la antitransformada y operamos siguiendo las tablas de transformadas
+
+    \[y(t)=\mathcal{L}_s^{-1}\left[  \frac{2}{3(s-5)} - \frac{2}{3(s-2)} + \frac{1}{s-1}  \right]\]
+
+    \[\mathcal{L}_s^{-1}\left[ \frac{2}{3(s-5)}\right ] = \mathcal{L}_s^{-1}\left[ \frac{2}{3}\cdot\frac{1}{s-5}\right] = \frac{2}{3} \mathcal{L}_s^{-1} \left[\frac{1}{s-5}\right] = \frac{2}{3}e^{5t}  \]
+    \[\mathcal{L}_s^{-1}\left[-\frac{2}{3(s-2)}\right] = \mathcal{L}_s^{-1}\left[ -\frac{2}{3}\cdot\frac{1}{s-2}\right] = -\frac{2}{3} \mathcal{L}_s^{-1} \left[\frac{1}{s-2}\right] = -\frac{2}{3}e^{2t}\]
+
+    \[y(t) = \frac{2e^{5t}}{3} - \frac{2e^{2t}}{3} + e^t\]
+
+
+
+    \newpage
+
+    \subsection{Problema opcional}
+    \textit{Enunciado del problema opcional...}
+
+    Del enunciado se concluye que se debe solucionar el sistema de ecuaciones de diferenciales
+
+    $$
+        \begin{cases}
+            x'=-3x+2y\\
+            y'=-3x+3y
+        \end{cases}
+    $$
+
+    Con los valores iniciales $x(0)=0$ e $y(0)=1$\\
+
+    Lamentablemente el alumno no ha podido llegar al tema 10 de sistemas de ecuaciones diferenciales, sin embargo, si que conoce la solución al problema.
+    
+    La relación entre los dos no será feliz, ya que sus famílias son hostiles entre ellas. Esta relación solamente dura 3 días
+    hasta que Romeo y Julieta se suicidan.
+
+    \begin{center}
+        \includegraphics{C:/Users/XYZ/Dropbox/DocumentGraphics/AEC2Mates/romeo.jpg}
+    \end{center}
+
+\newpage
+\printbibliography
+
+\end{document}

@@ -1,0 +1,235 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{geometry}
+\usepackage{hyperref}
+\geometry{margin=1in}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue,
+    pdftitle={Caso Práctico II: Gestión de Costes y Riesgos},
+    pdfauthor={Antonio Lana Rivera, Alexander Sebastián Kalis, Víctor Jesús Lucendo Garrido}
+}
+
+\begin{document}
+
+% Portada
+\begin{titlepage}
+    \centering
+    {\Huge \textbf{Universidad a Distancia de Madrid (UDIMA)}}\\[2cm]
+    {\Large \textbf{Gestión de Proyectos}}\\[0.5cm]
+    {\large \textbf{Caso Práctico II: Gestión de Costes y Riesgos}}\\[4cm]
+    {\large \textbf{Autores:}}\\[0.5cm]
+    {\large Antonio Lana Rivera}\\
+    {\large Alexander Sebastián Kalis}\\
+    {\large Víctor Jesús Lucendo Garrido}\\[2cm]
+    {\large \textbf{Profesor Responsable:}}\\[0.5cm]
+    {\large Juan Luis Rubio Sánchez}\\[4cm]
+    {\large \textbf{Fecha:}} \today
+    \vfill
+\end{titlepage}
+
+% Índice
+\tableofcontents
+\newpage
+
+\section*{Datos Generales}
+\begin{itemize}
+    \item \textbf{Asignatura:} Gestión de Proyectos
+    \item \textbf{Profesor responsable:} Juan Luis Rubio Sánchez
+    \item \textbf{Universidad:} Universidad a Distancia de Madrid (UDIMA)
+    \item \textbf{Tipo de actividad:} Caso Práctico II
+    \item \textbf{Autores:} Antonio Lana Rivera, Alexander Sebastián Kalis, Víctor Jesús Lucendo Garrido
+\end{itemize}
+
+\section{Introducción}
+El presente caso práctico se centra en la evaluación de métricas clave para la gestión de un proyecto compuesto por seis subproyectos secuenciales. Utilizando las técnicas estudiadas en la asignatura, se realiza un análisis del estado actual del proyecto, se calculan las proyecciones necesarias para su finalización y se ofrecen reflexiones para mejorar la eficiencia y el control del mismo.
+
+\section{Descripción del proyecto}
+El proyecto está dividido en seis subproyectos, cada uno con una duración estimada de tres meses y un coste planificado de 10,000 €. A continuación, se detalla el estado del proyecto al finalizar el mes 12:
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|}
+        \hline
+        \textbf{Subproyecto} & \textbf{Progreso (\%)} & \textbf{Coste Real (AC) (\texteuro)} \\
+        \hline
+        T1 & 100\% & 10,000 \\
+        T2 & 100\% & 11,000 \\
+        T3 & 100\% & 12,000 \\
+        T4 & 5\%   & 700 \\
+        \hline
+    \end{tabular}
+    \caption{Estado del proyecto al mes 12}
+\end{table}
+\section{Cálculo de métricas clave}
+
+A continuación, se presentan los cálculos de las principales métricas para evaluar el estado del proyecto al mes 12:
+
+\begin{itemize}
+    \item \textbf{Valor planificado (\(PV\)):} Representa el trabajo que debería haberse completado según el plan original:
+    \[
+    PV = 10,000 + 10,000 + 10,000 + (0.05 \times 10,000) = 40,500 \, \texteuro.
+    \]
+
+    \item \textbf{Valor ganado (\(EV\)):} Refleja el trabajo realmente completado, considerando el avance real de cada tarea:
+    \[
+    EV = (1.0 \times 10,000) + (1.0 \times 10,000) + (1.0 \times 10,000) + (0.05 \times 10,000) = 35,500 \, \texteuro.
+    \]
+
+    \item \textbf{Coste real (\(AC\)):} La suma de los costes incurridos en los subproyectos completados y en progreso:
+    \[
+    AC = 10,000 + 11,000 + 12,000 + 700 = 33,700 \, \texteuro.
+    \]
+
+    \item \textbf{Variación de costes (\(CV\)):} Indica si el proyecto está por debajo o por encima del presupuesto:
+    \[
+    CV = EV - AC = 35,500 - 33,700 = 1,800 \, \texteuro.
+    \]
+
+    \item \textbf{Índice de rendimiento de costes (\(CPI\)):} Mide la eficiencia del uso del presupuesto:
+    \[
+    CPI = \frac{EV}{AC} = \frac{35,500}{33,700} \approx 1.05.
+    \]
+
+    \item \textbf{Variación del cronograma (\(SV\)):} Mide la desviación del proyecto respecto al plan:
+    \[
+    SV = EV - PV = 35,500 - 40,500 = -5,000 \, \texteuro.
+    \]
+
+    \item \textbf{Índice de rendimiento del cronograma (\(SPI\)):} Mide la eficiencia del uso del tiempo:
+    \[
+    SPI = \frac{EV}{PV} = \frac{35,500}{40,500} \approx 0.88.
+    \]
+
+    \item \textbf{Presupuesto al finalizar (\(BAC\)):} El presupuesto total del proyecto:
+    \[
+    BAC = 6 \times 10,000 = 60,000 \, \texteuro.
+    \]
+
+    \item \textbf{Estimación al finalizar (\(EAC\)):} Considerando el índice de rendimiento de costes:
+    \[
+    EAC = \frac{BAC}{CPI} = \frac{60,000}{1.05} \approx 57,143 \, \texteuro.
+    \]
+
+    \item \textbf{Estimación para completar (\(ETC\)):} Calculada como:
+    \[
+    ETC = EAC - AC = 57,143 - 33,700 \approx 23,443 \, \texteuro.
+    \]
+\end{itemize}
+
+\section{Proyección para los trimestres finales}
+Dado que los subproyectos restantes (\(T5\) y \(T6\)) tienen un coste planificado de \(10,000 \, \texteuro\) cada uno, se proyecta:
+\begin{itemize}
+    \item \(PV_{\text{final}} = 60,000 \, \texteuro\).
+    \item \(EV_{\text{final}} = 60,000 \, \texteuro\).
+    \item \(AC_{\text{final}} = AC_{\text{actual}} + 20,000 = 53,700 \, \texteuro\).
+    \item \(CV_{\text{final}} = EV - AC = 60,000 - 53,700 = 6,300 \, \texteuro\).
+    \item \(EAC_{\text{final}} = 53,700 \, \texteuro\).
+\end{itemize}
+
+\section{Representación gráfica}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{grafica.png}
+    \caption{Evolución de PV, EV y AC en el proyecto.}
+    \label{fig:grafica-proyecto}
+\end{figure}
+
+\section{Conclusiones y recomendaciones}
+El análisis muestra un control eficiente de los costes (\(CPI > 1\)), pero evidencia retrasos en el cronograma (\(SPI < 1\)). Para mejorar el rendimiento del proyecto, se recomienda:
+\begin{itemize}
+    \item Implementar medidas de aceleración para reducir los retrasos.
+    \item Realizar un seguimiento más detallado del avance en los subproyectos \(T5\) y \(T6\).
+    \item Mejorar la comunicación entre los equipos responsables para garantizar la finalización en los plazos estimados.
+\end{itemize}
+
+
+\section{Gestión de riesgos: Enunciado 2}
+
+\subsection{Descripción del escenario}
+El subproyecto \( T4 \) está sujeto a la amenaza \( A4 \), cuya probabilidad de ocurrencia es alta. Dado que \( T4 \) tiene un valor muy alto para la conclusión exitosa del proyecto, cualquier impacto en esta actividad afecta directamente a los subproyectos dependientes (\( T5 \) y \( T6 \)). Aunque \( T5 \) y \( T6 \) también son importantes, existen alternativas viables en caso de problemas. En este contexto, se requiere un análisis detallado del impacto y las acciones necesarias para mitigar el riesgo.
+
+\subsection{Relaciones entre subproyectos}
+Las dependencias entre los subproyectos se representan de la siguiente manera:
+\[
+T4 \rightarrow T5 \rightarrow T6
+\]
+Esto significa que el éxito de \( T5 \) depende de \( T4 \), y el de \( T6 \) depende tanto de \( T4 \) como de \( T5 \).
+
+\subsection{Valores acumulados y conjuntos supremos}
+El valor individual de los subproyectos se clasifica como:
+\begin{itemize}
+    \item \( T4 \): Muy Alto (\( MA \))
+    \item \( T5 \): Alto (\( A \))
+    \item \( T6 \): Alto (\( A \))
+\end{itemize}
+
+El conjunto supremo de cada activo se define como los activos de los que depende directamente:
+\[
+\text{SUP}(T4) = \emptyset, \quad \text{SUP}(T5) = \{T4\}, \quad \text{SUP}(T6) = \{T4, T5\}.
+\]
+
+Los valores acumulados (\( VAc \)) para cada activo son:
+\begin{align*}
+VAc(T4) &= MA, \\
+VAc(T5) &= \max(V(T5), VAc(T4)) = \max(A, MA) = MA, \\
+VAc(T6) &= \max(V(T6), VAc(T5)) = \max(A, MA) = MA.
+\end{align*}
+
+\subsection{Impactos acumulados y repercutidos}
+La amenaza \( A4 \) afecta directamente a \( T4 \), causando una degradación de nivel \( MA \). Evaluamos los riesgos acumulados:
+\[
+I(T4) = MA \times MA = MA.
+\]
+El riesgo acumulado a partir de la probabilidad de la amenaza es:
+\[
+R(T4) = P(A4) \times I(T4) = 0.8 \times MA = MA.
+\]
+
+Para los impactos repercutidos, evaluamos:
+\[
+IR(T4) = \max(\text{Deg}(T5, T6)) \times V(T4) = \max(A, A) \times MA = A \times MA = MA.
+\]
+
+\subsection{Estrategias de mitigación}
+Para minimizar los riesgos asociados a \( A4 \), se proponen las siguientes estrategias:
+
+\begin{enumerate}
+    \item \textbf{Reasignación de recursos:} Incrementar los recursos humanos y técnicos en \( T4 \) para garantizar que los posibles retrasos se minimicen.
+    \item \textbf{Planes de contingencia:} Crear alternativas viables para ejecutar \( T5 \) y \( T6 \) en caso de interrupciones en \( T4 \). Esto incluye:
+    \begin{itemize}
+        \item Definir actividades paralelas que compensen posibles retrasos.
+        \item Mantener personal especializado en estado de disponibilidad.
+    \end{itemize}
+    \item \textbf{Reducción de probabilidad:} Implementar medidas de prevención para disminuir la probabilidad de ocurrencia de \( A4 \) de 0.8 a 0.3.
+    \item \textbf{Mitigación del impacto:} Invertir en tecnologías o procesos que reduzcan el impacto financiero y temporal en caso de materialización del riesgo.
+    \item \textbf{Presupuesto adicional:} Crear un fondo de contingencia para cubrir impactos residuales.
+\end{enumerate}
+
+\subsection{Cálculo de \( RAR \) y \( RRR \)}
+
+\begin{itemize}
+    \item \textbf{Riesgo asumido residual (\( RAR \))}: Antes de aplicar las estrategias, con una probabilidad \( P(A4) = 0.8 \) y un impacto sin mitigación de \( 15,000 \, \texteuro \), tenemos:
+    \[
+    RAR = P(A4) \times \text{Impacto no mitigado} = 0.8 \times 15,000 = 12,000 \, \texteuro.
+    \]
+    \item \textbf{Riesgo repercutido residual (\( RRR \))}: Tras implementar las estrategias, la probabilidad se reduce a \( 0.3 \) y el impacto financiero disminuye a \( 5,000 \, \texteuro \):
+    \[
+    RRR = P(A4) \times \text{Impacto mitigado} = 0.3 \times 5,000 = 1,500 \, \texteuro.
+    \]
+\end{itemize}
+
+\subsection{Conclusión}
+
+Con las medidas propuestas, el riesgo residual del proyecto se reduce significativamente de \( 12,000 \, \texteuro \) a \( 1,500 \, \texteuro \). Esto garantiza que el impacto de \( A4 \) se mantenga dentro de niveles aceptables, permitiendo la continuidad del proyecto. Este enfoque refuerza la capacidad del equipo para gestionar incertidumbres y salvaguarda la conclusión exitosa del proyecto.
+
+
+
+\end{document}

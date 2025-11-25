@@ -1,0 +1,241 @@
+\documentclass{article}
+\usepackage{lipsum}
+\usepackage[backend=biber]{biblatex}
+\usepackage{authoraftertitle}
+\usepackage[top=2cm,bottom=1.5cm,left=1.5cm, right=3cm,includeheadfoot]{geometry}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage[spanish]{babel}
+\usepackage{mathtools}
+\usepackage{csquotes}
+\usepackage{amssymb}
+\usepackage{fancybox, graphicx}
+\usepackage{array}
+\usepackage{hhline}
+\usepackage{hyperref}
+\usepackage{parskip}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{siunitx}
+\usepackage{amsmath}
+\usepackage{caption}
+\usepackage{esvect}
+\usepackage{siunitx}
+\usepackage{commath}
+\newcommand{\ihat}{\textbf{\^\i}}
+\newcommand{\jhat}{\textbf{\^\j}}
+%Header & Footer
+
+\pagestyle{fancy}
+%\fancyhead[LE]{\MyTitle}
+\fancyhead[LO]{Técnicas de optimización de sistemas industriales}
+%\fancyhead[RO]{\leftmark}
+%\fancyhead[RE]{\leftmark}
+\fancyfoot[L]{\raisebox{-1cm}{\includegraphics[height=1.5cm]{D:/KUKADisk/UDIMA/DocumentGraphics/LOGOUDIMA.jpg}}}
+\fancyfoot[R]{Corregido:\\ Dr. Fco. David de la Peña Esteban}
+%\fancyfoot[RO]{07/12/2018}
+
+
+%Vars
+\author{Alexander Sebastian Kalis}
+\title{AEC 2 - Unidades 2, 4 y 6}
+
+
+%DOC
+
+
+\begin{document}
+
+\begin{titlepage}
+
+    \begin{center}
+
+        \line(1,0){300}\\
+        [0.2in]
+        \huge{\bfseries {\MyTitle}}\\
+        [1mm]
+        \line(2,0){200}\\
+        [0.75cm]
+        \textsc{\LARGE Técnicas de optimización de sistemas industriales}\\
+        [2cm]
+        \includegraphics[height=10cm]{D:/KUKADisk/UDIMA/OptimizacionIndustrial/AEC2/portada.png}\\
+        [3cm]
+
+    \end{center}
+
+    \begin{flushright}
+
+        Autor: {\MyAuthor}\\
+        Profesor: Dr. Fco. David de la Peña Esteban\\
+        Curso: Ingeniería de Organización Industrial\\
+        UDIMA         
+
+    \end{flushright}
+    
+\end{titlepage}
+
+\section*{Caso 1. Teoría de juegos}
+
+\subsection*{1.A.}
+
+Existen dos plataformas de streaming de películas y series que se reparten un mismo
+segmento de mercado, y están analizando las estrategias a seguir en España para el próximo
+año. En principio este segmento de mercado está saturado, y los clientes que gana una
+compañía, los pierde la otra.
+La matriz de pagos, donde pone los clientes (en miles) que gana uno y pierde el otro es:
+
+\begin{center}
+    \includegraphics[height=4cm]{D:/KUKADisk/UDIMA/OptimizacionIndustrial/AEC2/p1ae1.PNG}\\
+\end{center}
+
+Se pide:
+
+-Aplicando el método de maximin – minimax ¿existe punto de equilibrio? ¿cuál es?\\
+-Aplicar estrategias dominadas y determinar el punto de equilibrio, si es que existe.\\
+
+Aplicando maximin - minimax podemos ver que existe el punto de equilibrio cuando el jugador 1 aplica la estrategia 1 y el jugador
+2 aplica la estrategia 3, pues ambos son el máximo y el mínimo y además coinciden en la misma celda. Su valor es -10.
+
+\begin{center}
+    \includegraphics[height=4cm]{D:/KUKADisk/UDIMA/OptimizacionIndustrial/AEC2/p1ar1.PNG}\\
+\end{center}
+
+Aplicando estrategias dominadas, podemos observar que la estrategia 3 siempre resulta más favorable que la estrategia 4 para 
+el jugador 2. Por otro lado, la estrategia 1 siempre es mejor que la 2 para el jugador 1.
+
+Se ha programado un simple simulador en C\# que permite introducir los datos de la matriz de pagos y asegurarnos del resultado. 
+
+El profesor puede consultar el código \href{https://github.com/Aleynikovik/DecisionMatrix/blob/master/Program.cs}{pulsando en este enlace}.
+
+\begin{center}
+    \includegraphics[height=2.9cm]{D:/KUKADisk/UDIMA/OptimizacionIndustrial/AEC2/p1ae2.PNG}
+\end{center}
+
+
+Si realizamos el proceso de eliminación de forma continua, podemos observar que obtenemos el mismo resultado que utilizando
+el método maximin-minimax. El punto de equilibrio es -10 y se consigue cuando el jugador 1 aplica la estrategia 1 y el 
+jugador 2 aplica la estrategia 3.
+
+
+\begin{center}
+    \includegraphics[width=0.7\textwidth]{D:/KUKADisk/UDIMA/OptimizacionIndustrial/AEC2/p1art.PNG}\\
+\end{center}
+
+\newpage
+
+\section*{1.B.}
+
+Dado la matriz de pago del siguiente juego, aplicando el método de estrategias 
+dominadas, ¿existe punto de equilibrio?
+
+\begin{center}
+    \includegraphics[width=0.7\textwidth]{D:/KUKADisk/UDIMA/OptimizacionIndustrial/AEC2/p1be1.PNG}\\
+\end{center}
+
+Aplicando el método de estrategias dominadas, obtenemos el siguiente resultado:
+
+\begin{center}
+    \includegraphics[width=0.7\textwidth]{D:/KUKADisk/UDIMA/OptimizacionIndustrial/AEC2/p1br1.PNG}\\
+\end{center}
+
+Las celdas verdes representan la estrategia dominante mientras que las celdas amarillas representan las 
+estrategias dominadas y por tanto son eliminadas de matriz de pagos.
+
+El punto de equilibrio existe cuando la compañía 1 aplica la estrategia 1 y la compañía 2 aplica la estrategia 2,
+resultando en una ganancia de 10 para la compañía 1 y 100 para la compañía 2.
+
+
+\newpage
+
+\subsection*{1.C.}
+
+Poner el siguiente juego simultáneo en su forma extensiva, donde hay dos jugadores (J1 y 
+J2), teniendo cada uno de ellos 3 posibles estrategias (E1, E2 y E3). ¿Cuál sería el punto de 
+equilibrio?
+
+\begin{center}
+    \includegraphics[width=0.7\textwidth]{D:/KUKADisk/UDIMA/OptimizacionIndustrial/AEC2/p1ce1.PNG}\\
+\end{center}
+
+
+Representamos el modelo de árbol:
+
+\begin{center}
+    \includegraphics[width=1\textwidth]{D:/KUKADisk/UDIMA/OptimizacionIndustrial/AEC2/p1cr1.PNG}\\
+\end{center}
+
+
+Eliminando desde el punto de vista de J2 nos queda:
+
+
+\begin{center}
+    \includegraphics[width=1\textwidth]{D:/KUKADisk/UDIMA/OptimizacionIndustrial/AEC2/p1cr2.PNG}\\
+\end{center}
+
+Y por tanto ahora J1 decide la estrategia que mas le conviene de las restantes. En este caso podemos ver que será la estrategia E2.
+De este modo concluimos que el punto de equilibrio está cuando ambos jugadores escogen E2 y corresponde a (7,6).
+
+\newpage 
+
+
+\section*{Caso 2. Árbol de decisión}
+
+Una empresa dedicada a la comercialización de material deportivo especializado está
+decidiendo la apertura de una nueva sede en España, debiendo elegir entre planta grande o
+pequeña. 
+
+La primera decisión que debe tomar es si realizar con carácter previo un estudio de mercado que
+tiene un coste de 25.000 €. Se estima que la probabilidad de que el estudio indique que el
+mercado es favorable para los intereses de la empresa es del 70\%. Si el estudio indica que el
+mercado será favorable, existe un 90\% de probabilidades de que la demanda sea alta, y de un
+10\% de que la demanda fuese baja.
+
+Si el estudio indicara que el mercado es desfavorable la probabilidad de que la demanda sea alta
+es de un 10\%, mientras que en un 90\% de los casos la demanda será baja. 
+
+Si no se realiza el estudio de mercado, las probabilidades de que la demanda sea alta o baja se
+estiman en un 50\% ante la falta de información adicional.
+
+En todas las posibilidades si la empresa se decidiese por la planta pequeña los beneficios serían
+de 35.000 € anuales con demanda alta y de 8.000 € anuales con demanda baja. 
+
+En caso de decidirse por la planta grande los beneficios serían de 80.000 € anuales con demanda
+alta y unas pérdidas de 50.000 € anuales con demanda baja, para todas las posibilidades.
+
+Se pide: Realizar el árbol de decisión asociado a esta problemática, considerando los
+próximos 3 años. ¿Qué decisión debe tomar la empresa para maximizar su beneficio?
+
+\hspace{1cm}
+
+
+\begin{center}
+    \includegraphics[width=.9\textwidth]{D:/KUKADisk/UDIMA/OptimizacionIndustrial/AEC2/p2cr1.PNG}
+\end{center}
+
+Con todas estas ramas obtendríamos la siguiente tabla:
+
+\hspace{2cm}
+
+\begin{center}
+    \includegraphics[width=.9\textwidth]{D:/KUKADisk/UDIMA/OptimizacionIndustrial/AEC2/p2cr2.PNG}
+\end{center}
+
+Pasamos ahora a simplificar las alternativas de derecha a izquierda:
+
+\hspace{2cm}
+
+
+\begin{center}
+    \includegraphics[width=.5\textwidth]{D:/KUKADisk/UDIMA/OptimizacionIndustrial/AEC2/p2cr3.PNG}
+\end{center}
+
+\hspace{1cm}
+
+En este caso como lo que buscamos es maximizar beneficios, escogemos entonces la opción de la planta grande
+realizando el estudio del mercado que resulta en un beneficio trienal total ponderado de 82400.
+
+
+
+\end{document}

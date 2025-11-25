@@ -1,0 +1,191 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\usepackage{siunitx}
+
+% Configuración de márgenes
+\geometry{left=2.5cm, right=2.5cm, top=3cm, bottom=3cm}
+
+% Encabezado y pie de página
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{UDIMA}
+\fancyhead[R]{Fundamentos de Termodinámica y Mecánica de Fluidos}
+\fancyfoot[C]{\thepage}
+
+% Título del documento
+\title{\textbf{Plantillas de Resolución para Problemas de Mecánica de Fluidos}\\[0.5cm]
+\Large{Unidades 7 a 10}}
+\author{}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\newpage
+\tableofcontents
+\newpage
+
+\section{Plantilla 17: Hidrostática y Manometría}
+\label{sec:hidrostatica}
+Se utiliza para problemas que involucran fluidos en reposo. El objetivo es calcular presiones a diferentes profundidades o determinar fuerzas sobre superficies sumergidas.
+
+\subsection*{Paso a Paso}
+\begin{enumerate}
+    \item \textbf{Identificar el Principio Fundamental.} La clave es la Ecuación Fundamental de la Hidrostática, que establece que la presión aumenta linealmente con la profundidad.
+    \[ P = P_{superficie} + \rho g h \]
+    Donde $\rho$ es la densidad del fluido, $g$ la gravedad y $h$ la profundidad.
+    
+    \item \textbf{Para Problemas de Manometría (Tubos en U):}
+    \begin{itemize}
+        \item[-] Dibuja una línea horizontal en la interfaz más baja entre dos fluidos inmiscibles.
+        \item[-] La presión a ambos lados de esta línea debe ser igual.
+        \item[-] Escribe la ecuación de presión para cada rama del tubo, sumando los términos $\rho g h$ para cada columna de fluido por encima de la línea de referencia.
+        \item[-] Iguala las presiones de ambas ramas y despeja la incógnita (generalmente una altura o una densidad).
+    \end{itemize}
+    
+    \item \textbf{Para Fuerzas sobre Superficies Sumergidas:}
+    \begin{itemize}
+        \item[-] \textbf{Fuerza Resultante ($F_R$):} Es igual a la presión en el centroide de la superficie multiplicada por el área total de la superficie.
+        \[ F_R = P_c \cdot A = (\rho g h_c) \cdot A \]
+        Donde $h_c$ es la profundidad vertical desde la superficie libre del fluido hasta el centroide del área sumergida.
+        \item[-] \textbf{Punto de Aplicación (Centro de Presiones, $y_p$):} La fuerza resultante no actúa en el centroide, sino en un punto más bajo. Para una superficie rectangular vertical que comienza en la superficie, el centro de presiones está a $2/3$ de la profundidad total.
+    \end{itemize}
+\end{enumerate}
+
+\subsection*{Ejercicios que usan esta plantilla:}
+\textbf{AEC3:} Ejercicio 3. \textbf{Problemas Fluidos.pdf:} 1-11, 37-41.
+
+\hrulefill
+
+\section{Plantilla 18: Flotabilidad y Estabilidad}
+\label{sec:flotabilidad}
+Se aplica a problemas con objetos total o parcialmente sumergidos en un fluido, para determinar si flotan, se hunden, o qué fuerza se necesita para mantenerlos en equilibrio.
+
+\subsection*{Paso a Paso}
+\begin{enumerate}
+    \item \textbf{Aplicar el Principio de Arquímedes.} Todo cuerpo sumergido en un fluido experimenta un empuje vertical y hacia arriba igual al peso del fluido desalojado.
+    \[ E = \rho_{fluido} \cdot g \cdot V_{desalojado} \]
+    
+    \item \textbf{Dibujar un Diagrama de Cuerpo Libre.} Representa todas las fuerzas verticales que actúan sobre el objeto:
+    \begin{itemize}
+        \item[-] El \textbf{Peso del objeto (W)}, actuando hacia abajo en su centro de gravedad. $W = m \cdot g = \rho_{objeto} \cdot g \cdot V_{total}$.
+        \item[-] La \textbf{Fuerza de Empuje (E)}, actuando hacia arriba en el centro de flotación (centroide del volumen desalojado).
+        \item[-] Cualquier otra fuerza externa (tensiones de cables, fuerzas aplicadas, etc.).
+    \end{itemize}
+    
+    \item \textbf{Plantear la Ecuación de Equilibrio.} Para que el cuerpo esté en equilibrio, la suma de fuerzas verticales debe ser cero.
+    \[ \sum F_y = 0 \implies E - W \pm F_{externa} = 0 \]
+    
+    \item \textbf{Resolver para la Incógnita.} Utiliza la ecuación de equilibrio para despejar la variable desconocida, que puede ser un volumen, una densidad, una masa o una fuerza.
+    \begin{itemize}
+        \item[-] Si un objeto flota libremente, $E = W$.
+        \item[-] Si está completamente sumergido y en equilibrio, $E = W \pm F_{externa}$.
+    \end{itemize}
+\end{enumerate}
+
+\subsection*{Ejercicios que usan esta plantilla:}
+\textbf{Problemas Fluidos.pdf:} 12-36.
+
+\hrulefill
+
+\section{Plantilla 19: Ecuación de Bernoulli (Fluidos Ideales)}
+\label{sec:bernoulli}
+Es la herramienta fundamental para analizar fluidos en movimiento \textbf{sin fricción}. Relaciona la presión, la velocidad y la altura entre dos puntos de una línea de corriente.
+
+\subsection*{Paso a Paso}
+\begin{enumerate}
+    \item \textbf{Identificar dos puntos de interés (1 y 2)} en el flujo. Elige puntos donde conozcas la mayor cantidad de información (ej. la superficie de un depósito, la salida de una tubería a la atmósfera).
+    
+    \item \textbf{Escribir la Ecuación de Bernoulli.} La suma de las "alturas" de presión, velocidad y elevación es constante entre los dos puntos.
+    \[ \frac{P_1}{\rho g} + z_1 + \frac{v_1^2}{2g} = \frac{P_2}{\rho g} + z_2 + \frac{v_2^2}{2g} \]
+    
+    \item \textbf{Simplificar la Ecuación.} Analiza las condiciones en los puntos 1 y 2 para cancelar términos:
+    \begin{itemize}
+        \item[-] Si un punto está en la \textbf{superficie de un gran depósito} abierto a la atmósfera: $P=0$ (presión manométrica) y $v \approx 0$.
+        \item[-] Si un punto es la \textbf{salida de un chorro a la atmósfera}: $P=0$ (presión manométrica).
+        \item[-] Si los puntos están a la \textbf{misma altura}: $z_1 = z_2$.
+        \item[-] Si el fluido se mueve por una \textbf{tubería de diámetro constante}: $v_1 = v_2$ (por la ecuación de continuidad $A_1v_1 = A_2v_2$).
+    \end{itemize}
+    
+    \item \textbf{Resolver para la incógnita.} Una vez simplificada, despeja la variable que buscas (presión, velocidad o altura).
+\end{enumerate}
+
+\subsection*{Ejercicios que usan esta plantilla:}
+\textbf{AEC3:} Ejercicio 1. \textbf{Problemas Fluidos.pdf:} 65-83.
+
+\hrulefill
+
+\section{Plantilla 20: Ecuación General de la Energía (Fluidos Reales)}
+\label{sec:energia}
+Esta es la versión extendida de Bernoulli para fluidos reales. Incluye términos para la energía añadida por \textbf{bombas ($h_A$)} y las pérdidas de energía por \textbf{fricción ($h_L$)}.
+
+\subsection*{Paso a Paso}
+\begin{enumerate}
+    \item \textbf{Identificar dos puntos de interés (1 y 2)} y la dirección del flujo.
+    
+    \item \textbf{Escribir la Ecuación General de la Energía.}
+    \[ \frac{P_1}{\rho g} + z_1 + \frac{v_1^2}{2g} + h_A = \frac{P_2}{\rho g} + z_2 + \frac{v_2^2}{2g} + h_L \]
+    \textit{Nota: Si hay una turbina, su energía extraída ($h_T$) se añade al lado derecho.}
+    
+    \item \textbf{Calcular las Pérdidas Totales ($h_L$).} Las pérdidas totales son la suma de las pérdidas primarias (fricción en tramos rectos) y las secundarias (en accesorios como codos y válvulas).
+    \[ h_L = h_{L,primarias} + h_{L,secundarias} \]
+    
+    \item \textbf{Calcular las Pérdidas Primarias ($h_{L,p}$): Ecuación de Darcy-Weisbach.}
+    \[ h_{L,p} = f \frac{L}{D} \frac{v^2}{2g} \]
+    Para encontrar el factor de fricción ($f$):
+    \begin{itemize}
+        \item[-] Calcula el \textbf{Número de Reynolds ($Re = \frac{\rho v D}{\mu}$)} para determinar si el flujo es laminar ($Re < 2000$) o turbulento ($Re > 4000$).
+        \item[-] Si es \textbf{laminar}, $f = 64/Re$.
+        \item[-] Si es \textbf{turbulento}, calcula la \textbf{rugosidad relativa ($\epsilon/D$)} y usa el \textbf{Diagrama de Moody} para encontrar $f$.
+    \end{itemize}
+    
+    \item \textbf{Calcular las Pérdidas Secundarias ($h_{L,s}$): Método de Longitud Equivalente.}
+    \begin{itemize}
+        \item[-] Para cada accesorio (codo, válvula, etc.), busca su \textbf{longitud equivalente ($L_e$)} en tablas o nomogramas.
+        \item[-] Suma todas las longitudes equivalentes: $\sum L_e$.
+        \item[-] Calcula la pérdida secundaria usando la misma fórmula de Darcy, pero con $\sum L_e$ en lugar de L.
+        \[ h_{L,s} = f \frac{\sum L_e}{D} \frac{v^2}{2g} \]
+    \end{itemize}
+    
+    \item \textbf{Resolver la Ecuación General.} Sustituye todos los términos conocidos y despeja la incógnita.
+\end{enumerate}
+
+\subsection*{Ejercicios que usan esta plantilla:}
+\textbf{AEC3:} Ejercicio 2.
+
+\hrulefill
+
+\section{Plantilla 21: Fórmula de Hazen-Williams (Solo para Agua)}
+\label{sec:hazen}
+Es una fórmula empírica y una alternativa más directa a Darcy-Weisbach, pero \textbf{solo para agua} en condiciones específicas (tuberías de más de 2 pulgadas y flujo turbulento).
+
+\subsection*{Paso a Paso}
+\begin{enumerate}
+    \item \textbf{Verificar las condiciones de aplicabilidad.} ¿El fluido es agua? ¿La temperatura está entre 5 y 25$^\circ$C? ¿El diámetro y la velocidad están dentro de los límites?
+    
+    \item \textbf{Seleccionar la fórmula de Hazen-Williams adecuada.} La fórmula se presenta de varias formas dependiendo de la incógnita. La más común para calcular la pérdida de carga ($h_L$) es:
+    \[ h_L = 10,67 \cdot \frac{L}{D^{4,87}} \left( \frac{Q}{C} \right)^{1,852} \]
+    Donde:
+    \begin{itemize}
+        \item[-] $h_L$ es la pérdida de carga (m).
+        \item[-] $L$ es la longitud de la tubería (m).
+        \item[-] $D$ es el diámetro interno (m).
+        \item[-] $Q$ es el caudal ($m^3/s$).
+        \item[-] $C$ es el coeficiente de rugosidad de Hazen-Williams (adimensional, depende del material y antigüedad de la tubería).
+    \end{itemize}
+    
+    \item \textbf{Recopilar los datos.} Asegúrate de que todas las unidades sean consistentes con el Sistema Internacional.
+    
+    \item \textbf{Resolver para la incógnita.} Sustituye los valores en la fórmula para encontrar la pérdida de carga.
+\end{enumerate}
+
+\subsection*{Ejercicios que usan esta plantilla:}
+\textbf{Problema-HazenWilliams.pdf:} Ejercicio de ejemplo.
+
+\end{document}

@@ -1,0 +1,389 @@
+\documentclass{article}
+\usepackage{lipsum}
+\usepackage[backend=biber]{biblatex}
+\usepackage{authoraftertitle}
+\usepackage[top=2cm,bottom=1.5cm,left=1.5cm, right=3cm,includeheadfoot]{geometry}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage[spanish]{babel}
+\usepackage{mathtools}
+\usepackage{csquotes}
+\usepackage{amssymb}
+\usepackage{fancybox, graphicx}
+\usepackage{array}
+\usepackage{hhline}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{siunitx}
+\usepackage{amsmath}
+\usepackage{caption}
+\usepackage{esvect}
+\usepackage{siunitx}
+\usepackage{commath}
+\newcommand{\ihat}{\textbf{\^\i}}
+\newcommand{\jhat}{\textbf{\^\j}}
+%Header & Footer
+
+\pagestyle{fancy}
+%\fancyhead[LE]{\MyTitle}
+\fancyhead[LO]{Química}
+%\fancyhead[RO]{\leftmark}
+%\fancyhead[RE]{\leftmark}
+\fancyfoot[L]{\raisebox{-1cm}{\includegraphics[height=1.5cm]{D:/KUKADisk/UDIMA/DocumentGraphics/LOGOUDIMA.jpg}}}
+\fancyfoot[R]{Corregido:\\ Dr. Lucas Castro Martínez}
+%\fancyfoot[RO]{07/12/2018}
+
+
+%Vars
+\author{Alexander Sebastian Kalis}
+\title{AEC 3 - Unidades 5 y 6}
+
+
+%DOC
+
+
+\begin{document}
+
+\begin{titlepage}
+
+    \begin{center}
+
+        \line(1,0){300}\\
+        [0.2in]
+        \huge{\bfseries {\MyTitle}}\\
+        [1mm]
+        \line(2,0){200}\\
+        [0.75cm]
+        \textsc{\LARGE Química}\\
+        [2cm]
+        \includegraphics[height=10cm]{D:/KUKADisk/UDIMA/Quimica/Practicas/portada.jpg}\\
+        [3cm]
+
+    \end{center}
+
+    \begin{flushright}
+
+        Autor: {\MyAuthor}\\
+        Profesor: Dr. Lucas Castro Martínez\\
+        Curso: Ingeniería de Organización Industrial\\
+        UDIMA         
+
+    \end{flushright}
+    
+\end{titlepage}
+
+
+\section*{Problema 1}
+
+En un dispositivo con un émbolo se introducen $0.854 \ mol$ de gas neón a una presión 
+constante de $105 \ Pa$, se calienta aportando $53 \ J$ en forma de calor, lo que produce un aumento de 
+temperatura de $3,00 \si[]{\degree} \ C$. Calcule:\\
+
+a) El incremento de volumen que se produce en el gas.
+
+b) El trabajo realizado por el gas, ¿es de expansión o de contracción? ¿positivo o negativo?
+
+c) La variación de entalpía y de energía interna del gas. ¿son positivas o negativas?
+
+\subsection*{Apartado a}
+
+Calculamos el incremento de volumen mediante la ecuación general de los gases ideales:
+
+\[
+    \Delta V=\cfrac[]{nR\Delta T}{p}
+\]
+
+Ya que $\Delta K = \Delta \si[]{\degree} \ C$, sustituyendo los datos del enunciado obtenemos:
+
+\[
+    \Delta V=\cfrac[]{0.854 \cdot 8.31 \cdot 3}{10^5}=\num{2.13e-4} \ m^3
+\]
+
+\subsection*{Apartado b}
+
+Podemos calcular el trabajo realizado con la relación presión-volumen. Sabiendo que la presión es constante:
+
+\[
+    W =  P\Delta V
+\]
+\[
+    W= 10^5 \cdot \num{2.13e-4} = 21.3 J
+\]
+
+Podemos decir que será un trabajo de expansión pues el volumen incrementa y es positivo.
+
+
+\subsection*{Apartado c}
+
+Calculamos la variación interna:
+
+\[
+    \Delta E = q - p \Delta V=
+    53-10^5 \cdot \num{2.13e-4}=
+    31.71 \ J
+\]  
+
+Y la entalpía:
+
+\[
+    \Delta H = q_p=53 \ J
+\]
+
+Entonces la entalpía y el incremento de energía es positivo pues el gas se calienta y aporta calor.
+
+
+\newpage
+
+\section*{Problema 2}
+
+Calcúlese la entalpía estándar de formación del acetileno (etino), $C_2H_2$ (g), a partir de las
+entalpías estándar de combustión del C (grafito), el $H_2$ (g) y el $C_2H_2$ (g). Para ello aplique la ley de Hess,
+la suma algebraica de las correspondientes ecuaciones termoquímicas. \\
+
+%\includegraphics[height=2cm]{D:/KUKADisk/UDIMA/Quimica/Practicas/AEC3/p2e1.PNG}\\
+
+\[
+    \begin{matrix}
+        \Delta H^0_c \left[C(grafito)\right]        =-286 kJ \cdot mol^{-1}\\
+        \Delta H^0_c \left[H_2(g)\right]            = -393 \cdot mol^{-1}\\
+        \Delta H^0_c \left[C_2H_2(g)\right]         =-1300 \cdot mol^{-1}
+    \end{matrix}
+\]
+
+(CUIDADO los datos de entalpías de combustión son por mol de compuesto que reacciona).\\
+
+Recuerda que una combustión es la reacción con el oxígeno para dar CO2, H2O o ambos).\\\\
+
+Tenemos 3 ecuaciones cuyos incrementos de entalpía estandar son conocidos:
+
+\[
+    \begin{matrix}
+      A &  H_2 (g) + \frac{1}{2} O_2 (g) \rightarrow H_2O (l) & \Delta H^0_c=-286 kJ \cdot mol^{-1}\\
+      B &  C(s)+O_2(g) \rightarrow CO_2(g) & \Delta H^0_c= -393 kJ \cdot mol^{-1}\\
+      C &  C_2H_2(g) + \frac{5}{2}O_2 \rightarrow 2CO_2(g)+H_2O(l) & \Delta H^0_c=-1300 kJ\cdot mol^{-1}
+    \end{matrix}
+\]
+
+Debemos calcular, utilizando la Ley de Hess, el incremento de entalía de:
+
+\[
+    \begin{matrix}
+        D & 2C(s)+H_2(g) \rightarrow C_2H_2(g) & \Delta H=?
+      \end{matrix}
+\]
+
+Primero sumamos la ecuación A con 2 veces la ecuación B:
+
+\[
+    H_2 (g) + 2C(s)+2O_2(g) + \frac{1}{2} O_2 (g) \rightarrow H_2O (l) + 2CO_2(g)
+\]
+
+Que simplificado queda:
+
+\[
+    2C(s)  +H_2 (g) + \frac{5}{2}O_2(g) \rightarrow 2CO_2(g) + H_2O(l)
+\]
+
+A esto le restamos la ecuación C obtenemos:
+
+\[
+    2C(s)  +H_2 (g) - C_2H_2(g) \rightarrow 0
+\]
+
+Y una vez pasado el término negativo sumando, es equivalente a la ecuación D:
+
+\[
+    2C(s)  +H_2 (g) \rightarrow C_2H_2(g)
+\]
+
+Ahora aplicando la Ley de Hess, podremos obtener la entalpía estandar. Solamente hay que realizar las mismas operaciones
+a las entalpías que a las ecuaciones:
+
+\[
+    \Delta H^0_f= -286+2(-393)-(-1300)=228 kJ\cdot mol^{-1}
+\]
+
+\newpage
+
+
+
+\section*{Problema 3}
+
+En junio del año 1812 Napoleón marchó de Francia con sus tropas. En diciembre, cuando
+se retiraron de Moscú, había perdido más de medio millón de soldados. Muchas razones existen para
+esta derrota, pero quizás la más interesante tiene que ver con sus botones de estaño. Dice la leyenda
+que, en el invierno de Rusia, sus botones se descompusieron, provocando la exposición de sus soldados
+al intenso frío. Es lo que se conoce como “peste del estaño”, que consiste en la transformación del
+estaño blanco (forma metálica del estaño) se transforma en estaño gris (forma no metálica, con aspecto
+de polvo). Determina si está historia pudo ser cierta.
+
+(AYUDA: La forma para determinarlo es probar si existe algún rango de temperaturas en que se
+produzca la reacción espontáneamente.)
+
+Datos.
+
+
+    \begin{center}
+        \begin{tabular}{ |c|c|c| }
+            \hline
+            \textbf{Compuesto}       &  \textbf{$\Delta$ H (kJ/mol)}  &   \textbf{S$\si[]{\degree}$ (J/mol.K)}\\
+            \hline
+            Sn (blanco)     & 0                         &   51,55\\
+            \hline
+            Sn (gris)       &  - 2,09                   &   44,14\\
+            \hline
+        \end{tabular}
+    \end{center}
+
+
+En este caso podemos utilizar la teoría sobre la energía libre de Gibbs ya que nos indicará si
+la reacción es espontánea o no:
+
+
+\[
+    \Delta G= \Delta H-T\cdot \Delta S
+\]
+
+\[
+    \Delta G= \sum G(productos)-\sum G(reactivos)
+\]
+
+Entonces necesitamos calcular las variaciones de entropía y entalpía de la reacción
+y aplicar la fórmula.
+
+\[
+    \Delta S=44.14-51.55=-7.41 J \cdot mol^{-1}\cdot K^{-1}
+\]
+
+\[
+    \Delta H=-2.09kJ \cdot mol^{-1}=-2090 J \cdot mol^{-1}
+\]
+
+\[
+    \Delta G= -2090 - T(-7.41)
+\]
+
+Según la teoría de la entalpía libre de Gibbs, para que la reacción sea espontánea se debe cuplir que
+$\Delta G < 0$:
+
+\[
+    0 > -2090 - T(-7.41)
+\]
+
+\[
+    2090 > -7.41T
+\]
+
+\[
+    T < 9 \si[]{\degree} \ C
+\]
+
+Lo que indica que la condición para que la reacción sea espontánea es de que la temperatura en
+la que se produce sea inferior a 9 grados Celsius. En este caso la leyenda puede ser cierta
+ya que las temperaturas durante el invierno en Russia llegan a los -40 grados Celsius.
+
+
+\newpage
+
+
+
+\section*{Problema 4}
+
+El fosgeno $(COCl_2)$, utilizado en las cámaras de gas por los alemanes durante la
+segunda guerra mundial, se produce a partir del monóxido de carbono y del cloro gas.\\
+
+a) Determina la ley de velocidad para la reacción a partir de los datos de la tabla.\\
+
+\begin{center}
+    \includegraphics[height=3.3cm]{D:/KUKADisk/UDIMA/Quimica/Practicas/AEC3/p4e1.PNG}\\ 
+\end{center}
+
+b) Calcúlese la constante de velocidad, k.\\
+
+
+\subsection*{Apartado a}
+
+Escribimos la ecuación cinética de la reacción:
+
+\[
+    v=k\left[CO\right]^m \cdot \left[Cl_2\right]^n
+\]
+
+Si tratamos los experimentos como sistemas de ecuaciones, podemos dividir y despejar las órdenes de
+reacción $m$ y $n$. Hecho esto obtenemos los valores:
+
+\[
+    m\approx 1, n\approx \frac{3}{2}
+\]
+
+Así que la ley de la velocidad es:
+
+\[
+    v\approx k\left[CO\right]^1 \cdot \left[Cl_2\right]^{\frac{3}{2}}
+\]
+
+\subsection*{Apartado b}
+
+Despejando la constante obtenemos su valor con cualquiera de los experimentos. El resultado no es exacto
+puesto que se han aproximado las órdenes de reacción.
+\[
+    k\approx
+    \frac{v}{[CO][Cl_2]^{\frac{3}{2}}}\approx
+    \frac{0.121}{0.12\cdot 0.2^{\frac{3}{2}}}\approx
+    11.27 \ M^{-1}\cdot s^{-1}
+\]  
+
+\newpage
+
+\section*{Problema 5}
+
+El ozono ($O_3$) reacciona con el dióxido de nitrógeno para dar pentóxido de dinitrógeno y
+oxígeno, (todos en fase gas), y presenta una ley de velocidad experimental $v = k[NO_2 ][O_3]$ . Durante la
+reacción se ha podido detectar la presencia de trióxido de nitrógeno como especie intermedia. Escribe
+la reacción global y propón un mecanismo factible para la reacción.\\
+
+Se nos presenta con la siguiente reacción:
+
+\[
+    O_3+NO_2 \rightarrow N_2O_5 + O_2
+\]
+
+Y su ley de velocidad experimental:
+
+\[
+    v = k[NO_2 ][O_3]
+\]
+
+El hecho de que coincidan los coeficientes estequiométricos de la reacción con los órdenes de reacción parciales de los reactivos, indica que
+dicha reacción transcurre a lo largo de varias etapas.
+
+Según los datos del enunciado postulamos el siguiente mecanismo para la reacción:\\
+
+
+\textbf{Etapa 1. Controlante}
+\[
+    O_3+NO_2 \rightarrow O_2 + NO_3
+\]
+
+Obteniendo así el trióxido de nitrógeno como intermedio de reacción.\\
+
+\textbf{Etapa 2. Rápida.}
+
+\[
+    NO_3+NO_2 \rightarrow N_2O_5
+\]
+
+
+\textbf{Reacción global.}\\
+
+
+\[
+    2NO_2+O_3 \rightarrow N_2O_5+O_2
+\]
+
+Sumando ambas ecuaciones obtenemos la reacción global y eliminamos el intermedio de reacción $NO_3$.
+
+\end{document}

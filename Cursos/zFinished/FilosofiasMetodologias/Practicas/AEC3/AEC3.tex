@@ -1,0 +1,268 @@
+\documentclass{article}
+\usepackage{lipsum}
+\usepackage{authoraftertitle}
+\usepackage[top=2cm,bottom=1.5cm,left=1.5cm, right=3cm,includeheadfoot]{geometry}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{mathtools}
+\usepackage{csquotes}
+\usepackage{enumitem}
+\usepackage{amssymb}
+\usepackage{fancybox, graphicx}
+\usepackage{array}
+\usepackage{hhline}
+\usepackage{textcomp}
+\usepackage{eurosym}
+\usepackage{hyperref}
+\usepackage{parskip}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{siunitx}
+\usepackage{amsmath}
+\usepackage{caption}
+\usepackage{esvect}
+\usepackage{siunitx}
+\usepackage{commath}
+
+%Header & Footer
+\pagestyle{fancy}
+%\fancyhead[LE]{\MyTitle}
+\fancyhead[LO]{Filosofías y metodologías industriales}
+\fancyhead[RO]{}
+%\fancyhead[RE]{\nouppercase\leftmark}
+\fancyfoot[L]{\raisebox{-1cm}{\includegraphics[height=1.5cm]{D:/KUKADisk/UDIMA/DocumentGraphics/LOGOUDIMA.jpg}}}
+\fancyfoot[R]{Corregido:\\ Dr. Fco. David de la Peña Esteban}
+%\fancyfoot[RO]{07/12/2018}
+
+
+%Vars
+%\author{Alexander Sebastian Kalis}
+\title{AEC 3 - Unidad 9 - Casos prácticos Seis Sigma}
+
+
+%DOC
+
+
+\begin{document}
+
+\begin{titlepage}
+
+    \begin{center}
+
+        \line(1,0){300}\\
+        [0.2in]
+        \huge{\bfseries {\MyTitle}}\\
+        [1mm]
+        \line(2,0){200}\\
+        [0.75cm]
+        \textsc{\LARGE Filosofías y metodologías industriales}\\
+        [2cm]
+        \includegraphics[height=9cm]{Items/portada.png}\\
+        [2cm]
+
+    \end{center}
+
+    \begin{flushright}
+
+        Juan Galdón\\
+        Milagros Villena Pérez\\
+        Alexander Sebastian Kalis\\
+        [.5cm]
+        Profesor: Dr. Fco. David de la Peña Esteban\\
+        Curso: Ingeniería de Organización Industrial\\
+        UDIMA         
+
+    \end{flushright}
+    
+\end{titlepage}
+
+\thispagestyle{plain}
+\tableofcontents
+
+\newpage
+
+\section{Estratificación con ayuda de diagramas de dispersión}
+
+En un equipo de mejora de procesos se obtienen los siguientes datos que recogen el nº de
+defectos por lote en conjuntos de 10.000 piezas, en función del tiempo de tratamiento al que se
+someten y la materia prima utilizada, para una muestra de 50 datos:
+
+\begin{center}
+    \includegraphics[height=11cm]{Items/p1e1.png}\\
+\end{center}
+
+Se pide:
+
+a) Mediante un diagrama de dispersión, analizar la relación entre el número de defectos
+y el tiempo de tratamiento.
+
+b) Indicar qué tipo de relación se observa. Calcular el coeficiente de correlación y
+explicar su valor.
+
+c) Realizar una estratificación por las materias primas (A y B) utilizadas. Indicar los
+coeficientes de correlación y qué tipo de relación se observa.
+
+
+
+\subsection{Diagrama de dispersión}
+
+En la Figura 1 podemos observar que no hay una aparente correlación entre el tiempo de tratamiento y los defectos pues muchos de los puntos
+se encuentran fuera de la línea de moda.
+
+\begin{figure}[!htb]
+    \begin{center}
+        \includegraphics[height=7cm]{Items/p1f1.PNG}
+        \caption{Diagrama de dispersión}
+    \end{center}
+\end{figure}
+
+\subsection{Relación y coeficiente de correlación}
+
+Como se ha comentado en el apartado anterior, la correlación es positiva débil puesto que la línea de moda es positiva y los puntos
+no forman una línea recta sobre ella.
+
+Calculando el coeficiente de correlación obtenemos $r=0.18$.
+
+Al ser un valor cercano a 0 podemos decir que hay muy poca correlación entre estos datos.
+
+\subsection{Estratificación por materias primas}
+
+Separamos los diagramas por materia prima:
+
+\begin{figure}[!htb]
+    \begin{center}
+        \includegraphics[width=\textwidth]{Items/p1f2.PNG}
+        \caption{Diagramas de dispersión por materia prima}
+    \end{center}
+\end{figure}
+
+De la misma forma observamos en ambos diagramas una correlación positiva débil. El coeficiente de la materia prima A resulta ser $r_a=0.16$
+y el coeficiente de la materia prima B es $r_b=0.20$. Podríamos decir que la materia prima B responde mejor a mayor tiempo de tratamiento
+pero al ser correlaciones tan débiles, no sería una conclusión válida o útil.
+
+\newpage
+
+\section{Estratificación}
+
+El Departamento de informática de una universidad da tres servicios principales en el
+edificio:
+
+-Atención al puesto de trabajo
+
+-Wifi invitados
+
+-Atención a aulas de laboratorio
+
+Normalmente se tienen 3 tipos de incidencias principales asociadas a estos servicios. En
+la siguiente tabla se detallan el número de incidencias que han tenido lugar para cada
+servicio y día de la semana pasada:
+
+\begin{center}
+    \includegraphics[height=7cm]{Items/p2e1.png}\\
+\end{center}
+
+También se tienen datos del tiempo medio de resolución de las incidencias:
+
+\begin{center}
+    \includegraphics[height=7cm]{Items/p2e2.png}\\
+\end{center}
+
+Se pide:
+
+Considerando que la gravedad de los tres tipos de incidencias son iguales, así como el
+volumen de los servicios ofertados, realizar un análisis estratificado de la situación
+actual y detectar qué factor es el más significativo.
+
+¿A qué conclusiones se llega? ¿Echáis en falta algún dato adicional?
+
+
+\subsection{Análisis estratificado}
+
+Extraemos la información sobre las incidencias y las ordenamos por el tipo de incidencia. Representamos gráficamente el diagrama 
+de Pareto:
+
+\begin{figure}[!htb]
+    \begin{center}
+        \includegraphics[height=7.5cm]{Items/p2f1.PNG}
+        \caption{Diagrama de Pareto, tipos de incidencias}
+    \end{center}
+\end{figure}
+
+Lo que nos dice que las incidencias de tipo 2 son las más comunes representando más de la mitad de ellas y que las incidencias
+de tipo 3 son las que menos peso tienen.
+
+Procedemos a analizar las incidencias respecto al tipo de servicio:
+
+
+\begin{figure}[!htb]
+    \begin{center}
+        \includegraphics[height=7.5cm]{Items/p2f2.PNG}
+        \caption{Diagrama de Pareto, tipos de servicios}
+    \end{center}
+\end{figure}
+
+En este caso observamos que tanto las aulas de laboratorio como la atención al puesto de trabajo son las más importantes.
+
+
+Ahora vamos a centrarnos en las inidencias de tipo 2 puesto que representan la mayor parte de incidencias.
+
+Por último nos fijamos en el tiempo de respuesta en cada tipo de incidencia:
+
+\begin{figure}[!htb]
+    \begin{center}
+        \includegraphics[height=7.5cm]{Items/p2f3.PNG}
+        \caption{Diagrama de Pareto, tiempo de respuesta}
+    \end{center}
+\end{figure}
+
+\subsection{Conclusión}
+
+Podemos ver que las incidencias de tipo 3, aunque anteriormente se ha observado que son las menos comunes, son aquellas que toman
+más tiempo de resolución con lo cual no podemos quitarles importancia.
+
+De igual forma no disponemos de datos que nos permitan saber qué provoca las incidencias como para poder darles una solución. Es un
+dato que se echaría en falta.
+
+\newpage
+
+\section{Poka-Yoke}
+
+\subsection{Ejemplo 1}
+
+Un ejemplo de Poka-Yoke utilizado en un componente eléctrico de la maquinaria con la que trabajo es esta fuente de 
+alimentación de servomotores (KUKA KPP).
+
+Aunque los dos conectores negros superiores parecen iguales a simple vista, realizan una función muy diferente. El conector
+de la izquierda sirve para que los motores descarguen su energía residual sobre una resistencia de lastre, mientras que el 
+conector de la derecha es donde se conecta la alimentación. Conectarlos de forma inversa provocaría un sobrecalentamiento
+de la resistencia y posiblemente haría que prenda fuego. Los conectores están fabricados de tal forma que no se pueden 
+llegar a conectar de forma inversa.
+
+\begin{figure}[!htb]
+    \begin{center}
+        \includegraphics[height=16cm]{Items/kpp.jpg}
+        \caption{KUKA KPP, Poka-Yoke}
+    \end{center}
+\end{figure}
+
+\subsection{Ejemplo 2}
+
+El segundo ejemplo es algo más común y es la memoria RAM utilizada en ordenadores convencionales. Cada placa base admite un tipo de RAM
+distinta.
+
+Dependiendo de su tipo (DDR-2-3-4) tienen un slot con una muesca colocada en una poición distinta. También hace que sea imposible 
+de colocar al revés:
+
+\begin{figure}[!htb]
+    \begin{center}
+        \includegraphics[height=11cm]{Items/ram.png}
+        \caption{Memoria RAM, Poka-Yoke}
+    \end{center}
+\end{figure}
+
+
+\end{document}

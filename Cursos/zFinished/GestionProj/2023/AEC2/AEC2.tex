@@ -1,0 +1,234 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage{comment}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{grffile}
+\usepackage{pdflscape}
+\usetikzlibrary{positioning}
+\usetikzlibrary{arrows.meta}
+
+\geometry{a4paper, margin=1in}
+
+\title{Caso Práctico I: Procesos en la dirección de proyectos}
+\author{Alexander Kalis}
+\date{\today}
+
+\begin{document}
+
+
+\begin{titlepage}
+
+   \begin{center}
+
+   
+       %\huge{\bfseries {\MyTitle}}\\
+       \line(2,0){200}\\
+       [0.75cm]
+       \textsc{\LARGE Gestión de Proyectos, AEC2}\\
+       [0.75cm]
+       \line(2,0){200}\\
+       [2cm]
+       \includegraphics[height=15cm]{portproj.png}\\
+       [3cm]
+
+   \end{center}
+
+   \begin{flushright}
+
+       Autores: Manuel Rubio, Carmelo Garcia, Alexander Kalis\\
+       Profesor: Dr. Juan Luis Rubio Sánchez\\
+       Curso: Ingeniería de Organización Industrial\\
+       UDIMA         
+
+   \end{flushright}
+   
+\end{titlepage}
+
+\tableofcontents
+
+\newpage
+
+\section{Enunciado 1}
+
+Un proyecto consta de 8 subproyectos S1,S2,S3,S4,S5,S6,S7,S8. Cada subproyecto se estima que durará 
+2 meses y tendrán un coste individual de 10.000 € Los subprpyectos están enlazados secuencialmente:
+Al finalizar el mes 12 la situación es la siguiente:
+
+
+\begin{center}
+    \includegraphics[width=0.9\textwidth]{e1p1.png}\\
+\end{center}
+
+
+\subsection{Calcular PV, EV, AC, BAC, CV, CPI, SV, SPI, TCPI, EAC, ETC para cada periodo.}
+
+\textbf{Datos de los Subproyectos:}
+
+\begin{itemize}
+    \item BAC (Presupuesto a la Finalización) = 80,000 € (10,000 € por cada uno de los 8 subproyectos)
+    \item PV (Valor Planificado) para cada subproyecto = 10,000 €
+    \item AC (Coste Real) y EV (Valor Ganado) son dados para cada subproyecto.
+\end{itemize}
+
+\textbf{Fórmulas Aplicadas:}
+\begin{align*}
+    SV &= EV - PV \\
+    CV &= EV - AC \\
+    SPI &= \frac{EV}{PV} \\
+    CPI &= \frac{EV}{AC} \\
+    EAC &= AC + (BAC - EV) \\
+    TCPI &= \frac{BAC - EV}{BAC - AC}
+\end{align*}
+
+
+% Subproyecto S1
+\subsubsection{Subproyecto S1}
+AC = 10,000 €, \, EV = 10,000 € \\
+SV = 0 €, \, CV = 0 €, \, SPI = 1, \, CPI = 1 \\
+EAC = 80,000 €, \, TCPI = 0.875
+
+% Subproyecto S2
+\subsubsection{Subproyecto S2}
+AC = 11,000 €, \, EV = 10,000 € \\
+SV = 0 €, \, CV = -1,000 €, \, SPI = 1, \, CPI = 0.91 \\
+EAC = 81,000 €, \, TCPI = 0.875
+
+% Subproyecto S3
+\subsubsection{Subproyecto S3}
+AC = 12,000 €, \, EV = 10,000 € \\
+SV = 0 €, \, CV = -2,000 €, \, SPI = 1, \, CPI = 0.83 \\
+EAC = 82,000 €, \, TCPI = 0.875
+
+% Subproyecto S4
+\subsubsection{Subproyecto S4}
+AC = 11,000 €, \, EV = 10,000 € \\
+SV = 0 €, \, CV = -1,000 €, \, SPI = 1, \, CPI = 0.91 \\
+EAC = 81,000 €, \, TCPI = 0.875
+
+% Subproyecto S5
+\subsubsection{Subproyecto S5}
+AC = 12,000 €, \, EV = 10,000 € \\
+SV = 0 €, \, CV = -2,000 €, \, SPI = 1, \, CPI = 0.83 \\
+EAC = 82,000 €, \, TCPI = 0.875
+
+% Subproyecto S6
+\subsubsection{Subproyecto S6}
+AC = 6,000 €, \, EV = 5,000 € \\
+SV = -5,000 €, \, CV = -1,000 €, \, SPI = 0.5, \, CPI = 0.83 \\
+EAC = 76,000 €, \, TCPI = 1.25
+
+% Subproyecto S7
+\subsubsection{Subproyecto S7}
+AC = 5,000 €, \, EV = 5,000 € \\
+SV = -5,000 €, \, CV = 0 €, \, SPI = 0.5, \, CPI = 1 \\
+EAC = 75,000 €, \, TCPI = 1.25
+
+
+
+\subsection{Estimación del Tiempo de Finalización y Costo Total del Proyecto}
+
+Dado que se asume que las tareas 6, 7 y 8 se completarán a un ritmo y con un nivel de gasto similar al actual, utilizaremos los índices de desempeño de tiempos (SPI) y costes (CPI) promedio para estas estimaciones.
+
+\subsubsection{Cálculo del SPI Promedio}
+El SPI promedio se calcula como el promedio de los SPI de los subproyectos completados (S1 a S7):
+\begin{align*}
+    SPI_{promedio} &= \frac{1 + 1 + 1 + 1 + 1 + 0.5 + 0.5}{7} 
+    = \frac{6}{7} 
+    = 0.857
+\end{align*}
+
+\subsubsection*{Cálculo del CPI Promedio}
+De manera similar, el CPI promedio se calcula como el promedio de los CPI de los subproyectos completados (S1 a S7):
+\begin{align*}
+    CPI_{promedio} &= \frac{1 + 0.91 + 0.83 + 0.91 + 0.83 + 0.83 + 1}{7} 
+    = \frac{6.32}{7} 
+    = 0.903
+\end{align*}
+
+\subsubsection*{Estimación del Tiempo de Finalización del Proyecto}
+Usando el SPI promedio, el tiempo estimado de finalización (TEFP) es:
+\begin{align*}
+    TEFP &= \frac{Duraci\acute{o}n\,Original\,del\,Proyecto}{SPI_{promedio}} 
+    = \frac{16\,meses}{0.857} 
+    = 18.67\,meses
+\end{align*}
+
+\subsubsection*{Estimación del Costo Total del Proyecto}
+Utilizando el CPI promedio, el costo total estimado (CTEP) es:
+\begin{align*}
+    CTEP &= \frac{BAC}{CPI_{promedio}} 
+    = \frac{80000\,€}{0.903} 
+    = 88594.68 €
+\end{align*}
+
+
+\subsection{Reflexión sobre la Actuación del Jefe de Proyecto y Propuestas de Acción}
+
+\subsubsection{Análisis del Desempeño del Proyecto hasta el Mes 12}
+\begin{itemize}
+    \item \textbf{Desviaciones en Coste y Tiempo (CV y SV):} Hemos observado que algunos subproyectos han incurrido en sobrecostes y retrasos. Esto puede sugerir que la planificación inicial fue demasiado optimista o que surgieron problemas inesperados.
+    \item \textbf{Índices de Eficiencia (CPI y SPI):} Los valores de CPI menores que 1 en varios subproyectos indican sobrecostes, mientras que los valores de SPI menores que 1 reflejan retrasos en algunos subproyectos.
+    \item \textbf{Estimaciones Futuras (EAC y TCPI):} Las estimaciones indican que el proyecto podría terminar con un sobrecoste y retraso si se mantiene el ritmo y nivel de gasto actual.
+\end{itemize}
+
+\subsubsection{Propuestas de Acción a partir del Mes 13}
+Como jefe de proyecto, sería esencial tomar medidas correctivas inmediatas:
+\begin{enumerate}
+    \item \textbf{Revisión del Plan de Proyecto:} Evaluar y ajustar la planificación de los subproyectos restantes para alinearlos mejor con la realidad del proyecto.
+    \item \textbf{Control de Costes:} Implementar un control más estricto de los costes, identificando y mitigando las causas de los sobrecostes.
+    \item \textbf{Gestión de Riesgos:} Revisar y actualizar el plan de gestión de riesgos, prestando especial atención a los riesgos que ya han impactado el proyecto.
+    \item \textbf{Comunicación con el Equipo y Stakeholders:} Mantener una comunicación transparente y regular con el equipo y los stakeholders sobre los cambios y el progreso del proyecto.
+    \item \textbf{Seguimiento Continuo:} Realizar un seguimiento continuo de los indicadores de desempeño del proyecto (CPI y SPI) para asegurar que las acciones correctivas están teniendo el efecto deseado.
+\end{enumerate}
+
+
+
+\section{Enunciado 2}
+
+En el ejercicio anterior se sabe que existe una ameza A6 cuya probabilidad de ocurrencia es alta, que
+puede afectar al subproyecto S6. Dado que el subproyecto S6 pertenece al cc se le otorga un valor muy
+alto para la conclusión exitosa del proyecto. Los subproyectos S7 y S8 se valoran como ‘medio’ de cara a
+la conclusión con éxito del proyecto, ya que aún siendo del cc, existen alternativas en caso de que
+presentaran problemas o retrasos.
+En caso de que se materializara A6, se sabe que la actividad quedaría completamente paralizada, por lo
+que el jefe de proyecto decide tomar medidas para que en caso de ocurrencia, el impacto quede reducido a
+un valor muy bajo.
+Se pide estudiar qué acciones se deberían tomar a partir de los valores RAR y RRR finales, sabiendo que
+la tolerancia al riesgo de la organización se situa en un valor muy alto.
+
+
+\subsection{Contexto del riesgo}
+El subproyecto S6 se enfrenta a la amenaza A6, con una alta probabilidad de ocurrencia. Dado su valor crítico para el éxito del proyecto, es imperativo gestionar este riesgo de manera efectiva.
+
+\subsubsection{Evaluación del riesgo antes de la respuesta (RAR)}
+\begin{itemize}
+    \item \textbf{Probabilidad de ocurrencia:} Alta.
+    \item \textbf{Impacto en caso de ocurrencia:} Paralización completa del subproyecto S6.
+    \item \textbf{Valoración del riesgo (RAR):} Muy alto debido a la importancia crítica del subproyecto S6 para el éxito del proyecto.
+\end{itemize}
+
+\subsubsection{Estrategias de mitigación y gestión del riesgo}
+Dado que la organización tiene una alta tolerancia al riesgo, el jefe de proyecto decide tomar medidas para reducir el impacto a un valor muy bajo.
+
+\begin{enumerate}
+    \item \textbf{Desarrollo de un plan de contingencia:} Creación de un plan detallado para acciones inmediatas en caso de que A6 se materialice.
+    \item \textbf{Refuerzo de los controles del proyecto:} Aumentar la supervisión y el control en las fases críticas del subproyecto S6 para detectar tempranamente cualquier señal de la amenaza A6.
+    \item \textbf{Formación y preparación del equipo:} Capacitar al equipo sobre cómo actuar eficazmente en caso de que la amenaza se materialice.
+    \item \textbf{Asignación de recursos adicionales:} Prever recursos adicionales (humanos, técnicos, financieros) para abordar rápidamente la amenaza si ocurre.
+\end{enumerate}
+
+\subsubsection{Evaluación del riesgo restante residual (RRR)}
+Tras implementar las medidas de mitigación, el RRR se espera que sea:
+\begin{itemize}
+    \item \textbf{Probabilidad de ocurrencia:} Sigue siendo alta.
+    \item \textbf{Impacto en caso de ocurrencia:} Reducido a un valor muy bajo.
+    \item \textbf{Valoración del riesgo (RRR):} Bajo, en línea con la alta tolerancia al riesgo de la organización.
+\end{itemize}
+
+
+
+\end{document}

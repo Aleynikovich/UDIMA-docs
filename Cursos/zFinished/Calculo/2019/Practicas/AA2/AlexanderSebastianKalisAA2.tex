@@ -1,0 +1,236 @@
+\documentclass{article}
+\usepackage[backend=biber]{biblatex}
+\usepackage{authoraftertitle}
+\usepackage[top=2cm,bottom=1.5cm,left=1.5cm, right=3cm,includeheadfoot]{geometry}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage[spanish]{babel}
+\usepackage{mathtools}
+\usepackage{csquotes}
+\usepackage{amssymb}
+\usepackage{fancybox, graphicx}
+\usepackage{array}
+\usepackage{hhline}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{esvect}
+\usepackage{siunitx}
+\usepackage{commath}
+\newcommand{\ihat}{\textbf{\^\i}}
+\newcommand{\jhat}{\textbf{\^\j}}
+
+
+
+%Header & Footer
+
+\pagestyle{fancy}
+\fancyhead[LE]{\MyTitle}
+\fancyhead[LO]{Análisis Mateático}
+\fancyhead[RO]{\leftmark}
+\fancyhead[RE]{\leftmark}
+\fancyfoot[L]{\raisebox{-1cm}{\includegraphics[height=2cm]{E:/KUKADisk/UDIMA/DocumentGraphics/LOGOUDIMA.jpg}}}
+\fancyfoot[R]{Corregido:\\ Dr. J.J. Moreno García}
+
+
+%Vars
+\author{Alexander Sebastian Kalis}
+\title{Actividad de Aprenizaje 2\\ Octave}
+
+
+%DOC
+
+
+\begin{document}
+
+\begin{titlepage}
+
+    \begin{center}
+
+        \line(1,0){300}\\
+        [0.2in]
+        \huge{\bfseries {\MyTitle}}\\
+        [1mm]
+        \line(2,0){200}\\
+        [0.75cm]
+        \textsc{\LARGE Análisis Matemático}\\
+        [3cm]
+        \includegraphics[height=10cm]{E:/KUKADisk/UDIMA/DocumentGraphics/octave.png}\\
+        [2cm]
+
+    \end{center}
+
+    \begin{flushright}
+
+        Autor: {\MyAuthor}\\
+        Profesor: Dr. Juan José Moreno García\\
+        Curso: 1o, Ingeniería de Organización Industrial\\
+        UDIMA         
+
+    \end{flushright}
+    
+\end{titlepage}
+
+\tableofcontents \thispagestyle{empty}
+
+\newpage
+
+\section{Introducción}
+
+El objetivo de la actividad es la contstrucción de un programa mediante el lenguaje MatLab/Octave que nos permita computar la resolución 
+numérica de integrales por varios métodos, es decir, calcular el área que hay por debajo de una curva. 
+
+El método utilizado para la resolución de la actividad será el método de los trapecios. Este método trata de dar los valores que tiene la función
+$f$ para una serie de valores equidistantes de $x$. De este modo tenemos trapecios de distintas áreas que podemos sumar para dar el área total. También
+se utilizará el método de Simpson, que aproxima las curvas a un poliniomio de grado tres.
+
+\newpage
+\section{Desarrollo de la actividad}
+
+    \subsection{Apartado A}
+
+    \textit{Calcular numéricamente la siguiente integral definida:\\}
+    \[I=\int_0^{2\pi} \left| x\sen x^2 \right| dx\]
+
+    \textit{Usando el sistema de los trapecios y Simpson, para 11, 101, 1001 y 10001 puntos e interpretar ambos casos.}
+
+    \subsubsection{Sistema de trapecios}
+
+    Para el sistema de trapecios, se ha desarrollado una función que toma 4 argumentos.
+
+    \begin{itemize}
+        \item Límite inferior de integración.
+        \item Límite superior de integración.
+        \item La función a integrar.
+        \item El número de trapecios en los que descomponemos el área de la integral.\\
+    \end{itemize}
+
+    \begin{center}
+        \includegraphics[height=10cm]{E:/KUKADisk/UDIMA/DocumentGraphics/AA2Mates/AA2Matestrapz.png}\\
+    \end{center}
+
+    \textbf{Comparativa de resultados}\\
+
+    Esto nos permite comparar los resultados que obtenemos dependiendo de la cantidad de trapecios en los
+    que dividimos el área.
+    
+    A continuación se verá unos ejemplos de cómo influyen las subdivisiones en la aproximación del resultado.
+
+    \newpage
+
+    \textbf{Resultado por cálculo analítico}\\
+
+    Mediante el cálculo analítico podemos concluir que
+
+    \[I=\int_0^{2\pi} \left| x\sen x^2 \right| dx = 12.604\]
+
+    \textbf{Resultado por cálculo numérico}\\
+
+        Utilizando la función programada en Octave, se evalúa el resultado de la integral dividiendo el área en 10, 100, 1000 y 10000 trapecios:\\
+
+        \begin{center}
+            \includegraphics[height=6cm]{E:/KUKADisk/UDIMA/DocumentGraphics/AA2Mates/AAMatestrapza.png}
+        \end{center}
+        
+        Podemos ver claramente cómo el valor se aproxima cada vez más al valor analítico a medida que aumentamos los trapecios. Sim embargo
+        aplicando la fórmula del error absoluto $\epsilon_a=\bar{X}-X_i$ podemos ver que \textbf{hay picos de aumento en error absoluto cuando nos acercamos a las decenas:}
+
+        \begin{figure}[!htb]
+            \begin{minipage}{0.48\textwidth}
+              \centering
+              \includegraphics[height=5.5cm]{E:/KUKADisk/UDIMA/DocumentGraphics/AA2Mates/AA2MatestrapzAprox.png}
+              \caption{Subdivisiones de $f$}
+            \end{minipage}\hfill
+            \begin{minipage}{0.48\textwidth}
+              \centering
+              \includegraphics[height=5.5cm]{E:/KUKADisk/UDIMA/DocumentGraphics/AA2Mates/AA2Mateserror.png}
+              \caption{Error absoluto respecto a las subdivisiones}
+            \end{minipage}
+        \end{figure}
+
+        \newpage  
+    
+        \subsubsection{Sistema de Simpson}
+
+        Para el sistema de Simpson, también se ha buscado una forma alternativa de plantear el programa con la finalidad de practicar. En este caso la
+        función solo admite 1 argumento, el número de subdivisiones, las cuales deben ser pares ya que van de 2 en 2.
+
+        \begin{center}
+            \includegraphics[height=10cm]{E:/KUKADisk/UDIMA/DocumentGraphics/AA2Mates/AA2Matessimp13.png}\\
+        \end{center}
+        
+        \textbf{Resultado por cálculo numérico}\\
+
+        Se calculan los resultados para 10, 100, 1000 y 10000 subdivisiones:
+
+        \begin{center}
+            \includegraphics[height=6cm]{E:/KUKADisk/UDIMA/DocumentGraphics/AA2Mates/AA2Matessimpa.png}\\
+        \end{center}
+
+        \newpage 
+
+        Volvemos a consultar los gráficos de subdivisión y aproximación:
+
+        \begin{figure}[!htb]
+            \begin{minipage}{0.48\textwidth}
+              \centering
+              \includegraphics[height=5.5cm]{E:/KUKADisk/UDIMA/DocumentGraphics/AA2Mates/AA2MatessimpAprox.png}
+              \caption{Subdivisiones de $f$}
+            \end{minipage}\hfill
+            \begin{minipage}{0.48\textwidth}
+              \centering
+              \includegraphics[height=5.5cm]{E:/KUKADisk/UDIMA/DocumentGraphics/AA2Mates/AA2Matessimperror.png}
+              \caption{Error absoluto respecto a las subdivisiones}
+            \end{minipage}
+        \end{figure}
+
+        Donde se ve claramente la diferencia con el método de los trapecios, ya que la función del error absoluto baja constantemente a medida que
+        se aumentan las subdivisiones, a diferencia del método de los trapecios, en el cual había altibajos propios de una función sinusoidal que eran
+        provocados por los trapecios saliéndose de la gráfica de la función en las bajadas o bien no llegando hasta el final en las subidas.\\\\
+
+        \textbf{Conclusión}\\
+
+        Para concluir con ambos métodos conjutamente, utilizamos la función plot() para ver los resultados de ambos métodos juntos en una gráfica:
+
+        \begin{center}
+            \includegraphics[width=\textwidth]{E:/KUKADisk/UDIMA/DocumentGraphics/AA2Mates/AA2Matescomparagraph.png}\\
+        \end{center}
+
+        \newpage 
+        \subsection{Apartado B}
+
+        \textit{Calcular analíticamente la integral definida}
+        
+        \[  
+            I = \int_0^\pi \sen^3x \ dx =
+            \int _0^{\pi }\left(1-\cos ^2\left(x\right)\right)\sin \left(x\right)dx
+            \int _1^{-1}-1+u^2du=
+            -\int _{-1}^1-1+u^2du=
+        \]
+        \[
+            -\left(-\int _{-1}^11du+\int _{-1}^1u^2du\right)=
+            -\left(-2+\frac{2}{3}\right)=
+            \frac{4}{3}
+        \]
+
+        \textit{Entonces, por comparación, calcular la cantidad mínima de puntos que habría que usar con Simpson para tener un resultado con al menos 5 cifras 
+        significativas correctas (4 decimales).}\\
+
+        Para comparar los resultados, se ha realizado otro script que se ha llamado comparacion.m. Este script consta de un bucle \textit{while} que va ir iterando
+        entre posibles valores de subdivisiones (de 2 en 2) mientras que el resultado no cumpla la condición. Una vez cumplida la condición propuesta, el bucle se romperá e imprimirá
+        por consola el valor que estamos buscando.
+
+        \begin{center}
+            \includegraphics[width=1\textwidth]{E:/KUKADisk/UDIMA/DocumentGraphics/AA2Mates/AA2Matescomparacion.png}\\
+        \end{center}
+
+        
+        Entonces ejecutando este nuevo programa obtenemos el resultado de \textbf{22 subdivisiones o 23 puntos}
+        
+        \begin{center}
+            \includegraphics[height=4cm]{E:/KUKADisk/UDIMA/DocumentGraphics/AA2Mates/AA2Matescomparaciono.png}\\
+        \end{center}
+
+
+    \end{document}

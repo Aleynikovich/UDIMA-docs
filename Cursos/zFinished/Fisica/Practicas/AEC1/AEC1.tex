@@ -1,0 +1,439 @@
+\documentclass{article}
+\usepackage{lipsum}
+\usepackage{authoraftertitle}
+\usepackage[top=2cm,bottom=1.5cm,left=1.5cm, right=3cm,includeheadfoot]{geometry}
+\usepackage{graphicx}
+\usepackage[parfill]{parskip}
+\usepackage{fancyhdr}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{mathtools}
+\usepackage{csquotes}
+\usepackage{amssymb}
+\usepackage[shortlabels]{enumitem}
+\usepackage{fancybox, graphicx}
+\usepackage{array}
+\usepackage{hhline}
+\usepackage{subfigure}
+\usepackage{gensymb}
+\usepackage{hyperref}
+\usepackage{nicefrac}
+\usepackage{tikz}
+\usepackage{amsmath}
+\DeclareUnicodeCharacter{00A0}{ }
+\usepackage{leftidx}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{upgreek}
+\usepackage{amsmath} 
+\usepackage{caption}
+\usepackage{esvect}
+\usepackage{siunitx}
+\usepackage{commath}
+\usepackage{bigints}
+
+
+%Vars
+\author{Alexander Sebastian Kalis}
+\title{Actividad de Evaluación Continua 1}
+\pagestyle{fancy}
+\fancyhead[LO]{1507 Fundamentos Físicos}
+\fancyhead[RO]{\author}
+%\fancyhead[RE]{\leftmark}
+\fancyfoot[L]{\raisebox{-1cm}{\includegraphics[height=1.5cm]{E:/KUKADisk/UDIMA/DocumentGraphics/LOGOUDIMA.jpg}}}
+\fancyfoot[R]{Corregido:\\ Dra. Celeste Beatriz Justo María}
+%\fancyfoot[RO]{07/12/2018}
+
+
+\begin{document}
+
+\begin{titlepage}
+
+    \begin{center}
+
+        \line(1,0){300}\\
+        [0.2in]
+        \huge{\bfseries {\MyTitle}}\\
+        [1mm]
+        \line(2,0){200}\\
+        [0.75cm]
+        \textsc{\LARGE Fundamentos Físicos}\\
+        [2cm]
+        \includegraphics[height=10cm]{E:/KUKADisk/UDIMA/Fisica/Practicas/portada.jpg}\\
+        [3cm]
+
+    \end{center}
+
+    \begin{flushright}
+
+        {\MyAuthor}\\
+        Profesora: Dra. Celeste Beatriz Justo María\\
+        Curso: Ingeniería de Organización Industrial\\
+        UDIMA\\
+        \today        
+
+    \end{flushright}
+    
+\end{titlepage}
+
+%\tableofcontents \thispagestyle{empty}
+%\newpage
+
+\section*{Problema 1}
+Tenemos una esfera conductora rodeada por una corteza esférica también conductora como en la
+siguiente figura:\\
+
+\begin{center}
+    \includegraphics[height=5cm]{E:/KUKADisk/UDIMA/Fisica/Practicas/AEC1/problema1.png}
+\end{center}
+
+En un momento determinado la esfera interior se conecta a una batería y se carga hasta que se llega al
+equilibrio electrostático de nuevo y a continuación se desconecta la batería, manteniéndose el equilibrio.
+Calcula:\\
+
+a) Densidad de carga superficial en la esfera interna.\\
+
+
+La esfera que hemos conectado a una batería es conductora. Esto significa que sus electrones de valencia
+se encuentran libres y están situados en la superfície de la esfera. También sabemos que la carga en una esfera  
+se comporta como una carga puntual en su centro.
+
+Por último, el dato que nos piden es la densidad de carga superficial. Por lo tanto necesitaremos saber la carga y la
+superfície de la esfera.\\
+
+
+Potencial  generado por una carga puntual $Q$ a una distancia $d$:
+
+\[
+    V=\frac{Q}{4\pi \epsilon_0 d} \implies Q=V 4\pi \epsilon_0 d
+\]
+
+Y sustituyendo los datos proporcionados nos queda que:
+
+\[
+    Q=V_0 R_0 4 \pi \epsilon_0 \ \  C
+\]
+
+Entonces la densidad de carga superficial de la esfera interna será:
+
+\[
+    \sigma = \frac{Q}{S} = \frac{V_0 R_0 4 \pi \epsilon_0}{4 \pi {R_0}^2} = \frac{V_0 \epsilon_0}{R_0} \ \nicefrac{C}{m^2}
+\]
+
+\newpage
+
+b) ¿Aparece alguna carga en la corteza esférica? ¿qué valores tiene? ¿cuáles son sus
+densidades?\\
+
+
+Por ley de Gauss, sabemos que el campo interior de un conductor en equilibrio equivale a 0. Por lo tanto, en las superfícies de la 
+corteza se concentran las cargas, de signo contrario. Por inducción, la superfície interior de la corteza estará cargada con la carga
+$-Q$ que hemos calculado en el apartado anterior y por consecuencia, la superfície exterior estará cargada con la carga $Q$.
+
+La densidad de carga superficial de la superfície interior será:
+
+\[
+    \sigma = \frac{Q}{S} \implies \sigma_{s2int}=\frac{-Q}{4 \pi R_i} \ \nicefrac{C}{m^2}
+\]
+
+Y la de la superfície exterior será:
+
+\[
+    \sigma = \frac{Q}{S} \implies \sigma_{s2ext}=\frac{Q}{4 \pi R_e} \ \nicefrac{C}{m^2}
+\]
+
+
+
+c) Campo eléctrico en todo punto del espacio, en forma vectorial.\\
+
+Si $r < R_0$ entonces $E=0 \nicefrac \ {N}{C}$ pues estamos dentro de un conductor.
+
+Si $R_0 < r < R_i$ se genera un campo radial. Recordamos que se comporta como una carga puntual en el centro:
+
+\[
+    \varPhi_{gauss} = \frac{q_{int}}{\epsilon_0} = \frac{Q}{\epsilon_0} \implies \frac{Q}{\epsilon_0} = E4\pi r^2 \implies E=\frac{Q}{4\pi \epsilon r^2} \ \nicefrac{N}{C}
+\]
+
+Si $R_i < r < R_e$ volvemos a estar dentro de un conductor por tanto $E=0 \ \nicefrac{N}{C}$.
+
+Si $R_e < r < \infty$ nos encontramos con el mismo caso que en $R_0 < r < R_i$ y por lo tanto será: 
+
+\[
+    E=\frac{Q}{4\pi \epsilon_0 r^2} \ \nicefrac{N}{C}
+\]
+
+
+d) Función potencial eléctrico en todo punto del espacio.\\
+
+La función del potencial eléctrico en cualquier punto, de nuevo, será la misma que la generada por una carga puntual en el centro de la 
+esfera cargada. Además sabemos que dentro de los conductores el potencial va a ser constante.
+
+\[    
+    V(r)=\frac{q}{4\pi \epsilon_0 r} \ V
+\]
+
+
+\newpage
+
+\section*{Problema 2}
+
+Un condensador cilíndrico está compuesto por por dos cilindros metálicos concéntricos de radios “a” y
+“b” $(a < b)$ y una longitud $L$. Este condensador está relleno de aire hasta un radio “c” y desde “c” hasta
+el conductor exterior de un dieléctrico de constante $r=4$.
+
+a) Haz un dibujo transversal esquemático del problema.\\
+
+\begin{center}
+    \includegraphics[height=7cm]{E:/KUKADisk/UDIMA/Fisica/Practicas/AEC1/problema2.png}\\
+\end{center}
+
+
+b) Cuando el cilindro interno se carga con Q y el exterior con -Q: ¿qué forma van a tener el campo
+eléctrico y las superficies equipotenciales en el interior del condensador?\\
+
+El campo generado por las cargas Q y -Q tendrá forma radial y apuntará hacia fuera del condensador.
+El campo generado por la carga de polarización tendrá la misma forma radial pero en este caso será hacia dentro del condensador.
+
+c) Calcula el campo y el potencial en el interior del condensador.\\
+
+El campo dentro del cilindro interio será $E=0$ pues es un conductor.
+
+El campo en el primer dieléctrico (aire), $k_1$, será el campo generado por la carga Q y disminuido por la constante dieléctrica del aire.
+Escogemos entonces una superfície gaussiana de radio $r$ donde $a<r<c$:
+
+\[
+    E_1=\frac{E_0}{k_{a}}=\frac{Q}{2\pi \epsilon_0 k_{1} L r } \ \nicefrac{N}{C}
+\]
+
+Similarmente ocurrirá en el dieléctrico exterior. El dieléctrico interior está reduciendo el campo total antes de llegar al
+siguiente dielétrico. Con lo cual solamente debemos multiplicar el campo anterior por la constante del material exterior por
+su constante dielétrica (4) y escogiendo una superfície gaussiana tal que $c<r<b$:
+
+\[
+    E_2=\frac{E_1}{4}=\frac{Q}{8\pi \epsilon_0 k_{1} L r} \ \nicefrac{N}{C}
+\]
+
+Aplicando el principio de superposición tendremos que el campo total será:
+
+\[
+    E_t=E_0-E_1-E_2 \ \nicefrac{N}{C}
+\]
+
+Sabemos que la diferencia de potencial también es inversamente proporcional a la constante dieléctrica, de forma que:
+
+\[
+    \Delta V = \frac{\Delta V_0}{4 k_1} \ V
+\]
+
+
+d) Calcula la capacidad del condensador.\\
+
+Al tener dos materiales dieléctricos, podemos tomar el condensador como dos condensadores conectados en serie:
+
+\[
+    \frac{1}{C_t}=\frac{1}{C_1}+\frac{1}{C_2} \ F
+\]
+
+
+Calculamos $C_1$ y $C_2$:
+
+\[
+    C_1 = \frac{2\pi L \epsilon_0 k_{a}}{\log (\nicefrac{a}{c})} \ F
+\]
+
+\[
+    C_2 = \frac{8\pi L \epsilon_0}{\log (\nicefrac{c}{b})} \ F
+\]
+
+Entonces nos queda que:
+
+
+\[
+    C_t = \cfrac{1}{\cfrac{2\pi L \epsilon_0 k_{a}}{\log (\nicefrac{a}{c})} + \cfrac{8\pi L \epsilon_0}{\log (\nicefrac{c}{b})}} \ F
+\]
+
+e) En el dieléctrico calcula: densidades de carga ligada volumétrica y superficial.
+
+Calculamos la carga en el primer dieléctrico (aire) y en el segundo dieléctrico:
+
+\[
+    q_a=Q(1-\frac{1}{k_1}) \ C
+\]
+   
+\[
+    q_r=Q(1-\frac{1}{4}) \ C
+\]
+
+Entonces densidad superficial será:
+
+\[
+    \sigma_a=\frac{q_a}{2\pi c L} \ \nicefrac{C}{m^2}
+\]
+
+\[
+    \sigma_r=\frac{q_r}{2\pi b L} \ \nicefrac{C}{m^2}
+\]
+
+La densidad volumétrica es nula.\\
+
+f) Demuestra que el dieléctrico sigue siendo neutro.
+
+Para demostrar que los dieléctricos son neutros, la densidad de carga en las superfícies de los conductores deberá ser igual pero opuesta
+a las superfícies de los dieléctricos con lo cual se debe cumplir que $\sigma_Q=-\sigma_a$ y $\sigma_{-Q} = \sigma_r$.
+
+
+\section*{Problema 3}
+
+Tenemos dos esferas metálicas de radios “a” y “b” respectivamente. Podemos suponer que ambas
+esferas están alejadas una de la otra una gran distancia. En un momento determinado conectamos
+cada esfera a una fuente de tensión y las ponemos a un potencial $V_a$ y $V_b$ respectivamente.
+A continuación, desconectamos las fuentes de tensión.
+
+a) ¿Qué cantidad de carga almacenan las esferas?
+
+Como vimos en el problema 1, la carga de una esfera se comporta como una carga puntual en su centro, entonces:
+
+\[
+    Q_a=V_a a k \ C
+\]
+
+\[
+    Q_b=V_b b k \ C
+\]
+
+b) ¿Qué energía almacena cada una de las esferas?
+
+La energía que almacena una esfera se puede expresar como:
+
+\[
+    U=\frac{1}{2} \frac{Q^2}{4\pi \epsilon_0 R} \ J
+\]
+
+Donde R será el radio de la esfera, en este caso $a$ y $b$ y Q será la carga que almacena la esfera, $Q_a$ y $Q_b$.\\
+
+
+Pasado un tiempo, mediante un hilo conductor, conectamos eléctricamente ambas esferas y esperamos
+una gran cantidad de tiempo a que se alcance un equilibrio:\\
+
+c) ¿Qué cantidad de carga va a tener cada una de las esferas?\\
+
+Como hemos llegado a un punto de equilibrio, se debe cumplir que $V_1 = V_2$, entonces:
+
+\[
+    k \frac{Q_a}{a}=k \frac{Q_b}{b} \ [V]
+\]
+
+Si despejamos nos queda que:
+
+\[
+    Q_a=Q_b \frac{a}{b} \ C
+\]
+
+\[
+    Q_b=Q_a \frac{b}{a} \ C
+\]
+
+d) ¿A qué potencial estará cada una de las esferas?
+
+Ambas esferas estarán al mismo potencial, pues al unirlas creamos un sistema equipotencial.
+
+\[V = k \frac{Q_a}{a} =  k \frac{Q_a}{a}=k \frac{Q_b}{b} \ [V] \]\\
+
+e) Qué energía almacena cada una de las esferas?
+
+\[
+    U_a=\frac{1}{2} \frac{(Q_b \frac{a}{b})^2}{4\pi \epsilon_0 a} \ J
+\]
+
+\[
+    U_b=\frac{1}{2} \frac{(Q_a \frac{b}{a})^2}{4\pi \epsilon_0 b} \ J
+\]
+
+
+\section*{Problema 4}
+
+Tenemos dos conos metálicos alineados con el eje Z. Uno está en el semiespacio $z>0$ y el otro está en
+el semiespacio $z<0$ y su vértice está en el origen de coordenadas como en la figura. Los dos vértices están
+eléctricamente aislados.\\
+
+También como se ve en la figura, el cono superior está sometido a un potencial $V_0$ y el inferior a  y el inferior a $-V_0$.
+En estas condiciones, calcula:\\
+
+a) El campo eléctrico entre ambos conos.
+
+
+\begin{center}
+    \includegraphics[height=4cm]{E:/KUKADisk/UDIMA/Fisica/Practicas/AEC1/problema4.png}\\
+\end{center}
+
+Sabemos que son superfícies equipotenciales, diferencia de potencial entre ambos conos siempre es de 2 V.\\
+
+El campo eléctrico entre los conos no es uniforme y varía en función de la distancia recorrida por el eje X. A medida que aumenta X,
+el campo disminuye.
+
+
+\begin{center}
+    \includegraphics[height=5cm]{E:/KUKADisk/UDIMA/Fisica/Practicas/AEC1/problema4b.PNG}\\
+\end{center}
+
+\[
+    \frac{d_x}{2}=x\frac{\cos \alpha}{\sin \alpha} \implies
+    d_x=2x \cot \alpha
+\]
+Partiendo de la definición:\\
+\[
+    \int \vec{E} \cdot \vec{dl}=V
+\]
+Podemos reescribirla así:\\
+\[
+    E \cdot  x \cot \alpha = 1
+\]
+Por lo tanto el campo será, en función de x:\\
+\[
+    E(x)=\frac{ \tan \alpha}{x} \ \nicefrac{V}{m}
+\]
+
+
+b) La densidad superficial de carga en las superficies de los dos conos. \\
+
+
+Ya que el campo depende de x, también lo hará la densidad de carga pues la geometría es cónica. Sabemos que
+el material es conductor entonces toda su carga se almacena en la superfície:
+
+\[
+    E=\frac{\sigma}{\epsilon_0} \implies
+    \sigma =  \frac{ \epsilon_0 \tan \alpha}{x} \ \nicefrac{C}{m^2}
+\]
+
+
+c)La densidad de carga a cada lado de la plancha metálica puesta a tierra que pudiésemos colocar
+en z=0.
+
+\begin{center}
+    \includegraphics[height=5cm]{E:/KUKADisk/UDIMA/Fisica/Practicas/AEC1/problema4c.PNG}\\
+\end{center}
+
+Podemos deducir que la densidad superficial de la plancha metálica tampoco se distribuye de forma constante.
+Los conos proyectan superfícies circulares equipotenciales de radio $x$. Como un lado es positivo y el otro negativo, esto hace 
+que la carga total neta sea 0, pues se anulan entre ellos. 
+
+Dicho en "matemáticas", en la parte superior de la plancha:
+
+\[
+    \sigma = - \frac{ \epsilon_0 \tan \alpha}{x} \ \nicefrac{C}{m^2}
+\]
+
+En la parte inferior de la plancha:
+
+\[
+    \sigma = + \frac{ \epsilon_0 \tan \alpha}{x} \ \nicefrac{C}{m^2}
+\]
+
+Carga neta total:
+
+\[
+    \sum Q_t = 0 \ C
+\]
+
+
+\end{document}

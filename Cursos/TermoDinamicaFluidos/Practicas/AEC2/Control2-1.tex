@@ -1,0 +1,218 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\usepackage{siunitx}
+\usepackage{enumitem}
+
+% Configuración de márgenes
+\geometry{left=2.5cm, right=2.5cm, top=3cm, bottom=3cm}
+
+% Encabezado y pie de página
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{UDIMA}
+\fancyhead[R]{Fundamentos de Termodinámica y Mecánica de Fluidos}
+\fancyfoot[C]{\thepage}
+
+% Título del documento
+\title{\textbf{Resolución del Control de Evaluación}\\[0.5cm]
+\Large{Unidades 5 y 6 - Transferencia de Calor}}
+\author{Alumno: Alexander Sebastian Kalis \\ Profesor: Dr.~César Pérez de Villar Palomo}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\newpage
+
+\section*{Preguntas y Resoluciones (Primera tanda)}
+
+\subsection*{Pregunta 1}
+\textit{La transmisión de calor por convección:}
+\begin{enumerate}[label=\alph*)]
+    \item Se produce únicamente cuando la superficie está a la misma temperatura que el fluido.
+    \item Se produce únicamente cuando la superficie está a menor temperatura.
+    \item Se produce únicamente cuando la superficie está a mayor temperatura.
+    \item \textbf{Se produce cuando la superficie está a distinta temperatura que el fluido.}
+\end{enumerate}
+
+\paragraph{Respuesta Correcta: d)}
+
+\hrulefill
+
+\subsection*{Pregunta 2}
+\textit{Para el caso de paredes planas en paralelo el calor global debido a conducción será:}
+\begin{enumerate}[label=\alph*)]
+    \item Igual a la que pasa por cada pared.
+    \item Fórmula en serie.
+    \item \textbf{Suma de flujos por cada pared (fórmula en paralelo).}
+    \item Ninguna es correcta.
+\end{enumerate}
+
+\paragraph{Respuesta Correcta: c)}
+
+\hrulefill
+
+\subsection*{Pregunta 3}
+\textit{Conducción de 3 kW a través de aislante ($A=8.4$ m$^2$, $L=9.1$ mm, $k=0.2$). $T_{int}=415^\circ$C. Calcular $T_{ext}$.}
+
+\paragraph{Respuesta: 399}
+\textbf{Justificación:} $\Delta T=\frac{Q L}{kA}=\frac{3000\cdot0.0091}{0.2\cdot8.4}=16.25$.  
+$T_{ext}=415-16.25=399^\circ$C.  
+(Corrección: en tu versión tenías 413.4 ºC, pero el resultado correcto es $\approx 399^\circ$C).
+
+\hrulefill
+
+\subsection*{Pregunta 4}
+\textit{Madera de $L=45.2$ mm, $q=40$ W/m$^2$, $\Delta T=26.4$ ºC. Calcular $k$.}
+
+\paragraph{Respuesta: 0.068}
+\textbf{Justificación:} $k=\frac{q L}{\Delta T}=\frac{40\cdot0.0452}{26.4}=0.068$ W/m·K.  
+(Corrección: en tu versión habías puesto 0.061, pero el cálculo da $\approx 0.068$).
+
+\hrulefill
+
+\subsection*{Pregunta 5}
+\textit{La conductancia convectiva tiene unidades de $\frac{J}{m^2 s K}$.}
+\begin{enumerate}[label=\alph*)]
+    \item \textbf{Verdadero}
+    \item Falso
+\end{enumerate}
+
+\paragraph{Respuesta Correcta: a)}
+
+\hrulefill
+
+\subsection*{Pregunta 6}
+\textit{¿Qué mecanismo no necesita medio físico?}
+\begin{enumerate}[label=\alph*)]
+    \item Conducción
+    \item Todas necesitan medio
+    \item \textbf{Radiación}
+    \item Convección
+\end{enumerate}
+
+\paragraph{Respuesta Correcta: c)}
+
+\hrulefill
+
+\subsection*{Pregunta 7}
+\textit{En paredes planas en paralelo, el calor total es la suma de los calores parciales.}
+\begin{enumerate}[label=\alph*)]
+    \item \textbf{Verdadero}
+    \item Falso
+\end{enumerate}
+
+\paragraph{Respuesta Correcta: a)}
+
+\hrulefill
+
+\subsection*{Pregunta 8}
+\textit{La conductividad térmica $k$ tiene unidades de $\frac{J}{m K}$.}
+\begin{enumerate}[label=\alph*)]
+    \item Verdadero
+    \item \textbf{Falso}
+\end{enumerate}
+
+\paragraph{Respuesta Correcta: b)}  
+\textbf{Justificación:} Correctamente es $\frac{W}{m K} = \frac{J}{s m K}$.
+
+\hrulefill
+
+\newpage
+\section*{Preguntas y Resoluciones (Segunda tanda)}
+
+\subsection*{Pregunta 9}
+\textit{Para que se produzca transferencia de calor por convección siempre es necesario que exista diferencia de temperaturas entre la superficie y el fluido.}
+\begin{enumerate}[label=\alph*)]
+    \item \textbf{Verdadero}
+    \item Falso
+\end{enumerate}
+
+\paragraph{Respuesta Correcta: a)}
+
+\hrulefill
+
+\subsection*{Pregunta 10}
+\textit{La conductividad térmica tiene unidades de $W/(m \cdot K)$.}
+\begin{enumerate}[label=\alph*)]
+    \item \textbf{Verdadero}
+    \item Falso
+\end{enumerate}
+
+\paragraph{Respuesta Correcta: a)}
+
+\hrulefill
+
+\subsection*{Pregunta 11}
+\textit{En paredes planas en serie, el calor total es la suma de los calores que atraviesan cada pared.}
+\begin{enumerate}[label=\alph*)]
+    \item Verdadero
+    \item \textbf{Falso}
+\end{enumerate}
+
+\paragraph{Respuesta Correcta: b)}  
+\textbf{Justificación:} En serie, el calor es el mismo en todas las capas, no se suma. Lo que se suma son las resistencias térmicas.
+
+\hrulefill
+
+\subsection*{Pregunta 12}
+\textit{La convección forzada:}
+\begin{enumerate}[label=\alph*)]
+    \item \textbf{Necesita fuerza motriz externa}
+    \item Se produce por diferencia de densidad
+    \item Ninguna es correcta
+    \item No necesita fluido
+\end{enumerate}
+
+\paragraph{Respuesta Correcta: a)}
+
+\hrulefill
+
+\subsection*{Pregunta 13}
+\textit{La transmisión de calor por radiación:}
+\begin{enumerate}[label=\alph*)]
+    \item Es independiente de la temperatura
+    \item \textbf{Se produce por ondas electromagnéticas}
+    \item No se puede producir en fluido
+    \item Necesita vacío
+\end{enumerate}
+
+\paragraph{Respuesta Correcta: b)}
+
+\hrulefill
+
+\subsection*{Pregunta 14}
+\textit{Conducción de 3 kW, $A=16$ m$^2$, $L=2.2$ mm, $k=0.2$, $T_{int}=415^\circ$C. Calcular $T_{ext}$.}
+
+\paragraph{Respuesta: 415}
+\textbf{Justificación:} $\Delta T=\frac{Q L}{kA}=\frac{3000\cdot0.0022}{0.2\cdot16}=2.06$.  
+$T_{ext}=415-2.06\approx 413^\circ$C.
+
+\hrulefill
+
+\subsection*{Pregunta 15}
+\textit{Madera de $L=43.5$ mm, $\Delta T=19.7$ ºC, $q=40$ W/m$^2$. Calcular $k$.}
+
+\paragraph{Respuesta: 0.088}
+\textbf{Justificación:} $k=\frac{q L}{\Delta T}=\frac{40\cdot0.0435}{19.7}=0.088$ W/m·K.
+
+\hrulefill
+
+\subsection*{Pregunta 16}
+\textit{La conducción estacionaria unidimensional se rige por la ley de Fourier. ¿Cuál es la forma correcta?}
+\begin{enumerate}[label=\alph*)]
+    \item Incorrecta
+    \item Incorrecta
+    \item Incorrecta
+    \item \textbf{Proporcional a $A$, $k$, $\Delta T$ e inversamente a $L$}
+\end{enumerate}
+
+\paragraph{Respuesta Correcta: d)}
+
+\end{document}

@@ -1,0 +1,180 @@
+\documentclass{article}
+\usepackage{lipsum}
+\usepackage{authoraftertitle}
+\usepackage[top=2cm,bottom=1.5cm,left=1.5cm, right=3cm,includeheadfoot]{geometry}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+%\usepackage[spanish]{babel}
+\usepackage{mathtools}
+\usepackage{nicefrac}
+\usepackage{csquotes}
+\usepackage{amssymb}
+\usepackage{fancybox, graphicx}
+\usepackage{array}
+\usepackage{hhline}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{esint}
+\usepackage{caption}
+\usepackage{esvect}
+\usepackage{siunitx}
+\usepackage{commath}
+\newcommand{\ihat}{\textbf{\^\i}}
+\newcommand{\jhat}{\textbf{\^\j}}
+%Header & Footer
+
+\pagestyle{fancy}
+%\fancyhead[LE]{\MyTitle}
+\fancyhead[LO]{Fundamentos de Electricidad y Electrónica}
+\fancyhead[RO]{Actividad de Evaluación Contínua 2}
+%\fancyhead[RE]{\leftmark}
+\fancyfoot[L]{\raisebox{-1cm}{\includegraphics[height=1.5cm]{D:/KUKADisk/OneDrive - KUKA AG/UDIMA/DocumentGraphics/LOGOUDIMA.jpg}}}
+\fancyfoot[R]{Corregido:\\ Dra. Teresa Magraner Benedicto}
+%\fancyfoot[RO]{07/12/2018}
+
+
+%Vars
+\author{Alexander Sebastian Kalis}
+\title{Actividad de Evaluación Contínua 2}
+
+
+%DOC
+
+
+\begin{document}
+
+\begin{titlepage}
+
+    \begin{center}
+
+        \line(1,0){300}\\
+        [0.2in]
+        \huge{\bfseries {\MyTitle}}\\
+        [1mm]
+        \line(2,0){200}\\
+        [0.75cm]
+        \textsc{\LARGE Fundamentos de Electricidad y Electrónica}\\
+        [2cm]
+        \includegraphics[height=10cm]{D:/KUKADisk/OneDrive - KUKA AG/UDIMA/EYE/AEC/AEC1/imgs/portada.jpg}\\
+        [3cm]
+
+    \end{center}
+
+    \begin{flushright}
+
+        Autor: {\MyAuthor}\\
+        Profesora: Dra. Teresa Magraner Benedicto\\
+        Ingeniería de Organización Industrial\\
+        UDIMA         
+
+    \end{flushright}
+    
+\end{titlepage}
+
+\section*{Caso 1}
+
+Para el circuito de la figura se pide:\\
+
+\begin{center}
+    \includegraphics*[height=7cm]{D:/KUKADisk/OneDrive - KUKA AG/UDIMA/EYE/AEC/AEC2/imgs/c1e1.png}
+\end{center}
+
+
+a) Determinar la caída de tensión entre los puntos A y B.\\
+
+En este caso podemos aplicar el teorema de Millmann para obtener la caída de tensión de forma simple:
+
+\[
+    V_{AB} = \cfrac[]{\cfrac[]{V_1}{R_1}+\cfrac[]{V_3-V_2}{R_2}+\cfrac[]{0}{R_3}}{\cfrac[]{1}{R_1}+\cfrac[]{1}{R_2}+\cfrac[]{1}{R_3}}=
+    \cfrac[]{\cfrac[]{10}{2}+\cfrac[]{3}{1}+\cfrac[]{0}{3}}{\cfrac[]{1}{2}+\cfrac[]{1}{1}+\cfrac[]{1}{3}}=
+    4.36V
+\]\\
+
+
+b) Comprobar el valor obtenido mediante la simulación del circuito en QUCS.\\
+
+\begin{center}
+    \includegraphics*[height=7cm]{D:/KUKADisk/OneDrive - KUKA AG/UDIMA/EYE/AEC/AEC2/imgs/c1r1.png}
+\end{center}
+
+\newpage
+
+\section*{Caso 2}
+
+El interruptor de los circuitos de la figura se cierra en $t = 0$, estando el condensador 
+descargado $(V_o = 0)$. Se pide para cada circuito:\\
+
+\begin{center}
+    \includegraphics*[height=8cm]{D:/KUKADisk/OneDrive - KUKA AG/UDIMA/EYE/AEC/AEC2/imgs/c2e1.png}
+\end{center}
+
+a) Determinar la expresión de la tensión en el condensador en función del tiempo $u_c(t)$.\\
+
+Circuito 1\\
+
+Vamos a aplicar Thevenin para simplificar el circuito:
+
+\begin{center}
+    \includegraphics*[height=5cm]{D:/KUKADisk/OneDrive - KUKA AG/UDIMA/EYE/AEC/AEC2/imgs/c2c1r2.png}
+\end{center}
+
+\[
+    R_{eq}=R1+R3=2500 \Omega
+\]
+
+\[
+    I_{th}=\frac{V}{R_{eq}}=\frac{10}{2500}=4 mA
+\]
+
+\[
+    V_{th}=R_3 \cdot I_{th}=2000 \cdot 4 \cdot 10^{-3} = 8V
+\]
+
+Para calcular la resistencia se cortocircuita la fuente de alimentación y sustituimos el condensador por una. En ese caso nos queda:
+
+\[
+    R_{th} = \cfrac[]{500 \cdot 2000}{500+2000} + 400 = 1000 \Omega
+\]
+
+
+\begin{center}
+    \includegraphics*[height=5cm]{D:/KUKADisk/OneDrive - KUKA AG/UDIMA/EYE/AEC/AEC2/imgs/c2c1r3.png}
+\end{center}
+
+Calculamos la constante de tiempo del circuito:
+
+\[
+    \tau = RC = 1000 \cdot 1 \cdot 10 ^ {-7} = 100 \mu s \rightarrow 5\tau = 500 \mu s
+\]
+
+Sabiendo que la tensión del condensador en función del tiempo viene dada por:
+
+\[
+    U_c(t) = [U_c(0) - U_{cp}(0)]e^{\cfrac[]{-t}{\tau}}+U_{cp}(t)
+\]
+
+Simplificamos con los datos calculados:
+
+\[
+    U_c(t)=8\left(1-e^{\cfrac[]{-t}{\tau}}\right)
+\]
+
+
+
+
+
+b) Obtener, mediante la simulación en QUCS, la evolución de la tensión en el condensador desde 
+el instante $t = 0$ hasta que el circuito alcance el régimen permanente.\\
+
+
+\begin{center}
+    \includegraphics*[height=7cm]{D:/KUKADisk/OneDrive - KUKA AG/UDIMA/EYE/AEC/AEC2/imgs/c2c1r4.png}
+\end{center}
+
+
+
+\end{document}

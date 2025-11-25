@@ -1,0 +1,338 @@
+\documentclass{article}
+\usepackage{lipsum}
+\usepackage{authoraftertitle}
+\usepackage[top=2cm,bottom=1.5cm,left=1.5cm, right=3cm,includeheadfoot]{geometry}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{mathtools}
+\usepackage{csquotes}
+\usepackage{enumitem}
+\usepackage{amssymb}
+\usepackage{fancybox, graphicx}
+\usepackage{array}
+\usepackage{hhline}
+\usepackage{textcomp}
+\usepackage{eurosym}
+\usepackage{hyperref}
+\usepackage{parskip}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{siunitx}
+\usepackage{amsmath}
+\usepackage{caption}
+\usepackage{esvect}
+\usepackage{siunitx}
+\usepackage{commath}
+
+%Header & Footer
+\pagestyle{fancy}
+%\fancyhead[LE]{\MyTitle}
+\fancyhead[LO]{Técnicas de optimización de sistemas industriales}
+\fancyhead[RO]{}
+%\fancyhead[RE]{\nouppercase\leftmark}
+\fancyfoot[L]{\raisebox{-1cm}{\includegraphics[height=1.5cm]{D:/KUKADisk/UDIMA/DocumentGraphics/LOGOUDIMA.jpg}}}
+\fancyfoot[R]{Corregido:\\ Dr. Fco. David de la Peña Esteban}
+%\fancyfoot[RO]{07/12/2018}
+
+
+%Vars
+%\author{Alexander Sebastian Kalis}
+\title{AEC 3 - Unidades 8 y 9}
+
+
+%DOC
+
+
+\begin{document}
+
+\begin{titlepage}
+
+    \begin{center}
+
+        \line(1,0){300}\\
+        [0.2in]
+        \huge{\bfseries {\MyTitle}}\\
+        [1mm]
+        \line(2,0){200}\\
+        [0.75cm]
+        \textsc{\LARGE Técnicas de optimización de sistemas industriales}\\
+        [2cm]
+        \includegraphics[height=10cm]{Items/portada.png}\\
+
+    \end{center}
+
+    \begin{flushright}
+
+        José Luís Galán\\
+        Jaume Lorente\\
+        Raquel Domingo Lazaro\\
+        Alexander Sebastian Kalis\\
+        [.5cm]
+        Profesor: Dr. Fco. David de la Peña Esteban\\
+        Curso: Ingeniería de Organización Industrial\\
+        UDIMA         
+
+    \end{flushright}
+    
+\end{titlepage}
+
+\thispagestyle{plain}
+\tableofcontents
+
+\newpage
+
+\section{Modelo con aprovisionamiento y consumo simultáneo}
+
+Una parte de nuestro productivo necesita 40.000 unidades anuales de un componente. Ese
+componente lo suministra otra parte de nuestro sistema productivo con una tasa de 500
+unidades por día. Se estima su coste en 5\euro \ por unidad. Su coste de almacenaje anual es de 1\euro \ por unidad.
+El coste de preparación del pedido se estima en 200\euro.
+
+Un año se considera que tiene 250 días laborables.
+
+Se pide:
+
+\begin{enumerate}
+
+    \item ¿Cuál será el tamaño del lote económico? El lote económico debe ser múltiplo de 500
+    unidades. Redondear por debajo.
+    \item Realizar la representación gráfica del problema.
+    \item Obtener también el punto de pedido para estas dos situaciones:
+     
+    \begin{enumerate}[label*=\arabic*.]
+        \item Si el periodo de suministro es de 5 días
+        \item Si el periodo de suministro es de 20 días
+    \end{enumerate}     
+
+\end{enumerate}
+
+\subsection{Lote económico}
+
+Datos:
+
+Da = 40.000 unidades/año
+
+Ce = 200\euro \ por pedido
+
+Cal = 1\euro \ unidad/año
+
+Cc = 5\euro \ unidad
+
+p = 500 unidades/día
+
+d = Da/N días año = 160 unidades/día
+
+\[
+    Q^*=\sqrt{\cfrac[]{2\cdot Da \cdot Ce}{Cal}\cdot \cfrac[]{p}{(p-d)}}=
+    \sqrt{\cfrac[]{2\cdot 40000\cdot 200}{1}\cdot \cfrac[]{500}{(500-160)}}=
+    4850.71 \approx 4500 \ uds
+\]
+
+
+\subsection{Representación gráfica}
+
+Tiempo necesario de producción:
+\[
+    t=\frac{Q^*}{p}=\frac{4500}{500}=9 \ d
+\]
+
+Pedidos anuales: 
+
+\[
+    \frac{Da}{Q^*}=9 \ pedidos
+\]
+
+Tiempo entre dos pedidos (días de año / pedidos por año): 
+
+\[
+    T = \frac{160}{9} = 28 \ d
+\]
+
+\begin{figure}[!htb]
+    \begin{center}
+        \includegraphics[height=7cm]{Items/p1f1.PNG}
+        \caption{Representación gráfica}
+    \end{center}
+\end{figure}
+
+\subsection{Suministro a 5 días}
+
+\[
+    Pp=d \cdot PS1 = 160 \cdot 5 = 800 \ uds
+\]
+
+\subsection{Suministro a 20 días}
+
+\[
+    Pp=(p-d)\cdot (T-PS)=2720 \ uds
+\]
+
+
+
+\newpage
+
+\section{Modelo de descuentos por cantidad}
+
+Nuestra empresa necesita un componente para la línea de producción. Anualmente necesita
+75.000 unidades, y se tiene una empresa proveedora que nos lo suministra a un precio de 82\euro \
+por unidad si la cantidad comprada es inferior a 1000 unidades, de 80\euro \ por unidad en caso de
+superar esta cifra, y de 75\euro \ por unidad si se igualan o superan las 1800 unidades. Cada vez
+que se hace un pedido hay unos costes fijos de 200\euro.
+
+Para este componente el factor K que relaciona su coste de almacenamiento con el precio es de
+$0.15$.
+
+Se pide:
+
+\begin{enumerate}
+
+    \item Realizar la representación gráfica del problema.
+    \item ¿Qué cantidad interesa pedir a nuestro proveedor?
+    
+\end{enumerate}
+
+
+\subsection{Representación gráfica}
+
+
+$Da = 75.000$
+
+$Ce = 200$
+
+$Cc_1 = 82$ para $ Q < 1000$
+
+$Cc_2 = 80$ para $ 1000 \leq Q < 1800$
+
+$Cc_3 = 75$ para $ Q \geq 1800$
+
+$K = 0,15$
+
+
+
+\[
+    Q^*_1=\sqrt{\frac{2\cdot Da \cdot Ce}{Cc_1 \cdot K}}=
+    \sqrt{\frac{2\cdot 75000 \cdot 200}{82 \cdot 0.15}}=
+    1561.73 \approx 1561 \ uds
+\]
+
+\[
+    Q^*_2=\sqrt{\frac{2\cdot Da \cdot Ce}{Cc_2 \cdot K}}=
+    \sqrt{\frac{2\cdot 75000 \cdot 200}{80 \cdot 0.15}}=
+    1581.13 \approx 1581 \ uds
+\]
+
+\[
+    Q^*_3=\sqrt{\frac{2\cdot Da \cdot Ce}{Cc_3 \cdot K}}=
+    \sqrt{\frac{2\cdot 75000 \cdot 200}{75 \cdot 0.15}}=
+    1632.99 \approx 1632 \ uds
+\]
+
+\begin{figure}[!htb]
+    \begin{center}
+        \includegraphics[height=6.5cm]{Items/p2f1.PNG}
+        \caption{Representación gráfica}
+    \end{center}
+\end{figure}
+
+
+\subsection{Cantidad a pedir al proveedor}
+
+Calculamos las opciones disponibles:
+
+\[
+    Q=Q^*_2=1581 \ uds
+\]
+
+\[
+    CT2=Da\cdot Cc_2 + \frac{Q}{2}\cdot Cc_2 \cdot K + \frac{Da}{Q} \cdot Ce=
+    75000\cdot 80 + \frac{1581}{2} \cdot 80 \cdot 0.15 + \frac{75000}{1581}=
+    6009533.44 \ eur
+\]
+
+Para $Q=q_2=1800$ unidades:
+
+\[
+    CT2=Da\cdot Ccq_2 + \frac{Q}{2}\cdot Ccq_2 \cdot K + \frac{Da}{Q} \cdot Ce=
+    750000\cdot 75+\frac{1800}{2}\cdot 75 \cdot 0.15 + \frac{75000}{1800} = 56351666.67 \ eur
+\]
+
+Con lo cual interesa pedir 1800 unidades.
+
+
+\newpage 
+
+\section{Simulación}
+
+Una empresa de distribución quiere analizar su sistema de entrega de paquetes por drones,
+contando en la actualidad con 2 drones. Los paquetes a enviar llegan a la oficina de
+expediciones cada cierto tiempo, según la siguiente distribución de probabilidad:
+
+\begin{figure}[!htb]
+    \begin{center}
+        \includegraphics[width=.4\textwidth]{Items/p3e1.PNG}
+        %\caption{Representación gráfica}
+    \end{center}
+\end{figure}
+
+Al paquete a enviar se le asigna un dron para el envío, aquel dentro de los disponibles que lleve
+más tiempo parado. El primer envío lo realiza el dron 1. El tiempo que emplea cada dron (en
+minutos) en el total del envío y su vuelta al centro se rige por la siguiente distribución de
+probabilidades:
+
+\begin{figure}[!htb]
+    \begin{center}
+        \includegraphics[width=.8\textwidth]{Items/p3e2.PNG}
+        %\caption{Representación gráfica}
+    \end{center}
+\end{figure}
+
+
+Se pide:
+
+Realizar una simulación de los primeros 12 envíos, calculando el tiempo total en realizarlos. La
+simulación comienza en $t=0$ justo cuando llega el primer paquete al centro de expedición.
+
+Las semillas a tomar para la generación de números aleatorios son las siguientes:
+
+\begin{itemize}
+
+    \item Tiempo que transcurre entre la llegada de paquetes a la oficina de expediciones: 4526
+    \item Tiempo del dron 1: 3678
+    \item Tiempo del dron 2: 7210
+     
+\end{itemize}
+
+\newpage
+
+\subsection{Simulación de 12 envíos}
+
+\begin{figure}[!htb]
+    \begin{center}
+        \includegraphics[width=\textwidth]{Items/p3f1.PNG}
+        \caption{RNG}
+    \end{center}
+\end{figure}
+
+
+\begin{figure}[!htb]
+    \begin{center}
+        \includegraphics[width=.9\textwidth]{Items/p3f2.PNG}
+        \caption{Rangos}
+    \end{center}
+\end{figure}
+
+En este caso debemos tener en cuenta los drones que están disponibles mientras uno va y el otro vuelve:
+
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=.9\textwidth]{Items/p3f3.PNG}
+        \caption{Solución}
+    \end{center}   
+\end{figure}
+
+
+\end{document}

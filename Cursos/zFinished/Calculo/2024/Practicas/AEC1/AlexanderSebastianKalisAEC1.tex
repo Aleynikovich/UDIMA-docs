@@ -1,0 +1,871 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+
+% Configuración de márgenes
+\geometry{left=2.5cm, right=2.5cm, top=3cm, bottom=3cm}
+
+% Encabezado y pie de página
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Universidad a Distancia de Madrid (UDIMA)}
+\fancyhead[R]{Análisis Matemático}
+\fancyfoot[C]{\thepage}
+
+% Título del documento
+\title{\textbf{Actividad de Evaluación Continua (AEC1)}\\[0.5cm]
+\Large{Análisis Matemático}}
+\author{Alumno: Alexander Sebastian Kalis \\ Profesor: Dr. Juan José Moreno García}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\newpage
+\tableofcontents
+\newpage
+\section{Problema 1}
+
+\begin{itemize}
+    \item[a)] Calcular el siguiente límite:
+    \[
+    \lim_{x \to \infty} \frac{\sqrt{x^2 + 1} + 1}{\sqrt{x+1} + \sqrt{x - 1}}.
+    \]
+\end{itemize}
+
+Procedemos dividiendo el numerador y el denominador por el término de mayor grado en \( x \) en cada caso.
+
+\[
+\lim_{x \to \infty} \frac{\sqrt{x^2 + 1} + 1}{\sqrt{x+1} + \sqrt{x - 1}} = \lim_{x \to \infty} \frac{\sqrt{x^2 \left(1 + \frac{1}{x^2}\right)} + \frac{1}{x}}{\sqrt{x \left(1 + \frac{1}{x}\right)} + \sqrt{x \left(1 - \frac{1}{x}\right)}}.
+\]
+
+Simplificando cada raíz:
+\[
+= \lim_{x \to \infty} \frac{x \sqrt{1 + \frac{1}{x^2}} + \frac{1}{x}}{x \left(\sqrt{1 + \frac{1}{x}} + \sqrt{1 - \frac{1}{x}}\right)}.
+\]
+
+Ahora dividimos todos los términos por \( x \):
+\[
+= \lim_{x \to \infty} \frac{\sqrt{1 + \frac{1}{x^2}} + \frac{1}{x}}{\sqrt{1 + \frac{1}{x}} + \sqrt{1 - \frac{1}{x}}}.
+\]
+
+Cuando \( x \to \infty \), los términos que incluyen \( \frac{1}{x} \) y \( \frac{1}{x^2} \) tienden a cero, de modo que el límite se convierte en:
+\[
+= \frac{\sqrt{1 + 0} + 0}{\sqrt{1 + 0} + \sqrt{1 - 0}} = \frac{1}{2}.
+\]
+
+Por lo tanto, el resultado es:
+\[
+\lim_{x \to \infty} \frac{\sqrt{x^2 + 1} + 1}{\sqrt{x+1} + \sqrt{x - 1}} = \frac{1}{2}.
+\]
+
+\begin{itemize}
+    \item[b)] Calcular este límite en función del valor de \( p \):
+    \[
+    \lim_{x \to 2} \frac{x^2 - px}{x^2 - 3x + 2}.
+    \]
+\end{itemize}
+
+Asumiendo \( p = 2 \):
+\[
+\lim_{x \to 2} \frac{x^2 - 2x}{x^2 - 3x + 2} = \lim_{x \to 2} \frac{x(x - 2)}{(x - 2)(x - 1)} \to \text{Simplificar} \to \lim_{x \to 2} \frac{x}{x - 1} \to \text{Sustituir } x \text{ por } 2:
+\]
+\[
+\lim_{x \to 2} \frac{2}{2 - 1} = 2.
+\]
+
+Asumiendo \( p < 2 \):
+\[
+\lim_{x \to 2} \frac{x^2 - px}{x^2 - 3x + 2} = \frac{2^2 - 2p}{2^2 - (3 \cdot 2) + 2} = \frac{4 - 2p}{0} = \infty \quad (\text{el numerador será un número positivo}).
+\]
+
+Asumiendo \( p > 2 \):
+\[
+\lim_{x \to 2} \frac{x^2 - px}{x^2 - 3x + 2} = \frac{2^2 - 2p}{2^2 - (3 \cdot 2) + 2} = \frac{4 - 2p}{0} = -\infty \quad (\text{el numerador será un número negativo}).
+\]
+
+Por lo tanto,
+\[
+\lim_{x \to 2} \frac{x^2 - px}{x^2 - 3x + 2} = 
+\begin{cases} 
+2, & p = 2 \\ 
+\infty, & p < 2 \\ 
+-\infty, & p > 2 
+\end{cases}.
+\]
+
+\begin{itemize}
+    \item[c)] Determinar el siguiente límite:
+    \[
+    \lim_{x \to 2} \ln \left( \frac{x^2 + 3x}{x+2} \right).
+    \]
+\end{itemize}
+
+\[
+\lim_{x \to \infty} \ln \left( \frac{x^2 + 3x}{x + 2} \right) = \lim_{x \to \infty} \ln \left( \frac{1}{x} \cdot \frac{x^2 + 3x}{x + 2} \right) = \lim_{x \to \infty} \ln \left( \frac{x + 3 + \frac{3}{x}}{1 + \frac{2}{x}} \right).
+\]
+
+\[
+= \lim_{x \to \infty} \ln \left( \frac{\infty}{1 + 0} \right) = \infty.
+\]
+
+\begin{itemize}
+    \item[d)] Hallar este límite:
+    \[
+    \lim_{x \to 0} x \sqrt{1 + 5x}.
+    \]
+\end{itemize}
+
+Cuando vemos una función en raíz con índice \( x \) o una función elevada a \( x \), podemos deducir que se trata de un límite en el cual tendremos que manipular la expresión para conseguir que represente el número de Euler:
+
+\[
+\lim_{n \to \infty} \left( 1 + \frac{1}{n} \right)^n = e.
+\]
+
+Entonces,
+\[
+\lim_{x \to 0} \sqrt[x]{1 + 5x} = \lim_{x \to 0} (1 + 5x)^{\frac{1}{x}} = \lim_{x \to 0} \exp \left( \frac{\ln(1 + 5x)}{x} \right).
+\]
+
+Aplicamos el límite al exponente:
+\[
+\lim_{x \to 0} \left( 1 + \frac{1}{5x} \right)^{5x} = e^5.
+\]
+
+
+\begin{itemize}
+    \item[e)] Resolver el siguiente límite:
+    \[
+    \lim_{x \to 0} \frac{\tan 6x}{e^{2x} - 1}.
+    \]
+\end{itemize}
+
+
+Primero, evaluamos el límite directamente:
+\[
+\lim_{x \to 0} \frac{\tan(6x)}{e^{2x} - 1} = \frac{\tan(0)}{e^{2 \cdot 0} - 1} = \frac{0}{0} \Rightarrow \text{indeterminación}.
+\]
+
+Se procede a simplificar y aplicar la regla de Hôpital:
+
+\[
+\lim_{x \to 0} \frac{\tan(6x)}{e^{2x} - 1} = \lim_{x \to 0} \frac{\sin(6x)}{(e^{2x} - 1) \cos(6x)}.
+\]
+
+Evaluamos los límites por separado:
+
+\[
+\lim_{x \to 0} \frac{\sin(6x)}{e^{2x} - 1} = \frac{0}{0} \Rightarrow \text{Indeterminación, se aplica la regla de Hôpital:}
+\]
+
+\[
+\lim_{x \to 0} \frac{\frac{d}{dx} [\sin(6x)]}{\frac{d}{dx} [e^{2x} - 1]} = \lim_{x \to 0} \frac{6 \cos(6x)}{2 e^{2x}} = \lim_{x \to 0} \frac{6 \cos(6x)}{2 e^{2x}} = \lim_{x \to 0} \frac{6 \cos(0)}{2 \cdot e^{0}} = \frac{6}{2} = 3.
+\]
+
+Por otro lado,
+
+\[
+\lim_{x \to 0} \frac{1}{\cos(6x)} = \frac{1}{\cos(6 \cdot 0)} = \frac{1}{1} = 1.
+\]
+
+Por lo tanto:
+\[
+\lim_{x \to 0} \frac{\tan(6x)}{e^{2x} - 1} = \lim_{x \to 0} \frac{\sin(6x)}{e^{2x} - 1} \cdot \lim_{x \to 0} \frac{1}{\cos(6x)} = 3 \cdot 1 = 3.
+\]
+
+\section{Problema 2}
+
+\begin{itemize}
+    \item[a)] Calcular las asíntotas de \( f(x) = \frac{1}{\ln x} \).
+\end{itemize}
+
+Para encontrar las asíntotas de \( f(x) = \frac{1}{\ln x} \), analizamos el comportamiento de la función en los valores críticos de \( x \) donde el logaritmo natural, \( \ln x \), tiende a valores extremos:
+
+1. Asíntota vertical:  
+   La función tiene una asíntota vertical en \( x = 1 \) porque:
+   \[
+   \lim_{x \to 1^+} f(x) = \lim_{x \to 1^+} \frac{1}{\ln x}.
+   \]
+   Cuando \( x \to 1^+ \), \( \ln x \to 0^+ \), lo que hace que \( f(x) \) tienda a \( +\infty \). Entonces, \( x = 1 \) es una asíntota vertical.
+
+2. Asíntota horizontal:  
+   Estudiamos el comportamiento de \( f(x) \) cuando \( x \to \infty \):
+   \[
+   \lim_{x \to \infty} f(x) = \lim_{x \to \infty} \frac{1}{\ln x} = 0.
+   \]
+   Esto indica que la recta \( y = 0 \) es una asíntota horizontal.
+
+Por lo tanto, \( f(x) = \frac{1}{\ln x} \) tiene:
+\begin{itemize}
+    \item una asíntota vertical en \( x = 1 \),
+    \item una asíntota horizontal en \( y = 0 \).
+\end{itemize}
+
+
+\begin{itemize}
+    \item[b)] Calcular las asíntotas y el dominio de \( f(x) = \frac{4 - 2x^2}{x} \).
+\end{itemize}
+
+A primera vista podemos ver que \( x = 0 \) será asíntota vertical y que el dominio será todo \( \mathbb{R} - \{0\} \).
+
+Por otro lado, al tener un numerador de grado 2 dividido por un numerador de grado 1, podemos sospechar que hay una asíntota oblicua \( y = mx + n \):
+
+\[
+\lim_{x \to \infty} \frac{f(x)}{x} = m \neq 0, \pm \infty
+\]
+
+\[
+\lim_{x \to \infty} \frac{4 - 2x^2}{x} = \lim_{x \to \infty} \frac{4 - 2x^2}{x^2} = \lim_{x \to \infty} \frac{4 - 2\infty^2}{\infty^2} = \lim_{x \to \infty} \frac{-2\infty^2}{\infty^2} = -2 = m.
+\]
+
+Para encontrar \( n \), calculamos:
+
+\[
+\lim_{x \to \infty} [f(x) - mx] = n
+\]
+
+\[
+\lim_{x \to \infty} \left( \frac{4 - 2x^2}{x} + 2x \right) = \lim_{x \to \infty} \left( \frac{4 - 2x^2 + 2x}{x} \right) = \lim_{x \to \infty} [-2\infty + 2\infty] = 0 = n.
+\]
+
+Por lo tanto, la asíntota oblicua será trazada por la recta con forma \( y = -2x \).
+
+
+\begin{itemize}
+    \item[c)] Determinar la continuidad y el dominio de \( f(x) = \frac{x}{\sqrt{x^2 - 2x}} \).
+\end{itemize}
+
+Para estudiar el dominio de \( f(x) = \frac{x}{\sqrt{x^2 - 2x}} \), identificamos las restricciones en el denominador. La expresión \( \sqrt{x^2 - 2x} \) está definida cuando \( x^2 - 2x \geq 0 \), es decir, cuando:
+\[
+x(x - 2) \geq 0.
+\]
+Resolviendo la desigualdad, obtenemos los intervalos donde el denominador es válido:
+\[
+x \leq 0 \quad \text{o} \quad x \geq 2.
+\]
+Por lo tanto, el dominio de la función es:
+\[
+\text{Dominio} = (-\infty, 0] \cup [2, \infty).
+\]
+
+Para la continuidad, observamos que la función está definida y es continua en los intervalos del dominio, es decir, en \( (-\infty, 0] \cup [2, \infty) \), excepto en \( x = 0 \) y \( x = 2 \), que son puntos de borde y no forman parte del intervalo interior.
+
+\begin{itemize}
+    \item[d)] Proporcionar el dominio de la función \( f(x) = \sin \left( \frac{1}{x - 1} \right) \).
+\end{itemize}
+
+Para determinar el dominio de \( f(x) = \sin \left( \frac{1}{x - 1} \right) \), analizamos la expresión dentro del seno. La función \( \frac{1}{x - 1} \) está definida para todos los valores de \( x \) excepto en \( x = 1 \), donde se produce una discontinuidad. Por lo tanto, el dominio de la función es:
+\[
+\text{Dominio} = \mathbb{R} \setminus \{1\}.
+\]
+
+\begin{itemize}
+    \item[e)] Hallar el valor de \( k \) para que la función sea continua:
+    \[
+    f(x) = \begin{cases}
+    2x + 1 & \text{si } x \leq 1, \\
+    k & \text{si } x > 1.
+    \end{cases}
+    \]
+\end{itemize}
+
+Para que la función sea continua en \( x = 1 \), debemos asegurarnos de que:
+\[
+\lim_{x \to 1^-} f(x) = \lim_{x \to 1^+} f(x) = f(1).
+\]
+Calculamos \( \lim_{x \to 1^-} f(x) \):
+\[
+\lim_{x \to 1^-} (2x + 1) = 2(1) + 1 = 3.
+\]
+Para que la función sea continua, necesitamos que \( f(1) = 3 \), es decir, que \( k = 3 \).
+
+
+\section{Problema 3}
+
+Un proveedor de cajas de Amazon tiene que fabricar cajas para esta compañía a partir de planchas de cartón mediante troquelado según el esquema mostrado en la figura. Para ello cuenta con diversos tipos de planchas. Uno de ellos mide 90 cm por 30 cm. ¿Cuánto tiene que medir en este caso el lado de los seis cuadrados que se troquelan y eliminan para maximizar el volumen de la caja resultante? ¿Cuál es dicho volumen?
+
+Consideremos \( x \) como el lado de los cuadrados que se troquelan en las esquinas. Las dimensiones de la caja después del troquelado y el plegado serán:
+
+- Altura: \( h = x \),
+- Profundidad: \( p = 30 - 2x \),
+- Base: \( b = \frac{90 - 3x}{2} \).
+
+Por lo tanto, el volumen \( V(x) \) de la caja se expresa como:
+\[
+V(x) = b \cdot p \cdot h = x(30 - 2x) \left(45 - \frac{3x}{2}\right).
+\]
+
+Expandiendo y simplificando esta expresión:
+\[
+V(x) = x(1350 - 45x - 90x + 3x^2) = 3x^3 - 135x^2 + 1350x.
+\]
+
+Para encontrar el valor de \( x \) que maximiza el volumen, derivamos \( V(x) \) con respecto a \( x \) y resolvemos \( V'(x) = 0 \):
+\[
+V'(x) = 9x^2 - 270x + 1350.
+\]
+Igualamos la derivada a cero:
+\[
+9x^2 - 270x + 1350 = 0.
+\]
+Dividiendo entre 9:
+\[
+x^2 - 30x + 150 = 0.
+\]
+Resolvemos la ecuación cuadrática:
+\[
+x = \frac{30 \pm \sqrt{900 - 600}}{2} = \frac{30 \pm \sqrt{300}}{2} = \frac{30 \pm 17.32}{2}.
+\]
+Esto nos da los valores:
+\[
+x_1 \approx 6.34 \quad \text{y} \quad x_2 \approx 23.66.
+\]
+Dado que \( x = 23.66 \) cm haría que las dimensiones de la caja fueran negativas, solo es válido \( x \approx 6.34 \, \text{cm} \).
+
+Sustituimos \( x = 6.34 \) en la expresión del volumen para obtener el volumen máximo:
+\[
+V_{\text{máx}} = 3(6.34)^3 - 135(6.34)^2 + 1350(6.34).
+\]
+Calculamos cada término:
+\[
+V_{\text{máx}} \approx 3 \cdot 254.94 - 135 \cdot 40.1956 + 1350 \cdot 6.34.
+\]
+Esto da:
+\[
+V_{\text{máx}} \approx 764.82 - 5426.41 + 8559 = 3897.41 \, \text{cm}^3.
+\]
+
+Finalmente, convertimos el volumen a litros:
+\[
+V_{\text{máx}} \approx 3.897 \, \text{litros}.
+\]
+
+Por lo tanto, el lado de los cuadrados que se deben troquelar es aproximadamente \( 6.34 \, \text{cm} \), y el volumen máximo de la caja es \( 3.897 \, \text{litros} \).
+
+\section{Problema 4}
+
+Calcular la ecuación de la recta tangente en el punto \( x = 0 \) a la función \( y = y(x) \), definida implícitamente por la relación:
+\[
+x^3 \ln y + y e^x \cos x - 1 = 0.
+\]
+
+Para encontrar la ecuación de la recta tangente, necesitamos calcular la derivada \( y' \) de \( y \) en \( x = 0 \) usando derivación implícita.
+
+1. Derivamos ambos lados de la ecuación con respecto a \( x \):
+   \[
+   \frac{d}{dx} \left( x^3 \ln y + y e^x \cos x - 1 \right) = \frac{d}{dx}(0).
+   \]
+
+   Esto nos da:
+   \[
+   3x^2 \ln y + x^3 \cdot \frac{1}{y} \cdot y' + \left( y' e^x \cos x + y e^x (-\sin x) + y e^x \cos x \right) = 0.
+   \]
+
+2. Agrupamos los términos que contienen \( y' \):
+   \[
+   y' \left( x^3 \frac{1}{y} + e^x \cos x \right) = -3x^2 \ln y - y e^x (-\sin x) - y e^x \cos x.
+   \]
+
+3. Evaluamos en \( x = 0 \):
+
+   - Cuando \( x = 0 \), la ecuación original se convierte en:
+     \[
+     0 \cdot \ln y + y \cdot 1 \cdot 1 - 1 = 0,
+     \]
+     lo que implica que \( y = 1 \).
+
+   - Sustituyendo \( x = 0 \) y \( y = 1 \) en la derivada, tenemos:
+     \[
+     y' \left( 0 \cdot \frac{1}{1} + 1 \cdot 1 \right) = -3 \cdot 0 \cdot \ln(1) - 1 \cdot 1 \cdot 0 - 1 \cdot 1 \cdot 1.
+     \]
+     Simplificando, obtenemos:
+     \[
+     y' = -1.
+     \]
+
+4. Con \( y(0) = 1 \) y \( y'(0) = -1 \), la ecuación de la recta tangente en \( x = 0 \) es:
+   \[
+   y - 1 = -1(x - 0),
+   \]
+   o, simplificando:
+   \[
+   y = -x + 1.
+   \]
+
+Por lo tanto, la ecuación de la recta tangente en \( x = 0 \) es:
+\[
+y = -x + 1.
+\]
+
+
+\section{Problema 5}
+
+Descomponer en fracciones simples la siguiente expresión:
+\[
+\frac{6x^3 - 14x^2 + 2x + 18}{x^4 - 3x^3 - 3x^2 + 11x - 6}.
+\]
+
+Se procede a factorizar el denominador mediante división de polinomios (Ruffini):
+\[
+x^4 - 3x^3 - 3x^2 + 11x - 6 = 0.
+\]
+
+Encontramos la primera raíz en \( x = 1 \):
+\[
+1^4 - 3(1)^3 - 3(1)^2 + 11(1) - 6 = 0.
+\]
+
+Se divide el polinomio por \( (x - 1) \):
+\[
+\frac{x^4 - 3x^3 - 3x^2 + 11x - 6}{(x - 1)} = x^3 - 2x^2 - 5x + 6 \Rightarrow x = 1 \text{ es raíz}.
+\]
+
+Dividimos nuevamente el polinomio \( x^3 - 2x^2 - 5x + 6 \) por \( (x - 1) \):
+\[
+\frac{x^3 - 2x^2 - 5x + 6}{(x - 1)} = x^2 - x - 6 \Rightarrow x = 1 \text{ es una raíz repetida}.
+\]
+
+Resolviendo la ecuación de segundo grado:
+\[
+x^2 - x - 6 = (x + 2)(x - 3) \Rightarrow x = -2 \text{ y } x = 3 \text{ son raíces}.
+\]
+
+Entonces, el denominador se puede factorizar como:
+\[
+x^4 - 3x^3 - 3x^2 + 11x - 6 = (x - 1)^2 (x + 2)(x - 3).
+\]
+
+Comparando la fracción compuesta con su forma parcial simple:
+\[
+\frac{6x^3 - 14x^2 + 2x + 18}{(x - 1)^2 (x + 2)(x - 3)} = \frac{A}{(x - 1)} + \frac{B}{(x - 1)^2} + \frac{C}{(x + 2)} + \frac{D}{(x - 3)}.
+\]
+
+Multiplicamos ambos lados por \( (x - 1)^2 (x + 2)(x - 3) \) para eliminar los denominadores:
+\[
+6x^3 - 14x^2 + 2x + 18 = A(x - 1)(x + 2)(x - 3) + B(x + 2)(x - 3) + C(x - 1)^2 (x - 3) + D(x - 1)^2 (x + 2).
+\]
+
+Expandiendo el lado derecho, obtenemos:
+\[
+f(x) = Ax^3 - 2Ax^2 - 5Ax + 6A + Bx^2 - Bx - 6B + Cx^3 - 5Cx^2 + 7Cx - 3C + Dx^3 - 3Dx + 2D.
+\]
+
+Agrupamos los términos por potencia de \( x \) para crear un sistema de ecuaciones y resolver las incógnitas:
+\[
+6x^3 - 14x^2 + 2x + 18 = (A + C + D)x^3 + (-2A + B - 5C)x^2 + (-5A - B + 7C - 3D)x + (6A - 6B - 3C + 2D).
+\]
+
+\subsection*{Sistema de ecuaciones}
+
+Representamos el sistema en forma de matriz aumentada y lo resolvemos:
+\[
+\begin{bmatrix}
+1 & 0 & 1 & 1 & \vert & 6 \\
+-2 & 1 & -5 & 0 & \vert & -14 \\
+-5 & -1 & 7 & -3 & \vert & 2 \\
+6 & -6 & -3 & 2 & \vert & 18 \\
+\end{bmatrix}
+\]
+
+
+Resolvemos para las incógnitas:
+\[
+\begin{cases}
+a + 2 + 3 = 6 \Rightarrow a = 1 \\
+b - 3(2) + 2(3) = -2 \Rightarrow b = -2 \\
+9c + 4d = 30 \Rightarrow c = 2 \\
+20d = 60 \Rightarrow d = 3 \\
+\end{cases}
+\]
+
+Finalmente, podemos expresar la fracción en términos de fracciones simples:
+\[
+\frac{6x^3 - 14x^2 + 2x + 18}{x^4 - 3x^3 - 3x^2 + 11x - 6} = \frac{1}{x - 1} - \frac{2}{(x - 1)^2} + \frac{2}{x + 2} + \frac{3}{x - 3}.
+\]
+
+
+Descomponer en fracciones simples la siguiente expresión:
+\[
+\frac{x^3 - 15x^2 + 47x - 38}{x^4 - 6x^3 + 5x^2 + 24x - 36}.
+\]
+
+Se procede a factorizar el denominador mediante el método de Ruffini:
+\[
+x^4 - 6x^3 + 5x^2 + 24x - 36 = 0 \quad \text{con} \quad x = -2.
+\]
+
+Dividimos el polinomio:
+\[
+\frac{x^4 - 6x^3 + 5x^2 + 24x - 36}{x + 2} = x^3 - 4x^2 - 3x + 18.
+\]
+
+Luego, encontramos que \( x = 3 \) es otra raíz:
+\[
+\frac{x^3 - 4x^2 - 3x + 18}{x - 3} = x^2 - x - 6.
+\]
+
+Resolviendo la ecuación de segundo grado:
+\[
+x^2 - x - 6 = (x + 2)(x - 3).
+\]
+
+Por lo tanto, el denominador se puede factorizar como:
+\[
+x^4 - 6x^3 + 5x^2 + 24x - 36 = (x - 3)^2 (x + 2)(x - 2).
+\]
+
+Comparando la fracción con su forma de fracciones simples, tenemos:
+\[
+\frac{x^3 - 15x^2 + 47x - 38}{(x - 3)^2 (x + 2)(x - 2)} = \frac{A}{(x - 3)^2} + \frac{B}{x - 3} + \frac{C}{x + 2} + \frac{D}{x - 2}.
+\]
+
+Multiplicamos ambos lados por \( (x - 3)^2 (x + 2)(x - 2) \) para eliminar los denominadores:
+\[
+x^3 - 15x^2 + 47x - 38 = A(x + 2)(x - 2) + B(x - 3)(x + 2)(x - 2) + C(x - 3)^2 (x - 2) + D(x + 2)(x - 3)^2.
+\]
+
+Expandiendo el lado derecho, obtenemos:
+\[
+f(x) = Ax^2 - 4A + Bx^3 - 3Bx^2 - 4Bx + 12B + Cx^3 - 8Cx^2 + 21Cx - 18C + Dx^3 - 4Dx^2 - 3Dx + 18D.
+\]
+
+Agrupamos los términos por potencia de \( x \) para formar un sistema de ecuaciones:
+\begin{small}
+    \[
+x^3 - 15x^2 + 47x - 38 = x^3(B + C + D) + x^2(A - 3B - 8C - 4D) + x(-4B + 21C - 3D) + (-4A + 12B - 18C + 18D).
+\]
+\end{small}
+
+
+\subsection*{Sistema de ecuaciones}
+
+Representamos el sistema en forma de matriz aumentada y lo resolvemos:
+\[
+\begin{bmatrix}
+0 & 1 & 1 & 1 & \vert & 1 \\
+1 & -3 & -8 & -4 & \vert & -15 \\
+0 & -4 & 21 & -3 & \vert & 47 \\
+-4 & 12 & -18 & 18 & \vert & -38 \\
+\end{bmatrix}
+\]
+
+
+Nos queda:
+
+\[
+\begin{cases}
+a + 6 - 16 - 4 = -15 \Rightarrow a = -1, \\
+b + 2 + 1 = 1 \Rightarrow b = -2, \\
+25c + 1 = 51 \Rightarrow c = 2, \\
+d = 1.
+\end{cases}
+\]
+
+Finalmente, la descomposición en fracciones simples es:
+\[
+\frac{x^3 - 15x^2 + 47x - 38}{x^4 - 6x^3 + 5x^2 + 24x - 36} = -\frac{1}{(x - 3)^2} - \frac{2}{x - 3} + \frac{2}{x + 2} + \frac{1}{x - 2}.
+\]
+
+
+\section{Problema 6}
+
+Resolver la integral separando la fracción en fracciones simples:
+
+\[
+\int \frac{2x^2 - 21x + 63}{x^3 - 8x^2 - 3x + 90} \, dx = \int \frac{a}{x + 3} \, dx + \int \frac{b}{x - 5} \, dx + \int \frac{c}{x - 6} \, dx.
+\]
+
+Procedemos a expresar el numerador en función de los factores del denominador:
+\[
+a(x - 5)(x - 6) + b(x + 3)(x - 6) + c(x + 3)(x - 5).
+\]
+
+Expandiendo y agrupando términos:
+\[
+a x^2 - 11a x + 30a + b x^2 - 3b x - 18b + c x^2 - 2c x - 15c.
+\]
+
+Agrupamos por potencias de \( x \):
+\[
+x^2 (a + b + c) + x(-11a - 3b - 2c) + (30a - 18b - 15c).
+\]
+
+Igualamos los coeficientes con el numerador de la fracción original para obtener el sistema de ecuaciones:
+\[
+\begin{cases}
+a + b + c = 2, \\
+-11a - 3b - 2c = -21, \\
+30a - 18b - 15c = 63.
+\end{cases}
+\]
+
+Resolviendo el sistema, obtenemos:
+\[
+\begin{cases}
+a = 2, \\
+b = -1, \\
+c = 1.
+\end{cases}
+\]
+
+Sustituyendo estos valores en la descomposición en fracciones simples, tenemos:
+\[
+\int \frac{2x^2 - 21x + 63}{x^3 - 8x^2 - 3x + 90} \, dx = 2 \int \frac{1}{x + 3} \, dx - \int \frac{1}{x - 5} \, dx + \int \frac{1}{x - 6} \, dx.
+\]
+
+Finalmente, integramos cada término:
+\[
+= 2 \ln |x + 3| - \ln |x - 5| + \ln |x - 6| + C.
+\]
+
+
+Resolver la siguiente integral:
+
+\[
+\int \sin(x) \ln(\cos(x)) \, dx
+\]
+
+Sabiendo que \( \frac{d}{dx} \cos(x) = -\sin(x) \), podemos modificar la integral mediante sustitución por \( u \) para simplificarla:
+
+\[
+\int \sin(x) \ln(\cos(x)) \, dx \xrightarrow{u = \cos(x)} \left\{
+\begin{array}{l}
+u = \cos(x), \\
+du = -\sin(x) \, dx
+\end{array}
+\right.
+\]
+
+Por lo tanto:
+
+\[
+= -\int \ln(u) \, du.
+\]
+
+Se procede a integrar por partes:
+
+\[
+\text{Fórmula general: } \int f'(x) g(x) \, dx = f(x) g(x) - \int f(x) g'(x) \, dx \quad \text{donde} \quad
+\begin{cases}
+f(x) = \ln(u), \\
+f'(x) = \frac{1}{u}, \\
+g(x) = u, \\
+g'(x) = du.
+\end{cases}
+\]
+
+\[
+\int \frac{1}{u} \, u \, du = \ln(u) \, u - \int \ln(u) \, du
+\]
+
+\[
+\int \sin(x) \ln(\cos(x)) \, dx = -\int \ln(u) \, du = u - \ln(u) \, u \xrightarrow{u = \cos(x)} \cos(x) - \ln(\cos(x)) \cos(x) + C.
+\]
+
+
+\section{Problema 7}
+
+Hallar la integral:
+\[
+I = \int \sin^4(x) \, dx,
+\]
+usando las propiedades de las potencias de funciones trigonométricas.
+
+
+Usamos la identidad para potencias de seno en términos de cosenos dobles:
+\[
+\sin^2(x) = \frac{1 - \cos(2x)}{2}.
+\]
+
+Por lo tanto:
+\[
+\sin^4(x) = \left( \sin^2(x) \right)^2 = \left( \frac{1 - \cos(2x)}{2} \right)^2.
+\]
+
+Expandiendo el cuadrado, obtenemos:
+\[
+\sin^4(x) = \frac{1}{4} (1 - 2 \cos(2x) + \cos^2(2x)).
+\]
+
+Ahora, aplicamos la identidad para \(\cos^2(2x)\):
+\[
+\cos^2(2x) = \frac{1 + \cos(4x)}{2}.
+\]
+
+Sustituyendo esto en la expresión, tenemos:
+\[
+\sin^4(x) = \frac{1}{4} \left(1 - 2 \cos(2x) + \frac{1 + \cos(4x)}{2}\right).
+\]
+
+Simplificando, obtenemos:
+\[
+\sin^4(x) = \frac{1}{4} - \frac{1}{2} \cos(2x) + \frac{1}{8} + \frac{1}{8} \cos(4x).
+\]
+
+Unimos términos constantes:
+\[
+\sin^4(x) = \frac{3}{8} - \frac{1}{2} \cos(2x) + \frac{1}{8} \cos(4x).
+\]
+
+
+Ahora integramos término a término:
+\[
+I = \int \sin^4(x) \, dx = \int \left( \frac{3}{8} - \frac{1}{2} \cos(2x) + \frac{1}{8} \cos(4x) \right) dx.
+\]
+
+Resolviendo cada término:
+\[
+I = \frac{3}{8} x - \frac{1}{2} \int \cos(2x) \, dx + \frac{1}{8} \int \cos(4x) \, dx.
+\]
+
+Integrando cada término trigonométrico:
+\[
+I = \frac{3}{8} x - \frac{1}{2} \cdot \frac{\sin(2x)}{2} + \frac{1}{8} \cdot \frac{\sin(4x)}{4} + C.
+\]
+
+Simplificando, obtenemos:
+\[
+I = \frac{3}{8} x - \frac{1}{4} \sin(2x) + \frac{1}{32} \sin(4x) + C.
+\]
+
+
+\[
+\int \sin^4(x) \, dx = \frac{3}{8} x - \frac{1}{4} \sin(2x) + \frac{1}{32} \sin(4x) + C.
+\]
+
+
+\section{Problema 8}
+
+Calcular, si es posible, la siguiente integral:
+\[
+I = \int_0^2 \frac{2x}{x^2 - 4} \, dx
+\]
+
+
+Definimos la integral como límite de una integral impropia de Riemann:
+\[
+\lim_{b \to 2^{-}} \int_0^b \frac{2x}{x^2 - 4} \, dx
+\]
+
+Resolvemos la integral indefinida:
+\[
+\int \frac{2x}{x^2 - 4} \, dx \to 
+\begin{cases}
+x^2 - 4 = u \\
+2x \, dx = du
+\end{cases}
+\Rightarrow \int \frac{1}{u} \, du = \ln |u| = \ln |x^2 - 4|
+\]
+
+Sustituyendo los límites:
+\[
+\lim_{b \to 2^{-}} \left[ \ln |x^2 - 4| \right]_0^b = \lim_{b \to 2^{-}} \left( \ln |b^2 - 4| - \ln |0^2 - 4| \right)
+\]
+
+\[
+= \lim_{b \to 2^{-}} \ln \left| \frac{b^2 - 4}{-4} \right| = \lim_{b \to 2^{-}} \ln \left| \frac{b^2 - 4}{-4} \right| = \infty
+\]
+
+Entonces:
+\[
+\int_0^2 \frac{2x}{x^2 - 4} \, dx \text{ es divergente}.
+\]
+
+
+\section{Problema 9}
+
+Aproxima el valor de la integral definida de abajo con un desarrollo en serie de potencias de Taylor en el origen de al menos 5 sumandos no nulos.
+\[
+\int_0^1 e^{-x^2} \, dx.
+\]
+
+Utilizando la serie de Taylor, extraemos la serie de potencias para la función:
+\[
+f(x) = \sum_{n=0}^{\infty} \frac{f^{(n)}(0)}{n!} \cdot (x - x_0)^n.
+\]
+
+Las derivadas impares son nulas, por lo cual se eliminan para mejorar la legibilidad. Calculamos las derivadas pares en \( x = 0 \):
+\[
+\begin{aligned}
+f(0) &= 1, \\
+f^{(2)}(0) &= -2, \\
+f^{(4)}(0) &= 12, \\
+f^{(6)}(0) &= -120, \\
+f^{(8)}(0) &= 1680.
+\end{aligned}
+\]
+
+Entonces, la serie de Taylor de \( e^{-x^2} \) alrededor de \( x = 0 \) es:
+\[
+e^{-x^2} \approx 1 - x^2 + \frac{x^4}{2} - \frac{x^6}{6} + \frac{x^8}{24}.
+\]
+
+Sustituimos esta aproximación en la integral:
+\[
+\int_0^1 e^{-x^2} \, dx \approx \int_0^1 \left( 1 - x^2 + \frac{x^4}{2} - \frac{x^6}{6} + \frac{x^8}{24} \right) dx.
+\]
+
+Evaluamos la integral término a término:
+\[
+\int_0^1 e^{-x^2} \, dx \approx \left[ x - \frac{x^3}{3} + \frac{x^5}{10} - \frac{x^7}{42} + \frac{x^9}{216} \right]_0^1.
+\]
+
+Sustituyendo los límites:
+\[
+\int_0^1 e^{-x^2} \, dx \approx 1 - \frac{1}{3} + \frac{1}{10} - \frac{1}{42} + \frac{1}{216}.
+\]
+
+Simplificamos los términos:
+\[
+\int_0^1 e^{-x^2} \, dx \approx 1 - 0.333 + 0.1 - 0.0238 + 0.00463 \approx 0.7475.
+\]
+
+Por lo tanto, la aproximación de la integral es:
+\[
+\int_0^1 e^{-x^2} \, dx \approx 0.7475.
+\]
+
+
+\section{Problema 10}
+
+Estudiar el carácter de la serie que tiene como término general el siguiente:
+\[
+a_n = \frac{n^n}{e^{n^2 + 1}}.
+\]
+
+Para estudiar si \(a_n\) es convergente o divergente, se evalúa su límite cuando \(n \to \infty\):
+\[
+\lim_{n \to \infty} a_n = \lim_{n \to \infty} \frac{n^n}{e^{n^2 + 1}} = \lim_{n \to \infty} n^n e^{-n^2} = \lim_{n \to \infty} e^{n \ln(n) - n^2} = \exp \left( \lim_{n \to \infty} \left( n \ln(n) - n^2 \right) \right).
+\]
+
+Evaluamos el límite interno:
+\[
+\lim_{n \to \infty} \left( n \ln(n) - n^2 \right) = \lim_{n \to \infty} n \left( \ln(n) - n \right).
+\]
+
+Esto nos lleva a una forma de indeterminación \( \infty \cdot (-\infty) \), por lo cual se debe proceder con cuidado.
+
+Tomamos como \( f(n) = \ln(n) - n \) y evaluamos:
+\[
+\lim_{n \to \infty} f(n) = \lim_{n \to \infty} \left( \ln(n) - n \right) = -\infty.
+\]
+
+Por lo tanto,
+\[
+\lim_{n \to \infty} a_n = \exp(-\infty) = 0.
+\]
+
+Dado que el límite del término general es 0, podemos concluir que:
+\[
+\sum_{n=1}^{\infty} a_n = \sum_{n=1}^{\infty} \frac{n^n}{e^{n^2 + 1}}
+\]
+es convergente.
+
+
+
+\end{document}

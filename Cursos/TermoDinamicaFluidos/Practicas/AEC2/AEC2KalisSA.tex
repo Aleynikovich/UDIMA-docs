@@ -1,0 +1,158 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\usepackage{siunitx}
+
+% Configuración de márgenes
+\geometry{left=2.5cm, right=2.5cm, top=3cm, bottom=3cm}
+
+% Encabezado y pie de página
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{UDIMA}
+\fancyhead[R]{Fundamentos de Termodinámica y Mecánica de Fluidos}
+\fancyfoot[C]{\thepage}
+
+% Título del documento
+\title{\textbf{Actividad de Evaluación Contínua 2}\\[0.5cm]
+\Large{Unidades 5 y 6 - Transferencia de Calor}}
+\author{Alumno: Alexander Sebastian Kalis \\ Profesor: Dr.~César Pérez de Villar Palomo}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\newpage
+\tableofcontents
+\newpage
+
+\section{Ejercicio 1}
+\textit{a) Calcular las pérdidas de calor (en julios) que sufre una persona a través de la piel cuya cara interna se encuentra a \SI{37}{\celsius} y la externa a \SI{12}{\celsius} suponiendo que el espesor de la piel es de \SI{3}{\centi\metre} y tiene una conductividad $k=\SI{0,01}{W/m.^\circ C}$ y el coeficiente de transmisión de calor por convección es $h = \SI{9.5}{W/m^2.K}$. Realizar los cálculos para una superficie estimada de piel de \SI{2}{\metre\squared}.}
+
+\textit{b) Deseamos reducir a la mitad las pérdidas de calor, con un vestido de lana ($k_{lana}=\SI{0,0209}{W/m.^\circ C}$) que cubre la totalidad del cuerpo. Calcular el espesor de lana necesario.}
+
+\subsection*{Resolución}
+Este problema describe un proceso de transferencia de calor en estado estacionario a través de varias capas, por lo que se puede modelar eficazmente utilizando el concepto de circuito de resistencias térmicas en serie. El calor fluye desde el interior del cuerpo, a una temperatura constante de \SI{37}{\celsius}, hacia el aire exterior, a \SI{12}{\celsius}, atravesando la piel por conducción y disipándose desde la superficie de la piel al aire por convección.
+
+\subsubsection*{Apartado (a): Pérdidas de calor a través de la piel}
+Para calcular la pérdida de calor total, primero determinamos la resistencia térmica que ofrece cada etapa del proceso. La resistencia a la conducción a través de la piel ($R_{piel}$) y la resistencia a la convección desde la superficie ($R_{conv}$) se calculan de la siguiente manera:
+\[ R_{piel} = \frac{L_{piel}}{k_{piel} \cdot A} = \frac{\SI{0,03}{\metre}}{\SI{0,01}{W/m.K} \cdot \SI{2}{\metre\squared}} = \SI{1,5}{K/W} \]
+\[ R_{conv} = \frac{1}{h \cdot A} = \frac{1}{\SI{9,5}{W/m^2.K} \cdot \SI{2}{\metre\squared}} \approx \SI{0,0526}{K/W} \]
+Al tratarse de un proceso en serie, la resistencia total es la suma de las resistencias individuales:
+\[ R_{total} = R_{piel} + R_{conv} = 1,5 + 0,0526 = \SI{1,5526}{K/W} \]
+La pérdida de calor, que es una potencia (energía por unidad de tiempo), se obtiene aplicando la ley de Ohm térmica, que relaciona el flujo de calor ($Q$) con la diferencia de temperatura total y la resistencia total:
+\[ Q = \frac{\Delta T_{total}}{R_{total}} = \frac{T_{interna} - T_{externa}}{R_{total}} = \frac{(\SI{37}{\celsius} - \SI{12}{\celsius})}{\SI{1,5526}{K/W}} \approx \SI{16,10}{W} \]
+Por lo tanto, las pérdidas de calor son de \textbf{\SI{16,10}{Julios/segundo}}.
+
+\subsubsection*{Apartado (b): Espesor de lana necesario}
+El objetivo ahora es reducir a la mitad esta pérdida de calor, lo que significa que el nuevo flujo de calor deseado es $Q_{nuevo} = \SI{16,10}{W} / 2 = \SI{8,05}{W}$. Para lograr esto, debemos aumentar la resistencia térmica total del sistema. La nueva resistencia total requerida será:
+\[ R'_{total} = \frac{\Delta T_{total}}{Q_{nuevo}} = \frac{\SI{25}{K}}{\SI{8,05}{W}} \approx \SI{3,1056}{K/W} \]
+Esta nueva resistencia total incluirá la resistencia de la capa de lana ($R_{lana}$), que se añade en serie a las ya existentes:
+\[ R'_{total} = R_{piel} + R_{lana} + R_{conv} \]
+La resistencia de la lana dependerá de su espesor ($L_{lana}$), que es nuestra incógnita:
+\[ R_{lana} = \frac{L_{lana}}{k_{lana} \cdot A} = \frac{L_{lana}}{\SI{0,0209}{W/m.K} \cdot \SI{2}{\metre\squared}} = \frac{L_{lana}}{\SI{0,0418}{m^2.K/W}} \]
+Sustituyendo los valores conocidos en la ecuación de la resistencia total, podemos despejar $L_{lana}$:
+\[ \SI{3,1056}{K/W} = \SI{1,5}{K/W} + R_{lana} + \SI{0,0526}{K/W} \]
+\[ R_{lana} = 3,1056 - 1,5 - 0,0526 = \SI{1,553}{K/W} \]
+Finalmente, a partir de la definición de $R_{lana}$, obtenemos el espesor:
+\[ L_{lana} = R_{lana} \cdot (k_{lana} \cdot A) = 1,553 \cdot (\SI{0,0418}{}) \approx \SI{0,0649}{\metre} \]
+Se necesitaría un espesor de lana de \textbf{\SI{6,49}{\centi\metre}} para reducir las pérdidas de calor a la mitad.
+
+\newpage
+\section{Ejercicio 2}
+\textit{Sea un tubo de acero de 2 pulgadas de diámetro exterior y 15 metros de longitud, por cuyo interior circula vapor de agua a \SI{200}{\celsius}, mientras que la temperatura ambiente es de \SI{25}{\celsius}. a) ¿Cuál es la disminución o aumento porcentual que existe en la perdida de calor si el tubo se pinta con una pintura de aluminio? b) Si se sustituye por un tubo de aluminio ¿cuál debería ser la longitud de éste para que la perdida de calor sea la misma que la del tubo de acero (sin pintar)?}
+
+\textbf{Datos:} $\sigma=\SI{5.67e-8}{W/m^2.K^4}$, $\epsilon_{acero}=0,16$, $\epsilon_{pintura}=0,35$, $\epsilon_{aluminio}=0,05$.
+
+\subsection*{Resolución}
+Este problema se enfoca en la transferencia de calor por radiación desde la superficie del tubo al ambiente. Dado que la temperatura de la superficie y del ambiente son fijas, y no se mencionan cambios en la convección, las variaciones en la pérdida de calor dependerán únicamente de la emisividad ($\epsilon$) de la superficie.
+
+\subsubsection*{Apartado (a): Aumento porcentual de la pérdida de calor al pintar}
+La pérdida de calor por radiación se rige por la Ley de Stefan-Boltzmann: $Q_{rad} = \epsilon \sigma A (T_{sup}^4 - T_{amb}^4)$. Para comparar la pérdida del tubo de acero sin pintar con la del tubo pintado, podemos establecer una relación. El término $\sigma A (T_{sup}^4 - T_{amb}^4)$ es constante en ambos casos, por lo que el cambio en el calor radiado es directamente proporcional al cambio en la emisividad.
+
+El aumento porcentual se puede calcular directamente a partir de las emisividades:
+\[ \text{Aumento \%} = \frac{Q_{pintado} - Q_{acero}}{Q_{acero}} \times 100 = \frac{\epsilon_{pintura} - \epsilon_{acero}}{\epsilon_{acero}} \times 100 \]
+Sustituyendo los valores dados:
+\[ \text{Aumento \%} = \frac{0,35 - 0,16}{0,16} \times 100 = \frac{0,19}{0,16} \times 100 = 118,75\% \]
+Al pintar el tubo con pintura de aluminio, la pérdida de calor por radiación \textbf{aumenta un 118,75\%} debido a que la emisividad de la pintura es mayor que la del acero.
+
+\subsubsection*{Apartado (b): Longitud del tubo de aluminio}
+Ahora buscamos la longitud de un tubo de aluminio ($L_{aluminio}$) que tenga la misma pérdida de calor por radiación que el tubo de acero original de \SI{15}{m}. Igualamos las ecuaciones de Stefan-Boltzmann para ambos casos:
+\[ Q_{aluminio} = Q_{acero} \]
+\[ \epsilon_{aluminio} \sigma A_{aluminio} (T_{sup}^4 - T_{amb}^4) = \epsilon_{acero} \sigma A_{acero} (T_{sup}^4 - T_{amb}^4) \]
+Los términos de temperatura y la constante $\sigma$ se cancelan. El área superficial de un tubo es $A = \pi D L$. Como el diámetro exterior no cambia, la ecuación se simplifica:
+\[ \epsilon_{aluminio} \cdot L_{aluminio} = \epsilon_{acero} \cdot L_{acero} \]
+Despejamos la longitud del tubo de aluminio:
+\[ L_{aluminio} = L_{acero} \cdot \frac{\epsilon_{acero}}{\epsilon_{aluminio}} = \SI{15}{\metre} \cdot \frac{0,16}{0,05} = \SI{48}{\metre} \]
+Debido a que el aluminio tiene una emisividad mucho menor, se necesitaría un tubo de \textbf{\SI{48}{metros}} de longitud para irradiar la misma cantidad de calor que el tubo de acero de 15 metros.
+
+\newpage
+\section{Ejercicio 3}
+\textit{Usando el modelo de analogía eléctrica, determinar el espesor de poliestireno necesario en una cámara frigorífica para que las pérdidas de calor por unidad de área no superen los \SI{10}{kcal/h.m^2}. El muro está compuesto por varias capas. $T_{int} = \SI{-20}{\celsius}$, $T_{ext} = \SI{30}{\celsius}$.}
+
+\subsection*{Resolución}
+Este problema de transferencia de calor a través de una pared compuesta se resuelve de manera eficiente mediante el modelo de circuito de resistencias térmicas en serie.
+
+\subsubsection*{Apartado (a): Coeficiente global de transmisión de calor (U)}
+El coeficiente global de transmisión, U, es una medida de la facilidad con la que el calor atraviesa el muro completo. Se relaciona con el flujo de calor por unidad de área ($q$) y la diferencia de temperatura total:
+\[ q = U \cdot (T_{ext} - T_{int}) \]
+El problema nos da el flujo de calor máximo permitido, $q = \SI{10}{kcal/h.m^2}$, y la diferencia de temperaturas, $\Delta T = 30 - (-20) = \SI{50}{\celsius}$. Por tanto, podemos calcular U:
+\[ U = \frac{q}{\Delta T_{total}} = \frac{\SI{10}{kcal/h.m^2}}{\SI{50}{\celsius}} = \textbf{\SI{0,2}{kcal/h.m^2.^\circ C}} \]
+
+\subsubsection*{Apartado (b): Espesor de poliestireno}
+La resistencia térmica total por unidad de área ($R_{total,A}$) es simplemente la inversa del coeficiente U:
+\[ R_{total,A} = \frac{1}{U} = \frac{1}{0,2} = \SI{5}{h.m^2.^\circ C/kcal} \]
+Esta resistencia total es la suma de las resistencias de cada una de las capas del muro y de los procesos de convección en las superficies interior y exterior. Primero, es necesario unificar las unidades de las conductividades a $kcal/h.m.^\circ C$, usando el factor $\SI{1}{W} \approx \SI{0,86}{kcal/h}$.
+\[ k_{azulejo} = \SI{1,3}{W/m.K} \times 0,86 \approx \SI{1,118}{kcal/h.m.^\circ C} \]
+Ahora calculamos la resistencia por unidad de área ($R_A = 1/h$ para convección y $R_A = L/k$ para conducción) de todas las capas conocidas:
+\begin{itemize}
+    \item Convección exterior: $R_{A,conv,ext} = 1/20 = \SI{0,05}{}$
+    \item Azulejo exterior: $R_{A,az,ext} = 0,015 / 1,118 \approx \SI{0,0134}{}$
+    \item Ladrillo exterior: $R_{A,lad,ext} = 0,10 / 1,1 \approx \SI{0,0909}{}$
+    \item Capa antivapor: $R_{A,vapor} = 0,020 / 0,4 = \SI{0,05}{}$
+    \item Ladrillo interior: $R_{A,lad,int} = 0,10 / 1,0 = \SI{0,10}{}$
+    \item Azulejo interior: $R_{A,az,int} = 0,015 / 1,118 \approx \SI{0,0134}{}$
+    \item Convección interior: $R_{A,conv,int} = 1/12 \approx \SI{0,0833}{}$
+\end{itemize}
+La suma de estas resistencias conocidas es $R_{A,conocidas} \approx \SI{0,401}{h.m^2.^\circ C/kcal}$. La resistencia total debe ser la suma de las conocidas más la del poliestireno, cuyo espesor $L_{poli}$ es la incógnita:
+\[ R_{total,A} = R_{A,conocidas} + R_{A,poliestireno} \implies 5 = 0,401 + \frac{L_{poli}}{0,05} \]
+Despejando $L_{poli}$:
+\[ \frac{L_{poli}}{0,05} = 5 - 0,401 = 4,599 \]
+\[ L_{poli} = 4,599 \times 0,05 \approx \SI{0,23}{\metre} \]
+Se requiere un espesor de aislante de poliestireno de \textbf{\SI{23}{\centi\metre}}.
+
+\newpage
+\section{Ejercicio 4}
+\textit{La pared externa de un horno mantiene una temperatura constante de \SI{250}{\celsius}, y el aire exterior está a \SI{25}{\celsius}. ¿Cuánto calor se pierde por convección en media hora si la pared tiene una superficie de \SI{60}{\centi\metre\squared}?}
+
+\subsection*{Resolución}
+Este problema trata sobre la convección natural, donde el coeficiente de convección `h` no es una constante, sino que depende de la diferencia de temperatura $\Delta T$.
+
+Primero, establecemos los datos comunes para ambos apartados. La diferencia de temperatura es $\Delta T = 250 - 25 = \SI{225}{\celsius}$. El área es $A = \SI{60}{cm^2} = \SI{0,006}{m^2}$ y el tiempo es $0,5 \text{ h} = \SI{1800}{s}$.
+
+\subsubsection*{Apartado (a): Pared vertical}
+Para una pared vertical, se nos proporciona la fórmula para el coeficiente de convección. Lo calculamos:
+\[ h = \SI{424e-6}{} (\Delta T)^{1/4} = \SI{424e-6}{} (225)^{1/4} \approx \SI{1,642e-3}{kcal/s.m^2.K} \]
+La tasa de pérdida de calor (potencia) se calcula con la ley de enfriamiento de Newton:
+\[ Q_{tasa} = h \cdot A \cdot \Delta T = (\SI{1,642e-3}{}) \cdot (\SI{0,006}{m^2}) \cdot (\SI{225}{K}) \approx \SI{0,002217}{kcal/s} \]
+Para encontrar la energía total perdida en media hora, multiplicamos esta tasa por el tiempo en segundos:
+\[ Q_{total} = Q_{tasa} \times \text{tiempo} = \SI{0,002217}{kcal/s} \times \SI{1800}{s} \approx \SI{3,99}{kcal} \]
+Finalmente, convertimos el resultado a julios, usando el factor $\SI{1}{kcal} \approx \SI{4184}{J}$:
+\[ Q_{total, J} = \SI{3,99}{kcal} \times \SI{4184}{J/kcal} \approx \textbf{\SI{16700}{J}} \]
+
+\subsubsection*{Apartado (b): Pared horizontal superior}
+El procedimiento es idéntico, pero cambia la fórmula para el coeficiente `h`.
+\[ h = \SI{576e-6}{} (\Delta T)^{1/4} = \SI{576e-6}{} (225)^{1/4} \approx \SI{2,231e-3}{kcal/s.m^2.K} \]
+La nueva tasa de pérdida de calor es:
+\[ Q_{tasa} = h \cdot A \cdot \Delta T = (\SI{2,231e-3}{}) \cdot (\SI{0,006}{m^2}) \cdot (\SI{225}{K}) \approx \SI{0,003012}{kcal/s} \]
+Y la energía total perdida en media hora:
+\[ Q_{total} = Q_{tasa} \times \text{tiempo} = \SI{0,003012}{kcal/s} \times \SI{1800}{s} \approx \SI{5,42}{kcal} \]
+En julios, esto equivale a:
+\[ Q_{total, J} = \SI{5,42}{kcal} \times \SI{4184}{J/kcal} \approx \textbf{\SI{22680}{J}} \]
+
+\end{document}

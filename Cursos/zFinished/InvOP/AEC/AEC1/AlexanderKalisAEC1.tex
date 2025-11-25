@@ -1,0 +1,205 @@
+\documentclass{article}
+\usepackage[utf8x]{inputenc}
+\usepackage{lmodern,textcomp}
+\usepackage{lipsum}
+\usepackage{authoraftertitle}
+\usepackage[top=2cm,bottom=1.5cm,left=1.5cm, right=3cm,includeheadfoot]{geometry}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+%\usepackage[spanish]{babel}
+\usepackage{mathtools}
+\usepackage{nicefrac}
+\usepackage{csquotes}
+\usepackage{amssymb}
+\usepackage{fancybox, graphicx}
+\usepackage{array}
+\usepackage{hhline}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{esint}
+\usepackage{caption}
+\usepackage{esvect}
+\usepackage{siunitx}
+\usepackage{commath}
+\newcommand{\ihat}{\textbf{\^\i}}
+\newcommand{\jhat}{\textbf{\^\j}}
+%Header & Footer
+
+\pagestyle{fancy}
+%\fancyhead[LE]{\MyTitle}
+\fancyhead[LO]{Investigación Operativa}
+\fancyhead[RO]{Actividad de Evaluación Contínua 1}
+%\fancyhead[RE]{\leftmark}
+\fancyfoot[L]{\raisebox{-1cm}{\includegraphics[height=1.5cm]{D:/KUKADisk/OneDrive - KUKA AG/UDIMA/DocumentGraphics/LOGOUDIMA.jpg}}}
+\fancyfoot[R]{Corregido:\\ Dr. Fco. David de la Peña Esteban}
+%\fancyfoot[RO]{07/12/2018}
+
+
+%Vars
+\author{Alexander Sebastian Kalis}
+\title{Actividad de Evaluación Contínua 1}
+
+
+%DOC
+
+
+\begin{document}
+
+\begin{titlepage}
+
+    \begin{center}
+
+        \line(1,0){300}\\
+        [0.2in]
+        \huge{\bfseries {\MyTitle}}\\
+        [1mm]
+        \line(2,0){200}\\
+        [0.75cm]
+        \textsc{\LARGE Investigación Operativa}\\
+        [2cm]
+        \includegraphics[height=10cm]{D:/KUKADisk/OneDrive - KUKA AG/UDIMA/InvOP/AEC/AEC1/img/portada.png}\\
+        [3cm]
+
+    \end{center}
+
+    \begin{flushright}
+
+        Autor: {\MyAuthor}\\
+        Profesor: Dr. Fco. David de la Peña Esteban\\
+        Ingeniería de Organización Industrial\\
+        UDIMA         
+
+    \end{flushright}
+    
+\end{titlepage}
+
+\newpage
+
+\section*{Caso 1. Formulación de problema de programación lineal }
+
+Una compañía tiene 2 edificios, cada uno con un horario distinto:
+
+-Edificio 1: Se quiere que este edificio esté abierto de 10:00 a 20:00.
+
+-Edificio 2: Se quiere que este edificio esté abierto de 10:00 a 16:00.
+
+El departamento de seguridad establece turnos de vigilancia que empiezan cada 2 
+horas. Los vigilantes necesarios por rangos horarios en cada edificio son:\\
+
+\begin{center}
+    \includegraphics[height=3cm]{D:/KUKADisk/OneDrive - KUKA AG/UDIMA/InvOP/AEC/AEC1/img/c1e1.PNG}\\
+\end{center}
+
+Se contrata a los vigilantes para hacer turnos de 4 horas, 6 horas o de 8 horas. El 
+coste asociado por hora para los que hacen el turno de 4 horas es de 18€. El coste 
+asociado por hora para los que hacen el turno de 6 horas es de 15€. El coste asociado
+por hora para los que hacen el turno de 8 horas es de 14€. Un vigilante puede 
+empezar el turno en un edificio y acabarlo en el otro.
+
+
+\subsection*{Variables}
+La cantidad de vigilantes se identificarán según su cantidad de horas: $vxi=8, vyi=6, vzi=4$. Se representan los turnos posibles en la tabla:
+
+\begin{center}
+    \includegraphics[height=3cm]{D:/KUKADisk/OneDrive - KUKA AG/UDIMA/InvOP/AEC/AEC1/img/turnos.PNG}\\
+\end{center}
+
+\subsection*{Función objetivo}
+
+Tomando en cuenta el coste total de cada vigilante según sus horas:
+
+\[
+    min(Z) = 112(vx1 + vx2)  + 90(vy1 + vy2 + vy3)  + 72(vz1 + vz2 + vz3 + vz4)
+\]
+
+\subsection*{Restricciones}
+
+{\setlength{\parindent}{0cm}
+    $vx1+vy1+vz1 \geq 13$ \\
+    $vx1+vx2+vy1+vy2+vz1+vz2 \geq 23$\\
+    $vx1+vx2+vy1+vy2+vy3+vz2+vz3 \geq 19$\\
+    $vx2+vx2+vy2+vy3+vz3+vz4 \geq 8$\\
+    $vx2+vy3+vz4 \geq 5$\\
+    $vxi \geq 0, i=1,2$ y enteros.\\
+    $vyi \geq 0, i=1,2,3$ y enteros.\\
+    $vzi \geq 0, i=1,...,4$ y enteros.
+}
+
+ 
+
+
+
+
+\section*{Caso 2. Método gráfico}
+
+F.O.: $Max / Min (120 x1 + 200 x2)$\\
+
+
+
+{\setlength{\parindent}{0cm}
+Restricciones:\\
+
+$x_1 + x_2 = 65$\\
+$x_1 \geq 23$ \\ 
+$x_2 \geq 20$ \\
+$60 x_1 + 24 x_2 \leq 3000$\\
+
+Resolver por el método gráfico, tanto para el caso de maximizar como de
+minimizar la función objetivo. \\
+}
+
+Graficamos las funciones en Geogebra:
+
+
+\begin{center}
+    \includegraphics[width=0.9\textwidth]{D:/KUKADisk/OneDrive - KUKA AG/UDIMA/InvOP/AEC/AEC1/img/c2r1.PNG}\\
+\end{center}
+
+En este caso, nos encontramos con una región factible acotada por una recta.
+El máximo se encuentra en el punto A(23,42) con un valor de $11160$ y el mínimo en el punto B(40,25) con un valor de $9800$.
+
+
+\newpage
+
+\section*{Caso 3. Método gráfico}
+
+F.O.: $Max / Min (0.2 x_3 + 0.5 x_4)$\\
+
+{\setlength{\parindent}{0cm}
+Restricciones:\\
+
+$0.1 x_3 + 0.6 x_4 \leq 2000$\\
+$x_3 + x_4 \leq 6000$\\
+$x_3 \leq 4000$\\
+$x_3 \geq 0$\\
+$x_4 \geq 0$\\
+
+Resolver por el método gráfico, tanto para el caso de maximizar como de
+minimizar la función objetivo. 
+}
+
+De la misma forma graficamos con Geogebra:
+
+\begin{center}
+    \includegraphics[width=0.9\textwidth]{D:/KUKADisk/OneDrive - KUKA AG/UDIMA/InvOP/AEC/AEC1/img/c3r1.PNG}\\
+\end{center}
+
+Aquí observamos una región factible acotada en la que el máximo se encuentra en el punto B(3200,2800) con valor 1720 y el mínimo en el punto D(4000,0) con valor 800.
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

@@ -1,0 +1,503 @@
+\documentclass{article}
+\usepackage{lipsum}
+\usepackage{authoraftertitle}
+\usepackage[top=2cm,bottom=1.5cm,left=1.5cm, right=3cm,includeheadfoot]{geometry}
+\usepackage{graphicx}
+\usepackage[parfill]{parskip}
+\usepackage{fancyhdr}
+\usepackage[spanish]{babel}
+\usepackage{mathtools}
+\usepackage{csquotes}
+\usepackage{amssymb}
+\usepackage[shortlabels]{enumitem}
+\usepackage{fancybox, graphicx}
+\usepackage{array}
+\usepackage{hhline}
+\usepackage{subfigure}
+\usepackage{gensymb}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{leftidx}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{amsmath} 
+\usepackage{caption}
+\usepackage{esvect}
+\usepackage{siunitx}
+\usepackage{commath}
+\usepackage{bigints}
+%Header & Footer
+
+\pagestyle{fancy}
+\fancyhead[LE]{\MyTitle}
+\fancyhead[LO]{Mecánica}
+%\fancyhead[RO]{\leftmark}
+%\fancyhead[RE]{\leftmark}
+\fancyfoot[L]{\raisebox{-1cm}{\includegraphics[height=2cm]{D:/KUKADisk/UDIMA/DocumentGraphics/LOGOUDIMA.jpg}}}
+\fancyfoot[R]{Corregido:\\ Dra. Isabel Cristina Gil García}
+%\fancyfoot[RO]{07/12/2018}
+
+
+%Vars
+\author{Alexander Sebastian Kalis}
+\title{Ejercicios propuestos Unidades 4-6}
+
+
+%DOC
+
+
+\begin{document}
+
+\begin{titlepage}
+
+    \begin{center}
+
+        \line(1,0){300}\\
+        [0.2in]
+        \huge{\bfseries {\MyTitle}}\\
+        [1mm]
+        \line(2,0){200}\\
+        [0.75cm]
+        \textsc{\LARGE Mecánica Clásica}\\
+        [2cm]
+        \includegraphics[height=10cm]{D:/KUKADisk/UDIMA/Mecanica/portada.jpg}\\
+        [3cm]
+
+    \end{center}
+
+    \begin{flushright}
+
+        {\MyAuthor}\\
+        %Profesora: Dra. Isabel Cristina Gil García\\
+        %Curso: Ingeniería de Organización Industrial\\
+        %UDIMA\\
+        \today        
+
+    \end{flushright}
+    
+\end{titlepage}
+
+%\tableofcontents \thispagestyle{empty}
+%\newpage
+
+%\section*{Introducción}
+
+
+\newpage
+
+\section*{Actividades}
+\subsection*{Problema 1}
+
+\subsubsection*{Enunciado del problema}
+
+Una avioneta A vuela con una velocidad constante de $1000 ft/s$, su trayectoria describe un
+arco de circunferencia con un radio de 10.000 ft. Otra avioneta B viaja en línea recta con una
+velocidad de $500 ft/s$, que aumenta a razón de $50 ft/s^2$.\\
+Determinar la velocidad y aceleración relativas de la avioneta A respecto al B. Expresarlo en unidades del SI. 
+
+\begin{figure}[!htb]
+    \centering
+        \includegraphics[height=7cm]{p1e.PNG}
+\end{figure}
+
+\subsubsection*{Datos}
+Se toma como sistema de referencia el frame mundo, representación esquemática:
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[height=6cm]{p1e2.PNG}
+\end{figure}
+
+\newpage
+Entonces los datos serán los siguientes:\\
+
+$\leftidx{^W}{v}_A = 1000ft/s \approx -305 m/s$\\
+$\leftidx{^W}{v}_B = 500ft/s \approx 150m/s$\\
+$\leftidx{^W}{a}_A = \cfrac{v^2}{r} \approx -\cfrac{305^2}{3050} \approx -30.5m/s^2$\\
+$\leftidx{^W}{a}_B = 50ft/s^2 \approx  15 m/s^2$
+\subsubsection*{Solución y explicación del problema}
+Aplicamos la fórmula del movimiento relativo para determinar la velocidad relativa entre los aviones:
+
+\begin{equation}
+    \vec{v}_{A/B} = \vec{v}_A - \vec{v}_B \approx -305 - 150 \approx - 455 \vec{i} \ m/s 
+\end{equation}
+
+Hacemos lo mismo con la aceleración, teniendo en cuenta que la aceleración del avión A es centrípeta y en este caso es
+paralela en sentido negativo al eje  $\leftidx{^A}{y}$ como se puede observar en el esquema.
+
+\begin{equation}
+    \vec{a}_{A/B} = \vec{a}_A - \vec{a}_B = -30.5 \vec{j} - 15 \vec{i} \ m/s^2
+\end{equation}
+
+
+
+\subsection*{Problema 2}
+
+\subsubsection*{Enunciado del problema}
+
+El diámetro exterior de una polea es de 0,8 m y la sección transversal de su borde es como vemos en la figura.
+Determina la masa y el peso del borde conociendo que la polea es de acero y que la densidad del acero es $\rho=7,85 \cdot 10^3 kg/m^3$ 
+
+\begin{figure}[!htb]
+    \centering
+        \includegraphics[height=7cm]{p2e.PNG}
+\end{figure}
+
+\newpage
+
+\subsubsection*{Datos}
+
+Primeramente realizamos la representación en 3D de la polea en Autocad según los datos del enunciado:\\
+Radio exterior de la polea: $0.4m$.\\
+Material y su densidad: $\rho_i = 7.85 \cdot 10^3kg/m^3$.\\
+
+\begin{figure}[!htb]
+    \centering
+        \includegraphics[height=7cm]{p2f1.PNG}
+\end{figure}
+
+\subsubsection*{Solución y explicación del problema}
+
+Se pide encontrar la masa y peso de la polea. Al tratarse de un sólido en revolución, se aplicará el segundo teorema de Pappus-Guldin para encontrar el volumen:
+
+\begin{equation}
+    V=\int 2\pi y \ dA = 2\pi y_G A
+\end{equation}
+
+Para ello será necesario conocer $y_G$, que es la distancia recorrida por el centro de gravedad cuando se engendra el volumen y el área generatriz, que es
+el área de la sección transversal de la polea.
+
+Determinamos el centro de gravedad de la sección transversal de la polea:
+
+\begin{figure}[!htb]
+    \centering
+        \includegraphics[height=5cm]{p2f2.PNG}
+\end{figure}
+
+Como se puede observar en la figura, esta dispone de un eje de simetría. Sabemos entonces que $X_G$ debe situarse sobre ese eje con lo cual $X_G=50mm$.
+
+Falta calcular $Y_G$:
+\[
+    A_1=A_3=20 \cdot 50=100mm^2    
+\]
+\[
+    A_2=60 \cdot 20 = 120mm^2
+\]
+\[
+    y_{G_1}=y_{G_3}=25mm
+\]
+\[
+    y_{G_2}=30+10=40mm
+\]
+
+\begin{equation}
+    Y_G=\cfrac{\sum y_{Gi}m_i}{\sum m_i} \rightarrow
+    Y_G=\cfrac{100 \cdot 25 + 120 \cdot 40 + 100 \cdot 25   }{100 + 120 + 100} = 30.625mm
+\end{equation}
+
+Entonces nos queda el siguiente centro de gravedad:
+
+\begin{figure}[!htb]
+    \centering
+        \includegraphics[height=5cm]{p2f3.PNG}
+\end{figure}
+
+Como ya disponemos de las áreas de los rectángulos individuales que forman la figura, la sumamos para obtener el área total $A$:
+
+\begin{equation}
+    A=320mm^2
+\end{equation}
+
+Ahora podemos restar al radio exterior de la polea la componente $Y$ del centro de gravedad de la sección transversal de la polea:
+
+\begin{equation}
+    Y_G=400-30.625=369.375mm
+\end{equation}
+
+Aplicamos Pappus-Guldin:
+
+\begin{equation}
+    V=2 \pi \cdot 369.375 \cdot 320 = 7.4267 \cdot 10^{-4} m^3
+\end{equation}
+
+Entonces su masa será 
+
+\begin{equation}
+    m=V\rho = 7.4267 \cdot 10^{-4} \cdot  7.85 \cdot 10^3 \approx 5.83Kg
+\end{equation}
+Y su peso en la tierra
+\begin{equation}
+    W=mg=5.83 \cdot 9.8 \approx 57.1 N
+\end{equation}
+\newpage
+
+
+\subsection*{Problema 3}
+
+\subsubsection*{Enunciado del problema}
+Una placa delgada de acero de 4 mm de espesor se corta y se dobla para formar la siguiente pieza. Determinar el momento de inercia de la pieza respecto al origen de coordenadas
+
+$\rho_{acero}=7850kg/m^3$
+
+\begin{figure}[!htb]
+    \centering
+        \includegraphics[height=7cm]{p3e1.PNG}
+\end{figure}
+
+\subsubsection*{Datos}
+
+De la imagen del enunciado disponemos de las medidas del objeto y su espesor.
+
+$\rho_{acero}=7850kg/m^3$
+
+\subsubsection*{Solución y explicación del problema}
+
+Al tratarse de una figura compleja, empezaremos por obtener las masas descomponiendo en figuras simples y calculando sus momentos de inercia
+consultando la tabla del libro:\\
+
+\textbf{Semidisco}\\
+\[
+    m_{semidisco}=\rho \cdot V = \rho \cdot A \cdot d=7850 \cdot \cfrac{0.08^2\pi}{2} \cdot 0.004 \approx 0.32kg
+\]
+
+En este caso ya tenemos el origen de coordenadas ubicado en el centroide del <<disco completo>> y no hace falta aplicar Steiner. Simplemente usamos
+las fórmulas relativas a un disco completo pero que tiene la mitad de su masa.
+
+\[
+    I_{x_{semidisco}}=\cfrac{m \cdot r^2}{2} = \cfrac{0.32 \cdot 0.08^2}{2}=    1.024  \cdot 10 ^{-3} kg \cdot m^2 \ \vec{i}
+\]
+
+\[
+    I_{y_{semidisco}}=I_{z_{semidisco}}=\cfrac{m\cdot r^2}{4}=\cfrac{0.32\cdot 0.08^2}{4}=0.512 \cdot 10^{-3} kg \cdot m^2 \ \vec{jk}
+\]
+
+
+\textbf{Disco}\\
+\[    
+    m_{disco}=\rho \cdot V = 7850 \cdot 0.05^2  \pi \cdot 0.004 \approx 0.25kg
+\]
+
+\[
+    I_{x_{disco}}=\cfrac{m \cdot r^2}{4} = \cfrac{0.25 \cdot 0.05^2}{4} =  -0.156   \cdot 10 ^{-3} kg \cdot m^2  \ \vec{i}
+\]
+
+En el caso de $I_y$ e $I_z$ tendremos que utilizar Steiner. Calculamos los momentos de inercia en el CG del disco y posteriormente trasladamos el frame 
+de referencia.
+
+\[
+    I_{y_{disco}}=  I_{x_{disco}} + 0.25 \cdot 0.1^2= -2.656  \cdot 10 ^{-3} kg \cdot m^2 \ \vec{j} 
+\]
+
+\[
+    I_{z_{disco}}= \cfrac{0.25 \cdot 0.05^2}{2}  + 0.25 \cdot 0.1^2= -2.812  \cdot 10 ^{-3} kg \cdot m^2 \ \vec{k}
+\]
+
+\textbf{Lámina}\\
+\[
+    m_{lamina}=\rho \cdot V = 7850 \cdot 0.2 \cdot 0.16 \cdot 0.004 \approx 1kg
+\]  
+
+Podemos calcular directamente $I_{x_{lamina}}$ ya que está sobre su centro de gravedad:
+
+\[
+    I_{x_{lamina}}=\cfrac{m \ b^2}{12}=\cfrac{0.16^2}{12}= 2.13 \cdot 10^{-3} kg \cdot m^2 \ \vec{i}
+\]
+
+Similarmente al semidisco, para los ejes $y$ y $z$ podemos distribuir la masa imaginando que la lámina tiene el doble de largo $2a$. De esta forma tenemos el origen de coordenadas 
+en el centro de gravedad:
+
+\[
+    I_{y_{lamina}}=\cfrac{m \ 2a^2}{12}=\cfrac{0.4^2}{12}= 13.333 \cdot 10^{-3} kg \cdot m^2 \ \vec{j}
+\] 
+\[
+    I_{z_{lamina}}=m\cfrac{2a^2 + b^2}{12}=\cfrac{0.4^2+0.16^2}{12}=  15.4666 \cdot 10^{-3} kg \cdot m^2 \ \vec{k}
+\]
+
+Finalmente realizamos el sumatorio de todos los momentos de inercia:
+
+\begin{equation}
+    I=[2.998 \vec{i} + 11.189 \vec{j} + 13.166 \vec{k}] \cdot 10^{-3}  kg \cdot m^2
+\end{equation}
+
+\newpage
+
+
+\subsection*{Problema 4}
+
+\subsubsection*{Enunciado del problema}
+Determinar el momento de inercia y el radio de giro respecto al eje OX de la siguiente figura plana. Las cotas están dadas en centímetros. 
+\begin{figure}[!htb]
+    \centering
+        \includegraphics[height=8cm]{p4e1.PNG}
+\end{figure}
+\subsubsection*{Datos}
+Disponemos de las dimensiones de la figura gracias a la imagen.
+
+A1: $A = 800mm^2, \ X_G=40mm, \ Y_G=5mm$
+
+A2: $A= 300mm^2,\ X_G=5mm, \ Y_G=25mm$
+\subsubsection*{Solución y explicación del problema}
+
+Calculamos los momentos de inercia de la figura aplicando Steiner directamente:
+
+\begin{equation}
+    I=I_{f1}+I_{f2}=\left(\cfrac{80 \cdot 10^3}{12}+800 \cdot 5^2\right) + \left( \cfrac{10 \cdot 30^3}{12}+300 \cdot 25^2\right) \approx 236666.7 \ kg \cdot mm^2
+\end{equation}
+
+Ahora podemos calcular el radio de giro:
+
+\begin{equation}
+    k=\sqrt{\cfrac{I}{m}}=\sqrt{\cfrac{236666.7}{800+300}} \approx 14.68 \ mm \approx 0.01468 \ m
+\end{equation}
+
+\newpage
+
+\subsection*{Problema extra}
+
+Demostración numérica y con un programa CAD (AutoCAD, SolidWorks etc.) que calcule propiedades físicas, obtendrán 0,5 puntos extra
+para el examen final presencial ordinario. Deben adjuntar pantallas en el PDF de la AEC (1 fichero) y fichero CAD (1 fichero).
+
+Determine el Momento de Inercia centroidal de la siguiente figura plana. Las cotas están en cm.
+
+\begin{figure}[!htb]
+    \centering
+        \includegraphics[height=7cm]{p5e1.PNG}
+\end{figure}
+
+
+Realizaremos el procedimiento paso a paso con ayuda de Autocad y posteriormente veremos si el resultado total coincide con el que calculamos:
+
+\textbf{Triángulo}
+
+Creamos el triángulo con las medidas del enunciado y lo convertimos en región. Aplicamos el comando $massprop$ para obtener los datos físicos:
+
+\begin{figure}[!htb]
+    \centering
+        \includegraphics[width=1\textwidth]{p5triangulo.PNG}
+\end{figure}
+
+Obtenemos: $A=216.75 , \ CG_x=17, \ CG_y=5.67$
+\newpage
+\textbf{Rectángulo}
+
+Seguimos el mismo procedimiento, dejamos el eje de coordenadas donde está para obtener el CG:
+
+\begin{figure}[!htb]
+    \centering
+        \includegraphics[width=1\textwidth]{p5rectangulo.PNG}
+\end{figure}
+
+Obtenemos: $A=433.5, \ GC_x=38.25, \ GC_y=8.5$
+
+\textbf{Círculo}
+
+\begin{figure}[!htb]
+    \centering
+        \includegraphics[width=1\textwidth]{p5circulo.PNG}
+\end{figure}
+
+Obtenemos: $A=127.88, \ GC_x=38.25, \ GC_y=8.5$
+
+Si calculamos el CG de la figura:
+
+\begin{equation}
+    X_G=\cfrac{\sum X_Gi \ m_i}{\sum m_i}=\cfrac{216.75 \cdot 17 + 433.5 \cdot 38.25 - 127.88 \cdot 38.25}{216.75 +  433.5 - 127.88}=29.43
+\end{equation}
+
+\begin{equation}
+    Y_G=\cfrac{\sum Y_Gi \ m_i}{\sum m_i}=\cfrac{216.75 \cdot 5.67 + 433.5 \cdot 8.5 - 127.88 \cdot 8.5}{216.75 +  433.5 - 127.88}=7.32
+\end{equation}
+
+\newpage
+
+Para comprobarlo en Autocad, convertimos todo el perímetro exterior de la figura en una sola región, el círculo en otra región, y subtraemos el círculo de la figura con el comando
+$subtract$:
+
+\begin{figure}[!htb]
+    \centering
+        \includegraphics[width=1\textwidth]{p5fx.PNG}
+\end{figure}
+
+Por último nos queda ver el el momento de inercia respecto al centroide de la figura. Para eso movemos el frame W en el punto anteriormente calculado y volvemos a aplicar $massprop$:
+
+
+\begin{figure}[!htb]
+    \centering
+        \includegraphics[width=1\textwidth]{p5inertia.PNG}
+\end{figure}
+
+De esta forma obtenemos el siguiente resultado:
+
+\[   
+    I_x=13636.9097
+\]
+
+\[
+    I_y=87283.1972
+\]
+
+\newpage
+
+\subsection*{Formulario}
+
+\textbf{Movimiento relativo}
+
+$\vec{v}_{absoluta}=\vec{v}_{relativa}+\vec{v}_{arrastre}$
+
+$\vec{v}_{A/B}=\vec{v}_{A}-\vec{v}_{B}$
+
+$\vec{v}=\vec{\omega} \times  \vec{r}$
+
+$\vec{v}_{absoluta}=\vec{v}_{relativa}+\vec{\omega} \times  \vec{r}$
+
+$\vec{a}_{abs}=\vec{a}_{rel}+\vec{a}_{arrastre}+\vec{a}_{Coriolis}$
+
+Fuerza de arrastre: $-m\vec{a}_{a}$
+
+Fuerza tangencial: $-m(\vec{\alpha} \times \vec{r})$
+
+Fuerza centrífuga: $-m(\vec{\omega}\times (\vec{\omega} \times \vec{r}))$
+
+Fuerza de Coriolis: $-2m (\vec{\omega}\times\vec{v_{rel}})$
+
+$\sum \vec{F}+\sum\vec{F}_{inercia}=m\vec{a}_{rel}$\\
+
+\textbf{Centro de gravedad}
+
+$XYZ_G=\cfrac{\bigint XYZ_i \ dm_i}{M}$
+
+1er Teorema Pappus-Guldin: $A=\int 2 \pi y \ dl = 2 \pi \int y \ dl = 2 \pi y_G \ L$
+
+2o Teorema Pappus-Guldin: $V=\int 2 \pi y \ dA = 2\pi \int y \ dA = 2\pi y_G A$
+
+\newpage
+
+\begin{figure}[!htb]
+    \centering
+        \includegraphics[height=.9\textheight]{centroide.jpg}
+\end{figure}
+
+\newpage
+
+\textbf{Momentos de inercia}
+
+Radio de giro: $k=\sqrt{\cfrac{I}{m}}$
+
+Teorema de Steiner: $I_{OZ}=I_{GZ}+md^2$
+
+Inercia en eje perpendicular: $I_z=I_x+I_y$
+
+Teorema de Steiner, productos de inercia: $P_{X'Y'}=P_{XY}+\overline{x} \cdot \overline{y} \cdot A$
+
+
+\begin{figure}[!htb]
+    \centering
+        \includegraphics[height=.8\textheight]{inercias1.jpg}
+\end{figure}
+
+\begin{figure}[!htb]
+    \centering
+        \includegraphics[height=.6\textheight]{inercias2.png}
+\end{figure}
+\end{document}

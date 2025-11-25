@@ -1,0 +1,41 @@
+
+¿Las decisiones no estructuradas tienen un procedimiento bien definido para tomarlas?
+
+Respuesta: No, las decisiones no estructuradas no tienen un procedimiento bien definido para tomarlas.
+Explicación del libro: Las decisiones no estructuradas requieren de juicio, evaluación y percepción, dado que no se rigen por un proceso estándar.
+¿Las actividades básicas en el proceso de desarrollo de sistemas incluyen análisis, diseño, programación, prueba, conversión, producción y mantenimiento?
+
+Respuesta: Verdadero.
+Explicación del libro: Estas actividades forman parte del proceso estructurado para la creación de sistemas de información y se deben realizar secuencialmente.
+Estrategias internacionales básicas para desarrollar empresas globales incluyen:
+
+Respuesta: Franquiciador, Exportador Nacional, Multinacional.
+Explicación del libro: Estas estrategias ayudan a las empresas a gestionar operaciones globales y a maximizar su alcance y eficiencia en diferentes mercados internacionales.
+¿La decisión sobre la ampliación del crédito de un cliente es una decisión estructurada?
+
+Respuesta: Sí, es una decisión estructurada.
+Explicación del libro: Se toman de manera sistemática y repetitiva, basadas en criterios preestablecidos, lo que permite una toma de decisiones rápida y eficiente.
+Entre las nuevas metodologías para creación de sistemas en la era de la empresa digital destacan:
+
+Respuesta: Diseño rápido de aplicaciones (RAD), Diseño conjunto de aplicaciones (JAD), Software orientado a objetos.
+Explicación del libro: Estas metodologías permiten un desarrollo más ágil y flexible de sistemas de información, adaptándose mejor a los cambios rápidos en la tecnología y las necesidades del negocio.
+¿Los sistemas de información globales imponen desafíos por la diversidad cultural, política y de idiomas?
+
+Respuesta: Verdadero.
+Explicación del libro: La diversidad incrementa las diferencias en la cultura organizacional y los procesos de negocios, complicando la integración y gestión de sistemas de información a nivel global.
+El diseño asistido por computador (CAD) es un ejemplo de:
+
+Respuesta: Sistema de trabajo del conocimiento.
+Explicación del libro: El CAD es utilizado por trabajadores del conocimiento como ingenieros para diseñar y crear nuevos productos, representando una herramienta especializada dentro de su ámbito.
+Entre los métodos de creación de sistemas, el uso de un distribuidor externo para crear los sistemas de información de una empresa se denomina:
+
+Respuesta: Outsourcing.
+Explicación del libro: El outsourcing implica externalizar el desarrollo de sistemas de información a terceros para aprovechar su especialización y reducir costos.
+¿Es cierto que los sistemas de información pueden mejorar todos los tipos de decisiones que se toman en una organización?
+
+Respuesta: Falso.
+Explicación del libro: Aunque los sistemas de información mejoran muchas decisiones, no pueden mejorar todas, ya que algunas decisiones son altamente subjetivas y pueden depender de factores externos.
+Entre los métodos de creación de sistemas, aquel que requiere que los sistemas de información se desarrollen en etapas formales que deben proceder en forma secuencial es conocido como:
+
+Respuesta: Ciclo de vida de sistemas.
+Explicación del libro: Este método estructura rigurosamente el desarrollo en fases formales, cada una con salidas definidas y requerimientos de aprobación antes de avanzar a la siguiente etapa.

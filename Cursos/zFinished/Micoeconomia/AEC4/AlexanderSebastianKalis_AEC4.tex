@@ -1,0 +1,254 @@
+\documentclass{article}
+\usepackage{lipsum}
+\usepackage{authoraftertitle}
+\usepackage[top=2cm,bottom=1.5cm,left=1.5cm, right=3cm,includeheadfoot]{geometry}
+\usepackage{graphicx}
+\usepackage[parfill]{parskip}
+\usepackage{fancyhdr}
+\usepackage[spanish]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{textcomp}
+\usepackage{eurosym}
+\usepackage{mathtools}
+\usepackage{csquotes}
+\usepackage{amssymb}
+\usepackage[shortlabels]{enumitem}
+\usepackage{fancybox, graphicx}
+\usepackage{array}
+\usepackage{hhline}
+\usepackage{subfigure}
+\usepackage{gensymb}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{amsmath} 
+\usepackage{caption}
+\usepackage{esvect}
+\usepackage{siunitx}
+\usepackage{commath}
+%Header & Footer
+
+\pagestyle{fancy}
+\fancyhead[LE]{\MyTitle}
+\fancyhead[LO]{Miroeconomía}
+%\fancyhead[RO]{\leftmark}
+%\fancyhead[RE]{\leftmark}
+\fancyfoot[L]{\raisebox{-1cm}{\includegraphics[height=2cm]{D:/KUKADisk/UDIMA/DocumentGraphics/LOGOUDIMA.jpg}}}
+\fancyfoot[R]{Corregido:\\Dr. Juan José Pintado Conesa}
+%\fancyfoot[RO]{07/12/2018}
+
+
+%Vars
+\author{Alexander Sebastian Kalis}
+\title{Ejercicios vinculados a las unidades 9 y 10}
+
+
+%DOC
+
+
+\begin{document}
+
+\begin{titlepage}
+
+    \begin{center}
+
+        \line(1,0){300}\\
+        [0.2in]
+        \huge{\bfseries {\MyTitle}}\\
+        [1mm]
+        \line(2,0){200}\\
+        [0.75cm]
+        \textsc{\LARGE Miroeconomía}\\
+        [2cm]
+        \includegraphics[height=10cm]{D:/KUKADisk/UDIMA/Micoeconomia/AEC1/Graphics/portada.jpg}\\
+        [3cm]
+
+    \end{center}
+
+    \begin{flushright}
+
+        {\MyAuthor}\\
+        %Profesora: Dra. Isabel Cristina Gil García\\
+        %Curso: Ingeniería de Organización Industrial\\
+        %UDIMA\\
+        \today        
+
+    \end{flushright}
+    
+\end{titlepage}
+
+%\tableofcontents \thispagestyle{empty}
+%\newpage
+
+%\section*{Introducción}
+
+
+\newpage
+
+\section*{Problema 1}
+
+Dada la siguiente curva de demanda del bien $X$, $QD = 150 - 5 P$ y la siguiente curva de oferta para dicho bien $QS = 120 + 10 P$.
+Calcule el precio y la cantidad de equilibrio y el valor del excedente total en el mismo. Represéntelo
+gráficamente. 
+
+\textbf{Precio de equilibrio}
+
+Para que exista equilibrio, se debe cumplir que $QD=QS$, entonces:
+\begin{equation}
+    150-5p=120+10P \rightarrow P^*=2
+\end{equation}
+
+\begin{equation}
+    QD=150-5(2) \rightarrow Q^* = 140
+\end{equation}
+
+Averiguamos los puntos de corte de la curva de demanda:
+
+\begin{equation}
+    0=150-5P \rightarrow P=30
+\end{equation}
+
+Entonces, para $P=30$
+
+\begin{equation}
+    Q=150-5(30) \rightarrow Q=150
+\end{equation}
+
+Y los puntos de corte para la curva de la oferta:
+
+\begin{equation}
+    0=120+10P \rightarrow P=-12
+\end{equation}
+
+con lo cual para $P=-12$
+
+\begin{equation}
+    Q=120+10P \rightarrow Q=120
+\end{equation}
+
+
+\textbf{Valor del excedente total}
+
+\begin{equation}
+    EC=\frac{(30-2)\cdot 140}{2} = 1960
+\end{equation}
+
+\begin{equation}
+    EP=\left|\frac{-12-2 \cdot 140}{2}\right|=980
+\end{equation}
+
+\begin{equation}
+    ET=EC+IP=2940
+\end{equation}
+
+\newpage 
+\textbf{Representación gráfica}
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=.90\textwidth]{p1f1.PNG}
+    \caption{Representación gráfica de oferta-demanda}
+\end{figure}
+
+\section*{Problema 2}
+A partir de la situación del ejercicio anterior, el Gobierno decide establecer un precio mínimo para el bien $X$
+de 3 euros por unidad. Obtenga la pérdida de eficiencia provocada por esta medida. Represéntelo
+gráficamente.
+
+\begin{equation}
+    QD=150-5(3)=135
+\end{equation}
+
+Para encontrar la pérdida de eficiencia se suman las areas que forman las curvas con el eje x.
+
+\[
+    A_1=0.5\cdot (15-2) \cdot (140-135)=32.5
+\]
+\[
+    A_2=0.5\cdot (3-1.5) \cdot (140-135)=3.75
+\]
+\begin{equation}
+    P_e=A_1+A_2=36.25    
+\end{equation}
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[height=6cm]{p2f1.PNG}
+    \caption{Representación gráfica de oferta-demanda con precio minimo 3}
+\end{figure}
+
+
+\section*{Problema 3}
+
+Suponga que las curvas de oferta y demanda de carne de buey de Kobe de un país son,\\
+$QD = 500.000 - 2.000 P$\\
+$QS = 200.000 + 1.000 P$\\
+A nivel internacional, el precio de la carne buey de Kobe es de 80 euros por kilogramo, el país representa una
+porción pequeña en el mercado internacional de la carne.
+
+Calcule el precio de equilibrio sin comercio, y calcule las importaciones o exportaciones una vez se abre el
+país al comercio.
+
+Para que esté equilibrado se debe cumplir que $QD=QS$ entonces:
+
+\begin{equation}
+    500000-2000P=200000+1000P \rightarrow P^*=100
+\end{equation}
+
+Al ser el precio nacional superior al internacional, el país se convertirá en importador. 
+Se calcula entonces la cantidad de bien ofrecida a nivel nacional si se vende a precio internacional:
+
+\[
+    QS=200000+1000P=280000
+\]
+
+Y posteriormente la cantidad demandada nacionalmente pero a precio internacional:
+
+\[
+    QD=500000-2000P=340000
+\]
+
+La cantidad importada será entonces la diferencia entre cantidad demandada y de la ofrecida:
+
+\begin{equation}
+    QD-QS=60000
+\end{equation}
+
+
+\section*{Problema 4}
+
+Suponga que las curvas de oferta y demanda de microchips son:\\
+$QD = 800 – 5 P$\\
+$QS = 590 + 2 P$\\
+a) Obtenga el precio y la cantidad de equilibrio.\\
+b) Si el Gobierno decide establecer un impuesto de 15 euros sobre los compradores, ¿cuál es la nueva
+cantidad de equilibrio?, ¿a qué precio se vende y se compra el bien?, ¿cuál es la recaudación del
+Gobierno por este impuesto?\\
+
+\textbf{Apartado A}
+
+De nuevo tenemo que $QS=QD$:
+\begin{equation}
+    800-5P=590+2P \rightarrow P^*=30, \  Q^*=650
+\end{equation}
+
+\textbf{Apartado B}
+
+Introduciendo un impuesto de 15e fijos, se está desplazando la curva de oferta:
+
+\begin{equation}
+    PC=PV+15
+\end{equation}
+
+Volviendo a calcular los valores de equilibrio, obtenemos:
+
+\begin{equation}
+    800-5PV=590+2(PV+15) \rightarrow PV=25.7, \ PC=40.7, \ Q=596.5
+\end{equation}
+
+Entonces para esta cantidad el gobierno recaudará $QT*I=596.5 \cdot 15 = 8947.5e$
+
+\end{document}

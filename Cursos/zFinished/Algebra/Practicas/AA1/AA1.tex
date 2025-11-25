@@ -1,0 +1,145 @@
+\documentclass{article}
+\usepackage{lipsum}
+\usepackage[backend=biber]{biblatex}
+\addbibresource{aec2.bib}
+\usepackage{authoraftertitle}
+\usepackage[top=2cm,bottom=1.5cm,left=1.5cm, right=3cm,includeheadfoot]{geometry}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage[spanish]{babel}
+\usepackage{mathtools}
+\usepackage{csquotes}
+\usepackage{amssymb}
+\usepackage{fancybox, graphicx}
+\usepackage{array}
+\usepackage{hhline}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{caption}
+\usepackage{esvect}
+\usepackage{siunitx}
+\usepackage{commath}
+\usepackage{tcolorbox}
+\makeatletter
+\renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
+   \hskip -\arraycolsep
+   \let\@ifnextchar\new@ifnextchar
+   \array{#1}}
+\makeatother
+
+%Header & Footer
+\pagestyle{fancy}
+\fancyhead[LE]{\MyTitle}
+\fancyhead[LO]{Álgebra Lineal}
+\fancyhead[RO]{\leftmark}
+\fancyhead[RE]{\leftmark}
+\fancyfoot[L]{\raisebox{-1cm}{\includegraphics[height=2cm]{C:/Users/XYZ/Dropbox/DocumentGraphics/LOGOUDIMA.jpg}}}
+\fancyfoot[R]{Corregido:\\ Dr. Juan José Moreno García}
+%\fancyfoot[RO]{07/12/2018}
+%Vars
+\author{Alexander Sebastian Kalis}
+\title{Actividad de Aprendizaje 1}
+
+
+%DOC
+
+\begin{document}
+
+\begin{titlepage}
+
+    \begin{center}
+
+        \line(1,0){300}\\
+        [0.2in]
+        \huge{\bfseries {\MyTitle}}\\
+        [1mm]
+        \line(2,0){200}\\
+        [0.75cm]
+        \textsc{\LARGE Álgebra Lineal}\\
+        [2cm]
+        \includegraphics[height=10cm]{C:/Users/XYZ/Dropbox/DocumentGraphics/Calculus.png}\\
+        [3cm]
+
+    \end{center}
+
+    \begin{flushright}
+
+        Autor: {\MyAuthor}\\
+        Profesor: Dr. Juan José Moreno García\\
+        Curso: 1o, Ingeniería de Organización Industrial\\
+        UDIMA\\
+        Domingo, 28 de Abril de 2019         
+
+    \end{flushright}
+    
+\end{titlepage}
+
+%\tableofcontents \thispagestyle{empty}
+
+\newpage
+
+\section{Problema 1}
+
+\includegraphics[width=\textwidth]{C:/Users/XYZ/Dropbox/DocumentGraphics/AA1ampliacion/enunciadoprob1.png}
+
+\subsection{Apartado a}
+
+Aplicar Gauss-Jordan usando Octave para obtener la solución del sistema.\\
+
+\textbf{Resolución:}\\
+
+Primeramente asignamos los valores de A y b en Octave mediante las instrucciones:\\
+
+\includegraphics[width=\textwidth]{C:/Users/XYZ/Dropbox/DocumentGraphics/AA1ampliacion/asignacionvalores.png}\\
+
+Seguidamente creamos la matriz ampliada M de A y b:\\
+
+\includegraphics[width=.4\textwidth]{C:/Users/XYZ/Dropbox/DocumentGraphics/AA1ampliacion/asignaiconm.png}\\
+
+Ahora ya podemos aplicar la función rref() sobre M para obtener la solución de ésta.\\
+
+\includegraphics[width=.4\textwidth]{C:/Users/XYZ/Dropbox/DocumentGraphics/AA1ampliacion/rrefm.png}\\
+
+\newpage
+
+\subsection{Apartado b}
+
+Asignamos la matriz y el vector truncados manualmente a 2 posiciones decimales a AT y el vector a bt:\\
+
+\includegraphics[width=\textwidth]{C:/Users/XYZ/Dropbox/DocumentGraphics/AA1ampliacion/asignaciontrunc.png}\\
+
+Siguiendo el mismo proceso, obtenemos la solución siguiente:\\
+
+\includegraphics[width=.5\textwidth]{C:/Users/XYZ/Dropbox/DocumentGraphics/AA1ampliacion/mtrmt.png}\\
+
+Se puede comparar la diferencia de los resultados obtenidos restando las matrices:\\
+
+\includegraphics[width=.5\textwidth]{C:/Users/XYZ/Dropbox/DocumentGraphics/AA1ampliacion/diferencia.png}\\
+
+Supongamos que la primera matriz [A,b] contiene los valores reales y que [AT,bt], que contienen los datos truncados, son los
+valores tomados con cierto error de medición.
+
+Podemos extraer la 5a columna de las matrices para operar con ellas más fácilmente:\\
+
+\includegraphics[width=.15\textwidth]{C:/Users/XYZ/Dropbox/DocumentGraphics/AA1ampliacion/d.png}\\
+
+Recordando la fórmula del error relativo:
+
+\[\epsilon_r = \frac{\epsilon_a}{X}\cdot 100\]
+
+Aplicamos la fórmula dónde $\epsilon_a = d$ y $X=rm$:\\
+
+\includegraphics[width=.15\textwidth]{C:/Users/XYZ/Dropbox/DocumentGraphics/AA1ampliacion/ea.png}\\
+
+Nótese el uso del operador punto ./, que indica que queremos realizar la operación fila con fila, y no dividir el vector $d$ por el vector $rm$.\\
+
+Entonces el vector `ea' nos indica, porcentualmente, el error que cometemos en cada fila al hacer la medición del valor utilizando sólo los 2 primeros 
+decimales como significativos. 
+
+Podemos observar que los errores generados por el truncamiento son muy elevados. Esto es normal ya que estamos trabajando con números decimales cercanos al 0 con lo que cualquier error decimal, sea en las centésimas o milésimas
+provocará un desfase significativo en la solución.
+\end{document}

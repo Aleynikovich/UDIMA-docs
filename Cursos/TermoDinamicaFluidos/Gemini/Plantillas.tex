@@ -1,0 +1,275 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{geometry}
+\geometry{a4paper, margin=1in}
+\title{Plantillas Completas de Resolución para Problemas de Termodinámica}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section{Plantilla 1: Conversión de Escalas de Temperatura}
+Se utiliza para convertir temperaturas entre escalas (Celsius, Fahrenheit, Kelvin) o para calibrar termómetros.
+
+\subsection*{Paso a Paso}
+1. \textbf{Identificar el objetivo:} ¿Convertir un valor o crear una fórmula de corrección?
+2. \textbf{Recopilar datos:} Anota los puntos de referencia conocidos (ej. fusión y ebullición del agua) para ambas escalas.
+3. \textbf{Seleccionar el método:}
+    \begin{itemize}
+        \item[-] \textbf{Para conversión directa:} Usa las fórmulas estándar como $T_F = \frac{9}{5}T_C + 32$ o $T_K = T_C + 273.15$.
+        \item[-] \textbf{Para calibración:} Usa una relación lineal entre la lectura incorrecta (A) y la correcta (C):
+        \[ \frac{C - C_{fusion}}{C_{ebullicion} - C_{fusion}} = \frac{A - A_{fusion}}{A_{ebullicion} - A_{fusion}} \]
+    \end{itemize}
+4. \textbf{Calcular y verificar:} Sustituye los valores y resuelve.
+
+\subsection*{Ejercicios que usan esta plantilla:}
+1, 2, 3, 4 (del primer PDF); 8 (del segundo PDF).
+
+\hrulefill
+
+\section{Plantilla 2: Dilatación Térmica}
+Se aplica a problemas sobre el cambio de dimensiones de un objeto por un cambio de temperatura.
+
+\subsection*{Paso a Paso}
+1. \textbf{Identificar el tipo de dilatación:} Busca palabras clave en el enunciado. \textbf{Lineal (1D)}: \textit{longitud, varilla, diámetro}. \textbf{Superficial (2D)}: \textit{área, superficie, lámina}. \textbf{Volumétrica (3D)}: \textit{volumen, capacidad, líquido}.
+2. \textbf{Recopilar datos y constantes:} Anota la dimensión inicial ($L_0, A_0, V_0$), las temperaturas inicial y final para calcular $\Delta T = T_f - T_i$, y el coeficiente de dilatación lineal ($\alpha$). Si es necesario, calcula $\gamma \approx 2\alpha$ y $\beta \approx 3\alpha$.
+3. \textbf{Seleccionar y aplicar la fórmula correcta:}
+    \begin{itemize}
+        \item[-] \textbf{Lineal:} $L_f = L_0(1 + \alpha \Delta T)$
+        \item[-] \textbf{Superficial:} $A_f = A_0(1 + \gamma \Delta T)$
+        \item[-] \textbf{Volumétrica:} $V_f = V_0(1 + \beta \Delta T)$
+    \end{itemize}
+4. \textbf{Resolver la ecuación:} Sustituye los valores y despeja la incógnita.
+
+\subsection*{Ejercicios que usan esta plantilla:}
+5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 43 (del primer PDF).
+
+\hrulefill
+
+\section{Plantilla 3: Calorimetría y Equilibrio Térmico (Sin Cambio de Fase)}
+Se usa cuando sustancias a diferentes temperaturas se mezclan y alcanzan un equilibrio sin cambiar de estado.
+
+\subsection*{Paso a Paso}
+1. \textbf{Aplicar conservación de la energía:} En un sistema aislado, el calor cedido por los cuerpos calientes es igual al calor absorbido por los fríos.
+    \[ \sum Q_{cedido} + \sum Q_{absorbido} = 0 \]
+2. \textbf{Identificar quién cede y quién absorbe calor:} Las sustancias que se enfrían ceden calor; las que se calientan, absorben.
+3. \textbf{Plantear la ecuación de calor para cada sustancia:} La fórmula para el calor sensible es:
+    \[ Q = m \cdot c \cdot (T_{final} - T_{inicial}) \]
+4. \textbf{Construir la ecuación de equilibrio térmico:} Suma los calores de todas las sustancias e iguálalos a cero.
+    \[ m_1 c_1 (T_{final} - T_{inicial,1}) + m_2 c_2 (T_{final} - T_{inicial,2}) = 0 \]
+5. \textbf{Resolver para la temperatura final ($T_{final}$)}.
+
+\subsection*{Ejercicios que usan esta plantilla:}
+27, 28, 29, 31, 32 (del primer PDF).
+
+\hrulefill
+
+\section{Plantilla 4: Calorimetría con Cambio de Fase}
+Para problemas donde una sustancia cambia de estado (sólido a líquido, líquido a gas, etc.).
+
+\subsection*{Paso a Paso}
+1. \textbf{Realizar un balance de energía previo:} Compara el calor necesario para el cambio de fase con el calor disponible.
+    \begin{itemize}
+        \item[-] \textbf{Calor necesario:} Suma el calor para llegar a la temperatura de cambio de fase ($Q_{sensible} = mc\Delta T$) y el calor para el cambio completo ($Q_{latente} = mL$).
+        \item[-] \textbf{Calor disponible:} Calcula el máximo calor que puede ceder la otra sustancia.
+    \end{itemize}
+2. \textbf{Determinar el estado final:}
+    \begin{itemize}
+        \item[-] Si el calor disponible es insuficiente, no hay cambio de fase completo y la temperatura final es la del punto de cambio de fase (ej. 0°C).
+        \item[-] Si el calor disponible es suficiente, el cambio de fase se completa y la mezcla alcanza una temperatura de equilibrio final.
+    \end{itemize}
+3. \textbf{Plantear la ecuación de calor completa:} Incluye todos los términos de calor sensible y latente en la ecuación de conservación de energía.
+    \[ \sum Q_{cedidos} + \sum Q_{absorbidos} = 0 \]
+4. \textbf{Resolver para la incógnita} (temperatura final o masa transformada).
+
+\subsection*{Ejercicios que usan esta plantilla:}
+30, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42 (del primer PDF).
+
+\hrulefill
+
+\section{Plantilla 5: Ley de los Gases Ideales}
+Para problemas que involucran el comportamiento de un gas (P, V, T).
+
+\subsection*{Paso a Paso}
+1. \textbf{Identificar los estados del gas (inicial y final):} Anota los valores conocidos de $P, V, T$.
+2. \textbf{Convertir unidades:} La temperatura \textbf{siempre en Kelvin (K)}.
+3. \textbf{Determinar el tipo de proceso:}
+    \begin{itemize}
+        \item[-] Si la masa de gas es constante, usa la \textbf{Ley Combinada de los Gases}:
+        \[ \frac{P_1V_1}{T_1} = \frac{P_2V_2}{T_2} \]
+        \item[-] Si necesitas calcular la cantidad de gas (moles, n), usa la \textbf{Ecuación de Estado del Gas Ideal}:
+        \[ PV = nRT \]
+    \end{itemize}
+4. \textbf{Resolver la ecuación} para la incógnita.
+
+\subsection*{Ejercicios que usan esta plantilla:}
+64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78 (del primer PDF); 2, 3 (del segundo PDF).
+
+\hrulefill
+
+\section{Plantilla 6: Primera Ley de la Termodinámica y Ciclos}
+Para analizar procesos y ciclos, calculando trabajo (W), calor (Q) y cambio de energía interna ($\Delta U$).
+
+\subsection*{Guía para Dibujar Diagramas Termodinámicos}
+Esta guía te ayudará a visualizar los ciclos termodinámicos en los dos diagramas más comunes: Presión-Volumen (p-V) y Presión-Temperatura (p-T).
+
+\subsubsection*{A. Diagrama p-V (Presión vs. Volumen)}
+Este es el diagrama fundamental. El eje Y es la Presión (p) y el eje X es el Volumen (V).
+\begin{itemize}
+    \item \textbf{Proceso Isobárico (presión constante):} Es una línea \textbf{horizontal}. Se desplaza hacia la derecha si es una expansión ($V \uparrow$) y hacia la izquierda si es una compresión ($V \downarrow$).
+    \item \textbf{Proceso Isocórico (volumen constante):} Es una línea \textbf{vertical}. Se desplaza hacia arriba si la presión aumenta ($p \uparrow$) y hacia abajo si la presión disminuye ($p \downarrow$).
+    \item \textbf{Proceso Isotérmico (temperatura constante):} Es una curva \textbf{hiperbólica} suave ($p \propto 1/V$). En una expansión, la curva desciende hacia la derecha. En una compresión, asciende hacia la izquierda.
+    \item \textbf{Proceso Adiabático (sin calor):} Es una curva similar a la isoterma, pero \textbf{más empinada} ($p \propto 1/V^\gamma$). Cae y sube más bruscamente que una isoterma que parta del mismo punto.
+\end{itemize}
+
+\subsubsection*{B. Diagrama p-T (Presión vs. Temperatura)}
+El eje Y es la Presión (p) y el eje X es la Temperatura (T).
+\begin{itemize}
+    \item \textbf{Proceso Isobárico (presión constante):} Es una línea \textbf{horizontal}. Se desplaza a la derecha si la temperatura aumenta ($T \uparrow$) y a la izquierda si disminuye ($T \downarrow$).
+    \item \textbf{Proceso Isotérmico (temperatura constante):} Es una línea \textbf{vertical}. Se desplaza hacia arriba si la presión aumenta ($p \uparrow$) y hacia abajo si disminuye ($p \downarrow$).
+    \item \textbf{Proceso Isocórico (volumen constante):} Es una \textbf{línea recta que pasa por el origen} si se extrapola ($p \propto T$).
+    \item \textbf{Proceso Adiabático:} Es una curva ($T \propto p^{(\gamma-1)/\gamma}$). En una compresión, sube hacia la derecha ($p \uparrow, T \uparrow$). En una expansión, baja hacia la izquierda ($p \downarrow, T \downarrow$).
+\end{itemize}
+
+\subsection*{Paso a Paso}
+1. \textbf{Analizar cada etapa del ciclo por separado:}
+    \begin{itemize}
+        \item[-] \textbf{Calcular el Trabajo (W):} Es el área bajo la curva en el diagrama p-V.
+        \begin{itemize}
+            \item Isobárico: $W = P \Delta V$
+            \item Isocórico: $W = 0$
+            \item Isotérmico: $W = nRT \ln(V_f/V_i)$
+            \item Adiabático: $W = -\Delta U = -nC_v\Delta T$
+        \end{itemize}
+        \item[-] \textbf{Calcular $\Delta U$:} Para un gas ideal, $\Delta U = nC_v\Delta T$. En un proceso isotérmico, $\Delta U = 0$.
+        \item[-] \textbf{Calcular Q:} Usa la Primera Ley: $Q = \Delta U + W$.
+    \end{itemize}
+2. \textbf{Analizar el ciclo completo:}
+    \begin{itemize}
+        \item[-] $\Delta U_{ciclo} = 0$.
+        \item[-] $W_{neto} = \sum W$ (área encerrada por el ciclo).
+        \item[-] $Q_{neto} = W_{neto}$.
+    \end{itemize}
+
+\subsection*{Ejercicios que usan esta plantilla:}
+79-101 (del primer PDF); 10, 11, 12, 13, 14, 17, 18, 20, 23 (del segundo PDF).
+
+\hrulefill
+
+\section{Plantilla 7: Eficiencia de Máquinas Térmicas y Refrigeradores}
+Para calcular la eficiencia (e) de un motor o el coeficiente de rendimiento (COP) de un refrigerador.
+
+\subsection*{Paso a Paso}
+1. \textbf{Identificar el tipo de máquina:} Motor (produce trabajo) o refrigerador (consume trabajo).
+2. \textbf{Recopilar datos de energía:} $Q_C$ (calor del foco caliente), $Q_F$ (calor del foco frío), $W$ (trabajo). Recuerda que $W = Q_C - Q_F$.
+3. \textbf{Calcular el rendimiento:}
+    \begin{itemize}
+        \item[-] \textbf{Motor Térmico (Eficiencia, $e$):} Es "lo que obtienes" (W) entre "lo que pagas" ($Q_C$).
+        \[ e = \frac{W}{Q_C} = 1 - \frac{Q_F}{Q_C} \]
+        Para una máquina de Carnot: $e_{Carnot} = 1 - \frac{T_F}{T_C}$.
+        \item[-] \textbf{Refrigerador (COP):} Es "lo que quieres" ($Q_F$) entre "lo que te cuesta" (W).
+        \[ \text{COP} = \frac{Q_F}{W} \]
+        Para un refrigerador de Carnot: $\text{COP}_{Carnot} = \frac{T_F}{T_C - T_F}$.
+    \end{itemize}
+
+\subsection*{Ejercicios que usan esta plantilla:}
+102-122 (del primer PDF); 24 (del segundo PDF).
+
+\hrulefill
+
+\section{Plantilla 8: Relaciones Termodinámicas y Derivadas Parciales}
+Para problemas que usan cálculo para relacionar propiedades termodinámicas (P, V, T).
+
+\subsection*{Paso a Paso}
+1. \textbf{Identificar el objetivo:} ¿Encontrar una derivada parcial, una ecuación de estado o el cambio en una propiedad?
+2. \textbf{Escribir las definiciones fundamentales:} $\alpha = \frac{1}{V}(\frac{\partial V}{\partial T})_P$, $\beta = -\frac{1}{V}(\frac{\partial V}{\partial P})_T$, la regla cíclica y la diferencial total.
+3. \textbf{Seleccionar la estrategia de cálculo:}
+    \begin{itemize}
+        \item[-] Para encontrar una derivada, usa la regla cíclica si es necesario.
+        \item[-] Para encontrar una ecuación de estado a partir de $\alpha$ y $\beta$, integra la diferencial total de V.
+        \item[-] Para encontrar $\Delta U$ en un gas no ideal, integra su diferencial total: $dU = C_V dT + (\frac{\partial U}{\partial V})_T dV$.
+    \end{itemize}
+4. \textbf{Realizar el cálculo} (derivación o integración).
+
+\subsection*{Ejercicios que usan esta plantilla:}
+4, 5, 6, 21 (del segundo PDF).
+
+\hrulefill
+
+\section{Plantilla 9: Primera Ley General de la Termodinámica}
+Se usa cuando hay cambios en la energía mecánica del sistema (cinética o potencial).
+
+\subsection*{Paso a Paso}
+1. \textbf{Identificar todos los cambios de energía:} Busca cambios de velocidad ($v$) o altura ($h$).
+2. \textbf{Escribir la Primera Ley General:}
+    \[ \Delta U + \Delta E_k + \Delta E_p = Q - W \]
+3. \textbf{Calcular los cambios de energía mecánica:} $\Delta E_k = \frac{1}{2}m(v_f^2 - v_i^2)$ y $\Delta E_p = mg(h_f - h_i)$.
+4. \textbf{Recopilar datos de Q y W}, prestando atención a los signos.
+5. \textbf{Resolver para la incógnita}, que suele ser $\Delta U$.
+
+\subsection*{Ejercicios que usan esta plantilla:}
+9 (del segundo PDF).
+
+\hrulefill
+
+\section{Plantilla 10: Trabajo de Expansión (Reacciones y Cambios de Fase)}
+Para calcular el trabajo cuando el volumen cambia por una reacción química o un cambio de fase.
+
+\subsection*{Paso a Paso}
+1. \textbf{Identificar el proceso:} ¿Reacción química o evaporación?
+2. \textbf{Determinar la presión externa ($P_{ext}$):} Si es un recipiente abierto, es la presión atmosférica. Si es cerrado y rígido, $W=0$.
+3. \textbf{Calcular el cambio de volumen ($\Delta V$):}
+    \begin{itemize}
+        \item[-] \textbf{Reacción química:} Calcula los moles de gas ($n_{gas}$) producidos y usa $PV=nRT$ para hallar su volumen.
+        \item[-] \textbf{Cambio de fase:} $\Delta V = V_{gas} - V_{liquido}$. Calcula $V_{gas}$ con la ley de los gases ideales.
+    \end{itemize}
+4. \textbf{Calcular el trabajo:}
+    \[ W = P_{ext} \Delta V \quad (\text{Criterio de signos ingenieril}) \]
+
+\subsection*{Ejercicios que usan esta plantilla:}
+15, 16, 19 (del segundo PDF).
+
+\hrulefill
+
+\section{Plantilla 11: Cálculos con Capacidad Calorífica Variable}
+Se usa cuando $C_p$ o $C_v$ se dan como una función de la temperatura.
+
+\subsection*{Paso a Paso}
+1. \textbf{Identificar el tipo de proceso} (isobárico o isocórico).
+2. \textbf{Obtener la función de la capacidad calorífica}, ej. $C_p(T) = a + bT + cT^2$.
+3. \textbf{Plantear la integral para el calor (Q):}
+    \begin{itemize}
+        \item[-] \textbf{Isobárico:} $Q = Q_p = \Delta H = \int_{T_i}^{T_f} n C_p(T) dT$
+        \item[-] \textbf{Isocórico:} $Q = Q_v = \Delta U = \int_{T_i}^{T_f} n C_v(T) dT$
+    \end{itemize}
+4. \textbf{Resolver la integral} entre los límites de temperatura.
+
+\subsection*{Ejercicios que usan esta plantilla:}
+22 (del segundo PDF).
+
+\hrulefill
+
+\section{Plantilla 12: Cálculo de Cambio de Entropía ($\Delta S$)}
+γPara determinar el cambio en la entropía de un sistema, un entorno o el universo.
+
+\subsection*{Paso a Paso}
+1. \textbf{Identificar el proceso:} Isotérmico, isobárico, isocórico, adiabático, cambio de fase, etc.
+2. \textbf{Recordar que $\Delta S$ es una función de estado:} Para calcularlo, siempre puedes usar un camino \textbf{reversible} equivalente.
+3. \textbf{Seleccionar la fórmula adecuada:}
+    \begin{itemize}
+        \item[-] \textbf{General (gas ideal):} $\Delta S = nC_v \ln(T_f/T_i) + nR \ln(V_f/V_i)$
+        \item[-] \textbf{Isotérmico:} $\Delta S = nR \ln(V_f/V_i)$
+        \item[-] \textbf{Isocórico:} $\Delta S = nC_v \ln(T_f/T_i)$
+        \item[-] \textbf{Isobárico:} $\Delta S = nC_p \ln(T_f/T_i)$
+        \item[-] \textbf{Adiabático Reversible:} $\Delta S = 0$.
+        \item[-] \textbf{Cambio de Fase:} $\Delta S = mL/T$.
+    \end{itemize}
+4. \textbf{Calcular y evaluar:} Para un proceso irreversible en un sistema aislado, $\Delta S_{universo} > 0$. Para uno reversible, $\Delta S_{universo} = 0$.
+
+\subsection*{Ejercicios que usan esta plantilla:}
+25 (del segundo PDF).
+
+\end{document}

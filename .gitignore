@@ -1,0 +1,113 @@
+# .gitignore - Study workspace
+# Purpose: ignore irrelevant/editor/build/cache files while keeping study
+# sources and final documents tracked. Adjust exceptions below as needed.
+
+##############################
+# LaTeX auxiliary & build files
+##############################
+*.aux
+*.lof
+*.lot
+*.log
+*.out
+*.toc
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.synctex
+*.blg
+*.bbl
+*.brf
+*.ilg
+*.ind
+*.idx
+*.nav
+*.snm
+*.vrb
+*.run.xml
+*.pdfsync
+
+*.dvi
+*.ps
+*.xdv
+
+_minted-*/
+*.pyg
+
+##############################
+# Temporary / backup files
+##############################
+*~
+*.bak
+*.orig
+*.tmp
+~$*         # Office temp files (Windows)
+
+##############################
+# OS / shell metadata
+##############################
+.DS_Store
+Thumbs.db
+desktop.ini
+
+##############################
+# Editor / IDE
+##############################
+.vscode/
+*.code-workspace
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln
+
+##############################
+# Language envs & caches
+##############################
+__pycache__/
+*.py[cod]
+env/
+venv/
+.venv/
+node_modules/
+package-lock.json
+yarn.lock
+
+##############################
+# Containers / build folders / misc
+##############################
+build/
+_build/
+out/
+dist/
+.cache/
+.pytest_cache/
+
+##############################
+# Optional large data / archives (uncomment if you want to ignore)
+##############################
+#*.zip
+#*.tar
+#*.tar.gz
+#*.rar
+
+##############################
+# Keep study-relevant file types
+##############################
+# Explicitly allow common study/source/output files so they are tracked
+!*.tex
+!*.pdf
+!*.doc
+!*.docx
+!*.bib
+!*.png
+!*.jpg
+!*.jpeg
+!*.svg
+!*.eps
+
+# If you need to track a normally ignored generated file (e.g. a .bbl),
+# add an explicit exception like:
+#  !path/to/specific/file.bbl
+
+# End of file

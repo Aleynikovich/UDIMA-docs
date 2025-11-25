@@ -1,0 +1,315 @@
+\documentclass{article}
+\usepackage{lipsum}
+\usepackage{authoraftertitle}
+\usepackage[top=2cm,bottom=1.5cm,left=1.5cm, right=3cm,includeheadfoot]{geometry}
+\usepackage{graphicx}
+\usepackage[parfill]{parskip}
+\usepackage{fancyhdr}
+\usepackage[spanish]{babel}
+\usepackage{mathtools}
+\usepackage{csquotes}
+\usepackage{amssymb}
+\usepackage[shortlabels]{enumitem}
+\usepackage{fancybox, graphicx}
+\usepackage[figuresleft]{rotating}
+\usepackage{array}
+\usepackage{hhline}
+\usepackage{subfigure}
+\usepackage{lscape}
+\usepackage{gensymb}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{amsmath} 
+\usepackage{caption}
+\usepackage{esvect}
+\usepackage{siunitx}
+\usepackage{commath}
+%Header & Footer
+
+\pagestyle{fancy}
+%\fancyhead[LE]{}
+\fancyhead[L]{Bases de Datos}
+\fancyhead[R]{Diseño Lógico de bases de datos}
+%\fancyhead[RO]{\leftmark}
+%\fancyhead[RE]{\leftmark}
+\fancyfoot[L]{\raisebox{-1cm}{\includegraphics[height=1.5cm]{D:/KUKADisk/UDIMA/DocumentGraphics/LOGOUDIMA.jpg}}}
+\fancyfoot[R]{\small Universidad a Distancia de Madrid}
+%\fancyfoot[RO]{07/12/2018}        +
+
+p`ñ´´´´´´´´´´´´´´´´´´´´´´´´´
+
+%Vars
+\author{Alexander Sebastian Kalis}
+\title{Actividad 11. AEC: Caso práctico IV: Consultas SQL}
+
+
+%DOC
+
+
+\begin{document}
+
+\begin{titlepage}
+
+    \begin{center}
+
+        \line(1,0){300}\\
+        [0.2in]
+        \huge{\bfseries {\MyTitle}}\\
+        [1mm]
+        \line(2,0){200}\\
+        [0.75cm]
+        \textsc{\LARGE Bases de Datos}\\
+        [2cm]
+            \includegraphics[width=.9\textwidth]{D:/KUKADisk/UDIMA/BBDD/portada.png}\\    
+        [3cm]
+
+    \end{center}
+
+    \begin{flushright}
+
+        Líder: Alexander Sebastian Kalis\\
+        José María Quintanilla Alonso\\
+        Raúl Alonso Crespo\\
+        %Profesora: Dra. Isabel Cristina Gil García\\
+        Ingeniería de Organización Industrial\\
+        %UDIMA\\
+        \today        
+
+    \end{flushright}
+    
+\end{titlepage}
+
+\tableofcontents % \thispagestyle{empty}
+\newpage
+
+\section{Modelo ER base corregido (CP I)}
+
+\begin{figure}[!htb]
+    \centering
+        \includegraphics[angle=90,scale=.85]{D:/KUKADisk/UDIMA/BBDD/AEC2/ERec.png}\\
+\end{figure}
+
+\newpage
+
+\section{Modelo lógico corregido (CP II)}
+\begin{figure}[htb!]
+  \centering
+  {\includegraphics[height=19cm]{D:/KUKADisk/UDIMA/BBDD/AEC2/investigadorrealizaarticulo.png}}
+  \caption{Diseño lógico final}
+  \label{}
+\end{figure}
+
+\newpage
+
+\section{Correcciones de inserts y scripts (CP III)}
+
+\subsection{script.sql}
+
+En la creación de la tabla `journal' se ha cambiado el tipo de atributo de `Ultimo\_Indice\_Impacto' de INT a FLOAT para permitir valores decimales y 
+se ha ampliado el campo de caracteres disponibles a 3000 del atributo `Instrucciones\_Envio'.\\
+
+\begin{figure}[htb!]
+  \centering
+  {\includegraphics[height=6cm]{D:/KUKADisk/UDIMA/BBDD/AEC4/cambiosjournal.png}}
+  \caption{Correciones en tabla journal}
+  \label{}
+\end{figure}
+
+En la creación de la tabla `articulo\_investigacion', se ha ampliado los caracteres disponibles del atributo `Resumen'.\\
+
+
+\begin{figure}[htb!]
+  \centering
+  {\includegraphics[height=7.5cm]{D:/KUKADisk/UDIMA/BBDD/AEC4/cambiosarticulo.png}}
+  \caption{Correciones en tabla artículo investigación}
+  \label{}
+\end{figure}
+
+\newpage
+
+\subsection{Inserts.sql}
+
+Debido al cambio de la tabla `journal', se han cambiado también los datos introducidos en la columna `Ultimo\_Indice\_Impacto' a valores decimales.
+
+\begin{figure}[htb!]
+  \centering
+  {\includegraphics[width=\textwidth]{D:/KUKADisk/UDIMA/BBDD/AEC4/cambiosinsert.png}}
+  \caption{Correciones en la inserción de datos de journal}
+  \label{}
+\end{figure}
+
+También se han realizado pequeñas modificaciones y adiciones en los valores de los atributos para hacer que los resultados
+de las consultas muestren almenos un resultado que coincida con todas las condiciones requeridas.
+
+\section{Consultas SQL (CP IV)}
+
+\subsection{Consulta 1}
+
+Listado de editores de la editorial, donde aparecerá el nombre del journal en el que presta sus servicios.
+
+\begin{figure}[htb!]
+  \centering
+  {\includegraphics[height=7cm]{D:/KUKADisk/UDIMA/BBDD/AEC4/ScConsultas/consulta1.png}}
+  \caption{Consulta 1}
+  \label{}
+\end{figure}
+
+\textbf{Descripción}
+
+En este caso seleccionamos el nombre completo de la tabla editor y el nombre del journal. Realizamos una unión con la tabla journal
+bajo la condición de que coincida el ISSN del journal gestionado del editor con el ISSN del journal, para que no aparezcan otras combinaciones editor-journal
+distintas.
+
+
+\subsection{Consulta 2}
+
+Listado de los journals de la editorial, ordenados por índice de impacto (aparecerán primero los de mayor índice de impacto). 
+
+\begin{figure}[htb!]
+  \centering
+  {\includegraphics[height=7cm]{D:/KUKADisk/UDIMA/BBDD/AEC4/ScConsultas/consulta2.png}}
+  \caption{Consulta 2}
+  \label{}
+\end{figure}
+
+\textbf{Descripción}
+
+En esta consulta seleccionamos el nombre y el índice de impacto de la tabla journal. Finalmente los ordenamos por el atributo índice impacto
+de mayor a menor añadiendo el keyword `desc'.
+
+\subsection{Consulta 3}
+
+Listado de los journals de la editorial,
+junto con el número (cantidad) de editores que gestionan cada uno. Se ordenarán los journals de menor a mayor número de editores. 
+
+\begin{figure}[htb!]
+  \centering
+  {\includegraphics[height=7cm]{D:/KUKADisk/UDIMA/BBDD/AEC4/ScConsultas/consulta3.png}}
+  \caption{Consulta 3}
+  \label{}
+\end{figure}
+
+\newpage 
+
+\textbf{Descripción}
+
+
+Empezamos seleccionando el nombre de la tabla journal y con la función count() el recuento de las filas que contienen valor en el atributo 
+editor.ISSN\_Journal\_Gestionado. Este recuento lo guardamos bajo alias `Gestores'.
+
+Para que ese recuento sea posible, unimos la tabla journal con editor con la condición de relación de ISSN mútuo.
+
+Agrupamos los resultados de conteo de gestores por nombre de cada journal y finalmente utilizamos los resultados guardados en el alias `Gestores' 
+para ordenar de menor a mayor con el uso del keyword `asc'.
+
+\subsection{Consulta 4}
+
+Listado de los investigadores que hayan realizado algún artículo de más de
+35 páginas publicado en algún número del journal “Information Sciences”, y
+cuyo editor responsable (del número) pertenezca a la misma institución que el investigador. 
+
+\begin{figure}[htb!]
+  \centering
+  {\includegraphics[height=7.5cm]{D:/KUKADisk/UDIMA/BBDD/AEC4/ScConsultas/consulta4.png}}
+  \caption{Consulta 4}
+  \label{}
+\end{figure}
+
+\textbf{Descripción}
+
+En esta consulta algo más compleja, seleccionamos (distintos) los nombres completos de los investigadores.
+
+Empezamos realizando las uniones de las tablas que nos van a ser necesarias para aplicar todos los filtros. Se puede observar que se crean dos
+bloques. El primer bloque son las uniones que tienen como condición relaciones de mutualidad. El segundo bloque son los filtros específicos de
+atributos de esas tablas.
+
+En el bloque de uniones JOIN, aplicamos directamente el filtro que condiciona que solo deben aparecer los investigadores cuyo artículo pertenezca a un
+journal que tiene como editor responsable a un miembro de su institución.
+
+En el bloque de condiciones WHERE, realizamos una resta de pagina final e inicial para obtener el número de páginas del artículo y condicionamos que 
+solo aparezcan los investigadores cuyo artículo supera las 35 páginas.
+
+Por último condicionamos que sólo aparezcan los nombres de investigadores cuyo artículo sea publicado en el journal con ISSN `5088-1245', que
+corresponde al journal “Information Sciences”.
+
+\subsection{Consulta 5}
+
+Listado de artículos open access con 4 o más autores, 
+contenidos en números de journals con periodicidad trimestral gestionados por menos de 10 editores. 
+
+\begin{figure}[htb!]
+  \centering
+  {\includegraphics[height=12cm]{D:/KUKADisk/UDIMA/BBDD/AEC4/ScConsultas/consulta5.png}}
+  \caption{Consulta 5}
+  \label{}
+\end{figure}
+
+\textbf{Descripción}
+
+Similarmente a la consulta 4, empezamos por unir tablas con relación de mutualidad. 
+
+Posteriormente aplicamos filtros condicionales donde especificamos que el artículo debe ser open access y que debe estar en un journal con periodicidad
+trimestral.
+
+Para mostrar solamente aquellos artículos que tengan 4 o más editores, se ha creado una subconsulta la cual nos devuelve una lista de IDs de artículos;
+
+Esta sublista está condicionada con el uso del keyword `having', haciendo que sólo se muestre en la sublista aquellas IDs (agrupadas por ID) de artículos que se repiten 4 o más
+veces (utilizando la función count()) en la tabla `realizar' ya que eso significa que tienen 4 o más autores. Por último, mediante el keyword `IN', obligamos a que
+la consulta principal nos muestre solamente los artículos cuyo ID aparezca en esta sublista.
+
+De la misma forma se ha realizado la condición de que solamente se muestren los artículos cuyo journal tiene menos de 10 editores.
+
+\newpage
+
+\subsection{Consulta 6}
+
+Sueldo medio de los editores, jefes de algún journal con algún número especial publicado en 2018. 
+
+\begin{figure}[htb!]
+  \centering
+  {\includegraphics[height=12cm]{D:/KUKADisk/UDIMA/BBDD/AEC4/ScConsultas/consulta6.png}}
+  \caption{Consulta 6}
+  \label{}
+\end{figure}
+
+\textbf{Descripción}
+
+En esta consulta seleccionamos la media de los sueldos de la tabla editor mediante el uso de la función avg() y lo guardamos bajo alias `Sueldo medio'
+
+Para los filtros, hacemos una subconsulta dentro de otra subconsulta:
+
+En la primera subconsulta, especificamos que el pasaporte del editor (que debe ser jefe de un journal) estará contenido en (IN) la lista
+de pasaportes que son jefes de la tabla journal.
+
+Sin embargo, con el uso de una subconsulta dentro de esa subconsulta, hacemos que sólo aparezcan los pasaportes de journals los cuales contienen algun número que
+sea de tipo especial y además su fecha de publicación esté comprendida entre 2018-01-01 y 2019-01-01 para que sea del 2018.
+
+\newpage
+
+\subsection{Consulta 7}
+
+Número medio de artículos por número (se pide un único valor).
+
+\begin{figure}[htb!]
+  \centering
+  {\includegraphics[height=8cm]{D:/KUKADisk/UDIMA/BBDD/AEC4/ScConsultas/consulta7.png}}
+  \caption{Consulta 7}
+  \label{}
+\end{figure}
+
+\textbf{Descripción}
+
+En esta consulta se utiliza el concepto de tabla derivada, es decir, una tabla volátil que se inicializa en el runtime de la consulta.
+
+Lo que hacemos es seleccionar la media con avg() de los números que contiene cada artículo y se muestra bajo alias `Media articulos por numero'.
+
+Para obtener los números por artículo creamos una tabla derivada en la cual seleccionamos el recuento (con count()) de los identificadores del número
+que contiene cada artículo y lo guardamos bajo alias `articulosPorNumero'. Agrupamos por ese identificador para que cada número tengo su cantidad de artículos.
+
+Finalmente el lenguaje nos obliga a guardar esta tabla derivada bajo un nombre. En este caso se ha guardado bajo el nombre `tablaArticulosPorNumero'.
+
+
+\end{document}

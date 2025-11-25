@@ -1,0 +1,393 @@
+\documentclass{article}
+\usepackage{lipsum}
+\usepackage{authoraftertitle}
+\usepackage[top=2cm,bottom=1.5cm,left=1.5cm, right=3cm,includeheadfoot]{geometry}
+\usepackage{graphicx}
+\usepackage[parfill]{parskip}
+\usepackage{fancyhdr}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{mathtools}
+\usepackage{csquotes}
+\usepackage{amssymb}
+\usepackage[shortlabels]{enumitem}
+\usepackage{fancybox, graphicx}
+\usepackage{array}
+\usepackage{hhline}
+\usepackage{subfigure}
+\usepackage{gensymb}
+\usepackage{hyperref}
+\usepackage{nicefrac}
+\usepackage{tikz}
+\usepackage{amsmath}
+\DeclareUnicodeCharacter{00A0}{ }
+\usepackage{leftidx}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{upgreek}
+\usepackage{amsmath} 
+\usepackage{caption}
+\usepackage{esvect}
+\usepackage{siunitx}
+\usepackage{commath}
+\usepackage{bigints}
+
+
+%Vars
+\author{Alexander Sebastian Kalis}
+\title{Actividad de Evaluación Continua 2}
+\pagestyle{fancy}
+\fancyhead[LO]{1507 Fundamentos Físicos}
+\fancyhead[RO]{\author}
+%\fancyhead[RE]{\leftmark}
+\fancyfoot[L]{\raisebox{-1cm}{\includegraphics[height=1.5cm]{E:/KUKADisk/UDIMA/DocumentGraphics/LOGOUDIMA.jpg}}}
+\fancyfoot[R]{Corregido:\\ Dra. Celeste Beatriz Justo María}
+%\fancyfoot[RO]{07/12/2018}
+
+
+\begin{document}
+
+\begin{titlepage}
+
+    \begin{center}
+
+        \line(1,0){300}\\
+        [0.2in]
+        \huge{\bfseries {\MyTitle}}\\
+        [1mm]
+        \line(2,0){200}\\
+        [0.75cm]
+        \textsc{\LARGE Fundamentos Físicos}\\
+        [2cm]
+        \includegraphics[height=10cm]{E:/KUKADisk/UDIMA/Fisica/Practicas/AEC2/img/portada.jpg}\\
+        [3cm]
+
+    \end{center}
+
+    \begin{flushright}
+
+        {\MyAuthor}\\
+        Profesora: Dra. Celeste Beatriz Justo María\\
+        Curso: Ingeniería de Organización Industrial\\
+        UDIMA\\
+        \today        
+
+    \end{flushright}
+    
+\end{titlepage}
+
+%\tableofcontents \thispagestyle{empty}
+%\newpage
+
+\section*{Problema 1}
+
+En el circuito de la figura, todos los elementos
+son conocidos salvo la resistencia R.
+
+\begin{center}
+    \includegraphics[height=5cm]{E:/KUKADisk/UDIMA/Fisica/Practicas/AEC2/img/p1.PNG}\\
+\end{center}
+
+
+Se pide:
+
+a) Valor de R que hace que la potencia
+consumida por la resistencia sea la máxima
+posible.
+
+La forma más sencilla de resolver este problema será mediante el uso del teorema de Thevenin. Para ello cortamos la rama $R$ del sistema y
+evaluamos el resto del circuito. La intención será conseguir un circuito equivalente con una sola fuente de tensión y una resistencia.
+
+\begin{center}
+    \includegraphics[height=5cm]{E:/KUKADisk/UDIMA/Fisica/Practicas/AEC2/img/p1v1.PNG}\\
+\end{center}
+
+Para resolver el circuito se utilizará análisis de nodos. Escribimos todas las ecuaciones del sistema:
+
+\[
+    CTL1: \ V_x=440-V_3
+\]
+
+\[
+   KCL2: \  \frac{440-V_2}{7}+\frac{V_3-V_2}{1}=\frac{V_x}{2}
+\]
+
+\[
+    KCL3: \ \frac{440-V_3}{2}+\frac{220-V_3}{3}=\frac{V_3-V_2}{1}
+\]
+
+Tenemos tres incógnitas y tres ecuaciones. Resolviendo el sistema obtenemos que $V_2=255.2V$. Sabiendo esto podemos calcular:
+
+
+\[
+    V_{th}=V_{oc}=440-255.2=184.8V
+\]
+
+Ahora para encontrar $R_{th}$ necesitaremos conocer la corriente $I_{sc}$. Aplicando KCL en el circuito cortocircuitado obtenemos:
+
+\[
+    CTL1: \ V_x=440-V_1
+\]
+
+\[
+    \frac{440-V_1}{2}+\frac{220-V_1}{3}=\frac{V_1-440}{1}
+\]
+
+Obtenemos entonces que $V_1$ (el nodo central en este caso) son $400V$. 
+
+\[
+    I_{sc}=\frac{440-400}{1}+\frac{V_x}{2}=40+20=60 \ A
+\]
+
+
+
+De esta forma podemos computar $R_{th}$:
+
+\[
+    R_{th}=\frac{V_{oc}}{I_{sc}}=\frac{184.8}{60}=3.08 \ \ohm
+\]
+
+Ahora tenemos montado nuestro circuito equivalente con $V_{th}=184.8 \ V$ y resistencia $R_{tv}=3.08 \ \ohm$ con lo cual podemos
+calcular el valor de $R$ tal que absorba la máxima potencia.
+
+El teorema de la máxima potencia nos dice que para maximizar la potencia absorbida simplemente colocamos una resistencia
+con la misma resistividad que $R_{tv}$. Con lo cual el valor de $R=3.08 \ \ohm$.
+
+
+b) ¿Cuál es esa potencia?
+
+De nuevo utilizaremos el teorema de máxima potencia:
+
+\[
+    P_l=I^2 \cdot R = 30^2 \cdot 3.08 = 2772 \ W
+\]
+
+\newpage
+
+\section*{Problema 2}
+
+En el circuito de la figura, la tensión $Vc$ del condensador vale $-4V$ en $t=0$.
+
+\begin{center}
+    \includegraphics[height=4.5cm]{E:/KUKADisk/UDIMA/Fisica/Practicas/AEC2/img/p2e.PNG}\\
+\end{center}
+
+Se pide:
+
+a) Si $R = 2 \ \ohm$, calcular el tiempo que tardará la tensión $Vc$ en el condensador en alcanzar $+4V$.
+
+Utilizando sustitución de fuentes de alimentación podemos simplificar bastante el circuito para que quede con este aspecto:
+
+\begin{center}
+    \includegraphics[height=4.5cm]{E:/KUKADisk/UDIMA/Fisica/Practicas/AEC2/img/p2v1.PNG}\\
+\end{center}
+
+Para resolver el problema lo más sencillo será volver a aplicar Thevenin. En este caso sólo existen fuentes de alimentación 
+independientes con lo cual encontrar $R_{th}$ resultará muy sencillo. Cortocircuitamos las fuentes y sumamos las resistencias 
+según convenga:
+
+\[
+    R_{th}=\frac{2 \cdot 8}{2+8}+2=3.6 \ \ohm
+\]
+
+Para encontrar $V_{th}$ simplemente aplicamos KCL en los dos nodos:
+
+\[
+    KCL2: \ \frac{80-V_2}{8}=\frac{V_2+5}{2}+\frac{V_2-V_1}{2}
+\]
+
+y
+
+\[
+    KCL1: \ \frac{V_2-V_1}{2}=0
+\]
+
+Calculando el valor de $V_2 = 12 \ V$ con lo cual $V_{th}=V_{oc}=12 \ V$.
+
+Ahora sabiendo el comportamiento de un circuito de tipo RC simple como el que tenemos, podemos calcular fácilmente el tiempo en
+el que el condensador tardará en alcanzar $4V$.
+
+Sabemos que en el instante $t=0$, el estado inicial del condensador es $-4V$. Solamente debemos aplicar la fórmula y resolver para $t$:
+
+\[
+    V(t)=V_0\left(1-\frac{1}{e^{\nicefrac{t}{RC}}}\right)
+\]
+
+Sustituyendo con nuestros datos:
+
+\[
+    -4=4\left(1-\frac{1}{e^{\frac{t}{3.6\cdot \:0.005}}}\right)
+\]
+
+Resolviendo para el tiempo $t$ obtenemos que $t=0.01247 \ s$.
+
+b) ¿Qué valor debería haber tenido R para que ese tiempo hubiera sido la mitad?
+
+Sabmos que el tiempo que tarda en cargarse un condensador depende proporcionalmente de la constante de tiempo $\tau=RC$.
+
+Debemos recordar que en el apartado anterior, $R=1.6+2$. Entonces la resistencia que debemos modificar es la de valor $2 \ohm$. Tenemos
+que encontrar un valor que haga que $\tau$ sea la mitad para conseguir que se cargue en la mitad de tiempo.
+
+\[
+    \tau=RC=(1.6+2) \cdot 0.005 = 0.018 \ s
+\]
+
+Entonces:
+
+\[
+    \tau=RC=(1.6+R) \cdot 0.005 = 0.09 \implies
+    (1.6+0.2) \cdot 0.005 = 0.09 \ s
+\]
+
+Con lo cual el valor de $R$ que hace que el tiempo sea la mitad es $R=0.2 \ \ohm$
+
+\newpage
+
+
+\section*{Problema 3}
+
+El siguiente circuito representa un conjunto de cargas conectadas a una red de 220V eficaces a 50Hz:
+Los datos que se conocen para cada una de las cargas son los siguientes:
+
+\begin{itemize}
+    \item $Z1 = 30+40j$
+    \item $Z2$ : consume 2KW con f.p. = 0.8 inductivo
+    \item $R$: consume 1 KW
+    \item $L$: consume 0,5 KVAR
+\end{itemize}
+
+
+\begin{center}
+    \includegraphics[height=4.5cm]{E:/KUKADisk/UDIMA/Fisica/Practicas/AEC2/img/p3e.PNG}\\
+\end{center}
+
+Se pide:
+
+a) Potencias activa, reactiva y aparente consumidas por cada una de las cargas.
+
+Para $Z1$:
+
+Su impedancia:
+
+\[
+    Z1=\sqrt{X^2+Y^2}=\sqrt{30^2+40^2}=50 \ \ohm
+\]
+
+La corriente que pasa por Z1:
+\[
+    I_{Z1}=\frac{V}{Z}=\frac{220}{50}=4.4 \ A
+\]
+
+Las potencias:
+
+\[
+    P_{Z1}=I^2\cdot R= 4.4^2 \cdot 30 = 580.8 \ W
+\]
+
+\[
+    Q_{Z1}=I^2 \cdot X = 4.4^2 \cdot 40 = 774.4 \ VAR
+\]
+
+\[
+    S_{Z1}=I^2 \cdot Z = 4.4^2 \cdot 50 = 968 \ VA
+\]
+
+
+Para $Z2$:
+
+Sabemos que consume 2000 W por lo tanto esa es su potencia activa. $P_{z2}=2000 \ W$.
+
+\[
+    S_{Z2}=\frac{2000}{0.8}=2500 \ VA
+\]
+
+\[
+    Q_{Z2}=\sqrt{S^2-P^2}=1500 \ VAR
+\]
+
+Para R:
+
+Sabemos que las resistencias disipan la potencia absorbida en forma de calor y no almacenan energía en forma
+de campo magnético, por lo tanto:
+
+\[
+    P_R=1000 \ W \implies 
+    S_R=1000 \ VA \implies
+    Q_R = 0 \ VAR
+\]
+
+Para L:
+
+En este caso sabemos que la bobina (perfecta) almacena la energía formando un campo magnético, pero no disipa ninguna 
+en forma de calor. Esto significa que:
+
+\[
+    Q_L= 500 \ VAR \implies
+    S_L= 500 \ VA \implies
+    P_L= 0 \ W  
+\]
+
+
+b) Factor de potencia del conjunto de cargas.
+
+Para ello debemos saber las potencias totales del sistema. Sumando los valores obtenidos en el apartado anterior obtenemos:
+
+\[
+    P_{sys}=3581 \ W
+\]
+
+\[
+    Q_{sys}=2774 \ VAR    
+\]
+
+\[
+    S_{sys}=\sqrt{P_{sys}^2+Q_{sys}^2}=4530 \ VA
+\]
+
+Ahora podemos computar el factor de potencia:
+
+\[
+    f.p. = \frac{P}{S}=0.79 \ (inductivo)
+\]
+
+
+c) Intensidad i solicitada a la red (valor eficaz).
+
+\[
+    I=\frac{S}{V}=\frac{4530}{220}=20.6 \ A
+\]
+
+d) Valor del condensador a colocar entre los terminales A y B para reducir esa intensidad un 10 \%.
+
+Calculamos el valor de las potencias que cumplan:
+
+\[
+    \frac{S}{220}=\frac{20.6}{1.1} \implies S=4077 \ VA
+\]
+
+\[
+    Q=\sqrt{S^2-P^2}=1950 \ VAR
+\]
+
+Aporte del condensador al sistema:
+
+\[
+    1950-2774 = -824 \ VAR  \implies
+    \frac{V^2}{\omega \cdot C} \implies
+\]
+
+\[
+    C=\frac{-824}{-220^2 \cdot 100 \pi} =
+    54.1 \ mF  
+\]
+
+e) Nuevo factor de potencia para el conjunto de las cargas (incluyendo el condensador).
+
+Repetimos el proceso del apartado b pero con la nueva potencia aparente:
+
+\[
+    f.p.=\frac{3581}{4077}=0.88 \ (inductivo)
+\]
+
+
+\end{document}

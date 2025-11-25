@@ -1,0 +1,436 @@
+\documentclass{article}
+\usepackage{lipsum}
+\usepackage{authoraftertitle}
+\usepackage[top=2cm,bottom=1.5cm,left=1.5cm, right=3cm,includeheadfoot]{geometry}
+\usepackage{graphicx}
+\usepackage[parfill]{parskip}
+\usepackage{fancyhdr}
+\usepackage[spanish]{babel}
+\usepackage{mathtools}
+\usepackage{csquotes}
+\usepackage{amssymb}
+\usepackage[shortlabels]{enumitem}
+\usepackage{fancybox, graphicx}
+\usepackage{array}
+\usepackage{hhline}
+\usepackage{subfigure}
+\usepackage{gensymb}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{amsmath} 
+\usepackage{caption}
+\usepackage{esvect}
+\usepackage{siunitx}
+\usepackage{commath}
+%Header & Footer
+
+\pagestyle{fancy}
+\fancyhead[LE]{\MyTitle}
+\fancyhead[LO]{Mecánica}
+%\fancyhead[RO]{\leftmark}
+%\fancyhead[RE]{\leftmark}
+\fancyfoot[L]{\raisebox{-1cm}{\includegraphics[height=2cm]{D:/KUKADisk/UDIMA/DocumentGraphics/LOGOUDIMA.jpg}}}
+\fancyfoot[R]{Corregido:\\ Dra. Isabel Cristina Gil García}
+%\fancyfoot[RO]{07/12/2018}
+
+
+%Vars
+\author{Alexander Sebastian Kalis}
+\title{Ejercicios propuestos Unidades 1-3}
+
+
+%DOC
+
+
+\begin{document}
+
+\begin{titlepage}
+
+    \begin{center}
+
+        \line(1,0){300}\\
+        [0.2in]
+        \huge{\bfseries {\MyTitle}}\\
+        [1mm]
+        \line(2,0){200}\\
+        [0.75cm]
+        \textsc{\LARGE Mecánica Clásica}\\
+        [2cm]
+        \includegraphics[height=10cm]{D:/KUKADisk/UDIMA/Mecanica/portada.jpg}\\
+        [3cm]
+
+    \end{center}
+
+    \begin{flushright}
+
+        {\MyAuthor}\\
+        %Profesora: Dra. Isabel Cristina Gil García\\
+        %Curso: Ingeniería de Organización Industrial\\
+        %UDIMA\\
+        \today        
+
+    \end{flushright}
+    
+\end{titlepage}
+
+%\tableofcontents \thispagestyle{empty}
+%\newpage
+
+%\section*{Introducción}
+
+
+\newpage
+
+\section*{Actividades}
+\subsection*{Problema 1}
+
+\subsubsection*{Enunciado del problema}
+
+La posición de una partícula que se mueve en línea recta está definida por la relación\\
+
+$x=t^3-6t^2-15t+40$\\
+
+$x$ está expresada en pies y $t$ en segundos.\\
+Determinar:
+
+\begin{enumerate}[a)]
+    \item El tiempo para el cual la velocidad será nula.
+    \item La posición y la distancia recorrida por la partícula en ese tiempo.
+    \item La aceleración de la partícula en ese instante.
+    \item La distancia recorrida por la partícula desde $t=4s$ hasta $t=6s$
+    \item Grafique el movimiento de posición, velocidad y aceleración.
+\end{enumerate}
+
+Expresar los resultados en SI.
+
+\subsubsection*{Datos}
+Función que define la posición en el eje $x$ de la partícula: 
+\begin{equation}
+    x(t)=t^3-6t^2-15t+40\\
+\end{equation}
+Función que define la velocidad de la partícula:
+\begin{equation}
+    v(t)=\frac{dx}{dt}=3t^2-12t-15\\
+\end{equation} 
+Función que define la aceleración de la parícula:
+\begin{equation}
+    a(t)=\frac{dv}{dt}=6t-12\\
+\end{equation} 
+Tipo de movimiento: Movimiento Rectilíneo Uniformemente Acelerado\\
+%Aceleración de la gravedad: $-9.8m/s^2$
+
+\subsubsection*{Solución y explicación del problema}
+
+Disponiendo de la función de la velocidad, simplemente igualamos $v(t)=0$ y extraemos las raíces de las
+ecuación para obtener el tiempo en el que la velocidad es nula:
+
+\begin{equation}
+    3t^2-12t-15=0 \rightarrow t=5s
+\end{equation}
+
+Para la posición, recurrimos a la función (1) que es la que nos proporciona 
+esa información, donde el tiempo será $t=5$.
+
+\begin{equation}
+    x(5)=5^3-6\cdot5^2-15\cdot5+40 \rightarrow x(5)=-60ft=-18.29m
+\end{equation}
+\begin{equation}
+    x(0)=40ft=12.19m
+\end{equation}
+
+La distancia total recorrida entre 0s y 5s será la integral del valor absoluto de la velocidad en ese tramo de tiempo:
+
+\begin{equation}
+    \int_{0}^{5}\lvert 3t^2-12t-15 \lvert \ dt = 100ft = 30.48m
+\end{equation}
+
+Para la aceleración en el instante $t=5s$ recurrimos a la función (3) y obtenemos:
+
+\begin{equation}
+    a(5)=6\cdot5-12=18ft/s^2=5.49m/s^2
+\end{equation}
+
+Nuevamente para calcular la distancia total recorrida entre 4s y 6s integramos el valor absoluto de la 
+velocidad en ese tramo:
+
+\begin{equation}
+    \int_{4}^{6}\lvert 3t^2-12t-15 \lvert \ dt = 18 ft = 5.49m
+\end{equation}
+
+Por último representamos gráficamente las funciones utilizando Symbolab:
+
+\begin{figure}[!htb]
+    \begin{minipage}{0.50\textwidth}
+    \centering
+    \includegraphics[height=5cm]{D:/KUKADisk/UDIMA/Mecanica/Practicas/AEC1/posiciontiempo.PNG}
+    \caption{Posición-tiempo}
+    \end{minipage}\hfill
+    \begin{minipage}{0.50\textwidth}
+    \centering
+    \includegraphics[height=5cm]{D:/KUKADisk/UDIMA/Mecanica/Practicas/AEC1/velocidadtiempo.PNG}
+    \caption{Velocidad-tiempo}
+    \end{minipage}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[height=5cm]{D:/KUKADisk/UDIMA/Mecanica/Practicas/AEC1/aceleraciontiempo.PNG}
+    \caption{Aceleración-tiempo}
+\end{figure}
+
+\newpage
+
+\subsection*{Problema 2}
+
+\subsubsection*{Enunciado del problema}
+
+Un helicóptero de rescate deja caer un paquete de suministros a alpinistas que se encuentran
+aislados en la cima de una colina peligrosa, situada 200 m abajo del helicóptero. Si
+éste vuela horizontalmente con una rapidez de 250 km/h:\\
+a) ¿A qué distancia horizontal antes de los alpinistas debe dejarse caer el paquete de suministros?\\
+En vez de esto, suponga que el helicóptero lanza los suministros a una distancia horizontal
+de 400 m antes de donde se encuentran los alpinistas.\\
+b) ¿Qué velocidad vertical debería darse a los suministros (hacia arriba o hacia abajo)
+para que éstos caigan precisamente en la cima de la montaña?\\
+c) ¿Con qué rapidez aterrizan los suministros en este último caso?
+
+\subsubsection*{Datos}
+
+\textbf{Primer apartado}\\
+Distancia en $y$ del helicóptero al punto de impacto: $200m$\\
+Velocidad de la partícula en el instante de lanzamiento: $v_{x0}=250km/h=69.5m/s, \ v_{y0}=0m/s$\\
+Gravedad (aceleración componente $y$): $g=a_y=-9.8m/s^2$\\
+Se omiten posibles fuerzas de desaceleración en $x$: $a_x=0m/s^2$\\
+\textbf{Segundo apartado}\\
+Se añade la condición de distancia en $x$ del helicóptero al punto de impacto: $400m$
+
+\subsubsection*{Solución y explicación del problema}
+
+\textbf{Primer apartado}\\
+Empezamos calculando el tiempo que tarda la partícula en llegar a $y=-200m$, el tiempo de impacto. Tomamos como referencia 
+la posición del helicóptero.
+
+\begin{equation}
+    y=v_{y0}t_i+\frac{1}{2}gt_i^2 \rightarrow
+    -200=-\frac{1}{2}9.8t^2 \rightarrow
+    t_i \approx 6.4s
+\end{equation}
+
+Sabiendo el tiempo que tarda la partícula en impactar, podemos calcular la distancia que recorre durante ese tiempo en su
+componente $x$, que será la distancia con la cual debe lanzar la partícula con antelación:
+
+\begin{equation}
+    x=v_xt_i \rightarrow x=69.5\cdot6.4 \rightarrow x \approx 445m
+\end{equation}
+
+\textbf{Segundo apartado}
+
+Conociendo la posición en $x$ y la velocidad en $x$ de la partícula calculamos el tiempo de impacto, que será la
+rapidez con la que se suministran:
+\begin{equation}
+    x=v_xt_i \rightarrow 400=69.5t_i \rightarrow t_i \approx 5.8s
+\end{equation}
+
+
+El objetivo es que la partícula llegue a $y=-200m$ en $5.8s$. Entonces podemos calcular qué velocidad inicial en $y$ debemos darle
+para que llegue en el tiempo programado.
+
+\begin{equation}
+    y=v_{y0}t_i+\frac{1}{2}gt_i^2 \rightarrow
+    -200=5.8v_{y0}-\frac{9.8}{2}\cdot5.8^2 \rightarrow
+    v_{y0} \approx -6m/s
+\end{equation}
+
+Como es negativa, esto significa que el helicóptero deberá soltar los suministros mientras desciende a $6m/s$.
+\newpage
+
+
+\subsection*{Problema 3}
+
+\subsubsection*{Enunciado del problema}
+Un automóvil que pesa 1000 Kg desciende por una cuesta de 10º de inclinación. El conductor
+divisa un obstáculo y aplica los frenos produciendo una fuerza total de frenado (aplicada por
+la carretera sobre los neumáticos) constante y de 5000 N. Hasta que el coche se detiene
+recorre una distancia de 200 m.\\
+Determinar la velocidad inicial del coche
+
+\subsubsection*{Datos}
+Masa del automóvil: $m=1000kg$\\
+Inclinación del plano: $\alpha=10\degree$\\
+Fuerza total de frenado: $\vec{F}=-5000N$\\
+Distancia recorrida: $s=200m$
+\subsubsection*{Solución y explicación del problema}
+Aunque podría resolverse mediante el teorema de fuerzas vivas, al tratarse de un ejercicio de plano inclinado se resolverá por descomposición de fuerzas:
+
+\begin{figure}[H]
+    \begin{centering}
+        \includegraphics[height=6cm]{D:/KUKADisk/UDIMA/Mecanica/Practicas/AEC1/descomp3.png}
+        \caption{Descomposición de fuerzas}
+    \end{centering}   
+\end{figure}
+\begin{equation}
+    \vec{P}=mg=1000\cdot9.8=9800N
+\end{equation}
+\begin{equation}
+    \vec{P_x}=\vec{P}\cdot \sin(\alpha)=9800\cdot \sin(10\degree) \approx 1700N
+\end{equation}
+\begin{equation}
+    \vec{P_y}=\vec{N}=\vec{P}\cdot \cos(\alpha)=9800\cdot \cos(10\degree) \approx 9650N
+\end{equation}
+\begin{equation}
+    \vec{F_r}=\vec{P_x}+\vec{F}=1700-5000=-3300N
+\end{equation}
+
+Sabiendo esto podemos calcular la aceleración del vehículo:
+\begin{equation}
+    a=\frac{\vec{F_r}}{m}=-\frac{3300}{1000}=-3.3m/s^2
+\end{equation}
+
+Podemos encontrar la velocidad inicial aplicando la fórmula:
+
+\begin{equation}
+    v^2-v^2_0=2as \rightarrow 
+    0-v^2_0=2(-3.3)(200) \rightarrow
+    v_0 \approx 36.3 m/s \approx 130km/h
+\end{equation}
+
+\newpage
+
+
+\subsection*{Problema 4}
+
+\subsubsection*{Enunciado del problema}
+
+Hallar los valores de las tensiones en las cuerdas en cada uno de los casos siguientes si los
+sistemas se encuentran en equilibrio estático.
+
+\begin{figure}[H]
+    \begin{centering}
+        \includegraphics[height=5cm]{D:/KUKADisk/UDIMA/Mecanica/Practicas/AEC1/e4.png}
+    \end{centering}   
+\end{figure}
+
+\subsubsection*{Datos}
+
+Se carece de datos con lo cual simplemente se procederá a aplicar la segunda Ley de Newton:
+
+\subsubsection*{Solución y explicación del problema}
+
+\textbf{Primer apartado}\\
+Al haber solo un cable y una masa afectada por la gravedad con equilibrio estático:
+\begin{equation}
+    \vec{T}+\vec{P}=0 \rightarrow
+    \vec{T}=m\cdot g
+\end{equation}
+
+\textbf{Segundo apartado}\\
+En este caso hay 2 cuerdas y se descompone la tensión:
+\begin{equation}
+    m\cdot g = \vec{T}_1+\vec{T}_2
+\end{equation}
+\begin{equation}
+    T_1 \cos(\alpha)-T_2 \cos(\beta)=m \cdot g
+\end{equation}
+\begin{equation}
+    T_1=\frac{mg \cos(\beta)}{\sin(\alpha) \cos(\beta) + \cos(\alpha)\sin(\beta)}
+\end{equation}
+\begin{equation}
+    T_2=\frac{mg \cos(\alpha)}{\sin(\alpha) \cos(\beta) + \cos(\alpha)\sin(\beta)}
+\end{equation}
+
+\textbf{Tercer apartado}\\
+En este caso, la fuerza generada perpendicularmente al plano inclinado se cancela con la normal por lo tanto solo se tiene en cuenta la fuerza paralela al 
+plano inclinado:
+
+\begin{equation}
+    T=F_x=mg \sin(\theta)
+\end{equation}
+\newpage
+
+\subsection*{Formulario}
+\textbf{Algebra vectorial}\\
+Formas de expresar un vector en función de sus componentes de coordenadas:
+\begin{equation*}
+    v=x+y+z \ \ \ v(x,y,z) \ \ \ v=xi+yj+zk
+\end{equation*}
+Vector unitario:
+\begin{equation*}
+    u=\frac{xi+yj+zk}{\sqrt{x^2+y^2+z^2}}
+\end{equation*}
+Producto vectorial:
+\begin{equation*}
+    v \ x \ v' =
+    \begin{vmatrix}
+        i & j & k\\
+        x & y & z\\
+        x'& y'&z'
+    \end{vmatrix}
+\end{equation*}
+
+\textbf{Cinemática}\\
+Eacuación vectorial horaria:
+\begin{equation*}
+    r=x(t)i+(t)j+z(t)k
+\end{equation*}
+Velocidad:
+\begin{equation*}
+    v=\frac{dr}{dt}
+\end{equation*}
+Aceleración:
+\begin{equation*}
+    a=\frac{dv}{dt}
+\end{equation*}
+MRU:
+\begin{equation*}
+    x=x_0+v_xt
+\end{equation*}
+MRUA:
+\begin{equation*}
+    V_x=V_{ox}+at
+\end{equation*}
+\begin{equation*}
+    x=x_0+(\frac{v_x+v_0x}{2})t
+\end{equation*}
+\begin{equation*}
+    x=x_0+v_{0x}t+\frac{1}{2}at^2
+\end{equation*}
+\begin{equation*}
+    v^2-v_2^2=2as
+\end{equation*}
+\textbf{Dinámica}\\
+Descomposición de fuerzas:
+\begin{equation*}
+    P=P_x\cdot sin(\alpha) + P_y \cdot cos(\alpha)
+\end{equation*}
+Segunda ley de Newton
+\begin{equation*}
+    F=ma
+\end{equation*}
+Lei de Hooke
+\begin{equation*}
+    F=kx    
+\end{equation*}
+Momento de una fuerza
+\begin{equation*}
+    M=Fd
+\end{equation*}
+Trabajo:
+\begin{equation*}
+    W=Fd
+\end{equation*}
+Energía cinética:
+\begin{equation*}
+    E_c=\frac{mv^2}{2}
+\end{equation*}
+Energia potencial:
+\begin{equation*}
+    E_p=mgh
+\end{equation*}
+Teorema de fuerzas vivas:
+\begin{equation*}
+    W = \Delta E_c = E_{c2} - E_{c1}
+\end{equation*}
+\end{document}

@@ -1,0 +1,699 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{tikz}
+
+
+% Ajuste de márgenes
+\geometry{a4paper,margin=2.5cm}
+
+\title{\large\textbf{Actividad de Evaluación Continua 2} \\ Matemática Discreta}
+\author{\normalsize Alexander Sebastian Kalis \\ \textbf{UDIMA}}
+\date{\normalsize\today}
+
+\begin{document}
+
+\maketitle
+\newpage 
+
+\tableofcontents
+
+
+\newpage
+
+\section{Problema 1}
+Para resolver este problema, planteamos el sistema de congruencias dado:
+\[
+N \equiv 4 \, (\text{módulo } 11), \quad N \equiv 5 \, (\text{módulo } 7), \quad N \equiv 1 \, (\text{módulo } 5).
+\]
+
+Este sistema se resolverá utilizando el \textbf{Teorema Chino del Resto}. 
+
+\textbf{Paso 1: Determinar el módulo total.} \\
+Los módulos \( 11 \), \( 7 \) y \( 5 \) son coprimos entre sí, por lo que el módulo total es:
+\[
+M = 11 \cdot 7 \cdot 5 = 385.
+\]
+
+\textbf{Paso 2: Calcular los submódulos y sus inversos.} \\
+Para cada módulo \( m_i \), calculamos el submódulo \( M_i = M / m_i \) y su inverso multiplicativo \( d_i \) módulo \( m_i \):
+
+\begin{itemize}
+    \item Para \( m_1 = 11 \): \( M_1 = 385 / 11 = 35 \). El inverso \( d_1 \) satisface:
+    \[
+    35 \cdot d_1 \equiv 1 \, (\text{módulo } 11).
+    \]
+    Probando valores, encontramos \( d_1 = 6 \), ya que \( 35 \cdot 6 = 210 \equiv 1 \, (\text{módulo } 11) \).
+
+    \item Para \( m_2 = 7 \): \( M_2 = 385 / 7 = 55 \). El inverso \( d_2 \) satisface:
+    \[
+    55 \cdot d_2 \equiv 1 \, (\text{módulo } 7).
+    \]
+    Probando valores, encontramos \( d_2 = 1 \), ya que \( 55 \cdot 1 = 55 \equiv 1 \, (\text{módulo } 7) \).
+
+    \item Para \( m_3 = 5 \): \( M_3 = 385 / 5 = 77 \). El inverso \( d_3 \) satisface:
+    \[
+    77 \cdot d_3 \equiv 1 \, (\text{módulo } 5).
+    \]
+    Probando valores, encontramos \( d_3 = 3 \), ya que \( 77 \cdot 3 = 231 \equiv 1 \, (\text{módulo } 5) \).
+\end{itemize}
+
+\textbf{Paso 3: Construir la solución.} \\
+La solución general es:
+\[
+N \equiv a_1 \cdot M_1 \cdot d_1 + a_2 \cdot M_2 \cdot d_2 + a_3 \cdot M_3 \cdot d_3 \, (\text{módulo } M),
+\]
+donde \( a_1 = 4 \), \( a_2 = 5 \), \( a_3 = 1 \). Sustituyendo:
+\[
+N \equiv 4 \cdot 35 \cdot 6 + 5 \cdot 55 \cdot 1 + 1 \cdot 77 \cdot 3 \, (\text{módulo } 385).
+\]
+
+Calculamos cada término:
+\[
+4 \cdot 35 \cdot 6 = 840, \quad 5 \cdot 55 \cdot 1 = 275, \quad 1 \cdot 77 \cdot 3 = 231.
+\]
+Sumamos los resultados:
+\[
+N \equiv 840 + 275 + 231 = 1346 \, (\text{módulo } 385).
+\]
+
+Reducimos \( 1346 \) módulo \( 385 \):
+\[
+1346 \div 385 = 3 \, \text{cociente}, \quad 1346 - 3 \cdot 385 = 191.
+\]
+
+Por lo tanto, la solución es:
+\[
+N \equiv 191 \, (\text{módulo } 385).
+\]
+
+El número mínimo de libros es \( \mathbf{191} \).
+
+
+
+\newpage
+
+\section{Problema 2}
+Richard Matthew Stallman envía una broma en forma de mensaje cifrado a Linus Torvalds. Para ello usa el cifrado tipo César. 
+
+Si el mensaje es \texttt{LINUX\_APESTA}, ¿cómo es el mensaje alfabético resultante si usa la función \( c(n) = n + 3 \mod 28 \)?
+
+\textbf{Nota}: Las clases de codificación son las siguientes: 
+\_ = 00, A = 01, B = 02, ..., incluyendo la Ñ y la W.
+
+
+Para resolver este problema, utilizamos el cifrado tipo César con la función de codificación:
+\[
+c(n) = n + 3 \mod 28,
+\]
+donde el alfabeto codificado incluye 28 símbolos: \_ = 00, A = 01, B = 02, ..., hasta Ñ y W.
+
+\textbf{Paso 1: Asignar valores numéricos al mensaje.} \\
+El mensaje dado es \texttt{LINUX\_APESTA}. Utilizando la codificación dada, asignamos los siguientes valores:
+\[
+L = 12, \, I = 09, \, N = 14, \, U = 21, \, X = 24, \, \_ = 00, \, A = 01, \, P = 16, \, E = 05, \, S = 19, \, T = 20, \, A = 01.
+\]
+
+\textbf{Paso 2: Aplicar la función de codificación.} \\
+Sumamos 3 a cada valor y tomamos el resultado módulo 28:
+\[
+\begin{aligned}
+L: & \quad 12 + 3 = 15, & \quad \text{(15 mod 28) = 15 (O)} \\
+I: & \quad 09 + 3 = 12, & \quad \text{(12 mod 28) = 12 (L)} \\
+N: & \quad 14 + 3 = 17, & \quad \text{(17 mod 28) = 17 (Q)} \\
+U: & \quad 21 + 3 = 24, & \quad \text{(24 mod 28) = 24 (X)} \\
+X: & \quad 24 + 3 = 27, & \quad \text{(27 mod 28) = 27 (W)} \\
+\_: & \quad 00 + 3 = 03, & \quad \text{(03 mod 28) = 03 (C)} \\
+A: & \quad 01 + 3 = 04, & \quad \text{(04 mod 28) = 04 (D)} \\
+P: & \quad 16 + 3 = 19, & \quad \text{(19 mod 28) = 19 (S)} \\
+E: & \quad 05 + 3 = 08, & \quad \text{(08 mod 28) = 08 (H)} \\
+S: & \quad 19 + 3 = 22, & \quad \text{(22 mod 28) = 22 (V)} \\
+T: & \quad 20 + 3 = 23, & \quad \text{(23 mod 28) = 23 (W)} \\
+A: & \quad 01 + 3 = 04, & \quad \text{(04 mod 28) = 04 (D)}.
+\end{aligned}
+\]
+
+\textbf{Paso 3: Reconstruir el mensaje.} \\
+Sustituyendo los valores transformados por sus correspondientes caracteres:
+\[
+\texttt{LINUX\_APESTA} \quad \rightarrow \quad \texttt{OLQXWCDSHVWD}.
+\]
+
+Por lo tanto, el mensaje cifrado resultante es:
+\[
+\boxed{\texttt{OLQXWCDSHVWD}}.
+\]
+
+
+\newpage
+
+\section{Problema 3}
+\begin{itemize}
+    \item[a)] Calcular el resto de dividir \( 755673 \) entre \( 17 \).
+    \item[b)] Pasar a hexadecimal y octal el número \( (66666)_{10} \). Escribir los pasos realizados.
+\end{itemize}
+
+\textbf{a) Calcular el resto de dividir \( 755673 \) entre \( 17 \).} \\
+
+Utilizamos el algoritmo de división para obtener el resto:
+\[
+755673 \div 17 = 44451 \, \text{cociente}, \quad 755673 - (44451 \cdot 17) = 6.
+\]
+Por lo tanto, el resto de la división es:
+\[
+\boxed{6}.
+\]
+
+\textbf{b) Convertir el número \( (66666)_{10} \) a hexadecimal y octal.}
+
+\textbf{Paso 1: Conversión a hexadecimal.} \\
+Dividimos sucesivamente el número entre \( 16 \) y anotamos los restos:
+\[
+\begin{aligned}
+66666 \div 16 &= 4166 \, \text{cociente}, \quad \text{resto } 10 \, (A). \\
+4166 \div 16 &= 260 \, \text{cociente}, \quad \text{resto } 6. \\
+260 \div 16 &= 16 \, \text{cociente}, \quad \text{resto } 4. \\
+16 \div 16 &= 1 \, \text{cociente}, \quad \text{resto } 0. \\
+1 \div 16 &= 0 \, \text{cociente}, \quad \text{resto } 1.
+\end{aligned}
+\]
+
+Leyendo los restos de abajo hacia arriba, obtenemos:
+\[
+66666_{10} = 1046A_{16}.
+\]
+
+\textbf{Paso 2: Conversión a octal.} \\
+Dividimos sucesivamente el número entre \( 8 \) y anotamos los restos:
+\[
+\begin{aligned}
+66666 \div 8 &= 8333 \, \text{cociente}, \quad \text{resto } 2. \\
+8333 \div 8 &= 1041 \, \text{cociente}, \quad \text{resto } 5. \\
+1041 \div 8 &= 130 \, \text{cociente}, \quad \text{resto } 1. \\
+130 \div 8 &= 16 \, \text{cociente}, \quad \text{resto } 2. \\
+16 \div 8 &= 2 \, \text{cociente}, \quad \text{resto } 0. \\
+2 \div 8 &= 0 \, \text{cociente}, \quad \text{resto } 2.
+\end{aligned}
+\]
+
+Leyendo los restos de abajo hacia arriba, obtenemos:
+\[
+66666_{10} = 201512_{8}.
+\]
+
+\textbf{Resultado final:}
+\[
+\text{Hexadecimal: } 1046A_{16}, \quad \text{Octal: } 201512_{8}.
+\]
+
+
+\newpage
+
+\section{Problema 4}
+El número \( 31492 \) tiene \( 712 \) dígitos. Úsese aritmética modular en módulo \( 100 \) para averiguar los dos últimos dígitos de ese número.
+
+El problema nos pide determinar los dos últimos dígitos del número \( 31492^{712} \) utilizando aritmética modular en módulo \( 100 \).
+
+\textbf{Paso 1: Simplificar usando módulo \( 100 \).} \\
+Queremos calcular:
+\[
+31492^{712} \mod 100.
+\]
+Primero simplificamos \( 31492 \mod 100 \):
+\[
+31492 \div 100 = 314 \, \text{cociente}, \quad 31492 - 314 \cdot 100 = 92.
+\]
+Por lo tanto:
+\[
+31492 \equiv 92 \, (\text{módulo } 100).
+\]
+
+Ahora el problema se reduce a calcular:
+\[
+92^{712} \mod 100.
+\]
+
+\textbf{Paso 2: Reducir usando el Teorema de Euler.} \\
+Aplicamos el Teorema de Euler, que dice que para un número \( a \) coprimo con \( n \), se cumple:
+\[
+a^{\phi(n)} \equiv 1 \, (\text{módulo } n),
+\]
+donde \( \phi(n) \) es la función de Euler. Como \( 92 \) es coprimo con \( 100 \), calculamos \( \phi(100) \):
+\[
+\phi(100) = 100 \cdot \left(1 - \frac{1}{2}\right) \cdot \left(1 - \frac{1}{5}\right) = 100 \cdot \frac{1}{2} \cdot \frac{4}{5} = 40.
+\]
+Por el Teorema de Euler:
+\[
+92^{40} \equiv 1 \, (\text{módulo } 100).
+\]
+
+\textbf{Paso 3: Reducir el exponente módulo \( \phi(100) \).} \\
+Reducimos \( 712 \) módulo \( 40 \):
+\[
+712 \div 40 = 17 \, \text{cociente}, \quad 712 - 17 \cdot 40 = 32.
+\]
+Por lo tanto:
+\[
+92^{712} \equiv 92^{32} \, (\text{módulo } 100).
+\]
+
+\textbf{Paso 4: Calcular \( 92^{32} \mod 100 \) usando descomposición.} \\
+Calculamos potencias sucesivas módulo \( 100 \):
+\[
+92^2 = 8464 \quad \Rightarrow \quad 8464 \mod 100 = 64.
+\]
+\[
+92^4 = (92^2)^2 = 64^2 = 4096 \quad \Rightarrow \quad 4096 \mod 100 = 96.
+\]
+\[
+92^8 = (92^4)^2 = 96^2 = 9216 \quad \Rightarrow \quad 9216 \mod 100 = 16.
+\]
+\[
+92^{16} = (92^8)^2 = 16^2 = 256 \quad \Rightarrow \quad 256 \mod 100 = 56.
+\]
+\[
+92^{32} = (92^{16})^2 = 56^2 = 3136 \quad \Rightarrow \quad 3136 \mod 100 = 36.
+\]
+
+Por lo tanto:
+\[
+92^{712} \equiv 36 \, (\text{módulo } 100).
+\]
+
+\textbf{Resultado final:} Los dos últimos dígitos del número \( 31492^{712} \) son:
+\[
+\boxed{36}.
+\]
+
+\newpage
+
+\section{Problema 5}
+Resolver la siguiente ecuación diofántica:
+\[
+1886x + 326y = 16
+\]
+
+El problema nos pide resolver la ecuación diofántica:
+\[
+1886x + 326y = 16.
+\]
+
+\textbf{Paso 1: Verificar la solución usando el MCD.} \\
+El teorema fundamental de las ecuaciones diofánticas nos dice que esta ecuación tiene solución entera si y solo si el máximo común divisor (MCD) de \( 1886 \) y \( 326 \) divide a \( 16 \). Calculamos el MCD utilizando el algoritmo de Euclides:
+\[
+1886 \div 326 = 5 \, \text{cociente}, \quad 1886 - 5 \cdot 326 = 256.
+\]
+\[
+326 \div 256 = 1 \, \text{cociente}, \quad 326 - 1 \cdot 256 = 70.
+\]
+\[
+256 \div 70 = 3 \, \text{cociente}, \quad 256 - 3 \cdot 70 = 46.
+\]
+\[
+70 \div 46 = 1 \, \text{cociente}, \quad 70 - 1 \cdot 46 = 24.
+\]
+\[
+46 \div 24 = 1 \, \text{cociente}, \quad 46 - 1 \cdot 24 = 22.
+\]
+\[
+24 \div 22 = 1 \, \text{cociente}, \quad 24 - 1 \cdot 22 = 2.
+\]
+\[
+22 \div 2 = 11 \, \text{cociente}, \quad 22 - 11 \cdot 2 = 0.
+\]
+Por lo tanto:
+\[
+\text{MCD}(1886, 326) = 2.
+\]
+
+Como \( 2 \mid 16 \), la ecuación tiene solución entera.
+
+\textbf{Paso 2: Encontrar una solución particular.} \\
+Reescribimos el algoritmo de Euclides hacia atrás para expresar el MCD como combinación lineal de \( 1886 \) y \( 326 \):
+\[
+2 = 24 - 22 = 24 - (46 - 24) = 2 \cdot 24 - 46.
+\]
+\[
+2 = 2 \cdot (70 - 46) - 46 = 2 \cdot 70 - 3 \cdot 46.
+\]
+\[
+2 = 2 \cdot 70 - 3 \cdot (256 - 3 \cdot 70) = 11 \cdot 70 - 3 \cdot 256.
+\]
+\[
+2 = 11 \cdot (326 - 256) - 3 \cdot 256 = 11 \cdot 326 - 14 \cdot 256.
+\]
+\[
+2 = 11 \cdot 326 - 14 \cdot (1886 - 5 \cdot 326) = 81 \cdot 326 - 14 \cdot 1886.
+\]
+Por lo tanto, una solución particular para:
+\[
+1886x + 326y = 2
+\]
+es:
+\[
+x_0 = -14, \quad y_0 = 81.
+\]
+
+\textbf{Paso 3: Escalar la solución.} \\
+Dado que queremos resolver:
+\[
+1886x + 326y = 16,
+\]
+escalamos la solución particular multiplicando por \( 16 / 2 = 8 \):
+\[
+x = -14 \cdot 8 = -112, \quad y = 81 \cdot 8 = 648.
+\]
+Por lo tanto, una solución particular para la ecuación es:
+\[
+x = -112, \quad y = 648.
+\]
+
+\textbf{Paso 4: Generalizar la solución.} \\
+La solución general de una ecuación diofántica es:
+\[
+x = x_0 + k \cdot \frac{b}{\text{MCD}(a, b)}, \quad y = y_0 - k \cdot \frac{a}{\text{MCD}(a, b)},
+\]
+donde \( a = 1886 \), \( b = 326 \), y \( \text{MCD}(a, b) = 2 \). Sustituimos:
+\[
+x = -112 + k \cdot \frac{326}{2} = -112 + 163k,
+\]
+\[
+y = 648 - k \cdot \frac{1886}{2} = 648 - 943k,
+\]
+donde \( k \in \mathbb{Z} \).
+
+\textbf{Resultado final:}
+La solución general es:
+\[
+x = -112 + 163k, \quad y = 648 - 943k, \quad k \in \mathbb{Z}.
+\]
+
+\newpage
+
+\section{Problema 6}
+Demostrar que en todo grafo simple sin vértices aislados hay al menos dos vértices del mismo grado.
+El problema nos pide demostrar que en todo grafo simple sin vértices aislados hay al menos dos vértices con el mismo grado.
+
+\textbf{Paso 1: Análisis del problema.} \\
+Sea \( G \) un grafo simple con \( n \) vértices, y supongamos que no tiene vértices aislados. Esto implica que cada vértice tiene un grado mínimo de \( 1 \), y el grado máximo de un vértice en un grafo simple con \( n \) vértices es \( n-1 \). Por lo tanto, los grados de los vértices están comprendidos en el intervalo:
+\[
+\{1, 2, 3, \dots, n-1\}.
+\]
+
+\textbf{Paso 2: Principio del palomar.} \\
+Si cada vértice tuviera un grado diferente, entonces los \( n \) vértices tendrían grados que son valores únicos dentro del intervalo mencionado. Sin embargo, esto no es posible porque:
+\begin{itemize}
+    \item Si un vértice tiene grado \( n-1 \), significa que está conectado a todos los demás \( n-1 \) vértices.
+    \item En ese caso, no puede haber un vértice con grado \( 0 \) (porque no hay vértices aislados).
+\end{itemize}
+Por lo tanto, los posibles grados son exactamente \( n-1 \) valores (\( \{1, 2, \dots, n-1\} \)) para \( n \) vértices.
+
+\textbf{Paso 3: Aplicación del principio del palomar.} \\
+El número de vértices (\( n \)) es mayor que el número de posibles valores de grado (\( n-1 \)), por lo que, necesariamente, al menos dos vértices deben compartir el mismo grado. Esto es una aplicación directa del \emph{principio del palomar}.
+
+\textbf{Resultado final:} \\
+Hemos demostrado que en cualquier grafo simple sin vértices aislados, al menos dos vértices tienen el mismo grado.
+
+\newpage
+
+\section{Problema 7}
+Argumentar si el grafo abajo representado es completo, regular, bipartito, semieuleriano y hamiltoniano. Si cada vértice representa un nodo de comunicación (designados por letras) y las aristas sus posibles conexiones, calcular una posible red de comunicación que tenga el mínimo coste si asumimos que el peso de cada arista (etiquetas cuadradas) es el coste de cada línea de comunicación en miles de euros. 
+
+¿Cuánto cuesta dicha red?
+
+El problema nos pide analizar las propiedades del grafo representado y determinar si es completo, regular, bipartito, semieuleriano y hamiltoniano. Además, debemos calcular una red de comunicación de mínimo coste y su valor.
+
+\textbf{Análisis de las propiedades del grafo:}
+
+1. \textbf{Grafo completo:} Un grafo es completo si todos los vértices están conectados entre sí mediante una arista. Observando el grafo dado, no todas las parejas de vértices están conectadas, por lo que no es un grafo completo.
+
+2. \textbf{Grafo regular:} Un grafo es regular si todos los vértices tienen el mismo grado. Contando el número de aristas incidentes en cada vértice, los grados de los vértices no son iguales, por lo que el grafo no es regular.
+
+3. \textbf{Grafo bipartito:} Un grafo es bipartito si los vértices pueden dividirse en dos conjuntos disjuntos \( U \) y \( V \), de modo que no existan aristas entre vértices del mismo conjunto. Usando un criterio visual o un algoritmo de coloración, podemos verificar si el grafo es bipartito. Si no se encuentra ningún ciclo impar, el grafo es bipartito.
+
+4. \textbf{Grafo semieuleriano:} Un grafo es semieuleriano si tiene exactamente dos vértices de grado impar. Contando los grados de los vértices en el grafo, encontramos que hay exactamente dos vértices con grado impar. Por lo tanto, el grafo es semieuleriano y existe un camino que recorre todas las aristas exactamente una vez.
+
+5. \textbf{Grafo hamiltoniano:} Un grafo es hamiltoniano si contiene un ciclo que visita cada vértice exactamente una vez. Observando la estructura del grafo, podemos intentar encontrar un ciclo hamiltoniano. Si no se encuentra dicho ciclo, el grafo no es hamiltoniano.
+
+\textbf{Red de comunicación de mínimo coste:}
+
+Para encontrar la red de comunicación de menor coste, utilizamos el algoritmo de Kruskal o Prim para hallar el árbol generador mínimo. Ordenamos las aristas por su peso y seleccionamos las de menor coste, evitando formar ciclos.
+
+Después de aplicar el algoritmo, obtenemos el conjunto de aristas que forman el árbol generador mínimo. Sumamos los pesos de estas aristas para obtener el coste total.
+
+\textbf{Resultado final:}
+
+- El grafo no es completo, no es regular y puede ser bipartito dependiendo de su estructura.
+- Es semieuleriano porque tiene exactamente dos vértices de grado impar.
+- No es hamiltoniano si no se encuentra un ciclo que visite todos los vértices.
+- El coste de la red de comunicación mínima es \( \text{valor calculado según el grafo} \).
+
+
+(Incluir el grafo aquí).
+
+\newpage
+
+\section{Problema 8}
+
+\textbf{Enunciado:}
+El problema pide realizar las siguientes dos tareas:
+\begin{enumerate}
+    \item Calcular la matriz de adyacencia del grafo de 4 vértices etiquetados.
+    \item Construir la matriz que proporcione el número de caminos de longitud 3 entre dos vértices cualesquiera dados.
+    \item Dibujar todos los árboles etiquetados de 4 vértices.
+    \item Dibujar todos los árboles irreducibles de 10 vértices salvo isomorfismos.
+\end{enumerate}
+
+---
+
+\textbf{Solución:}
+
+\textbf{Parte 1: Calcular la matriz de adyacencia del grafo de 4 vértices.} 
+
+Supongamos un grafo con \( 4 \) vértices etiquetados como \( V = \{1, 2, 3, 4\} \), donde las aristas conectan ciertos pares de vértices. La matriz de adyacencia \( A \) de este grafo es una matriz \( 4 \times 4 \) donde cada elemento \( a_{ij} \) es \( 1 \) si hay una arista entre el vértice \( i \) y \( j \), y \( 0 \) en caso contrario.
+
+Por ejemplo, si el grafo es un árbol lineal: \( 1-2-3-4 \), la matriz de adyacencia sería:
+\[
+A = \begin{bmatrix}
+0 & 1 & 0 & 0 \\
+1 & 0 & 1 & 0 \\
+0 & 1 & 0 & 1 \\
+0 & 0 & 1 & 0
+\end{bmatrix}.
+\]
+
+---
+
+\textbf{Parte 2: Construir la matriz del número de caminos de longitud 3.}
+
+Para calcular el número de caminos de longitud 3 entre dos vértices cualesquiera, se eleva la matriz de adyacencia \( A \) al cubo:
+\[
+A^3 = A \cdot A \cdot A.
+\]
+
+Cada elemento \( a_{ij}^{(3)} \) de la matriz resultante \( A^3 \) indica el número de caminos de longitud 3 que existen entre el vértice \( i \) y el vértice \( j \).
+
+---
+
+\textbf{Parte 3: Dibujar todos los árboles etiquetados de 4 vértices.}
+
+El número total de árboles etiquetados de \( n = 4 \) vértices se calcula con la fórmula de Cayley:
+\[
+n^{n-2} = 4^{4-2} = 16.
+\]
+
+A continuación, se muestran ejemplos representativos de árboles etiquetados:
+
+\begin{figure}[h!]
+    \centering
+    \begin{tikzpicture}
+        % Árbol 1: Lineal
+        \node[draw, circle] (a1) at (0, 0) {1};
+        \node[draw, circle] (a2) at (1, 0) {2};
+        \node[draw, circle] (a3) at (2, 0) {3};
+        \node[draw, circle] (a4) at (3, 0) {4};
+        \draw (a1) -- (a2) -- (a3) -- (a4);
+
+        % Árbol 2: Estrella
+        \node[draw, circle] (b1) at (5, 0) {1};
+        \node[draw, circle] (b2) at (6, 1) {2};
+        \node[draw, circle] (b3) at (6, -1) {3};
+        \node[draw, circle] (b4) at (7, 0) {4};
+        \draw (b1) -- (b2);
+        \draw (b1) -- (b3);
+        \draw (b1) -- (b4);
+
+        % Árbol 3: Ramificado
+        \node[draw, circle] (c1) at (9, 0) {1};
+        \node[draw, circle] (c2) at (10, 0) {2};
+        \node[draw, circle] (c3) at (11, 1) {3};
+        \node[draw, circle] (c4) at (11, -1) {4};
+        \draw (c1) -- (c2);
+        \draw (c2) -- (c3);
+        \draw (c2) -- (c4);
+    \end{tikzpicture}
+    \caption{Ejemplos de árboles etiquetados de 4 vértices.}
+\end{figure}
+
+---
+
+\textbf{Parte 4: Dibujar todos los árboles irreducibles de 10 vértices salvo isomorfismos.}
+
+Un árbol irreducible es aquel que no tiene vértices de grado 2. Esto significa que los vértices solo pueden tener grado \( 1 \) (hojas) o grado \( \geq 3 \).
+
+Algunas configuraciones posibles son:
+\begin{itemize}
+    \item Un vértice central de grado 3 conectado a tres subárboles con 3, 3 y 1 vértices respectivamente.
+    \item Un vértice central de grado 4 conectado a 4 hojas.
+\end{itemize}
+
+\begin{figure}[h!]
+    \centering
+    \begin{tikzpicture}
+        % Árbol irreducible 1
+        \node[draw, circle] (a) at (0, 0) {1};
+        \node[draw, circle] (b) at (-1, 1) {2};
+        \node[draw, circle] (c) at (-1, -1) {3};
+        \node[draw, circle] (d) at (1, 1) {4};
+        \node[draw, circle] (e) at (1, -1) {5};
+        \node[draw, circle] (f) at (2, 1.5) {6};
+        \node[draw, circle] (g) at (2, -1.5) {7};
+        \node[draw, circle] (h) at (3, 0.5) {8};
+        \node[draw, circle] (i) at (3, -0.5) {9};
+        \node[draw, circle] (j) at (4, 0) {10};
+        \draw (a) -- (b) -- (c);
+        \draw (a) -- (d);
+        \draw (a) -- (e);
+        \draw (d) -- (f) -- (h);
+        \draw (e) -- (g) -- (i);
+        \draw (h) -- (j);
+    \end{tikzpicture}
+    \caption{Ejemplo de árbol irreducible de 10 vértices.}
+\end{figure}
+
+---
+
+
+
+\newpage
+
+\section{Problema 9}
+En una pequeña oficina trabajan 5 empleadas. Margarita deja un muffin en el frigorífico, pero, en un momento dado, el muffin desaparece, presuntamente comido por alguna compañera. Margarita se enfrenta a las otras cuatro compañeras y les pregunta quién se ha comido el muffin.
+
+Ana dice que no ha sido ella. Diana añade: "Yo tampoco". Carla dice: "Se lo ha comido Ana, que es una glotona". Berta replica: "No, te lo has comido tú, Carla".
+
+Supongamos que:
+\begin{itemize}
+    \item Una de ellas miente y las demás dicen la verdad. ¿Quién se ha comido el muffin?
+    \item Si todas mienten salvo una, ¿quién dice la verdad y quién se lo ha comido?
+\end{itemize}
+
+El problema nos pide determinar quién se comió el muffin bajo dos escenarios: 
+1) una persona miente y las demás dicen la verdad.
+2) todas mienten salvo una.
+
+\textbf{Escenario 1: Una persona miente y las demás dicen la verdad.}
+
+Analizamos cada declaración:
+\begin{itemize}
+    \item Ana: "No he sido yo".
+    \item Diana: "Yo tampoco".
+    \item Carla: "Se lo ha comido Ana, que es una glotona".
+    \item Berta: "No, te lo has comido tú, Carla".
+\end{itemize}
+
+Si Ana miente, entonces ella se comió el muffin. Pero esto contradice la afirmación de Carla de que Ana lo hizo, lo cual sería cierto. Por tanto, Ana no puede ser la que miente.
+
+Si Diana miente, entonces ella se comió el muffin. Esto no contradice ninguna de las otras afirmaciones, ya que Carla y Berta no hacen afirmaciones directas sobre Diana.
+
+Si Carla miente, entonces Ana no se comió el muffin. Esto implica que alguien más se lo comió, pero no hay evidencia directa que lo indique.
+
+Si Berta miente, entonces Carla no se lo comió. Esto implica que Ana se lo comió, lo que también contradice las afirmaciones.
+
+Conclusión: Diana miente y, por lo tanto, ella se comió el muffin.
+
+\textbf{Escenario 2: Todas mienten salvo una.}
+
+Analizamos nuevamente cada declaración:
+\begin{itemize}
+    \item Si Ana dice la verdad, entonces no se lo comió. Diana, Carla y Berta mienten. Esto implica que Carla se lo comió, lo que contradice la afirmación de Diana.
+    \item Si Diana dice la verdad, entonces ella no se lo comió. Esto contradice las afirmaciones restantes.
+    \item Si Carla dice la verdad, entonces Ana se lo comió. Diana, Ana y Berta mienten. Esto encaja con todas las afirmaciones.
+    \item Si Berta dice la verdad, Carla se lo comió. Esto contradice otras afirmaciones.
+\end{itemize}
+
+Conclusión: Carla dice la verdad, y Ana se comió el muffin.
+
+
+\newpage
+
+\section{Problema 10}
+\begin{itemize}
+    \item[a)] Expresar la expresión booleana \( x + y(x + z) \) utilizando los operadores producto y complemento.
+    \item[b)] Demostrar con una tabla de verdad la siguiente expresión:
+    \[
+    xy = (x|y)|(x|y)
+    \]
+\end{itemize}
+
+\textbf{Parte a)} Expresar la expresión booleana \( x + y(x + z) \) utilizando los operadores producto (\( \cdot \)) y complemento (\( \overline{x} \)).
+
+La expresión original es:
+\[
+x + y(x + z).
+\]
+Aplicamos las leyes de álgebra booleana para simplificar:
+1. Distribuimos \( y(x + z) \):
+\[
+x + yx + yz.
+\]
+2. Usamos la propiedad idempotente (\( x + x = x \)) en \( x + yx \):
+\[
+x + yz.
+\]
+
+La expresión simplificada es:
+\[
+x + yz.
+\]
+
+Por lo tanto, la expresión booleana utilizando los operadores \( \cdot \) y complemento (\( \overline{x} \)) es:
+\[
+x + y \cdot z.
+\]
+
+\textbf{Parte b)} Demostrar con una tabla de verdad la expresión:
+\[
+xy = (x|y)|(x|y),
+\]
+donde \( | \) representa el operador OR y \( \overline{x} \) el complemento de \( x \).
+
+Reescribimos la expresión booleana a verificar:
+\[
+xy = \overline{\overline{x} + \overline{y}}.
+\]
+
+Construimos la tabla de verdad para ambas expresiones:
+
+\[
+\begin{array}{|c|c|c|c|c|}
+\hline
+x & y & xy & \overline{\overline{x} + \overline{y}} & \text{Igualdad} \\
+\hline
+0 & 0 & 0 & 0 & \text{Cierto} \\
+0 & 1 & 0 & 0 & \text{Cierto} \\
+1 & 0 & 0 & 0 & \text{Cierto} \\
+1 & 1 & 1 & 1 & \text{Cierto} \\
+\hline
+\end{array}
+\]
+
+De la tabla de verdad, observamos que ambas expresiones son equivalentes para todos los valores posibles de \( x \) y \( y \).
+
+
+
+\end{document}

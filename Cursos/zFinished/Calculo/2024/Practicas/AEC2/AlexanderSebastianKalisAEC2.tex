@@ -1,0 +1,1005 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+
+% Configuración de márgenes
+\geometry{left=2.5cm, right=2.5cm, top=3cm, bottom=3cm}
+
+% Encabezado y pie de página
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Universidad a Distancia de Madrid (UDIMA)}
+\fancyhead[R]{Análisis Matemático}
+\fancyfoot[C]{\thepage}
+
+% Título del documento
+\title{\textbf{Actividad de Evaluación Continua (AEC1)}\\[0.5cm]
+\Large{Análisis Matemático}}
+\author{Alumno: Alexander Sebastian Kalis \\ Profesor: Dr. Juan José Moreno García}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\newpage
+\tableofcontents
+\newpage
+
+\section{Problema 1}
+\textbf{Enunciado:} Hallar los tres puntos críticos, y determinar su naturaleza, de la función:
+\[
+f(x, y) = x^2 y - x^2 - 2y^2 + 2.
+\]
+
+\subsection*{Solución}
+Para determinar los puntos críticos, seguimos estos pasos:
+
+\subsubsection*{Paso 1: Cálculo de las derivadas parciales}
+\[
+f_x = \frac{\partial f}{\partial x} = 2xy - 2x, \quad f_y = \frac{\partial f}{\partial y} = x^2 - 4y.
+\]
+
+Los puntos críticos se encuentran resolviendo el sistema de ecuaciones:
+\[
+f_x = 0, \quad f_y = 0.
+\]
+
+\subsubsection*{Paso 2: Resolución del sistema}
+\begin{align*}
+& f_x = 2x(y - 1) = 0, \\
+& f_y = x^2 - 4y = 0.
+\end{align*}
+
+De la primera ecuación:
+\[
+x = 0 \quad \text{o} \quad y = 1.
+\]
+
+\textbf{Caso 1:} Si $x = 0$, sustituimos en $f_y = x^2 - 4y = 0$:
+\[
+0^2 - 4y = 0 \implies y = 0.
+\]
+Por lo tanto, un punto crítico es $(0, 0)$.
+
+\textbf{Caso 2:} Si $y = 1$, sustituimos en $f_y = x^2 - 4y = 0$:
+\[
+x^2 - 4(1) = 0 \implies x^2 = 4 \implies x = \pm 2.
+\]
+Por lo tanto, los puntos críticos adicionales son $(2, 1)$ y $(-2, 1)$.
+
+\subsubsection*{Paso 3: Determinación de la naturaleza de los puntos críticos}
+Calculamos las segundas derivadas:
+\[
+f_{xx} = \frac{\partial^2 f}{\partial x^2} = 2y - 2, \quad f_{yy} = \frac{\partial^2 f}{\partial y^2} = -4, \quad f_{xy} = \frac{\partial^2 f}{\partial x \partial y} = 2x.
+\]
+
+El determinante de la matriz hessiana es:
+\[
+H = f_{xx}f_{yy} - (f_{xy})^2.
+\]
+
+\textbf{En $(0, 0)$:}
+\[
+f_{xx} = -2, \quad f_{yy} = -4, \quad f_{xy} = 0.
+\]
+\[
+H = (-2)(-4) - (0)^2 = 8 > 0.
+\]
+Dado que $f_{xx} < 0$, $(0, 0)$ es un \textbf{máximo relativo}.
+
+\textbf{En $(2, 1)$ y $(-2, 1)$:}
+\[
+f_{xx} = 0, \quad f_{yy} = -4, \quad f_{xy} = 4 \text{ para } (2, 1), \text{ y } f_{xy} = -4 \text{ para } (-2, 1).
+\]
+\[
+H = (0)(-4) - (4)^2 = -16 < 0.
+\]
+En ambos casos, $(2, 1)$ y $(-2, 1)$ son \textbf{sillas}.
+
+\subsection*{Conclusión}
+Los puntos críticos son:
+\[
+(0, 0): \text{máximo relativo}, \quad (2, 1): \text{silla}, \quad (-2, 1): \text{silla}.
+\]
+
+\section{Problema 2}
+\textbf{Enunciado:} Hallar los máximos y mínimos (hay cuatro en total) que alcanza la función:
+\[
+f(x, y) = 3xy,
+\]
+cuando \((x, y)\) recorre la elipse:
+\[
+x^2 + y^2 + xy = 3.
+\]
+
+\subsection*{Solución}
+Para resolver el problema, seguimos estos pasos:
+
+\subsubsection*{Paso 1: Aplicación del método de Lagrange}
+Queremos encontrar los extremos de \(f(x, y)\) sujetos a la restricción \(g(x, y) = x^2 + y^2 + xy - 3 = 0\). Utilizamos el método de los multiplicadores de Lagrange:
+\[
+\mathcal{L}(x, y, \lambda) = 3xy + \lambda(x^2 + y^2 + xy - 3).
+\]
+
+Calculamos las derivadas parciales:
+\[
+\frac{\partial \mathcal{L}}{\partial x} = 3y + \lambda(2x + y) = 0,
+\]
+\[
+\frac{\partial \mathcal{L}}{\partial y} = 3x + \lambda(2y + x) = 0,
+\]
+\[
+\frac{\partial \mathcal{L}}{\partial \lambda} = x^2 + y^2 + xy - 3 = 0.
+\]
+
+\subsubsection*{Paso 2: Resolución del sistema de ecuaciones}
+El sistema de ecuaciones es:
+\[
+3y + \lambda(2x + y) = 0, \quad 3x + \lambda(2y + x) = 0, \quad x^2 + y^2 + xy = 3.
+\]
+
+De la primera ecuación:
+\[
+\lambda = -\frac{3y}{2x + y} \quad \text{(si \(2x + y \neq 0\))}.
+\]
+
+Sustituyendo en la segunda ecuación:
+\[
+3x - \frac{3y(2y + x)}{2x + y} = 0 \implies 3x(2x + y) - 3y(2y + x) = 0,
+\]
+\[
+6x^2 + 3xy - 6y^2 - 3xy = 0 \implies 6x^2 - 6y^2 = 0 \implies x^2 = y^2.
+\]
+
+Por lo tanto, \(x = y\) o \(x = -y\).
+
+\textbf{Caso 1: \(x = y\)}
+Sustituyendo en \(x^2 + y^2 + xy = 3\):
+\[
+x^2 + x^2 + x^2 = 3 \implies 3x^2 = 3 \implies x^2 = 1 \implies x = \pm 1.
+\]
+Esto da los puntos \((1, 1)\) y \((-1, -1)\).
+
+\textbf{Caso 2: \(x = -y\)}
+Sustituyendo en \(x^2 + y^2 + xy = 3\):
+\[
+x^2 + x^2 - x^2 = 3 \implies x^2 = 3 \implies x = \pm \sqrt{3}.
+\]
+Esto da los puntos \((\sqrt{3}, -\sqrt{3})\) y \((-\sqrt{3}, \sqrt{3})\).
+
+\subsubsection*{Paso 3: Evaluación de \(f(x, y)\) en los puntos críticos}
+Calculamos \(f(x, y) = 3xy\) en los puntos críticos:
+\begin{itemize}
+    \item En \((1, 1)\): \(f(1, 1) = 3(1)(1) = 3\).
+    \item En \((-1, -1)\): \(f(-1, -1) = 3(-1)(-1) = 3\).
+    \item En \((\sqrt{3}, -\sqrt{3})\): \(f(\sqrt{3}, -\sqrt{3}) = 3(\sqrt{3})(-\sqrt{3}) = -9\).
+    \item En \((-\sqrt{3}, \sqrt{3})\): \(f(-\sqrt{3}, \sqrt{3}) = 3(-\sqrt{3})(\sqrt{3}) = -9\).
+\end{itemize}
+
+\subsection*{Conclusión}
+Los máximos de \(f(x, y)\) son:
+\[
+f(1, 1) = 3 \quad \text{y} \quad f(-1, -1) = 3.
+\]
+Los mínimos de \(f(x, y)\) son:
+\[
+f(\sqrt{3}, -\sqrt{3}) = -9 \quad \text{y} \quad f(-\sqrt{3}, \sqrt{3}) = -9.
+\]
+
+
+\section{Problema 3}
+\textbf{Enunciado:} Calcular la siguiente integral:
+\[
+I = \int \int_S \frac{1}{4}xy \, dy \, dx,
+\]
+donde \(S\) es la región limitada por las rectas \(y = x + 1\), \(y = 3x - 1\) y el eje \(y\).
+
+\subsection*{Solución}
+\subsubsection*{Paso 1: Identificación de la región \(S\)}
+La región \(S\) está limitada por:
+\begin{itemize}
+    \item La recta \(y = x + 1\),
+    \item La recta \(y = 3x - 1\),
+    \item El eje \(y\), es decir, \(x = 0\).
+\end{itemize}
+
+Los puntos de intersección son:
+\begin{enumerate}
+    \item Intersección entre \(y = x + 1\) y \(y = 3x - 1\):
+    \[
+    x + 1 = 3x - 1 \implies 2x = 2 \implies x = 1.
+    \]
+    Sustituyendo \(x = 1\) en \(y = x + 1\), obtenemos \(y = 2\). Punto: \((1, 2)\).
+
+    \item Intersección de \(y = x + 1\) con el eje \(y\) (\(x = 0\)):
+    \[
+    y = 0 + 1 = 1. \quad \text{Punto: \((0, 1)\)}.
+    \]
+
+    \item Intersección de \(y = 3x - 1\) con el eje \(y\) (\(x = 0\)):
+    \[
+    y = 3(0) - 1 = -1. \quad \text{Punto: \((0, -1)\)}.
+    \]
+\end{enumerate}
+
+La región es un triángulo con vértices en \((0, -1)\), \((0, 1)\) y \((1, 2)\).
+
+\subsubsection*{Paso 2: Determinación de los límites de integración}
+El triángulo se divide según las rectas \(y = x + 1\) y \(y = 3x - 1\):
+\begin{itemize}
+    \item Para \(x \in [0, 1]\), \(y\) varía entre \(y = 3x - 1\) (curva inferior) y \(y = x + 1\) (curva superior).
+\end{itemize}
+
+\subsubsection*{Paso 3: Escritura de la integral}
+La integral es:
+\[
+I = \frac{1}{4} \int_0^1 \int_{3x-1}^{x+1} xy \, dy \, dx.
+\]
+
+\subsubsection*{Paso 4: Resolución de la integral interna}
+Primero resolvemos la integral respecto a \(y\):
+\[
+\int_{3x-1}^{x+1} xy \, dy = x \int_{3x-1}^{x+1} y \, dy.
+\]
+La integral de \(y\) es:
+\[
+\int y \, dy = \frac{y^2}{2}.
+\]
+Evaluando en los límites \(y = x+1\) y \(y = 3x-1\):
+\[
+\int_{3x-1}^{x+1} y \, dy = \frac{(x+1)^2}{2} - \frac{(3x-1)^2}{2}.
+\]
+Expandiendo:
+\[
+(x+1)^2 = x^2 + 2x + 1, \quad (3x-1)^2 = 9x^2 - 6x + 1.
+\]
+Sustituyendo:
+\[
+\int_{3x-1}^{x+1} y \, dy = \frac{1}{2} \left[(x^2 + 2x + 1) - (9x^2 - 6x + 1)\right].
+\]
+Simplificando:
+\[
+\int_{3x-1}^{x+1} y \, dy = \frac{1}{2} \left(-8x^2 + 8x\right) = 4x - 4x^2.
+\]
+
+Multiplicamos por \(x\):
+\[
+x \int_{3x-1}^{x+1} y \, dy = x(4x - 4x^2) = 4x^2 - 4x^3.
+\]
+
+\subsubsection*{Paso 5: Resolución de la integral externa}
+La integral externa es:
+\[
+I = \frac{1}{4} \int_0^1 (4x^2 - 4x^3) \, dx.
+\]
+Separando términos:
+\[
+I = \frac{1}{4} \left[ \int_0^1 4x^2 \, dx - \int_0^1 4x^3 \, dx \right].
+\]
+
+Calculamos cada término:
+\[
+\int_0^1 4x^2 \, dx = 4 \cdot \frac{x^3}{3} \Big|_0^1 = \frac{4}{3},
+\]
+\[
+\int_0^1 4x^3 \, dx = 4 \cdot \frac{x^4}{4} \Big|_0^1 = 1.
+\]
+
+Sustituyendo y concluyendo:
+\[
+I = \frac{1}{4} \left(\frac{4}{3} - 1\right) = \frac{1}{4} \cdot \frac{1}{3} = \frac{1}{12}.
+\]
+
+
+\section{Problema 4}
+\textbf{Enunciado:} Calcular la integral:
+\[
+I = \int \int_D (4x + 2) \, dA,
+\]
+donde \(D\) es la región encerrada por las curvas \(y = x^2\) y \(y = 2x\).
+
+\subsection*{Solución}
+\subsubsection*{Paso 1: Identificación de la región \(D\)}
+La región \(D\) está limitada por:
+\begin{itemize}
+    \item La parábola \(y = x^2\),
+    \item La recta \(y = 2x\).
+\end{itemize}
+
+Determinamos los puntos de intersección resolviendo \(x^2 = 2x\):
+\[
+x^2 - 2x = 0 \implies x(x - 2) = 0 \implies x = 0 \, \text{o} \, x = 2.
+\]
+Por lo tanto, los límites de integración en \(x\) son \(x \in [0, 2]\).
+
+\subsubsection*{Paso 2: Escritura de la integral}
+Para cada \(x \in [0, 2]\), el límite inferior de \(y\) es \(y = x^2\) y el límite superior es \(y = 2x\). La integral se escribe como:
+\[
+I = \int_0^2 \int_{x^2}^{2x} (4x + 2) \, dy \, dx.
+\]
+
+\subsubsection*{Paso 3: Resolución de la integral interna}
+La integral respecto a \(y\) es:
+\[
+\int_{x^2}^{2x} (4x + 2) \, dy = (4x + 2) \int_{x^2}^{2x} 1 \, dy = (4x + 2) \left[ y \right]_{y = x^2}^{y = 2x}.
+\]
+Evaluamos:
+\[
+\int_{x^2}^{2x} (4x + 2) \, dy = (4x + 2) \left[ 2x - x^2 \right] = (4x + 2)(2x - x^2).
+\]
+Expandiendo:
+\[
+\int_{x^2}^{2x} (4x + 2) \, dy = (4x + 2)(2x) - (4x + 2)(x^2) = 8x^2 + 4x - 4x^3 - 2x^2.
+\]
+Simplificando:
+\[
+\int_{x^2}^{2x} (4x + 2) \, dy = 6x^2 - 4x^3 + 4x.
+\]
+
+\subsubsection*{Paso 4: Resolución de la integral externa}
+La integral respecto a \(x\) es:
+\[
+I = \int_0^2 \left( 6x^2 - 4x^3 + 4x \right) \, dx.
+\]
+Separando términos:
+\[
+I = \int_0^2 6x^2 \, dx - \int_0^2 4x^3 \, dx + \int_0^2 4x \, dx.
+\]
+
+Calculamos cada término:
+\[
+\int_0^2 6x^2 \, dx = 6 \int_0^2 x^2 \, dx = 6 \left[ \frac{x^3}{3} \right]_0^2 = 6 \cdot \frac{8}{3} = 16,
+\]
+\[
+\int_0^2 4x^3 \, dx = 4 \int_0^2 x^3 \, dx = 4 \left[ \frac{x^4}{4} \right]_0^2 = 4 \cdot \frac{16}{4} = 16,
+\]
+\[
+\int_0^2 4x \, dx = 4 \int_0^2 x \, dx = 4 \left[ \frac{x^2}{2} \right]_0^2 = 4 \cdot 2 = 8.
+\]
+
+Sustituyendo:
+\[
+I = 16 - 16 + 8 = 8.
+\]
+
+
+\section{Problema 5}
+\textbf{Enunciado:} Usando el cambio a coordenadas esféricas, calcular la integral:
+\[
+I = \iiint_{\Omega} e^{-\sqrt{x^2 + y^2 + z^2}^3} \, dx \, dy \, dz,
+\]
+donde \(\Omega\) es todo \(\mathbb{R}^3\).
+
+\subsection*{Solución}
+\subsubsection*{Paso 1: Cambio a coordenadas esféricas}
+Recordemos las expresiones en coordenadas esféricas:
+\[
+x = \rho \sin\phi \cos\theta, \quad y = \rho \sin\phi \sin\theta, \quad z = \rho \cos\phi,
+\]
+donde:
+\begin{itemize}
+    \item \(\rho \geq 0\) es la distancia radial,
+    \item \(\phi \in [0, \pi]\) es el ángulo polar,
+    \item \(\theta \in [0, 2\pi)\) es el ángulo azimutal.
+\end{itemize}
+
+El elemento de volumen en coordenadas esféricas es:
+\[
+dx \, dy \, dz = \rho^2 \sin\phi \, d\rho \, d\phi \, d\theta.
+\]
+
+La integral se convierte en:
+\[
+I = \int_0^{2\pi} \int_0^\pi \int_0^\infty e^{-\rho^3} \rho^2 \sin\phi \, d\rho \, d\phi \, d\theta.
+\]
+
+\subsubsection*{Paso 2: Separación de variables}
+Debido a la simetría del integrando, la integral se puede separar:
+\[
+I = \left( \int_0^{2\pi} d\theta \right) \left( \int_0^\pi \sin\phi \, d\phi \right) \left( \int_0^\infty e^{-\rho^3} \rho^2 \, d\rho \right).
+\]
+
+Calculamos cada término por separado:
+
+\textbf{1. Integral respecto a \(\theta\):}
+\[
+\int_0^{2\pi} d\theta = 2\pi.
+\]
+
+\textbf{2. Integral respecto a \(\phi\):}
+\[
+\int_0^\pi \sin\phi \, d\phi = \left[ -\cos\phi \right]_0^\pi = -\cos(\pi) + \cos(0) = 2.
+\]
+
+\textbf{3. Integral respecto a \(\rho\):}
+Sea \(u = \rho^3\), entonces \(du = 3\rho^2 \, d\rho\). Esto implica:
+\[
+\int_0^\infty e^{-\rho^3} \rho^2 \, d\rho = \frac{1}{3} \int_0^\infty e^{-u} \, du.
+\]
+La integral de \(e^{-u}\) es:
+\[
+\int_0^\infty e^{-u} \, du = 1.
+\]
+Por lo tanto:
+\[
+\int_0^\infty e^{-\rho^3} \rho^2 \, d\rho = \frac{1}{3}.
+\]
+
+\subsubsection*{Paso 3: Resultado final}
+Combinando los resultados:
+\[
+I = (2\pi)(2)\left(\frac{1}{3}\right) = \frac{4\pi}{3}.
+\]
+
+
+\section{Problema 6}
+\textbf{Enunciado:} Sea \(\Omega\) la región limitada por el plano \(z = 2\) y por el paraboloide cuya superficie es descrita por:
+\[
+2z = x^2 + y^2.
+\]
+Calcular:
+\[
+I = \iiint_{\Omega} (x^2 + y^2) \, dx \, dy \, dz.
+\]
+
+\subsection*{Solución}
+\subsection*{Paso 1: Descripción de la región}
+La región \(\Omega\) está limitada por:
+\begin{itemize}
+    \item El paraboloide \(2z = x^2 + y^2\), que reescribimos como \(z = \frac{1}{2}(x^2 + y^2)\),
+    \item El plano \(z = 2\).
+\end{itemize}
+
+La intersección entre el paraboloide y el plano \(z = 2\) ocurre cuando:
+\[
+z = 2 \implies 2z = x^2 + y^2 \implies x^2 + y^2 = 4.
+\]
+Por lo tanto, la proyección en el plano \(xy\) es un círculo de radio \(2\) centrado en el origen.
+
+\subsection*{Paso 2: Cambio a coordenadas cilíndricas}
+En coordenadas cilíndricas:
+\[
+x = r\cos\theta, \quad y = r\sin\theta, \quad z = z, \quad dx \, dy \, dz = r \, dr \, d\theta \, dz.
+\]
+La ecuación del paraboloide es:
+\[
+z = \frac{1}{2}r^2.
+\]
+
+La integral en coordenadas cilíndricas se convierte en:
+\[
+I = \int_0^{2\pi} \int_0^2 \int_{\frac{1}{2}r^2}^2 r^2 \cdot r \, dz \, dr \, d\theta.
+\]
+
+\subsection*{Paso 3: Resolución de la integral}
+1. Integral respecto a \(z\):
+\[
+\int_{\frac{1}{2}r^2}^2 r^3 \, dz = r^3 \int_{\frac{1}{2}r^2}^2 dz = r^3 \left[z\right]_{\frac{1}{2}r^2}^2 = r^3 \left(2 - \frac{1}{2}r^2\right).
+\]
+Expandiendo:
+\[
+\int_{\frac{1}{2}r^2}^2 r^3 \, dz = 2r^3 - \frac{1}{2}r^5.
+\]
+
+2. Integral respecto a \(r\):
+\[
+\int_0^2 \left(2r^3 - \frac{1}{2}r^5\right) \, dr = 2 \int_0^2 r^3 \, dr - \frac{1}{2} \int_0^2 r^5 \, dr.
+\]
+Calculamos cada término:
+\[
+\int_0^2 r^3 \, dr = \left[\frac{r^4}{4}\right]_0^2 = \frac{16}{4} = 4,
+\]
+\[
+\int_0^2 r^5 \, dr = \left[\frac{r^6}{6}\right]_0^2 = \frac{64}{6} = \frac{32}{3}.
+\]
+Por lo tanto:
+\[
+\int_0^2 \left(2r^3 - \frac{1}{2}r^5\right) \, dr = 2(4) - \frac{1}{2}\left(\frac{32}{3}\right) = 8 - \frac{16}{3} = \frac{24}{3} - \frac{16}{3} = \frac{8}{3}.
+\]
+
+3. Integral respecto a \(\theta\):
+\[
+\int_0^{2\pi} d\theta = 2\pi.
+\]
+
+4. Combinación de resultados:
+\[
+I = \int_0^{2\pi} \int_0^2 \int_{\frac{1}{2}r^2}^2 r^2 \cdot r \, dz \, dr \, d\theta = \left(\frac{8}{3}\right)(2\pi) = \frac{16\pi}{3}.
+\]
+
+\section{Problema 7}
+\textbf{Enunciado:} Hallar la integral curvilínea:
+\[
+I = \int (x^2 + y^2) \, ds
+\]
+sobre la circunferencia \(x^2 + y^2 = ax\) para \(a > 0\).
+
+\subsection*{Solución}
+\subsubsection*{Paso 1: Ecuación de la circunferencia}
+La ecuación de la circunferencia dada es:
+\[
+x^2 + y^2 = ax.
+\]
+Reorganizando términos:
+\[
+x^2 - ax + y^2 = 0 \implies \left(x - \frac{a}{2}\right)^2 + y^2 = \frac{a^2}{4}.
+\]
+Por lo tanto, es una circunferencia con centro en \(\left(\frac{a}{2}, 0\right)\) y radio \(r = \frac{a}{2}\).
+
+\subsubsection*{Paso 2: Representación paramétrica}
+Usamos la representación paramétrica de la circunferencia:
+\[
+x(t) = \frac{a}{2} + \frac{a}{2}\cos t, \quad y(t) = \frac{a}{2}\sin t, \quad t \in [0, 2\pi].
+\]
+
+El diferencial de arco \(ds\) se calcula como:
+\[
+ds = \sqrt{\left(\frac{dx}{dt}\right)^2 + \left(\frac{dy}{dt}\right)^2} \, dt.
+\]
+Derivando \(x(t)\) e \(y(t)\) respecto a \(t\):
+\[
+\frac{dx}{dt} = -\frac{a}{2}\sin t, \quad \frac{dy}{dt} = \frac{a}{2}\cos t.
+\]
+Por lo tanto:
+\[
+ds = \sqrt{\left(-\frac{a}{2}\sin t\right)^2 + \left(\frac{a}{2}\cos t\right)^2} \, dt = \sqrt{\frac{a^2}{4}(\sin^2 t + \cos^2 t)} \, dt = \frac{a}{2} \, dt.
+\]
+
+\subsubsection*{Paso 3: Evaluación de la integral}
+El integrando es \(x^2 + y^2\). Sustituyendo \(x(t)\) e \(y(t)\):
+\[
+x^2 + y^2 = \left(\frac{a}{2} + \frac{a}{2}\cos t\right)^2 + \left(\frac{a}{2}\sin t\right)^2.
+\]
+Expandiendo:
+\[
+x^2 + y^2 = \frac{a^2}{4} + \frac{a^2}{2}\cos t + \frac{a^2}{4}\cos^2 t + \frac{a^2}{4}\sin^2 t.
+\]
+Usamos \(\cos^2 t + \sin^2 t = 1\):
+\[
+x^2 + y^2 = \frac{a^2}{4} + \frac{a^2}{4} + \frac{a^2}{2}\cos t = \frac{a^2}{2}(1 + \cos t).
+\]
+
+Sustituimos en la integral:
+\[
+I = \int_0^{2\pi} \frac{a^2}{2}(1 + \cos t) \cdot \frac{a}{2} \, dt = \frac{a^3}{4} \int_0^{2\pi} (1 + \cos t) \, dt.
+\]
+
+Dividimos la integral:
+\[
+I = \frac{a^3}{4} \left(\int_0^{2\pi} 1 \, dt + \int_0^{2\pi} \cos t \, dt\right).
+\]
+
+Calculamos cada término:
+\[
+\int_0^{2\pi} 1 \, dt = 2\pi, \quad \int_0^{2\pi} \cos t \, dt = \left[\sin t\right]_0^{2\pi} = 0.
+\]
+
+Por lo tanto:
+\[
+I = \frac{a^3}{4} \cdot 2\pi = \frac{\pi a^3}{2}.
+\]
+
+
+\section{Problema 8}
+\textbf{Enunciado:} 
+Estudiemos el problema de una placa fina homogénea de longitud \(L\) y sección rectangular constante hecha de un material determinado, por ejemplo acero. La coordenada \(x\) se considera a lo largo de la lámina, mientras que \(y(x)\) representa el desplazamiento respecto a la horizontal debido a una fuerza aplicada en un extremo de la placa. 
+
+La teoría de elasticidad establece que el momento de deformación \(M(x)\) es proporcional a la curvatura \(k(x)\) de la curva elástica \(C\). Bajo la aproximación de pequeñas deformaciones, la curvatura se puede aproximar como:
+\[
+k(x) \approx y''(x).
+\]
+
+Además, bajo las condiciones de Euler-Bernoulli:
+\[
+M(x) = k(x)EI,
+\]
+donde \(E\) es el módulo de Young del material y \(I\) es el momento de inercia de la sección rectangular. Se cumple la ecuación diferencial:
+\[
+EI \frac{d^2y}{dx^2} = M(x).
+\]
+Si el momento es causado únicamente por una fuerza \(F\) aplicada en el extremo libre, el momento será:
+\[
+M(x) = F(L - x).
+\]
+
+Finalmente, la ecuación diferencial queda:
+\[
+\frac{d^2y}{dx^2} = \frac{F}{EI}(L - x).
+\]
+
+\subsection*{Solución}
+\subsubsection*{Paso 1: Resolución de la ecuación diferencial}
+Integramos dos veces la ecuación diferencial para hallar \(y(x)\):
+\[
+\frac{d^2y}{dx^2} = \frac{F}{EI}(L - x).
+\]
+Primera integración:
+\[
+\frac{dy}{dx} = \int \frac{F}{EI}(L - x) \, dx = \frac{F}{EI} \left(Lx - \frac{x^2}{2}\right) + C_1,
+\]
+donde \(C_1\) es una constante de integración.
+
+Segunda integración:
+\[
+y(x) = \int \left[\frac{F}{EI} \left(Lx - \frac{x^2}{2}\right) + C_1\right] dx = \frac{F}{EI} \left(\frac{Lx^2}{2} - \frac{x^3}{6}\right) + C_1x + C_2,
+\]
+donde \(C_2\) es otra constante de integración.
+
+\subsubsection*{Paso 2: Condiciones de contorno}
+Las condiciones de contorno son:
+\begin{itemize}
+    \item En el extremo fijo (\(x = 0\)): \(y(0) = 0\) y \(\frac{dy}{dx}\big|_{x=0} = 0\).
+\end{itemize}
+
+Usando \(y(0) = 0\):
+\[
+y(0) = \frac{F}{EI} \left(\frac{L \cdot 0^2}{2} - \frac{0^3}{6}\right) + C_1 \cdot 0 + C_2 = 0 \implies C_2 = 0.
+\]
+
+Usando \(\frac{dy}{dx}\big|_{x=0} = 0\):
+\[
+\frac{dy}{dx} = \frac{F}{EI} \left(L \cdot 0 - \frac{0^2}{2}\right) + C_1 = 0 \implies C_1 = 0.
+\]
+
+\subsubsection*{Paso 3: Solución final}
+Sustituyendo las constantes \(C_1 = 0\) y \(C_2 = 0\), la solución es:
+\[
+y(x) = \frac{F}{EI} \left(\frac{Lx^2}{2} - \frac{x^3}{6}\right).
+\]
+
+\subsection*{Desplazamiento en el extremo libre}
+Para \(x = L\), el desplazamiento \(y(L)\) es:
+\[
+y(L) = \frac{F}{EI} \left(\frac{L \cdot L^2}{2} - \frac{L^3}{6}\right) = \frac{F}{EI} \left(\frac{L^3}{3}\right).
+\]
+Por lo tanto, el desplazamiento máximo en el extremo libre es:
+\[
+y(L) = \frac{FL^3}{3EI}.
+\]
+
+\subsection*{Conclusión}
+La curva elástica que describe la deformación está dada por:
+\[
+y(x) = \frac{F}{EI} \left(\frac{Lx^2}{2} - \frac{x^3}{6}\right),
+\]
+y el desplazamiento máximo en el extremo libre es:
+\[
+y(L) = \frac{FL^3}{3EI}.
+\]
+
+
+\section{Problema 9}
+\textbf{Enunciado:} Resolver el siguiente problema de valores iniciales:
+\[
+y''(t) + 4y'(t) - 5y(t) = 0, \quad y(0) = 0, \quad y'(0) = 6.
+\]
+
+\subsection*{Solución}
+\subsubsection*{Paso 1: Ecuación característica}
+Planteamos la solución general para la ecuación diferencial homogénea:
+\[
+y(t) = e^{r t}.
+\]
+Sustituyendo en la ecuación diferencial:
+\[
+r^2 e^{r t} + 4r e^{r t} - 5e^{r t} = 0.
+\]
+Factorizamos \(e^{r t}\) (que nunca es cero):
+\[
+r^2 + 4r - 5 = 0.
+\]
+
+Resolviendo la ecuación cuadrática:
+\[
+r = \frac{-4 \pm \sqrt{4^2 - 4(1)(-5)}}{2(1)} = \frac{-4 \pm \sqrt{16 + 20}}{2} = \frac{-4 \pm 6}{2}.
+\]
+Por lo tanto, las raíces son:
+\[
+r_1 = 1, \quad r_2 = -5.
+\]
+
+\subsubsection*{Paso 2: Solución general de la ecuación diferencial}
+La solución general es:
+\[
+y(t) = C_1 e^{r_1 t} + C_2 e^{r_2 t} = C_1 e^{t} + C_2 e^{-5t}.
+\]
+
+\subsubsection*{Paso 3: Aplicación de las condiciones iniciales}
+Usamos las condiciones iniciales para encontrar \(C_1\) y \(C_2\).
+
+\paragraph{Primera condición: \(y(0) = 0\)}
+\[
+y(0) = C_1 e^0 + C_2 e^0 = C_1 + C_2 = 0.
+\]
+Por lo tanto:
+\[
+C_1 = -C_2.
+\]
+
+\paragraph{Segunda condición: \(y'(0) = 6\)}
+Primero derivamos \(y(t)\):
+\[
+y'(t) = C_1 e^{t} - 5C_2 e^{-5t}.
+\]
+Sustituimos \(t = 0\):
+\[
+y'(0) = C_1 e^0 - 5C_2 e^0 = C_1 - 5C_2.
+\]
+Sustituyendo \(C_1 = -C_2\):
+\[
+-C_2 - 5C_2 = 6 \implies -6C_2 = 6 \implies C_2 = -1.
+\]
+Por lo tanto:
+\[
+C_1 = -C_2 = 1.
+\]
+
+\subsubsection*{Paso 4: Solución particular}
+Sustituimos \(C_1 = 1\) y \(C_2 = -1\) en la solución general:
+\[
+y(t) = C_1 e^{t} + C_2 e^{-5t} = e^{t} - e^{-5t}.
+\]
+
+
+\section{Problema 10}
+\textbf{Enunciado:} Resolver el siguiente problema de valores iniciales:
+\[
+y''(t) - 3y'(t) - 18y(t) = 18t + 6, \quad y(0) = 0, \quad y'(0) = 6.
+\]
+
+\subsection*{Solución}
+\subsubsection*{Paso 1: Solución general de la ecuación homogénea asociada}
+La ecuación homogénea asociada es:
+\[
+y''(t) - 3y'(t) - 18y(t) = 0.
+\]
+
+Planteamos la solución en la forma \(y_h(t) = e^{rt}\), y sustituimos en la ecuación:
+\[
+r^2 e^{rt} - 3r e^{rt} - 18e^{rt} = 0.
+\]
+Factorizamos \(e^{rt}\) (que nunca es cero):
+\[
+r^2 - 3r - 18 = 0.
+\]
+
+Resolvemos la ecuación cuadrática:
+\[
+r = \frac{-(-3) \pm \sqrt{(-3)^2 - 4(1)(-18)}}{2(1)} = \frac{3 \pm \sqrt{9 + 72}}{2} = \frac{3 \pm 9}{2}.
+\]
+Las raíces son:
+\[
+r_1 = 6, \quad r_2 = -3.
+\]
+
+Por lo tanto, la solución general de la ecuación homogénea es:
+\[
+y_h(t) = C_1 e^{6t} + C_2 e^{-3t}.
+\]
+
+\subsubsection*{Paso 2: Solución particular de la ecuación completa}
+Buscamos una solución particular \(y_p(t)\) de la forma:
+\[
+y_p(t) = At + B.
+\]
+Calculamos sus derivadas:
+\[
+y_p'(t) = A, \quad y_p''(t) = 0.
+\]
+
+Sustituimos en la ecuación completa:
+\[
+0 - 3A - 18(At + B) = 18t + 6.
+\]
+Expandiendo y agrupando términos:
+\[
+-18At - 18B - 3A = 18t + 6.
+\]
+Comparando coeficientes de \(t\) y los términos constantes:
+\[
+-18A = 18 \implies A = -1,
+\]
+\[
+-18B - 3(-1) = 6 \implies -18B + 3 = 6 \implies -18B = 3 \implies B = -\frac{1}{6}.
+\]
+
+Por lo tanto, la solución particular es:
+\[
+y_p(t) = -t - \frac{1}{6}.
+\]
+
+\subsubsection*{Paso 3: Solución general}
+La solución general de la ecuación diferencial es la suma de la solución homogénea y la particular:
+\[
+y(t) = y_h(t) + y_p(t) = C_1 e^{6t} + C_2 e^{-3t} - t - \frac{1}{6}.
+\]
+
+\subsubsection*{Paso 4: Aplicación de las condiciones iniciales}
+Usamos \(y(0) = 0\):
+\[
+y(0) = C_1 e^{0} + C_2 e^{0} - 0 - \frac{1}{6} = C_1 + C_2 - \frac{1}{6} = 0.
+\]
+Por lo tanto:
+\[
+C_1 + C_2 = \frac{1}{6}.
+\]
+
+Usamos \(y'(0) = 6\). Derivamos \(y(t)\):
+\[
+y'(t) = 6C_1 e^{6t} - 3C_2 e^{-3t} - 1.
+\]
+Sustituimos \(t = 0\):
+\[
+y'(0) = 6C_1 - 3C_2 - 1 = 6.
+\]
+Por lo tanto:
+\[
+6C_1 - 3C_2 = 7.
+\]
+
+Resolviendo el sistema:
+\[
+C_1 + C_2 = \frac{1}{6}, \quad 6C_1 - 3C_2 = 7.
+\]
+
+De la primera ecuación:
+\[
+C_2 = \frac{1}{6} - C_1.
+\]
+Sustituimos en la segunda:
+\[
+6C_1 - 3\left(\frac{1}{6} - C_1\right) = 7 \implies 6C_1 - \frac{1}{2} + 3C_1 = 7.
+\]
+\[
+9C_1 = 7 + \frac{1}{2} = \frac{15}{2} \implies C_1 = \frac{5}{6}.
+\]
+\[
+C_2 = \frac{1}{6} - \frac{5}{6} = -\frac{2}{3}.
+\]
+
+\subsubsection*{Paso 5: Solución final}
+Sustituimos \(C_1\) y \(C_2\) en la solución general:
+\[
+y(t) = \frac{5}{6}e^{6t} - \frac{2}{3}e^{-3t} - t - \frac{1}{6}.
+\]
+
+\section{Problema 11}
+\textbf{Enunciado:} Resolver, usando transformada de Laplace, la siguiente ecuación diferencial:
+\[
+y''(t) + 25y(t) = 0, \quad y(0) = 1, \quad y'(0) = 5.
+\]
+
+\subsection*{Solución}
+\subsubsection*{Paso 1: Transformada de Laplace de la ecuación diferencial}
+Aplicamos la transformada de Laplace a ambos lados de la ecuación diferencial:
+\[
+\mathcal{L}\{y''(t)\} + 25\mathcal{L}\{y(t)\} = \mathcal{L}\{0\}.
+\]
+
+Usamos las propiedades de la transformada de Laplace:
+\[
+\mathcal{L}\{y''(t)\} = s^2Y(s) - sy(0) - y'(0), \quad \mathcal{L}\{y(t)\} = Y(s).
+\]
+
+Sustituyendo:
+\[
+s^2Y(s) - s\cdot y(0) - y'(0) + 25Y(s) = 0.
+\]
+
+Sustituimos las condiciones iniciales \(y(0) = 1\) y \(y'(0) = 5\):
+\[
+s^2Y(s) - s(1) - 5 + 25Y(s) = 0.
+\]
+
+Simplificamos:
+\[
+(s^2 + 25)Y(s) = s + 5.
+\]
+
+Despejamos \(Y(s)\):
+\[
+Y(s) = \frac{s + 5}{s^2 + 25}.
+\]
+
+\subsubsection*{Paso 2: Transformada inversa de Laplace}
+Para calcular la solución \(y(t)\), aplicamos la transformada inversa de Laplace a \(Y(s)\):
+\[
+Y(s) = \frac{s}{s^2 + 25} + \frac{5}{s^2 + 25}.
+\]
+
+Separando los términos:
+1. \(\mathcal{L}^{-1}\left\{\frac{s}{s^2 + 25}\right\} = \cos(5t)\).
+2. \(\mathcal{L}^{-1}\left\{\frac{5}{s^2 + 25}\right\} = \sin(5t)\).
+
+Por lo tanto:
+\[
+y(t) = \cos(5t) + \sin(5t).
+\]
+
+
+
+\section{Problema 12}
+\textbf{Enunciado:} Resolver, usando transformada de Laplace, la siguiente ecuación diferencial:
+\[
+y''(t) - 7y'(t) + 10y(t) = 4e^t, \quad y(0) = 1, \quad y'(0) = 3.
+\]
+
+\subsection*{Solución}
+\subsubsection*{Paso 1: Aplicación de la transformada de Laplace}
+Aplicamos la transformada de Laplace a ambos lados de la ecuación diferencial:
+\[
+\mathcal{L}\{y''(t)\} - 7\mathcal{L}\{y'(t)\} + 10\mathcal{L}\{y(t)\} = \mathcal{L}\{4e^t\}.
+\]
+
+Usamos las propiedades de la transformada de Laplace:
+\[
+\mathcal{L}\{y''(t)\} = s^2Y(s) - sy(0) - y'(0), \quad \mathcal{L}\{y'(t)\} = sY(s) - y(0), \quad \mathcal{L}\{y(t)\} = Y(s).
+\]
+
+Sustituyendo las condiciones iniciales \(y(0) = 1\) y \(y'(0) = 3\):
+\[
+s^2Y(s) - s(1) - 3 - 7[sY(s) - 1] + 10Y(s) = \frac{4}{s - 1}.
+\]
+
+Simplificamos:
+\[
+s^2Y(s) - s - 3 - 7sY(s) + 7 + 10Y(s) = \frac{4}{s - 1}.
+\]
+
+Agrupamos los términos en \(Y(s)\):
+\[
+(s^2 - 7s + 10)Y(s) = \frac{4}{s - 1} + s - 4.
+\]
+
+Simplificamos el lado derecho:
+\[
+(s^2 - 7s + 10)Y(s) = \frac{4}{s - 1} + s - 4.
+\]
+
+Finalmente, despejamos \(Y(s)\):
+\[
+Y(s) = \frac{s^2 - 5s + 8}{(s - 5)(s - 2)(s - 1)}.
+\]
+
+\subsubsection*{Paso 2: Descomposición en fracciones parciales}
+Descomponemos la fracción:
+\[
+Y(s) = \frac{A}{s - 5} + \frac{B}{s - 2} + \frac{C}{s - 1}.
+\]
+
+Multiplicamos por el denominador común \((s - 5)(s - 2)(s - 1)\):
+\[
+s^2 - 5s + 8 = A(s - 2)(s - 1) + B(s - 5)(s - 1) + C(s - 5)(s - 2).
+\]
+
+Expandiendo cada término y comparando coeficientes, resolvemos para \(A\), \(B\), y \(C\):
+\[
+A = \frac{2}{3}, \quad B = -\frac{2}{3}, \quad C = 1.
+\]
+
+Por lo tanto, la descomposición es:
+\[
+Y(s) = \frac{2}{3(s - 5)} - \frac{2}{3(s - 2)} + \frac{1}{s - 1}.
+\]
+
+\subsubsection*{Paso 3: Transformada inversa de Laplace}
+Aplicamos la transformada inversa a cada término:
+\[
+\mathcal{L}^{-1}\left\{\frac{2}{3(s - 5)}\right\} = \frac{2}{3}e^{5t}, \quad
+\mathcal{L}^{-1}\left\{\frac{-2}{3(s - 2)}\right\} = -\frac{2}{3}e^{2t}, \quad
+\mathcal{L}^{-1}\left\{\frac{1}{s - 1}\right\} = e^t.
+\]
+
+Por lo tanto, la solución general es:
+\[
+y(t) = \frac{2}{3}e^{5t} - \frac{2}{3}e^{2t} + e^t.
+\]
+
+
+
+\end{document}

@@ -1,0 +1,207 @@
+\documentclass{article}
+\usepackage{lipsum}
+\usepackage[backend=biber]{biblatex}
+\addbibresource{aec2.bib}
+\usepackage{authoraftertitle}
+\usepackage[top=2cm,bottom=1.5cm,left=1.5cm, right=3cm,includeheadfoot]{geometry}
+\usepackage{fancyhdr}
+\usepackage[spanish]{babel}
+\usepackage{mathtools}
+\usepackage{csquotes}
+\usepackage{amssymb}
+\usepackage{fancybox, graphicx}
+\usepackage{array}
+\usepackage{hhline}
+\usepackage{hyperref}
+\usepackage{textcomp}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{eurosym}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{caption}
+\usepackage{esvect}
+\usepackage{siunitx}
+\usepackage{commath}
+\newcommand{\ihat}{\textbf{\^\i}}
+\newcommand{\jhat}{\textbf{\^\j}}
+%Header & Footer
+
+\pagestyle{fancy}
+%\fancyhead[LE]{\MyTitle}
+\fancyhead[LO]{Microeconomía}
+%\fancyhead[RO]{\leftmark}
+%\fancyhead[RE]{\leftmark}
+%\fancyfoot[L]{\raisebox{-1cm}{\includegraphics[height=2cm]{C:/Users/XYZ/Dropbox/DocumentGraphics/LOGOUDIMA.jpg}}}
+\fancyfoot[R]{Corregido:\\ Dr. Juan José Pintado Conesa}
+%\fancyfoot[RO]{07/12/2018}
+
+
+%Vars
+\author{Alexander Sebastian Kalis}
+\title{Tarea 1. Ejercicios vinculados a las Unidades 1 y 2}
+
+
+%DOC
+
+
+\begin{document}
+
+\begin{titlepage}
+
+    \begin{center}
+
+        \line(1,0){300}\\
+        [0.2in]
+        \huge{\bfseries {\MyTitle}}\\
+        [1mm]
+        \line(2,0){200}\\
+        [0.75cm]
+        \textsc{\LARGE Microeconomía}\\
+        [2cm]
+        \includegraphics[height=10cm]{D:/KUKADisk/UDIMA/Micoeconomia/AEC1/Graphics/portada.jpg}\\
+        [2.5cm]
+        
+
+    \end{center}
+
+    \begin{flushright}
+
+        Autor: {\MyAuthor}\\
+        Profesor: Dr. Juan José Pintado Conesa\\
+        Curso: Ingeniería de Organización Industrial\\
+        UDIMA\\
+        \today     
+
+    \end{flushright}
+    
+\end{titlepage}
+
+\tableofcontents \thispagestyle{empty}
+\newpage
+
+\newpage
+
+\section{Actividades}
+    
+\subsection{Actividad 1}
+
+En un mercado existen solamente cuatro consumidores A, B, C y D cuyas demandas individuales respecto al mismo bien, aparecen reflejadas en la siguiente Tabla para diferentes precios de ese bien. \\\\
+\includegraphics[height=3cm]{D:/KUKADisk/UDIMA/Micoeconomia/AEC1/Graphics/Ejer1.PNG}\\
+
+Se le solicita que obtenga la demanda de mercado de dicho bien, y su representación gráfica. \\\\
+
+Podemos representar la demanda total mediante la suma horizontal de cada bien de cada consumidor:\\
+
+\begin{table}[H]
+    \begin{tabular}{llllll}
+     Precio     & Consumidor A  & Consumidor B  & Consumidor C      &  Consumidor D     & Total mercado \\
+     1 \euro{}  & 6 unidades    & 11 unidades   & 16 unidades       & 21 unidades       & 54 unidades            \\
+     2 \euro{}  & 4 unidades    & 8 unidades    & 13 unidades       & 20 unidades       & 45 unidades            \\
+     3 \euro{}  & 2 unidades    & 6 unidades    & 10 unidades       & 15 unidades       & 33 unidades           \\
+     4 \euro{}  & 1 unidad      & 4 unidades    & 7 unidades        & 10 unidades       & 22 unidades            \\
+     5 \euro{}  & 1 unidad      & 3 unidades    & 5 unidades        &  7 unidades       & 16 unidades
+    \end{tabular}
+\end{table}
+
+Estos datos, representado gráficamente con la curva de demanda individual de mercado: \\\\
+
+\includegraphics[height=7cm]{D:/KUKADisk/UDIMA/Micoeconomia/AEC1/Graphics/graficapreciodemanda.PNG}\\
+\newpage
+
+\subsection{Actividad 2}
+
+La función de utilidad de un consumidor es $UT = 2xy$, dónde x e y son las cantidades respectivas de dos bienes. 
+ 
+Los precios son para cada uno de ellos: \\
+
+$P_x = 1 \EUR $
+
+
+$P_y = 2 \EUR $\\
+
+Se le pide que calcule la cantidad consumida de ambos bienes para una renta del consumidor de 100 euros. 
+ 
+Nota: recuerde que la Utilidad Marginal del bien x es igual a la derivada de la función de utilidad con respecto al bien x. Igual ocurre con el bien y.\\\\
+
+Sabemos que la utilidad marginal es el incremento de la utilidad que se consigue al aumentar la cantidad disponible, de forma que:\\
+
+\begin{equation}
+    Umg_x = \frac{\Delta U}{\Delta X} = 2y = 2 \cdot 2 = 4
+\end{equation}
+\begin{equation}
+    Umg_y = \frac{\Delta U}{\Delta Y} = 2x = 2 \cdot1 = 2
+\end{equation}
+
+Sabiendo esto y la renta del consumidor de 100 $\EUR$ calculamos las cantidades de bien X e Y consumidos:\\
+
+\begin{equation}
+    100 = 2xy \rightarrow 100 = 4x \rightarrow x = 25
+\end{equation}
+
+\begin{equation}
+    100 = 2xy \rightarrow 100 = 8y \rightarrow y = 12.5
+\end{equation}
+
+\subsection{Actividad 3}
+
+Un consumidor adquiere 100 kilos de naranjas al año cuándo su precio es de 2 euros el kilo. Por otro lado, cuándo el precio sube a 3 euros demanda 80 kilos por año. \\
+Calcule y califique a la elasticidad precio demanda de este consumidor. \\\\
+
+Conocemos que la elasticidad del precio de la demanda se expresa como:\\
+
+\begin{equation}
+    \eta_p = \cfrac{\left(\cfrac{\Delta Q_d}{Q_d}\right)}{\left(\cfrac{\Delta P}{P}\right)}
+\end{equation}
+
+Donde donde el numerador es la variación de la cantidad del producto demandado y el denominador la variación del precio. Entonces:
+
+\begin{equation}
+    \eta_p = \cfrac{\cfrac{80-100}{100}}{\cfrac{3-2}{2}}=-0.2
+\end{equation}
+
+Como es lógico, obtenemos un valor negativo ya que al incrementar el precio de las naranjas, el consumidor reduce su demanda. Con lo cual podemos decir que la demanda respecto
+al precio es \textbf{inelástica} ya que podemos observar que $0 < \left| \eta_p \right| < -1 $
+
+
+
+\subsection{Actividad 4}
+
+En la economía EVASA, durante el año 20X0, la Renta Nacional fue de 2 Billones de euros. En ese mismo año, las ventas de una determinada marca de automóviles ascendieron a 100.000 unidades. 
+ 
+Durante el año 20X1, la Renta Nacional subió a 2,1 Billones (en euros constantes), y las ventas de ese modelo aumentaron a 106.500 unidades. 
+ 
+¿Cómo calificaría a este bien?\\\\
+
+Para calificar un bien, utilizamos la elasticidad renta de la demanda, que relaciona la variación porcentual de la cantidad demandada de un bien y la variaciación
+de la renta que originó ese cambio. Utilizamos la siguiente fórmula:\\
+
+\begin{equation}
+    \eta_R = \cfrac{\cfrac{\Delta Q}{Q}}{\cfrac{\Delta R}{R}}
+\end{equation}
+
+Sustituyendo los datos del enunciado, obtenemos:\\
+
+\begin{equation}
+    \eta_R=\cfrac{\cfrac{106500-100000}{106500}}{\cfrac{2.1-2}{2.1}}=1.5
+\end{equation}
+
+Ya que $\eta_R > 1$, podemos calificar el bien como un \textbf{bien de lujo}.
+
+\subsection{Actividad 5}
+
+Como se ha visto en la actividad 3, la elasticidad precio demanda viene dada por la ecuación 5. Sustituyendo los datos del enunciado obtenemos:
+
+\begin{equation}
+    -1.2=\cfrac{\cfrac{\Delta Q_d}{Q_d}}{-0.5} \rightarrow \cfrac{\Delta Q_d}{Q_d}=0.6
+\end{equation}
+
+Lo que significa que el cambio porcentual demandado es del 60 \% y consecuentemente el incremento de gasto en ese producto es de:
+
+\begin{equation}
+    10000 \cdot \frac{60}{100} \cdot 50 = 300000
+\end{equation}
+
+Dado que tras la bajada de precio aumentará el gasto en 300.000 euros, entonces el gasto total será de $10000 \cdot 50 + 300000 = 800000 \EUR$
+\end{document}

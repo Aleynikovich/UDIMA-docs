@@ -1,0 +1,298 @@
+\documentclass{article}
+\usepackage[spanish,es-nodecimaldot]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\geometry{a4paper, margin=1in}
+\usepackage{fancyhdr}
+\usepackage{titling}
+\usepackage{graphicx}
+\usepackage{parskip}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\usepackage{float}
+\usepackage{hyperref}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Actividad de evaluación contínua 2}
+\lhead{Procesos e Ingeniería de Fabricación}
+\fancyfoot[C]{\thepage} % except the center
+\title{Actividad de evaluación contínua 2}
+\author{Alexander Kalis}
+\date{Fecha de Entrega: \today}
+
+\begin{document}
+
+\begin{titlepage}
+    \centering
+    \vspace*{1cm}
+    \includegraphics[width=0.15\textwidth]{logo-universidad.jpg}\par\vspace{1cm}
+    {\scshape\LARGE Ingeniería Industrial \par}
+    \vspace{1cm}
+    {\scshape\Large Procesos e Ingeniería de Fabricación\par}
+    \vspace{1.5cm}
+    {\huge\bfseries Actividad de evaluación contínua 1\par}
+    \vspace{2cm}
+    {\Large\itshape Alexander Kalis\par}
+    \vfill
+    Profesor\par
+    Dr. Lucas Castro Martínez
+
+    \vfill
+
+    % Bottom of the page
+    {\large \today\par}
+\end{titlepage}
+
+
+\section{Pregunta 1}
+Estamos a cargo de una fábrica de vidrio y nos han pedido vidrios para las aplicaciones que figuran en la tabla siguiente. A continuación, se describen los óxidos necesarios en su composición y los procesos de fabricación recomendados.
+
+\subsection{a) Composición de óxidos}
+Para fabricar una pizarra de vidrio incoloro y altamente transparente, la composición debe incluir dióxido de silicio (\(\text{SiO}_2\)) como componente principal, ya que proporciona alta transparencia y resistencia química. Además, se puede añadir óxido de sodio (\(\text{Na}_2\text{O}\)) y óxido de calcio (\(\text{CaO}\)) para reducir la temperatura de fusión y mejorar la trabajabilidad del vidrio.
+
+En el caso del vidrio destinado a depósitos de residuos químicos, donde se requiere alta resistencia a agentes químicos, es fundamental incluir borosilicato (\(\text{B}_2\text{O}_3\)) y óxido de aluminio (\(\text{Al}_2\text{O}_3\)) en la composición. Estos óxidos confieren resistencia química y mecánica, mientras que pequeñas cantidades de \(\text{CaO}\) pueden actuar como estabilizadores para mantener la trabajabilidad.
+
+Para el vidrio decorativo con tonalidades verdosa o amarilla, se necesitan óxidos específicos para lograr la coloración deseada. La tonalidad verdosa se consigue mediante trazas de óxido de hierro (\(\text{Fe}_2\text{O}_3\)), mientras que la tonalidad amarilla se puede obtener añadiendo óxido de azufre (\(\text{SO}_3\)) o combinaciones de cromo.
+
+Finalmente, para recipientes que soporten ciclos de calentamiento y enfriamiento sin romperse, se recomienda una composición basada en borosilicato (\(\text{B}_2\text{O}_3\)), que proporciona alta resistencia al choque térmico y durabilidad. También se pueden incluir pequeñas proporciones de \(\text{Na}_2\text{O}\) y \(\text{CaO}\) para mejorar las propiedades mecánicas.
+
+\subsection{b) Proceso de fabricación}
+El proceso de fabricación también varía según la aplicación. Para la pizarra de vidrio altamente transparente, se utiliza el método de vidrio flotado (float glass). Este proceso consiste en verter el vidrio fundido sobre un baño de estaño líquido, lo que permite obtener superficies planas y lisas de alta calidad.
+
+En el caso de los depósitos de residuos químicos, el método de prensado/soplado es el más adecuado. Este proceso implica moldear el vidrio para darle la forma deseada y someterlo a un recocido posterior que elimina tensiones internas y mejora su resistencia.
+
+Para el vidrio decorativo con tonalidades verdosa o amarilla, el proceso de vidrio soplado es ideal. Este método permite incorporar burbujas en el material y añadir los óxidos colorantes durante la fusión para obtener el color deseado de manera uniforme.
+
+Por último, los recipientes diseñados para resistir ciclos térmicos se fabrican mediante el proceso de moldeo por soplado/soplado. Este método incluye un recocido especial para mejorar la resistencia al choque térmico y garantizar que puedan soportar variaciones de temperatura repetidas sin romperse.
+
+
+\section{Pregunta 2}
+
+\subsection{Prensado uniaxial en frío}
+El prensado uniaxial en frío es un proceso utilizado para fabricar piezas pequeñas y compactas con formas simples, como ladrillos, tejas, azulejos y componentes electrónicos como aislantes. Este método aplica presión en una sola dirección sobre el material en polvo, compactándolo en moldes específicos. Es adecuado para grandes volúmenes de producción debido a su simplicidad y eficiencia.
+
+\subsection{Prensado uniaxial en caliente}
+El prensado uniaxial en caliente combina presión y altas temperaturas para fabricar piezas técnicas que requieren alta densidad y propiedades mecánicas avanzadas. Es ideal para la producción de herramientas de corte, piezas resistentes al desgaste y cerámicas técnicas utilizadas en la industria aeroespacial.
+
+\subsection{Prensado isostático}
+El prensado isostático aplica presión de manera uniforme en todas las direcciones sobre un polvo cerámico encerrado en un molde flexible. Este proceso es ideal para piezas con geometrías complejas, como tubos cerámicos, varillas y componentes de precisión utilizados en la industria médica y electrónica. A menudo se emplea para fabricar piezas con alta relación de longitud a espesor.
+
+\subsection{Colada (Slip Casting)}
+La colada se utiliza para piezas de formas complejas como recipientes, sanitarios, decoraciones cerámicas y moldes industriales. En este proceso, una barbotina (suspensión de partículas cerámicas en agua) se vierte en un molde poroso que elimina el agua, dejando una capa sólida de material cerámico en la superficie del molde. Es una técnica versátil para diseños detallados.
+
+\subsection{Conformado plástico por terrajado}
+El terrajado es un proceso de conformado plástico utilizado para fabricar piezas simétricas de revolución, como vasijas, platos y piezas decorativas. Se basa en girar el material sobre un torno mientras se aplica presión para darle forma. Es común en la industria artesanal y en la producción limitada.
+
+\subsection{Moldeo por inyección}
+El moldeo por inyección es un método que se utiliza para piezas de alta complejidad geométrica y tolerancias dimensionales precisas, como engranajes, conectores eléctricos y componentes estructurales. Este proceso es ideal para la producción en masa de piezas técnicas de pequeño tamaño.
+
+\subsection{Moldeo por compresión}
+El moldeo por compresión se emplea para fabricar piezas planas o tridimensionales con propiedades mecánicas avanzadas, como carcasas de motores eléctricos, aisladores eléctricos y piezas estructurales. Este proceso utiliza moldes cerrados en los que se compacta el material cerámico bajo presión.
+
+\subsection{Extrusión}
+La extrusión es un proceso adecuado para fabricar piezas largas con secciones transversales constantes, como tubos, barras, ladrillos y tejas. En este método, el material cerámico plastificado se fuerza a través de una boquilla con la forma deseada, obteniendo productos continuos.
+
+\subsection{Colada continua}
+La colada continua se utiliza en la fabricación de láminas y placas cerámicas delgadas. Es un proceso continuo que permite la producción de grandes volúmenes de materiales planos, como revestimientos cerámicos para pisos y paredes.
+
+\subsection{Recubrimiento por plasma}
+El recubrimiento por plasma es un proceso especializado para depositar capas cerámicas sobre piezas metálicas o cerámicas. Se utiliza para mejorar propiedades como la resistencia al desgaste, la conductividad térmica y la resistencia a altas temperaturas. Este proceso es común en la industria aeroespacial y en aplicaciones médicas.
+
+\section{Pregunta 3}
+Los cuadros de bicicletas de uso deportivo se fabrican con materiales compuestos de fibra de carbono. Estos materiales permiten obtener estructuras ligeras y resistentes, adecuadas para soportar los esfuerzos a los que serán sometidas.
+
+\subsection{a) Relación entre fibra y polímero}
+En un material compuesto, la \textbf{fibra} funciona como refuerzo, proporcionando resistencia y rigidez. Por otro lado, el \textbf{polímero}, también conocido como matriz, distribuye las cargas aplicadas sobre el compuesto y protege a las fibras de factores externos como la humedad, agentes químicos y posibles impactos.
+
+La matriz también asegura la cohesión entre las fibras y transfiere los esfuerzos aplicados a las mismas. De esta forma, el compuesto combina las propiedades individuales de cada material para lograr un rendimiento superior.
+
+\subsection{b) Polímeros utilizados y propiedades de la resina}
+En los cuadros de bicicletas de fibra de carbono, el polímero más utilizado como matriz es la \textbf{resina epoxi}. Este tipo de resina termoestable presenta propiedades ideales para aplicaciones deportivas exigentes. Entre las propiedades que aporta la resina se encuentran:
+
+- Alta \textbf{resistencia a impactos} y gran capacidad de adhesión con las fibras de carbono.
+- Buena \textbf{resistencia térmica}, lo que permite que el compuesto soporte variaciones de temperatura extremas sin perder sus propiedades mecánicas.
+- Excelente \textbf{resistencia química}, lo que protege al cuadro de agentes corrosivos o ambientes adversos.
+- Óptima \textbf{rigidez} y \textbf{estabilidad dimensional}, garantizando la integridad estructural de las piezas.
+
+La combinación de fibra de carbono con resinas epoxi da como resultado materiales compuestos ligeros, resistentes y duraderos, esenciales para satisfacer las exigencias del ciclismo de alto rendimiento.
+
+
+\subsection{c) Vídeo sobre bicicletas de fibra de carbono }
+
+\subsubsection{¿Por qué en unas zonas se usan tejidos y en otras zonas se usa cinta unidireccional preimpregnada (Prepreg)? (Min 6:00-8:00)}
+Los \textbf{tejidos de fibra de carbono} se utilizan en aplicaciones que requieren resistencia en múltiples direcciones y mejor conformabilidad para formas complejas. Esto resulta especialmente útil para mejorar la estética y la resistencia al delaminado. 
+
+Por otro lado, las \textbf{cintas unidireccionales preimpregnadas} (Prepregs) se emplean para maximizar la resistencia y rigidez en una dirección específica. Esto permite diseñar estructuras optimizadas y ligeras, colocando las fibras exactamente donde se necesitan para soportar cargas específicas. La elección entre tejidos y Prepregs depende de los requisitos específicos del diseño en términos de rendimiento, peso y proceso de fabricación.
+
+\subsubsection{¿Por qué se aplica calor? (Min 9:00-10:40)}
+El \textbf{calor} es esencial en el proceso de producción de materiales compuestos, ya que estabiliza y oxida las fibras plásticas precursoras. Esto permite que las moléculas del polímero se reorganicen y aumenten su estabilidad térmica, lo que es crucial para las siguientes etapas de carbonización y endurecimiento.
+
+Además, el calor ayuda a que la resina penetre de manera eficiente en las fibras durante el laminado y curado, asegurando que las fibras adquieran las propiedades necesarias para su resistencia y rigidez. Este proceso mejora la cohesión entre las fibras y la matriz, lo que resulta en un compuesto con mejores propiedades mecánicas.
+
+\subsubsection{¿Por qué se aplica presión en el interior y exterior del cuadro?}
+La \textbf{presión} aplicada tanto en el interior como en el exterior del cuadro durante la fabricación asegura que el material compuesto se consolide correctamente. Esto elimina cualquier burbuja de aire que pudiera debilitar la estructura y garantiza una distribución uniforme de la resina, cubriendo completamente las fibras del tejido.
+
+Este procedimiento asegura que el cuadro final tenga la máxima resistencia y rigidez posibles, cumpliendo con los estándares de calidad y rendimiento requeridos.
+
+\subsection{d) Vídeo sobre fabricación de la fibra de carbono}
+
+\subsubsection{¿Qué material menciona que se usa como precursor de la fibra de carbono? ¿Cuál es?}
+El material precursor de la fibra de carbono que se menciona en el video es el \textbf{poliacrilonitrilo (PAN)}. Este es un polímero compuesto por miles de filamentos diminutos, lo que permite su uso como base para la fabricación de fibras de carbono debido a su estructura química y propiedades mecánicas.
+
+\subsubsection{De las etapas que se indican en el manual, aunque sea con otro nombre, ¿qué etapas se comentan en el video para obtener las fibras de carbono? ¿Le ha faltado alguna?}
+En el video se comentan las siguientes etapas relacionadas con la obtención de las fibras de carbono:
+\begin{enumerate}
+    \item \textbf{Oxidación/Estabilización:} Se menciona un "horno de oxidación", donde las fibras precursoras se calientan en presencia de oxígeno para reorganizar su estructura atómica y hacerlas infusibles. Esta etapa corresponde a la estabilización descrita en el manual.
+    \item \textbf{Carbonización:} El video describe un proceso de "carbonización" en un horno con atmósfera libre de oxígeno. En esta etapa, los átomos no esenciales son expulsados, transformando el material en fibras de carbono con alta resistencia y rigidez.
+    \item \textbf{Grafitización:} El video no menciona explícitamente la grafitización. Sin embargo, en el manual se describe como una etapa opcional para aumentar la cristalinidad de las fibras a temperaturas superiores a 2000 \( ^\circ \)C.
+    \item \textbf{Tratamiento superficial:} En el video no se aborda un tratamiento superficial específico, mientras que en el manual se describe el uso de ácidos para oxidar y mejorar la adhesión entre la fibra y la matriz.
+    \item \textbf{Aplicación de ensimajes y terminaciones:} El video menciona la aplicación de una resina ligera para mejorar la manipulación y la adhesión, aunque no se identifica claramente como la etapa de ensimajes descrita en el manual.
+    \item \textbf{Bobinado en ovillos o carretes:} Esta etapa sí se menciona en el video, donde las fibras terminadas se enrollan en una bobina.
+\end{enumerate}
+
+\subsubsection{¿Qué tipos de arquitectura de refuerzo comentan en el video? ¿Cuáles faltan?}
+Se habla de la creación de fibra de carbono y su conversión en tejidos o láminas impregnadas con resina, conocidas como Prepreg. La arquitectura de refuerzo descrita implica principalmente la alineación y tejido de fibras de carbono para fabricar materiales compuestos resistentes y ligeros.
+
+
+\subsection{e) Análisis de los videos}
+De los siguientes videos se indica el método de conformado de materiales compuestos empleado, señalando cada una de las etapas, qué tipo de arquitectura de refuerzo se utiliza y cualquier comentario relevante. En caso de que sea una variante de las descritas en el manual, se especificará la variación.
+
+\subsubsection{Video A: Laminado Manual (Hand Lay-Up)}
+El método de conformado observado en este video corresponde a la técnica de \textbf{laminado manual (Hand Lay-Up)}. Este proceso es ampliamente utilizado para la fabricación de piezas compuestas con geometrías sencillas, debido a su bajo costo y facilidad de implementación.
+
+\paragraph{Etapas del proceso:}
+\begin{enumerate}
+    \item \textbf{Preparación de los materiales:} Se limpia la superficie con un solvente, como acetona (visible en la imagen), para eliminar impurezas y asegurar una buena adhesión. Además, las fibras de refuerzo, como tejidos de fibra de vidrio o fibra de carbono, se cortan a las dimensiones requeridas.
+    \item \textbf{Impregnación con resina:} Se aplica resina epoxi o poliéster sobre las capas de refuerzo utilizando un rodillo o una brocha, asegurando que las fibras queden completamente impregnadas con la matriz.
+    \item \textbf{Consolidación:} Se emplea un rodillo para compactar las capas y eliminar burbujas de aire atrapadas en la resina. Este paso es esencial para mejorar la densidad y las propiedades mecánicas del material compuesto.
+    \item \textbf{Curado:} El laminado se deja endurecer a temperatura ambiente o en un horno para completar el proceso de polimerización, logrando que la resina adquiera sus propiedades mecánicas finales.
+\end{enumerate}
+
+\paragraph{Tipo de arquitectura de refuerzo:} 
+El refuerzo empleado corresponde a un \textbf{tejido bidireccional}, el cual ofrece resistencia estructural en múltiples direcciones, lo que lo hace ideal para aplicaciones donde se requieren propiedades equilibradas.
+
+\paragraph{Comentarios adicionales:} 
+Este método es adecuado para la fabricación de piezas de geometría simple, como paneles o cascos de embarcaciones. Sin embargo, la calidad final del producto puede depender de la habilidad del operador, lo que puede ocasionar variaciones en la consistencia del material.
+
+\subsubsection{Video B: Moldeo por Transferencia de Resina}
+
+
+\paragraph{Etapas del proceso:}
+\begin{enumerate}
+    \item \textbf{Preparación del molde y del refuerzo:} 
+    Las telas de refuerzo, como fibra de vidrio o fibra de carbono, se colocan dentro del molde en la geometría deseada, asegurando que queden distribuidas de manera uniforme.
+    \item \textbf{Cerrado del molde:} 
+    El molde se cierra herméticamente, sellando el sistema para la inyección de resina.
+    \item \textbf{Inyección de resina:} 
+    Se inyecta la resina líquida en el molde con ayuda de una bomba, mientras se aplica vacío en el lado opuesto. Esto elimina las burbujas de aire y asegura una impregnación uniforme de las fibras de refuerzo.
+    \item \textbf{Curado:} 
+    La resina impregnada se deja endurecer para completar el proceso de polimerización, lo que puede realizarse a temperatura ambiente o en un horno.
+    \item \textbf{Desmoldeo:} 
+    La pieza final se extrae del molde después del curado y se somete, si es necesario, a procesos de acabado como corte o lijado.
+\end{enumerate}
+
+\paragraph{Refuerzo empleado:}
+En el video se observa el uso de un \textbf{tejido de fibra de vidrio bidireccional}, que garantiza propiedades equilibradas en dos direcciones principales. Este tipo de refuerzo es adecuado para aplicaciones estructurales que requieren alta resistencia.
+
+\paragraph{Comentarios adicionales:}
+El proceso permite fabricar piezas con superficies lisas y acabados uniformes en ambas caras, minimizando la porosidad y logrando excelentes propiedades mecánicas. Es una técnica eficiente para la producción de componentes complejos con requisitos de precisión y resistencia, como en las industrias automotriz y aeronáutica.
+
+\subsubsection{Video C: Enrollamiento Filamentario}
+
+
+\paragraph{Etapas del proceso:}
+\begin{enumerate}
+    \item \textbf{Preparación de las fibras y resina:} Las fibras de refuerzo, generalmente de vidrio o carbono, son impregnadas con resina líquida epoxi o poliéster a medida que se alimentan desde las bobinas.
+    \item \textbf{Enrollamiento sobre el molde:} Las fibras impregnadas se enrollan de manera continua sobre un molde giratorio, lo que permite controlar el ángulo de colocación de las fibras según los requisitos de resistencia. El objeto rectangular observado podría ser un mandril que define la forma del componente final.
+    \item \textbf{Curado:} Una vez completado el enrollamiento, el conjunto se somete a un proceso de curado para endurecer la resina. Esto puede hacerse a temperatura ambiente o en un horno.
+    \item \textbf{Desmoldeo y acabado:} Tras el curado, el componente se extrae del molde y, si es necesario, se realizan procesos de acabado para ajustar las dimensiones y eliminar imperfecciones.
+\end{enumerate}
+
+\paragraph{Refuerzo empleado:}
+En el proceso se observa el uso de fibras continuas impregnadas con resina, aplicadas de forma controlada para generar un refuerzo unidireccional con resistencia específica según el ángulo de enrollamiento.
+
+\paragraph{Comentarios adicionales:}
+El enrollamiento filamentario es ideal para fabricar componentes estructurales como tanques, tubos, ejes o cualquier elemento que requiera alta resistencia en direcciones específicas. La precisión del ángulo de enrollamiento permite optimizar la resistencia a cargas axiales, radiales o combinadas, dependiendo del diseño requerido.
+
+\subsubsection{Video D: Pultrusión}
+
+
+\paragraph{Etapas del proceso:}
+\begin{enumerate}
+    \item \textbf{Desbobinado:} Las fibras continuas son desenrolladas de sus carretes y alineadas para garantizar una distribución uniforme.
+    \item \textbf{Impregnación:} Las fibras son completamente impregnadas con una matriz de resina termoestable, como epoxi o poliéster.
+    \item \textbf{Pre-formación:} Las fibras impregnadas son guiadas a través de una preforma que las compacta al perfil deseado antes de entrar en la matriz de curado.
+    \item \textbf{Curado:} Dentro de la matriz calefactada, la resina se cura y el perfil de material compuesto se solidifica.
+    \item \textbf{Extracción:} El perfil curado es continuamente extraído de la matriz de curado utilizando un sistema de tracción.
+    \item \textbf{Corte:} Un mecanismo de corte automático corta el perfil curado a la longitud deseada.
+\end{enumerate}
+
+\paragraph{Refuerzo empleado:}
+Se utilizan fibras continuas que son alineadas en la dirección de la extracción, lo que confiere al perfil propiedades mecánicas anisotrópicas, con alta resistencia y rigidez en la dirección de las fibras.
+
+\paragraph{Comentarios adicionales:}
+La pultrusión es un proceso continuo y altamente eficiente, ideal para fabricar perfiles estructurales de sección constante, como barras, vigas, y postes. Este método asegura un excelente control sobre la calidad del material, además de ser económico para producciones en masa.
+
+\subsubsection{Video E: Consolidación de Prepreg}
+
+
+\paragraph{Etapas del proceso:}
+\begin{enumerate}
+    \item \textbf{Preparación del molde:} Se limpia el molde y se aplica un agente de liberación para facilitar el desmoldeo de la pieza curada.
+    \item \textbf{Colocación del prepreg:} El material prepreg (preimpregnado con resina) se corta a la forma deseada y se coloca cuidadosamente dentro del molde. La orientación de las fibras se selecciona en función de las cargas mecánicas que soportará la pieza final.
+    \item \textbf{Compactación:} Utilizando un rodillo o una espátula, se compacta el prepreg para eliminar burbujas de aire atrapadas y asegurar la correcta adherencia entre las capas.
+    \item \textbf{Curado:} Se aplica calor y presión para curar la resina y consolidar el material compuesto. Este proceso generalmente se realiza en un autoclave, y en el video se observa el uso de una bomba de vacío como parte del sistema.
+    \item \textbf{Desmoldeo:} Tras completar el curado, la pieza consolidada se extrae cuidadosamente del molde.
+    \item \textbf{Post-curado y acabado:} Si es necesario, se realiza un post-curado para mejorar las propiedades del compuesto. Posteriormente, la pieza puede someterse a procesos de acabado como recorte, lijado o aplicación de pintura o sellador.
+\end{enumerate}
+
+\paragraph{Refuerzo empleado:}
+El material prepreg utilizado es \textbf{unidireccional}, como se evidencia por la orientación de las fibras observadas en el video. Esto permite optimizar la resistencia y rigidez en una dirección específica.
+
+\paragraph{Comentarios adicionales:}
+El uso de prepregs facilita el control de las propiedades mecánicas del material compuesto, gracias a la uniformidad en la impregnación de las fibras con resina. Este proceso es ampliamente utilizado en aplicaciones aeronáuticas y automotrices, donde se requieren piezas de alta precisión y resistencia.
+
+\subsubsection{Video F: Fiberglass Spray Lay-Up}
+
+\paragraph{Etapas del proceso:}
+El proceso de fabricación mediante proyección de fibras cortadas puede ser descrito en las siguientes etapas:
+\begin{enumerate}
+    \item \textbf{Preparación del molde:} El molde que define la forma de la pieza se limpia y se aplica un agente desmoldante para facilitar la extracción de la pieza curada.
+    \item \textbf{Aplicación de gelcoat:} Si es necesario, se aplica un gelcoat al molde para proporcionar una superficie lisa y acabada.
+    \item \textbf{Proyección de fibras y resina:} 
+    \begin{itemize}
+        \item Se cortan fibras continuas, como fibra de vidrio o fibra de carbono, en trozos cortos utilizando un dispositivo de corte en la pistola de proyección.
+        \item Se mezclan las fibras cortadas con resina catalizada y se proyectan sobre el molde.
+    \end{itemize}
+    \item \textbf{Compactación:} Se utiliza un rodillo para compactar las fibras y la resina contra el molde, eliminando las burbujas de aire y asegurando una buena impregnación de la resina en las fibras.
+    \item \textbf{Curado:} La pieza se deja curar a temperatura ambiente o se coloca en un horno para acelerar el proceso.
+    \item \textbf{Desmoldeo:} Una vez curada, la pieza se retira del molde.
+    \item \textbf{Acabado:} La pieza puede ser recortada, lijada o sometida a otros procesos de acabado según sea necesario.
+\end{enumerate}
+
+\paragraph{Refuerzo empleado:}
+El tipo de arquitectura de refuerzo utilizado en la proyección de fibras cortadas es un \textbf{refuerzo aleatorio 2D}. Las fibras cortadas se distribuyen aleatoriamente y en múltiples direcciones sobre la superficie del molde, proporcionando isotropía en el plano y una buena relación resistencia-peso.
+
+\paragraph{Comentarios adicionales:}
+Este proceso es adecuado para piezas de gran tamaño y geometrías complejas, ofreciendo ventajas como una rápida tasa de deposición de material y una reducción en los costos laborales. Sin embargo, la resistencia mecánica de las piezas puede ser inferior en comparación con aquellas fabricadas con tejidos de fibras continuas debido a la orientación aleatoria y la longitud más corta de las fibras.
+
+\newpage
+\begin{thebibliography}{99}
+  \bibitem{procesos-industriales}
+Castro Martínez, Lucas (2024). \textit{Procesos Industriales} (2.ª ed.). Centro de Estudios Financieros. ISBN: 978-84-454-4769-7.
+  
+  \bibitem{video-a} Video A: Laminado Manual (Hand Lay-Up). Recuperado de: \url{https://youtu.be/GZBNnQ5ZnTA}.
+  
+  \bibitem{video-b} Video B: Moldeo por Transferencia de Resina (RTM). Recuperado de: \url{https://youtu.be/Ln-V3B6l9xo}.
+  
+  \bibitem{video-c} Video C: Enrollamiento Filamentario. Recuperado de: \url{https://youtu.be/YugAlSg8QW8}.
+  
+  \bibitem{video-d} Video D: Pultrusión. Recuperado de: \url{https://youtu.be/YugAlSg8QW8}.
+  
+  \bibitem{video-e} Video E: Consolidación de Prepreg. Recuperado de: \url{https://youtu.be/P1zf_Uy3M_g}.
+  
+  \bibitem{video-f} Video F: Fiberglass Spray Lay-Up. Recuperado de: \url{https://youtu.be/qFViNPH0c_M}.
+\end{thebibliography}
+
+\end{document}

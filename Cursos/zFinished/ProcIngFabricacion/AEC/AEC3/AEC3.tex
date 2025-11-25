@@ -1,0 +1,519 @@
+\documentclass{article}
+\usepackage[spanish,es-nodecimaldot]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\geometry{a4paper, margin=1in}
+\usepackage{fancyhdr}
+\usepackage{titling}
+\usepackage{graphicx}
+\usepackage[shortlabels]{enumitem}
+\usepackage{parskip}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\usepackage{float}
+\usepackage{hyperref}
+%\usepackage{natbib}
+%\usepackage{pages} % Carga la extensión "pages"
+
+
+%\bibliographystyle{apalike} % Estilo de citación
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Actividad de evaluación contínua 3}
+\lhead{Procesos e Ingeniería de Fabricación}
+\fancyfoot[C]{\thepage} % except the center
+\title{Actividad de evaluación contínua 3}
+\author{Alexander Kalis}
+\date{Fecha de Entrega: \today}
+
+\begin{document}
+
+\begin{titlepage}
+    \centering
+    \vspace*{1cm}
+    \includegraphics[width=0.15\textwidth]{logo-universidad.jpg}\par\vspace{1cm}
+    {\scshape\LARGE Ingeniería Industrial \par}
+    \vspace{1cm}
+    {\scshape\Large Procesos e Ingeniería de Fabricación\par}
+    \vspace{1.5cm}
+    {\huge\bfseries Actividad de evaluación contínua 3\par}
+    \vspace{2cm}
+    {\Large\itshape Alexander Kalis\par}
+    \vfill
+    Profesor\par
+    Dr. Lucas Castro Martínez
+
+    \vfill
+
+    % Bottom of the page
+    {\large \today\par}
+\end{titlepage}
+
+\tableofcontents
+
+\newpage
+
+
+\section{Ejercicio 1. Soldadura}
+
+\subsection{Oxiacetilénica}
+
+\cite[pp 18-22]{Kou} La soldadura oxiacetilénica es un proceso de soldadura que utiliza una llama producida por la combustión del acetileno (\( C_2H_2 \)) con el oxígeno (\( O_2 \)) para fundir y unir materiales. A continuación se detallan algunos aspectos clave de este proceso:
+
+\begin{enumerate}[a)]
+    \item \textbf{Gases Utilizados:} Los gases utilizados en la soldadura oxiacetilénica son el acetileno (\( C_2H_2 \)) y el oxígeno (\( O_2 \)).
+    
+    \item \textbf{Reacción Química:} La reacción química principal en la soldadura oxiacetilénica es la combustión del acetileno con oxígeno. La reacción química balanceada es:
+    \[ 2C_2H_2 (g) + 5O_2 (g) \rightarrow 4CO_2 (g) + 2H_2O (g) \]
+
+    \begin{figure}[ht]
+      \centering
+      \includegraphics[width=0.7\linewidth]{procesoqimico.PNG} % Reemplaza "nombre_de_la_imagen" con el nombre de tu archivo de imagen
+      \caption{Reacciones químicas en una llama neutral. Fuente: Adaptado de \cite{Kou}.} % Añade la descripción de la imagen y la fuente
+      \label{fig:procesoqimico}
+    \end{figure}
+    
+    
+    \item \textbf{Entalpía de la Reacción:} La entalpía de esta reacción es la energía liberada durante la combustión. La entalpía de la reacción de combustión del acetileno por mol es aproximadamente
+    \[ \Delta H = -141625.89 \, \text{cal/mol} \]
+    Para 1 kg de acetileno, la cantidad de energía liberada sería aproximadamente
+    \[ E = -5439200 \, \text{cal} \]
+    
+    \item \textbf{Tipos de Llamas:} En la soldadura oxiacetilénica, se pueden lograr diferentes tipos de llamas ajustando la proporción de oxígeno y acetileno. Los tipos principales son:
+    \begin{itemize}
+        \item Llama Neutra: Proporción equilibrada de oxígeno y acetileno.
+        \item Llama Oxidante: Exceso de oxígeno, resultando en una llama más caliente y azul.
+        \item Llama Reductora: Exceso de acetileno, con una llama más fría y amarilla.
+    \end{itemize}
+
+    \begin{figure}[ht]
+      \centering
+      \includegraphics[width=0.6\linewidth]{tiposllama.PNG} % Reemplaza "nombre_de_la_imagen" con el nombre de tu archivo de imagen
+      \caption{Tipos de llamas. Fuente: Adaptado de \cite{Kou}.} % Añade la descripción de la imagen y la fuente
+      \label{fig:tiposllama}
+    \end{figure}
+    
+    \item \textbf{Relación Teórica Oxígeno/Acetileno para una Llama Neutra:} Para obtener una llama neutra, la relación teórica de oxígeno a acetileno debe ser tal que ambos gases reaccionen completamente sin dejar exceso de ninguno. Según la ecuación química balanceada, esta relación es de 2.5 a 1, es decir,
+    \[ \text{Relación} \, \text{O}_2/\text{C}_2\text{H}_2 = 2.5:1 \]
+\end{enumerate}
+
+\newpage
+\subsection{Manual con electrodo revestido}
+
+La soldadura manual con electrodo revestido es un método comúnmente utilizado para soldar aceros. A continuación, se detallan los tipos de electrodos utilizados, sus características, recomendaciones de uso, y cómo seleccionar el diámetro del electrodo, así como la intensidad y la tensión adecuadas para la soldadura de chapas de acero:
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.6\linewidth]{revestido.PNG} % Reemplaza "nombre_de_la_imagen" con el nombre de tu archivo de imagen
+  \caption{Electrodo revestido: (a) proceso general; (b) ampliado . Fuente: Adaptado de \cite{Kou}.} % Añade la descripción de la imagen y la fuente
+  \label{fig:revestido}
+\end{figure}
+
+\begin{enumerate}[a)]
+    \item \textbf{Tipos de Electrodo para Soldar Acero:}
+    \begin{itemize}
+        \item \textit{Electrodos de Rutilo:} Contienen dióxido de titanio en el revestimiento, son fáciles de usar y proporcionan un buen acabado. Recomendados para trabajos generales.
+        \item \textit{Electrodos Básicos:} Contienen carbonatos y fluoruros, son adecuados para soldaduras de alta calidad y para aceros de alta resistencia.
+        \item \textit{Electrodos Celulósicos:} Tienen un alto contenido de celulosa en el revestimiento, son ideales para soldaduras en posiciones difíciles.
+        \item \textit{Electrodos de Bajo Hidrógeno:} Minimizan el contenido de hidrógeno en el metal de soldadura, previniendo la fragilidad.
+    \end{itemize}
+
+    \item \textbf{Selección del Diámetro de Electrodo y Parámetros de Soldadura:}
+    La elección del diámetro del electrodo depende del espesor del material a soldar y de la posición de soldadura. Generalmente, para espesores menores, se utilizan electrodos más finos. La intensidad y la tensión se eligen en función del diámetro del electrodo y del tipo de soldadura. 
+
+    \item \textbf{Cálculo de Intensidad y Voltaje para Soldar Chapas de Acero de 2 mm:}
+    Para soldar dos chapas de acero de 2 mm de espesor, se recomienda utilizar un electrodo con un diámetro adecuado, generalmente en el rango de 1.6 mm a 2.5 mm. La intensidad (amperaje) y el voltaje se pueden calcular basándose en las especificaciones del fabricante del electrodo y en las recomendaciones para el espesor del material. Un rango común de amperaje para este espesor puede ser de 50 a 90 amperios, y el voltaje se ajusta generalmente entre 20 y 30 voltios, dependiendo de la técnica de soldadura y el equipo utilizado.
+\end{enumerate}
+
+
+
+\subsection{TIG, MIG, MAG}
+
+La soldadura TIG (Tungsten Inert Gas), MIG (Metal Inert Gas) y MAG (Metal Active Gas) son procesos de soldadura comunes, cada uno con sus aplicaciones específicas y características. A continuación, se detalla para qué materiales y en qué procesos se recomienda cada tipo de soldadura, así como el uso de material de aporte en la soldadura TIG y la compatibilidad entre las antorchas de MIG/MAG y TIG:
+
+\begin{enumerate}[a)]
+    \item \textbf{Soldadura TIG:}
+    \begin{itemize}
+        \item \textit{Materiales y Procesos:} Se recomienda para soldar acero inoxidable, aluminio, magnesio, cobre, níquel, titanio y sus aleaciones. Es ideal para soldaduras de alta calidad, soldaduras de precisión y en espesores finos.
+        \item \textit{Uso de Material de Aporte:} El material de aporte se utiliza en la soldadura TIG cuando se requiere rellenar juntas o añadir material al metal base. En algunas aplicaciones, como la soldadura de láminas delgadas o tuberías, puede no ser necesario.
+    \end{itemize}
+
+    \begin{figure}[ht]
+      \centering
+      \includegraphics[width=0.55\linewidth]{tig.PNG} % Reemplaza "nombre_de_la_imagen" con el nombre de tu archivo de imagen
+      \caption{Soldadura TIG. (a) proceso general; (b) ampliado. Fuente: Adaptado de \cite{Kou}.} % Añade la descripción de la imagen y la fuente
+      \label{fig:tig}
+    \end{figure}
+
+    \item \textbf{Soldadura MIG:}
+    \begin{itemize}
+        \item \textit{Materiales y Procesos:} Apropiada para soldar aceros al carbono, aceros inoxidables, aluminio y sus aleaciones. Es ideal para la producción en serie, soldadura de estructuras y aplicaciones donde se requiere alta productividad. En este caso se utilizan gases intertes como el argón $Ar$.
+    \end{itemize}
+
+ 
+
+    \item \textbf{Soldadura MAG:}
+    \begin{itemize}
+        \item \textit{Materiales y Procesos:} Se emplea principalmente en aceros al carbono y aceros de baja aleación. Es adecuada para soldaduras en ambientes industriales y en construcción de estructuras pesadas. Aquí se usan gases activos como el dióxido de carbono $CO_2$.
+    \end{itemize}
+
+    \begin{figure}[ht]
+      \centering
+      \includegraphics[width=0.55\linewidth]{mig.PNG} % Reemplaza "nombre_de_la_imagen" con el nombre de tu archivo de imagen
+      \caption{Soldadura MIG/MAG. (a) proceso general; (b) ampliado. Fuente: Adaptado de \cite{Kou}.} % Añade la descripción de la imagen y la fuente
+      \label{fig:mig}
+    \end{figure}
+
+    \item \textbf{Compatibilidad entre Antorchas de MIG/MAG y TIG:}
+    No se recomienda emplear una antorcha de MIG/MAG para soldar TIG, ni viceversa. Estos procesos de soldadura tienen requerimientos diferentes en cuanto a la antorcha y el gas de protección, por lo que sus equipos son específicos para cada proceso y no son intercambiables.
+\end{enumerate}
+
+
+\subsection{Resistencia}
+
+La soldadura por resistencia es un proceso de soldadura en el que se genera calor a través de la resistencia eléctrica de los materiales a unir junto con la fuerza aplicada para unir las piezas. A continuación, se describen los tipos más comunes de soldadura por resistencia y sus aplicaciones específicas:
+
+\begin{enumerate}[a)]
+    \item \textbf{Soldadura por Puntos (Spot Welding):}
+    \begin{itemize}
+        \item  Se utiliza corriente eléctrica y presión para soldar láminas de metal en puntos localizados.
+        \item  Ampliamente usada en la fabricación de automóviles, electrodomésticos y en la unión de láminas de metal de espesor moderado.
+    \end{itemize}
+
+    \item \textbf{Soldadura por Proyección (Projection Welding):}
+    \begin{itemize}
+        \item  Se utilizan proyecciones, como protuberancias o muescas, en una o ambas piezas a soldar para concentrar el calor y la corriente en puntos específicos.
+        \item  Empleada en la unión de elementos como tuercas y pernos a láminas de metal, y en la fabricación de componentes metálicos con elementos de fijación.
+    \end{itemize}
+
+    \begin{figure}[ht]
+      \centering
+      \includegraphics[width=0.5\linewidth]{resweld.jpg} % Reemplaza "nombre_de_la_imagen" con el nombre de tu archivo de imagen
+      \caption{Soldadura por puntos/proyección. Fuente: \cite{htrw}.} % Añade la descripción de la imagen y la fuente
+      \label{fig:resweld}
+    \end{figure}
+
+    \newpage
+    
+    \item \textbf{Soldadura de Costura (Seam Welding):}
+    \begin{itemize}
+        \item  Similar a la soldadura por puntos, pero crea una serie de soldaduras solapadas, formando una costura continua.
+        \item Utilizada en aplicaciones donde se requiere una unión continua, como en tanques, silos y tuberías.
+    \end{itemize}
+
+    \begin{figure}[ht]
+      \centering
+      \includegraphics[width=0.2\linewidth]{seam.jpg} % Reemplaza "nombre_de_la_imagen" con el nombre de tu archivo de imagen
+      \caption{Soldadura por costura. Fuente: \cite{htrw}.} % Añade la descripción de la imagen y la fuente
+      \label{fig:seam}
+    \end{figure}
+
+    \item \textbf{Soldadura por Tope (Butt Welding):}
+    \begin{itemize}
+        \item  Se utilizan para unir los extremos de barras, tubos o láminas, aplicando corriente y fuerza axial.
+        \item  Utilizada en la fabricación de alambre, barras y tuberías, especialmente útil para materiales de sección transversal pequeña a moderada.
+    \end{itemize}
+
+    \begin{figure}[ht]
+      \centering
+      \includegraphics[width=0.43\linewidth]{butt.jpg} % Reemplaza "nombre_de_la_imagen" con el nombre de tu archivo de imagen
+      \caption{Soldadura por tope. Fuente: \cite{twi}.} % Añade la descripción de la imagen y la fuente
+      \label{fig:butt}
+    \end{figure}
+\end{enumerate}
+
+
+\section{Ejercicio 2. Adhesivos}
+
+\subsection{Epoxi}
+
+\cite[pp 819-822, adaptado]{HAT} Los adhesivos de resina epoxi se utilizan en aplicaciones especializadas debido a su alta resistencia y costos relativamente altos. Se usan en aplicaciones estructurales en concreto y metal. Son adecuados para encapsulamiento y relleno de espacios debido a sus buenas propiedades eléctricas, bajo encogimiento y durabilidad. Son ideales cuando la presión de sujeción es difícil de aplicar y permiten tiempos de ensamblaje largos. También se utilizan en aplicaciones de consumo con tiempos de curado cortos y encuentran uso en industrias como la construcción, automotriz y electrónica debido a su buena adherencia a superficies no porosas.
+\begin{enumerate}[a)]
+    \item Los adhesivos epoxi son considerados adhesivos estructurales debido a su alta resistencia mecánica y química, y su capacidad para soportar cargas y tensiones significativas. Estas propiedades los hacen ideales para aplicaciones críticas en construcción, automoción y aeronáutica.
+
+    \item Después del curado, los adhesivos epoxi se convierten en materiales termoestables. Esto significa que forman enlaces químicos tridimensionales que no pueden ser remodelados o suavizados por el calor. Esto les confiere resistencia al calor y a los solventes, así como una durabilidad a largo plazo.
+    
+    \item Para los adhesivos epoxi bicomponentes, la dosificación correcta de los componentes (resina y endurecedor) es crucial para el desempeño del adhesivo. La proporción correcta se suele indicar por el fabricante y depende de la composición química de cada componente. La dosificación precisa se puede determinar leyendo las instrucciones del fabricante, que especifican la proporción de mezcla en términos de peso o volumen.
+
+    \item Los adhesivos epoxi monocomponentes están formulados para curarse bajo ciertas condiciones específicas, como la exposición a la humedad, la temperatura o la luz UV. Durante el almacenamiento, estos adhesivos se mantienen en un estado estable debido a la ausencia de estas condiciones. Una vez aplicados y expuestos a las condiciones adecuadas, se inicia el proceso de curado.
+
+\end{enumerate}
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.9\linewidth]{epoxy1.PNG} % Reemplaza "nombre_de_la_imagen" con el nombre de tu archivo de imagen
+  \caption{Reacción entre epichlorhydrin y bisphenol A, una resina expoi común. Fuente: Adaptado de \cite{HAT}.} % Añade la descripción de la imagen y la fuente
+  \label{fig:imagen}
+\end{figure}
+
+\subsection{Cianoacrilatos}
+
+\cite[pp 788-798, adaptado]{HAT}Los adhesivos de cianoacrilato se pueden definir como líquidos químicamente activos de un solo componente que reaccionan muy rápidamente con la humedad u otros materiales débilmente alcalinos para formar sólidos duros y transparentes. Sus características importantes son las siguientes:
+\begin{enumerate}
+    \item Curado muy rápido.
+    \item Se aplican en forma líquida.
+    \item Se curan mediante una reacción química.
+    \item Se activan con materiales alcalinos.
+    \item Forman materiales plásticos duros después del curado.
+\end{enumerate}
+
+
+
+
+\begin{enumerate}[a)]
+  \item Aunque los cianoacrilatos proporcionan una adhesión fuerte y rápida, generalmente no se consideran adhesivos estructurales. Esto se debe a su limitada resistencia a la tensión y a su sensibilidad a la humedad y a las altas temperaturas. Son más adecuados para aplicaciones que requieren una unión rápida y una alta resistencia a la tracción, pero no donde se esperan cargas elevadas o condiciones ambientales adversas.
+  
+  \item La polimerización de los cianoacrilatos se inicia comúnmente por la presencia de humedad. La humedad, incluso la mínima presente en el aire o en las superficies de los materiales, actúa como catalizador, iniciando una reacción en cadena que conduce a la formación de polímeros largos y a la adhesión de las superficies.
+  
+  \item Si se derrama agua sobre el monómero de cianoacrilato, esto acelerará rápidamente la polimerización, pudiendo causar una solidificación instantánea del adhesivo. Esta reacción puede generar calor y, en algunos casos, formar un vapor irritante.
+  
+  \item Para los cianoacrilatos, se recomienda generalmente una capa delgada de adhesivo, ya que un exceso de adhesivo puede reducir la resistencia de la unión. Un espesor óptimo suele ser de unos pocos micrómetros.
+  
+  \item Es posible agregar cargas o rellenos a los cianoacrilatos para aumentar el volumen y mejorar ciertas propiedades, como la resistencia térmica o la resistencia al impacto. Sin embargo, esto debe hacerse con precaución, ya que la adición de cargas puede afectar la capacidad de curado y las propiedades de adhesión del adhesivo.
+\end{enumerate}
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.3\linewidth]{cianoacrilato.PNG} % Reemplaza "nombre_de_la_imagen" con el nombre de tu archivo de imagen
+  \caption{Estructura general del cianoacrilato. Fuente: Adaptado de \cite{HAT}.} % Añade la descripción de la imagen y la fuente
+  \label{fig:cianoacrilato}
+\end{figure}
+
+\subsection{Elásticos}
+
+\cite[pp 512-515, adaptado]{HAT} Los adhesivos elastoméricos representan una categoría especializada en el mundo de los adhesivos. Están diseñados para ofrecer una combinación única de propiedades que los distingue de otros tipos de adhesivos. Estos adhesivos son conocidos por su capacidad para proporcionar una unión flexible y elástica después del curado, lo que los hace ideales para aplicaciones donde se requiere resistencia a movimientos, deformaciones y tensiones repetidas sin comprometer la integridad de la unión.
+
+\begin{enumerate}[a)]
+  \item La polimerización de los poliuretanos implica la reacción de un isocianato con un poliol. La formación del polímero de poliuretano ocurre por la reacción de estos dos componentes, creando enlaces de uretano. Esta reacción puede ser catalizada y modificar su velocidad y características mediante la adición de diferentes tipos de catalizadores. Los poliuretanos resultantes pueden ser termoplásticos o termoestables, y su naturaleza elástica se debe a la segmentación de sus cadenas, donde las regiones blandas proporcionan elasticidad y las regiones duras ofrecen resistencia y estructura.
+
+  \item La elasticidad de las siliconas se debe a su estructura química única, que consiste en una cadena de silicio-oxígeno alternada con grupos orgánicos unidos al silicio. Esta estructura le confiere una flexibilidad y movilidad excepcionales a nivel molecular, lo que resulta en una alta elasticidad y resistencia al envejecimiento, a la temperatura y a la degradación química. Las siliconas mantienen sus propiedades elásticas en un amplio rango de temperaturas y condiciones ambientales.
+
+  \item La polimerización de las siliconas generalmente ocurre a través de un proceso de curado, que puede ser iniciado por humedad (curado por humedad), calor (curado térmico) o radiación UV (curado por UV). En el curado por humedad, los grupos terminales de silano reaccionan con la humedad del aire para formar enlaces siloxano, resultando en la formación de un polímero tridimensional. En el curado térmico y por UV, se utilizan diferentes mecanismos de reacción, pero el resultado es similar: la formación de una red polimérica tridimensional que confiere al material sus características elásticas únicas.
+\end{enumerate}
+
+\subsection{Comparativa de uniones}
+
+Para una cierta aplicación es necesario realizar la unión mediante adhesivo. La unión va a trabajar como 
+se describe en la figura
+
+\begin{center}
+  \includegraphics[width=0.4\textwidth]{fuerzas.PNG}
+\end{center}
+
+
+Para hacer la unión se han creado dos posibles soluciones. Indique cual elegiría razonando la respuesta.
+\begin{center}
+  \includegraphics[width=0.9\textwidth]{opciones.PNG}
+\end{center}
+
+
+
+Dado que la carga es compresiva, la mejor opción probablemente sea aquella con el mayor área de superficie para maximizar el contacto y el área de distribución de las fuerzas. Por eso escogaría la opción A, ya que tiene algo más de area de contacto y al ser cuadrada, las fuerzas se distribuyen de forma más uniforme.
+
+
+\newpage
+
+\section{Ejercicio 3: Recubrimientos}
+
+\subsection{Conversión}
+
+
+
+
+
+\cite[pp 416-419, adaptado]{Corrosion} Los recubrimientos de conversión son tratamientos superficiales que cambian la composición química de la superficie de un metal para mejorar su resistencia a la corrosión y para proporcionar una base para la adhesión de pinturas y otros acabados. A continuación, se describen los tratamientos más empleados, su función y cómo se realiza cada uno de ellos:
+
+\begin{enumerate}
+    \item \textbf{Fosfatados de Zinc/Hierro/Manganeso:} Consiste en la aplicación de una solución que contiene fosfatos que reacciona con la superficie metálica para formar una capa de fosfato. Este tratamiento se utiliza para mejorar la resistencia a la corrosión del metal y para mejorar la adhesión de las pinturas. El proceso de fosfatado puede realizarse por inmersión o rociado como se puede ver en la Figura \ref*{fig:fosfatado} y la superficie debe estar limpia y libre de óxidos antes de la aplicación.
+    \item \textbf{Cromatizado:} Se aplica una solución que contiene cromatos que reaccionan con la superficie del metal, generalmente aluminio o aleaciones de aluminio, para formar una capa de cromato. Este recubrimiento proporciona protección contra la corrosión y es una base excelente para la pintura. El cromatizado se realiza generalmente por inmersión o rociado, seguido de un enjuague y secado. Ver Figura \ref*{fig:cromado}
+  \end{enumerate}
+
+  \begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.85\linewidth]{conversion1.PNG} % Reemplaza "nombre_de_la_imagen" con el nombre de tu archivo de imagen
+    \caption{Proceso de fosfatado. Fuente: Adaptado de \cite{Corrosion}.} % Añade la descripción de la imagen y la fuente
+    \label{fig:fosfatado}
+  \end{figure}
+  
+
+  \begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.8\linewidth]{cromado.PNG} % Reemplaza "nombre_de_la_imagen" con el nombre de tu archivo de imagen
+    \caption{Proceso de tratamiento de aluminio mediante immersión de cromo. Fuente: Adaptado de \cite{Corrosion}.} % Añade la descripción de la imagen y la fuente
+    \label{fig:cromado}
+  \end{figure}
+
+  
+
+\newpage
+
+
+\subsection{Anodizado}
+
+\cite[pp 419-420, adaptado]{Corrosion} El anodizado es un proceso electroquímico que se utiliza para aumentar el grosor de la capa natural de óxido en la superficie del aluminio, mejorando así su resistencia a la corrosión y su durabilidad. A continuación, se describen las etapas del proceso de anodizado y cómo se colorean las piezas de aluminio:
+
+\begin{enumerate}
+    \item \textbf{Pretratamiento:} La superficie de aluminio se limpia para eliminar toda la suciedad, grasa y otros contaminantes. Esto se puede hacer mediante procesos de limpieza química y/o mecánica, como desengrase y decapado.
+
+    \item \textbf{Anodizado:} El aluminio limpio se sumerge en un baño electrolítico, como el ácido sulfúrico, y se utiliza como ánodo al aplicar una corriente eléctrica. Durante este proceso, se forma una capa de óxido de aluminio en la superficie que es porosa, permitiendo una mayor protección y adhesión para futuros procesos.
+
+    \item \textbf{Coloración:} Después del anodizado, las piezas pueden ser coloreadas utilizando métodos orgánicos o inorgánicos. La coloración orgánica se logra sumergiendo el aluminio en un baño que contiene colorantes orgánicos que se absorben en los poros de la capa de óxido. La coloración inorgánica, como el proceso de electrólisis o impregnación con sales metálicas, se realiza aplicando corriente eléctrica en un baño que contiene sales metálicas, las cuales precipitan en los poros del óxido formando colores que van desde el negro al bronce y dorado.
+
+    \item \textbf{Sellado:} El último paso es sellar los poros de la capa de óxido para aumentar la resistencia a la corrosión y fijar el color. El sellado se realiza sumergiendo las piezas en agua caliente o vapor, donde el agua reacciona con el óxido de aluminio para formar una capa de hidróxido que bloquea los poros.
+
+    \item \textbf{Secado:} Finalmente, las piezas se secan cuidadosamente después del sellado para completar el proceso de anodizado.
+\end{enumerate}
+
+La variación en los colores se consigue ajustando la composición del baño de coloración y los parámetros del proceso, como la densidad de corriente y la temperatura. Los colores también pueden ser afectados por la aleación de aluminio y el acabado superficial previo al anodizado.
+
+
+\subsection{Electrodepositados}
+
+\begin{enumerate}[a)]
+  \item \textbf{Resistencia a la corrosión:}
+  \begin{center}
+    \includegraphics[width=0.6\textwidth]{recubrimientos.PNG}
+  \end{center}
+  El recubrimiento de zinc sería mejor frente a la corrosión en comparación con el recubrimiento de cobre. El zinc actúa como un metal de sacrificio, protegiendo al acero mediante la protección catódica. Aunque el cobre tiene buena resistencia a la corrosión, no ofrece la misma protección catódica que el zinc.
+
+  \item \textbf{Uso de recubrimientos de metales nobles:}
+  Los recubrimientos de metales nobles se utilizan para mejorar la conductividad eléctrica, resistir la corrosión y proporcionar un acabado estético. Debido a su baja reactividad, estos recubrimientos son ideales para aplicaciones donde se requiere durabilidad y una apariencia decorativa.
+
+  \item \textbf{Uso de recubrimientos de metales activos:}
+  Los recubrimientos de metales activos como el zinc son utilizados para su capacidad de ofrecer protección catódica al metal base. Estos recubrimientos se corroen preferentemente, protegiendo el metal subyacente de la corrosión, lo que es esencial en ambientes corrosivos.
+\end{enumerate}
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.7\linewidth]{electro.PNG} % Reemplaza "nombre_de_la_imagen" con el nombre de tu archivo de imagen
+  \caption{Baño de electrodepositados. Fuente: Adaptado de \cite{Corrosion}.} % Añade la descripción de la imagen y la fuente
+  \label{fig:electro}
+\end{figure}
+
+\newpage
+
+\subsection{Galvanizado}
+
+El galvanizado es un proceso de recubrimiento de piezas de acero o hierro con una capa protectora de zinc. Este proceso se realiza generalmente por inmersión en caliente, donde las piezas se sumergen en un baño de zinc fundido, lo que permite que el zinc se adhiera a la superficie del metal base formando una barrera física. También puede realizarse por métodos electroquímicos o mediante la aplicación de pinturas ricas en zinc.
+
+Ventajas:
+\begin{enumerate}
+    \item \textbf{Protección Catódica:} El zinc ofrece protección catódica al acero. Si el recubrimiento se daña, el zinc cercano al área dañada se corroerá preferentemente, protegiendo así al acero subyacente de la corrosión.
+    
+    \item \textbf{Excelente Resistencia a la Corrosión:} El galvanizado proporciona una excelente resistencia a la corrosión, lo que lo hace ideal para aplicaciones en ambientes húmedos o corrosivos.
+    
+    \item \textbf{Durabilidad:} Las capas de zinc son duraderas y pueden proporcionar protección durante un largo período de tiempo, lo que reduce la necesidad de mantenimiento frecuente.
+    
+    \item \textbf{Versatilidad:} El galvanizado se puede aplicar a una amplia variedad de formas y tamaños de piezas metálicas, lo que lo hace versátil para diversas aplicaciones.
+    
+    \item \textbf{Bajo Costo:} El galvanizado suele ser una opción económica en comparación con otros recubrimientos de protección contra la corrosión.
+\end{enumerate}
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.65\linewidth]{galva.PNG} % Reemplaza "nombre_de_la_imagen" con el nombre de tu archivo de imagen
+  \caption{Procesos de galvanizado. Fuente: Adaptado de \cite{Corrosion}.} % Añade la descripción de la imagen y la fuente
+  \label{fig:electro}
+\end{figure}
+
+\newpage
+\subsection{Difusión}
+
+\cite[pp 406]{Corrosion} En este método, la superficie del metal que se va a recubrir se modifica al hacer que un metal o un elemento se difunda en él a alta temperatura. Esto proporciona la resistencia necesaria cuando se combina con el metal base.
+\begin{enumerate}
+    \item \textbf{Nitrurado:} En el nitrurado, se introduce nitrógeno en la superficie del acero para formar una capa de nitruro de hierro. Esto se logra mediante la exposición del acero a una atmósfera rica en nitrógeno a temperaturas elevadas, típicamente en el rango de 500°C a 600°C.
+
+
+    \item \textbf{Carburizado:} En el carburizado, se introduce carbono en la superficie del acero para formar una capa de carburos de hierro. Esto se logra exponiendo el acero a una atmósfera rica en carbono, a menudo mediante el uso de gas metano, a temperaturas elevadas, generalmente en el rango de 870°C a 980°C.
+
+    \item \textbf{Borurado:} El borurado implica la introducción de boro en la superficie del acero para formar una capa de boruros de hierro. Este proceso se lleva a cabo en un baño de sales que contiene boro, a altas temperaturas, generalmente en el rango de 800°C a 1100°C.
+  \end{enumerate}
+
+
+  \subsection{Recubrimientos especiales}
+
+  \subsection*{Implantación Iónica}
+
+\begin{enumerate}
+    \item \textbf{Proceso de Obtención:} La implantación iónica se utiliza en diversas aplicaciones debido a su capacidad para modificar las propiedades de la superficie de los materiales de una manera controlada y precisa.
+    
+    \item \textbf{Ventajas:}
+    \begin{itemize}
+        \item Mejora de la dureza y resistencia al desgaste de la superficie.
+        \item Control preciso de las propiedades químicas y mecánicas de la capa implantada.
+        \item Posibilidad de crear recubrimientos resistentes a la corrosión y al desgaste.
+    \end{itemize}
+    
+    \item \textbf{Desventajas:}
+    \begin{itemize}
+        \item Costoso y complejo debido al equipo necesario.
+        \item Depende de la difusión de iones en el material base.
+        \item No es adecuado para aplicaciones de recubrimientos gruesos.
+    \end{itemize}
+    
+    \item \textbf{Aplicaciones:} La implantación iónica se emplea principalmente en la fabricación componentes electrónicos.
+\end{enumerate}
+
+\subsection*{PVD (Deposición Física de Vapor)}
+
+\begin{enumerate}
+    \item \textbf{Proceso de Obtención:} \cite[pp 429]{Corrosion} En este proceso, los vapores de un compuesto que contiene metal entran en contacto con un sustrato calentado y se deposita un compuesto de metal en la superficie. En el caso específico de la reacción entre el cloruro de aluminio ($AlCl_3$) y el acero ($Fe$), que se lleva a cabo en una atmósfera reductora a 1000°C, se deposita aluminio ($Al$) en la superficie. La reacción química se representa de la siguiente manera:
+    \[2\text{AlCl}_3 + 3\text{Fe} \rightarrow 3\text{FeCl}_2 + 2\text{Al}\]
+
+
+    
+    \item \textbf{Ventajas:}
+    \begin{itemize}
+        \item Alta calidad y adherencia del recubrimiento.
+        \item Control preciso del espesor y composición del recubrimiento.
+        \item Amplia gama de materiales y acabados disponibles.
+    \end{itemize}
+    
+    \item \textbf{Desventajas:}
+    \begin{itemize}
+        \item Limitado para recubrimientos gruesos.
+        \item Requiere vacío, lo que aumenta la complejidad y el costo.
+    \end{itemize}
+    
+    \item \textbf{Aplicaciones:} El PVD se utiliza para aplicar recubrimientos decorativos y funcionales en componentes de relojes, herramientas de corte, componentes automotrices y más.
+\end{enumerate}
+
+\subsection*{CVD (Deposición Química de Vapor)}
+
+\begin{enumerate}
+    \item \textbf{Proceso de Obtención:} La deposición CVD implica la reacción química de precursores gaseosos en la superficie de un sustrato a alta temperatura. Esto forma un recubrimiento sólido que se adhiere a la superficie del material base.
+    
+    \item \textbf{Ventajas:}
+    \begin{itemize}
+        \item Se pueden obtener recubrimientos gruesos y conformes a formas complejas.
+        \item Control preciso de la composición y la estructura del recubrimiento.
+        \item Amplia variedad de materiales disponibles.
+    \end{itemize}
+    
+    \item \textbf{Desventajas:}
+    \begin{itemize}
+        \item Requiere altas temperaturas y gases reactivos, lo que puede ser peligroso.
+        \item Proceso más lento en comparación con otros métodos.
+    \end{itemize}
+    
+    \item \textbf{Aplicaciones:} El CVD se utiliza en la fabricación de herramientas de corte de alta velocidad, componentes cerámicos, recubrimientos de barrera en electrónica y más.
+\end{enumerate}
+
+\newpage
+
+\begin{thebibliography}{9} % 9 es el número máximo de referencias que esperas tener; ajusta según tus necesidades
+
+  
+  \bibitem{Kou} Kou, Sindo.\textit{Welding Metallurgy, 2e}. Editorial Wiley, 2003.
+
+  \bibitem{htrw} How To Resistance Weld.\url{https://www.howtoresistanceweld.info/projection-welding/what-is-a-projection-weld.html}. 
+
+  \bibitem{twi} TWI Global.\url{https://www.twi-global.com/technical-knowledge/faqs/what-is-a-butt-weld}. 
+
+  \bibitem{HAT} A. Pizzi, K.L. Mittal.\textit{Handbook of Adhesive Technology, 3e}. Editorial Marcel Dekker, 2003.
+
+  \bibitem{Corrosion} Zaki Ahmad.\textit{Principles of Corrosion Engineering  and Corrosion Control}. Editorial Elsevier, 2006.
+  
+  \end{thebibliography}
+
+\end{document}

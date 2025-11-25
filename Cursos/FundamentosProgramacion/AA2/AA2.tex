@@ -1,0 +1,161 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+
+\geometry{a4paper, margin=2.5cm}
+
+% Configuración de encabezado y pie de página
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Sistema de Control de Almacén}
+\lhead{AA2 - Práctica Unidad 3}
+\rfoot{Página \thepage}
+
+\title{\textbf{Actividad de Aprendizaje (AA2)} \\ 
+\textbf{Práctica de la Unidad 3} \\
+\large Sistema de Control de Almacén de Piezas de PC}
+\author{Alexander Sebastian Kalis}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+\newpage
+
+\tableofcontents
+\newpage
+
+\section{Introducción}
+
+Este documento presenta el análisis y diseño de un sistema informático para el control de existencias de un almacén de piezas de PC. El sistema contempla dos tipos de usuario: {operador} y {jefe de producto}, cada uno con funcionalidades específicas según sus necesidades operativas.
+
+
+\newpage 
+\section{Definición de Requisitos}
+
+Una empresa de piezas de reparación de móviles desea llevar el control de almacén para distintos productos. Cada producto se identifica por un código único.
+
+El sistema gestiona para cada producto:
+\begin{itemize}
+    \item Código único del producto
+    \item Nombre comercial
+    \item Cantidad de existencias disponibles
+    \item Precio de venta unitario
+    \item Variable booleana de alerta cuando las existencias bajan de 10 unidades
+\end{itemize}
+
+\subsection{Funcionalidades del Sistema}
+
+El sistema permite gestionar las entradas y salidas de productos, de manera que cuando las existencias de un producto estén por debajo de 10 unidades se lance una alerta en el momento de actualizar la cantidad. Además, el sistema debe mostrar por pantalla el estado de existencias de cada producto, así como el total de facturación acumulada.
+
+\subsection{Tipos de Usuario}
+
+\subsubsection{Operador del sistema}
+
+El operador del sistema podrá realizar las siguientes operaciones:
+\begin{itemize}
+    \item Visualización del estado del almacén
+    \item Actualización de existencias
+\end{itemize}
+
+\subsubsection{Jefe de producto}
+
+El jefe de producto de la empresa podrá realizar las mismas operaciones que el operador, pero además puede:
+\begin{itemize}
+    \item Eliminar productos del sistema
+    \item Incluir otros nuevos, fijando todos los datos necesarios (código, nombre, producto y existencias)
+\end{itemize}
+
+\subsection{Tipos de Datos}
+
+El programa manejará los siguientes datos para cada producto:
+
+\begin{itemize}
+    \item \textbf{Código}: número entero entre 10 y 15 ambos inclusive
+    \item \textbf{Nombre comercial}: cadena de caracteres
+    \item \textbf{Existencias}: número entero mayor o igual a 0
+    \item \textbf{Precio de venta}: número real positivo
+    \item \textbf{Fecha de alta}: formato dd.mm.aaaa (establecida por el jefe de producto)
+\end{itemize}
+
+\newpage 
+
+\section{Análisis del Sistema}
+
+\subsection{Diagrama de Flujo - Arquitectura del Sistema}
+
+Este diagrama muestra la arquitectura general del sistema, diferenciando los dos tipos de usuario (Operador y Jefe de Producto) y sus respectivos permisos de acceso a las funcionalidades del sistema de gestión de almacén.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{imagen1_arquitectura.png}
+    \caption{Diagrama de flujo con la arquitectura del sistema}
+    \label{fig:arquitectura}
+\end{figure}
+
+\subsection{Diagrama General de Procesos del Sistema}
+
+Este diagrama presenta la estructura modular del sistema, mostrando los principales módulos funcionales y su interacción con la base de datos central.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{imagen2_procesos.png}
+    \caption{Diagrama general de procesos del sistema}
+    \label{fig:procesos}
+\end{figure}
+
+\subsection{Diagrama del Proceso de Actualización de Producto}
+
+Este diagrama detalla el proceso de actualización de existencias de un producto, tanto para entradas (llegada de fábrica) como salidas (ventas a puntos de venta), incluyendo validaciones y el sistema de alertas por stock bajo.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{imagen3_actualizacion.png}
+    \caption{Diagrama del proceso de actualización de un producto (por entrada o salida)}
+    \label{fig:actualizacion}
+\end{figure}
+
+\subsection{Diagrama del Proceso de Eliminar o Añadir Producto}
+
+Este diagrama ilustra los dos procesos administrativos exclusivos del Jefe de Producto: la inclusión de nuevos productos al sistema (con todas las validaciones de datos) y la eliminación de productos existentes.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{imagen4_crud.png}
+    \caption{Diagrama del proceso de eliminar o añadir un nuevo producto al sistema}
+    \label{fig:crud}
+\end{figure}
+
+\section{Diseño General del Sistema}
+
+\subsection{Diseño Arquitectónico Modular del Sistema}
+
+Arquitectura modular en tres capas que separa la presentación, la lógica de negocio y el acceso a datos, permitiendo mantenibilidad y escalabilidad del sistema.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\textwidth]{imagen5_modular.png}
+    \caption{Diseño arquitectónico modular del sistema}
+    \label{fig:modular}
+\end{figure}
+
+\newpage
+\subsection{Estructura del Registro del Fichero}
+
+Estructura de datos que representa el registro en el fichero, mostrando los atributos de cada producto (código, nombre, existencias, precio, fecha) y las operaciones principales del sistema de almacén.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{imagen6_registro.png}
+    \caption{Estructura del registro del fichero que contendrá los datos del producto}
+    \label{fig:registro}
+\end{figure}
+
+
+\end{document}

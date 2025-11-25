@@ -1,0 +1,114 @@
+\documentclass[twoside]{article}
+\usepackage{lipsum}
+\usepackage{authoraftertitle}
+\usepackage[margin=2cm,left=2.5cm,bottom=1.5cm,top=2cm,includeheadfoot]{geometry}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage[spanish]{babel}
+\usepackage{mathtools}
+
+
+%Header & Footer
+
+\pagestyle{fancy}
+\fancyhead[LE]{\MyTitle}
+\fancyhead[LO]{Tecnologías de la Información y Comunicación}
+\fancyhead[RO]{\leftmark}
+\fancyhead[RE]{\leftmark}
+\fancyfoot[L]{\raisebox{-1cm}{\includegraphics[height=2cm]{C:/Users/alexk/Dropbox/DocumentGraphics/LOGOUDIMA.jpg}}}
+\fancyfoot[RE]{Corregido:\\ Dr. Isaac Seaone Pujol}
+\fancyfoot[RO]{07/12/2018}
+
+
+%Vars
+\author{Alexander Sebastian Kalis}
+\title{Actividad de Evaluación Continua 3, Octave:Opción A}
+
+
+%DOC
+
+
+\begin{document}
+
+\begin{titlepage}
+
+    \begin{center}
+
+        \line(1,0){300}\\
+        [0.2in]
+        \huge{\bfseries {\MyTitle}}\\
+        [1mm]
+        \line(2,0){200}\\
+        [0.75cm]
+        \textsc{\LARGE Tecnologías de la Información y Comunicación}\\
+        [3cm]
+        \includegraphics[height=10cm]{C:/Users/alexk/Dropbox/DocumentGraphics/octave.png}\\
+        [2cm]
+
+    \end{center}
+
+    \begin{flushright}
+
+        Autor: {\MyAuthor}\\
+        Profesores: Dr. Lucas Castro Martínez, Dr. Isaac Seoane Pujol\\
+        Curso: 1o, Ingeniería de Organización Industrial\\
+        UDIMA         
+
+    \end{flushright}
+    
+\end{titlepage}
+
+\newpage
+
+\section{Introducción}
+
+En este documento se pretende mostrar un pequeño resumen del desarrollo de la actividad en Octave. El alumno está familiarizado con la estructuración
+y programación en varios lenguajes funcionales y orientados a objetos, sin embargo nunca ha realizado programación en MatLab/Octave.
+
+\section{Desarrollo}
+Se ha escogido la opción A a desarrollar:Crear un algoritmo que permita resolver un sistema de ecuaciones como el que se muestra acontinuación y dibujar la progresión de cada una de las 3 variables de salida X1, X2 y X3 para todos las posibles valores del parámetro V. Los valores de los parámetros di son los 8 dígitos de vuestro DNI y el parámetro d es el valor medio de las 8 cifras de dicho DNI. 
+
+Los parámetros V y R varían de la siguiente manera: V tomará 51 valores equiespaciados entre -10 y 10. R es 1 valor aleatorio entre 0 y 10.\\
+
+\begin{center}
+    
+    $d_1X+d_2Y+d_3Z=d$
+
+    $d_4X+d_5Y+d_6Z=V$
+    
+    $d_7X+d_8Y+dZ=R$
+
+\end{center}
+
+Como se ha observado en la sesión de videoconferencia de Octave, se propondrá la resolución del problema utilizando la función de la inversa de una matriz.
+
+En la primera parte se plantean las variables y constantes que utilizará el programa:\\
+
+\includegraphics[width=\textwidth]{C:/Users/alexk/Dropbox/DocumentGraphics/AEC3TIC/variables.png}
+
+Seguidamente, mediante un bucle ``for", se crearán varios vectores que corresponderán a los resultados para cada valor de V, es decir, 51 vectores distintos:\\
+
+\includegraphics[width=\textwidth]{C:/Users/alexk/Dropbox/DocumentGraphics/AEC3TIC/for.png}
+
+Se utiliza la función plot() para obtener la gráfica de los resultados obtenidos. Adicionalmente se pone título y leyenda a los valores representados:\\
+
+\includegraphics{C:/Users/alexk/Dropbox/DocumentGraphics/AEC3TIC/plot.png}
+
+Por último se guardan los resultados en un fichero .csv el cual nos permitirá importar estos valores posteriormente, si fueran necesarios:
+
+\includegraphics[width=\textwidth]{C:/Users/alexk/Dropbox/DocumentGraphics/AEC3TIC/csv.png}
+
+\section{Resultados gráficos}
+
+A continuación se muestra un par ejemplos de resultados obtenidos con nuestro script de Octave:
+
+\includegraphics[height=5cm]{C:/Users/alexk/Dropbox/DocumentGraphics/AEC3TIC/graph1.jpg}
+\includegraphics[height=5cm]{C:/Users/alexk/Dropbox/DocumentGraphics/AEC3TIC/graph2.jpg}
+
+\section{Conclusión}
+
+Viniendo de programación funcional y secuancial principalmente, me ha costado un poco ``cambiar el chip'' a la forma de pensar
+en matrices para utilizar el lenguaje de MatLab/GNU Octave. Realmente es un lenguaje muy potente y espero con ansias poder utilizarlo
+en las asignaturas relacionadas con matemáticas, ya que también es divertido ver las representaciones gráficas de lo que uno computa.
+
+\end{document}

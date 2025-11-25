@@ -1,0 +1,121 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{geometry}
+\geometry{a4paper, margin=1in}
+\title{Plantillas de Resolución para Problemas de Transferencia de Calor}
+\author{Unidades 5 y 6}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section{Plantilla 13: Transferencia de Calor por Conducción}
+Se utiliza para calcular el calor que se transfiere a través de un material sólido (o un fluido en reposo) debido a una diferencia de temperatura.
+
+\subsection*{Paso a Paso}
+1. \textbf{Identificar la Geometría:} El problema especificará si se trata de una \textbf{pared plana}, un \textbf{cilindro hueco} (tubería) o una \textbf{esfera hueca}. Esto determina la fórmula de la resistencia térmica.
+
+2. \textbf{Identificar la Configuración:} Los materiales pueden estar en \textbf{serie} (uno después de otro, el calor los atraviesa secuencialmente) o en \textbf{paralelo} (uno al lado del otro, el calor se divide).
+
+3. \textbf{Aplicar el Concepto de Resistencia Térmica ($R_{th}$):} Es la forma más sencilla de resolver estos problemas. La resistencia se opone al paso del calor.
+    \[ Q = \frac{\Delta T}{R_{th}} \]
+    Donde $\Delta T$ es la diferencia de temperaturas entre los extremos del material.
+
+4. \textbf{Calcular la Resistencia Térmica para la Geometría Adecuada:}
+    \begin{itemize}
+        \item[-] \textbf{Pared Plana:} La resistencia depende del espesor (L), la conductividad (k) y el área (A).
+        \[ R_{cond, pared} = \frac{L}{k \cdot A} \]
+        \item[-] \textbf{Cilindro Hueco (Tubería):} Depende de los radios interior ($r_1$) y exterior ($r_2$), la longitud (L) y la conductividad (k).
+        \[ R_{cond, cilindro} = \frac{\ln(r_2 / r_1)}{2 \pi k L} \]
+    \end{itemize}
+
+5. \textbf{Combinar las Resistencias (si hay varios materiales):}
+    \begin{itemize}
+        \item[-] \textbf{En Serie:} Las resistencias se suman. $R_{total} = R_1 + R_2 + \dots$
+        \item[-] \textbf{En Paralelo:} Se suma el inverso de las resistencias. $\frac{1}{R_{total}} = \frac{1}{R_1} + \frac{1}{R_2} + \dots$
+    \end{itemize}
+
+6. \textbf{Calcular el Flujo de Calor (Q):} Una vez que tienes la resistencia total, aplica la fórmula del paso 3 con la diferencia de temperatura total.
+
+\subsection*{Ejercicios que usan esta plantilla:}
+\textbf{Problemas calor.pdf:} 44, 45, 46, 47, 49, 50, 51, 52.
+
+\hrulefill
+
+\section{Plantilla 14: Transferencia de Calor por Convección}
+Se utiliza para calcular el calor transferido entre la superficie de un sólido y un fluido en movimiento (líquido o gas) que se encuentra a una temperatura diferente.
+
+\subsection*{Paso a Paso}
+1. \textbf{Identificar el Proceso:} El enunciado mencionará un fluido (aire, agua, etc.) en contacto con una superficie a una temperatura distinta. Se proporcionará un \textbf{coeficiente de convección (h)}.
+
+2. \textbf{Aplicar la Ley de Enfriamiento de Newton:} Esta es la fórmula clave para la convección.
+    \[ Q = h \cdot A \cdot (T_{superficie} - T_{fluido}) \]
+    Donde $A$ es el área de la superficie en contacto con el fluido.
+
+3. \textbf{Calcular el Coeficiente de Convección (h) si no es un dato:} En algunos problemas (como el Ej. 4 del AEC2), `h` no es un valor fijo, sino que se da como una fórmula que depende de la diferencia de temperatura, $\Delta T$. En ese caso, primero calcula $\Delta T$ y luego úsalo en la fórmula para encontrar el valor de `h`.
+
+4. \textbf{Usar el Concepto de Resistencia Térmica (opcional pero recomendado):} La convección también tiene una resistencia térmica, lo que es muy útil para problemas con mecanismos combinados (ver Plantilla 16).
+    \[ R_{conv} = \frac{1}{h \cdot A} \]
+
+5. \textbf{Calcular el Flujo de Calor (Q):} Sustituye los valores de `h`, `A` y las temperaturas en la Ley de Enfriamiento de Newton.
+
+\subsection*{Ejercicios que usan esta plantilla:}
+\textbf{Problemas calor.pdf:} 53, 54. \textbf{AEC2:} 4.
+
+\hrulefill
+
+\section{Plantilla 15: Transferencia de Calor por Radiación}
+Se utiliza para calcular el calor transferido mediante ondas electromagnéticas entre dos superficies a diferentes temperaturas. No necesita un medio material.
+
+\subsection*{Paso a Paso}
+1. \textbf{Identificar el Proceso:} El enunciado mencionará la "radiación", la "emisividad" ($\epsilon$) de una superficie, o se referirá a un "cuerpo negro".
+
+2. \textbf{Aplicar la Ley de Stefan-Boltzmann:} Esta ley describe el intercambio neto de calor por radiación.
+    \[ Q = \epsilon \cdot \sigma \cdot A \cdot (T_{sup1}^4 - T_{sup2}^4) \]
+    \textbf{¡Atención!} Las temperaturas ($T_{sup1}$ y $T_{sup2}$) deben estar \textbf{obligatoriamente en Kelvin (K)}.
+    \begin{itemize}
+        \item[-] $\epsilon$ es la \textbf{emisividad} de la superficie (un valor entre 0 y 1). Si es un "cuerpo negro", $\epsilon = 1$.
+        \item[-] $\sigma$ es la constante de Stefan-Boltzmann: $5.67 \times 10^{-8} \frac{W}{m^2 K^4}$.
+        \item[-] $A$ es el área de la superficie que emite la radiación.
+    \end{itemize}
+
+3. \textbf{Calcular el Flujo de Calor (Q):} Sustituye todos los valores en la ecuación, asegurándote de que las temperaturas estén en Kelvin y elevadas a la cuarta potencia.
+
+\subsection*{Ejercicios que usan esta plantilla:}
+\textbf{Problemas calor.pdf:} 57, 58, 59, 60, 61, 62, 63. \textbf{AEC2:} 2.
+
+\hrulefill
+
+\section{Plantilla 16: Mecanismos Combinados y Circuitos Térmicos}
+Esta es la plantilla más potente y se usa cuando el calor atraviesa un sistema donde ocurren varios procesos en serie (conducción a través de varias capas, convección en las superficies, etc.).
+
+\subsection*{Paso a Paso}
+1. \textbf{Dibujar el Sistema y el Circuito de Resistencias Térmicas:}
+    \begin{itemize}
+        \item[-] Representa cada capa de material o proceso de transferencia de calor como una resistencia.
+        \item[-] Si el calor debe atravesar un elemento después de otro, las resistencias están \textbf{en serie}.
+        \item[-] Dibuja los puntos de temperatura conocidos (ej. $T_{fluido\_int}$, $T_{superficie}$, $T_{fluido\_ext}$).
+    \end{itemize}
+
+2. \textbf{Calcular cada Resistencia Térmica individual:} Usa las fórmulas de las plantillas anteriores para cada parte del circuito.
+    \begin{itemize}
+        \item[-] Resistencia de Convección (interior): $R_{conv,int} = \frac{1}{h_{int} \cdot A}$
+        \item[-] Resistencia de Conducción (pared): $R_{cond} = \frac{L}{k \cdot A}$
+        \item[-] Resistencia de Convección (exterior): $R_{conv,ext} = \frac{1}{h_{ext} \cdot A}$
+    \end{itemize}
+
+3. \textbf{Calcular la Resistencia Térmica Total ($R_{total}$):} Como casi siempre están en serie, simplemente súmalas.
+    \[ R_{total} = R_{conv,int} + R_{cond,1} + R_{cond,2} + \dots + R_{conv,ext} \]
+
+4. \textbf{Calcular el Flujo de Calor Total (Q):} Usa la diferencia de temperatura total (entre los dos fluidos, por ejemplo) y la resistencia total.
+    \[ Q = \frac{\Delta T_{total}}{R_{total}} = \frac{T_{fluido,caliente} - T_{fluido,frio}}{R_{total}} \]
+
+5. \textbf{(Opcional) Calcular Temperaturas Intermedias:} Una vez que conoces Q, puedes usar la misma lógica para encontrar la temperatura en cualquier punto intermedio. Por ejemplo, para encontrar la temperatura de la superficie interior ($T_{s,int}$):
+    \[ Q = \frac{T_{fluido,int} - T_{s,int}}{R_{conv,int}} \Rightarrow T_{s,int} = T_{fluido,int} - Q \cdot R_{conv,int} \]
+
+\subsection*{Ejercicios que usan esta plantilla:}
+\textbf{Problemas calor.pdf:} 55, 56. \textbf{AEC2:} 1, 3.
+
+\end{document}

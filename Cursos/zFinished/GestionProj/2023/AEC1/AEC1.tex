@@ -1,0 +1,284 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage{comment}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{grffile}
+\usepackage{pdflscape}
+\usetikzlibrary{positioning}
+\usetikzlibrary{arrows.meta}
+
+\geometry{a4paper, margin=1in}
+
+\title{Caso Práctico I: Procesos en la dirección de proyectos}
+\author{Alexander Kalis}
+\date{\today}
+
+\begin{document}
+
+
+\begin{titlepage}
+
+   \begin{center}
+
+   
+       %\huge{\bfseries {\MyTitle}}\\
+       \line(2,0){200}\\
+       [0.75cm]
+       \textsc{\LARGE Gestión de Proyectos}\\
+       [0.75cm]
+       \line(2,0){200}\\
+       [2cm]
+       \includegraphics[height=15cm]{E:/KUKADisk/OneDrive - KUKA AG/UDIMA/GestionProj/portproj.png}\\
+       [3cm]
+
+   \end{center}
+
+   \begin{flushright}
+
+       Autores: Manuel Rubio, Carmelo Garcia, Alexander Kalis\\
+       Profesor: Dr. Juan Luis Rubio Sánchez\\
+       Curso: Ingeniería de Organización Industrial\\
+       UDIMA         
+
+   \end{flushright}
+   
+\end{titlepage}
+
+
+
+\section{Enunciado 1}
+\subsection{Introducción}
+En cualquier proyecto la definición y aplicación de los diferentes procesos con los que se gestionará cada
+fase del proyecto es una actividad de la que depende el éxito o fracaso del mismo. La correcta definición
+del alcance así como la correcta estimación de tiempos y planificación de los recursos determina las
+herramientas para facilitar el seguimiento y control del proyecto, cuestión esta por la que dicha actividad es
+vital en la vida del mismo.
+
+\subsection{Objetivo del Caso Práctico}
+El objetivo del caso práctico es la aplicación de las técnicas de planificación vistas en teoría a un caso real
+y la familiarización con herramientas de software que faciliten estas tareas.
+
+\subsection{Enunciado}
+La empresa Suelos S.L. ha recibido en encargo de poner tarima flotante en un piso que tiene 120m²,
+distribuidos en 3 habitaciones (10m² cada una), un salón (25 m²), pasillos y hall (12 m²) y el resto son
+cocina, baños y terraza que no llevan tarima. Se pide acabar el proyecto en un plazo de 10 días,
+incluyendo la colocación de rodapié, limpieza de la obra y eliminación de residuos.
+
+\subsubsection{Se pide}
+\begin{enumerate}
+    \item Elaborar un esbozo del documento de Alcance del Proyecto que debe contener:
+    \begin{itemize}
+        \item Documento de requisitos
+        \item Matriz de requisitos
+        \item Entregables o hitos
+        \item EDT, con al menos 8 actividades.
+        \item Criterios de aceptación
+    \end{itemize}
+    En caso de ser necesario se pueden incorporar cuantas hipótesis sean precisas indicándolas claramente.
+    
+    \item Generar un posible diagrama de actividades y otro de Gantt mediante alguna herramienta software.
+\end{enumerate}
+
+\subsection{Documento de Alcance del Proyecto}
+
+\subsubsection{Descripción del Proyecto}
+\begin{itemize}
+    \item El proyecto consiste en la instalación de tarima flotante en un piso de 120m².
+    \item El trabajo incluye la colocación de rodapié, limpieza de la obra y eliminación de residuos.
+    \item El plazo para completar el proyecto es de 10 días.
+\end{itemize}
+
+\subsubsection{Documento de Requisitos}
+\begin{itemize}
+    \item Se requiere la instalación de tarima flotante en todas las áreas del piso, excepto la cocina, baños y terraza.
+    \item La tarima debe ser de alta calidad y cumplir con las normativas locales.
+    \item Los rodapiés deben ser instalados en todas las áreas con tarima.
+    \item La obra debe estar completamente limpia al finalizar.
+    \item Todos los residuos generados durante la instalación deben ser eliminados adecuadamente.
+\end{itemize}
+
+\subsubsection{Matriz de Requisitos}
+
+\begin{tabular}{|p{6cm}|c|}
+\hline
+Requisito & Cumplimiento \\
+\hline
+Instalación de tarima en áreas designadas & Sí \\
+Uso de tarima de alta calidad & Sí \\
+Instalación de rodapié en todas las áreas & Sí \\
+Limpieza completa de la obra al finalizar & Sí \\
+Eliminación adecuada de residuos & Sí \\
+\hline
+\end{tabular}
+
+\subsubsection{Entregables o Hitos}
+\begin{itemize}
+    \item Hito 1: Instalación de tarima completada.
+    \item Hito 2: Instalación de rodapié completada.
+    \item Hito 3: Limpieza de la obra realizada.
+    \item Hito 4: Eliminación de residuos completada.
+    \item Hito 5: Finalización del proyecto.
+\end{itemize}
+
+\subsubsection{EDT (Estructura de Desglose de Trabajo) con al menos 8 actividades}
+
+\begin{figure}[h]
+   \centering
+   \includegraphics[width=0.9\textwidth]{E:/KUKADisk/OneDrive - KUKA AG/UDIMA/GestionProj/c1p1.PNG}
+ \end{figure}
+
+ \begin{figure}[h]
+   \centering
+   \includegraphics[width=0.9\textwidth]{E:/KUKADisk/OneDrive - KUKA AG/UDIMA/GestionProj/c1p2.PNG}
+ \end{figure}
+
+ \begin{figure}[h]
+   \centering
+   \includegraphics[width=0.9\textwidth]{E:/KUKADisk/OneDrive - KUKA AG/UDIMA/GestionProj/c1p3.PNG}
+ \end{figure}
+
+\subsubsection{Criterios de Aceptación}
+\begin{itemize}
+    \item Todas las áreas designadas tienen tarima instalada de manera adecuada.
+    \item Los rodapiés están instalados correctamente en todas las áreas.
+    \item La obra está limpia y libre de residuos.
+    \item El proyecto se ha completado en un plazo máximo de 10 días.
+\end{itemize}
+
+
+\subsection{Diagrama de Actividades}
+
+\begin{figure}[h]
+   \centering
+   \includegraphics[width=0.9\textwidth]{E:/KUKADisk/OneDrive - KUKA AG/UDIMA/GestionProj/ganntc1.PNG}
+   \caption{Diagrama de Actividades}
+ \end{figure}
+
+\newpage
+
+
+
+
+\section{Enunciado 2}
+
+\subsection{Diagrama de Actividades}
+
+\begin{figure}[h]
+   \centering
+   \includegraphics[width=0.9\textwidth]{E:/KUKADisk/OneDrive - KUKA AG/UDIMA/GestionProj/c2p1.PNG}
+   \caption{Diagrama de Actividades}
+ \end{figure}
+
+\subsection{Cálculo del Camino Crítico}
+
+\begin{figure}[h]
+   \centering
+   \includegraphics[width=0.9\textwidth]{E:/KUKADisk/OneDrive - KUKA AG/UDIMA/GestionProj/c2p2.PNG}
+   \caption{Cálculo del Camino Crítico}
+ \end{figure}
+
+ \newpage
+\subsection{Camino Crítico en OpenProj}
+
+\begin{figure}[h]
+   \centering
+   \includegraphics[height=7cm]{E:/KUKADisk/OneDrive - KUKA AG/UDIMA/GestionProj/c2p3.PNG}
+   \caption{Camino Crítico en OpenProj}
+ \end{figure}
+
+\subsection{Cálculo de Desviación Admisible}
+
+\begin{figure}[h]
+   \centering
+   \includegraphics[width=0.9\textwidth]{E:/KUKADisk/OneDrive - KUKA AG/UDIMA/GestionProj/c2p4.PNG}
+   \caption{Cálculo de Desviación Admisible}
+ \end{figure}
+
+ Las tareas A, D, J y L son tareas críticas y no pueden retrasarse ninguna semana sin alargar el periodo total de las 14 semanas para terminar el proyecto.\\
+La tarea B se puede retrasar 1 semana, lo que supone el 25\% sobre el comienzo más tardío.\\
+La tarea C se puede retrasar 7 semanas sin afectar a la duración del proyecto, lo que supone el 100\% sobre su periodo de comienzo más tardío.\\
+La tarea E se puede retrasar 4 semanas sin afectar a la duración del proyecto, lo que supone el 57,14\% sobre su periodo de comienzo más tardío.\\
+La tarea F se puede retrasar 1 semana sin afectar a la duración del proyecto, lo que supone el 11,11\% sobre su periodo de comienzo más tardío.\\
+La tarea G se puede retrasar 2 semanas sin afectar a la duración del proyecto, lo que supone el 25\% sobre su periodo de comienzo más tardío.\\
+La tarea H se puede retrasar 2 semanas sin afectar a la duración del proyecto, lo que supone el 25\% sobre su periodo de comienzo más tardío.\\
+La tarea I se puede retrasar 4 semanas sin afectar a la duración del proyecto, lo que supone el 40\% sobre su periodo de comienzo más tardío.\\
+La tarea K se puede retrasar 1 semana sin afectar a la duración del proyecto, lo que supone el 10\% sobre su periodo de comienzo más tardío.\\
+
+\subsection{Impacto del Cambio de Legislación}
+El proyecto no se vería afectado ya que el comienzo más temprano de la actividad L viene marcado por la actividad más tardía entre J y K, que en este caso es J con 11 semanas, mientras que la actividad K parte de 10 semanas y, por tanto, retrasándose una semana partiría de 11 semanas la actividad L partiría de 11 semanas, que es de donde parte ahora mismo al termina de la actividad J.
+
+\subsection{Impacto del Accidente en la Actividad D}
+El proyecto se alargaría una semana más pasando de 14 a 15 ya que la actividad D es crítica.
+
+\begin{figure}[h]
+   \centering
+   \includegraphics[width=0.9\textwidth]{E:/KUKADisk/OneDrive - KUKA AG/UDIMA/GestionProj/c2p6.PNG}
+   \caption{Impacto del Accidente en la Actividad D}
+ \end{figure}
+
+ 
+\begin{figure}[h]
+   \centering
+   \includegraphics[width=0.9\textwidth]{E:/KUKADisk/OneDrive - KUKA AG/UDIMA/GestionProj/c2p62.PNG}
+   \caption{Impacto del Accidente en la Actividad D}
+ \end{figure}
+
+ \begin{figure}[h]
+   \centering
+   \includegraphics[width=0.9\textwidth]{E:/KUKADisk/OneDrive - KUKA AG/UDIMA/GestionProj/c2p63.PNG}
+   \caption{Impacto del Accidente en la Actividad D}
+ \end{figure}
+
+ Pero las holguras del resto de tareas no criticas aumentarían también en una semana tal como quedan en el siguiente detalle.
+
+ \begin{figure}[h]
+   \centering
+   \includegraphics[width=0.9\textwidth]{E:/KUKADisk/OneDrive - KUKA AG/UDIMA/GestionProj/c2p64.PNG}
+
+ \end{figure}
+
+\subsection{Demostrar gráficamente que si la última actividad del camino crítico se retrasa 1 semana más de lo obtenido en el apartado 4, el camino critico cambia en tareas y/o duración}
+
+Si aumentamos el periodo de la actividad L (última del camino crítico visto A,D,J,L), y pasa de 3 a 4 semanas, la duración total de las tareas pasan de 14 a 15 semanas, pero no así la ruta crítica que seguiría siendo la misma (A,D,L,J)
+
+\begin{figure}[h]
+   \centering
+   \includegraphics[width=0.9\textwidth]{E:/KUKADisk/OneDrive - KUKA AG/UDIMA/GestionProj/c2p7.PNG}
+
+ \end{figure}
+
+
+ \begin{figure}[h]
+   \centering
+   \includegraphics[width=0.9\textwidth]{E:/KUKADisk/OneDrive - KUKA AG/UDIMA/GestionProj/c2p71.PNG}
+
+ \end{figure}
+
+
+
+\subsection{Elaboración del EDT Detallado}
+
+Como tareas dentro de cada actividad hemos considerado las siguientes
+
+
+\begin{figure}[h]
+   \centering
+   \includegraphics[width=0.9\textwidth]{E:/KUKADisk/OneDrive - KUKA AG/UDIMA/GestionProj/c2p8.PNG}
+ \end{figure}
+
+ \begin{figure}[h]
+   \centering
+   \includegraphics[width=0.9\textwidth]{E:/KUKADisk/OneDrive - KUKA AG/UDIMA/GestionProj/c2p81.PNG}
+ \end{figure}
+
+ \begin{figure}[h]
+   \centering
+   \includegraphics[width=0.9\textwidth]{E:/KUKADisk/OneDrive - KUKA AG/UDIMA/GestionProj/c2p82.PNG}
+ \end{figure}
+
+
+\end{document}

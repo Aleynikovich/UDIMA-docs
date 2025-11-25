@@ -1,0 +1,787 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% PREÁMBULO - Configuración del documento
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[a4paper, 11pt]{article}
+
+% --- Paquetes necesarios ---
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{hyperref}
+\usepackage{titlesec}
+\usepackage{amssymb} % Para símbolos matemáticos adicionales
+
+% --- Configuración de títulos ---
+\titleformat{\section}{\Large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\large\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\normalsize\bfseries}{\thesubsubsection}{1em}{}
+
+% --- Título del Documento ---
+\title{Resumen Completo de Tecnología Energética y Medioambiente}
+\author{Material de Estudio}
+\date{\today}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% INICIO DEL DOCUMENTO
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\maketitle
+\tableofcontents
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% UNIDAD 1: ECOLOGÍA
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% --- Página del Esquema Visual ---
+\newgeometry{margin=0pt}
+\thispagestyle{empty}
+\begin{figure}[p]
+    \centering
+    \includegraphics[width=\paperwidth, height=\paperheight, keepaspectratio]{MA1.png}
+\end{figure}
+\restoregeometry
+\newpage
+
+% --- Resumen de Texto Detallado ---
+\section*{Unidad 1: ¿Qué es la ecología? La ciencia que entiende el planeta}
+
+\subsection*{Introducción a la Ecología y el Medioambiente}
+\begin{itemize}
+    \item \textbf{Definición de Medioambiente}: Según la Real Academia Española (RAE), es el "conjunto de circunstancias o condiciones exteriores a un ser vivo que influyen en su desarrollo y en sus actividades". Esto engloba factores físicos, ecológicos, económicos, culturales e incluso estéticos.
+    \item \textbf{Origen de la Preocupación Ambiental}: Aunque el estudio de la naturaleza se remonta a Aristóteles, la percepción del impacto del progreso humano en el medioambiente surgió a mediados del siglo XX, consolidando la ecología como ciencia.
+    \item \textbf{Pioneros y Figuras Clave}:
+    \begin{itemize}
+        \item \textbf{Alexander von Humboldt (s. XIX)}: Considerado uno de los padres de la ciencia ecológica. Buscaba demostrar que todo en la naturaleza estaba interconectado y fue de los primeros en describir científicamente cómo el ser humano altera su entorno de forma irreversible.
+        \item \textbf{Ernst Haeckel (1866)}: Acuñó el término \textbf{ecología} como "la ciencia de las relaciones de los organismos con su entorno".
+        \item \textbf{Rachel Carson (1962)}: Con su libro \textit{Primavera silenciosa}, alertó sobre los efectos nocivos de los pesticidas en el medioambiente.
+        \item \textbf{Eugene Odum}: Fundamental en el desarrollo de la ecología de sistemas y de poblaciones.
+    \end{itemize}
+\end{itemize}
+
+\subsection*{La Problemática Ambiental Actual}
+\begin{itemize}
+    \item \textbf{Factores Desencadenantes}: Principalmente el \textbf{aumento de la población} ("explosión demográfica" post-siglo XX) y la \textbf{globalización}.
+    \item \textbf{Consecuencias del Crecimiento Poblacional}:
+    \begin{itemize}
+        \item \textbf{Sobreexplotación de Recursos Naturales}: Agotamiento de agua dulce, degradación del suelo, sobrepesca y deforestación a nivel mundial.
+        \item \textbf{Degradación del Medioambiente}: Contaminación del aire y del agua (eutrofización), pérdida de biodiversidad, erosión del paisaje y desertificación.
+        \item \textbf{Cambio Climático}: Causado por el aumento de la concentración de \textbf{Gases de Efecto Invernadero (GEI)} por la actividad humana.
+        \begin{itemize}
+            \item \textbf{Principales GEI y su Potencial de Calentamiento (GWP)}:
+                \begin{itemize}
+                    \item \textbf{Dióxido de Carbono ($CO_2$)}: El más abundante, de la quema de combustibles fósiles.
+                    \item \textbf{Metano ($CH_4$)}: GWP de 28. De agricultura, ganadería y vertederos.
+                    \item \textbf{Óxido Nitroso ($N_2O$)}: GWP de 265. De fertilizantes y quema de combustibles.
+                    \item \textbf{Otros gases} (HFC, PFC, $SF_6$): GWP muy elevados (ej. $SF_6$ tiene un GWP de 23000).
+                \end{itemize}
+            \item \textbf{Efectos del Cambio Climático}: Aumento de la temperatura global, deshielo de casquetes polares, alteración de patrones de precipitación y afectación a la biodiversidad.
+        \end{itemize}
+    \end{itemize}
+    \item \textbf{Implicaciones Socioeconómicas}: Inseguridad alimentaria, desigualdad en el acceso a recursos, migraciones y conflictos.
+\end{itemize}
+
+\subsection*{Ecología vs. Ecologismo y el Desarrollo Sostenible}
+\begin{itemize}
+    \item \textbf{Diferencia Clave}: La \textbf{ecología} es una ciencia interdisciplinaria que estudia las relaciones en los ecosistemas. El \textbf{ecologismo} es un movimiento social y político que defiende la protección del medioambiente.
+    \item \textbf{Desarrollo Sostenible} (Informe Brundtland, 1987): "El desarrollo que satisface las necesidades de la generación presente sin comprometer la capacidad de las generaciones futuras para satisfacer sus propias necesidades". Su pionero fue Ernst Friedrich Schumacher.
+\end{itemize}
+
+\subsection*{Hitos y Acuerdos Internacionales}
+\begin{itemize}
+    \item \textbf{Conferencia de Estocolmo (1972)}: Primera cumbre mundial sobre medioambiente. Creó el PNUMA (Programa de las Naciones Unidas para el Medio Ambiente).
+    \item \textbf{Cumbre de la Tierra de Río (1992)}: Creó las 3 grandes convenciones (Cambio Climático - CMNUCC, Biodiversidad y Desertificación) y la Agenda 21. Estableció las Conferencias de las Partes (COP).
+    \item \textbf{Protocolo de Kioto (1997)}: Primer acuerdo legalmente vinculante para reducir las emisiones de 6 GEI en un 5\% para 2012 respecto a 1990.
+    \item \textbf{Acuerdo de París (2015)}: Sustituye a Kioto. Objetivo: limitar el calentamiento global por debajo de los 2$^{\circ}$C.
+    \item \textbf{Agenda 2030 (2015)}: Plan de acción de la ONU que incluye los \textbf{17 Objetivos de Desarrollo Sostenible (ODS)}.
+\end{itemize}
+
+\subsection*{Análisis del Ciclo de Vida (ACV)}
+\begin{itemize}
+    \item \textbf{Definición}: Herramienta sistemática para evaluar el impacto ambiental de un producto, proceso o servicio a lo largo de todo su ciclo de vida ("de la cuna a la tumba"). Sirve para evitar el \textit{greenwashing} (lavado ecológico).
+    \item \textbf{Normativa}: ISO 14040 y 14044.
+    \item \textbf{Fases de un ACV}: 1. Definición de objetivos y alcance (incluyendo la \textbf{unidad funcional}); 2. Análisis del Inventario del Ciclo de Vida (ICV); 3. Evaluación del Impacto del Ciclo de Vida (EICV); 4. Interpretación de resultados.
+\end{itemize}
+
+\subsection*{Ecoetiquetas}
+\begin{itemize}
+    \item \textbf{Definición}: Sellos que identifican productos o servicios respetuosos con el medioambiente.
+    \item \textbf{Clasificación (según norma ISO 14020)}:
+    \begin{itemize}
+        \item \textbf{Tipo 1 (ISO 14024)}: Certificadas por una tercera entidad independiente. Analizan todo el ciclo de vida. Alta credibilidad (ej. Etiqueta Ecológica Europea, Blue Angel).
+        \item \textbf{Tipo 2 (ISO 14021)}: Autodeclaraciones informativas del fabricante sobre aspectos concretos (ej. "reciclable").
+        \item \textbf{Tipo 3 (ISO 14025)}: Declaraciones ambientales de producto (DAP o EPD), que ofrecen información cuantitativa detallada basada en el ACV.
+    \end{itemize}
+\end{itemize}
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% UNIDAD 2: CONTAMINACIÓN ATMOSFÉRICA
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% --- Página del Esquema Visual ---
+\newgeometry{margin=0pt}
+\thispagestyle{empty}
+\begin{figure}[p]
+    \centering
+    \includegraphics[width=\paperwidth, height=\paperheight, keepaspectratio]{MA2.png}
+\end{figure}
+\restoregeometry
+\newpage
+
+% --- Resumen de Texto Detallado ---
+\section*{Unidad 2: Contaminación atmosférica}
+
+\subsection*{La Atmósfera}
+\begin{itemize}
+    \item \textbf{Estructura}: La atmósfera es una envoltura gaseosa heterogénea. El 75\% de su masa se concentra en los primeros 11 km.
+    \item \textbf{Capas por Temperatura}:
+    \begin{itemize}
+        \item \textbf{Troposfera}: Capa más cercana (hasta 18 km). Contiene la mayor parte del vapor de agua y en ella ocurren los fenómenos meteorológicos. La temperatura disminuye con la altitud a razón de 0,64 °C cada 100 metros.
+        \item \textbf{Estratosfera}: Hasta 50 km. Contiene la \textbf{capa de ozono}, que absorbe radiación UV de longitud de onda \textbf{menor de 360 nm}, provocando que la temperatura aumente con la altitud.
+        \item \textbf{Mesosfera}: Hasta 85 km. Es la capa más fría, donde se desintegran los meteoritos. La temperatura disminuye con la altitud.
+        \item \textbf{Termosfera}: Entre 85 y 600 km. La temperatura aumenta drásticamente por la ionización de gases (absorción de rayos X y gamma). Esta capa, también llamada \textbf{ionosfera}, refleja las ondas de radio. Aquí orbita la Estación Espacial Internacional.
+        \item \textbf{Exosfera}: Capa más externa, donde los gases se dispersan hacia el espacio.
+    \end{itemize}
+    \item \textbf{Composición Química}:
+    \begin{itemize}
+        \item \textbf{Homosfera} (0-100 km): Composición constante: 78,084\% Nitrógeno ($N_2$), 20,946\% Oxígeno ($O_2$), 0,934\% Argón (Ar), 0,04\% $CO_2$.
+        \item \textbf{Heterosfera} (>100 km): Composición estratificada y variable por la disociación de moléculas.
+    \end{itemize}
+\end{itemize}
+
+\subsection*{Contaminación Atmosférica}
+\begin{itemize}
+    \item \textbf{Definición Legal}: "La presencia en el aire de materias, sustancias o formas de energía que impliquen molestia grave, riesgo o daño para personas, medioambiente y demás bienes".
+    \item \textbf{Conceptos}: \textbf{Emisión} es la cantidad de contaminante vertido desde un foco; \textbf{Inmisión} es la concentración que llega al receptor.
+    \item \textbf{Clasificación}: \textbf{Contaminantes primarios} (emitidos directamente, ej. $SO_2$) y \textbf{secundarios} (formados en la atmósfera, ej. ozono troposférico).
+\end{itemize}
+
+\subsection*{Principales Contaminantes Químicos}
+\begin{itemize}
+    \item \textbf{Dióxido de azufre ($SO_2$)}: De la quema de combustibles fósiles con azufre. Causa la lluvia ácida.
+    \item \textbf{Óxidos de nitrógeno ($NO_x$)}: De la combustión a alta temperatura (tráfico, industria). Precursores de lluvia ácida y smog.
+    \item \textbf{Monóxido de carbono (CO)}: De la combustión incompleta. Es tóxico porque se une a la hemoglobina con una afinidad 210 veces mayor que el oxígeno, impidiendo su transporte.
+    \item \textbf{Partículas en suspensión (PM)}: Sólidos o líquidos. Las \textbf{PM10} (<10µm) y \textbf{PM2,5} (<2,5µm) son las más peligrosas para la salud respiratoria y cardiovascular.
+    \item \textbf{Ozono troposférico ($O_3$)}: "Ozono malo". Contaminante secundario formado por $NO_x$ y COV con luz solar. Causa problemas respiratorios y daños a la vegetación.
+\end{itemize}
+
+\subsection*{Efectos Globales de la Contaminación Atmosférica}
+\begin{itemize}
+    \item \textbf{Lluvia Ácida}: Formada por la reacción de $SO_x$ y $NO_x$ con el agua atmosférica, creando ácido sulfúrico y nítrico. Acidifica suelos y aguas.
+    \item \textbf{Destrucción de la Capa de Ozono}: Los CFCs liberan cloro en la estratosfera, que destruye el ozono ($O_3$) protector. El \textbf{Protocolo de Montreal} prohibió estos compuestos.
+    \item \textbf{Smog Urbano}:
+    \begin{itemize}
+        \item \textbf{Fotoquímico}: Mezcla de $NO_x$, COV y luz solar, que produce ozono. Color pardo-rojizo.
+        \item \textbf{Sulfuroso (Industrial)}: Mezcla de $SO_2$ y partículas de la quema de carbón.
+    \end{itemize}
+\end{itemize}
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% UNIDAD 3: CONTAMINACIÓN DEL AGUA
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% --- Página del Esquema Visual ---
+\newgeometry{margin=0pt}
+\thispagestyle{empty}
+\begin{figure}[p]
+    \centering
+    \includegraphics[width=\paperwidth, height=\paperheight, keepaspectratio]{MA3.png}
+\end{figure}
+\restoregeometry
+\newpage
+
+% --- Resumen de Texto Detallado ---
+\section*{Unidad 3: Contaminación del agua}
+
+\subsection*{El Agua y sus Propiedades}
+\begin{itemize}
+    \item \textbf{Ciclo Hidrológico}: Proceso continuo de evaporación, condensación, precipitación y escorrentía del agua, impulsado por la energía solar.
+    \item \textbf{Propiedades Físico-Químicas Clave}:
+    \begin{itemize}
+        \item \textbf{Estructura Molecular}: La molécula de agua ($H_2O$) es polar, lo que le permite formar puentes de hidrógeno, siendo un "disolvente universal".
+        \item \textbf{Anomalía de la Densidad}: El hielo (sólido) es menos denso que el agua líquida, por lo que flota. La densidad máxima del agua se da a 3,983 °C.
+        \item \textbf{pH}: El agua pura es neutra (pH=7). La acidificación de los océanos, por la absorción de $CO_2$ atmosférico, dificulta la formación de caparazones de carbonato de calcio en organismos marinos.
+        \item \textbf{Dureza}: Concentración de iones disueltos de calcio ($Ca^{2+}$) y magnesio ($Mg^{2+}$). Se clasifica en temporal (eliminable al hervir) y permanente.
+    \end{itemize}
+    \item \textbf{Parámetros de Calidad del Agua}:
+    \begin{itemize}
+        \item \textbf{Oxígeno Disuelto (OD)}: Esencial para la vida acuática (mínimo $\approx$ 5 mg/L para peces). La materia orgánica en descomposición consume OD.
+        \item \textbf{Demanda Biológica de Oxígeno (DBO)}: Cantidad de oxígeno consumido por microorganismos para descomponer la materia orgánica biodegradable. Se mide en 5 días ($DBO_5$).
+        \item \textbf{Demanda Química de Oxígeno (DQO)}: Cantidad de oxígeno necesaria para oxidar toda la materia orgánica (biodegradable y no) mediante un agente químico. Siempre $DQO \ge DBO$. La relación $DQO/DBO_5$ indica la tratabilidad biológica del agua residual.
+    \end{itemize}
+\end{itemize}
+
+\subsection*{Tipos de Contaminantes y Fenómenos Asociados}
+\begin{itemize}
+    \item \textbf{Clasificación de Contaminantes}:
+    \begin{itemize}
+        \item \textbf{Físicos}: Sedimentos, residuos sólidos, contaminación térmica (aumento de temperatura).
+        \item \textbf{Químicos}: Metales pesados (plomo, mercurio, cadmio), purines (exceso de nitratos y fosfatos), jabones y detergentes, petróleo, pesticidas y plásticos.
+        \item \textbf{Biológicos}: Organismos patógenos como bacterias (\textit{E. coli}), virus y parásitos.
+    \end{itemize}
+    \item \textbf{Fenómenos Principales}:
+    \begin{itemize}
+        \item \textbf{Eutrofización}: Enriquecimiento excesivo de un cuerpo de agua con nutrientes (nitrógeno y fósforo), que provoca una proliferación masiva de algas. Al morir y descomponerse, estas algas agotan el oxígeno del agua, causando la muerte de la fauna acuática.
+        \item \textbf{Acidificación}: Disminución del pH del agua, principalmente por lluvia ácida o drenaje ácido de minas.
+        \item \textbf{Microplásticos}: Partículas de plástico de menos de 5 mm que contaminan los ecosistemas acuáticos e ingresan en la cadena alimentaria. Provienen de la degradación de plásticos mayores y de productos como cosméticos o fibras textiles.
+    \end{itemize}
+\end{itemize}
+
+\subsection*{Tratamiento de Aguas}
+\begin{itemize}
+    \item \textbf{Potabilización (ETAP - Estación de Tratamiento de Agua Potable)}: Proceso para hacer el agua segura para el consumo humano.
+    \begin{itemize}
+        \item \textbf{Fases}: Captación $\rightarrow$ Pretratamiento (desbaste, desarenado) $\rightarrow$ Coagulación-Floculación (agrupación de partículas finas) $\rightarrow$ Decantación (sedimentación de flóculos) $\rightarrow$ Filtración (a través de lechos de arena) $\rightarrow$ Desinfección (generalmente con cloro).
+    \end{itemize}
+    \item \textbf{Depuración (EDAR - Estación Depuradora de Aguas Residuales)}: Proceso para limpiar las aguas residuales antes de devolverlas al medioambiente.
+    \begin{itemize}
+        \item \textbf{Línea de Agua}:
+            \begin{itemize}
+                \item \textbf{Pretratamiento}: Eliminación de sólidos gruesos, arenas y grasas.
+                \item \textbf{Tratamiento Primario}: Decantación de sólidos en suspensión.
+                \item \textbf{Tratamiento Secundario (Biológico)}: Microorganismos (fangos activos) eliminan la materia orgánica disuelta (DBO). Incluye procesos de nitrificación-desnitrificación para eliminar nitrógeno.
+                \item \textbf{Tratamiento Terciario}: Procesos avanzados para una depuración más exhaustiva (eliminación de fósforo, desinfección).
+            \end{itemize}
+        \item \textbf{Línea de Fangos}: El lodo generado se trata mediante \textbf{espesamiento} (reducir volumen), \textbf{estabilización} (digestión anaerobia para producir biogás) y \textbf{deshidratación} (secado).
+    \end{itemize}
+\end{itemize}
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% UNIDAD 4: DEGRADACIÓN DEL SUELO
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% --- Página del Esquema Visual ---
+\newgeometry{margin=0pt}
+\thispagestyle{empty}
+\begin{figure}[p]
+    \centering
+    \includegraphics[width=\paperwidth, height=\paperheight, keepaspectratio]{MA4.png}
+\end{figure}
+\restoregeometry
+\newpage
+
+% --- Resumen de Texto Detallado ---
+\section*{Unidad 4: Degradación y contaminación del suelo}
+
+\subsection*{El Suelo y sus Características}
+\begin{itemize}
+    \item \textbf{Edafología}: Es la ciencia que se dedica al estudio del suelo.
+    \item \textbf{Definición}: El suelo es la fina capa superior de la corteza terrestre, un recurso frágil y no renovable a corto plazo, formado por la interacción de procesos geológicos, climáticos y biológicos.
+    \item \textbf{Funciones del Suelo}: Actúa como productor de biomasa, es un componente clave del ciclo hidrológico, funciona como filtro de contaminantes, es hábitat para una gran biodiversidad y proporciona soporte para las actividades humanas.
+    \item \textbf{Composición}: Se compone de minerales (clasificados por tamaño: \textbf{grava} > 2 mm, \textbf{arena} 0,05-2 mm, \textbf{limo} 0,002-0,05 mm, y \textbf{arcilla} < 0,002 mm), materia orgánica (humus), agua, aire y organismos vivos.
+    \item \textbf{Estructura por Horizontes}: El perfil del suelo se divide en capas:
+    \begin{itemize}
+        \item \textbf{Horizonte O}: Capa superficial orgánica.
+        \item \textbf{Horizonte A}: Capa arable, rica en materia orgánica y minerales.
+        \item \textbf{Horizonte E}: Capa de eluviación (lavado de minerales).
+        \item \textbf{Horizonte B}: Subsuelo, zona de acumulación de los materiales lavados.
+        \item \textbf{Horizonte C}: Material parental o roca madre parcialmente alterada.
+        \item \textbf{Horizonte R}: Lecho de roca no alterado.
+    \end{itemize}
+\end{itemize}
+
+\subsection*{Degradación del Suelo}
+\begin{itemize}
+    \item \textbf{Proceso}: La degradación es la modificación negativa de las propiedades del suelo, afectando su capacidad para producir bienes y servicios. Puede ser física, química o biológica.
+    \item \textbf{Definición Legal (Ley 7/2022)}: Un \textbf{suelo contaminado} es aquel alterado negativamente por componentes químicos peligrosos de origen humano que comportan un riesgo inaceptable para la salud humana o el medioambiente.
+    \item \textbf{Principales Procesos y Efectos}:
+    \begin{itemize}
+        \item \textbf{Erosión del Suelo}: Es la remoción del material superficial por la acción del agua (erosión hídrica) o del viento (erosión eólica). La actividad humana acelera este proceso.
+        \item \textbf{Acidificación}: Disminución del pH del suelo, que reduce la disponibilidad de nutrientes para las plantas.
+        \item \textbf{Pérdida de Materia Orgánica}: Debilita la estructura del suelo, disminuye la retención de agua y nutrientes, y aumenta la erosión.
+        \item \textbf{Compactación}: Reduce el espacio poroso, dificultando la infiltración de agua y el crecimiento de las raíces.
+        \item \textbf{Sellado del Suelo}: Cobertura permanente de la superficie con materiales artificiales (asfalto, hormigón) debido a la expansión urbana.
+        \item \textbf{Desertificación}: Es la fase final de la degradación de la tierra en zonas áridas, semiáridas y subhúmedas secas, donde el suelo pierde su capacidad productiva.
+    \end{itemize}
+\end{itemize}
+
+\subsection*{Contaminantes del Suelo}
+\begin{itemize}
+    \item Son sustancias que degradan la calidad del suelo y provienen de diversas fuentes. Los principales son:
+    \begin{itemize}
+        \item \textbf{Metales Pesados}: Plomo (Pb), mercurio (Hg), cadmio (Cd), cromo (Cr), arsénico (As). Son tóxicos y persistentes.
+        \item \textbf{Compuestos Orgánicos Persistentes (COP)}: Pesticidas (como DDT), herbicidas y productos industriales (como PCBs) que son resistentes a la degradación.
+        \item \textbf{Petróleo y sus derivados}: Por derrames y fugas.
+        \item \textbf{Productos Químicos Agrícolas}: Uso excesivo de fertilizantes y pesticidas.
+        \item \textbf{Desechos Sólidos}: Basura doméstica e industrial mal gestionada.
+        \item \textbf{Radiactivos}: De accidentes nucleares o residuos de la industria.
+    \end{itemize}
+\end{itemize}
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% UNIDAD 5: GESTIÓN DE RESIDUOS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% --- Página del Esquema Visual ---
+\newgeometry{margin=0pt}
+\thispagestyle{empty}
+\begin{figure}[p]
+    \centering
+    \includegraphics[width=\paperwidth, height=\paperheight, keepaspectratio]{MA5.png}
+\end{figure}
+\restoregeometry
+\newpage
+
+% --- Resumen de Texto Detallado ---
+\section*{Unidad 5: Gestión de residuos y gestión ambiental}
+
+\subsection*{Residuos: Definición y Clasificación}
+\begin{itemize}
+    \item \textbf{Definición Legal (Ley 7/2022)}: Un \textbf{residuo} es "cualquier sustancia u objeto que su poseedor deseche o tenga la intención o la obligación de desechar".
+    \item \textbf{Economía Circular}: Modelo que contrasta con la economía lineal de "usar y tirar", promoviendo la reutilización, reparación y reciclaje para extender la vida útil de los productos y minimizar los residuos.
+    \item \textbf{Clasificación de Residuos}:
+    \begin{itemize}
+        \item \textbf{Por Origen}: Domésticos, municipales, industriales, comerciales, agrarios, de construcción y demolición, etc.
+        \item \textbf{Por Características}:
+            \begin{itemize}
+                \item \textbf{Residuos Inertes}: No sufren transformaciones significativas y no son peligrosos (ej. escombros).
+                \item \textbf{Residuos Peligrosos}: Presentan una o varias de las 15 características de peligrosidad (códigos \textbf{HP1} a \textbf{HP15}), como HP1 (Explosivo), HP3 (Inflamable), HP6 (Toxicidad aguda), HP7 (Carcinógeno) o HP14 (Ecotóxico).
+            \end{itemize}
+    \end{itemize}
+    \item \textbf{Identificación}: Se utiliza la \textbf{Lista Europea de Residuos (LER)} para asignar un código de 6 cifras. Los residuos peligrosos se marcan con un asterisco (*). Los peligros se señalizan con los pictogramas del Sistema Globalmente Armonizado (SGA o GHS).
+\end{itemize}
+
+\subsection*{Política y Tratamiento de Residuos}
+\begin{itemize}
+    \item \textbf{Jerarquía de Residuos}: Principio rector de la política de residuos, que establece el siguiente orden de prioridad:
+    \begin{enumerate}
+        \item \textbf{Prevención}: Reducir la generación de residuos.
+        \item \textbf{Preparación para la reutilización}: Limpiar o reparar productos para volver a usarlos.
+        \item \textbf{Reciclado}: Transformar los residuos en nuevos materiales.
+        \item \textbf{Otro tipo de valorización}: Incluye la \textbf{valorización energética} (incineración con recuperación de energía).
+        \item \textbf{Eliminación}: La opción menos deseable (ej. vertedero).
+    \end{enumerate}
+    \item \textbf{Tratamientos de Residuos}:
+    \begin{itemize}
+        \item \textbf{Químicos}: Neutralización, oxidación-reducción, precipitación, estabilización-solidificación.
+        \item \textbf{Térmicos}: \textbf{Incineración} (con exceso de oxígeno), \textbf{Gasificación} (con oxígeno limitado para producir gas de síntesis) y \textbf{Pirólisis} (descomposición térmica en ausencia de oxígeno).
+        \item \textbf{Biológicos}: \textbf{Compostaje} (proceso aeróbico para materia orgánica sólida que produce compost) y \textbf{Biometanización} (proceso anaeróbico que produce biogás).
+    \end{itemize}
+\end{itemize}
+
+\subsection*{Instalaciones para el Tratamiento de Residuos}
+\begin{itemize}
+    \item \textbf{Plantas de Compostaje}: Instalaciones que gestionan la descomposición controlada de residuos orgánicos.
+    \item \textbf{Vertederos}: Instalaciones para la eliminación final de residuos. Deben cumplir estrictas condiciones de diseño para prevenir la contaminación, incluyendo la impermeabilización del fondo, la recogida y tratamiento de lixiviados y la captura de gases.
+    \item \textbf{Incineradoras}: Plantas que queman residuos a altas temperaturas para reducir su volumen y, a menudo, recuperar energía. Deben contar con sistemas avanzados de limpieza de gases de combustión.
+\end{itemize}
+
+\subsection*{Gestión e Impacto Ambiental}
+\begin{itemize}
+    \item \textbf{Impacto Ambiental}: Es la alteración (positiva o negativa) que se produce sobre el medioambiente por la ejecución de un proyecto. Se clasifica según su recuperación (reversible/irreversible), duración (temporal/permanente) e interrelación (simple/acumulativo/sinérgico).
+    \item \textbf{Evaluación Ambiental (Ley 21/2013)}: Procedimiento administrativo para analizar los posibles impactos significativos de planes, programas y proyectos.
+    \begin{itemize}
+        \item \textbf{Evaluación Ambiental Estratégica (EAE)}: Para planes y programas.
+        \item \textbf{Evaluación de Impacto Ambiental (EIA)}: Para proyectos. Puede ser \textbf{ordinaria} (proyectos del Anexo I de la ley) o \textbf{simplificada} (proyectos del Anexo II).
+    \end{itemize}
+\end{itemize}
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% UNIDAD 6: ENERGÍAS NO RENOVABLES
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% --- Página del Esquema Visual ---
+\newgeometry{margin=0pt}
+\thispagestyle{empty}
+\begin{figure}[p]
+    \centering
+    \includegraphics[width=\paperwidth, height=\paperheight, keepaspectratio]{MA6.png}
+\end{figure}
+\restoregeometry
+\newpage
+
+% --- Resumen de Texto Detallado ---
+\section*{Unidad 6: Fuentes de energía. Energías no renovables}
+
+\subsection*{Introducción y Clasificación}
+\begin{itemize}
+    \item \textbf{Consumo y Desarrollo}: El consumo de energía per cápita es uno de los indicadores más precisos para evaluar el grado de desarrollo económico de una sociedad.
+    \item \textbf{Clasificación de Fuentes de Energía}:
+    \begin{itemize}
+        \item \textbf{No Renovables}: Recursos finitos y agotables (petróleo, gas natural, carbón, nuclear).
+        \item \textbf{Renovables}: Fuentes sostenibles cuyo recurso no se agota con su uso (solar, eólica, hidráulica, etc.).
+        \item \textbf{Primarias}: Se obtienen directamente de la naturaleza (sol, viento, crudo de petróleo).
+        \item \textbf{Secundarias}: Resultan de la transformación de las primarias (electricidad, gasolina).
+    \end{itemize}
+    \item \textbf{Vectores Energéticos}: Sustancias o sistemas que permiten almacenar y transportar energía de forma controlada, como la \textbf{electricidad} y el \textbf{hidrógeno}.
+\end{itemize}
+
+\subsection*{Petróleo}
+\begin{itemize}
+    \item \textbf{Formación}: A partir de la descomposición de materia orgánica marina (plancton) durante millones de años bajo condiciones de alta presión y temperatura.
+    \item \textbf{Clasificación}:
+        \begin{itemize}
+            \item Por su \textbf{densidad API}: Medida de su densidad relativa al agua. Se clasifican en superligero, ligero, medio, pesado y extrapesado.
+            \item Por \textbf{crudos de referencia} del mercado: \textbf{Brent} (referencia en Europa), \textbf{West Texas Intermediate (WTI)} (referencia en Norteamérica) y \textbf{Dubái/Omán} (referencia en Asia).
+        \end{itemize}
+    \item \textbf{Proceso de Refino}: Conjunto de operaciones para convertir el crudo en productos útiles.
+    \begin{itemize}
+        \item \textbf{Destilación}: Proceso físico que separa los componentes del crudo en una torre de destilación según sus puntos de ebullición, obteniendo fracciones como naftas, queroseno, gasóleo y residuo. Se realiza a presión atmosférica y al vacío.
+        \item \textbf{Conversión}: Procesos químicos como el \textbf{craqueo catalítico} que rompen las moléculas grandes de hidrocarburos en otras más pequeñas y valiosas (como la gasolina).
+        \item \textbf{Tratamiento}: Procesos como la \textbf{hidrodesulfuración} que eliminan impurezas (principalmente azufre) para mejorar la calidad del combustible y reducir la contaminación.
+    \end{itemize}
+\end{itemize}
+
+\subsection*{Carbón y Gas Natural}
+\begin{itemize}
+    \item \textbf{Carbón}: Recurso formado por la descomposición de materia vegetal terrestre (proceso de carbonización). Se clasifica por su antigüedad y contenido en carbono en: \textbf{Turba} (más joven), \textbf{Lignito}, \textbf{Hulla} y \textbf{Antracita} (más antiguo y con mayor poder calorífico).
+    \item \textbf{Gas Natural}: Mezcla de hidrocarburos gaseosos, principalmente \textbf{metano ($CH_4$)}. Se extrae de yacimientos y se procesa para eliminar impurezas (agua, $H_2S$, $CO_2$). Para su transporte en barco se enfría a -162°C para convertirlo en \textbf{Gas Natural Licuado (GNL)}, reduciendo su volumen 600 veces.
+\end{itemize}
+
+\subsection*{Energía Nuclear}
+\begin{itemize}
+    \item \textbf{Fundamentos}:
+    \begin{itemize}
+        \item \textbf{Fisión Nuclear}: Proceso utilizado en las centrales actuales. Consiste en la \textbf{división} del núcleo de un átomo pesado (como el \textbf{Uranio-235}) al ser bombardeado por un neutrón, liberando una gran cantidad de energía y más neutrones.
+        \item \textbf{Fusión Nuclear}: Proceso que ocurre en las estrellas. Consiste en la \textbf{unión} de dos núcleos ligeros (isótopos de hidrógeno) para formar uno más pesado, liberando una cantidad de energía inmensa. Aún se encuentra en fase experimental en la Tierra (proyecto ITER).
+    \end{itemize}
+    \item \textbf{Reacción en Cadena y Control}: Los neutrones liberados en una fisión pueden causar nuevas fisiones. Para mantener una reacción controlada, se utilizan:
+    \begin{itemize}
+        \item \textbf{Moderador} (agua o grafito): Frena los neutrones para hacerlos más efectivos.
+        \item \textbf{Barras de control} (boro o cadmio): Absorben el exceso de neutrones para regular o detener la reacción.
+    \end{itemize}
+    \item \textbf{Centrales Nucleares}: Utilizan el calor de la fisión para generar vapor que mueve una turbina (ciclo Rankine).
+    \begin{itemize}
+        \item \textbf{PWR (Reactor de Agua a Presión)}: El más común. Utiliza un circuito primario de agua a alta presión que no hierve y transfiere el calor a un circuito secundario donde se genera el vapor.
+        \item \textbf{BWR (Reactor de Agua en Ebullición)}: Diseño más simple con un único circuito. El agua hierve directamente en el núcleo del reactor y el vapor generado va directo a la turbina.
+    \end{itemize}
+\end{itemize}
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% UNIDAD 7: ENERGÍAS RENOVABLES
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% --- Página del Esquema Visual ---
+\newgeometry{margin=0pt}
+\thispagestyle{empty}
+\begin{figure}[p]
+    \centering
+    \includegraphics[width=\paperwidth, height=\paperheight, keepaspectratio]{MA7.png}
+\end{figure}
+\restoregeometry
+\newpage
+
+% --- Resumen de Texto Detallado ---
+\section*{Unidad 7: Fuentes de energía. Energías renovables}
+\subsection*{Introducción a las Energías Renovables}
+\begin{itemize}
+    \item \textbf{Definición (Directiva UE 2018/2001)}: "La energía procedente de fuentes no fósiles, como la energía eólica, la energía solar (tanto térmica como fotovoltaica), la energía geotérmica, la energía ambiental, la energía mareomotriz, la energía undimotriz y otras formas de energía oceánica, así como la energía hidráulica, la biomasa, los gases de vertedero, los gases de plantas de depuración y el biogás".
+    \item \textbf{Contexto Histórico}: El uso de renovables es antiguo (molinos de viento, norias), pero fue relegado por los combustibles fósiles. Las crisis energéticas de los 70 y la conciencia sobre el cambio climático han impulsado su desarrollo exponencial en las últimas décadas.
+    \item \textbf{Objetivos en España (Ley 7/2021)}: Para 2030, se pretende que el 74\% de la electricidad provenga de fuentes renovables.
+\end{itemize}
+
+\subsection*{Energía Solar}
+\begin{itemize}
+    \item \textbf{Solar Fotovoltaica (FV)}: Convierte la luz solar directamente en electricidad mediante el efecto fotovoltaico en células de silicio. Los paneles pueden ser de silicio \textbf{monocristalino} (más eficientes, 18-22\%) o \textbf{policristalino} (más económicos, 15-17\%).
+    \item \textbf{Solar Térmica}: Aprovecha el calor del sol.
+        \begin{itemize}
+            \item \textbf{Baja Temperatura (<100 °C)}: Se usa para calentar agua sanitaria (ACS) y climatizar piscinas mediante captadores solares.
+            \item \textbf{Alta Temperatura (CSP - Concentrated Solar Power)}: Usa espejos para concentrar la radiación solar, calentar un fluido a altas temperaturas, generar vapor y mover una turbina para producir electricidad.
+        \end{itemize}
+\end{itemize}
+
+\subsection*{Energía Eólica}
+\begin{itemize}
+    \item \textbf{Funcionamiento}: Convierte la energía cinética del viento en electricidad mediante aerogeneradores. Las palas del rotor capturan la energía del viento y hacen girar un generador.
+    \item \textbf{Componentes Principales}: Un aerogenerador consta de cimientos, una torre, una \textbf{góndola} (que aloja el multiplicador y el generador) y un \textbf{rotor} (formado por las palas y el buje).
+    \item \textbf{Obtención de Energía}: La potencia disponible en el viento es proporcional al área barrida por las palas y, de forma cúbica, a la velocidad del viento ($P_v = \frac{1}{2}\rho A V^3$).
+    \item \textbf{Límite de Betz}: Principio físico que establece que un aerogenerador no puede extraer más del 59,26\% de la energía cinética del viento.
+    \item \textbf{Eólica Marina}: Instalación de aerogeneradores en el mar, donde los vientos son más fuertes y constantes, aunque su construcción y mantenimiento son más costosos.
+\end{itemize}
+
+\subsection*{Energía Hidráulica}
+\begin{itemize}
+    \item \textbf{Funcionamiento}: Aprovecha la energía potencial del agua almacenada a cierta altura en un embalse. Al liberarla, la energía potencial se convierte en cinética, que mueve una turbina acoplada a un generador.
+    \item \textbf{Tipos de Centrales}:
+        \begin{itemize}
+            \item \textbf{De Embalse}: El tipo más común. Una presa retiene grandes volúmenes de agua.
+            \item \textbf{De Agua Fluyente (o Pasantes)}: Desvían parte del caudal de un río, sin un gran embalse.
+            \item \textbf{Reversibles (o de Bombeo)}: Funcionan como una "batería". Usan energía sobrante de la red (en horas de baja demanda) para bombear agua a un embalse superior, y la liberan para generar electricidad en horas punta.
+        \end{itemize}
+    \item \textbf{Turbinas Hidráulicas}: La elección depende de la altura del salto y del caudal.
+    \begin{itemize}
+        \item \textbf{Turbina Pelton}: Para saltos muy altos y caudales bajos.
+        \item \textbf{Turbina Francis}: Para saltos y caudales medios.
+        \item \textbf{Turbina Kaplan}: Para saltos bajos y grandes caudales.
+    \end{itemize}
+\end{itemize}
+
+\subsection*{Biomasa}
+\begin{itemize}
+    \item \textbf{Definición}: Fracción biodegradable de productos, residuos y desechos de origen biológico.
+    \item \textbf{Tipos}: \textbf{Natural} (residuos forestales espontáneos), \textbf{residual} (subproductos de agricultura, ganadería, industria o residuos urbanos) y de \textbf{cultivos energéticos}.
+    \item \textbf{Métodos de Aprovechamiento}:
+    \begin{itemize}
+        \item \textbf{Combustión Directa}: Quema para generar calor y/o electricidad.
+        \item \textbf{Procesos Termoquímicos}: Gasificación (produce gas de síntesis) y pirólisis (produce biogás, bioaceite y carbón vegetal).
+        \item \textbf{Procesos Bioquímicos}: Fermentación alcohólica (produce bioetanol) y digestión anaerobia (produce biogás).
+    \end{itemize}
+\end{itemize}
+
+\subsection*{Energía Geotérmica}
+\begin{itemize}
+    \item \textbf{Definición}: Energía almacenada en forma de calor bajo la superficie terrestre.
+    \item \textbf{Yacimientos}: Se clasifican por su temperatura (entalpía). Los de \textbf{alta entalpía} (>150 °C) se usan para generar electricidad. Los de \textbf{baja entalpía} (<100 °C) se destinan a usos directos como calefacción y climatización.
+    \item \textbf{Sistemas de Baja Entalpía}: Son los más comunes en España. Utilizan una \textbf{bomba de calor geotérmica} que intercambia calor con el subsuelo a través de captadores (horizontales o verticales) para climatizar edificios.
+\end{itemize}
+
+\subsection*{Energía Mareomotriz}
+\begin{itemize}
+    \item \textbf{Definición}: Aprovecha el movimiento cíclico y predecible de las mareas. No debe confundirse con la \textbf{energía undimotriz}, que aprovecha el movimiento de las olas (causado por el viento).
+    \item \textbf{Tecnologías}: \textbf{Presas de marea} (similares a una central hidroeléctrica en un estuario) y \textbf{generadores de corrientes de marea} (turbinas submarinas).
+\end{itemize}
+
+\subsection*{Mix Energético y Regulación de la Red}
+\begin{itemize}
+    \item \textbf{Mix Energético}: Es la combinación de las diferentes fuentes (renovables y no renovables) que un país utiliza para generar electricidad.
+    \item \textbf{Regulación de la Red Eléctrica}: Como la electricidad no se puede almacenar a gran escala, la generación debe igualar a la demanda en todo momento. Esto se logra mediante:
+    \begin{itemize}
+        \item \textbf{Regulación Primaria}: Respuesta automática e inmediata (segundos) de las centrales para estabilizar la frecuencia de la red (50 Hz).
+        \item \textbf{Regulación Secundaria}: Ajuste centralizado y automático (minutos) para corregir desviaciones.
+        \item \textbf{Regulación Terciaria}: Ajustes manuales a más largo plazo para optimizar las reservas de potencia.
+    \end{itemize}
+\end{itemize}
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% UNIDAD 8: COMBUSTIBLES Y COMBUSTIÓN
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% --- Página del Esquema Visual ---
+\newgeometry{margin=0pt}
+\thispagestyle{empty}
+\begin{figure}[p]
+    \centering
+    \includegraphics[width=\paperwidth, height=\paperheight, keepaspectratio]{MA8.png}
+\end{figure}
+\restoregeometry
+\newpage
+
+% --- Resumen de Texto Detallado ---
+\section*{Unidad 8: Combustibles y combustión}
+
+\subsection*{Conceptos Fundamentales}
+\begin{itemize}
+    \item \textbf{Combustible}: Cualquier sustancia capaz de liberar energía al oxidarse rápidamente en una reacción exotérmica.
+    \item \textbf{Comburente}: Sustancia que reacciona con el combustible, generalmente el oxígeno ($O_2$) del aire.
+    \item \textbf{Combustión}: Reacción entre combustible y comburente.
+    \item \textbf{Poder Calorífico}: Cantidad de energía liberada por unidad de masa o volumen del combustible.
+    \begin{itemize}
+        \item \textbf{Poder Calorífico Superior (PCS)}: Considera que el agua producida en la combustión se condensa, liberando su calor latente. Es la energía total máxima.
+        \item \textbf{Poder Calorífico Inferior (PCI)}: Considera que el agua producida permanece en estado de vapor. Es el valor de energía útil en la mayoría de aplicaciones prácticas (motores, turbinas).
+    \end{itemize}
+\end{itemize}
+
+\subsection*{Tipos de Combustibles}
+\begin{itemize}
+    \item \textbf{Gases Combustibles}: Se clasifican según el \textbf{Índice de Wobbe} ($W_s = \frac{PCS}{\sqrt{d_r}}$), que mide la intercambiabilidad energética de los gases.
+    \begin{itemize}
+        \item \textbf{Familia 1}: Gas ciudad (manufacturado).
+        \item \textbf{Familia 2}: Gas natural (principalmente metano).
+        \item \textbf{Familia 3}: Gases Licuados del Petróleo (GLP), como butano y propano.
+    \end{itemize}
+    \item \textbf{Líquidos Combustibles}:
+    \begin{itemize}
+        \item \textbf{Gasolina}: Para motores de encendido por chispa (ciclo Otto). Su propiedad antidetonante se mide con el \textbf{índice de octano}. Se establece una escala de 0 (n-heptano) a 100 (iso-octano).
+        \item \textbf{Gasóleo (Diésel)}: Para motores de encendido por compresión (ciclo Diésel). Su calidad de ignición se mide con el \textbf{índice de cetano}, usando una escala de 0 (1-metilnaftaleno) a 100 (cetano/n-hexadecano).
+        \item \textbf{Queroseno}: Principalmente para aviación.
+    \end{itemize}
+    \item \textbf{Biocombustibles}:
+    \begin{itemize}
+        \item \textbf{Bioetanol}: Alcohol producido por \textbf{fermentación} de azúcares (de maíz, caña de azúcar). Se mezcla con gasolina.
+        \item \textbf{Biodiésel}: Ésteres metílicos producidos por \textbf{transesterificación} de aceites vegetales o grasas animales. Se mezcla con diésel.
+    \end{itemize}
+    \item \textbf{Hidrógeno ($H_2$)}: Un vector energético. Se clasifica por "colores" según su producción:
+    \begin{itemize}
+        \item \textbf{Hidrógeno Verde}: El único 100\% limpio. Producido por \textbf{electrólisis} del agua usando electricidad renovable.
+        \item \textbf{Hidrógeno Gris}: El más común. Producido por \textbf{reformado de gas natural} con vapor, emitiendo $CO_2$.
+        \item \textbf{Hidrógeno Azul}: Igual que el gris, pero el $CO_2$ es capturado (tecnología CAC).
+        \item \textbf{Hidrógeno Negro/Marrón}: Producido por gasificación de carbón, muy contaminante.
+    \end{itemize}
+\end{itemize}
+
+\subsection*{Centrales de Combustión}
+\begin{itemize}
+    \item \textbf{Centrales Térmicas Convencionales}: Queman un combustible (carbón, fueloil) para generar vapor que mueve una turbina. Funcionan según el \textbf{ciclo Rankine} (bomba $\rightarrow$ caldera $\rightarrow$ turbina $\rightarrow$ condensador).
+    \item \textbf{Centrales de Ciclo Combinado}: Son más eficientes ($\approx$60\%) porque combinan dos ciclos:
+    \begin{enumerate}
+        \item Un \textbf{ciclo Brayton} (turbina de gas): Se quema gas natural, y los gases de combustión calientes mueven una turbina de gas.
+        \item Un \textbf{ciclo Rankine} (turbina de vapor): Los gases de escape calientes de la turbina de gas se usan en una caldera de recuperación para generar vapor, que mueve una segunda turbina de vapor.
+    \end{enumerate}
+\end{itemize}
+
+\subsection*{Principios de la Combustión}
+\begin{itemize}
+    \item \textbf{Estequiometría y Dosado}: La estequiometría es el cálculo de la proporción exacta de aire (oxígeno) y combustible para una combustión completa, donde todos los reactivos se consumen. La relación aire-combustible ($A/C$) puede ser molar o másica.
+    \item \textbf{Coeficiente de Exceso de Aire (Factor $\lambda$)}: Es la relación entre la cantidad real de aire y la cantidad estequiométrica. $$ \lambda = \frac{\text{Cantidad real de aire}}{\text{Cantidad estequiométrica de aire}} $$
+    \begin{itemize}
+        \item \textbf{$\lambda < 1$}: **Mezcla rica** (defecto de aire). Genera combustión incompleta, produciendo CO y hollín.
+        \item \textbf{$\lambda = 1$}: **Mezcla estequiométrica**.
+        \item \textbf{$\lambda > 1$}: **Mezcla pobre** (exceso de aire). Asegura la combustión completa, aunque puede reducir la eficiencia térmica.
+    \end{itemize}
+\end{itemize}
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% UNIDAD 9: DISPONIBILIDAD SOLAR
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% --- Página del Esquema Visual ---
+\newgeometry{margin=0pt}
+\thispagestyle{empty}
+\begin{figure}[p]
+    \centering
+    \includegraphics[width=\paperwidth, height=\paperheight, keepaspectratio]{MA9.png}
+\end{figure}
+\restoregeometry
+\newpage
+
+% --- Resumen de Texto Detallado ---
+\section*{Unidad 9: Disponibilidad solar}
+
+\subsection*{El Sol y la Radiación Solar}
+\begin{itemize}
+    \item \textbf{Fuente de Energía}: El Sol es una estrella que genera energía mediante la \textbf{fusión nuclear} de hidrógeno para formar helio.
+    \item \textbf{Movimiento Terrestre y Estaciones}:
+    \begin{itemize}
+        \item La órbita de la Tierra es elíptica, con un punto más cercano al Sol (\textbf{perihelio}, $\approx$3 de enero) y uno más lejano (\textbf{afelio}, $\approx$3 de julio).
+        \item Las estaciones del año se deben a la \textbf{inclinación del eje de rotación de la Tierra (23,45º)} respecto al plano de su órbita, no a la distancia al Sol. Esta inclinación hace que los rayos solares incidan de forma más directa o indirecta sobre cada hemisferio según la época.
+    \end{itemize}
+    \item \textbf{Constante Solar (Irradiancia Solar Total)}: Es la cantidad de energía solar que llega a la parte superior de la atmósfera sobre una superficie perpendicular a los rayos. Su valor medio es de \textbf{1361 W/m²}. La intensidad disminuye con el cuadrado de la distancia (\textbf{ley inversa del cuadrado}).
+\end{itemize}
+
+\subsection*{Atenuación Solar en la Atmósfera}
+\begin{itemize}
+    \item La radiación solar se debilita al atravesar la atmósfera debido a tres fenómenos:
+    \begin{itemize}
+        \item \textbf{Reflexión}: Parte de la radiación es reflejada de vuelta al espacio. La fracción de radiación reflejada por un planeta o superficie se denomina \textbf{albedo}. El albedo medio de la Tierra es de 0,3.
+        \item \textbf{Absorción}: Gases como el ozono ($O_3$), el vapor de agua ($H_2O$) y el dióxido de carbono ($CO_2$) absorben selectivamente ciertas longitudes de onda, transformando la energía radiante en calor.
+        \item \textbf{Dispersión}: La radiación cambia de dirección al chocar con partículas.
+            \begin{itemize}
+                \item \textbf{Dispersión de Rayleigh}: Ocurre con partículas más pequeñas que la longitud de onda de la luz (moléculas de aire). Dispersa más eficientemente las longitudes de onda cortas (azules y violetas), lo que explica por qué \textbf{el cielo es azul}.
+                \item \textbf{Dispersión de Mie}: Ocurre con partículas de tamaño similar o mayor a la longitud de onda (gotas de agua, polvo). Dispersa todas las longitudes de onda por igual, por lo que \textbf{las nubes y la niebla son blancas}.
+            \end{itemize}
+    \end{itemize}
+    \item \textbf{Masa de Aire (AM)}: Es la relación entre la longitud del camino que la luz recorre a través de la atmósfera y la longitud del camino si el Sol estuviera en el cénit (vertical). Se calcula como $AM = 1 / \sin(\beta)$, donde $\beta$ es el ángulo de elevación solar. Un valor de AM=1,5 se toma como referencia para condiciones estándar.
+\end{itemize}
+
+\subsection*{Medición de la Radiación Solar}
+\begin{itemize}
+    \item \textbf{Instrumentos de Medida}:
+    \begin{itemize}
+        \item \textbf{Piranómetro}: Mide la radiación solar \textbf{global} (directa + difusa) sobre una superficie horizontal.
+        \item \textbf{Pirheliómetro}: Mide exclusivamente la radiación solar \textbf{directa}. Requiere un sistema de seguimiento solar para apuntar siempre al Sol.
+    \end{itemize}
+    \item \textbf{Tipos de Irradiancia}:
+    \begin{itemize}
+        \item \textbf{DNI (Irradiancia Normal Directa)}: Radiación directa que incide sobre una superficie perpendicular a los rayos del Sol.
+        \item \textbf{DHI (Irradiancia Horizontal Difusa)}: Radiación que ha sido dispersada por la atmósfera y llega a una superficie horizontal.
+        \item \textbf{GHI (Irradiancia Horizontal Global)}: Es la radiación total que llega a una superficie horizontal ($GHI = DHI + DNI \cdot \cos(\alpha)$, donde $\alpha$ es el ángulo cenital).
+    \end{itemize}
+\end{itemize}
+
+\subsection*{Balance Térmico Global}
+\begin{itemize}
+    \item Describe el equilibrio entre la energía entrante del Sol y la energía saliente de la Tierra. La radiación solar incidente media en la Tierra es de unos \textbf{340,4 W/m²}.
+    \item Del total, unos \textbf{99,9 W/m²} son reflejados (albedo) y \textbf{240,5 W/m²} son absorbidos por el sistema Tierra-atmósfera.
+    \item La superficie, a su vez, emite radiación infrarroja, que es en gran parte absorbida y reemitida hacia la Tierra por los GEI (efecto invernadero).
+    \item Actualmente, existe un pequeño desequilibrio: la Tierra absorbe \textbf{0,6 W/m²} más de lo que emite, lo que provoca el calentamiento global.
+\end{itemize}
+
+\subsection*{Inclinación Óptima para Captación Solar}
+\begin{itemize}
+    \item Es el ángulo de inclinación de un panel solar respecto a la horizontal que maximiza la energía recibida.
+    \item \textbf{Factores Clave}:
+    \begin{itemize}
+        \item \textbf{Latitud ($\phi$)}: Para maximizar la captación anual, la inclinación óptima ($\beta$) es aproximadamente igual a la latitud del lugar ($\beta \approx \phi$).
+        \item \textbf{Época del año}: La inclinación óptima varía con la estación. Para maximizar en invierno, $\beta \approx \phi + 15^\circ$; para verano, $\beta \approx \phi - 15^\circ$.
+        \item \textbf{Declinación Solar ($\delta$)}: Es el ángulo entre el plano ecuatorial y los rayos del Sol, que varía entre +23,45° (solsticio de verano) y -23,45° (solsticio de invierno). Una fórmula para calcularla es: $\delta = 23,45^\circ \cdot \sin\left(\frac{360}{365} \cdot (N+284)\right)$, donde N es el día del año.
+        \item \textbf{Cálculo para un día específico}: La inclinación óptima para un día concreto es $\beta = \phi - \delta$.
+    \end{itemize}
+\end{itemize}
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% UNIDAD 10: ENERGÍA SOLAR TÉRMICA Y FOTOVOLTAICA
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% --- Página del Esquema Visual ---
+\newgeometry{margin=0pt}
+\thispagestyle{empty}
+\begin{figure}[p]
+    \centering
+    \includegraphics[width=\paperwidth, height=\paperheight, keepaspectratio]{MA10.png}
+\end{figure}
+\restoregeometry
+\newpage
+
+% --- Resumen de Texto Detallado ---
+\section*{Unidad 10: Energía solar térmica y fotovoltaica}
+
+\subsection*{Energía Solar Térmica de Alta Temperatura (CSP)}
+\begin{itemize}
+    \item \textbf{Definición}: Tecnología que utiliza espejos o lentes para concentrar la radiación solar y generar calor a temperaturas elevadas (superiores a 400 °C), que se usa para producir electricidad mediante un ciclo de vapor (generalmente Rankine).
+    \item \textbf{Tecnologías Principales}:
+    \begin{itemize}
+        \item \textbf{Torre Central}: Un campo de espejos móviles (\textbf{helióstatos}) concentra la luz solar en un receptor situado en lo alto de una torre. El fluido calentado (a menudo sales fundidas) puede almacenarse para generar electricidad incluso sin sol.
+        \item \textbf{Colectores Cilindro-Parabólicos (CCP)}: Espejos curvos con forma de parábola que concentran la luz en un tubo receptor por el que circula un fluido térmico.
+        \item \textbf{Tecnología Fresnel}: Utiliza reflectores planos y largos que giran para enfocar la luz en un receptor fijo.
+        \item \textbf{Tecnología de Disco Stirling}: Un disco parabólico concentra la luz en un motor Stirling para generar electricidad de forma directa.
+    \end{itemize}
+\end{itemize}
+
+\subsection*{Energía Solar Térmica de Baja Temperatura}
+\begin{itemize}
+    \item \textbf{Definición}: Aprovecha el calor del sol para aplicaciones que requieren temperaturas por debajo de los 100 °C, principalmente Agua Caliente Sanitaria (ACS) y calefacción.
+    \item \textbf{Tipos de Instalaciones}:
+    \begin{itemize}
+        \item \textbf{Circulación Natural (Termosifón)}: El fluido caloportador se mueve por convección natural (el agua caliente sube). El depósito de acumulación debe estar situado por encima de los captadores.
+        \item \textbf{Circulación Forzada}: Utiliza una bomba para mover el fluido, lo que ofrece mayor flexibilidad en el diseño.
+    \end{itemize}
+    \item \textbf{Componentes Principales}:
+    \begin{itemize}
+        \item \textbf{Captadores Solares}: Absorben la radiación. Pueden ser \textbf{captadores planos} o \textbf{de tubos de vacío} (más eficientes, especialmente en climas fríos).
+        \item \textbf{Acumulador}: Tanque aislado que almacena el agua caliente.
+    \end{itemize}
+    \item \textbf{Balance Energético del Captador}: El rendimiento ($\eta$) de un captador depende de su rendimiento óptico ($\eta_0$) y de sus pérdidas térmicas, que aumentan con la diferencia de temperatura entre el captador y el ambiente. La ecuación de Hottel-Whillier-Bliss describe este comportamiento: $$ \eta = F_R(\tau\alpha) - F_R U_L \frac{(t_e - t_a)}{I_0} $$
+\end{itemize}
+
+\subsection*{Energía Solar Fotovoltaica (PV)}
+\begin{itemize}
+    \item \textbf{Principio de Funcionamiento (Efecto Fotovoltaico)}:
+    \begin{enumerate}
+        \item Se utiliza un material semiconductor (generalmente \textbf{silicio}) dopado para crear una capa tipo N (exceso de electrones) y una capa tipo P (exceso de "huecos").
+        \item La unión de ambas capas crea un campo eléctrico permanente en la \textbf{unión P-N}.
+        \item Cuando los fotones de la luz solar inciden en la célula, su energía libera electrones, creando pares electrón-hueco.
+        \item El campo eléctrico de la unión P-N separa estos pares, generando una diferencia de potencial y, si se conecta a un circuito externo, una corriente eléctrica en \textbf{corriente continua (CC)}.
+    \end{enumerate}
+    \item \textbf{Tipos de Células Solares}:
+    \begin{itemize}
+        \item \textbf{Monocristalino}: Hechas de un único cristal de silicio. Son las más eficientes (18-22\%) y de color negro uniforme.
+        \item \textbf{Policristalino}: Hechas de múltiples cristales de silicio. Ligeramente menos eficientes (15-17\%), más económicas y de color azul con vetas visibles.
+        \item \textbf{Capa Fina (Thin-film)}: Ligeras y flexibles, pero con menor eficiencia (7-18\%).
+        \item \textbf{Multiunión}: Muy alta eficiencia (>40\%), pero muy costosas. Se usan en aplicaciones espaciales.
+    \end{itemize}
+    \item \textbf{Parámetros y Curva I-V}:
+    \begin{itemize}
+        \item La \textbf{curva I-V} de un panel muestra la relación entre la intensidad (I) y el voltaje (V) que genera. Puntos clave son la \textbf{Intensidad de Cortocircuito ($I_{sc}$)} y la \textbf{Tensión de Circuito Abierto ($V_{oc}$)}.
+        \item El \textbf{Punto de Máxima Potencia (MPP)} es el punto de la curva donde la potencia ($P = V \cdot I$) es máxima.
+        \item El rendimiento de un panel disminuye con el aumento de la \textbf{temperatura} y aumenta con la \textbf{irradiancia}.
+    \end{itemize}
+    \item \textbf{Tipos de Instalación Fotovoltaica}:
+    \begin{itemize}
+        \item \textbf{Aisladas (Off-grid)}: Son autónomas y no están conectadas a la red eléctrica. Requieren \textbf{baterías} para almacenar energía y un \textbf{regulador de carga}.
+        \item \textbf{Conectadas a Red (On-grid)}: Operan en paralelo con la red eléctrica. Permiten el \textbf{autoconsumo} y verter los excedentes a la red. El componente clave es el \textbf{inversor}, que convierte la CC en Corriente Alterna (CA) y la sincroniza con la red.
+    \end{itemize}
+\end{itemize}
+
+\end{document}

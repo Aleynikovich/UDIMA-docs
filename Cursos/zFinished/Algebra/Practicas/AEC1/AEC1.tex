@@ -1,0 +1,908 @@
+\documentclass{article}
+\usepackage{lipsum}
+\usepackage[backend=biber]{biblatex}
+\addbibresource{aec2.bib}
+\usepackage{authoraftertitle}
+\usepackage[top=2cm,bottom=1.5cm,left=1.5cm, right=3cm,includeheadfoot]{geometry}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage[spanish]{babel}
+\usepackage{mathtools}
+\usepackage{csquotes}
+\usepackage{amssymb}
+\usepackage{fancybox, graphicx}
+\usepackage{array}
+\usepackage{hhline}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{caption}
+\usepackage{esvect}
+\usepackage{siunitx}
+\usepackage{commath}
+\usepackage{tcolorbox}
+\makeatletter
+\renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
+   \hskip -\arraycolsep
+   \let\@ifnextchar\new@ifnextchar
+   \array{#1}}
+\makeatother
+
+%Header & Footer
+\pagestyle{fancy}
+\fancyhead[LE]{\MyTitle}
+\fancyhead[LO]{Álgebra Lineal}
+\fancyhead[RO]{\leftmark}
+\fancyhead[RE]{\leftmark}
+\fancyfoot[L]{\raisebox{-1cm}{\includegraphics[height=2cm]{C:/Users/XYZ/Dropbox/DocumentGraphics/LOGOUDIMA.jpg}}}
+\fancyfoot[R]{Corregido:\\ Dr. Juan José Moreno García}
+%\fancyfoot[RO]{07/12/2018}
+%Vars
+\author{Alexander Sebastian Kalis}
+\title{Actividad de Evaluación Continua 1}
+
+
+%DOC
+
+\begin{document}
+
+\begin{titlepage}
+
+    \begin{center}
+
+        \line(1,0){300}\\
+        [0.2in]
+        \huge{\bfseries {\MyTitle}}\\
+        [1mm]
+        \line(2,0){200}\\
+        [0.75cm]
+        \textsc{\LARGE Álgebra Lineal}\\
+        [2cm]
+        \includegraphics[height=10cm]{C:/Users/XYZ/Dropbox/DocumentGraphics/Calculus.png}\\
+        [3cm]
+
+    \end{center}
+
+    \begin{flushright}
+
+        Autor: {\MyAuthor}\\
+        Profesor: Dr. Juan José Moreno García\\
+        Curso: 1o, Ingeniería de Organización Industrial\\
+        UDIMA         
+
+    \end{flushright}
+    
+\end{titlepage}
+
+\tableofcontents \thispagestyle{empty}
+
+\newpage
+
+\section{Actividades}
+
+\subsection{Problema 1}
+
+Calcular la distancia desde el punto $Q = (1,-1,-1)$ a la recta intersección de los planos:
+
+\begin{center}
+    \begin{eqnarray*}
+        x-2y+z=3\\
+        2x-3y-z=6  
+    \end{eqnarray*}  
+\end{center}
+
+
+RESOLUCIÓN:
+
+\textit{Disponemos de 2 planos cuyas ecuaciones son:}
+\begin{center}
+    \begin{eqnarray*}
+        \pi_1: x-2y+z=3\\
+        \pi_2: 2x-3y-z=6  
+    \end{eqnarray*}
+\end{center}
+
+
+\textit{Y sus rectas normales: }
+\begin{eqnarray*}
+    \vec{n_1}=<1,-2,1>\\
+    \vec{n_2}=<2,-3,-1>
+\end{eqnarray*}
+
+\textit{Con lo cual son planos no paralelos. Para definir la línea que forman al cruzarse necesitaremos un punto y su vector director el cual
+obtenemos calculando el \textbf{producto vectorial} de ambos:}
+\[\vec{v}=\vec{n_1}\times\vec{n_2}\]
+
+\[
+\vec{v}=
+\begin{vmatrix} 
+    \hat{\imath} & \hat{\jmath} & \hat{k} \\
+    2 & -3 & -1 \\
+    1 & -2 & 1
+\end{vmatrix}=
+5\hat{\imath} + 3 \hat{\jmath} + \hat{k}\\
+\]
+
+
+
+\textit{Para encontrar el punto resolvemos el sistema tomando $y=0$:}
+\[
+    \begin{cases}
+        y=0\\
+        x+z=3\\
+        2x-z=6
+    \end{cases}\rightarrow
+    P(x,y,z)=(3,0,0)
+\]    
+\textit{Con lo que podemos definir la ecuación de la recta y calculamos la distancia del punto $Q(1,-1,-1)$:}
+
+\[ 
+r:\frac{x-3}{5}=\frac{y}{3}=z   
+\]
+\[
+\vec{u}=\vec{PQ}=<-2,-1,-1>    
+\]
+\[
+    Distancia(r,Q)=
+    \frac{\lVert\vec{u}\times\vec{v}\rVert}{\lVert\vec{v}\rVert}=
+    \frac{\lVert<2,-3,1>\rVert}{\sqrt{35}}=
+    \sqrt{\frac{2}{5}}
+\]
+
+\newpage
+
+\subsection{Problema 2}
+
+Resolver el siguiente sistema por gauss y sustitución hacia atrás:
+
+\[
+    \begin{cases}
+        2x+5y+2z=4\\
+        x-y+3z=0\\
+        -x+7y-7z=4
+    \end{cases}
+    \xrightarrow[]{\text{Matriz aumentada}}
+    \begin{bmatrix}[*2cr@{\quad}|@{\quad}>{\bf\color{black}}r]
+        2 & 5 & 2  &  4 \\
+        1 & -1 & 3 & 0 \\
+        -1 & 7 & -7 & 4
+    \end{bmatrix}
+    \xrightarrow[]{R_1 \leftrightarrow R_2}
+    \begin{bmatrix}[*2cr@{\quad}|@{\quad}>{\bf\color{black}}r]
+        1 & -1 & 3 & 0 \\
+        2 & 5 & 2  &  4 \\
+        -1 & 7 & -7 & 4
+    \end{bmatrix}
+    \xrightarrow[]{}
+    \begin{bmatrix}[*2cr@{\quad}|@{\quad}>{\bf\color{black}}r]
+        1 & -1 & 3 & 0 \\
+        0 & 7 & -4  &  4 \\
+        0 & 6 & -4 & 4
+    \end{bmatrix}
+    \]
+    \[
+        \xrightarrow[]{C_2 \leftrightarrow C_3}
+        \begin{bmatrix}[*2cr@{\quad}|@{\quad}>{\bf\color{black}}r]
+            1 & 3 & -1 & 0 \\
+            0 & -4 & 7  &  4 \\
+            0 & -4 & 6 & 4
+        \end{bmatrix}
+        \xrightarrow[]{}
+        \begin{bmatrix}[*2cr@{\quad}|@{\quad}>{\bf\color{black}}r]
+            1 & 3 & -1 & 0 \\
+            0 & -4 & 7  &  4 \\
+            0 & 0 & -1 & 0
+        \end{bmatrix}\\
+    \]\\
+
+    \textit{Queda el sistema reducido:}
+   
+    \[
+        \begin{cases}
+            x+3z-y=0\\
+            -4z+7y=4\\
+            y=0
+        \end{cases}\rightarrow
+        \begin{cases}
+            x=3\\
+            y=0\\
+            z=-1
+        \end{cases}    
+    \]\\\\
+
+\subsection{Problema 3}
+
+Resolver el siguiente sistema por Gauss-Jordan:
+
+\[
+    \begin{matrix}
+        2x & +6y & -2z & & = 2\\
+        3x & +9y & -3z & +3w & = 1\\
+        -x & -3y & +z & -3w & = 1\\
+        -2x & -6y & +2z & -6w & = 2
+    \end{matrix}
+\]
+
+Obtener forma escalonada reducida por fila de la matriz ampliada del sistema. Comprobar si el sistema es compatible. Comproba si es determinado
+o indeterminado. En el caso de que sea lo segundo expresar la solución en función de un parámetro $t$ que se corresponda a la variable libre.\\
+
+RESOLUCIÓN:\\
+
+\[
+    \begin{bmatrix}[*3cr@{\quad}|@{\quad}>{\bf\color{black}}r]
+        2 & 6 & -2  & 0 & 2 \\
+        3 & 9 & -3 & 3 & 1\\
+        -1 & -3 & 1 & -3 & 1\\
+        -2 & -6 & 2 & -6 & 2
+    \end{bmatrix}
+    \xrightarrow[]{\substack{R_4+R_1 \\ R1/2}}
+    \begin{bmatrix}[*3cr@{\quad}|@{\quad}>{\bf\color{black}}r]
+        1 & 3 & -1  & 0 & 1 \\
+        3 & 9 & -3 & 3 & 1\\
+        -1 & -3 & 1 & -3 & 1
+    \end{bmatrix}
+    \xrightarrow[]{\substack{R_3+R_1 \\ R_2+3R_1}}
+    \begin{bmatrix}[*3cr@{\quad}|@{\quad}>{\bf\color{black}}r]
+        1 & 3 & -1  & 0 & 1 \\
+        0 & 0 & 0 & 3 & -2\\
+        0 & 0 & 0 & -3 & 2
+    \end{bmatrix}=
+\]
+\[
+    \begin{bmatrix}[*3cr@{\quad}|@{\quad}>{\bf\color{black}}r]
+        1 & 3 & -1  & 0 & 1 \\
+        0 & 0 & 0 & 1 & -\frac{2}{3}\\
+    \end{bmatrix}
+\]\\
+
+\textit{Podemos comprobar que el sistema es compatible indeterminado ya que tenemos infinitas soluciones
+para las variables libres $z=s$ e $y=t$.}
+
+\textit{Representamos de forma paramétrica:}
+
+\[
+    \begin{cases}
+        x = s-3t+1\\
+        y = t\\
+        z =s \\
+        w= -\frac{2}{3}
+    \end{cases}
+    \xrightarrow[]{}
+    \begin{bmatrix} 
+        x \\
+        y \\
+        z \\
+        w 
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+        1 \\
+        0 \\
+        0 \\
+        -\frac{2}{3}
+    \end{bmatrix}
+    +s
+    \begin{bmatrix}
+        1 \\
+        0 \\
+        1 \\
+        0 
+    \end{bmatrix}
+    +t
+    \begin{bmatrix}
+        -3 \\
+        1 \\
+        0 \\
+        0 
+    \end{bmatrix}
+\]
+
+
+\subsection{Problema 4}
+
+Sea el sistema de ecuaciones cuya matriz aumpliada es la siguiente:
+
+\[
+\begin{bmatrix}[*2cr@{\quad}|@{\quad}>{\bf\color{black}}r]
+    1 & a & -1 & 2 \\
+    2 & -1 & a & 5 \\
+    1 & 10 & -6 & 1
+\end{bmatrix}
+\]
+
+Discutir en función del parámetro $a$. \\
+
+RESOLUCIÓN:\\
+
+\textit{Se determina qué valores de $a$ hacen que el sistema sea incompatible con el determinante de la matriz:}
+
+% \[
+% \begin{bmatrix}[*2cr@{\quad}|@{\quad}>{\bf\color{black}}r]
+%     1 & a & -1 & 2 \\
+%     2 & -1 & a & 5 \\
+%     1 & 10 & -6 & 1
+% \end{bmatrix}
+% \xrightarrow[]{\substack{R_2-2R_1 \\ R_3-R_1}}
+% \begin{bmatrix}[*2cr@{\quad}|@{\quad}>{\bf\color{black}}r]
+%     1 & a & -1 & 2 \\
+%     0 & -1-2a & a+2 & 1 \\
+%     0 & 10-a & -5 & -1
+% \end{bmatrix}
+% \xrightarrow[]{\substack{C_2 \leftrightarrow C_3}}
+% \]
+
+\[
+det \left(
+\begin{bmatrix}
+    1 & a & -1  \\
+    2 & -1 & a  \\
+    1 & 10 & -6 
+\end{bmatrix}
+\right)=
+a^2+2a-15=
+(a-3)(a+5)
+\]
+
+\textit{Sabemos entonces que el sistema es compatible determinado para valores de $a$ diferentes a 3 y -5.}
+
+\textit{Se evalúa el sistema para $a=3$:}
+
+\[
+\begin{bmatrix}[*2cr@{\quad}|@{\quad}>{\bf\color{black}}r]
+    1 & 3 & -1 & 2 \\
+    2 & -1 & 3 & 5 \\
+    1 & 10 & -6 & 1
+\end{bmatrix}\rightarrow
+\begin{bmatrix}[*2cr@{\quad}|@{\quad}>{\bf\color{black}}r]
+    1 & 3 & -1 & 2 \\
+    0 & -7 & 5 & 1 \\
+    0 & 0 & 0 & 0
+\end{bmatrix}
+\]
+
+\textit{Podemos observar que el sistema queda compatible e indeterminado ya que existen más incógnitas que ecuaciones 
+linealmente independientes.\\}
+
+
+\textit{Se realiza el mismo procedimiento para $a=-5$:}
+
+\[
+\begin{bmatrix}[*2cr@{\quad}|@{\quad}>{\bf\color{black}}r]
+    1 & -5 & -1 & 2 \\
+    2 & -1 & -5 & 5 \\
+    1 & 10 & -6 & 1
+\end{bmatrix}\rightarrow
+\begin{bmatrix}[*2cr@{\quad}|@{\quad}>{\bf\color{black}}r]
+    1 & -5 & -1 & 2 \\
+    0 & 9 & -3 & 1 \\
+    0 & 0 & 0 & -\frac{8}{3}
+\end{bmatrix}
+\]
+
+\textit{Lo que resulta en un sistema incompatible, ya que obtenemos el resultado $0=-\frac{8}{3}$.}
+
+\newpage 
+
+\subsection{Problema 5}
+
+Realiza la descomposición LU de la matriz A
+
+\textit{Se reduce de forma escalonada para obtener los coeficientes de $LU$}
+\[
+    A=
+    \begin{bmatrix}
+        1 & -2 & 1 \\
+        2 & -5 & 4 \\
+        1 & -4 & 6 
+    \end{bmatrix}
+    \xrightarrow[]{\substack{-2R_1+R_2 \\ -1R_1+R_3}}
+    \begin{bmatrix}
+        1 & -2 & 1 \\
+        0 & -1 & 2 \\
+        0 & -2 & 5 
+    \end{bmatrix}
+    \xrightarrow[]{\substack{-2R_2+R_3}}
+    \begin{bmatrix}
+        1 & -2 & 1 \\
+        0 & -1 & 2 \\
+        0 & 0 & 1 
+    \end{bmatrix}
+\]
+
+\textit{Lo que es equivalente a multiplicarlo por:}
+
+\[
+    L= 
+    \begin{bmatrix}
+        1 & 0 & 0 \\
+        2 & 1 & 0 \\
+        1 & 2 & 1 
+    \end{bmatrix}
+    U=
+    \begin{bmatrix}
+        1 & -2 & 1 \\
+        0 & -1 & 2 \\
+        0 & 0 & 1 
+    \end{bmatrix}     
+\]\\
+
+Si la matriz A corresponde a la matriz de un sistema, calcular la solución de
+dicho sistema si el vector del lado derecho es:
+
+\[
+  b=
+  \begin{bmatrix}
+      5\\
+      -3\\
+      10
+  \end{bmatrix}  
+\]\\
+
+\textit{Resolvemos el sistema $Ax=b \rightarrow LUx=b$}
+
+\[
+    Ly=b\rightarrow
+    \begin{bmatrix}
+        1 & 0 & 0 \\
+        2 & 1 & 0 \\
+        1 & 2 & 1 
+    \end{bmatrix}
+    \cdot
+    \begin{bmatrix}
+        y_1\\
+        y_2\\
+        y_3
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+        5\\
+        -3\\
+        10
+    \end{bmatrix}\rightarrow
+    \begin{bmatrix}
+        y_1\\
+        y_2\\
+        y_3
+    \end{bmatrix}=
+    \begin{bmatrix}
+        5\\
+        -13\\
+        31
+    \end{bmatrix}
+\]
+
+\textit{Y finalmente:}
+\[
+    Ux=b\rightarrow
+    \begin{bmatrix*}[r]
+        1 & -2 & 1 \\
+        0 & -1 & 2 \\
+        0 & 0 & 1 
+    \end{bmatrix*}
+    \cdot
+    \begin{bmatrix}
+        x_1\\
+        x_2\\
+        x_3
+    \end{bmatrix}=
+    \begin{bmatrix*}[r]
+        5\\
+        -13\\
+        31
+    \end{bmatrix*}
+    \rightarrow
+    \begin{bmatrix*}[r]
+        x_1\\
+        x_2\\
+        x_3
+    \end{bmatrix*}=
+    \begin{bmatrix}[r]
+        124\\
+        75\\
+        31
+    \end{bmatrix}
+\]
+
+
+\subsection{Problema 6}
+
+Realiza la descomposición LU de la matriz A y comprueba el resultado:
+
+\[
+A=
+\begin{bmatrix*}[r]
+    2 & 4 & -1 & 5\\
+    -4 & -5 & 3 & -8\\
+    2 & -5 & -4 & 1\\
+    -6 & 0 & 7 & -3
+\end{bmatrix*}\\    
+\]\\
+
+\textit{Se reduce de forma escalonada para obtener los coeficientes de $LU$}
+
+\[
+    \begin{bmatrix*}[r]
+        2 & 4 & -1 & 5\\
+        -4 & -5 & 3 & -8\\
+        2 & -5 & -4 & 1\\
+        -6 & 0 & 7 & -3
+    \end{bmatrix*}
+    \xrightarrow[]{\substack{2R_1+F_2 \\ \substack{-1R_1+R_3 \\ 3R_1+R_4}}}
+    \begin{bmatrix*}[r]
+        2 & 4 & -1 & 5\\
+        0 & 3 & 1 & 2\\
+        0 & -9 & -3 & -4\\
+        0 & 12 & 4 & -12
+    \end{bmatrix*}
+    \xrightarrow[]{\substack{3R_2 + R_3 \\ -4R_2+R_4}}
+    \begin{bmatrix*}[r]
+        2 & 4 & -1 & 5\\
+        0 & 3 & 1 & 2\\
+        0 & 0 & 0 & 2\\
+        0 & 0 & 0 & -20
+    \end{bmatrix*}
+\]
+
+\newpage
+\textit{Entonces los coeficientes de $LU$ y su comprobación son:}
+
+\[
+  A=L \cdot U \rightarrow
+  \begin{bmatrix*}[r]
+    2 & 4 & -1 & 5\\
+    -4 & -5 & 3 & -8\\
+    2 & -5 & -4 & 1\\
+    -6 & 0 & 7 & -3
+\end{bmatrix*}=
+\begin{bmatrix*}[r]
+    1 & 0 & 0 & 0\\
+    -2 & 1 & 0 & 0\\
+    1 & -3 & 1 & 0\\
+    -3 & 4 & 0 & 1
+\end{bmatrix*}
+\cdot
+\begin{bmatrix*}[r]
+    2 & 4 & -1 & 5\\
+    0 & 3 & 1 & 2\\
+    0 & 0 & 0 & 2\\
+    0 & 0 & 0 & 20
+\end{bmatrix*}
+\]\\
+
+\subsection{Problema 7}
+
+Obtener por el método de Gauss-Jordan la inversa de la matriz A, si es
+posible.
+
+\[
+    \begin{bmatrix*}[r]
+        2 & 1 & -4  \\
+        -4 & -1 & 6   \\
+        -2 & 2 & -1 
+    \end{bmatrix*}
+\]
+
+Si $A$ es la matriz de un sistema de ecuaciones con el vector del lado derecho
+
+\[
+    b=
+    \begin{bmatrix*}[r]
+        3 \\
+        -1   \\
+        -2 
+    \end{bmatrix*}
+\]
+
+¿Cuál es la solución del sistema usando dicha inversa?\\
+
+\[
+    \left[
+        \begin{array}{ccc|ccc}
+            2 & 1 & -4 & 1 & 0 & 0 \\
+            -4 & -1 & 6 & 0 & 1 & 0  \\
+            -2 & 2 & -1 & 0 & 0 & 1
+        \end{array}
+    \right]
+    \xrightarrow[]{\substack{\frac{1}{2}R_1 \\ \substack{ 2R_1 + R_2\\ R_1 + R_3}}}
+    \left[
+        \begin{array}{ccc|ccc}
+            1 & \frac{1}{2} & -2        & \frac{1}{2} & 0 & 0 \\
+            0 & 1 & -2                   & 2 & 1 & 0  \\
+            0 & 3 & -5                  & 1 & 0 & 1
+        \end{array}
+    \right]
+    \xrightarrow[]{\substack{-3R_2 + R_3 \\ }}
+    \left[
+        \begin{array}{ccc|ccc}
+            1 & \frac{1}{2} & -2        & \frac{1}{2} & 0 & 0 \\
+            0 & 1 & -2                   & 2 & 1 & 0  \\
+            0 & 0 & 1                  & -5 & -3 & 1
+        \end{array}
+    \right]
+    \xrightarrow[]{\substack{2R_3 + R_2 \\ 2R_3+R_1}}
+\]
+\[
+    \left[
+        \begin{array}{ccc|ccc}
+            1 & \frac{1}{2} & 0        & -\frac{19}{2} & -6 & 2 \\
+            0 & 1 & 0                   & -8 & -5 & 2  \\
+            0 & 0 & 1                  & -5 & -3 & 1
+        \end{array}
+    \right]
+    \xrightarrow[]{\substack{-\frac{1}{2}R_2+R_1}}
+    \left[
+        \begin{array}{ccc|ccc}
+            1 & 0 & 0        & -\frac{11}{2} & -\frac{-7}{2} & 1 \\
+            0 & 1 & 0                   & -8 & -5 & 2  \\
+            0 & 0 & 1                  & -5 & -3 & 1
+        \end{array}
+    \right]
+\]\\
+
+\textit{Entonces la matriz inversa es:}
+
+\[
+    A^{-1}=\frac{1}{2}
+    \begin{bmatrix*}[r]
+        -11 & -7 & 2\\
+        -16 & -10 & 4\\
+        -10 & -6 & 2
+    \end{bmatrix*}  
+\]
+
+\textit{Y $Ax=b$ es:}
+
+\[
+    x=A^{-1} \cdot b =
+    \frac{1}{2}
+    \begin{bmatrix*}[r]
+        -11 & -7 & 2\\
+        -16 & -10 & 4\\
+        -10 & -6 & 2
+    \end{bmatrix*}  
+    \cdot
+    \begin{bmatrix*}[r]
+        3 \\
+        -1   \\
+        -2 
+    \end{bmatrix*}
+    =
+    \begin{bmatrix*}[r]
+        -15 \\
+        -23   \\
+        -14 
+    \end{bmatrix*}
+\]
+
+\newpage
+
+\subsection{Problema 8}
+
+
+Encontrar en $\mathbb{R}^2$ la matriz canónica de la aplicación que en el orden indicado
+efectúa las siguientes operaciones: giro de 60º en el sentido contrario a las
+agujas del reloj, dilatación positiva de factor 2 horizontal, dilatación positiva
+vertical de factor $\sqrt{3}$ y reflexión especular respecto al eje Y .
+Nota: no usar notación decimal\\
+
+\textit{Para efectuar la rotación de 60º utilizaremos la matriz}
+
+\[
+    R=
+    \begin{bmatrix*}[r]
+        \cos(60) & -\sin(60) \\
+         \sin(60) & \cos(60)     
+    \end{bmatrix*} 
+    =
+    \begin{bmatrix*}[r]
+        \frac{1}{2} & -\frac{\sqrt{3}}{2} \\
+         \frac{\sqrt{3}}{2} & \frac{1}{2}     
+    \end{bmatrix*} 
+\]
+
+\textit{Para la dilatación positiva horizontal de factor 2 y vertical de factor $\sqrt{3}$:}
+
+\[
+    D=
+    \begin{bmatrix*}[r]
+        2 & 0 \\
+         0 & \sqrt{3}     
+    \end{bmatrix*}    
+\]
+
+\textit{Para efectuar la reflexión especular respecto al eje Y:}
+
+\[
+    E=
+    \begin{bmatrix*}[r]
+        -1 & 0 \\
+         0 & 1     
+    \end{bmatrix*}    
+\]
+
+\textit{Entonces podemos representar estas 3 transformaciones conjuntamente mediante su producto en el siguiente orden:}
+
+\[
+  A=EDR=
+  \begin{bmatrix*}[r]
+    -1 & 0 \\
+     0 & 1     
+\end{bmatrix*}   
+  \begin{bmatrix*}[r]
+    2 & 0 \\
+     0 & \sqrt{3}     
+\end{bmatrix*}    
+  \begin{bmatrix*}[r]
+    \frac{1}{2} & -\frac{\sqrt{3}}{2} \\
+     \frac{\sqrt{3}}{2} & \frac{1}{2}     
+\end{bmatrix*}
+=
+\begin{bmatrix*}[r]
+    -1 & \sqrt{3} \\
+     \frac{3}{2} & \frac{\sqrt{3}}{2}     
+\end{bmatrix*}
+\]
+\subsection{Problema 9}
+
+Calcula el siguiente determinante:
+
+\[
+    \begin{vmatrix}
+        1 & 1 & 1 & 1\\
+        1 & a & 0 & 0\\
+        1 & 0 & a & 0\\
+        1 & 0 & 0 & a
+    \end{vmatrix}
+    \xrightarrow[]{\substack{-R_1+R_2 \\ \substack{-R_1+R_3 \\ -R_1+R_4}}}
+    \begin{vmatrix}
+        1 & 1 & 1 & 1\\
+        0 & a-1 & -1 & -1\\
+        0 & -1 & a-1 & -1\\
+        0 & -1 & -1 & a-1
+    \end{vmatrix}
+    \xrightarrow[]{R_2 \leftrightarrow R_3}
+    -
+    \begin{vmatrix}
+        1 & 1 & 1 & 1\\
+        0 & -1 & a-1 & -1\\
+        0 & a-1 & -1 & -1\\
+        0 & -1 & -1 & a-1
+    \end{vmatrix}
+    \xrightarrow[]{(a-1)R_2+R_3}
+\]
+\[
+    \begin{vmatrix}
+        1 & 1 & 1 & 1\\
+        0 & -1 & a-1 & -1\\
+        0 & 0 & (a-2)a & -a\\
+        0 & -1 & -1 & a-1
+    \end{vmatrix}
+    \xrightarrow[]{-R_2+R_4}
+    \begin{vmatrix}
+        1 & 1 & 1 & 1\\
+        0 & -1 & a-1 & -1\\
+        0 & 0 & (a-2)a & -a\\
+        0 & 0 & -a & a
+    \end{vmatrix}
+    \xrightarrow[]{\frac{1}{-2+a}R_3+R_4}
+    \begin{vmatrix}
+        \mathbf{1} & 1 & 1 & 1\\
+        0 & \mathbf{-1} & a-1 & -1\\
+        0 & 0 & \mathbf{(a-2)a} & -a\\
+        0 & 0 & 0 & \mathbf{\frac{(-3+a)a}{-2+a}}
+    \end{vmatrix}
+\]\\
+
+\textit{Una vez reducida, podemos calcular el determinante de la matriz con el producto de sus elementos
+diagonales}
+
+\[
+    det
+    \left(
+        \begin{vmatrix}
+        1 & 1 & 1 & 1\\
+        1 & a & 0 & 0\\
+        1 & 0 & a & 0\\
+        1 & 0 & 0 & a
+    \end{vmatrix}
+    \right)
+    =
+    -\frac{-2((-2+a)a)((-3+a)a)}{-2+a}
+    =
+    a^3-3a^2
+\]
+
+\newpage
+
+\subsection{Problema 10}
+
+Sea la matriz 
+
+\[
+    \begin{bmatrix}
+        2 & -6\\
+        -3 & 0
+    \end{bmatrix}
+\]
+
+Encuéntrese la matrix 2 x 2 a la que llamaremos $B$ cuyas columnas sean distintas de cero y que cumpla
+que $AB=0$. Nota: en realidad se trata de una familia de soluciones.
+
+\[
+    Tomamos \ A=
+    \begin{bmatrix}
+        2 & -6\\
+        -3 & 0
+    \end{bmatrix} 
+    \ y \ B=
+    \begin{bmatrix}
+        a & b\\
+        c & d
+    \end{bmatrix}
+\]
+
+\[
+  AB=
+    \begin{bmatrix}
+        2 & -6\\
+        -3 & 0
+    \end{bmatrix} 
+    \begin{bmatrix}
+        a & b\\
+        c & d
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+        2a-6c & 2b-6d\\
+        -3a+9c & -3b+9d
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+        0 & 0\\
+        0 & 0
+    \end{bmatrix}
+\]\\
+
+\textit{Resolvemos el sistema $AB=0$ de forma matricial por eleminación Gaussiana:}
+
+\[
+    \begin{bmatrix}[*3cr@{\quad}|@{\quad}>{\bf\color{black}}r]
+        2 & 0 & -6  & 0 &  0 \\
+        0 & 2 & 0 & -6 & 0 \\
+        -3 & 0 & 9 & 0 & 0 \\
+        0 & -3 & 0 & 9 & 0
+    \end{bmatrix}
+    \xrightarrow[]{\substack{3R_1+2R_3 \\ 3R_2+2R_4}}
+    \begin{bmatrix}[*3cr@{\quad}|@{\quad}>{\bf\color{black}}r]
+        2 & 0 & -6  & 0 &  0 \\
+        0 & 2 & 0 & -6 & 0 \\
+        0 & 0 & 0 & 0 & 0 \\
+        0 & 0 & 0 & 0 & 0
+    \end{bmatrix}
+\]
+
+\textit{Lo que nos devuelve un sistema compatible indeterminado con variables libres $c$ y $d$}
+
+\textit{Tomamos c=t y d=s para parametrizar el sistema, entonces:}
+
+\[
+    \begin{cases}
+        a=3t\\
+        b=3s\\
+        c=t\\
+        d=s
+    \end{cases}
+    \text{con lo cual la familia de soluciones del sistema tiene la forma: }
+    B=  
+    \begin{bmatrix}
+        3t & 3s\\
+        t & s
+    \end{bmatrix}
+\]
+
+
+
+\end{document}

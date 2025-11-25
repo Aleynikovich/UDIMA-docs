@@ -1,0 +1,441 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+
+% Configuración de márgenes
+\geometry{top=2.5cm, bottom=2.5cm, left=3cm, right=3cm}
+
+% Configuración de encabezado y pie de página
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Universidad a Distancia de Madrid (UDIMA)}
+\fancyhead[R]{Grado en Ingeniería Industrial}
+\fancyfoot[C]{\thepage}
+
+% Título y datos
+\title{Actividad de Evaluación Continua de las Unidades 4, 5 y 6\\
+\large Asignatura: Estadística y Probabilidad}
+\author{Nombre del Estudiante\\Grado en Ingeniería Industrial}
+\date{\today}
+
+\begin{document}
+
+% Portada
+\maketitle
+\begin{center}
+    \includegraphics[width=0.4\textwidth]{logo.png} % Puedes insertar el logo de la universidad aquí, si lo tienes.
+\end{center}
+\vfill
+\begin{center}
+    \textbf{Profesora:}  Dra. Vanessa Fernández Chamorro
+\end{center}
+\newpage
+
+% Índice
+\tableofcontents
+
+\newpage
+
+
+% Problema 1
+\section{Determinación de la función de densidad y cálculo de probabilidades}
+\textbf{Enunciado:} Una variable aleatoria \( X \) tiene la función de densidad:
+\[
+f(x) =
+\begin{cases}
+c(1-x^2) & \text{si } 0 \leq x \leq 1, \\
+0 & \text{en otro caso.}
+\end{cases}
+\]
+\begin{enumerate}
+    \item Calcular \( c \) para que la función sea una función de densidad.
+    \item Calcular la media, la desviación típica y \( P(0.5 \leq X \leq 1) \).
+\end{enumerate}
+
+\subsection{Cálculo de \( c \)}
+Para que \( f(x) \) sea una función de densidad, debe cumplirse:
+\[
+\int_{-\infty}^\infty f(x) \, dx = 1.
+\]
+Dado que \( f(x) = 0 \) fuera de \( [0,1] \), basta calcular:
+\[
+\int_0^1 c(1-x^2) \, dx = 1.
+\]
+Resolviendo:
+\[
+\int_0^1 (1 - x^2) \, dx = \left[x - \frac{x^3}{3}\right]_0^1 = 1 - \frac{1}{3} = \frac{2}{3}.
+\]
+Por lo tanto:
+\[
+c \cdot \frac{2}{3} = 1 \implies c = \frac{3}{2}.
+\]
+
+\subsection{Cálculo de la media}
+La media \( \mu \) se calcula como:
+\[
+\mu = \int_0^1 x f(x) \, dx = \int_0^1 x \cdot \frac{3}{2}(1-x^2) \, dx.
+\]
+Resolviendo:
+\[
+\int_0^1 \frac{3}{2}(x - x^3) \, dx = \frac{3}{2} \left[\frac{x^2}{2} - \frac{x^4}{4}\right]_0^1 = \frac{3}{2} \left(\frac{1}{2} - \frac{1}{4}\right) = \frac{3}{2} \cdot \frac{1}{4} = \frac{3}{8}.
+\]
+
+\subsection{Cálculo de la desviación típica}
+La varianza \( \sigma^2 \) es:
+\[
+\sigma^2 = \int_0^1 x^2 f(x) \, dx - \mu^2.
+\]
+Primero, calculamos:
+\[
+\int_0^1 x^2 f(x) \, dx = \int_0^1 x^2 \cdot \frac{3}{2}(1-x^2) \, dx = \frac{3}{2} \int_0^1 (x^2 - x^4) \, dx.
+\]
+Resolviendo:
+\[
+\int_0^1 x^2 \, dx = \frac{1}{3}, \quad \int_0^1 x^4 \, dx = \frac{1}{5}.
+\]
+Por lo tanto:
+\[
+\frac{3}{2} \left(\frac{1}{3} - \frac{1}{5}\right) = \frac{3}{2} \cdot \frac{2}{15} = \frac{1}{5}.
+\]
+Entonces:
+\[
+\sigma^2 = \frac{1}{5} - \left(\frac{3}{8}\right)^2 = \frac{1}{5} - \frac{9}{64} = \frac{64}{320} - \frac{45}{320} = \frac{19}{320}.
+\]
+Y la desviación típica es:
+\[
+\sigma = \sqrt{\frac{19}{320}}.
+\]
+
+\subsection{Cálculo de \( P(0.5 \leq X \leq 1) \)}
+\[
+P(0.5 \leq X \leq 1) = \int_{0.5}^1 \frac{3}{2}(1-x^2) \, dx.
+\]
+Resolviendo:
+\[
+\int_{0.5}^1 (1 - x^2) \, dx = \left[x - \frac{x^3}{3}\right]_{0.5}^1 = \left(1 - \frac{1}{3}\right) - \left(0.5 - \frac{0.5^3}{3}\right).
+\]
+\[
+= \frac{2}{3} - \left(0.5 - \frac{0.125}{3}\right) = \frac{2}{3} - \left(0.5 - 0.0417\right) = \frac{2}{3} - 0.4583.
+\]
+\[
+= 0.6667 - 0.4583 = 0.2084.
+\]
+
+\newpage
+
+% Problema 2
+\section{Probabilidades en una distribución exponencial}
+\textbf{Enunciado:} El tiempo de los estacionamientos en la zona azul sigue una distribución exponencial con media \( 0.5 \) horas. Calcular:
+\begin{enumerate}
+    \item La probabilidad de que el estacionamiento supere las 3 horas.
+    \item La probabilidad de que sea inferior a 30 minutos.
+\end{enumerate}
+
+\subsection{Cálculo de las probabilidades}
+La función de densidad de una distribución exponencial es:
+\[
+f(x) = \lambda e^{-\lambda x}, \quad x \geq 0.
+\]
+Con \( \lambda = \frac{1}{\text{media}} = 2 \).
+
+\subsubsection{Probabilidad de superar las 3 horas}
+\[
+P(X > 3) = \int_3^\infty 2e^{-2x} \, dx = \left[-e^{-2x}\right]_3^\infty = 0 - \left(-e^{-6}\right) = e^{-6}.
+\]
+Aproximando:
+\[
+P(X > 3) \approx e^{-6} = 0.00248.
+\]
+
+\subsubsection{Probabilidad de ser inferior a 30 minutos}
+\[
+P(X < 0.5) = \int_0^{0.5} 2e^{-2x} \, dx = \left[-e^{-2x}\right]_0^{0.5} = \left(-e^{-1}\right) - (-e^0) = 1 - e^{-1}.
+\]
+Aproximando:
+\[
+P(X < 0.5) \approx 1 - e^{-1} = 0.632.
+\]
+
+
+\newpage
+
+% Problema 3
+\section{Clientes en caja rápida}
+\textbf{Enunciado:} En un supermercado, el número de clientes que usan la caja rápida sigue una distribución Poisson con una media de 24 clientes por hora. Calcular:
+\begin{enumerate}
+    \item La probabilidad de que más de 6 clientes utilicen la caja rápida durante un cuarto de hora.
+    \item La probabilidad de que menos de 3 clientes utilicen la caja rápida durante los próximos 5 minutos.
+\end{enumerate}
+
+\subsection{Cálculo de probabilidades}
+Sabemos que la variable \( X \) sigue una distribución Poisson con parámetro \( \lambda \), que representa la media del número de clientes por intervalo de tiempo. La función de probabilidad es:
+\[
+P(X = k) = \frac{\lambda^k e^{-\lambda}}{k!}, \quad k = 0, 1, 2, \dots
+\]
+La media se ajusta al intervalo de tiempo en consideración.
+
+\subsection{Probabilidad de más de 6 clientes en 15 minutos}
+La media por cuarto de hora es:
+\[
+\lambda = 24 \, \text{clientes/hora} \times \frac{1}{4} \, \text{horas} = 6 \, \text{clientes}.
+\]
+Buscamos:
+\[
+P(X > 6) = 1 - P(X \leq 6) = 1 - \sum_{k=0}^6 P(X = k).
+\]
+Calculamos los términos:
+\[
+P(X = k) = \frac{\lambda^k e^{-\lambda}}{k!}, \quad \lambda = 6.
+\]
+Sustituyendo:
+\[
+P(X = 0) = \frac{6^0 e^{-6}}{0!} = e^{-6}, \quad P(X = 1) = \frac{6^1 e^{-6}}{1!} = 6e^{-6}, \dots
+\]
+Resolviendo y sumando:
+\[
+P(X \leq 6) = e^{-6} \left(1 + 6 + \frac{6^2}{2!} + \frac{6^3}{3!} + \frac{6^4}{4!} + \frac{6^5}{5!} + \frac{6^6}{6!}\right).
+\]
+Aproximando numéricamente:
+\[
+P(X \leq 6) \approx 0.4457.
+\]
+Por lo tanto:
+\[
+P(X > 6) = 1 - 0.4457 = 0.5543.
+\]
+
+\subsection{Probabilidad de menos de 3 clientes en 5 minutos}
+La media por 5 minutos es:
+\[
+\lambda = 24 \, \text{clientes/hora} \times \frac{1}{12} \, \text{horas} = 2 \, \text{clientes}.
+\]
+Buscamos:
+\[
+P(X < 3) = P(X = 0) + P(X = 1) + P(X = 2).
+\]
+Calculamos cada término:
+\[
+P(X = 0) = \frac{2^0 e^{-2}}{0!} = e^{-2}, \quad P(X = 1) = \frac{2^1 e^{-2}}{1!} = 2e^{-2}, \quad P(X = 2) = \frac{2^2 e^{-2}}{2!} = 2e^{-2}.
+\]
+Sumando:
+\[
+P(X < 3) = e^{-2} (1 + 2 + 2) = e^{-2} \cdot 5.
+\]
+Aproximando numéricamente:
+\[
+P(X < 3) \approx 0.1353 \cdot 5 = 0.6765.
+\]
+
+\subsection{Resultados finales}
+\begin{itemize}
+    \item La probabilidad de que más de 6 clientes utilicen la caja rápida durante un cuarto de hora es aproximadamente:
+    \[
+    P(X > 6) \approx 0.5543.
+    \]
+    \item La probabilidad de que menos de 3 clientes utilicen la caja rápida durante los próximos 5 minutos es aproximadamente:
+    \[
+    P(X < 3) \approx 0.6765.
+    \]
+\end{itemize}
+
+\newpage
+
+% Problema 4
+\section{densidad marginal e independencia}
+\textbf{Enunciado:} Dada la siguiente función de densidad conjunta para las variables aleatorias \( X \) e \( Y \):
+\[
+f(x, y) =
+\begin{cases}
+\frac{2 - x - y}{8}, & \text{si } -1 \leq x \leq 1, -1 \leq y \leq 1, \\
+0, & \text{en otro caso.}
+\end{cases}
+\]
+Calcular:
+\begin{enumerate}
+    \item La función de densidad marginal de \( X \).
+    \item La función de densidad marginal de \( Y \).
+    \item Determinar si \( X \) e \( Y \) son independientes.
+\end{enumerate}
+
+\subsection{Densidad marginal de \( X \)}
+La función de densidad marginal de \( X \) se obtiene integrando la densidad conjunta sobre \( Y \):
+\[
+f_X(x) = \int_{-1}^1 f(x, y) \, dy.
+\]
+Sustituyendo \( f(x, y) \):
+\[
+f_X(x) = \int_{-1}^1 \frac{2 - x - y}{8} \, dy.
+\]
+Resolviendo la integral:
+\[
+f_X(x) = \frac{1}{8} \int_{-1}^1 (2 - x - y) \, dy = \frac{1}{8} \left[ (2 - x)y - \frac{y^2}{2} \right]_{-1}^1.
+\]
+Evaluamos los límites:
+\[
+f_X(x) = \frac{1}{8} \left[ (2 - x)(1) - \frac{1^2}{2} - \left((2 - x)(-1) - \frac{(-1)^2}{2}\right) \right].
+\]
+\[
+f_X(x) = \frac{1}{8} \left[ (2 - x) - \frac{1}{2} - (-2 + x - \frac{1}{2}) \right].
+\]
+\[
+f_X(x) = \frac{1}{8} \left[ 4 - 2x \right] = \frac{4 - 2x}{8} = \frac{2 - x}{4}.
+\]
+Por lo tanto:
+\[
+f_X(x) =
+\begin{cases}
+\frac{2 - x}{4}, & \text{si } -1 \leq x \leq 1, \\
+0, & \text{en otro caso.}
+\end{cases}
+\]
+
+\subsection{Densidad marginal de \( Y \)}
+De manera similar, la función de densidad marginal de \( Y \) se obtiene integrando la densidad conjunta sobre \( X \):
+\[
+f_Y(y) = \int_{-1}^1 f(x, y) \, dx.
+\]
+Sustituyendo \( f(x, y) \):
+\[
+f_Y(y) = \int_{-1}^1 \frac{2 - x - y}{8} \, dx.
+\]
+Resolviendo la integral:
+\[
+f_Y(y) = \frac{1}{8} \int_{-1}^1 (2 - x - y) \, dx = \frac{1}{8} \left[ (2 - y)x - \frac{x^2}{2} \right]_{-1}^1.
+\]
+Evaluamos los límites:
+\[
+f_Y(y) = \frac{1}{8} \left[ (2 - y)(1) - \frac{1^2}{2} - ((2 - y)(-1) - \frac{(-1)^2}{2}) \right].
+\]
+\[
+f_Y(y) = \frac{1}{8} \left[ (2 - y) - \frac{1}{2} - (-2 + y - \frac{1}{2}) \right].
+\]
+\[
+f_Y(y) = \frac{1}{8} \left[ 4 - 2y \right] = \frac{4 - 2y}{8} = \frac{2 - y}{4}.
+\]
+Por lo tanto:
+\[
+f_Y(y) =
+\begin{cases}
+\frac{2 - y}{4}, & \text{si } -1 \leq y \leq 1, \\
+0, & \text{en otro caso.}
+\end{cases}
+\]
+
+\subsection{Independencia de \( X \) e \( Y \)}
+Para que \( X \) e \( Y \) sean independientes, debe cumplirse que:
+\[
+f(x, y) = f_X(x) f_Y(y), \quad \forall x, y.
+\]
+Sustituyendo:
+\[
+f_X(x) f_Y(y) = \frac{2 - x}{4} \cdot \frac{2 - y}{4} = \frac{(2 - x)(2 - y)}{16}.
+\]
+Sin embargo, sabemos que:
+\[
+f(x, y) = \frac{2 - x - y}{8}.
+\]
+Claramente:
+\[
+f(x, y) \neq f_X(x) f_Y(y).
+\]
+Por lo tanto, \( X \) e \( Y \) \textbf{no son independientes}.
+
+\subsection{Resultados finales}
+\begin{itemize}
+    \item La función de densidad marginal de \( X \) es:
+    \[
+    f_X(x) =
+    \begin{cases}
+    \frac{2 - x}{4}, & \text{si } -1 \leq x \leq 1, \\
+    0, & \text{en otro caso.}
+    \end{cases}
+    \]
+    \item La función de densidad marginal de \( Y \) es:
+    \[
+    f_Y(y) =
+    \begin{cases}
+    \frac{2 - y}{4}, & \text{si } -1 \leq y \leq 1, \\
+    0, & \text{en otro caso.}
+    \end{cases}
+    \]
+    \item \( X \) e \( Y \) no son independientes.
+\end{itemize}
+
+
+\newpage
+
+% Problema 5
+\section{Control de calidad de bolígrafos}
+\textbf{Enunciado:} La publicidad de una marca de bolígrafos afirma que escriben 2 km. La longitud de escritura de estos bolígrafos sigue una distribución normal con media \( \mu \) km y desviación típica \( \sigma = 0.5 \) km. Calcular:
+\begin{enumerate}
+    \item El número mínimo de bolígrafos que deben seleccionarse en una muestra aleatoria simple para que el error máximo cometido en la estimación de \( \mu \) por la media muestral sea como mucho 0.05 km con un nivel de confianza del 95\%.
+    \item Si la longitud media de escritura \( \mu \) es la anunciada, calcular la probabilidad de que, con una muestra de 16 bolígrafos elegidos al azar, se puedan escribir más de 30 km.
+\end{enumerate}
+
+\subsection{Número mínimo de bolígrafos en la muestra}
+El error máximo de estimación se calcula como:
+\[
+E = Z_{\alpha/2} \frac{\sigma}{\sqrt{n}},
+\]
+donde:
+\begin{itemize}
+    \item \( Z_{\alpha/2} \) es el valor crítico de la distribución normal estándar para un nivel de confianza del 95\%. Sabemos que \( Z_{0.025} = 1.96 \).
+    \item \( \sigma = 0.5 \) km es la desviación típica.
+    \item \( n \) es el tamaño de la muestra.
+\end{itemize}
+
+Queremos que el error máximo \( E \) sea como mucho 0.05 km:
+\[
+0.05 = 1.96 \frac{0.5}{\sqrt{n}}.
+\]
+Resolviendo para \( n \):
+\[
+\sqrt{n} = \frac{1.96 \cdot 0.5}{0.05} = \frac{0.98}{0.05} = 19.6.
+\]
+\[
+n = (19.6)^2 = 384.16.
+\]
+El tamaño de la muestra debe ser un número entero, por lo que redondeamos hacia arriba:
+\[
+n = 385.
+\]
+
+\subsection{Probabilidad de escribir más de 30 km con 16 bolígrafos}
+La longitud total de escritura de los 16 bolígrafos se modela mediante la suma de 16 variables normales independientes, es decir:
+\[
+T \sim N(16\mu, 16\sigma^2).
+\]
+Con \( \mu = 2 \) km y \( \sigma = 0.5 \) km:
+\[
+T \sim N(32, 16 \cdot 0.5^2) = N(32, 4).
+\]
+La probabilidad de escribir más de 30 km es:
+\[
+P(T > 30) = P\left(Z > \frac{30 - 32}{\sqrt{4}}\right),
+\]
+donde \( Z \) es una variable normal estándar. Calculamos el valor estandarizado:
+\[
+Z = \frac{30 - 32}{2} = -1.
+\]
+Usando la tabla de la distribución normal estándar:
+\[
+P(Z > -1) = 1 - P(Z < -1) = 1 - 0.1587 = 0.8413.
+\]
+
+\subsection{Resultados finales}
+\begin{itemize}
+    \item El número mínimo de bolígrafos que deben seleccionarse en una muestra es:
+    \[
+    n = 385.
+    \]
+    \item La probabilidad de que, con una muestra de 16 bolígrafos, se puedan escribir más de 30 km es:
+    \[
+    P(T > 30) \approx 0.8413.
+    \]
+\end{itemize}
+
+\end{document}

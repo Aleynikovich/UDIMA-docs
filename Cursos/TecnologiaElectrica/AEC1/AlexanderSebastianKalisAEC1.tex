@@ -1,0 +1,325 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{float}
+\usepackage{caption}
+\usepackage[spanish]{babel}
+\geometry{left=3cm, right=3cm, top=2.5cm, bottom=2.5cm}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Tecnología Eléctrica}
+\fancyhead[R]{Universidad a Distancia de Madrid (UDIMA)}
+\fancyfoot[C]{\thepage}
+
+\title{AEC1. Prácticas de máquinas eléctricas. Simulación y circuitos equivalentes}
+\author{Alexander Sebastian Kalis}
+\date{9 de noviembre de 2024}
+
+\begin{document}
+
+\maketitle
+
+\newpage
+
+\tableofcontents
+
+\newpage 
+
+\section{Problema 1}
+Un transformador monofásico de 1 MVA, relación de tensiones 10000/1000 V y 50 Hz, ha dado los siguientes resultados en unos ensayos:
+
+\begin{itemize}
+    \item \textbf{Ensayo de vacío} (lado de baja tensión): $U_0 = 1000$ V, $I_0 = 30$ A, $P_0 = 10$ kW.
+    \item \textbf{Ensayo de cortocircuito} (lado de alta tensión): $U_{\text{cc}} = 540$ V, $I_{\text{cc}} = 90$ A, $P_{\text{cc}} = 12$ kW.
+\end{itemize}
+
+
+
+\subsection{a) Circuito equivalente}
+Dibuja el circuito equivalente del transformador e indica los valores numéricos de las resistencias y reactancias calculadas:
+
+
+A partir de los datos obtenidos en los ensayos de vacío y cortocircuito, determinamos los parámetros del circuito equivalente del transformador.
+
+\subsubsection{Ensayo de vacío}
+Datos del ensayo de vacío en el lado de baja tensión:
+\[
+U_0 = 1000 \, \text{V}, \quad I_0 = 30 \, \text{A}, \quad P_0 = 10,000 \, \text{W}
+\]
+
+Para calcular el factor de potencia en vacío:
+\[
+\cos \phi_0 = \frac{P_0}{U_0 \cdot I_0} = \frac{10,000}{1000 \times 30} = 0.333
+\]
+y el ángulo de fase:
+\[
+\phi_0 = \cos^{-1}(0.333) \approx 70.53^\circ
+\]
+
+Descomponemos la corriente de vacío \( I_0 \) en sus componentes activa \( I_{\text{Fe}} \) y reactiva \( I_m \):
+\[
+I_{\text{Fe}} = I_0 \cos \phi_0 = 10 \, \text{A}, \quad I_m = I_0 \sin \phi_0 \approx 28.29 \, \text{A}
+\]
+
+Calculamos los valores de la rama en paralelo:
+\[
+R_{\text{Fe}} = \frac{U_0}{I_{\text{Fe}}} = \frac{1000}{10} = 100 \, \Omega
+\]
+\[
+X_m = \frac{U_0}{I_m} = \frac{1000}{28.29} \approx 35.35 \, \Omega
+\]
+
+\subsubsection{Ensayo de cortocircuito}
+Datos del ensayo de cortocircuito en el lado de alta tensión:
+\[
+U_{\text{cc}} = 540 \, \text{V}, \quad I_{\text{cc}} = 90 \, \text{A}, \quad P_{\text{cc}} = 12,000 \, \text{W}
+\]
+
+Calculamos la resistencia y reactancia en serie total:
+\[
+R_{\text{cc}} = \frac{P_{\text{cc}}}{I_{\text{cc}}^2} = \frac{12,000}{90^2} \approx 1.48 \, \Omega
+\]
+\[
+Z_{\text{cc}} = \frac{U_{\text{cc}}}{I_{\text{cc}}} = 6 \, \Omega
+\]
+\[
+X_{\text{cc}} = \sqrt{Z_{\text{cc}}^2 - R_{\text{cc}}^2} = \sqrt{6^2 - 1.48^2} \approx 5.81 \, \Omega
+\]
+
+Distribuimos estos valores entre \( R_1 \), \( X_1 \), \( R_2 \), y \( X_2 \) suponiendo que:
+\[
+R_1 = R_2 = \frac{R_{\text{cc}}}{2} = 0.74 \, \Omega, \quad X_1 = X_2 = \frac{X_{\text{cc}}}{2} = 2.905 \, \Omega
+\]
+
+\subsubsection{Resumen del circuito equivalente}
+Los parámetros obtenidos para el circuito equivalente del transformador son:
+\begin{itemize}
+    \item Resistencia en paralelo (pérdidas en el núcleo): \( R_{\text{Fe}} = 100 \, \Omega \)
+    \item Reactancia de magnetización: \( X_m = 35.35 \, \Omega \)
+    \item Resistencia en el lado primario: \( R_1 = 0.74 \, \Omega \)
+    \item Reactancia en el lado primario: \( X_1 = 2.905 \, \Omega \)
+    \item Resistencia en el lado secundario: \( R_2 = 0.74 \, \Omega \)
+    \item Reactancia en el lado secundario: \( X_2 = 2.905 \, \Omega \)
+\end{itemize}
+
+Estos valores conforman el circuito equivalente completo del transformador.
+
+
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{circuito_equivalente.png} % Sustituye con la ruta de tu imagen
+    \caption{Circuito equivalente del transformador}
+\end{figure}
+
+\subsection{b) Tensión de alimentación}
+Calcula la tensión con la que se debe alimentar el transformador en el primario para proporcionar la tensión nominal en el secundario al suministrar a una carga de 800 kVA con un factor de potencia 0.8 inductivo.
+
+
+Para determinar la tensión en el primario \( U_1 \) que permita obtener la tensión nominal en el secundario bajo una carga de 800 kVA con un factor de potencia de 0.8 inductivo, seguimos el procedimiento descrito.
+
+\subsubsection*{1. Cálculo de la corriente en el secundario}
+Dado:
+\begin{itemize}
+    \item Potencia aparente de la carga: \( S = 800 \, \text{kVA} = 800,000 \, \text{VA} \)
+    \item Tensión nominal en el secundario: \( U_{\text{sec}} = 1000 \, \text{V} \)
+    \item Factor de potencia: \( \cos \phi = 0.8 \) (inductivo)
+\end{itemize}
+
+La corriente en el secundario se calcula como:
+\[
+I_{\text{sec}} = \frac{S}{U_{\text{sec}}} = \frac{800,000}{1000} = 800 \, \text{A}
+\]
+
+\subsubsection*{2. Reflexión de la corriente al primario}
+Usamos la relación de transformación \( \text{rt} = \frac{10000}{1000} = 10 \) para reflejar la corriente al lado primario:
+\[
+I'_2 = \frac{I_{\text{sec}}}{\text{rt}} = \frac{800}{10} = 80 \, \text{A}
+\]
+
+\subsubsection*{3. Cálculo de la tensión en el primario}
+Aplicamos la segunda ley de Kirchhoff en el circuito equivalente reflejado al lado primario, despreciando la rama en paralelo. La ecuación para la tensión en el primario es:
+\[
+U_1 = I'_2 \cdot (R_{\text{cc}} + jX_{\text{cc}}) + U'_2
+\]
+
+Donde:
+\begin{itemize}
+    \item \( R_{\text{cc}} = 1.48 \, \Omega \)
+    \item \( X_{\text{cc}} = 5.81 \, \Omega \)
+    \item \( U'_2 = U_{\text{sec}} \times \text{rt} = 1000 \times 10 = 10,000 \, \text{V} \)
+    \item \( I'_2 = 80 \, \text{A} \)
+\end{itemize}
+
+Calculamos la caída de tensión en la impedancia serie:
+\[
+I'_2 \cdot (R_{\text{cc}} + jX_{\text{cc}}) = 80 \times (1.48 + j5.81) = 80 \times 1.48 + j(80 \times 5.81)
+\]
+\[
+= 118.4 + j464.8 \, \text{V}
+\]
+
+Convertimos esta expresión a forma polar:
+\[
+|I'_2 \cdot (R_{\text{cc}} + jX_{\text{cc}})| = \sqrt{118.4^2 + 464.8^2} \approx 478.65 \, \text{V}
+\]
+\[
+\theta = \tan^{-1}\left(\frac{464.8}{118.4}\right) \approx 75.7^\circ
+\]
+
+Finalmente, sumamos esta caída de tensión a \( U'_2 \) en forma polar para obtener \( U_1 \):
+\[
+U_1 \approx 10,000 + 478.65 \angle 75.7^\circ
+\]
+
+El resultado de \( U_1 \) en forma polar proporciona la tensión requerida en el primario para mantener la tensión nominal en el secundario bajo carga.
+
+
+\section{Problema 2}
+
+\subsection{a) Ensayo de vacío}
+Simula el circuito equivalente del ensayo de vacío en QUCS y determina la intensidad de vacío $I_0$ y sus componentes de la rama en paralelo.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\textwidth]{simulacion_vacio.png} % Ruta de la captura de pantalla de QUCS
+    \caption{Simulación del circuito de vacío en QUCS}
+\end{figure}
+
+\subsection{b) Ensayo de cortocircuito}
+Simula el circuito equivalente del ensayo de cortocircuito en QUCS y verifica el valor de la intensidad de cortocircuito $I_{\text{cc}}$.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\textwidth]{simulacion_cortocircuito.png} % Ruta de la captura de pantalla de QUCS
+    \caption{Simulación del circuito de cortocircuito en QUCS}
+\end{figure}
+
+\section{Problema 3}
+Un generador trifásico conectado en estrella con una potencia de 4500 kVA y conectado a una red de 6000 V tiene una reactancia síncrona de $j0.7 \, \Omega/$fase. Calcular el valor de la f.e.m. resultante y la f.m.m. necesaria para una carga con factor de potencia 0.85 inductivo, interpolando en la tabla dada.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\textwidth]{p3e1.png} % Ruta de la captura de pantalla de QUC
+\end{figure}
+    
+
+1. \textbf{Cálculo de la corriente de línea \(I_{\text{L}}\)}
+
+   Dado:
+   \begin{itemize}
+       \item Potencia aparente del generador: \( S = 4500 \, \text{kVA} = 4500000 \, \text{VA} \)
+       \item Tensión de línea: \( U_{\text{L}} = 6000 \, \text{V} \)
+       \item Factor de potencia: \( \cos \varphi = 0.85 \)
+   \end{itemize}
+
+   La corriente de línea en un sistema trifásico es:
+   \[
+   I_{\text{L}} = \frac{S}{\sqrt{3} \cdot U_{\text{L}}} = \frac{4500000}{\sqrt{3} \cdot 6000} \approx 433 \, \text{A}
+   \]
+
+2. \textbf{Conversión a tensión de fase}
+
+   La tensión de fase en un sistema conectado en estrella se calcula como:
+   \[
+   U_{\text{fase}} = \frac{U_{\text{L}}}{\sqrt{3}} = \frac{6000}{\sqrt{3}} \approx 3464.1 \, \text{V}
+   \]
+
+3. \textbf{Cálculo de la fuerza electromotriz (f.e.m.)}
+
+   La reactancia síncrona del generador es \( X_s = 0.7 \, \Omega \). Con la carga inductiva (\( \cos \varphi = 0.85 \)), descomponemos la corriente en componentes activa y reactiva:
+   \[
+   I_{\text{act}} = I_{\text{L}} \cos \varphi = 433 \times 0.85 \approx 368.05 \, \text{A}
+   \]
+   \[
+   I_{\text{react}} = I_{\text{L}} \sin \varphi = 433 \sin(\cos^{-1}(0.85)) \approx 233.92 \, \text{A}
+   \]
+
+   Calculamos la caída de tensión debido a la reactancia:
+   \[
+   \Delta V = I_{\text{react}} \cdot X_s = 233.92 \times 0.7 \approx 163.74 \, \text{V}
+   \]
+
+   Finalmente, la fuerza electromotriz \( E \) se calcula como:
+   \[
+   E = \sqrt{U_{\text{fase}}^2 + (\Delta V)^2} = \sqrt{3464.1^2 + 163.74^2} \approx 3471.97 \, \text{V}
+   \]
+
+4. \textbf{Interpolación para la fuerza magnetomotriz (f.m.m.)}
+
+   Con \( E \approx 3471.97 \, \text{V} \), interpolamos en la tabla. Los valores más cercanos son:
+   \[
+   \text{E (V)} = 3005 \rightarrow F = 10000 \quad \text{y} \quad \text{E (V)} = 3580 \rightarrow F = 15000
+   \]
+
+   Aplicando la interpolación lineal:
+   \[
+   F = 10000 + \left( \frac{3471.97 - 3005}{3580 - 3005} \right) \cdot (15000 - 10000)
+   \]
+   \[
+   F \approx 10000 + \frac{466.97}{575} \cdot 5000 \approx 14062 \, \text{Av/polo}
+   \]
+
+\begin{itemize}
+    \item Fuerza electromotriz \( E \approx 3472 \, \text{V} \)
+    \item Fuerza magnetomotriz \( F \approx 14062 \, \text{Av/polo} \)
+\end{itemize}
+
+\section{Problema 4}
+Calcular el rendimiento de un motor asíncrono trifásico de 4 polos que absorbe una potencia de 5.5 kW y está conectado a una red de 50 Hz, girando a 1470 r.p.m., con pérdidas en el estátor y otros componentes.
+
+\begin{enumerate}
+    \item \textbf{Datos:}
+    \begin{itemize}
+        \item Potencia eléctrica absorbida: $ P_{\text{el}} = 5.5 \, \text{kW} $
+        \item Frecuencia de la red: $ f = 50 \, \text{Hz} $
+        \item Velocidad del rotor: $ n_{\text{r}} = 1470 \, \text{r.p.m.} $
+        \item Número de polos: $ p = 4 $
+        \item Pérdidas en el estátor: $ 3\% \text{ de } P_{\text{el}} $
+        \item Pérdidas por rozamiento y ventilación: $ P_{\text{rv}} = 180 \, \text{W} $
+    \end{itemize}
+
+    \item \textbf{Cálculo de la velocidad síncrona} $ n_s $:
+    \[
+    n_s = \frac{120 \times f}{p} = \frac{120 \times 50}{4} = 1500 \, \text{r.p.m.}
+    \]
+
+    \item \textbf{Cálculo del deslizamiento} $ s $:
+    \[
+    s = \frac{n_s - n_r}{n_s} = \frac{1500 - 1470}{1500} = 0.02
+    \]
+
+    \item \textbf{Pérdidas en el estátor}:
+    \[
+    P_{\text{estator}} = 0.03 \times P_{\text{el}} = 0.03 \times 5500 \, \text{W} = 165 \, \text{W}
+    \]
+
+    \item \textbf{Cálculo de la potencia que llega al rotor} $ P_{\text{rotor}} $:
+    \[
+    P_{\text{rotor}} = P_{\text{el}} - P_{\text{estator}} = 5500 - 165 = 5335 \, \text{W}
+    \]
+
+    \item \textbf{Pérdidas en el cobre del rotor} $ P_{\text{cobre, rotor}} $:
+    \[
+    P_{\text{cobre, rotor}} = P_{\text{rotor}} \cdot s = 5335 \times 0.02 = 106.7 \, \text{W}
+    \]
+
+    \item \textbf{Cálculo de la potencia útil} $ P_{\text{out}} $:
+    \[
+    P_{\text{out}} = P_{\text{rotor}} - P_{\text{cobre, rotor}} - P_{\text{rv}} 
+    \]
+    \[
+    P_{\text{out}} = 5335 - 106.7 - 180 = 5048.3 \, \text{W}
+    \]
+
+    \item \textbf{Cálculo del rendimiento} $ \eta $:
+    \[
+    \eta = \frac{P_{\text{out}}}{P_{\text{el}}} \times 100 = \frac{5048.3}{5500} \times 100 \approx 91.78\%
+    \]
+\end{enumerate}
+
+
+
+\end{document}

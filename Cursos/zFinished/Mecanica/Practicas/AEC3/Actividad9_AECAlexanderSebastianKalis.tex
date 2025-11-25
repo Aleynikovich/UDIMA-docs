@@ -1,0 +1,337 @@
+\documentclass{article}
+\usepackage{lipsum}
+\usepackage{authoraftertitle}
+\usepackage[top=2cm,bottom=1.5cm,left=1.5cm, right=3cm,includeheadfoot]{geometry}
+\usepackage{graphicx}
+\usepackage[parfill]{parskip}
+\usepackage{fancyhdr}
+\usepackage[spanish]{babel}
+\usepackage{mathtools}
+\usepackage{csquotes}
+\usepackage{amssymb}
+\usepackage[shortlabels]{enumitem}
+\usepackage{fancybox, graphicx}
+\usepackage{array}
+\usepackage{hhline}
+\usepackage{subfigure}
+\usepackage{gensymb}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{leftidx}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{upgreek}
+\usepackage{amsmath} 
+\usepackage{caption}
+\usepackage{esvect}
+\usepackage{siunitx}
+\usepackage{commath}
+\usepackage{bigints}
+%Header & Footer
+
+\pagestyle{fancy}
+\fancyhead[LE]{\MyTitle}
+\fancyhead[LO]{Mecánica}
+%\fancyhead[RO]{\leftmark}
+%\fancyhead[RE]{\leftmark}
+\fancyfoot[L]{\raisebox{-1cm}{\includegraphics[height=1.5cm]{D:/KUKADisk/UDIMA/DocumentGraphics/LOGOUDIMA.jpg}}}
+\fancyfoot[R]{Corregido:\\ Dra. Isabel Cristina Gil García}
+%\fancyfoot[RO]{07/12/2018}
+
+
+%Vars
+\author{Alexander Sebastian Kalis}
+\title{Ejercicios propuestos Unidades 7-9}
+
+
+%DOC
+
+
+\begin{document}
+
+\begin{titlepage}
+
+    \begin{center}
+
+        \line(1,0){300}\\
+        [0.2in]
+        \huge{\bfseries {\MyTitle}}\\
+        [1mm]
+        \line(2,0){200}\\
+        [0.75cm]
+        \textsc{\LARGE Mecánica Clásica}\\
+        [2cm]
+        \includegraphics[height=10cm]{D:/KUKADisk/UDIMA/Mecanica/Practicas/AEC3/Portada.jpg}\\
+        [3cm]
+
+    \end{center}
+
+    \begin{flushright}
+
+        {\MyAuthor}\\
+        %Profesora: Dra. Isabel Cristina Gil García\\
+        %Curso: Ingeniería de Organización Industrial\\
+        %UDIMA\\
+        \today        
+
+    \end{flushright}
+    
+\end{titlepage}
+
+%\tableofcontents \thispagestyle{empty}
+%\newpage
+
+%\section*{Introducción}
+
+
+\newpage
+
+\section*{Actividades}
+\subsection*{Problema 1}
+
+\begin{wrapfigure}{r}{0.25\textwidth}
+    \vspace{-35pt}
+        \includegraphics[height=5cm]{p1e.png}
+\end{wrapfigure}
+
+
+Una vagoneta se encuentra en reposo sobre una vía que forma un ángulo de $25º$ con la vertical.  
+ 
+El peso total de la vagoneta con su carga es de 5500 lbf y se aplica en un punto a 30 pulgadas de la vía equidistante a los dos ejes.  
+ 
+La vagoneta está sostenida por un cable fijo a 24 pulgadas de la vía.  Determine la tensión en el cable y la reacción en cada par de ruedas.
+Exprese los resultados en el SI. Nota: Las unidades están en pulgadas. \\\\\\
+
+\textbf{Resolución}
+
+Peso de la vagoneta: $\vec{P} = 5500lbf \approx 24465N \rightarrow \vec{P_x}=cos 25 \cdot \vec{P} \approx 22170N, \ \vec{P_y}=sin 25 \cdot \vec{P} \approx 10340N$\\
+
+Ya que la única fuerza que afecta al movimiento de la vagoneta es su componente $\vec{P_x}$, la tensión de la cuerda que hace que quede en reposo es:
+\begin{equation}
+    \sum \vec{F_x} = 0 \rightarrow
+    \vec{T}+\vec{P_x}=0 \rightarrow
+    \vec{T}=\vec{-P_x} \rightarrow
+    \vec{T}=-22170N
+\end{equation}
+
+
+Para ver la reacción en cada par de ruedas, analizamos la rotación del sólido generada por el vector deslizante T. Al estar su línea de acción por debajo del CG, podemos 
+asumir que generará, en este caso, una rotación en sentido horario del cuerpo.
+
+Sabiendo que el cuerpo resta estático, tomamos como rueda A, la rueda situada en la parte alta de la rampa y la rueda B, la baja y 
+determinamos las reacciones normales $\vec{N_a}$ y $\vec{N_b}$ al plano en cada una.
+
+Para el par de ruedas A tomamos como punto de aplicación de los momentos de fuerza la intersección entre la línea de acción de la normal $\vec{N_b}$ y la tensión $\vec{T}$. 
+
+
+\begin{equation}
+    \sum M_B=0 \rightarrow
+    -M_{P_y} + M_{P_x} + M_{N_a} = 0 \rightarrow
+    - 10340 \cdot 0.635 + 22170 \cdot 0.1524 + \vec{N_a} \cdot 1.27 \rightarrow
+    \vec{N_a}=2510N
+\end{equation}
+
+Para el par de ruedas B tomamos como punto de aplicación de los momentos de fuerza la intersección entre la línea de acción de la normal $N_a$ y la tensión $T$:
+
+\begin{equation}
+    \sum M_A=0 \rightarrow
+    M_{P_y} + M_{P_x} - M_{N_b} = 0 \rightarrow
+    10340 \cdot 0.635 + 22170N \cdot 0.1524 - M_{N_b} \cdot 1.27 = 0 \rightarrow
+    \vec{N_b}=7830N
+\end{equation}
+
+
+
+\newpage
+
+\subsection*{Problema 2}
+
+Una viga uniforme de masa $mb$ y longitud $L$ sostiene bloques con masas $m1$ y $m2$ en dos posiciones, como se ve en la imagen. La viga se apoya sobre dos filos de cuchillos. 
+
+Determine la ecuación de $X$ para que la viga esté balanceada  en $P$ de tal manera que la fuerza normal en $O$ sea cero. 
+
+\begin{figure}[!htb]
+    \centering
+        \includegraphics[height=7cm]{p2e.png}
+\end{figure}
+
+\textbf{Resolución}
+
+
+Similarmente al problema anterior, tenemos un caso de estática y se nos pide la distancia $x$ tal que el sistema esté en equilibrio sobre el punto $P$. Analizamos entonces la ecuación de momentos:
+
+\[
+    \sum \vec{M} = 0
+\]
+\[
+    m_1 \vec{g}\left(\cfrac{l}{2}+d\right)+m_v \vec{g}d - m_2 \vec{g}x=0    
+\]
+
+Despejando la distancia $x$ nos queda que:
+
+\begin{equation}
+    x = \cfrac{m_1 \left(\frac{l}{2}+d\right)+m_vd}{m_2}
+\end{equation}
+
+\newpage
+
+
+\subsection*{Problema 3}
+
+El microfono de un cantante vibra con MAS a una frecuencia de $262 Hz$. La amplitud en el centro del micrófono es $A=1.5 \cdot 10^{-4} m$. ,y en $t=0 , x= A$. 
+ 
+a) ¿Cuál es la ecuación que describe el movimiento en el centro del micrófono?  
+ 
+b) ¿Cuáles son la velocidad y la aceleración en función del tiempo?  
+ 
+c) ¿Cuál es la posición del micrófono en $t=1 ms$ ? 
+
+\begin{figure}[!htb]
+    \centering
+        \includegraphics[height=4cm]{p3e.png}
+\end{figure}
+
+\textbf{Datos}
+
+
+$\nu = 262 \ Hz$\\
+$A=1.5 \cdot 10 ^ {-4} \ m$\\
+$x(0)=A$\\
+
+\textbf{Resolución}
+
+\textbf{Apartado A}
+
+Disponiendo de la frecuencia podemos empezar calculando el periodo y posteriormente la frecuencia angular:
+
+\begin{equation}
+    T=\frac{1}{\nu}=\frac{1}{262}=3.82 \cdot 10 ^{-3} \ s
+\end{equation}
+
+\begin{equation}
+    \omega=\frac{2 \pi}{T}=524\pi \ rad/s
+\end{equation}
+
+Conociendo la ecuación del MAS
+
+\[
+    x(t)=Acos(\omega t + \upvarphi)
+\]
+
+Y que $x(0)=A$, despejamos $\upvarphi$:
+
+\begin{equation}
+    \upvarphi=\arccos 1 \rightarrow \upvarphi=0
+\end{equation}
+
+Entonces la ecuación de desplazamiento de este MAS es
+
+\begin{equation}
+    x(t)=1.5 \cdot 10 ^{-4} \cos(524 \pi \cdot t)
+\end{equation}
+
+
+\newpage
+
+\textbf{Apartado B}
+
+Teniendo la ecuación de desplazamiento podemos derivarla respecto al tiempo para obtener la velocidad y aceleración:
+
+\begin{equation}
+    v(t)=\frac{dx(t)}{dt}=\omega A \cos(\omega t + \upvarphi) 
+    \rightarrow
+    v(t)=524\pi \cdot 1.5 \cdot 10 ^ {-4} \cos (524\pi \cdot t)
+\end{equation}
+
+\begin{equation}
+    a(t)=\frac{dv(t)}{dt}=-\omega^2x(t) \rightarrow a(t)=-(524\pi)^2 \cdot 1.5 \cdot 10 ^{-4} \sin(524 \pi \cdot t)
+\end{equation}
+
+
+\textbf{Apartado C}
+
+
+\begin{equation}
+    x(0.001)=1.5 \cdot 10 ^{-4} \cos(524 \pi \cdot 0.001)=-1.123 \cdot 10^{-5} \ m 
+\end{equation}
+
+
+
+
+
+
+\subsection*{Problema 4}
+
+Un sistema está formado por una masa que se desplaza de forma horizontal,
+sin rozamiento, sometida al esfuerzo de dos muelles, tal y como se indica en la figura. Calcular el periodo del movimiento. 
+
+
+\begin{figure}[!htb]
+    \centering
+        \includegraphics[height=3cm]{p4e.png}
+\end{figure}
+
+\textbf{Resolución}
+
+Este sistema de muelles cuya ecuación de fuerza elástica viene dada por $\vec{F}=-kx$ y cuyo sistema se equilibra por fuerzas opuestas tendrá
+la forma:
+
+\begin{equation}
+    \vec{F}=\vec{F_1}+\vec{F_2} \rightarrow k=k_1+k_2
+\end{equation}
+
+Entonces su frecuencia angular será:
+
+\begin{equation}
+    \omega=\sqrt{\frac{k}{M}}=\sqrt{\frac{k_1+k_2}{M}}
+\end{equation}
+
+Y el periodo:
+
+\begin{equation}
+    T=\frac{2\pi}{\omega} \rightarrow T=\cfrac{2\pi}{\sqrt{\frac{k_1+k_2}{M}}}
+\end{equation}
+
+\newpage
+
+\subsection*{Formulario}
+
+\textbf{Mecanica del sólido rígido}
+
+
+Cinemática:\\
+
+Tralación: $\vec{r}_B=\vec{r}_A+\vec{AB}$\\
+Rotación sobre un eje fijo: $\vec{p}=\vec{\omega} \times \vec{OP}$, $\vec{a}_p=\vec{\alpha} \times \vec{r}_p + \vec{\omega} \times (\vec{\omega} \times \vec{r}_p  )$\\
+Aceleraciones: $\vec{a_\tau}=\vec{\alpha} \times \vec{r}_p $, $a_n=\vec{\omega} \times (\vec{\omega} \times \vec{r}_p)$\\
+Movimiento general: $\vec{v}_B=\vec{v}_A+\vec{\omega} \times \vec{AB}$, $\vec{a}_B=\vec{a}_A + \vec{\alpha} \times \vec{AB} + \vec{\omega}\times(\vec{\omega \times \vec{AB}})$\\
+
+Dinámica\\
+
+$\vec{\sum F}=m \cdot \vec{a}_G$\\
+$\sum \vec{M_G}=I_G \cdot \alpha$\\
+Fuerzas vivas: $E_{C1}+W_{12}=E_{C2}$\\
+Trabajo:$W=Fd$\\
+Trabajo de un momento:$W=M \cdot \theta$\\
+Teorema de conservación de energía: $1/2mv^2_G+1/2I\omega^2+V=cte$\\
+
+\textbf{Oscilaciones}
+
+Cinemática\\
+
+Desplazamiento: $x=A\cos(\omega t+\upvarphi)$\\
+Velocidad: $v=\omega A \cos(\omega t + \upvarphi)$\\ 
+Aceleración: $a(t)=\frac{dv(t)}{dt}=-\omega^2x(t)$\\
+Periodo: $T=\frac{2\pi}{\omega}$\\
+Frecuencia: $\nu=\frac{1}{T}$\\
+
+Dinámica\\
+
+Ley de Hooke: $F(x)=-kx$\\
+Frecuencia angular: $\omega=\sqrt{\cfrac{k}{m}}$\\
+
+
+
+
+\end{document}

@@ -1,0 +1,268 @@
+\documentclass{article}
+\usepackage{lipsum}
+\usepackage[backend=biber]{biblatex}
+\addbibresource{bib.bib}
+\usepackage{authoraftertitle}
+\usepackage[top=2cm,bottom=1.5cm,left=1.5cm, right=3cm,includeheadfoot]{geometry}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage[spanish]{babel}
+\usepackage{mathtools}
+\usepackage{nicefrac}
+\usepackage{csquotes}
+\usepackage{amssymb}
+\usepackage{fancybox, graphicx}
+\usepackage{array}
+\usepackage{hhline}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{esint}
+\usepackage{caption}
+\usepackage{esvect}
+\usepackage{url}
+\usepackage{siunitx}
+\usepackage{commath}
+\usepackage{lastpage} 
+%Header & Footer
+
+\pagestyle{fancy}
+\fancyhf{} % Limpia todos los encabezados y pies de página existentes
+
+%Header
+\fancyhead[LO]{Sistemas Integrados de Información Industrial}
+\fancyhead[RO]{Creación de Sistemas de Información}
+% Configura el pie de página
+\fancyfoot[R]{Página \thepage\ de \pageref{LastPage}} % Formato "Página X de Y" a la derecha
+\fancyfoot[L]{\raisebox{-1cm}{\includegraphics[height=1.5cm]{C:/Users/Tekniker/OneDrive - TEKNIKER/UDIMA/Resources/Graphics/logo.png}}} % Si quieres mantener el logo a la izquierda
+
+
+%Vars
+\author{Alexander Sebastian Kalis}
+\title{Actividad de Evaluación Continua 3, Creación de Sistemas de Información}
+
+
+%DOC
+
+
+\begin{document}
+
+\begin{titlepage}
+
+    \begin{center}
+
+        \line(1,0){300}\\
+        [0.2in]
+        \huge{\bfseries {\MyTitle}}\\
+        [1mm]
+        \line(2,0){200}\\
+        [0.75cm]
+        \textsc{\LARGE Sistemas Integrados de Información Industrial}\\
+        [2cm]
+        \includegraphics[height=10cm]{C:/Users/Tekniker/OneDrive - TEKNIKER/UDIMA/SistemasIntegradosInformacionIndustrial/AEC/AEC3/portada.png}\\
+        [2cm]
+
+    \end{center}
+
+    \begin{flushright}
+
+        Autor: {\MyAuthor}\\
+        Profesoras: Dras. Jackeline Spinola y María Aurora Martínez\\
+        Curso: Ingeniería de Organización Industrial\\
+        UDIMA\\
+        \today         
+
+    \end{flushright}
+    
+\end{titlepage}
+
+
+\tableofcontents
+
+\newpage
+
+\section{Análisis del sistema antiguo}
+SourceGas enfrentó problemas significativos con su sistema anterior, que afectaron principalmente la eficiencia y efectividad de su programación de trabajo y la gestión de la fuerza laboral. El sistema carecía de la flexibilidad necesaria para adaptarse a cambios rápidos o a demandas imprevistas, lo que resultaba en ineficiencias operativas y retrasos. La incapacidad para ajustar rápidamente las asignaciones de recursos y responder a emergencias operativas sin demoras era un problema constante que obstaculizaba la capacidad de la empresa para mantener operaciones fluidas y eficientes.
+
+\subsection{Factores de administración, organización y tecnología responsables}
+\subsubsection{Factores de administración}
+La falta de integración entre los distintos departamentos y la ausencia de una comunicación efectiva entre los niveles gerenciales y técnicos contribuyeron a una implementación deficiente de las funcionalidades necesarias en el sistema. Esto se evidenciaba en la descoordinación a la hora de asignar tareas y recursos, provocando solapamientos y redundancias que afectaban la productividad general. La gestión falló en establecer una cultura de intercambio de información y colaboración, lo que hubiera facilitado una implementación más efectiva de tecnologías de información.
+
+\subsubsection{Factores de organización}
+La estructura organizativa de SourceGas no apoyaba adecuadamente el uso de tecnologías avanzadas. Las barreras culturales internas, incluyendo la resistencia al cambio por parte de empleados que se sentían más cómodos con los procesos tradicionales, impidieron las mejoras necesarias en los procesos operativos. Además, la empresa no proporcionaba suficiente formación y desarrollo profesional en nuevas tecnologías, lo que exacerbaba la resistencia al cambio y la adaptación tecnológica.
+
+\subsubsection{Factores de tecnología}
+El sistema anterior era rígido y programado en plataformas obsoletas que no permitían modificaciones o actualizaciones fáciles sin intervención significativa de TI. Esta rigidez tecnológica hacía difícil responder rápidamente a las nuevas necesidades o problemas emergentes, como ajustar la logística en respuesta a fallos inesperados o cambios en la demanda del mercado. La falta de modularidad y escalabilidad en el diseño del sistema complicaba aún más estas adaptaciones.
+
+\subsection{Impacto de negocio de estos problemas}
+Los problemas con el sistema anterior tuvieron un impacto directo en la eficiencia operativa de SourceGas. Los retrasos en la programación de trabajos y la mala gestión de la fuerza laboral resultaban en una menor satisfacción del cliente debido a tiempos de respuesta lentos. Además, el aumento en los costos operativos, generado por la necesidad de horas extras y trabajo manual para compensar las deficiencias del sistema, afectaba negativamente la rentabilidad de la empresa. El descontento creciente entre los clientes y el personal, combinado con los mayores costos operativos, destacaba la urgencia de actualizar o reemplazar el sistema de información existente.
+
+\subsection{Diagrama de flujo}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[height=15cm]{C:/Users/Tekniker/OneDrive - TEKNIKER/UDIMA/SistemasIntegradosInformacionIndustrial/AEC/AEC3/flowchartantiguo.png}
+    \caption{Diagrama de flujo del proceso antiguo de SourceGas}
+    \label{fig:diagramaflujoantiguo}
+\end{figure}
+
+\section{Usuarios}
+\subsection{Rol de los usuarios}
+Los usuarios jugaron un papel fundamental en el desarrollo del nuevo sistema en SourceGas, involucrándose activamente en todas las etapas del proyecto. Desde el principio, se aseguró que los usuarios participaran en la definición de los requerimientos del sistema, lo cual es crucial para alinear el desarrollo del sistema con las necesidades reales del negocio. Además, su participación no se limitó solo a la fase inicial, sino que se extendió a lo largo de todo el ciclo de desarrollo, especialmente durante las fases de prueba. 
+
+Un comité compuesto por técnicos superusuarios y miembros del equipo de operaciones fue establecido para trabajar junto con el equipo de desarrollo. Este comité tuvo la tarea de revisar continuamente el progreso del sistema y proporcionar retroalimentación constructiva. Durante la fase de pruebas, los usuarios finales manejaron cerca de 225 tipos diferentes de órdenes de servicio utilizando la nueva aplicación. Esta experiencia directa fue vital para validar la funcionalidad del sistema bajo escenarios de negocios reales, asegurando que el sistema final estuviera bien equipado para manejar las operaciones diarias de SourceGas de manera eficiente.
+
+\subsection{Estrategias para asegurar la involucración de los usuarios}
+Para asegurar una adecuada involucración de los usuarios, el equipo del proyecto implementó varias estrategias clave:
+\begin{itemize}
+    \item \textbf{Establecimiento de un comité de superusuarios:} Este comité actuó como el principal canal de comunicación entre los usuarios finales y el equipo de desarrollo, garantizando que las necesidades y preocupaciones de los usuarios fueran entendidas y abordadas.
+    \item \textbf{Sesiones regulares de revisión y retroalimentación:} Se organizaron reuniones periódicas durante las cuales los usuarios podían ver avances del sistema, probar funcionalidades y proporcionar retroalimentación inmediata.
+    \item \textbf{Capacitación temprana:} Los usuarios fueron capacitados en el uso del sistema desde las etapas tempranas de desarrollo, lo que no solo facilitó una transición más suave una vez que el sistema fue lanzado, sino que también permitió que los usuarios identificaran potenciales fallos o mejoras necesarias desde una etapa temprana.
+\end{itemize}
+
+\subsection{Impacto de la no involucración de los usuarios}
+Si los usuarios no hubieran sido adecuadamente involucrados en el proceso de desarrollo, el proyecto podría haber enfrentado múltiples desafíos significativos:
+\begin{itemize}
+    \item \textbf{Desajuste entre las necesidades del negocio y las funcionalidades del sistema:} Sin la entrada de los usuarios, existe un riesgo considerable de desarrollar un sistema que no alinee con las necesidades reales del negocio, resultando en un software que es poco práctico o inadecuado para las operaciones diarias.
+    \item \textbf{Resistencia al cambio:} Los usuarios que no se sienten parte del proceso de desarrollo pueden mostrar resistencia al adoptar el nuevo sistema, lo cual puede obstaculizar la transición y reducir la eficiencia operativa general.
+    \item \textbf{Aumento de los costos y del tiempo de desarrollo:} La falta de retroalimentación temprana puede llevar a revisiones costosas y extensas modificaciones del sistema después de su implementación, aumentando significativamente los costos y el tiempo de desarrollo.
+\end{itemize}
+
+
+\section{Generación del nuevo sistema}
+
+\subsection{Metodologías y Herramientas}
+SourceGas implementó una serie de metodologías modernas y herramientas tecnológicas para desarrollar su nuevo sistema de órdenes de trabajo y despacho. Utilizaron un enfoque iterativo y la metodología de desarrollo ágil, lo cual les permitió adaptar el sistema de manera flexible y continua a medida que recibían retroalimentación de los usuarios. Además, eligieron el paquete de software SAP Workforce Scheduling \& Optimization, integrado con sus sistemas SAP existentes como SAP ERP y SAP CRM. Este paquete permitió una gestión optimizada de la programación y despacho en tiempo real, incluyendo herramientas avanzadas para la previsión de demandas, asignación de recursos basada en habilidades y preferencias, y análisis de desempeño del servicio .
+
+\subsection{Pasos adicionales}
+Además de la implementación de metodologías ágiles y la integración de sistemas avanzados, SourceGas llevó a cabo varias iniciativas para asegurar el éxito del nuevo sistema:
+\begin{itemize}
+    \item \textbf{Pruebas exhaustivas:} Los usuarios finales del equipo de operaciones de SourceGas realizaron pruebas con cerca de 225 tipos diferentes de órdenes de servicio, asegurándose de que el sistema pudiera manejar todos los escenarios de negocios posibles.
+    \item \textbf{Capacitación y retroalimentación anticipada:} Se capacitó al 20\% de la fuerza laboral y se recogió su retroalimentación para afinar el sistema antes de su implementación completa. Esto no solo ayudó a identificar y corregir problemas antes de la implementación generalizada, sino que también facilitó la adopción del sistema por parte de los usuarios .
+    \item \textbf{Integración proactiva:} El sistema fue diseñado para integrarse sin problemas con las aplicaciones SAP existentes, asegurando una sinergia entre los procesos de despacho y las funciones empresariales generales.
+\end{itemize}
+
+Estos pasos fueron fundamentales para minimizar los riesgos típicos asociados con la implementación de nuevos sistemas, como la resistencia al cambio por parte de los usuarios y las dificultades técnicas que podrían haber comprometido la funcionalidad del sistema. Al adoptar un enfoque inclusivo y reflexivo en la implementación del sistema, SourceGas pudo mejorar significativamente la eficiencia operativa y la satisfacción del usuario final con el nuevo sistema.
+
+\section{Análisis del nuevo sistema}
+\subsection{Beneficios del nuevo sistema}
+El nuevo sistema de SourceGas ha traído varios beneficios clave que han mejorado significativamente la eficiencia operacional de la empresa. Los despachadores ahora pueden ver con mayor precisión sus cargas de trabajo y asignar recursos de manera más efectiva. Además, la gerencia puede medir con mayor precisión la carga de trabajo en las divisiones, lo que ha mejorado el desempeño general y la planificación de recursos .
+
+Además, el sistema ha permitido a SourceGas tener un mejor control de los costos de mantenimiento y actualización, realizando la mayoría de este trabajo con personal interno, lo que reduce los costos asociados con los proveedores externos. Este cambio ha sido fundamental para mejorar la respuesta de la empresa a los cambios rápidos en la industria .
+
+\subsection{Cambios en la operación del negocio}
+El nuevo sistema ha cambiado la forma en que SourceGas opera su negocio, haciendo la programación y despacho mucho más eficientes y menos dependientes de procesos manuales. El sistema automatizado ha mejorado la programación de las órdenes de trabajo y ha hecho que la respuesta a emergencias y cambios inesperados sea más rápida y efectiva. La integración con SAP ERP y SAP CRM ha permitido un flujo de trabajo más fluido y una mejor gestión de datos .
+
+\subsection{Éxito de la solución de sistemas}
+La solución implementada ha sido muy exitosa, permitiendo a SourceGas completar 400,000 órdenes de trabajo y procesar 900,000 hojas de asistencia con mayor eficiencia que antes. Sin embargo, la gerencia sigue evaluando el sistema para determinar en su totalidad las eficiencias y beneficios operacionales que puede proporcionar a largo plazo .
+
+\subsection{Diagrama de flujo del nuevo proceso}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.65\textwidth]{C:/Users/Tekniker/OneDrive - TEKNIKER/UDIMA/SistemasIntegradosInformacionIndustrial/AEC/AEC3/flowchartnuevo.png}
+    \caption{Diagrama de flujo del nuevo proceso de SourceGas}
+    \label{fig:diagramaflujonuevo}
+\end{figure}
+
+
+
+\section{Implementación de HubSpot}
+
+Utilizando la prueba gratuita de 14 días, vamos a explorar las opciones y herramientas que nos ofrece HubSpot.
+\subsection{Gestión de contactos y segmentación de clientes}
+La implementación de HubSpot en SourceGas permitirá una gestión de contactos más efectiva, proporcionando herramientas avanzadas para segmentar clientes basándose en criterios específicos como ubicación, historial de servicios, y preferencias de comunicación. Esto facilitará campañas de marketing personalizadas y comunicaciones dirigidas, mejorando la relevancia y la eficacia de las interacciones con los clientes. La segmentación precisa también ayudará a SourceGas a identificar oportunidades de upselling y cross-selling, aumentando así la rentabilidad.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{C:/Users/Tekniker/OneDrive - TEKNIKER/UDIMA/SistemasIntegradosInformacionIndustrial/AEC/AEC3/hubspot1.png}
+    \caption{Contactos en HubSpot}
+    \label{fig:contacts}
+\end{figure}
+
+
+
+\subsection{Automatización de marketing}
+HubSpot facilitará la automatización de procesos de marketing en SourceGas, permitiendo el envío automático de comunicaciones como recordatorios de servicio, avisos de mantenimiento, y promociones especiales basadas en el comportamiento y necesidades del cliente. Esta funcionalidad no solo mejorará la eficiencia reduciendo la carga de trabajo manual, sino que también garantizará que los clientes reciban información pertinente en el momento oportuno, mejorando así su satisfacción y lealtad hacia SourceGas.
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{C:/Users/Tekniker/OneDrive - TEKNIKER/UDIMA/SistemasIntegradosInformacionIndustrial/AEC/AEC3/hubspot2.png}
+    \caption{Campañas de marketing}
+    \label{fig:campanas}
+\end{figure}
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{C:/Users/Tekniker/OneDrive - TEKNIKER/UDIMA/SistemasIntegradosInformacionIndustrial/AEC/AEC3/hubspot3.png}
+    \caption{Workflow automático de emailing list}
+    \label{fig:workflow}
+\end{figure}
+
+
+\subsection{Análisis de datos y reporte}
+Con HubSpot, SourceGas podrá aprovechar las capacidades analíticas avanzadas para recopilar y analizar datos sobre el comportamiento del cliente y la eficiencia de las operaciones. Esto incluye el seguimiento de métricas clave como tiempos de respuesta, tasas de satisfacción del cliente, y efectividad de campañas de marketing. Los insights obtenidos permitirán a SourceGas tomar decisiones basadas en datos para mejorar continuamente sus servicios y optimizar sus recursos, lo que resultará en una operación más eficiente y rentable.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{C:/Users/Tekniker/OneDrive - TEKNIKER/UDIMA/SistemasIntegradosInformacionIndustrial/AEC/AEC3/hubspot4.png}
+    \caption{Análisis de datos en HubSpot}
+    \label{fig:analiticas}
+\end{figure}
+
+\subsection{Mejora del servicio al cliente}
+HubSpot ofrecerá a SourceGas la capacidad de mejorar significativamente su servicio al cliente mediante la implementación de un portal en línea donde los clientes pueden interactuar directamente con la empresa. Este portal permitirá a los clientes programar servicios, hacer seguimiento de sus órdenes en tiempo real, y proporcionar retroalimentación inmediata. Mejorar la experiencia del cliente de esta manera puede aumentar significativamente la satisfacción del cliente y fortalecer la lealtad a la marca.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{C:/Users/Tekniker/OneDrive - TEKNIKER/UDIMA/SistemasIntegradosInformacionIndustrial/AEC/AEC3/hubspot6.png}
+    \caption{Encuestas de satisfacción}
+    \label{fig:encuestas}
+\end{figure}
+
+
+\subsection{Integración con otros sistemas}
+La integración de HubSpot con otros sistemas empresariales existentes en SourceGas, como SAP ERP, blogs de WordPress y redes sociales es un aspecto crucial. Esta integración permitirá una gestión de datos centralizada, lo que facilitará un flujo de trabajo más cohesivo y eliminará redundancias. La sincronización de datos entre sistemas asegurará que toda la información sea actual y relevante, lo que mejorará la eficiencia operativa y reducirá las posibilidades de error.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{C:/Users/Tekniker/OneDrive - TEKNIKER/UDIMA/SistemasIntegradosInformacionIndustrial/AEC/AEC3/hubspot5.png}
+    \caption{Integración de WordPress}
+    \label{fig:Integracion}
+\end{figure}
+
+
+\section{Conclusiones sobre el caso de SourceGas y las herramientas utilizadas}
+
+El estudio del caso de SourceGas ha revelado múltiples aspectos críticos relacionados con la gestión de sistemas de información y la transformación digital en una organización de servicios. A través de la implementación del nuevo sistema y la utilización de herramientas avanzadas como HubSpot, SourceGas ha demostrado cómo la tecnología puede ser utilizada para mejorar significativamente la eficiencia operativa y la satisfacción del cliente.
+
+\subsection{Impacto del nuevo sistema}
+El nuevo sistema ha permitido a SourceGas optimizar sus operaciones de despacho y gestión de órdenes de trabajo, lo que ha resultado en una reducción notable de tiempos de respuesta y un aumento en la precisión de la programación de servicios. La capacidad del sistema para integrarse fluidamente con otras herramientas empresariales ha mejorado la cohesión interna y ha simplificado procesos que anteriormente eran laboriosos y propensos a errores.
+
+\subsection{Lecciones aprendidas y recomendaciones}
+Este caso subraya la importancia de la adaptabilidad y la innovación en la gestión de sistemas de información dentro de las empresas de servicios. Para otras organizaciones que buscan mejorar sus operaciones a través de la tecnología, se recomienda adoptar un enfoque proactivo en la integración de nuevas tecnologías, asegurando la participación de los usuarios desde las etapas iniciales y centrando los esfuerzos en mejorar la experiencia del cliente. Además, la evaluación continua y el ajuste del sistema y de las herramientas utilizadas son esenciales para mantener la relevancia y eficacia en un entorno empresarial en rápida evolución.
+
+En conclusión, el caso de SourceGas sirve como un testimonio de cómo la tecnología adecuada, implementada estratégicamente, puede transformar las operaciones de una empresa, mejorando no solo la eficiencia operativa sino también fortaleciendo las relaciones con los clientes y mejorando su satisfacción.
+
+\cleardoublepage % Asegura que la bibliografía comience en una nueva página si es necesario
+\addcontentsline{toc}{section}{Bibliografía} % Añade la bibliografía al índice
+
+\begin{thebibliography}{9}
+    \bibitem{mis} 
+    Kenneth C. Laudon, Jane P. Laudon.
+    \textit{Sistemas de Información Gerencial},
+    12ª edición, Pearson Educación, 2012.
+    
+    \bibitem{hubspot} 
+    HubSpot CRM.
+    \textit{HubSpot CRM: Herramientas y Funcionalidades},
+    Disponible en: \url{https://www.hubspot.es/products/crm}
+    
+    \end{thebibliography}
+
+\end{document}

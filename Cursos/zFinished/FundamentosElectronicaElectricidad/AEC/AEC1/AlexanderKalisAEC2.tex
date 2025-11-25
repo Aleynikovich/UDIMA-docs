@@ -1,0 +1,256 @@
+\documentclass{article}
+\usepackage{lipsum}
+\usepackage[backend=biber]{biblatex}
+\addbibresource{aec2.bib}
+\usepackage{authoraftertitle}
+\usepackage[top=2cm,bottom=1.5cm,left=1.5cm, right=3cm,includeheadfoot]{geometry}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+%\usepackage[spanish]{babel}
+\usepackage{mathtools}
+\usepackage{nicefrac}
+\usepackage{csquotes}
+\usepackage{amssymb}
+\usepackage{fancybox, graphicx}
+\usepackage{array}
+\usepackage{hhline}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{esint}
+\usepackage{caption}
+\usepackage{esvect}
+\usepackage{siunitx}
+\usepackage{commath}
+\newcommand{\ihat}{\textbf{\^\i}}
+\newcommand{\jhat}{\textbf{\^\j}}
+%Header & Footer
+
+\pagestyle{fancy}
+%\fancyhead[LE]{\MyTitle}
+\fancyhead[LO]{Fundamentos de Electricidad y Electrónica}
+\fancyhead[RO]{Actividad de Evaluación Contínua 1}
+%\fancyhead[RE]{\leftmark}
+\fancyfoot[L]{\raisebox{-1cm}{\includegraphics[height=1.5cm]{D:/KUKADisk/OneDrive - KUKA AG/UDIMA/DocumentGraphics/LOGOUDIMA.jpg}}}
+\fancyfoot[R]{Corregido:\\ Dra. Teresa Magraner Benedicto}
+%\fancyfoot[RO]{07/12/2018}
+
+
+%Vars
+\author{Alexander Sebastian Kalis}
+\title{Actividad de Evaluación Contínua 1}
+
+
+%DOC
+
+
+\begin{document}
+
+\begin{titlepage}
+
+    \begin{center}
+
+        \line(1,0){300}\\
+        [0.2in]
+        \huge{\bfseries {\MyTitle}}\\
+        [1mm]
+        \line(2,0){200}\\
+        [0.75cm]
+        \textsc{\LARGE Fundamentos de Electricidad y Electrónica}\\
+        [2cm]
+        \includegraphics[height=10cm]{D:/KUKADisk/OneDrive - KUKA AG/UDIMA/EYE/AEC/AEC1/imgs/portada.jpg}\\
+        [3cm]
+
+    \end{center}
+
+    \begin{flushright}
+
+        Autor: {\MyAuthor}\\
+        Profesora: Dra. Teresa Magraner Benedicto\\
+        Ingeniería de Organización Industrial\\
+        UDIMA         
+
+    \end{flushright}
+    
+\end{titlepage}
+
+\section*{Caso 1}
+
+En el circuito de la figura, calcular el valor de la fuerza magnetomotriz necesaria para 
+que circule un flujo de $10^{-4} Wb$ suponiendo que no hay dispersión.
+
+\begin{center}
+    \includegraphics[height=8cm]{D:/KUKADisk/OneDrive - KUKA AG/UDIMA/EYE/AEC/AEC1/imgs/p1e1.PNG}\\
+\end{center}
+
+
+Datos\\
+$\mu_r = 300$
+$\mu_0 = 4\pi 10^{-7} Tm/A$\\
+
+Empezamos calculando la longitud de las lineas medias:\\
+
+$L_n = 2(55-5) + 60 - 5(2) = 1.5m$\\
+
+$L_{e} = 2(1) = 0.02m$\\
+
+$L_a = 60 - 5(2) = 0.5m$\\
+
+Conociendo el valor del flujo y las medidas geométricas podemos determinar la densidad del flujo. Al no haber dispersión el flujo será uniforme
+a lo largo de la figura.
+
+\[
+    B_{nea} = \cfrac[]{\Phi_{nea}}{A_{nea}}=\frac{10^{-4}}{0.01} = 10^{-2} T
+\]
+
+Procedemos a calcular el valor del campo magnético:
+
+\[
+    H_e = \cfrac[]{10^{-2}}{4\pi \cdot 10^{-7}}=
+    \cfrac[]{10^5}{4\pi} Av/m
+\]
+
+\[
+    H_{na} = \cfrac[]{10^{-2}}{4\pi \cdot 10^{-7} \cdot 300} = \cfrac[]{10^3}{12\pi} Av/m
+\]
+
+Procedemos a hacer la sumatoria por cada trozo de la figura para obtener la f.m.m necesaria:
+
+\[
+    f.m.m = NI = \sum H_iL_i 
+\]
+
+\[
+    H_{na}L_{na} + H_eL_e =
+    2 \cfrac[]{10^3}{12\pi}  +  0.02 \cfrac[]{10^5}{4\pi} = 
+    212.2 Av
+\]
+\newpage
+
+\section*{Caso 2}
+
+
+El anillo magnético de la figura tiene una longitud media de 0,5 metros y una sección 
+uniforme de $10 cm^2$, está formado por un material magnético que tiene la siguiente curva de 
+magnetización:\\
+
+$B = 15H/(100+H)$ con $B$ en $T$, y $H$ en $Av/m$\\
+
+Si por la bobina arrollada circula una intensidad de $0,1 A$, ¿cuál será su coeficiente de 
+autoinducción $L$ sabiendo que tiene 100 espiras?
+
+\begin{center}
+    \includegraphics[height=4cm]{D:/KUKADisk/OneDrive - KUKA AG/UDIMA/EYE/AEC/AEC1/imgs/p2e1.PNG}\\
+\end{center}
+
+Conociendo la intensidad y el número de espiras calculamos la fuerza magnetomotriz:\\
+
+\[
+    f.m.m = NI = 100 \cdot 0.1 = 10 Av  
+\]\\
+
+Y por ende la fuerza del campo magnético:\\
+
+\[
+    H = \cfrac[]{fmm}{l_c} = \cfrac[]{10}{0.5} = 20 Av/m
+\]  \\
+
+Conocemos la curva de magnetización:\\
+
+\[
+    B = \cfrac[]{15 \cdot 20}{100+20} = 2.5 T
+\]\\
+
+Con estos datos podemos calcular el flujo magnético:\\
+
+\[
+    \Phi = BA = 2.5 \cdot 10^{-4} Wb  
+\]\\
+
+Finalmente hallamos su coeficiente de autoinducción:\\
+
+\[
+    L = \cfrac[]{N\Phi}{I} = \cfrac[]{100 \cdot 2.5 \cdot 10^{-4}}{0.1} = 0.25 H
+\]
+
+
+\newpage
+
+\section*{Caso 3}
+
+El circuito magnético de la figura está formado por un arrollamiento de 500 espiras en 
+la rama central del núcleo que induce un campo magnético en el entrehierro de $1.1 Teslas$. Calcular 
+el valor de la intensidad que recorre la bobina suponiendo que no hay dispersión de flujo, sabiendo 
+que los valores de la curva de magnetización del material de núcleo son los que se recogen en la 
+tabla 1 y que el espesor del entrehierro es de $1 mm$. Todas las cotas del dibujo están en $mm$.
+
+\begin{center}
+    \includegraphics[height=8cm]{D:/KUKADisk/OneDrive - KUKA AG/UDIMA/EYE/AEC/AEC1/imgs/p3e1.PNG}\\
+\end{center}
+\begin{center}
+    \includegraphics[width=0.9\textwidth]{D:/KUKADisk/OneDrive - KUKA AG/UDIMA/EYE/AEC/AEC1/imgs/p3e2.PNG}\\
+\end{center}
+
+Hacemos el esquema del circuito magnético:
+
+\begin{center}
+    \includegraphics[height=5cm]{D:/KUKADisk/OneDrive - KUKA AG/UDIMA/EYE/AEC/AEC1/imgs/p3e3.PNG}\\
+\end{center}
+
+Para resolver el circuito empezamos interpolando linealmente para obtener $H$ para $B=1.1 T$:
+
+\[
+    400 + (1.1-1) \cfrac[]{1000-400}{1.35-1} = 571.43 Av/m
+\]
+
+\[
+    U_{R4} = (H_4 \cdot l_4) + (H_2 \cdot l_2) = (571.43 \cdot 0.499) + \left(\cfrac[]{1.1}{4\pi \cdot 10^{-7}} \right) = 1169.5 Av
+\]
+
+Entonces:
+
+\[
+    H_4 = \cfrac[]{1160.5}{0.5} = 2321 Av/m    
+\]\\
+
+Podemos calcular $B_4$ para $H_4 = 2321$:\\
+
+\[
+    B_4 = 1.45 + \cfrac[]{2321-2000}{3000-2000} \cdot (1.5-1.45) = 1.466 T
+\]\\
+
+Con estos datos pasamos a calcular los flujos:\\
+
+\[
+    \Phi_1 = B_1A_1 = 1.1 \cdot 10^{-3} Wb
+\]
+\[
+    \Phi_2= B_2A_2 = 1.466 \cdot 10^{-3} Wb
+\]
+\[
+    \Phi_3 = B_3A_3 = 1.1 \cdot 10^{-3}+1.466 \cdot 10 ^{-3} = 2.566 \cdot 10^{-3} Wb
+\]\\
+
+Calculo $B_3$ con el dato del flujo:\\
+
+\[
+    B_3=\frac{\Phi_1}{A_1}=\cfrac[]{2.566 \cdot 10^{-3}}{1.6 \cdot 10^{-3}}=1.604 T
+\]\\
+
+
+Volvemos a interpolar para obtener $H$:\\
+
+\[
+    H_3 = 4000+(1.604 - 1.54) \cfrac[]{6000-4000}{1.61-1.54}=5829 Av/m
+\]\\
+
+Finalmente podemos calcular la intensidad tal que:\\
+
+\[
+    I = \cfrac[]{H_4l_4+H_3l_3}{N}=\cfrac[]{2321 \cdot 0.5 + 5829 \cdot 0.2}{500} = 4.65 A
+\]
+
+\end{document}

@@ -1,0 +1,175 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\usepackage{siunitx}
+\usepackage{enumitem}
+
+% Configuración de márgenes
+\geometry{left=2.5cm, right=2.5cm, top=3cm, bottom=3cm}
+
+% Encabezado y pie de página
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{UDIMA}
+\fancyhead[R]{Fundamentos de Termodinámica y Mecánica de Fluidos}
+\fancyfoot[C]{\thepage}
+
+% Título del documento
+\title{\textbf{Resolución del Control de Evaluación}\\[0.5cm]
+\Large{Unidades 1, 2, 3 y 4}}
+\author{Alumno: Alexander Sebastian Kalis \\ Profesor: Dr.~César Pérez de Villar Palomo}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\newpage
+
+\section*{Preguntas y Resoluciones}
+
+\subsection*{Pregunta 1}
+\textit{Una pared diatérmica:}
+\begin{enumerate}[label=\alph*)]
+    \item todas son correctas
+    \item hace que se mantenga la diferencia de temperaturas a ambos lados de la pared
+    \item es lo mismo que una pared adiabática
+    \item \textbf{permite el flujo de calor a su través}
+\end{enumerate}
+
+\paragraph{Respuesta Correcta: d)}
+\textbf{Justificación:} La definición de una pared diatérmica (o diaterma) es precisamente aquella que permite la transferencia de energía en forma de calor. Al contrario, una pared adiabática es la que impide el flujo de calor. Una pared diatérmica no mantiene una diferencia de temperaturas, sino que permite que estas se igualen a través del flujo de calor, alcanzando el equilibrio térmico.
+
+\hrulefill
+
+\subsection*{Pregunta 2}
+\textit{Dos moles de un gas ideal monoatómico realizan un ciclo de Carnot, con un rendimiento $\eta = 0.6$. El gas absorbe 1000 J del foco caliente en cada ciclo, que se encuentra a 550 K. Si el ciclo dura 0.3 s, la potencia de la máquina es de:}
+\begin{enumerate}[label=\alph*)]
+    \item 600 W
+    \item \textbf{2 kW}
+    \item 1333.3 W
+    \item 180 W
+\end{enumerate}
+
+\paragraph{Respuesta Correcta: b)}
+\textbf{Justificación:} La potencia es el trabajo realizado por unidad de tiempo ($P = W/t$). Primero, calculamos el trabajo ($W$) que realiza la máquina en cada ciclo a partir de la definición de rendimiento ($\eta = W/Q_H$).
+\[ W = \eta \cdot Q_H = 0.6 \cdot \SI{1000}{J} = \SI{600}{J} \]
+Este es el trabajo realizado en un ciclo, que dura \SI{0.3}{s}. La potencia es:
+\[ P = \frac{W}{t} = \frac{\SI{600}{J}}{\SI{0.3}{s}} = \SI{2000}{W} = \textbf{\SI{2}{kW}} \]
+
+\hrulefill
+
+\subsection*{Pregunta 3}
+\textit{Dos moles de un gas ideal monoatómico realizan un ciclo de Carnot, con un rendimiento $\eta = 0.6$. El gas absorbe 1000 J del foco caliente en cada ciclo, que se encuentra a 550 K. El ciclo está formado por:}
+\begin{enumerate}[label=\alph*)]
+    \item \textbf{Expansión isoterma, expansión adiabática, compresión isoterma y compresión adiabática}
+    \item Expansión isoterma, expansión adiabática, compresión isobara y compresión isoterma
+    \item Expansión isobara, expansión adiabática, compresión isobara y compresión adiabática
+    \item Expansión isobara, expansión adiabática y compresión isoterma
+\end{enumerate}
+
+\paragraph{Respuesta Correcta: a)}
+\textbf{Justificación:} Por definición, un ciclo de Carnot consiste en cuatro procesos reversibles: dos isotérmicos (donde se intercambia calor con los focos) y dos adiabáticos (que conectan las dos isotermas).
+
+\hrulefill
+
+\subsection*{Pregunta 4}
+\textit{el trabajo:}
+\begin{enumerate}[label=\alph*)]
+    \item es cero para todo proceso adiabático
+    \item se considera positivo el que realiza el sistema independientemente del criterio de signos elegido
+    \item \textbf{todas son incorrectas}
+    \item es siempre positivo independientemente del criterio de signos elegido
+\end{enumerate}
+
+\paragraph{Respuesta Correcta: c)}
+\textbf{Justificación:} La opción (a) es incorrecta; en un proceso adiabático $Q=0$, por lo que $\Delta U = -W$, y el trabajo no es cero a menos que la energía interna no cambie. Las opciones (b) y (d) son incorrectas porque el signo del trabajo depende tanto de si es una expansión o compresión como del criterio de signos adoptado (en el criterio ingenieril, el trabajo realizado por el sistema es positivo, pero en otros es negativo). Por tanto, todas las afirmaciones son falsas.
+
+\hrulefill
+
+\subsection*{Pregunta 5}
+\textit{La eficiencia de un refrigerador es mayor cuanto menor es el trabajo consumido.}
+\begin{enumerate}[label=\alph*)]
+    \item \textbf{Verdadero}
+    \item Falso
+\end{enumerate}
+
+\paragraph{Respuesta Correcta: a)}
+\textbf{Justificación:} La "eficiencia" de un refrigerador es su Coeficiente de Rendimiento (COP), definido como $COP = Q_C / W_{in}$, donde $Q_C$ es el calor extraído del foco frío y $W_{in}$ es el trabajo consumido. Como el trabajo está en el denominador, si $W_{in}$ disminuye, el valor del COP aumenta, lo que significa una mayor eficiencia.
+
+\hrulefill
+
+\subsection*{Pregunta 6}
+\textit{Dos moles de un gas ideal monoatómico realizan un ciclo de Carnot, con un rendimiento $\eta = 0.6$. El gas absorbe 1000 J del foco caliente en cada ciclo, que se encuentra a 550 K. La variación de entropía del foco caliente en cada ciclo es:}
+\begin{enumerate}[label=\alph*)]
+    \item \textbf{-1.82 J/K}
+    \item 1.82 J/K
+    \item nula, es un ciclo reversible
+    \item -1000 J/K
+\end{enumerate}
+
+\paragraph{Respuesta Correcta: a)}
+\textbf{Justificación:} La variación de entropía se calcula como $\Delta S = Q/T$. El foco caliente \textbf{cede} \SI{1000}{J} de calor al sistema, por lo que para el foco, el calor es negativo ($Q_{foco} = \SI{-1000}{J}$). La temperatura del foco es constante a \SI{550}{K}.
+\[ \Delta S_{foco caliente} = \frac{Q_{foco}}{T_H} = \frac{\SI{-1000}{J}}{\SI{550}{K}} \approx \textbf{-1.82 J/K} \]
+
+\hrulefill
+
+\subsection*{Pregunta 7}
+\textit{Dos moles de un gas ideal monoatómico realizan un ciclo de Carnot, con un rendimiento $\eta = 0.6$. El gas absorbe 1000 J del foco caliente en cada ciclo, que se encuentra a 550 K. El ciclo está formado por:}
+\begin{enumerate}[label=\alph*)]
+    \item \textbf{Expansión isoterma, expansión adiabática, compresión isoterma y compresión adiabática}
+    \item Expansión isoterma, expansión adiabática, compresión isobara y compresión isoterma
+    \item Expansión isobara, expansión adiabática, compresión isobara y compresión adiabática
+    \item Expansión isobara, expansión adiabática y compresión isoterma
+\end{enumerate}
+
+\paragraph{Respuesta Correcta: a)}
+\textbf{Justificación:} Esta pregunta es idéntica a la pregunta 3. Un ciclo de Carnot se compone de dos procesos isotérmicos y dos adiabáticos, todos reversibles.
+
+\hrulefill
+
+\subsection*{Pregunta 8}
+\textit{En una compresión isoterma (siendo una transformación reversible realizada por un gas ideal):}
+\begin{enumerate}[label=\alph*)]
+    \item la energía interna aumenta
+    \item la energía interna disminuye
+    \item \textbf{el calor y el trabajo coinciden}
+    \item el gas realiza un trabajo positivo
+\end{enumerate}
+
+\paragraph{Respuesta Correcta: c)}
+\textbf{Justificación:} En un proceso isotérmico de un gas ideal, la temperatura es constante, por lo que la variación de energía interna es cero ($\Delta U = 0$). Según la Primera Ley, $\Delta U = Q - W$. Si $\Delta U = 0$, entonces $Q = W$. En una compresión, se realiza trabajo sobre el gas ($W<0$) y este debe ceder calor ($Q<0$) para mantener la temperatura constante.
+
+\hrulefill
+
+\subsection*{Pregunta 9}
+\textit{Indique cual es la correcta. Una variable extensiva:}
+\begin{enumerate}[label=\alph*)]
+    \item es la presión
+    \item \textbf{es proporcional al tamaño de la muestra}
+    \item todas son correctas
+    \item es la temperatura
+\end{enumerate}
+
+\paragraph{Respuesta Correcta: b)}
+\textbf{Justificación:} Por definición, una propiedad extensiva es aquella cuyo valor depende de la cantidad de materia o tamaño del sistema (ej. masa, volumen, energía interna). Una propiedad intensiva es independiente del tamaño (ej. presión, temperatura, densidad).
+
+\hrulefill
+
+\subsection*{Pregunta 10}
+\textit{En un proceso cíclico (siendo una transformación reversible realizada por un gas ideal):}
+\begin{enumerate}[label=\alph*)]
+    \item la energía interna aumenta
+    \item el trabajo siempre es positivo
+    \item el gas no intercambia calor
+    \item \textbf{el calor y el trabajo coinciden}
+\end{enumerate}
+
+\paragraph{Respuesta Correcta: d)}
+\textbf{Justificación:} En un ciclo completo, el sistema vuelve a su estado inicial. Como la energía interna (U) es una función de estado, su variación neta en un ciclo es cero ($\Delta U_{ciclo} = 0$). Aplicando la Primera Ley, $\Delta U_{ciclo} = Q_{neto} - W_{neto}$. Si $\Delta U_{ciclo} = 0$, se deduce que $Q_{neto} = W_{neto}$. El calor neto intercambiado es igual al trabajo neto realizado.
+
+\end{document}

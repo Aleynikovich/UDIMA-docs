@@ -1,0 +1,122 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\usepackage{fancyhdr}
+\usepackage{latexsym,pifont,mathrsfs}
+\usepackage{amssymb,amsfonts,textcomp}
+\usepackage{multicol}
+\usepackage{color}
+\usepackage{fancyhdr}
+\usepackage[top=1cm,bottom=2cm,left=2cm,right=3cm,nohead,nofoot]{geometry}
+\usepackage{array}
+\usepackage{hhline}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usepackage{fancybox}
+\usepackage{caption}
+\usepackage[shortlabels]{enumitem}
+\usepackage[document]{ragged2e}
+\usepackage{authoraftertitle}
+
+\pagestyle{fancy}
+\title{AA1 \LaTeX}
+
+\author{Alexander Sebastian Kalis}
+\date{\today}
+
+\begin{document}
+Actividad realizada por: \MyAuthor \newline
+\vspace{1em}
+    \begin{center}  
+        \setlength{\fboxsep}{12pt}
+            \shadowbox
+            {
+                \parbox{1\textwidth}
+                {   
+                    
+                    \textbf{\underline{EJEMPLO 17}}
+                    \break 
+                    
+                    Usar la regla de L'Hopital para hallar los siguientes limites:
+                    \break
+
+                    \begin{enumerate}[a)]
+                        \item $\lim_{x \to 0}\:\cfrac{\sin \:x}{x}$
+                        \item $\lim_{x \to 0}\:\cfrac{1-\cos \:x}{x^2}$
+                        \item $\lim_{x \to 0}\:\cfrac{x-\tan \:x}{x^3}$
+                        \item $\lim_{x \to \infty}\:x\:ln\:\cfrac{x-1}{x+1}$
+                        \item $\lim_{x \to 0^+}\:xe^{1/x}$
+                    \end{enumerate}
+
+                    \vspace{2em}
+                    \textbf{Solucion}
+                    \vspace{1em}
+
+                    En cada caso, despues de verificar la indeterminacion, se aplica la
+                    regla de L'Hopital las \newline veces necesarias.
+                    
+                    \begin{enumerate}[a)]
+                        \item %a)
+                            $
+                                \lim_{x \to 0}\:\cfrac{\sin x}{x}= 
+                                \left(\:\cfrac{0}{0}\:\right)\overset{H}{=} 
+                                \lim_{x \to 0}\: \cfrac{\cos x}{1}= 
+                                \cfrac{1}{1}=
+                                1
+                            $ 
+                        \item %b)
+                            $
+                                \lim_{x \to 0}\:\cfrac{1-\cos x}{x^2} =
+                                \left(\:\cfrac{0}{0}\:\right) \overset{H}{=}
+                                \lim_{x \to 0}\: \cfrac{\sin x}{2x} =
+                                \left(\:\cfrac{0}{0}\:\right) \overset{H}{=}
+                                \lim_{x \to 0}\: \cfrac{\cos x}{2}=
+                                \cfrac{1}{2}
+                            $
+                        \item %c)
+                            $
+                                \lim_{x \to 0}\:\cfrac{x-\tan x}{x^3} =
+                                \left(\:\cfrac{0}{0}\:\right) \overset{H}{=}
+                                \lim_{x \to 0} \cfrac{1-(1+\tan^2 x)}{3x^2}=
+                                lim_{x \to 0} \cfrac{-\tan^2 x}{3x^2}=
+                                \left(\:\cfrac{0}{0}\:\right) \overset{H}{=}
+                                \lim_{x \to 0} \cfrac{-2tan\:x(1+\tan^2 x)}{6x}=
+                                \lim_{x \to 0} \cfrac{-\tan x}{3x}=
+                                \left(\:\cfrac{0}{0}\:\right) \overset{H}{=}
+                                \lim_{x \to 0} \cfrac{-(1+\tan^2 x)}{3}=
+                                \cfrac{-1}{3}
+                            $
+                        \item %d)
+                            $
+                                \lim_{x \to \infty}\:x\:ln\:\cfrac{x-1}{x+1}=
+                                (\infty \cdot 0)=
+                                \lim_{x \to \infty}\: \cfrac{ln\: \cfrac{x-1}{x+1}}{\cfrac{1}{x}}=
+                                \left(\:\cfrac{0}{0}\:\right) \overset{H}{=}
+                                \lim_{x \to \infty}\: \cfrac{\cfrac{1}{x-1}-\cfrac{1}{x+1}}{\cfrac{-1}{x^2}}=\newline
+                                =\lim_{x \to \infty}\: \cfrac{-2x^2}{x^2-1}=
+                                -2
+                            $
+                        \item %e)
+                            $
+                                \lim_{x \to 0^+}\:xe^{1/x}=
+                                (0 \cdot \infty)=
+                                \lim_{x \to 0}\:\cfrac{e^{1/x}}{\cfrac{1}{x}}=
+                                \cfrac{\infty}{\infty}\overset{H}{=}
+                                \lim_{x \to 0^+}\: \cfrac{\cfrac{-1}{x^2}e^{1/x}}{\cfrac{-1}{x^2}}=
+                                \lim_{x \to 0^+}\: e^{1/x}=
+                                \infty
+                            $
+                    \end{enumerate}
+                }
+            }
+
+        %FOOTER
+        \lfoot{\textbf{www.udima.es}}
+        \cfoot{}
+        \rfoot{85}
+
+    \end{center}
+
+\end{document}

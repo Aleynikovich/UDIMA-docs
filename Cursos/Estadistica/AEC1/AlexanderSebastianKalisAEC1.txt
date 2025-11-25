@@ -1,0 +1,124 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+
+% Configuración de márgenes
+\geometry{top=2.5cm, bottom=2.5cm, left=3cm, right=3cm}
+
+% Configuración de encabezado y pie de página
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Universidad a Distancia de Madrid (UDIMA)}
+\fancyhead[R]{Grado en Ingeniería Industrial}
+\fancyfoot[C]{\thepage}
+
+% Título y datos
+\title{Actividad de Evaluación Continua de las Unidades 1, 2 y 3\\
+\large Asignatura: Estadística y Probabilidad}
+\author{Alexander Sebastian Kalis\\Grado en Ingeniería Industrial}
+\date{\today}
+
+\begin{document}
+
+% Portada
+\maketitle
+\begin{center}
+    \includegraphics[width=0.4\textwidth]{logo.png} % Puedes insertar el logo de la universidad aquí, si lo tienes.
+\end{center}
+\vfill
+\begin{center}
+    \textbf{Profesora:} Profa. Dra. Vanessa Fernández Chamorro
+\end{center}
+\newpage
+
+% Índice
+\tableofcontents
+\newpage
+
+\section*{Objetivos de Aprendizaje}
+La realización de esta actividad permitirá comprobar los avances realizados mediante la aplicación práctica de los conceptos teóricos desarrollados en las unidades correspondientes. El objetivo es que el estudiante sea capaz de encontrar las herramientas de Estadística necesarias para resolver cada problema y aplicarlas con éxito. Todas las respuestas deberán estar debidamente justificadas y bien argumentadas.
+
+\section*{Instrucciones para la realización y entrega}
+\begin{itemize}
+    \item Presentación correcta, portada con el nombre completo e índice.
+    \item Planteamiento y solución correcta de los ejercicios.
+    \item Argumentación de la solución.
+    \item Realización de forma individual.
+\end{itemize}
+
+\newpage
+
+% Ejercicio 1
+\section{Ejercicio 1 (2 Puntos)}
+Entre los deportistas profesionales, el 50\% disfruta de una beca de alto rendimiento y el 30\% está cursando estudios superiores. Se sabe que el 10\% de los deportistas disfruta de una beca y está cursando estudios superiores. Seleccionado un deportista al azar, calcule:
+\begin{enumerate}
+    \item La probabilidad de que disfrute de una beca de alto rendimiento o esté cursando estudios superiores.
+    \item La probabilidad de que no disfrute de una beca, sabiendo que no está cursando estudios superiores.
+\end{enumerate}
+
+\textbf{Solución:} \\
+% Escribe aquí la solución al ejercicio 1. Puedes usar las fórmulas necesarias en formato LaTeX.
+
+\newpage
+
+% Ejercicio 2
+\section{Ejercicio 2 (2 Puntos)}
+Una urna contiene 7 bolas blancas y 12 bolas negras. Se extrae una bola al azar y se sustituye por dos del otro color. A continuación, se extrae una segunda bola. Calcule:
+\begin{enumerate}
+    \item La probabilidad de que la segunda bola extraída sea blanca.
+    \item La probabilidad de que la segunda bola extraída sea de distinto color que la primera.
+    \item La probabilidad de que la primera bola extraída haya sido negra, sabiendo que la segunda bola fue blanca.
+\end{enumerate}
+
+\textbf{Solución:} \\
+% Escribe aquí la solución al ejercicio 2. Usa diagramas de árbol o probabilidades condicionales según sea necesario.
+
+\newpage
+
+% Ejercicio 3
+\section{Ejercicio 3 (2 Puntos)}
+En un mercado agropecuario, el 70\% de las verduras son de proximidad y el resto no. El 30\% de las de proximidad son ecológicas, y solo el 10\% de las no de proximidad lo son. Calcule:
+\begin{enumerate}
+    \item La probabilidad de que la verdura comprada no sea ecológica.
+    \item La probabilidad de que la verdura sea de proximidad o ecológica.
+\end{enumerate}
+
+\textbf{Solución:} \\
+% Escribe aquí la solución al ejercicio 3.
+
+\newpage
+
+% Ejercicio 4
+\section{Ejercicio 4 (2 Puntos)}
+Dados dos sucesos $A$ y $B$, con probabilidades: $P(A \cup B) = 0.55$, $P(\overline{A} \cup \overline{B}) = 0.90$, y $P(B|A) = 0.25$. Calcule:
+\begin{enumerate}
+    \item $P(A \cap B)$, $P(A)$, $P(B)$ y $P(B|\overline{A})$
+    \item Determine si los sucesos $A$ y $B$ son independientes.
+\end{enumerate}
+
+\textbf{Solución:} \\
+% Escribe aquí la solución al ejercicio 4.
+
+\newpage
+
+% Ejercicio 5
+\section{Ejercicio 5 (2 Puntos)}
+Una empresa de reparto de comida reparte platos de dos restaurantes. El 60\% de los platos provienen del primer restaurante, y el 40\% del segundo. El 50\% de los platos del primer restaurante están cocinados con productos ecológicos, y el 80\% del segundo lo están. Calcule:
+\begin{enumerate}
+    \item La probabilidad de que un plato esté cocinado con productos ecológicos.
+    \item La probabilidad de que provenga del segundo restaurante, dado que no está cocinado con productos ecológicos.
+\end{enumerate}
+
+\textbf{Solución:} \\
+% Escribe aquí la solución al ejercicio 5.
+
+\newpage
+
+\section*{Conclusión}
+% Aquí puedes escribir tus conclusiones sobre los ejercicios realizados, indicando los conceptos aprendidos y las técnicas aplicadas.
+
+\end{document}

@@ -1,0 +1,409 @@
+\documentclass{article}
+\usepackage[spanish,es-nodecimaldot]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\geometry{a4paper, margin=1in}
+\usepackage{fancyhdr}
+\usepackage{titling}
+\usepackage{graphicx}
+\usepackage{parskip}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\usepackage{float}
+\usepackage{hyperref}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Actividad de evaluación contínua 1}
+\lhead{Procesos e Ingeniería de Fabricación}
+\fancyfoot[C]{\thepage} % except the center
+\title{Actividad de evaluación contínua 1}
+\author{Alexander Kalis}
+\date{Fecha de Entrega: \today}
+
+\begin{document}
+
+\begin{titlepage}
+    \centering
+    \vspace*{1cm}
+    \includegraphics[width=0.15\textwidth]{logo-universidad.jpg}\par\vspace{1cm}
+    {\scshape\LARGE Ingeniería Industrial \par}
+    \vspace{1cm}
+    {\scshape\Large Procesos e Ingeniería de Fabricación\par}
+    \vspace{1.5cm}
+    {\huge\bfseries Actividad de evaluación contínua 1\par}
+    \vspace{2cm}
+    {\Large\itshape Alexander Kalis\par}
+    \vfill
+    Profesor\par
+    Dr. Lucas Castro Martínez
+
+    \vfill
+
+    % Bottom of the page
+    {\large \today\par}
+\end{titlepage}
+
+
+
+
+\section*{Pregunta 1}
+Disponemos del siguiente catálogo de composiciones de vidrios que nos presenta una empresa. Tenemos necesidades para elegir ciertos vidrios para distintas aplicaciones:
+
+\begin{figure}[htbp] % 'htbp' es para la posición (here, top, bottom, page)
+    \centering
+    \includegraphics[width=0.9\textwidth]{vidrios.PNG}
+    \label{fig:mi_etiqueta} % Etiqueta para referenciar la figura en el texto
+  \end{figure}
+
+\begin{enumerate}
+    \item Fabricar una pizarra de vidrio para lo cual se busca las siguientes características:
+    \begin{itemize}
+        \item Incoloro
+        \item Alta transparencia
+    \end{itemize}
+    \item Vidrio para depósito de residuos químicos para lo cual se busca las siguientes características:
+    \begin{itemize}
+        \item Alta resistencia a los agentes químicos
+    \end{itemize}
+    \item Vidrio decorativo para unos paneles luminosos con los colores corporativos:
+    \begin{itemize}
+        \item Uno que tenga tonalidad verdosa
+        \item Uno que tenga tonalidad rojiza
+    \end{itemize}
+    \item Vidrio para recipiente que va a ser usado de recipiente para calentar líquidos y debe aguantar bien sin romperse muchos ciclos de calentamiento-enfriamiento.
+\end{enumerate}
+Indique los motivos que le llevan a su elección y por los que descarta el resto.
+ 
+\section*{Análisis y muestras recomendadas}
+
+Muestra 1 y 10: Mayor contenido de CaO, lo que sugiere una buena durabilidad y estabilidad. El contenido de SiO2 es relativamente bajo, lo que podría afectar la transparencia y la resistencia a altas temperaturas.
+
+Muestra 2, 3, 4, 6, 8, 11: Altos niveles de SiO2 indican una excelente transparencia y resistencia química. La presencia de Na2O y K2O reducirá la temperatura de fusión y aumentará la maleabilidad durante la fabricación.
+
+Muestra 5 y 9: Estas muestras tienen el contenido más alto de SiO2 y B2O3, lo que las hace muy transparentes y resistentes a cambios térmicos. Son ideales para aplicaciones que requieren alta claridad y durabilidad.
+
+Muestra 7: Tiene un alto contenido de PbO, lo que indica que este vidrio tendrá un índice de refracción alto y será más pesado. Esta composición es típica del cristal de plomo, usado comúnmente en la fabricación de vidrio decorativo y artístico por su brillo y claridad.
+
+\subsection*{Pizarra de vidrio}
+\textbf{Características buscadas:} Incoloro y alta transparencia.
+\begin{itemize}
+  \item \textbf{Muestra Recomendada:} Muestra 5. Este vidrio es ideal por su alto contenido de SiO2 (76\%), lo que le confiere una excelente transparencia. Por otro lado, tiene cierta cantidad de CaO y Na2O lo cual puede influir en la dureza y la resistencia a los arañazos, características importantes para una pizarra de vidrio.
+  \item \textbf{Descartadas:} Las muestras 1, 2, 3, 4, 6, 7, 8, 10, y 11 fueron descartadas debido a sus menores concentraciones de SiO2 y/o mayores concentraciones de otros óxidos que podrían afectar la transparencia o introducir coloración no deseada. Por ejemplo, las muestras con mayor contenido de Fe2O3 y CuO pueden dar lugar a tonos que van desde el verde hasta el marrón o azul, inapropiados para una pizarra incolora.
+\end{itemize}
+
+
+\subsection*{Depósito de residuos químicos}
+\textbf{Características buscadas:} Alta resistencia a los agentes químicos.
+\begin{itemize}
+  \item \textbf{Muestra recomendada:} Muestra 9. Esta muestra tiene un alto contenido de SiO2 (80\%), lo que generalmente proporciona una excelente resistencia a los productos químicos. También tiene un buen porcentaje de B2O3 (12.9\%), lo que puede mejorar su durabilidad química.
+  \item \textbf{Descartadas:} Las muestras con menor contenido de SiO2, como la 1, 7, y 10, o aquellas con altos niveles de otros óxidos que no contribuyen significativamente a la resistencia química, como el CaO en la muestra 1, no son preferidas. La resistencia química es crucial para evitar la degradación del vidrio al estar en contacto con sustancias químicas agresivas.
+\end{itemize}
+
+\subsection*{Vidrio decorativo}
+\textbf{Características buscadas:} Tonalidades específicas para representar colores corporativos.
+\begin{itemize}
+  \item \textbf{Muestra con tonalidad verdosa recomendada:} Muestra 1. Aunque el contenido de Fe2O3 es bajo (0.4\%), en presencia de otros componentes y bajo condiciones específicas de procesamiento, puede aportar una tonalidad verdosa al vidrio.
+  \item \textbf{Muestra con tonalidad rojiza recomendada:} Muestra 10. El alto contenido de CuO (3\%) puede, bajo ciertas condiciones de oxidación, producir una coloración rojiza distintiva.
+  \item \textbf{Descartadas:} Otras muestras fueron descartadas para el vidrio decorativo verde porque tienen contenidos más bajos de Fe2O3 y CuO, lo que las hace menos propensas a desarrollar la tonalidad deseada. En cuanto a la tonalidad rojiza, las muestras sin CuO o con niveles muy bajos no alcanzarían la intensidad de color requerida para representar los colores corporativos adecuadamente.
+\end{itemize}
+
+\subsection*{Recipiente para calentar líquidos}
+\textbf{Características buscadas:} Resistencia a múltiples ciclos de calentamiento-enfriamiento.
+\begin{itemize}
+  \item \textbf{Muestra recomendada:} Muestra 5. El alto contenido de SiO2 (76\%) junto con B2O3 (13.5\%) aumenta la resistencia del vidrio frente a los choques térmicos, minimizando el riesgo de fracturas durante el uso repetido.
+  \item \textbf{Descartadas:} Las demás muestras, particularmente aquellas con bajos porcentajes de SiO2 y B2O3, como las muestras 1, 7 y 10, tienen una mayor susceptibilidad a fracturas debido a los cambios térmicos. Los componentes como Na2O y K2O, presentes en otras muestras, pueden disminuir la resistencia del vidrio al choque térmico, lo que no es deseable para este tipo de aplicación.
+\end{itemize}
+
+
+\newpage
+
+\section*{Pregunta 2} 
+a) Los procesos de conformado para la obtención de cerámicas técnicas mediante procesos 
+industriales se resumen en el siguiente esquema que se muestra en la figura:
+
+\begin{figure}[htbp] % 'htbp' es para la posición (here, top, bottom, page)
+    \centering
+    \includegraphics[width=0.7\textwidth]{p2e1.PNG}
+  \end{figure}
+
+  Indique para que tipo de piezas está indicado cada uno de los procesos que se indican en la figura.
+
+  b) Indique la diferencia entre las cerámicas técnicas y tradicionales en los distintos aspectos (materias 
+primas, conformado y consolidación, tipo de productos fabricados, estructura interna)
+
+\subsection*{Apartado A}
+
+Los procesos de conformado para la obtención de cerámicas técnicas mediante procesos industriales se resumen en el siguiente esquema.
+
+\subsection*{Prensado}
+\begin{itemize}
+  \item \textbf{Uniaxial en Frío:} Utilizado para piezas con geometrías simples. Adecuado para placas y bloques que no requieren densidad uniforme.
+  \item \textbf{Isostático en Frío:} Para piezas que necesitan mayor uniformidad en la densidad y resistencia mecánica. Aplicado en piezas como bolas de rodamientos y cilindros.
+  \item \textbf{Uniaxial en Caliente:} Empleado para mejorar las propiedades mecánicas y la densidad de las piezas que requieren precisión y resistencia, como componentes de herramientas.
+  \item \textbf{Isostático en Caliente:} Indicado para la producción de piezas con alta densidad y resistencia, utilizado en aplicaciones de alta exigencia como en la industria aeroespacial y biomédica.
+\end{itemize}
+
+\subsection*{Colada}
+\begin{itemize}
+  \item \textbf{Slip Casting:} Ideal para piezas complejas y de paredes delgadas como loza sanitaria y piezas decorativas. Permite un alto nivel de detalle y es útil para piezas huecas.
+\end{itemize}
+
+\subsection*{Conformado Plástico}
+\begin{itemize}
+  \item \textbf{Terrajado:} Usado para objetos simétricos como jarrones y platos. A menudo se realiza en un torno de alfarero.
+  \item \textbf{Moldeo por Inyección:} Adecuado para la producción en masa de piezas pequeñas con tolerancias ajustadas como insertos para herramientas y componentes electrónicos.
+  \item \textbf{Moldeo por Compresión:} Para piezas grandes que se pueden moldear en dos mitades, como aisladores eléctricos y componentes estructurales.
+  \item \textbf{Extrusión:} Utilizado para producir perfiles largos con secciones transversales fijas, como tubos y ladrillos.
+\end{itemize}
+
+\subsection*{Otros Procesos}
+
+\begin{itemize}
+    \item \textbf{Laminación:} Utilizada para producir láminas o placas de cerámica de espesor uniforme mediante el uso de rodillos.
+    \item \textbf{Moldeo por transferencia:} Similar al moldeo por inyección, con el material calentado en una cámara antes de ser forzado a la cavidad del molde.
+    \item \textbf{Moldeo rotacional:} Emplea la rotación del molde para distribuir el material y formar objetos huecos.
+    \item \textbf{Moldeo por soplado:} Adecuado para formar objetos huecos al inflar el material blando dentro de un molde utilizando aire comprimido.
+    \item \textbf{Colado en barbotina bajo presión:} Una variante del slip casting que utiliza presión para mejorar la uniformidad y la producción.
+    \item \textbf{Gelcasting:} Formación de un cuerpo verde robusto mediante la creación de una red polimérica en la suspensión cerámica, que luego se polimeriza.
+    \item \textbf{Electroforesis o deposición electrolítica:} Uso de un campo eléctrico para depositar partículas cerámicas y formar un revestimiento o cuerpo sobre un electrodo.
+  \end{itemize}
+
+  \subsection*{Apartado B}
+
+  \begin{enumerate}
+    \item \textbf{Materias primas:}
+    \begin{itemize}
+      \item Las \textbf{cerámicas técnicas} utilizan materias primas con alta pureza y propiedades específicas, como óxidos, nitruros, carburos y boruros.
+      \item Las \textbf{cerámicas tradicionales} se fabrican a partir de arcillas naturales y otros materiales de origen mineral fácilmente disponibles.
+    \end{itemize}
+    
+    \item \textbf{Conformado y consolidación:}
+    \begin{itemize}
+      \item En las \textbf{cerámicas técnicas}, los procesos de conformado son más controlados y pueden incluir técnicas como el prensado isostático en caliente y la sinterización por láser. Estos procesos permiten una mayor precisión dimensional y densidades más altas.
+      \item Las \textbf{cerámicas tradicionales} suelen conformarse mediante técnicas como el moldeado por deslizamiento y el torneado, seguido de una sinterización a temperaturas relativamente más bajas.
+    \end{itemize}
+    
+    \item \textbf{Tipo de productos fabricados:}
+    \begin{itemize}
+      \item Las \textbf{cerámicas técnicas} se utilizan en aplicaciones de alta tecnología, como componentes electrónicos, biomateriales, elementos estructurales en condiciones extremas y piezas de maquinaria resistente al desgaste.
+      \item Las \textbf{cerámicas tradicionales} se destinan a productos como vajilla, ladrillos, tejas y objetos decorativos.
+    \end{itemize}
+    
+    \item \textbf{Estructura interna:}
+    \begin{itemize}
+      \item Las \textbf{cerámicas técnicas} tienden a tener una microestructura más controlada y homogénea, con granos finos y uniformes y mínima porosidad.
+      \item Las \textbf{cerámicas tradicionales} pueden presentar una microestructura más heterogénea con mayores niveles de porosidad y granos de tamaño más variable.
+    \end{itemize}
+  \end{enumerate}
+
+  \section*{Pregunta 3}
+
+  \subsection*{A}
+  Los cuadros de bicicletas de las bicicletas de uso deportivo se fabrican con fibra de carbono.
+  Se busca que pesen lo menos posible soportando los distintos esfuerzos a los que van a ser sometidos.
+  Las calidades y materiales varían en función del precio.
+  Visualice el siguiente video:
+
+ \url{ https://www.youtube.com/watch?v=FQSxxZDOOYg}
+
+  Esta traducido del inglés y usa un lenguaje poco técnico. Explica detalladamente las siguientes 
+  cuestiones como un ingeniero de procesos.
+
+  ¿Qué quiere decir con las siguientes palabras?
+  \begin{itemize}
+    \item Estrés: 2:50-3:00
+    
+    Estrés Mecánico: Los componentes de una bicicleta están sometidos a diferentes tipos de fuerzas, como la tensión (cuando se estiran), la compresión (cuando se comprimen), el corte (cuando se aplican fuerzas en direcciones opuestas), y la torsión (cuando se retuercen). Por ejemplo, el marco de la bicicleta tiene que soportar el peso del ciclista y la fuerza de pedaleo, lo que provoca tensión y torsión.
+    \item Tratamiento: 4:45
+    
+    Parece que en este caso por ``tratamiento'' se refieren al proceso de compactación al vacío, que permite eliminar las burbujas de aire o los vacíos que puedan quedar entre las capas de fibra de carbono y la matriz de resina.
+    
+    \item consigue que la fibra de carbono blanda y floja se refuerce inmensamente 5:20
+    
+    La estabilización es una fase clave en la producción de fibras de carbono donde las fibras precursoras, típicamente hechas de poliacrilonitrilo (PAN), se calientan a temperaturas moderadas (como 150°C, en este caso) para inducir una oxidación controlada. Este proceso transforma la estructura química del PAN, estableciendo enlaces cruzados entre las cadenas moleculares y cambiando el color de las fibras de blanco a marrón, incrementando su rigidez y estabilidad térmica. Este paso previene que las fibras se fundan durante la carbonización subsiguiente y es crucial para garantizar la resistencia y calidad del producto final de fibra de carbono.
+  \end{itemize}
+  ¿Por qué la calientan? 4:12
+
+  El calentamiento de prepregs de fibra de carbono con una pistola de calor durante el moldeo es esencial para hacer el material más maleable, eliminar la humedad, mejorar la adhesión de las fibras con la resina, reducir la viscosidad de la resina para un mejor llenado y eliminación de burbujas, y acelerar el proceso de curado. Este paso garantiza que el material pueda ser conformado eficientemente en formas complejas y que el componente finalizado posea una integridad estructural óptima y resistencia mecánica superior.
+
+  \subsection*{B}
+  Visualice el siguiente video:
+
+  \url{https://www.youtube.com/watch?v=pk-0XV1Ro8o}
+
+\begin{itemize}
+    \item ¿Por qué en unas zonas se usan tejidos y en otras cinta unidireccional preimpregnada 
+    (Prepreg)? 6:00-8:00
+
+    
+Los tejidos de fibra de carbono se utilizan para aplicaciones que requieren resistencia en múltiples direcciones y mejor conformabilidad para formas complejas, así como para mejorar la estética y la resistencia al delaminado. En contraste, las cintas unidireccionales preimpregnadas se seleccionan para maximizar la resistencia y la rigidez en una dirección específica, permitiendo un diseño más ligero y optimizado al colocar las fibras exactamente donde se necesitan para soportar cargas predeterminadas, lo cual es esencial en componentes estructurales críticos. La elección entre ambos tipos de materiales compuestos dependerá de los requerimientos específicos de rendimiento, peso y manufactura del producto final.
+
+    \item ¿Por qué se aplica calor? 9:00-10:40
+    
+    El calor se aplica en el proceso de producción de fibras de carbono para promover la estabilización y oxidación de las fibras plásticas, permitiendo que las moléculas del polímero precursor se reorganicen y aumenten su estabilidad térmica, lo que es esencial para las etapas subsecuentes de carbonización y para asegurar la adecuada impregnación de las fibras con resina. El calentamiento permite que las fibras adquieran las propiedades necesarias para su resistencia y rigidez, y también ayuda a la resina a penetrar eficientemente en los filamentos durante el proceso de laminación y curado.
+
+
+    \item ¿Por qué se aplica presión en el interior y exterior del cuadro?
+    
+    La presión se aplica tanto en el interior como en el exterior del cuadro durante la fabricación para asegurar que el material compuesto se consolide correctamente, eliminando cualquier burbuja de aire que pueda debilitar la estructura y asegurando que la resina se distribuya uniformemente y penetre completamente las fibras del tejido. Esto resulta en un cuadro con la máxima resistencia y rigidez posibles.
+\end{itemize}
+
+
+\subsection*{C}
+
+Visualice el siguiente video:
+
+\url{https://www.youtube.com/watch?v=x1laMABbmIE}
+
+\begin{itemize}
+    \item ¿Qué material se usa dice que se usa como precursor de la fibra de carbono? ¿Sabrías decir 
+    cuál es?
+
+    Para la fabricación de fibra de carbono se utiliza como material precursor el poliacrilonitrilo (PAN), que es un polímero compuesto por miles de filamentos diminutos.
+
+
+    \item De las etapas que se indican en el manual. Aunque sea con otro nombre ¿Qué etapas se 
+    comentan en el vídeo para obtener las fibras de carbono? ¿Le ha faltado alguna?
+
+    \begin{enumerate}
+        \item \textbf{Oxidación / Estabilización:} En el video se menciona un ``horno de oxidación'' que podría corresponder a la fase de estabilización del manual, donde las fibras se calientan en presencia de oxígeno para reorganizar su estructura atómica y hacerlas infusibles.
+        
+        \item \textbf{Carbonización:} El video habla de un proceso de ``carbonización'' en hornos en atmósfera libre de oxígeno que podría ser equivalente a la fase de carbonización del manual, expulsando átomos no carbono y aumentando la cristalinidad.
+        
+        \item \textbf{Grafitización:} No se menciona explícitamente una etapa de grafitización en el video, que en el manual se describe como un proceso opcional para aumentar la cristalinidad a temperaturas superiores a 2000 ºC.
+        
+        \item \textbf{Tratamiento superficial:} El video no menciona un tratamiento superficial específico como el descrito en el manual, donde las fibras se atacan con ácido y se oxidan para mejorar el enlace interfacial.
+        
+        \item \textbf{Aplicación de ensimajes y terminaciones:} Aunque el video describe la aplicación de una resina ligera que podría mejorar la manipulación y la adhesión a la matriz, no es claro si esto corresponde a los ``ensimajes y terminaciones'' del manual.
+        
+        \item \textbf{Bobinado en ovillos o carretes:} El video sí menciona el bobinado de las fibras en una bobina.
+      \end{enumerate}
+
+
+    \item ¿Qué tipos de arquitectura de refuerzo comentan en el video?
+    
+    Se habla de la creación de fibra de carbono y su conversión en tejidos o láminas impregnadas con resina, conocidas como Prepreg. La arquitectura de refuerzo descrita implica principalmente la alineación y tejido de fibras de carbono para fabricar materiales compuestos resistentes y ligeros.
+\end{itemize}
+
+\newpage 
+
+\subsection*{D}
+
+De los siguientes videos indica el método de conformado de materiales compuestos empleado, 
+indicando cada una de las etapas, qué tipo de arquitectura de refuerzo se utiliza y cualquier comentario
+
+
+
+\section*{Fiberglass spray lay-up}
+
+Video 1: \url{https://youtu.be/qFViNPH0c_M}
+
+El proceso de fabricación mediante proyección de fibras cortadas puede ser descrito en las siguientes etapas:
+
+\begin{enumerate}
+  \item \textbf{Preparación del Molde:} El molde que define la forma de la pieza se limpia y aplica un agente desmoldante para facilitar la extracción de la pieza curada.
+
+  \item \textbf{Aplicación de Gelcoat:} Si es necesario, se aplica un gelcoat al molde para proporcionar una superficie lisa y acabada.
+
+  \item \textbf{Proyección de Fibras y Resina:}
+  \begin{itemize}
+    \item Se cortan fibras continuas, como fibra de vidrio o fibra de carbono, en trozos cortos utilizando un dispositivo de corte en la pistola de proyección.
+    \item Se mezclan las fibras cortadas con resina catalizada y se proyectan sobre el molde.
+  \end{itemize}
+
+  \item \textbf{Compactación:} Se utiliza un rodillo para compactar las fibras y la resina contra el molde, eliminando las burbujas de aire y asegurando una buena impregnación de la resina en las fibras.
+
+  \item \textbf{Curado:} La pieza se deja curar a temperatura ambiente o se coloca en un horno para acelerar el proceso.
+
+  \item \textbf{Desmoldeo:} Una vez curada, la pieza se retira del molde.
+
+  \item \textbf{Acabado:} La pieza puede ser recortada, lijada o sometida a otros procesos de acabado según sea necesario.
+\end{enumerate}
+
+El tipo de arquitectura de refuerzo utilizado en la proyección de fibras cortadas es un refuerzo aleatorio 2D. Las fibras cortadas se distribuyen aleatoriamente y en múltiples direcciones sobre la superficie del molde, proporcionando isotropía en el plano y una buena relación resistencia-peso.
+
+Este proceso es adecuado para piezas de gran tamaño y geometrías complejas, ofreciendo ventajas como una rápida tasa de deposición de material y una reducción en los costos laborales. Sin embargo, la resistencia mecánica de las piezas puede ser inferior en comparación con aquellas fabricadas con tejidos de fibras continuas debido a la orientación aleatoria y la longitud más corta de las fibras.
+
+
+\section*{Resin Transfer Molding}
+
+Vídeo 2: \url{https://youtu.be/cH5AuqaYNDg}
+
+
+\begin{enumerate}
+    \item \textbf{Colocación de la tela de refuerzo:} Preparación de la matriz con resina y colocación de la tela de refuerzo, que puede estar hecha de fibras de vidrio, carbono o aramida.
+    \item \textbf{Preparación del molde y la bolsa de vacío:} Colocación de la tela dentro del molde o sobre un modelo de trabajo y sellado con una bolsa de vacío.
+    \item \textbf{Inyección de resina:} Con la ayuda de un vacío, la resina se inyecta en el sistema para impregnar la tela de refuerzo.
+    \item \textbf{Curado:} La resina se deja curar, transformándose de un líquido a un sólido a través de la polimerización.
+    \item \textbf{Desmoldeo y acabado:} Una vez curado el compuesto, se retira del molde y se somete a procesos de acabado como corte y lijado.
+\end{enumerate}
+
+En el minuto 0:36 del vídeo se puede observar que se utiliza un refuerzo de fieltro.
+
+La calidad de la impregnación de la resina es crítica en este proceso. Debe asegurarse que la resina fluya uniformemente a través de todas las capas de la tela de refuerzo para evitar la formación de zonas secas o con exceso de resina.
+
+
+\section*{Filament Winding}
+Vídeo 3: \url{https://youtu.be/o7u5mYRSU7c}
+
+Se pueden distinguir las siguientes etapas:
+
+\begin{enumerate}
+    \item \textbf{Preparación de la fibra:} Las fibras continuas, como fibra de carbono, vidrio o Kevlar, son desenrolladas de sus carretes.
+    \item \textbf{Impregnación:} Las fibras son saturadas con una matriz de resina termoestable, a menudo con la ayuda de un baño de resina o un aplicador de resina.
+    \item \textbf{Enrollamiento:} Las fibras impregnadas se enrollan bajo tensión en un mandril que gira, siguiendo un patrón de enrollamiento preestablecido.
+    \item \textbf{Curado:} El conjunto se somete a calor para curar la resina, consolidando el compuesto.
+    \item \textbf{Extracción del mandril:} Una vez que la resina ha curado y el material compuesto se ha solidificado, se retira el mandril si no es parte del producto final.
+    \item \textbf{Acabado:} Se realizan operaciones de acabado como corte, mecanizado o pulido según sea necesario.
+\end{enumerate}
+
+La arquitectura del refuerzo en el proceso de \textit{filament winding} se caracteriza por fibras continuas alineadas helicoidalmente o en un patrón de cruzamiento sobre el mandril o como se define en el manual, \textit{roving}. La orientación de las fibras puede ser ajustada para optimizar las propiedades mecánicas del componente final, dependiendo de las cargas específicas que deba soportar.
+
+\section*{Pultrusión}
+
+Vídeo 4: \url{https://youtu.be/YugAlSg8QW8}
+
+Etapas:
+
+\begin{enumerate}
+    \item \textbf{Desbobinado:} Las fibras continuas son desenrolladas de sus carretes.
+    \item \textbf{Impregnación:} Las fibras son completamente impregnadas con una matriz de resina termoestable.
+    \item \textbf{Pre-formación:} Las fibras impregnadas son guiadas a través de una pre-forma que las compacta al perfil deseado antes de entrar en la matriz de curado.
+    \item \textbf{Curado:} Dentro de la matriz calefactada, la resina se cura y el perfil de material compuesto se solidifica.
+    \item \textbf{Extracción:} El perfil curado es continuamente extraído de la matriz de curado.
+    \item \textbf{Corte:} Un mecanismo de corte automático corta el perfil curado a la longitud deseada.
+\end{enumerate}
+
+
+Se utilizan fibras continuas que son alineadas en la dirección de la extracción, lo que confiere al perfil propiedades mecánicas anisotrópicas, con una alta resistencia y rigidez en la dirección de las fibras.
+
+
+\section*{Prepreg}
+
+Vídeo 5: \url{https://youtu.be/P1zf_Uy3M_g}
+
+Etapas del Proceso:
+
+\begin{enumerate}
+    \item \textbf{Preparación del Molde:} Se limpia el molde y se aplica un agente de liberación para facilitar el desmoldeo de la pieza curada.
+    \item \textbf{Colocación del Prepreg:} Se corta el material prepreg a la forma deseada y se coloca dentro del molde. La orientación de las fibras se elige en función de las cargas mecánicas que soportará la pieza.
+    \item \textbf{Compactación:} Se utiliza un rodillo o una espátula para compactar el prepreg en el molde y eliminar las burbujas de aire.
+    \item \textbf{Curado:} Se aplica calor y presión para curar la resina y consolidar el composite. El proceso se realiza frecuentemente en una autoclave. En el vídeo se observa que se utiliza una bomba de vacío.
+    \item \textbf{Desmoldeo:} Tras el curado, se extrae la pieza del molde.
+    \item \textbf{Post-curado y Acabado:} Se realiza un post-curado si es necesario, seguido de operaciones de acabado como recorte, lijado y aplicación de pintura o sellador.
+\end{enumerate}
+
+Dada la resolución del vídeo, resulta algo complicado distinguir si la arquitectura de refuerzo del prepeg es unidireccional o bidireccional. 
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

@@ -1,0 +1,281 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{geometry}
+\geometry{left=3cm,right=3cm,top=2.5cm,bottom=2.5cm}
+
+\title{Actividad de Evaluación Continua 3 \\ Estadística y Probabilidad}
+\author{Alexander Sebastian Kalis}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\newpage
+\tableofcontents
+\newpage
+
+% Aquí se desarrollarán los problemas y soluciones.
+
+\section{Problema 1}
+\textbf{Enunciado:} Los responsables municipales de salud miden la radiactividad en el agua de una fuente natural. Se realizan 10 mediciones y se obtiene una media de 12 y una varianza muestral de 34. Calcular un intervalo de confianza para la varianza al 90\%.
+
+
+Los datos proporcionados son:
+\[
+n = 10, \quad \bar{x} = 12, \quad S^2 = 34, \quad \text{Nivel de confianza: } 90\% \quad (\alpha = 0.10).
+\]
+
+El intervalo de confianza para la varianza poblacional \(\sigma^2\) se basa en la distribución \(\chi^2\) y está dado por:
+\[
+\left( \frac{(n-1)S^2}{\chi^2_{\alpha/2}}, \frac{(n-1)S^2}{\chi^2_{1-\alpha/2}} \right),
+\]
+donde:
+\begin{itemize}
+    \item \(n - 1 = 9\) es el número de grados de libertad.
+    \item \(\chi^2_{\alpha/2}\) y \(\chi^2_{1-\alpha/2}\) son los valores críticos de la distribución \(\chi^2\) para un nivel de confianza del 90\%.
+\end{itemize}
+
+\subsection*{Cálculo de los valores críticos}
+Para \(\alpha = 0.10\), tenemos \(\alpha/2 = 0.05\). Los valores críticos \(\chi^2_{0.05, 9}\) y \(\chi^2_{0.95, 9}\) para \(9\) grados de libertad son:
+\[
+\chi^2_{0.05, 9} = 16.92, \quad \chi^2_{0.95, 9} = 3.325.
+\]
+
+\subsection*{Cálculo de los límites del intervalo}
+Sustituimos los valores en la fórmula:
+\[
+\text{Límite inferior} = \frac{(n-1)S^2}{\chi^2_{\alpha/2}} = \frac{9 \cdot 34}{16.92} = 18.10,
+\]
+\[
+\text{Límite superior} = \frac{(n-1)S^2}{\chi^2_{1-\alpha/2}} = \frac{9 \cdot 34}{3.325} = 92.08.
+\]
+
+Por lo tanto, el intervalo de confianza para la varianza poblacional es:
+\[
+(18.10, 92.08).
+\]
+
+\subsection*{Conclusión}
+Con un nivel de confianza del 90\%, podemos afirmar que la varianza poblacional de la radiactividad en el agua se encuentra en el intervalo \((18.10, 92.08)\).
+\section{Problema 2}
+\textbf{Enunciado:} Se tienen los siguientes datos de dos muestras: 
+\[
+\bar{x}_1 = 3565, \, S_1 = 150, \, n_1 = 25, \quad \bar{x}_2 = 3280, \, S_2 = 170, \, n_2 = 12.
+\]
+Obtener el intervalo de confianza al 95\% de la diferencia de medias.
+
+
+Los datos proporcionados son:
+\[
+\bar{x}_1 = 3565, \quad S_1 = 150, \quad n_1 = 25, \quad \bar{x}_2 = 3280, \quad S_2 = 170, \quad n_2 = 12.
+\]
+
+Queremos calcular un intervalo de confianza para la diferencia de medias \((\mu_1 - \mu_2)\) bajo el supuesto de que las varianzas son desconocidas pero iguales.
+
+\subsection*{Paso 1: Fórmula del intervalo de confianza}
+La fórmula para el intervalo de confianza es:
+\[
+\left( (\bar{x}_1 - \bar{x}_2) - t_{1-\alpha/2} \cdot SE, \, (\bar{x}_1 - \bar{x}_2) + t_{1-\alpha/2} \cdot SE \right),
+\]
+donde \(SE\) (error estándar) está dado por:
+\[
+SE = \sqrt{S_p^2 \left(\frac{1}{n_1} + \frac{1}{n_2}\right)},
+\]
+y \(S_p^2\) es la varianza combinada:
+\[
+S_p^2 = \frac{(n_1 - 1)S_1^2 + (n_2 - 1)S_2^2}{n_1 + n_2 - 2}.
+\]
+
+\subsection*{Paso 2: Cálculo de \(S_p^2\)}
+Sustituimos los valores:
+\[
+S_p^2 = \frac{(25 - 1)(150^2) + (12 - 1)(170^2)}{25 + 12 - 2}.
+\]
+\[
+S_p^2 = \frac{24 \cdot 22500 + 11 \cdot 28900}{35} = \frac{540000 + 317900}{35} = \frac{857900}{35} = 24511.43.
+\]
+
+\subsection*{Paso 3: Cálculo del error estándar (\(SE\))}
+\[
+SE = \sqrt{24511.43 \left(\frac{1}{25} + \frac{1}{12}\right)}.
+\]
+\[
+SE = \sqrt{24511.43 \left(0.04 + 0.0833\right)} = \sqrt{24511.43 \cdot 0.1233} = \sqrt{3022.71} = 54.97.
+\]
+
+\subsection*{Paso 4: Valor crítico \(t_{1-\alpha/2}\)}
+Para un nivel de confianza del 95\% y \(n_1 + n_2 - 2 = 35\) grados de libertad, el valor crítico \(t_{0.975}\) es aproximadamente \(2.030\).
+
+\subsection*{Paso 5: Cálculo de los límites del intervalo}
+La diferencia de medias es:
+\[
+\bar{x}_1 - \bar{x}_2 = 3565 - 3280 = 285.
+\]
+
+Los límites del intervalo son:
+\[
+\text{Límite inferior} = 285 - 2.030 \cdot 54.97 = 285 - 111.49 = 173.51,
+\]
+\[
+\text{Límite superior} = 285 + 2.030 \cdot 54.97 = 285 + 111.49 = 396.49.
+\]
+
+\subsection*{Conclusión}
+Con un nivel de confianza del 95\%, el intervalo para la diferencia de medias es:
+\[
+(173.51, 396.49).
+\]
+\section{Problema 3}
+\textbf{Enunciado:} Para comprobar si las cotizaciones de dos tipos de renta fija (A y B) presentan la misma dispersión, se obtienen dos muestras aleatorias e independientes de 17 días de cotización cada una. Las cotizaciones al cierre de A presentaron una varianza de \(125.25\) y de B una varianza de \(638.5\). 
+¿Podemos decir que ambos tipos de renta fija presentan la misma estabilidad en su cotización al \(10\%\) de significación?
+
+El problema plantea un contraste de hipótesis para comparar las varianzas de dos poblaciones. Utilizamos la prueba \(F\)-de Fisher, con las siguientes hipótesis:
+
+\[
+H_0: \sigma_A^2 = \sigma_B^2, \quad H_1: \sigma_A^2 \neq \sigma_B^2.
+\]
+
+\subsection*{Paso 1: Datos conocidos}
+Los datos proporcionados son:
+\[
+n_A = 17, \quad S_A^2 = 125.25, \quad n_B = 17, \quad S_B^2 = 638.5.
+\]
+
+\subsection*{Paso 2: Estadístico de prueba}
+El estadístico \(F\) se calcula como:
+\[
+F = \frac{\text{Varianza mayor}}{\text{Varianza menor}} = \frac{S_B^2}{S_A^2}.
+\]
+
+Sustituimos los valores:
+\[
+F = \frac{638.5}{125.25} = 5.1.
+\]
+
+\subsection*{Paso 3: Valores críticos de \(F\)}
+Para un nivel de significación \(\alpha = 0.10\) y grados de libertad:
+\[
+\text{gl}_1 = n_B - 1 = 16, \quad \text{gl}_2 = n_A - 1 = 16,
+\]
+consultamos la tabla de la distribución \(F\). Los valores críticos son:
+\[
+F_{\alpha/2, 16, 16} = F_{0.05, 16, 16} = 3.36, \quad F_{1-\alpha/2, 16, 16} = F_{0.95, 16, 16} = \frac{1}{F_{0.05, 16, 16}} = \frac{1}{3.36} \approx 0.298.
+\]
+
+\subsection*{Paso 4: Regla de decisión}
+La región de rechazo para \(H_0\) es:
+\[
+F < 0.298 \quad \text{o} \quad F > 3.36.
+\]
+
+Como \(F = 5.1 > 3.36\), caemos en la región de rechazo.
+
+\subsection*{Conclusión}
+Con un nivel de significación del \(10\%\), rechazamos la hipótesis nula \(H_0\). Esto significa que existe evidencia suficiente para afirmar que las varianzas de las cotizaciones de los dos tipos de renta fija son significativamente diferentes, por lo que no presentan la misma estabilidad.
+\section{Problema 4}
+\textbf{Enunciado:} Las bolsas de azúcar envasadas por una cierta máquina tienen \(\mu = 500\) gramos y \(\sigma = 35\) gramos. Las bolsas se empaquetan en cajas de 100 unidades. Calcular:
+\begin{itemize}
+    \item La probabilidad de que la media de los pesos de las bolsas de un paquete sea menor que 495 gramos.
+    \item El intervalo de confianza para la media al 95\%.
+    \item La probabilidad de que una caja de 100 bolsas pese más de 51 Kg.
+\end{itemize}
+
+
+
+\subsection*{1. Probabilidad de que la media de los pesos de las bolsas de un paquete sea menor que 495 gramos}
+
+La distribución de la media muestral \(\bar{X}\) sigue una distribución normal:
+\[
+\bar{X} \sim N\left(\mu, \frac{\sigma}{\sqrt{n}}\right),
+\]
+donde:
+\[
+\mu = 500, \quad \sigma = 35, \quad n = 100.
+\]
+
+El error estándar es:
+\[
+SE = \frac{\sigma}{\sqrt{n}} = \frac{35}{\sqrt{100}} = 3.5.
+\]
+
+Calculamos la probabilidad usando la normal estándar \(Z\):
+\[
+Z = \frac{\bar{X} - \mu}{SE}.
+\]
+Para \(\bar{X} = 495\):
+\[
+Z = \frac{495 - 500}{3.5} = -1.43.
+\]
+
+Consultando la tabla de la distribución normal estándar:
+\[
+P(Z < -1.43) \approx 0.0764.
+\]
+
+Por lo tanto, la probabilidad de que la media sea menor que 495 gramos es:
+\[
+P(\bar{X} < 495) = 0.0764 \quad \text{(7.64\%)}.
+\]
+
+\subsection*{2. Intervalo de confianza para la media al 95\%}
+
+El intervalo de confianza para la media poblacional está dado por:
+\[
+\left( \mu - Z_{1-\alpha/2} \cdot SE, \mu + Z_{1-\alpha/2} \cdot SE \right),
+\]
+donde \(Z_{1-\alpha/2} = Z_{0.975} \approx 1.96\) para un nivel de confianza del 95\%.
+
+Sustituimos los valores:
+\[
+\text{Límite inferior} = 500 - 1.96 \cdot 3.5 = 500 - 6.86 = 493.14,
+\]
+\[
+\text{Límite superior} = 500 + 1.96 \cdot 3.5 = 500 + 6.86 = 506.86.
+\]
+
+Por lo tanto, el intervalo de confianza es:
+\[
+(493.14, 506.86).
+\]
+
+\subsection*{3. Probabilidad de que una caja de 100 bolsas pese más de 51 Kg}
+
+La media total del peso de una caja es \(100 \cdot \bar{X}\), y su distribución también es normal:
+\[
+\text{Peso total} \sim N(100 \cdot \mu, 100 \cdot SE).
+\]
+
+El error estándar del peso total es:
+\[
+SE_{\text{total}} = 100 \cdot SE = 100 \cdot 3.5 = 350.
+\]
+
+La probabilidad de que pese más de 51 Kg (\(51000\) gramos):
+\[
+Z = \frac{51000 - (100 \cdot 500)}{SE_{\text{total}}} = \frac{51000 - 50000}{350} = \frac{1000}{350} \approx 2.86.
+\]
+
+Consultando la tabla de la normal estándar:
+\[
+P(Z > 2.86) \approx 0.0021.
+\]
+
+Por lo tanto, la probabilidad de que una caja pese más de 51 Kg es:
+\[
+P(\text{Peso total} > 51000) = 0.0021 \quad \text{(0.21\%)}.
+\]
+
+\subsection*{Conclusión}
+\begin{itemize}
+    \item La probabilidad de que la media de los pesos sea menor que 495 gramos es \(7.64\%\).
+    \item El intervalo de confianza al 95\% para la media es \((493.14, 506.86)\).
+    \item La probabilidad de que una caja pese más de 51 Kg es \(0.21\%\).
+\end{itemize}
+
+
+\end{document}

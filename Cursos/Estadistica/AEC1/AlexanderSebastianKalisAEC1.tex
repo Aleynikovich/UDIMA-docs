@@ -1,0 +1,457 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+
+% Configuración de márgenes
+\geometry{top=2.5cm, bottom=2.5cm, left=3cm, right=3cm}
+
+% Configuración de encabezado y pie de página
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Universidad a Distancia de Madrid (UDIMA)}
+\fancyhead[R]{Grado en Ingeniería Industrial}
+\fancyfoot[C]{\thepage}
+
+% Título y datos
+\title{Actividad de Evaluación Continua de las Unidades 1, 2 y 3\\
+\large Asignatura: Estadística y Probabilidad}
+\author{Alexander Sebastian Kalis\\Grado en Ingeniería Industrial}
+\date{\today}
+
+\begin{document}
+
+% Portada
+\maketitle
+\begin{center}
+    \includegraphics[width=0.4\textwidth]{logo.png} % Puedes insertar el logo de la universidad aquí, si lo tienes.
+\end{center}
+\vfill
+\begin{center}
+    \textbf{Profesora:} Profa. Dra. Vanessa Fernández Chamorro
+\end{center}
+\newpage
+
+% Índice
+\tableofcontents
+
+\newpage
+
+% Ejercicio 1
+\section{Ejercicio 1 (2 Puntos)}
+Entre los deportistas profesionales, el 50\% disfruta de una beca de alto rendimiento y el 30\% está cursando estudios superiores. Se sabe que el 10\% de los deportistas disfruta de una beca y está cursando estudios superiores. Seleccionado un deportista al azar, calcule:
+\begin{enumerate}
+    \item La probabilidad de que disfrute de una beca de alto rendimiento o esté cursando estudios superiores.
+    \item La probabilidad de que no disfrute de una beca, sabiendo que no está cursando estudios superiores.
+\end{enumerate}
+
+\textbf{Solución:} \\
+% Escribe aquí la solución al ejercicio 1. Puedes usar las fórmulas necesarias en formato LaTeX.
+Definimos los sucesos siguientes:
+- Sea $A$ el suceso ``el deportista disfruta de una beca de alto rendimiento''.
+- Sea $B$ el suceso ``el deportista está cursando estudios superiores''.
+
+Se nos dan las probabilidades:
+\begin{itemize}
+    \item $P(A) = 0.50$
+    \item $P(B) = 0.30$
+    \item $P(A \cap B) = 0.10$
+\end{itemize}
+
+\subsection*{1. Probabilidad de que disfrute de una beca de alto rendimiento o esté cursando estudios superiores}
+
+Queremos encontrar la probabilidad de que el deportista disfrute de una beca de alto rendimiento o esté cursando estudios superiores, es decir, $P(A \cup B)$.
+
+Utilizamos la fórmula de la probabilidad de la unión de dos sucesos:
+\[
+P(A \cup B) = P(A) + P(B) - P(A \cap B)
+\]
+
+Sustituyendo los valores conocidos:
+\[
+P(A \cup B) = 0.50 + 0.30 - 0.10 = 0.70
+\]
+
+Por lo tanto, la probabilidad de que el deportista disfrute de una beca de alto rendimiento o esté cursando estudios superiores es:
+\[
+\boxed{P(A \cup B) = 0.70}
+\]
+
+\subsection*{2. Probabilidad de que no disfrute de una beca de alto rendimiento, sabiendo que no está cursando estudios superiores}
+
+Queremos encontrar $P(A^c | B^c)$, es decir, la probabilidad de que el deportista no disfrute de una beca de alto rendimiento dado que no está cursando estudios superiores.
+
+Usamos la fórmula de la probabilidad condicionada:
+\[
+P(A^c | B^c) = \frac{P(A^c \cap B^c)}{P(B^c)}
+\]
+
+Primero calculamos $P(B^c)$ y $P(A^c \cap B^c)$.
+
+\begin{itemize}
+    \item $P(B^c) = 1 - P(B) = 1 - 0.30 = 0.70$
+    \item $P(A^c \cap B^c) = 1 - P(A \cup B) = 1 - 0.70 = 0.30$
+\end{itemize}
+
+Sustituyendo en la fórmula:
+\[
+P(A^c | B^c) = \frac{0.30}{0.70} = 0.4286
+\]
+
+Por lo tanto, la probabilidad de que el deportista no disfrute de una beca de alto rendimiento, sabiendo que no está cursando estudios superiores, es:
+\[
+\boxed{P(A^c | B^c) = 0.4286}
+\]
+
+\newpage
+
+% Ejercicio 2
+\section{Ejercicio 2 (2 Puntos)}
+Una urna contiene 7 bolas blancas y 12 bolas negras. Se extrae una bola al azar y se sustituye por dos del otro color. A continuación, se extrae una segunda bola. Calcule:
+\begin{enumerate}
+    \item La probabilidad de que la segunda bola extraída sea blanca.
+    \item La probabilidad de que la segunda bola extraída sea de distinto color que la primera.
+    \item La probabilidad de que la primera bola extraída haya sido negra, sabiendo que la segunda bola fue blanca.
+\end{enumerate}
+
+\textbf{Solución:}
+
+Definimos los sucesos de la siguiente manera:
+- Sea $B_1$ el suceso "la primera bola extraída es blanca".
+- Sea $N_1$ el suceso "la primera bola extraída es negra".
+- Sea $B_2$ el suceso "la segunda bola extraída es blanca".
+- Sea $N_2$ el suceso "la segunda bola extraída es negra".
+
+Dado que inicialmente hay 7 bolas blancas y 12 negras, tenemos en total 19 bolas en la urna.
+
+\subsection*{1. Probabilidad de que la segunda bola extraída sea blanca}
+
+Para calcular esta probabilidad, analizamos dos casos según el color de la primera bola extraída, ya que cambia la composición de la urna:
+
+\begin{itemize}
+    \item \textbf{Caso 1: La primera bola extraída es blanca ($B_1$)} \\
+    Si la primera bola es blanca, queda una bola blanca menos, y añadimos 2 negras, lo que da una nueva composición de 6 blancas y 14 negras (20 en total). La probabilidad de extraer una bola blanca en la segunda extracción en este caso es:
+    \[
+    P(B_2 | B_1) = \frac{6}{20} = 0.30
+    \]
+
+    \item \textbf{Caso 2: La primera bola extraída es negra ($N_1$)} \\
+    Si la primera bola es negra, queda una bola negra menos, y añadimos 2 blancas, lo que da una nueva composición de 9 blancas y 11 negras (20 en total). La probabilidad de extraer una bola blanca en la segunda extracción en este caso es:
+    \[
+    P(B_2 | N_1) = \frac{9}{20} = 0.45
+    \]
+\end{itemize}
+
+La probabilidad total de que la segunda bola extraída sea blanca es entonces:
+\[
+P(B_2) = P(B_2 | B_1) \cdot P(B_1) + P(B_2 | N_1) \cdot P(N_1)
+\]
+donde $P(B_1) = \frac{7}{19}$ y $P(N_1) = \frac{12}{19}$. Sustituyendo valores:
+\[
+P(B_2) = \left(0.30 \cdot \frac{7}{19}\right) + \left(0.45 \cdot \frac{12}{19}\right)
+\]
+\[
+P(B_2) = \frac{2.1}{19} + \frac{5.4}{19} = \frac{7.5}{19} \approx 0.3947
+\]
+
+Por lo tanto, la probabilidad de que la segunda bola extraída sea blanca es:
+\[
+\boxed{P(B_2) \approx 0.3947}
+\]
+
+\subsection*{2. Probabilidad de que la segunda bola extraída sea de distinto color que la primera}
+
+Examinamos ambos casos posibles:
+
+\begin{itemize}
+    \item \textbf{Caso 1: La primera bola es blanca ($B_1$)} \\
+    Si la primera bola es blanca, la probabilidad de que la segunda bola sea negra es $P(N_2 | B_1) = \frac{14}{20} = 0.70$.
+
+    \item \textbf{Caso 2: La primera bola es negra ($N_1$)} \\
+    Si la primera bola es negra, la probabilidad de que la segunda bola sea blanca es $P(B_2 | N_1) = 0.45$ (ya calculado anteriormente).
+\end{itemize}
+
+Entonces, la probabilidad de que las bolas sean de distinto color es:
+\[
+P(\text{distinto color}) = P(N_2 | B_1) \cdot P(B_1) + P(B_2 | N_1) \cdot P(N_1)
+\]
+Sustituyendo los valores:
+\[
+P(\text{distinto color}) = \left(0.70 \cdot \frac{7}{19}\right) + \left(0.45 \cdot \frac{12}{19}\right)
+\]
+\[
+P(\text{distinto color}) = \frac{4.9}{19} + \frac{5.4}{19} = \frac{10.3}{19} \approx 0.5421
+\]
+
+Por lo tanto, la probabilidad de que la segunda bola extraída sea de distinto color que la primera es:
+\[
+\boxed{P(\text{distinto color}) \approx 0.5421}
+\]
+
+\subsection*{3. Probabilidad de que la primera bola extraída haya sido negra, sabiendo que la segunda bola fue blanca}
+
+Queremos calcular $P(N_1 | B_2)$. Usamos la fórmula de la probabilidad condicionada:
+\[
+P(N_1 | B_2) = \frac{P(B_2 | N_1) \cdot P(N_1)}{P(B_2)}
+\]
+Sustituyendo los valores conocidos:
+\[
+P(N_1 | B_2) = \frac{0.45 \cdot \frac{12}{19}}{0.3947}
+\]
+\[
+P(N_1 | B_2) \approx \frac{5.4/19}{0.3947} \approx 0.7301
+\]
+
+Por lo tanto, la probabilidad de que la primera bola extraída haya sido negra, sabiendo que la segunda bola fue blanca, es:
+\[
+\boxed{P(N_1 | B_2) \approx 0.7301}
+\]
+
+
+\newpage
+
+% Ejercicio 3
+\section{Ejercicio 3 (2 Puntos)}
+En un mercado agropecuario, el 70\% de las verduras son de proximidad y el resto no. El 30\% de las de proximidad son ecológicas, y solo el 10\% de las no de proximidad lo son. Calcule:
+\begin{enumerate}
+    \item La probabilidad de que la verdura comprada no sea ecológica.
+    \item La probabilidad de que la verdura sea de proximidad o ecológica.
+\end{enumerate}
+\textbf{Solución:}
+
+Definimos los sucesos de la siguiente manera:
+- Sea $P$ el suceso ``la verdura es de proximidad''.
+- Sea $E$ el suceso ``la verdura es ecológica''.
+
+Se nos proporcionan las siguientes probabilidades:
+\begin{itemize}
+    \item $P(P) = 0.70$ (probabilidad de que la verdura sea de proximidad).
+    \item $P(E | P) = 0.30$ (probabilidad de que la verdura sea ecológica dado que es de proximidad).
+    \item $P(E | P^c) = 0.10$ (probabilidad de que la verdura sea ecológica dado que no es de proximidad).
+\end{itemize}
+
+\subsection*{1. Probabilidad de que la verdura comprada no sea ecológica}
+
+Queremos calcular $P(E^c)$, la probabilidad de que la verdura no sea ecológica. Usamos el teorema de la probabilidad total:
+
+\[
+P(E) = P(E | P) \cdot P(P) + P(E | P^c) \cdot P(P^c)
+\]
+
+Calculamos $P(P^c)$, la probabilidad de que la verdura no sea de proximidad:
+\[
+P(P^c) = 1 - P(P) = 1 - 0.70 = 0.30
+\]
+
+Sustituyendo los valores en la fórmula:
+
+\[
+P(E) = (0.30 \cdot 0.70) + (0.10 \cdot 0.30)
+\]
+\[
+P(E) = 0.21 + 0.03 = 0.24
+\]
+
+Ahora calculamos $P(E^c)$ como la probabilidad complementaria de $P(E)$:
+\[
+P(E^c) = 1 - P(E) = 1 - 0.24 = 0.76
+\]
+
+Por lo tanto, la probabilidad de que la verdura comprada no sea ecológica es:
+\[
+\boxed{P(E^c) = 0.76}
+\]
+
+\subsection*{2. Probabilidad de que la verdura sea de proximidad o ecológica}
+
+Queremos calcular $P(P \cup E)$, la probabilidad de que la verdura sea de proximidad o ecológica. Usamos la fórmula de la probabilidad de la unión de dos sucesos:
+
+\[
+P(P \cup E) = P(P) + P(E) - P(P \cap E)
+\]
+
+Ya conocemos $P(P) = 0.70$ y $P(E) = 0.24$. Ahora necesitamos calcular $P(P \cap E)$, la probabilidad de que la verdura sea de proximidad y ecológica.
+
+Sabemos que:
+\[
+P(P \cap E) = P(E | P) \cdot P(P) = 0.30 \cdot 0.70 = 0.21
+\]
+
+Sustituyendo los valores en la fórmula de la unión:
+\[
+P(P \cup E) = 0.70 + 0.24 - 0.21
+\]
+\[
+P(P \cup E) = 0.94 - 0.21 = 0.73
+\]
+
+Por lo tanto, la probabilidad de que la verdura sea de proximidad o ecológica es:
+\[
+\boxed{P(P \cup E) = 0.73}
+\]
+
+
+\newpage
+
+% Ejercicio 4
+\section{Ejercicio 4 (2 Puntos)}
+Dados dos sucesos $A$ y $B$, con probabilidades: $P(A \cup B) = 0.55$, $P(\overline{A} \cup \overline{B}) = 0.90$, y $P(B|A) = 0.25$. Calcule:
+\begin{enumerate}
+    \item $P(A \cap B)$, $P(A)$, $P(B)$ y $P(B|\overline{A})$
+    \item Determine si los sucesos $A$ y $B$ son independientes.
+\end{enumerate}
+
+\textbf{Solución:}
+
+Dados los datos:
+\[
+P(A \cup B) = 0.55, \quad P(A^c \cup B^c) = 0.90, \quad P(B|A) = 0.25
+\]
+
+Calcularemos los valores requeridos.
+
+\subsection*{1. Cálculo de \( P(A \cap B) \), \( P(A) \), \( P(B) \) y \( P(B|A^c) \)}
+
+\subsubsection*{1.1 Cálculo de \( P(A \cap B) \)}
+
+Sabemos que:
+\[
+P(A^c \cup B^c) = 1 - P(A \cap B)
+\]
+Por lo tanto,
+\[
+P(A \cap B) = 1 - P(A^c \cup B^c) = 1 - 0.90 = 0.10
+\]
+
+\subsubsection*{1.2 Cálculo de \( P(A) \)}
+
+Utilizando la definición de probabilidad condicional:
+\[
+P(B|A) = \frac{P(A \cap B)}{P(A)}
+\]
+Despejando \( P(A) \):
+\[
+P(A) = \frac{P(A \cap B)}{P(B|A)} = \frac{0.10}{0.25} = 0.40
+\]
+
+\subsubsection*{1.3 Cálculo de \( P(B) \)}
+
+Usamos la fórmula de la probabilidad de la unión de dos eventos:
+\[
+P(A \cup B) = P(A) + P(B) - P(A \cap B)
+\]
+Despejando \( P(B) \):
+\[
+P(B) = P(A \cup B) - P(A) + P(A \cap B) = 0.55 - 0.40 + 0.10 = 0.25
+\]
+
+\subsubsection*{1.4 Cálculo de \( P(B|A^c) \)}
+
+Usamos la fórmula de probabilidad condicional, considerando el complemento de \( A \):
+\[
+P(B|A^c) = \frac{P(A^c \cap B)}{P(A^c)}
+\]
+Sabemos que:
+\[
+P(A^c) = 1 - P(A) = 1 - 0.40 = 0.60
+\]
+Y \( P(A^c \cap B) = P(B) - P(A \cap B) \):
+\[
+P(A^c \cap B) = 0.25 - 0.10 = 0.15
+\]
+Entonces,
+\[
+P(B|A^c) = \frac{0.15}{0.60} = 0.25
+\]
+
+\subsection*{2. Independencia de los sucesos \( A \) y \( B \)}
+
+Dos eventos \( A \) y \( B \) son independientes si \( P(A \cap B) = P(A) \cdot P(B) \).
+
+Calculamos \( P(A) \cdot P(B) \):
+\[
+P(A) \cdot P(B) = 0.40 \cdot 0.25 = 0.10
+\]
+Como \( P(A \cap B) = 0.10 \), entonces:
+\[
+P(A \cap B) = P(A) \cdot P(B)
+\]
+Por lo tanto, los eventos \( A \) y \( B \) son \textbf{independientes}.
+
+\newpage
+
+% Ejercicio 5
+\section{Ejercicio 5 (2 Puntos)}
+Una empresa de reparto de comida reparte platos de dos restaurantes. El 60\% de los platos provienen del primer restaurante, y el 40\% del segundo. El 50\% de los platos del primer restaurante están cocinados con productos ecológicos, y el 80\% del segundo lo están. Calcule:
+\begin{enumerate}
+    \item La probabilidad de que un plato esté cocinado con productos ecológicos.
+    \item La probabilidad de que provenga del segundo restaurante, dado que no está cocinado con productos ecológicos.
+\end{enumerate}
+
+\textbf{Solución:} \\
+% Escribe aquí la solución al ejercicio 5.
+
+Definimos los eventos:
+\begin{itemize}
+    \item \( A \): El plato proviene del primer restaurante.
+    \item \( B \): El plato proviene del segundo restaurante.
+    \item \( E \): El plato está cocinado con productos ecológicos.
+\end{itemize}
+
+Los datos se traducen a probabilidades:
+\[
+P(A) = 0.60, \quad P(B) = 0.40
+\]
+\[
+P(E|A) = 0.50, \quad P(E|B) = 0.80
+\]
+
+\subsection*{1. Probabilidad de que un plato esté cocinado con productos ecológicos}
+
+Queremos encontrar \( P(E) \). Usamos la ley de la probabilidad total:
+\[
+P(E) = P(E|A) \cdot P(A) + P(E|B) \cdot P(B)
+\]
+Sustituyendo los valores:
+\[
+P(E) = (0.50)(0.60) + (0.80)(0.40)
+\]
+\[
+P(E) = 0.30 + 0.32 = 0.62
+\]
+
+\subsection*{2. Probabilidad de que provenga del segundo restaurante, dado que no está cocinado con productos ecológicos}
+
+Queremos encontrar \( P(B|E^c) \), donde \( E^c \) es el complemento de \( E \) (plato no cocinado con productos ecológicos).
+
+Usamos la fórmula de la probabilidad condicional:
+\[
+P(B|E^c) = \frac{P(E^c|B) \cdot P(B)}{P(E^c)}
+\]
+Primero calculamos \( P(E^c) \) utilizando la ley de la probabilidad total:
+\[
+P(E^c) = 1 - P(E) = 1 - 0.62 = 0.38
+\]
+Sabemos que \( P(E^c|B) = 1 - P(E|B) \):
+\[
+P(E^c|B) = 1 - 0.80 = 0.20
+\]
+Por lo tanto,
+\[
+P(B|E^c) = \frac{(0.20)(0.40)}{0.38}
+\]
+\[
+P(B|E^c) = \frac{0.08}{0.38} \approx 0.2105
+\]
+
+\subsection*{Resultados}
+
+\begin{itemize}
+    \item La probabilidad de que un plato esté cocinado con productos ecológicos es \( P(E) = 0.62 \).
+    \item La probabilidad de que provenga del segundo restaurante, dado que no está cocinado con productos ecológicos, es \( P(B|E^c) \approx 0.2105 \).
+\end{itemize}
+
+\end{document}

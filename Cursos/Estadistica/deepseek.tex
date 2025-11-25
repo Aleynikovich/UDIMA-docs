@@ -1,0 +1,379 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumerate}
+
+\title{Guía de Estudio para el Examen de Estadística y Probabilidad}
+\author{Tu Nombre}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section*{Introducción}
+Este documento está diseñado para ayudarte a prepararte para el examen de Estadística y Probabilidad. Incluye explicaciones sencillas, conceptos clave y ejercicios resueltos paso a paso.
+
+\section*{Conceptos Clave}
+
+\subsection*{1. Probabilidad Básica}
+La probabilidad es una medida de qué tan probable es que algo ocurra. Se expresa como un número entre 0 y 1, donde:
+\begin{itemize}
+    \item 0 significa que el evento \textbf{no ocurrirá}.
+    \item 1 significa que el evento \textbf{seguro ocurrirá}.
+    \item Un valor entre 0 y 1 indica la \textbf{posibilidad} de que el evento ocurra.
+\end{itemize}
+
+La probabilidad de un evento \( A \) se calcula como:
+\[
+P(A) = \frac{\text{Número de resultados favorables}}{\text{Número total de resultados posibles}}
+\]
+\begin{itemize}
+    \item \( P(A) \): Probabilidad del evento \( A \).
+    \item \textbf{Resultados favorables}: Son los resultados que nos interesan.
+    \item \textbf{Resultados posibles}: Son todos los resultados que pueden ocurrir.
+\end{itemize}
+
+\subsection*{2. Probabilidad Condicional}
+La probabilidad condicional es la probabilidad de que ocurra un evento \( A \), dado que otro evento \( B \) ya ha ocurrido. Se denota como \( P(A|B) \) y se calcula como:
+\[
+P(A|B) = \frac{P(A \cap B)}{P(B)}
+\]
+\begin{itemize}
+    \item \( P(A|B) \): Probabilidad de \( A \) dado \( B \).
+    \item \( P(A \cap B) \): Probabilidad de que ocurran tanto \( A \) como \( B \).
+    \item \( P(B) \): Probabilidad de que ocurra \( B \).
+\end{itemize}
+
+\subsection*{3. Teorema de la Probabilidad Total}
+Este teorema se usa cuando un evento puede ocurrir de varias maneras diferentes. Si \( B_1, B_2, \dots, B_n \) son eventos que cubren todas las posibilidades (es decir, no se solapan y uno de ellos siempre ocurre), entonces la probabilidad de un evento \( A \) se calcula como:
+\[
+P(A) = P(A|B_1)P(B_1) + P(A|B_2)P(B_2) + \dots + P(A|B_n)P(B_n)
+\]
+\begin{itemize}
+    \item \( P(A|B_i) \): Probabilidad de \( A \) dado que \( B_i \) ha ocurrido.
+    \item \( P(B_i) \): Probabilidad de que ocurra \( B_i \).
+\end{itemize}
+
+\subsection*{4. Independencia de Sucesos}
+Dos eventos \( A \) y \( B \) son independientes si el hecho de que ocurra uno no afecta la probabilidad de que ocurra el otro. Matemáticamente, esto se expresa como:
+\[
+P(A \cap B) = P(A) \cdot P(B)
+\]
+\begin{itemize}
+    \item \( P(A \cap B) \): Probabilidad de que ocurran tanto \( A \) como \( B \).
+    \item \( P(A) \) y \( P(B) \): Probabilidades individuales de \( A \) y \( B \).
+\end{itemize}
+
+\section*{Ejercicios Resueltos}
+
+\subsection*{Ejercicio 1: Probabilidad de Eventos}
+\textbf{Enunciado:} Entre los deportistas profesionales, el 50\% disfrutan de una beca de alto rendimiento y el 30\% está cursando estudios superiores. Se sabe también que el 10\% de los deportistas profesionales disfrutan de una beca de alto rendimiento y además están cursando estudios superiores. Seleccionado un deportista profesional al azar, calcule la probabilidad de que:
+\begin{enumerate}
+    \item Disfrute de una beca de alto rendimiento o esté cursando estudios superiores.
+    \item No disfrute de una beca de alto rendimiento, sabiendo que no está cursando estudios superiores.
+\end{enumerate}
+
+\textbf{Solución:}
+\begin{enumerate}
+    \item Usamos la fórmula de la unión de dos eventos:
+    \[
+    P(A \cup B) = P(A) + P(B) - P(A \cap B)
+    \]
+    Donde:
+    \begin{itemize}
+        \item \( P(A) = 0.5 \): Probabilidad de disfrutar una beca.
+        \item \( P(B) = 0.3 \): Probabilidad de cursar estudios superiores.
+        \item \( P(A \cap B) = 0.1 \): Probabilidad de disfrutar una beca y cursar estudios superiores.
+    \end{itemize}
+    Entonces:
+    \[
+    P(A \cup B) = 0.5 + 0.3 - 0.1 = 0.7
+    \]
+    \item Usamos la probabilidad condicional:
+    \[
+    P(\overline{A}| \overline{B}) = \frac{P(\overline{A} \cap \overline{B})}{P(\overline{B})}
+    \]
+    Donde:
+    \begin{itemize}
+        \item \( P(\overline{B}) = 1 - P(B) = 0.7 \): Probabilidad de no cursar estudios superiores.
+        \item \( P(\overline{A} \cap \overline{B}) = 1 - P(A \cup B) = 1 - 0.7 = 0.3 \): Probabilidad de no disfrutar una beca y no cursar estudios superiores.
+    \end{itemize}
+    Finalmente:
+    \[
+    P(\overline{A}| \overline{B}) = \frac{0.3}{0.7} \approx 0.4286
+    \]
+\end{enumerate}
+
+\subsection*{Ejercicio 2: Probabilidad con Urnas}
+\textbf{Enunciado:} Una urna contiene 7 bolas blancas y 12 bolas negras. Se extrae al azar una bola de la urna y se sustituye por dos del otro color. A continuación, se extrae una segunda bola de la urna. Se pide:
+\begin{enumerate}
+    \item Calcular la probabilidad de que la segunda bola extraída sea blanca.
+    \item Calcular la probabilidad de que la segunda bola extraída sea de distinto color que la primera.
+    \item Calcular la probabilidad de que la primera bola extraída haya sido negra, sabiendo que la segunda bola fue blanca.
+\end{enumerate}
+
+\textbf{Solución:}
+\begin{enumerate}
+    \item Usamos el teorema de la probabilidad total. Hay dos casos:
+    \begin{itemize}
+        \item La primera bola es blanca (probabilidad \( \frac{7}{19} \)), y se sustituye por dos negras. Entonces, la urna tendrá 6 blancas y 14 negras.
+        \item La primera bola es negra (probabilidad \( \frac{12}{19} \)), y se sustituye por dos blancas. Entonces, la urna tendrá 9 blancas y 11 negras.
+    \end{itemize}
+    La probabilidad de que la segunda bola sea blanca es:
+    \[
+    P(\text{Blanca}) = \frac{7}{19} \cdot \frac{6}{20} + \frac{12}{19} \cdot \frac{9}{20} = \frac{42}{380} + \frac{108}{380} = \frac{150}{380} \approx 0.3947
+    \]
+    \item La probabilidad de que la segunda bola sea de distinto color que la primera es:
+    \[
+    P(\text{Distinto color}) = P(\text{Blanca primero}) \cdot P(\text{Negra segundo}) + P(\text{Negra primero}) \cdot P(\text{Blanca segundo})
+    \]
+    \[
+    P(\text{Distinto color}) = \frac{7}{19} \cdot \frac{14}{20} + \frac{12}{19} \cdot \frac{9}{20} = \frac{98}{380} + \frac{108}{380} = \frac{206}{380} \approx 0.5421
+    \]
+    \item Usamos la probabilidad condicional:
+    \[
+    P(\text{Negra primero} | \text{Blanca segundo}) = \frac{P(\text{Negra primero} \cap \text{Blanca segundo})}{P(\text{Blanca segundo})}
+    \]
+    Ya calculamos \( P(\text{Blanca segundo}) \approx 0.3947 \).
+    La probabilidad de que la primera bola sea negra y la segunda blanca es:
+    \[
+    P(\text{Negra primero} \cap \text{Blanca segundo}) = \frac{12}{19} \cdot \frac{9}{20} = \frac{108}{380} \approx 0.2842
+    \]
+    Entonces:
+    \[
+    P(\text{Negra primero} | \text{Blanca segundo}) = \frac{0.2842}{0.3947} \approx 0.72
+    \]
+\end{enumerate}
+
+\section*{Conclusión}
+Este documento cubre los conceptos básicos y ejercicios resueltos que te ayudarán a prepararte para el examen. Recuerda practicar con más ejercicios similares para afianzar tus conocimientos.
+
+\section*{Unidades 4, 5 y 6: Variables Aleatorias y Distribuciones}
+
+En estas unidades trabajaremos con **variables aleatorias** y sus **distribuciones de probabilidad**. Vamos a explicar los conceptos básicos y cómo resolver los ejercicios paso a paso.
+
+\subsection*{1. Variables Aleatorias}
+Una **variable aleatoria** es una función que asigna un valor numérico a cada resultado posible de un experimento aleatorio. Hay dos tipos:
+\begin{itemize}
+    \item \textbf{Variable aleatoria discreta}: Toma valores enteros (por ejemplo, el número de clientes en una tienda).
+    \item \textbf{Variable aleatoria continua}: Toma valores en un intervalo (por ejemplo, el tiempo que tarda un coche en aparcar).
+\end{itemize}
+
+\subsection*{2. Función de Densidad y Función de Distribución}
+\begin{itemize}
+    \item \textbf{Función de densidad} (para variables continuas): Es una función \( f(x) \) que describe la probabilidad de que la variable aleatoria \( X \) tome un valor cercano a \( x \). La probabilidad se calcula como el área bajo la curva de \( f(x) \).
+    \item \textbf{Función de distribución}: Es una función \( F(x) \) que da la probabilidad de que \( X \) sea menor o igual a \( x \).
+\end{itemize}
+
+\subsection*{3. Media y Desviación Típica}
+\begin{itemize}
+    \item \textbf{Media} (\( \mu \)): Es el valor promedio de la variable aleatoria.
+    \item \textbf{Desviación típica} (\( \sigma \)): Mide cuánto se dispersan los valores de la variable aleatoria respecto a la media.
+\end{itemize}
+
+\subsection*{4. Distribuciones Importantes}
+\begin{itemize}
+    \item \textbf{Distribución Uniforme}: Todos los valores tienen la misma probabilidad.
+    \item \textbf{Distribución Exponencial}: Describe el tiempo entre eventos en un proceso de Poisson.
+    \item \textbf{Distribución Normal}: Es la distribución más común en estadística, con forma de campana.
+    \item \textbf{Distribución Poisson}: Describe el número de eventos que ocurren en un intervalo de tiempo.
+\end{itemize}
+
+\section*{Ejercicios Resueltos}
+
+\subsection*{Problema 1: Función de Densidad}
+\textbf{Enunciado:} Una variable aleatoria \( X \) tiene la función de densidad:
+\[
+f(x) = 
+\begin{cases}
+c(1 - x^2) & \text{si } 0 \leq x \leq 1 \\
+0 & \text{en otro caso}
+\end{cases}
+\]
+Se pide:
+\begin{enumerate}
+    \item Calcular \( c \) para que \( f(x) \) sea una función de densidad.
+    \item Calcular la media, la desviación típica y \( P(0.5 \leq X \leq 1) \).
+\end{enumerate}
+
+\textbf{Solución:}
+\begin{enumerate}
+    \item Para que \( f(x) \) sea una función de densidad, el área bajo la curva debe ser 1. Entonces:
+    \[
+    \int_{0}^{1} c(1 - x^2) \, dx = 1
+    \]
+    Resolviendo la integral:
+    \[
+    c \int_{0}^{1} (1 - x^2) \, dx = c \left[ x - \frac{x^3}{3} \right]_0^1 = c \left(1 - \frac{1}{3}\right) = \frac{2c}{3}
+    \]
+    Igualamos a 1:
+    \[
+    \frac{2c}{3} = 1 \implies c = \frac{3}{2}
+    \]
+    \item \textbf{Media (\( \mu \))}:
+    \[
+    \mu = \int_{0}^{1} x \cdot f(x) \, dx = \int_{0}^{1} x \cdot \frac{3}{2}(1 - x^2) \, dx = \frac{3}{2} \int_{0}^{1} (x - x^3) \, dx
+    \]
+    Resolviendo:
+    \[
+    \mu = \frac{3}{2} \left[ \frac{x^2}{2} - \frac{x^4}{4} \right]_0^1 = \frac{3}{2} \left( \frac{1}{2} - \frac{1}{4} \right) = \frac{3}{2} \cdot \frac{1}{4} = \frac{3}{8}
+    \]
+    \textbf{Desviación típica (\( \sigma \))}:
+    Primero calculamos \( E(X^2) \):
+    \[
+    E(X^2) = \int_{0}^{1} x^2 \cdot f(x) \, dx = \int_{0}^{1} x^2 \cdot \frac{3}{2}(1 - x^2) \, dx = \frac{3}{2} \int_{0}^{1} (x^2 - x^4) \, dx
+    \]
+    Resolviendo:
+    \[
+    E(X^2) = \frac{3}{2} \left[ \frac{x^3}{3} - \frac{x^5}{5} \right]_0^1 = \frac{3}{2} \left( \frac{1}{3} - \frac{1}{5} \right) = \frac{3}{2} \cdot \frac{2}{15} = \frac{1}{5}
+    \]
+    Luego, la varianza es:
+    \[
+    \sigma^2 = E(X^2) - \mu^2 = \frac{1}{5} - \left( \frac{3}{8} \right)^2 = \frac{1}{5} - \frac{9}{64} = \frac{64 - 45}{320} = \frac{19}{320}
+    \]
+    Finalmente, la desviación típica es:
+    \[
+    \sigma = \sqrt{\frac{19}{320}} \approx 0.24
+    \]
+    \textbf{Probabilidad \( P(0.5 \leq X \leq 1) \)}:
+    \[
+    P(0.5 \leq X \leq 1) = \int_{0.5}^{1} f(x) \, dx = \int_{0.5}^{1} \frac{3}{2}(1 - x^2) \, dx
+    \]
+    Resolviendo:
+    \[
+    P(0.5 \leq X \leq 1) = \frac{3}{2} \left[ x - \frac{x^3}{3} \right]_{0.5}^1 = \frac{3}{2} \left( \left(1 - \frac{1}{3}\right) - \left(0.5 - \frac{0.125}{3}\right) \right) = \frac{3}{2} \left( \frac{2}{3} - 0.4583 \right) \approx 0.3125
+    \]
+\end{enumerate}
+
+\subsection*{Problema 2: Distribución Exponencial}
+\textbf{Enunciado:} El tiempo de estacionamiento en la zona azul de Madrid sigue una distribución exponencial con media 0.5 horas. Se pide:
+\begin{enumerate}
+    \item Calcular la probabilidad de que un estacionamiento supere las 3 horas.
+    \item Calcular la probabilidad de que un estacionamiento sea inferior a 30 minutos.
+\end{enumerate}
+
+\textbf{Solución:}
+\begin{enumerate}
+    \item La distribución exponencial tiene la función de densidad:
+    \[
+    f(x) = \lambda e^{-\lambda x}
+    \]
+    Donde \( \lambda = \frac{1}{\text{media}} = \frac{1}{0.5} = 2 \).
+    La probabilidad de que \( X > 3 \) es:
+    \[
+    P(X > 3) = \int_{3}^{\infty} 2 e^{-2x} \, dx = e^{-6} \approx 0.0025
+    \]
+    \item La probabilidad de que \( X < 0.5 \) horas (30 minutos) es:
+    \[
+    P(X < 0.5) = \int_{0}^{0.5} 2 e^{-2x} \, dx = 1 - e^{-1} \approx 0.6321
+    \]
+\end{enumerate}
+
+\section*{Unidades 7, 8, 9 y 10: Inferencia Estadística}
+
+En estas unidades trabajaremos con **inferencia estadística**, que es el proceso de usar datos de una muestra para hacer conclusiones sobre una población. Vamos a explicar los conceptos básicos y cómo resolver los ejercicios paso a paso.
+
+\subsection*{1. Intervalos de Confianza}
+Un **intervalo de confianza** es un rango de valores que probablemente contiene el valor verdadero de un parámetro de la población (como la media o la varianza). Se calcula usando datos de una muestra y un nivel de confianza (por ejemplo, 95\%).
+
+\subsection*{2. Pruebas de Hipótesis}
+Una **prueba de hipótesis** es un procedimiento para decidir si una afirmación sobre una población es válida, basándose en datos de una muestra. Se comparan dos hipótesis:
+\begin{itemize}
+    \item \textbf{Hipótesis nula} (\( H_0 \)): Es la afirmación que se quiere probar (por ejemplo, "no hay diferencia").
+    \item \textbf{Hipótesis alternativa} (\( H_1 \)): Es la afirmación contraria a \( H_0 \) (por ejemplo, "hay diferencia").
+\end{itemize}
+
+\subsection*{3. Distribuciones Importantes}
+\begin{itemize}
+    \item \textbf{Distribución t de Student}: Se usa cuando la muestra es pequeña y la desviación típica de la población es desconocida.
+    \item \textbf{Distribución Chi-cuadrado (\( \chi^2 \))}: Se usa para intervalos de confianza de la varianza.
+    \item \textbf{Distribución F}: Se usa para comparar varianzas de dos poblaciones.
+\end{itemize}
+
+\section*{Ejercicios Resueltos}
+
+\subsection*{Problema 1: Intervalo de Confianza para la Varianza}
+\textbf{Enunciado:} Se realizan 10 mediciones de radiactividad en el agua de una fuente natural, obteniendo una media de 12 y una varianza muestral de 34. Calcular un intervalo de confianza para la varianza al 90\%.
+
+\textbf{Solución:}
+\begin{enumerate}
+    \item \textbf{Datos:}
+    \begin{itemize}
+        \item Tamaño de la muestra (\( n \)): 10
+        \item Varianza muestral (\( s^2 \)): 34
+        \item Nivel de confianza: 90\%
+    \end{itemize}
+    \item \textbf{Distribución Chi-cuadrado:} Para un intervalo de confianza de la varianza, usamos la distribución \( \chi^2 \).
+    \item \textbf{Grados de libertad (\( \nu \)):} \( \nu = n - 1 = 9 \).
+    \item \textbf{Valores críticos de \( \chi^2 \):} Para un nivel de confianza del 90\%, los valores críticos son \( \chi^2_{0.05} = 3.325 \) y \( \chi^2_{0.95} = 16.919 \).
+    \item \textbf{Intervalo de confianza:}
+    \[
+    \left( \frac{(n-1)s^2}{\chi^2_{0.95}}, \frac{(n-1)s^2}{\chi^2_{0.05}} \right) = \left( \frac{9 \cdot 34}{16.919}, \frac{9 \cdot 34}{3.325} \right) = (18.12, 92.03)
+    \]
+    \item \textbf{Conclusión:} Con un 90\% de confianza, la varianza de la radiactividad en el agua está entre 18.12 y 92.03.
+\end{enumerate}
+
+\subsection*{Problema 2: Intervalo de Confianza para la Diferencia de Medias}
+\textbf{Enunciado:} Se tienen dos muestras con los siguientes datos:
+\begin{itemize}
+    \item Muestra 1: \( \bar{x}_1 = 3565 \), \( s_1 = 150 \), \( n_1 = 25 \)
+    \item Muestra 2: \( \bar{x}_2 = 3280 \), \( s_2 = 170 \), \( n_2 = 12 \)
+\end{itemize}
+Calcular el intervalo de confianza al 95\% de la diferencia de medias.
+
+\textbf{Solución:}
+\begin{enumerate}
+    \item \textbf{Datos:}
+    \begin{itemize}
+        \item Medias muestrales: \( \bar{x}_1 = 3565 \), \( \bar{x}_2 = 3280 \)
+        \item Desviaciones típicas: \( s_1 = 150 \), \( s_2 = 170 \)
+        \item Tamaños de muestra: \( n_1 = 25 \), \( n_2 = 12 \)
+        \item Nivel de confianza: 95\%
+    \end{itemize}
+    \item \textbf{Distribución t de Student:} Como las muestras son pequeñas y las varianzas son desconocidas, usamos la distribución \( t \).
+    \item \textbf{Grados de libertad (\( \nu \)):} Usamos la fórmula de Welch:
+    \[
+    \nu = \frac{ \left( \frac{s_1^2}{n_1} + \frac{s_2^2}{n_2} \right)^2 }{ \frac{(s_1^2/n_1)^2}{n_1-1} + \frac{(s_2^2/n_2)^2}{n_2-1} } \approx 15.5 \approx 16
+    \]
+    \item \textbf{Valor crítico de \( t \):} Para un nivel de confianza del 95\% y \( \nu = 16 \), el valor crítico es \( t_{0.025} = 2.120 \).
+    \item \textbf{Intervalo de confianza:}
+    \[
+    (\bar{x}_1 - \bar{x}_2) \pm t_{0.025} \cdot \sqrt{ \frac{s_1^2}{n_1} + \frac{s_2^2}{n_2} }
+    \]
+    Calculamos:
+    \[
+    3565 - 3280 = 285
+    \]
+    \[
+    \sqrt{ \frac{150^2}{25} + \frac{170^2}{12} } = \sqrt{900 + 2408.33} = \sqrt{3308.33} \approx 57.52
+    \]
+    Entonces:
+    \[
+    285 \pm 2.120 \cdot 57.52 = 285 \pm 122.0
+    \]
+    \item \textbf{Conclusión:} Con un 95\% de confianza, la diferencia de medias está entre 163 y 407.
+\end{enumerate}
+
+\subsection*{Problema 3: Prueba de Hipótesis para la Igualdad de Varianzas}
+\textbf{Enunciado:} Para comprobar si las cotizaciones de dos tipos de renta fija (A y B) presentan la misma dispersión, se obtienen dos muestras aleatorias e independientes de 17 días de cotización cada una. Las cotizaciones al cierre de A presentaron una varianza de 125.25 y de B una varianza de 638.5. ¿Podemos decir que ambos tipos de renta fija presentan la misma estabilidad en su cotización al 10\% de significación?
+
+\textbf{Solución:}
+\begin{enumerate}
+    \item \textbf{Hipótesis:}
+    \begin{itemize}
+        \item \( H_0 \): \( \sigma_A^2 = \sigma_B^2 \) (las varianzas son iguales).
+        \item \( H_1 \): \( \sigma_A^2 \neq \sigma_B^2 \) (las varianzas son diferentes).
+    \end{itemize}
+    \item \textbf{Distribución F:} Usamos la distribución \( F \) para comparar varianzas.
+    \item \textbf{Estadístico de prueba:}
+    \[
+    F = \frac{s_A^2}{s_B^2} = \frac{125.25}{638.5} \approx 0.196
+    \]
+    \item \textbf{Valores críticos de \( F \):} Para un nivel de significación del 10\% y grados de libertad \( \nu_1 = 16 \), \( \nu_2 = 16 \), los valores críticos son \( F_{0.05} = 0.46 \) y \( F_{0.95} = 2.17 \).
+    \item \textbf{Decisión:} Como \( F = 0.196 \) está fuera del intervalo \( [0.46, 2.17] \), rechazamos \( H_0 \).
+    \item \textbf{Conclusión:} Con un 10\% de significación, podemos decir que las varianzas de las cotizaciones de A y B son diferentes.
+\end{enumerate}
+
+\end{document}

@@ -1,0 +1,198 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[spanish,es-tabla]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{siunitx} % Para unidades correctas
+\usepackage{float} % Para posicionar mejor las figuras
+\usepackage{hyperref}
+
+% Configuración de página estándar
+\geometry{left=3cm, right=3cm, top=3cm, bottom=3cm}
+
+% Configuración de siunitx para español
+\sisetup{output-decimal-marker={,}, range-phrase={ a }, list-final-separator={ y }, list-pair-separator={ y }}
+
+\begin{document}
+
+% PORTADA
+\begin{titlepage}
+    \centering
+    \vspace*{2cm}
+
+    {\Huge\bfseries Prácticas de máquinas eléctricas}\\[0.5cm]
+    {\huge\bfseries Simulación y circuitos equivalentes}\\[2cm]
+
+    {\Large Actividad de Evaluación Continua 1 (AEC1)}\\[0.5cm]
+    {\Large Asignatura: Tecnología Eléctrica (1526)}\\[4cm]
+
+    \textbf{\Large Alexander Sebastian Kalis}\\[1cm]
+    {\large \today}
+
+    \vfill
+\end{titlepage}
+
+% ÍNDICE
+\thispagestyle{plain}
+\tableofcontents
+\newpage
+
+\section{Problema 1}
+\textit{Problema examen febrero 2025}
+
+Una amasadora industrial se conecta a una red eléctrica de \SI{15}{\kilo\volt}, \SI{50}{\hertz}, mediante un transformador de las siguientes características:
+\begin{itemize}
+    \item Conexión Yy
+    \item $S_N = \SI{100}{\kilo\volt\ampere}$
+    \item Relación de tensiones \SI{15}{\kilo\volt}/\SI{380}{\volt}
+    \item $\varepsilon_{Rcc} = \SI{5}{\percent}$
+    \item $\varepsilon_{Xcc} = \SI{2}{\percent}$
+\end{itemize}
+La carga de la amasadora se modela mediante una impedancia de $\bar{Z}_{carga} = 3\angle 30^{\circ}\,\Omega$.
+Se pide calcular la tensión de línea a la que se alimenta la amasadora sabiendo que la tensión en el primario se mantiene constante y que está conectada en estrella con una línea de impedancia $0,1\,\Omega/\text{fase}$.
+
+\subsection*{Solución}
+
+\begin{enumerate}
+    \item \textbf{Cálculo de parámetros del transformador (lado B.T.):}
+    \begin{align*}
+        Z_{base,BT} &= \frac{U_{N,BT}^2}{S_N} = \frac{380^2}{100000} = \SI{1.444}{\ohm} \\
+        R_{cc,BT} &= \varepsilon_{Rcc} \cdot Z_{base,BT} = 0,05 \cdot 1,444 = \SI{0.0722}{\ohm} \\
+        X_{cc,BT} &= \varepsilon_{Xcc} \cdot Z_{base,BT} = 0,02 \cdot 1,444 = \SI{0.02888}{\ohm}
+    \end{align*}
+
+    \item \textbf{Circuito equivalente por fase (referido al secundario):}
+    La impedancia total por fase vista desde la carga incluye la del transformador y la de la línea.
+    \begin{align*}
+        \bar{Z}_{tot} &= (R_{cc,BT} + jX_{cc,BT}) + \bar{Z}_{linea} + \bar{Z}_{carga} \\
+        \bar{Z}_{tot} &= (0,0722 + j0,02888) + (0,1 + j0) + (3\angle 30^{\circ}) \\
+        \bar{Z}_{tot} &= 0,1722 + j0,02888 + (2,598 + j1,5) \\
+                      &= 2,7702 + j1,52888 = 3,164 \angle 28,9^{\circ}\,\Omega
+    \end{align*}
+
+    \item \textbf{Cálculo de la tensión en la carga:}
+    Tensión de fase en el secundario en vacío (referencia):
+    \[ U_{20f} = \frac{380}{\sqrt{3}} \approx \SI{219.39}{\volt} \]
+    Corriente de carga:
+    \[ \bar{I}_2 = \frac{U_{20f}}{\bar{Z}_{tot}} = \frac{219,39\angle 0^{\circ}}{3,164\angle 28,9^{\circ}} = 69,34 \angle -28,9^{\circ}\,\text{A} \]
+    Tensión de fase en la carga:
+    \[ \bar{U}_{2f,carga} = \bar{I}_2 \cdot \bar{Z}_{carga} = 69,34\angle -28,9^{\circ} \cdot 3\angle 30^{\circ} = 208,02 \angle 1,1^{\circ}\,\text{V} \]
+    Tensión de línea en la carga (módulo):
+    \[ U_{2L,carga} = \sqrt{3} \cdot |\bar{U}_{2f,carga}| = \sqrt{3} \cdot 208,02 \approx \textbf{\SI{360.3}{\volt}} \]
+\end{enumerate}
+
+\newpage
+
+\section{Problema 2}
+Un transformador monofásico de \SI{1}{\mega\volt\ampere}, 10000/1000 V, \SI{50}{\hertz} ha dado los siguientes resultados en ensayos:\\
+
+\textbf{Vacío (B.T.):} $U_0 = \SI{1000}{\volt}$, $I_0 = \SI{30}{\ampere}$, $P_0 = \SI{10}{\kilo\watt}$\\
+
+\textbf{Cortocircuito (A.T.):} $U_{cc} = \SI{540}{\volt}$, $I_{cc} = \SI{90}{\ampere}$, $P_{cc} = \SI{12}{\kilo\watt}$
+
+\subsection{a) Ensayo de vacío}
+\textbf{Cálculo de parámetros:}
+\begin{align*}
+    \cos\varphi_0 &= \frac{P_0}{U_0 \cdot I_0} = \frac{10000}{1000 \cdot 30} = 0,333 \Rightarrow \varphi_0 = 70,53^{\circ} \\
+    I_{Fe} &= I_0 \cdot \cos\varphi_0 = 30 \cdot 0,333 = \SI{10}{\ampere} \Rightarrow R_{Fe} = \frac{U_0}{I_{Fe}} = \frac{1000}{10} = \textbf{\SI{100}{\ohm}} \\
+    I_\mu &= I_0 \cdot \sin\varphi_0 = 30 \cdot \sin(70,53^{\circ}) = \SI{28.28}{\ampere} \Rightarrow X_\mu = \frac{U_0}{I_\mu} = \frac{1000}{28,28} \approx \textbf{\SI{35.36}{\ohm}}
+\end{align*}
+Cálculo de la inductancia de magnetización para la simulación:
+\[ L_\mu = \frac{X_\mu}{2\pi f} = \frac{35.36}{2\pi \cdot 50} \approx \textbf{\SI{0.1125}{\henry}} \]
+
+\textbf{Simulación en QUCS:}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{vacio.png}
+    \caption{Circuito de simulación del ensayo de vacío en QUCS. La simulación verifica el valor de la intensidad de vacío $I_0 = \SI{30}{\ampere}$.}
+\end{figure}
+
+\newpage
+
+\subsection{b) Ensayo de cortocircuito}
+\textbf{Cálculo de parámetros:}
+\begin{align*}
+    R_{cc} &= \frac{P_{cc}}{I_{cc}^2} = \frac{12000}{90^2} \approx \textbf{\SI{1.48}{\ohm}} \\
+    Z_{cc} &= \frac{U_{cc}}{I_{cc}} = \frac{540}{90} = \SI{6}{\ohm} \\
+    X_{cc} &= \sqrt{Z_{cc}^2 - R_{cc}^2} = \sqrt{6^2 - 1,48^2} \approx \textbf{\SI{5.81}{\ohm}}
+\end{align*}
+Cálculo de la inductancia de cortocircuito para la simulación:
+\[ L_{cc} = \frac{X_{cc}}{2\pi f} = \frac{5.81}{2\pi \cdot 50} \approx \textbf{\SI{0.0185}{\henry}} \]
+
+\textbf{Simulación en QUCS:}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{cortocircuito.png}
+    \caption{Circuito de simulación del ensayo de cortocircuito en QUCS. La simulación verifica el valor de la intensidad de cortocircuito $I_{cc} = \SI{90}{\ampere}$.}
+\end{figure}
+
+\newpage
+
+\section{Problema 3}
+\textit{Problema examen septiembre 2025}
+
+Alternador trifásico conectado en estrella a red de potencia infinita de \SI{9}{\kilo\volt}. $X_s = \SI{35}{\ohm}/\text{fase}$. Desarrolla $S = \SI{3000}{\kilo\volt\ampere}$ con $\cos\varphi = 0,9$ (inductivo). Se aumenta la f.e.m. un 10\% manteniendo potencia activa constante.
+
+\subsection*{Solución}
+\begin{enumerate}
+    \item \textbf{Estado inicial (1):}
+    Tensión de fase y corriente nominal:
+    \[ U_f = \frac{9000}{\sqrt{3}} \approx \SI{5196}{\volt} \]
+    \[ I_1 = \frac{S}{\sqrt{3} U_L} = \frac{3000 \times 10^3}{\sqrt{3} \cdot 9000} \approx \SI{192.45}{\ampere} \]
+    \[ \varphi_1 = \arccos(0,9) \approx 25,84^{\circ} \]
+    \[ \bar{I}_1 = 192,45 \angle -25,84^{\circ}\,\text{A} \quad (\text{tomando } \bar{U}_f \text{ como referencia } 0^{\circ}) \]
+    F.e.m. inicial $\bar{E}_1$:
+    \begin{align*}
+        \bar{E}_1 &= \bar{U}_f + j X_s \bar{I}_1 = 5196 + j35 \cdot (192,45\angle -25,84^{\circ}) \\
+        &= 5196 + 35 \cdot 192,45 \angle 64,16^{\circ} = 5196 + 2933 + j6062 \\
+        &\approx 8129 + j6062 = 10145 \angle 36,7^{\circ}\,\text{V}
+    \end{align*}
+    \[ E_1 = |\bar{E}_1| = \SI{10145}{\volt} \]
+
+    \item \textbf{Estado final (2):}
+    Potencia activa constante:
+    \[ P_1 = S_1 \cos\varphi_1 = 3000 \cdot 0,9 = \SI{2700}{\kilo\watt} = P_2 \]
+    Nueva f.e.m.:
+    \[ E_2 = 1,10 \cdot E_1 = 1,10 \cdot 10145 \approx \SI{11160}{\volt} \]
+    Cálculo del nuevo ángulo de par $\delta_2$:
+    \[ P = 3 \frac{U_f E}{X_s} \sin\delta \Rightarrow \frac{E_1 \sin\delta_1}{X_s} = \frac{E_2 \sin\delta_2}{X_s} \]
+    \[ \sin\delta_2 = \frac{E_1}{E_2} \sin\delta_1 = \frac{1}{1,1} \sin(36,7^{\circ}) \approx 0,543 \Rightarrow \delta_2 \approx 32,9^{\circ} \]
+    Nueva corriente y factor de potencia:
+    \begin{align*}
+        \bar{I}_2 &= \frac{\bar{E}_2 - \bar{U}_f}{j X_s} = \frac{11160\angle 32,9^{\circ} - 5196\angle 0^{\circ}}{35\angle 90^{\circ}} \\
+        &= \frac{(9375 + j6063) - 5196}{j35} = \frac{4179 + j6063}{j35} \\
+        &\approx 173,2 - j119,4\,\text{A} \approx 210,4 \angle -34,6^{\circ}\,\text{A}
+    \end{align*}
+    Nuevo factor de potencia:
+    \[ \cos\varphi_2 = \cos(-34,6^{\circ}) \approx \textbf{0,823 \text{ (inductivo)}} \]
+\end{enumerate}
+
+\newpage
+
+\section{Problema 4}
+\textit{Problema examen septiembre 2022}
+
+Motor asíncrono trifásico, rotor jaula de ardilla, 4 polos. Datos placa: $P_u = \SI{10}{\kilo\watt}$, 220/380 V, \SI{50}{\hertz}, $I_{abs} = \SI{19}{\ampere}$, $N_n = \SI{1425}{rpm}$, $\cos\varphi = 0,9$.
+
+\subsection*{Solución}
+Asumimos conexión estrella para red de 380V (la más habitual si no se especifica otra cosa y concuerda con la corriente de 19A para esa potencia).
+
+\textbf{a) Resistencia de carga $R'_c$ y $R'_2$}
+Deslizamiento nominal:
+\[ n_s = \frac{60 \cdot f}{p} = \frac{60 \cdot 50}{2} = \SI{1500}{rpm} \]
+\[ s_n = \frac{1500 - 1425}{1500} = \frac{75}{1500} = 0,05 \]
+Potencia útil (suponiendo pérdidas mecánicas nulas, $P_u \approx P_{mi}$):
+\[ P_{mi} = 3 \cdot I_2'^2 \cdot R'_c = 3 \cdot I_2'^2 \cdot R'_2 \frac{1-s}{s} = \SI{10000}{\watt} \]
+
+\[ P_{ag} = \frac{P_{mi}}{1-s} = \frac{10000}{1-0,05} \approx \SI{10526}{\watt} \]
+\[ P_{Cu2} = s \cdot P_{ag} = 0,05 \cdot 10526 \approx \SI{526.3}{\watt} \]
+Si asumimos $I_1 \approx I'_2 = \SI{19}{\ampere}$:
+\[ 3 \cdot 19^2 \cdot R'_2 \approx 526,3 \Rightarrow R'_2 \approx \frac{526,3}{3 \cdot 361} \approx \textbf{\SI{0.486}{\ohm}} \]
+\[ R'_c = R'_2 \frac{1-0,05}{0,05} = 0,486 \cdot 19 \approx \textbf{\SI{9.23}{\ohm}} \]
+
+\textbf{b) Par útil en el eje}
+\[ T_u = \frac{P_u}{\omega_m} = \frac{10000}{1425 \cdot \frac{2\pi}{60}} = \frac{10000}{149,2} \approx \textbf{\SI{67.0}{\newton\meter}} \]
+
+\end{document}

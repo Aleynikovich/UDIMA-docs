@@ -1,0 +1,152 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\geometry{a4paper}
+\usepackage{graphicx}
+\usepackage[spanish]{babel}
+\usepackage{csquotes}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{titling}
+
+% Bibliography and citations
+\usepackage[backend=biber, style=apa]{biblatex}
+\addbibresource{references.bib} % Aquí van las referencias en formato BibTeX
+
+\title{AEC3: Blockchain}
+\author{Alexander Sebastian Kalis}
+\date{\today}
+
+\begin{document}
+
+\begin{titlepage}
+    \centering
+    \vspace*{1cm} % Espacio vertical superior
+    
+    \Large \textbf{Universidad a Distancia de Madrid}\\[0.5cm] % Nombre de la universidad
+    \large Escuela de Ciencias Técnicas e Ingeniería\\[0.5cm] % Facultad o escuela
+
+    \vspace{2cm} % Espacio antes del título
+
+    \Huge \thetitle\\[2cm] % Título del documento
+
+    \Large \theauthor\\[1cm] % Autor del documento
+
+    \Large Asignatura: Logística\\[0.5cm] % Asignatura
+    \Large Profesor: José Manuel Toledano Rico\\[1cm] % Profesor
+
+    \Large 12 de Mayo de 2024\\[2cm] % Fecha
+
+    \vfill % Llena el espacio vertical restante
+
+    \includegraphics[width=0.2\textwidth]{/run/media/x/Server/Teknikerdisk/UDIMA/Resources/Graphics/logo.jpg}\\[1cm] % Logo de la universidad
+
+\end{titlepage}
+
+\newpage 
+\thispagestyle{empty}
+\newpage
+\tableofcontents
+\newpage
+
+\section{Introducción}
+
+La globalización ha incrementado exponencialmente la complejidad de las cadenas de suministro, convirtiéndolas en redes extensas que abarcan múltiples fronteras geográficas y jurisdicciones. Esto ha traído consigo una serie de desafíos relacionados con la gestión de la logística, la eficiencia operativa y la transparencia en las transacciones. En este contexto, la tecnología blockchain emerge como una solución potencialmente revolucionaria, ofreciendo un enfoque descentralizado y seguro para la gestión de datos a lo largo de la cadena de suministros.
+
+El blockchain, originalmente desarrollado como la arquitectura subyacente para criptomonedas como Bitcoin, se basa en un sistema de registro distribuido que promete una mayor transparencia y seguridad en las operaciones logísticas. Sus características distintivas incluyen la inmutabilidad de los registros, la transparencia en las transacciones y la capacidad de operar sin la necesidad de intermediarios de confianza, lo cual podría reducir significativamente los costos y los tiempos de operación.
+
+Este trabajo tiene como objetivo analizar las ventajas y desventajas de la implementación de la tecnología blockchain en las cadenas de suministro. A través de una revisión crítica de literatura especializada y la exploración de estudios de caso relevantes, se evaluará el impacto potencial de esta tecnología en la eficiencia, seguridad y gestión de las cadenas de suministros globales. Además, se presentarán reflexiones personales y profesionales para enriquecer el análisis desde una perspectiva práctica y teórica.
+
+
+\section{Fundamentos del Blockchain}
+
+"Blockchain es una tecnología de registro distribuido que permite la creación de un libro contable digital descentralizado" \cite{TechSolutions} y seguro de todas las transacciones realizadas entre partes. Cada ``bloque'' en la cadena contiene un número de transacciones, y cada vez que una nueva transacción se realiza, se registra un nuevo bloque en la cadena de todos los participantes. Este bloque es validado por consenso entre los nodos participantes, lo que asegura que cada copia del libro contable es idéntica y correcta.
+
+La tecnología se basa en principios de criptografía fuerte que aseguran la integridad y la seguridad de los datos registrados, haciendo casi imposible la alteración de la información una vez que ha sido incluida en la cadena. Esto es crucial para aplicaciones en la cadena de suministros donde la veracidad y la inalterabilidad de los registros de productos son esenciales para la confianza y la transparencia entre las partes.
+
+Una de las características más destacadas del blockchain es la posibilidad de operar sin la necesidad de un intermediario centralizado. En cambio, utiliza un mecanismo de consenso distribuido que permite a todas las partes tener acceso a la misma versión verificada de la verdad. Esta característica no solo reduce los costos asociados con los intermediarios, sino que también aumenta la eficiencia en los procesos.
+
+La implementación de ``contratos inteligentes'' es otra innovación clave del blockchain. Estos contratos son programas almacenados en la cadena de bloques que se ejecutan automáticamente cuando se cumplen condiciones predefinidas. En el contexto de la cadena de suministros, esto puede automatizar y agilizar procesos complejos y basados en el cumplimiento de ciertos criterios, como pagos automáticos y liberaciones de carga, reduciendo así el tiempo y el potencial de error humano.
+
+
+
+\section{Ventajas del uso de blockchain en la cadena de suministros}
+
+La aplicación de la tecnología blockchain en la cadena de suministros ofrece múltiples ventajas que pueden transformar la manera en que las organizaciones manejan y operan sus redes logísticas globales. A continuación, se destacan algunas de las principales ventajas:
+
+\subsection{Trazabilidad mejorada}
+Una de las ventajas más significativas del blockchain es su capacidad para proporcionar una trazabilidad completa y transparente de los productos a lo largo de toda la cadena de suministros. Cada transacción o movimiento del producto puede ser registrado 
+en la blockchain, proporcionando un registro inmutable y permanente que es accesible para todos los participantes. Esto 
+es particularmente valioso en industrias donde la autenticidad y el origen de los productos son cruciales, como en la 
+alimentación, la farmacéutica y la electrónica.
+
+\subsection{Reducción de costos y eficiencia mejorada}
+Blockchain elimina la necesidad de intermediarios en muchos procesos logísticos mediante el uso de contratos inteligentes
+ que ejecutan automáticamente acuerdos preestablecidos entre las partes. Esto no solo reduce los costos asociados con 
+ intermediarios, sino que también acelera las transacciones y minimiza los errores y retrasos que pueden surgir de la 
+ gestión manual. Además, la eficiencia operativa se ve reforzada al simplificar los procesos de cumplimiento y auditoría,
+  dado que todos los registros son accesibles y verificables en tiempo real.
+
+\subsection{Seguridad mejorada}
+``El uso de criptografía avanzada en blockchain asegura que los datos almacenados son altamente seguros y resistentes a los intentos de modificación no autorizada. En el contexto de la cadena de suministros, esto significa que la información sobre el origen
+ de los productos, su manejo y sus transacciones está protegida contra manipulaciones, 
+ reduciendo significativamente el riesgo de fraude y contrabando"  \cite{casey2018blockchain}.
+
+\subsection{Mayor resiliencia de la red}
+"La naturaleza descentralizada del blockchain hace que la red sea más resistente a fallos y ataques específicos. A diferencia de los sistemas centralizados, donde un punto de fallo puede afectar a toda la cadena, en blockchain, la información se distribuye entre numerosos nodos, asegurando que el sistema pueda seguir funcionando incluso si algunos nodos fallan o son atacados" \cite{peters2016understanding}.
+
+
+\section{Desventajas y retos}
+A pesar de sus numerosas ventajas, la implementación de blockchain en la cadena de suministros no está exenta de desafíos. Estos retos pueden ser técnicos, económicos o regulatorios, y es esencial abordarlos para comprender completamente el alcance de la tecnología blockchain.
+
+\subsection{Costo de implementación}
+``Uno de los principales obstáculos para la adopción de blockchain es el alto costo inicial asociado con el desarrollo e implementación de soluciones blockchain personalizadas. Estas tecnologías requieren una inversión significativa en hardware, software y experiencia técnica, lo que puede ser prohibitivo para pequeñas y medianas empresas" \cite{hald2019blockchain}.
+
+\subsection{Escalabilidad y velocidad de transacciones}
+La tecnología blockchain, especialmente aquella que emplea pruebas de trabajo como mecanismo de consenso, enfrenta problemas de escalabilidad y puede procesar un número limitado de transacciones por segundo en comparación con sistemas de pago tradicionales. Esto puede resultar en retrasos y cuellos de botella cuando se implementa a gran escala en cadenas de suministro complejas.
+
+\subsection{Interoperabilidad entre diferentes blockchains}
+La falta de estándares comunes y la dificultad en la interoperabilidad entre diferentes plataformas blockchain pueden limitar la eficacia de las soluciones blockchain integradas. Sin una integración fluida, la capacidad de blockchain para mejorar la transparencia y la eficiencia en la cadena de suministros puede verse comprometida.
+
+\subsection{Cuestiones regulatorias y legales}
+El entorno regulatorio para blockchain sigue siendo incierto en muchas jurisdicciones. Las preocupaciones sobre la privacidad de los datos, la seguridad y la legalidad de los contratos inteligentes necesitan ser abordadas claramente para que las empresas adopten esta tecnología de manera amplia.
+
+\subsection{Resistencia al cambio}
+Finalmente, la adopción de blockchain requiere un cambio cultural y organizacional significativo. Muchas empresas pueden ser reacias a adoptar una tecnología relativamente nueva y no probada debido a la incertidumbre sobre su efectividad y el retorno de la inversión.
+
+
+\section{Casos de estudio y aplicaciones reales}
+
+Además de los análisis teóricos y ejemplos documentados de uso de blockchain en la cadena de suministros,
+ mi experiencia personal en la inversión en criptomonedas y el trabajo con tecnologías blockchain como Solana ofrece
+  una perspectiva única sobre la aplicación práctica de esta tecnología. Adelante he buscado un ejemplo de aplicación real
+   de la blockchain en grandes empresas y un poco mi experiencia personal.
+  
+
+\subsection{Walmart y la trazabilidad de alimentos}
+Walmart ha implementado blockchain para rastrear el origen de varios productos alimenticios en su cadena de suministro. La capacidad de trazar rápidamente los productos desde su origen hasta el consumidor final es fundamental para abordar rápidamente los problemas de seguridad alimentaria, una capacidad que también he observado en la red Solana, donde las transacciones rápidas y la trazabilidad pueden aplicarse a una amplia gama de aplicaciones. \cite{walmart2019blockchain}
+\subsection{Experiencia con Solana}
+Mi trabajo con Solana, una plataforma conocida por su alta velocidad de transacción y eficiencia energética en comparación con otras cadenas de bloques, subraya el potencial de blockchain para revolucionar no solo la cadena de suministros sino también otras muchas industrias. La capacidad de Solana para procesar miles de transacciones por segundo con un mecanismo de consenso de prueba de participación delegada presenta un modelo viable para implementaciones de blockchain a gran escala que requieren una alta throughput y una menor latencia.
+
+
+
+\section{Conclusión}
+
+A lo largo de este trabajo, hemos explorado en profundidad las ventajas y desventajas del uso de la tecnología blockchain en la cadena de suministros. La capacidad de proporcionar trazabilidad mejorada, reducir costos mediante la eliminación de intermediarios, mejorar la seguridad de los datos y aumentar la resiliencia de la red son claros beneficios que hacen del blockchain una tecnología prometedora para revolucionar la cadena de suministros global.
+
+Sin embargo, también hemos identificado desafíos significativos que deben ser superados para que su adopción sea más generalizada. El alto costo de implementación, problemas de escalabilidad, la falta de interoperabilidad entre diferentes plataformas de blockchain, y las incertidumbres regulatorias son obstáculos que aún están en proceso de ser resueltos.
+
+Mirando hacia el futuro, es esencial que los desarrolladores de blockchain, las empresas y los reguladores trabajen juntos para abordar estos desafíos. La estandarización y la mejora de la tecnología permitirán no solo superar las barreras técnicas y económicas, sino también fomentar un entorno en el que la seguridad, la transparencia y la eficiencia puedan alcanzar nuevos niveles.
+
+En conclusión, mientras que el blockchain ofrece un potencial considerable para transformar la cadena de suministros, su éxito dependerá de nuestra capacidad para integrar esta tecnología de manera efectiva, asegurando que sea accesible, segura y beneficiosa para todas las partes involucradas en la cadena de valor global.
+
+\newpage 
+
+
+\section{Bibliografía}
+\printbibliography
+
+
+\end{document}

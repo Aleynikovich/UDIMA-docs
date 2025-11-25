@@ -1,0 +1,261 @@
+\documentclass{article}
+\usepackage{lipsum}
+\usepackage{authoraftertitle}
+\usepackage[top=2cm,bottom=1.5cm,left=1.5cm, right=3cm,includeheadfoot]{geometry}
+\usepackage{graphicx}
+\usepackage[parfill]{parskip}
+\usepackage{fancyhdr}
+\usepackage[spanish]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{textcomp}
+\usepackage{eurosym}
+\usepackage{mathtools}
+\usepackage{csquotes}
+\usepackage{amssymb}
+\usepackage[shortlabels]{enumitem}
+\usepackage{fancybox, graphicx}
+\usepackage{array}
+\usepackage{hhline}
+\usepackage{subfigure}
+\usepackage{gensymb}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{amsmath} 
+\usepackage{caption}
+\usepackage{esvect}
+\usepackage{siunitx}
+\usepackage{commath}
+%Header & Footer
+
+\pagestyle{fancy}
+\fancyhead[LE]{\MyTitle}
+\fancyhead[LO]{Miroeconomía}
+%\fancyhead[RO]{\leftmark}
+%\fancyhead[RE]{\leftmark}
+\fancyfoot[L]{\raisebox{-1cm}{\includegraphics[height=2cm]{D:/KUKADisk/UDIMA/DocumentGraphics/LOGOUDIMA.jpg}}}
+\fancyfoot[R]{Corregido:\\Dr. Juan José Pintado Conesa}
+%\fancyfoot[RO]{07/12/2018}
+
+
+%Vars
+\author{Alexander Sebastian Kalis}
+\title{Ejercicios vinculados a las unidades 3, 4 y 5}
+
+
+%DOC
+
+
+\begin{document}
+
+\begin{titlepage}
+
+    \begin{center}
+
+        \line(1,0){300}\\
+        [0.2in]
+        \huge{\bfseries {\MyTitle}}\\
+        [1mm]
+        \line(2,0){200}\\
+        [0.75cm]
+        \textsc{\LARGE Miroeconomía}\\
+        [2cm]
+        \includegraphics[height=10cm]{D:/KUKADisk/UDIMA/Micoeconomia/AEC1/Graphics/portada.jpg}\\
+        [3cm]
+
+    \end{center}
+
+    \begin{flushright}
+
+        {\MyAuthor}\\
+        %Profesora: Dra. Isabel Cristina Gil García\\
+        %Curso: Ingeniería de Organización Industrial\\
+        %UDIMA\\
+        \today        
+
+    \end{flushright}
+    
+\end{titlepage}
+
+%\tableofcontents \thispagestyle{empty}
+%\newpage
+
+%\section*{Introducción}
+
+
+\newpage
+
+\section*{Problema 1}
+Analice como operan el efecto sustitución, el efecto renta y el efecto total en el caso de un:\\
+a) Bien Normal.\\
+b) Bien Inferior.\\ 
+c) Bien Giffen\\
+
+Podemos analizarlo utilizando la tabla que encontramos en el manual de la asignatura:\\
+\begin{figure}[htb!]
+    \centering
+    \includegraphics[height=4cm]{D:/KUKADisk/UDIMA/Micoeconomia/AEC2/tabla1.png}
+    \caption{Efectos sobre la cantidad demandada de un bien, provocados por cambios de su precio}
+    \label{}
+\end{figure}
+
+En la tabla se puede observar como el efecto sustitución tiene el mismo efecto para los tres tipos de bienes,
+cuando el precio sube, baja la cantidad demandada del mismo, a su vez, cuando el precio baja, aumenta la
+cantidad demandada.\\
+Cuando el precio de un bien normal sube, la demanda disminuye con todos sus efectos.\\
+En el caso de un bien inferior, una subida del precio hace que la cantidad demandada de los mismos
+disminuya en los casos del efecto de sustitución y del total.\\
+En el caso de un bien Giffen, el sentido de los efectos renta y sustitución es igual al de los bienes inferiores,
+sin embargo, podemos observar que ante una subida del precio del bien, la cantidad demandada aumenta.
+Esto es debido a la magnitud del efecto renta es superior a la del efecto sustitución.
+
+
+
+\section*{Problema 2}
+
+La empresa ESTMARSA dedicada a la fabricación de Microchips utiliza únicamente dos factores productivos: “a” y “b”. 
+ 
+Su función de producción viene determinada por la ecuación: 
+
+\begin{equation*}
+    y = 2ab 
+\end{equation*}
+
+
+Donde y es la cantidad de producto obtenido (número de microchips fabricados), y “a” y “b” son las cantidades utilizadas de cada uno de los factores productivos. 
+ 
+El precio del factor “a” es de 1 \euro{}, y el de “b” de 2 \euro{} (ambos por unidad de factor). 
+ 
+Para una producción de 100 microchips, se le pide que determine: 
+ 
+a) El empleo de cada uno de los factores.\\
+b) El mínimo coste en el que incurre. \\
+
+\newpage
+
+Podemos utilizar la ecuación donde minimizamos los costes de producción:
+
+\begin{equation}
+     \cfrac{PMg_b}{w}=\cfrac{PMg_a}{r}
+\end{equation}
+
+La productividad marginal: $f(a,b) - 2ab$ entonces $PMg_a=2b$ y ${PMg_b=2a}$. Sustituyendo en la anterior fórmula obtenemos:\\
+
+
+\begin{equation}
+    \cfrac{2a}{2b}=\cfrac{2}{1}
+\end{equation}
+
+Despejando y sustituyendo el valor de 100 microchips obtenemos:
+
+\begin{equation}
+    100=2ab \rightarrow
+    b=\sqrt{25}=\rightarrow
+    b=5
+\end{equation}
+
+y
+
+\begin{equation}
+    100=2a(5) \rightarrow 
+    100=10a \rightarrow
+    a=10
+\end{equation}
+
+Una vez sabido esto podemos calcular el coste mínimo que incurre utilizando la fórmula:
+
+\begin{equation}
+    CT=rPa+wPb \rightarrow
+    1(10)+2(5)=20
+\end{equation}
+
+Luego 20eur es el coste mínimo.
+
+
+\section*{Problema 3}
+
+La empresa GONPABSA que tiene unos costes fijos de 100 u.m., presenta la siguiente
+estructura de costes: 
+
+\begin{figure}[htb!]
+    \centering
+    \includegraphics[height=4cm]{D:/KUKADisk/UDIMA/Micoeconomia/AEC2/tabla2a.png}
+\end{figure}
+
+Se le pide que represente en una tabla, para cada volumen de producción, el coste total, el coste
+marginal, el coste total medio, el coste variable medio, y el coste fijo medio.
+
+\newpage
+
+Se realiza la actividad con una tabla en Excel:
+\begin{figure}[htb!]
+    \centering
+    \includegraphics[height=4cm]{D:/KUKADisk/UDIMA/Micoeconomia/AEC2/tabla2b.png}
+\end{figure}
+
+\section*{Problema 4}
+
+Si nos encontramos en los siguientes situaciones: 
+\begin{figure}[htb!]
+    \centering
+    \includegraphics[height=2cm]{D:/KUKADisk/UDIMA/Micoeconomia/AEC2/tabla4a.png}
+\end{figure}
+
+Señale cuál es el producto medio del factor variable en cada una de las mismas. 
+
+Podemos calcular el producto medio del factor variable utilizando la fórmula
+\begin{equation}
+    PMe_L=\cfrac{PT_L}{L}
+\end{equation}
+
+El resultado se muestra en la tabla:
+\begin{figure}[htb!]
+    \centering
+    \includegraphics[height=2cm]{D:/KUKADisk/UDIMA/Micoeconomia/AEC2/tabla4b.png}
+\end{figure}
+
+\section*{Problema 5}
+
+Dadas las siguientes posibilidades en un proceso productivo: 
+
+\begin{figure}[htb!]
+    \centering
+    \includegraphics[height=2cm]{D:/KUKADisk/UDIMA/Micoeconomia/AEC2/tabla5a.png}
+\end{figure}
+
+Señale y argumente que clase de rendimientos a escala experimenta al pasar de la situación A a la
+B. 
+
+Se puede observar la variación proporcional del factor de producción $m=2$.
+
+Esto significa que al pasar de situación A a situación B tenemos un rendimiento creciente de escala, aplicamos la fórmula:
+
+\begin{equation}
+    f(mK,mL)>mf(K,L) \rightarrow
+    f(2K,2L)>2f(K,L)
+\end{equation}
+
+Entonces se multiplica el producto obtenido en un factor de $3.33$.
+
+
+\section*{Problema 6}
+
+Sea la función de costes: $CT = 100 + 10 q$\\
+Se le pide que obtenga:\\
+a) El coste total medio.\\
+b) El coste variable medio.\\
+c) El coste fijo medio.\\
+d) El coste marginal. \\
+
+Se representa con una tabla de valores:
+
+\begin{figure}[htb!]
+    \centering
+    \includegraphics[height=4cm]{D:/KUKADisk/UDIMA/Micoeconomia/AEC2/tabla6a.png}
+\end{figure}
+
+
+\end{document}

@@ -1,0 +1,218 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{float}
+\usepackage{caption}
+\usepackage[spanish]{babel}
+\geometry{left=3cm, right=3cm, top=2.5cm, bottom=2.5cm}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Tecnología Eléctrica}
+\fancyhead[R]{Universidad a Distancia de Madrid (UDIMA)}
+\fancyfoot[C]{\thepage}
+
+\title{AEC2. Prácticas de Dimensionado de Circuitos Eléctricos}
+\author{Alexander Sebastian Kalis}
+\date{1 de diciembre de 2024}
+
+\begin{document}
+
+
+
+\maketitle
+
+\newpage
+
+\tableofcontents
+
+\newpage 
+
+\section{Problema 1}
+
+Se desea determinar la sección de los conductores eléctricos para alimentar un motor trifásico de una amasadora industrial con las siguientes condiciones: potencia del motor de $10 \, \text{CV}$, factor de potencia $\cos \varphi = 0.85$, tensión de $380 \, \text{V}$, longitud de la línea de $12 \, \text{m}$ y una caída de tensión máxima permitida del $1\%$. Los conductores son de cobre, instalados en tubos de PVC, con una resistencia específica de $\rho_{\text{Cu}} = 0.018 \, \Omega \, \text{mm}^2/\text{m}$.
+
+La potencia del motor, en kilovatios, se convierte como:
+\[
+P_{\text{kW}} = 10 \, \text{CV} \cdot 0.736 = 7.36 \, \text{kW}.
+\]
+La intensidad de corriente se determina mediante la fórmula:
+\[
+I_B = \frac{P_{\text{kW}}}{\sqrt{3} \cdot V \cdot \cos \varphi},
+\]
+donde $P_{\text{kW}} = 7.36 \, \text{kW}$, $V = 380 \, \text{V}$ y $\cos \varphi = 0.85$. Sustituyendo valores:
+\[
+I_B = \frac{7.36}{\sqrt{3} \cdot 380 \cdot 0.85} \approx 13.2 \, \text{A}.
+\]
+
+Para la caída de tensión, se usa la relación:
+\[
+\Delta V = \frac{2 \cdot \rho_{\text{Cu}} \cdot L \cdot I_B}{S},
+\]
+donde $\Delta V_{\text{máx}} = 0.01 \cdot 380 = 3.8 \, \text{V}$. Despejando $S$:
+\[
+S = \frac{2 \cdot \rho_{\text{Cu}} \cdot L \cdot I_B}{\Delta V}.
+\]
+Sustituyendo los valores:
+\[
+S = \frac{2 \cdot 0.018 \cdot 12 \cdot 13.2}{3.8} \approx 1.5 \, \text{mm}^2.
+\]
+
+Finalmente, verificamos el criterio del proyectista: $0.9 \cdot I_z > I_B$. Para un conductor de sección $1.5 \, \text{mm}^2$ tripolar empotrado, la intensidad admisible es $I_z \approx 15 \, \text{A}$. Entonces:
+\[
+0.9 \cdot I_z = 0.9 \cdot 15 = 13.5 \, \text{A}.
+\]
+Como $13.5 > 13.2$, se cumple el criterio adicional. Por lo tanto, la sección de los conductores requerida es de $1.5 \, \text{mm}^2$.
+
+
+
+\section{Problema 2}
+
+Para la instalación de la figura, se realiza el análisis con los siguientes datos:
+
+\begin{itemize}
+    \item Potencia absorbida por la carga: $P_{\text{abs}} = 20800 \, \text{W}$.
+    \item Tensión nominal: $V = 380 \, \text{V}$.
+    \item Factor de potencia: $\cos \varphi = 0.92$.
+    \item Longitud de la línea: $L = 45 \, \text{m}$.
+    \item Sección de los conductores: $S = 6 \, \text{mm}^2$.
+    \item Resistividad del cobre: $\rho_{\text{Cu}} = 0.018 \, \Omega \, \text{mm}^2/\text{m}$.
+    \item Impedancia en el punto A: $Z_A = 25 + 22j \, \text{m}\Omega$.
+\end{itemize}
+
+\subsection*{a) Verificación de la caída de tensión}
+
+La intensidad de corriente absorbida por la carga se calcula como:
+\[
+I_B = \frac{P_{\text{abs}}}{\sqrt{3} \cdot V \cdot \cos \varphi}.
+\]
+Sustituyendo los valores:
+\[
+I_B = \frac{20800}{\sqrt{3} \cdot 380 \cdot 0.92} \approx 33.14 \, \text{A}.
+\]
+
+La caída de tensión se calcula con la fórmula:
+\[
+\Delta V = \frac{2 \cdot \rho_{\text{Cu}} \cdot L \cdot I_B}{S},
+\]
+donde $L$ es la longitud total del cableado (ida y vuelta). Sustituyendo los valores:
+\[
+\Delta V = \frac{2 \cdot 0.018 \cdot 45 \cdot 33.14}{6} \approx 8.93 \, \text{V}.
+\]
+
+El porcentaje de caída de tensión respecto a la tensión nominal es:
+\[
+\text{Caída (\%)} = \frac{\Delta V}{V} \cdot 100 = \frac{8.93}{380} \cdot 100 \approx 2.35\%.
+\]
+
+Como el porcentaje de caída excede el límite del $1.5\%$ establecido por la ITC-BT-19 del REBT, es necesario aumentar la sección del conductor.
+
+\subsection*{b) Cálculo de la corriente de cortocircuito}
+
+La impedancia del punto A está dada como $Z_A = 25 + 22j \, \text{m}\Omega$, lo que equivale a:
+\[
+Z_A = 0.025 + 0.022j \, \Omega.
+\]
+
+El módulo de la impedancia es:
+\[
+|Z_A| = \sqrt{(0.025)^2 + (0.022)^2} \approx 0.0336 \, \Omega.
+\]
+
+La corriente máxima de cortocircuito se calcula suponiendo que $\cos \varphi = 1$ (impedancia puramente resistiva):
+\[
+I_{\text{cc máx}} = \frac{V}{|Z_A|} = \frac{380}{0.0336} \approx 11310 \, \text{A}.
+\]
+
+Para la corriente mínima de cortocircuito, consideramos el ángulo de desfase $\theta$ entre la resistencia y la reactancia, calculado como:
+\[
+\theta = \arctan\left(\frac{\text{Im}(Z_A)}{\text{Re}(Z_A)}\right) = \arctan\left(\frac{0.022}{0.025}\right) \approx 41.19^\circ.
+\]
+
+El factor de potencia asociado es:
+\[
+\cos \theta = \cos(41.19^\circ) \approx 0.754.
+\]
+
+La corriente mínima de cortocircuito es:
+\[
+I_{\text{cc mín}} = I_{\text{cc máx}} \cdot \cos \theta = 11310 \cdot 0.754 \approx 8530 \, \text{A}.
+\]
+
+Por lo tanto, las corrientes de cortocircuito en el punto A son:
+\[
+I_{\text{cc máx}} \approx 11310 \, \text{A}, \quad I_{\text{cc mín}} \approx 8530 \, \text{A}.
+\]
+
+\section{Problema 3}
+
+Se solicita determinar las corrientes de cortocircuito en el punto A, basándonos en los siguientes datos:
+
+\begin{itemize}
+    \item Potencia nominal del transformador: $S_n = 800 \, \text{kVA}$.
+    \item Tensiones: $20 \, \text{kV}/400 \, \text{V}$.
+    \item Impedancia relativa del transformador: $\varepsilon_{cc} = 6\%$.
+    \item Impedancia relativa de la red: $\varepsilon_{xcc} = 4.5\%$.
+    \item Longitud de la línea: $L = 60 \, \text{m}$.
+    \item Sección del conductor: $S = 16 \, \text{mm}^2$.
+    \item Resistividad del cobre: $\rho_{\text{Cu}} = 0.018 \, \Omega \, \text{mm}^2/\text{m}$.
+\end{itemize}
+
+\subsection*{Cálculo de la impedancia equivalente}
+
+\subsubsection*{Impedancia del transformador}
+La impedancia relativa del transformador, expresada en ohmios, se calcula utilizando la fórmula:
+\[
+Z_{\text{cc}} = \varepsilon_{cc} \cdot \frac{V_{\text{sec}}^2}{S_n},
+\]
+donde $V_{\text{sec}} = 400 \, \text{V}$ es la tensión en el lado secundario y $S_n = 800 \, \text{kVA}$ es la potencia nominal. Sustituyendo valores:
+\[
+Z_{\text{cc}} = 0.06 \cdot \frac{400^2}{800 \cdot 10^3} = 0.012 \, \Omega.
+\]
+
+\subsubsection*{Impedancia de la red}
+De manera análoga, para la red:
+\[
+Z_{\text{xcc}} = \varepsilon_{xcc} \cdot \frac{V_{\text{sec}}^2}{S_n},
+\]
+con $\varepsilon_{xcc} = 4.5\%$. Sustituyendo valores:
+\[
+Z_{\text{xcc}} = 0.045 \cdot \frac{400^2}{800 \cdot 10^3} = 0.009 \, \Omega.
+\]
+
+\subsubsection*{Impedancia de la línea}
+La impedancia de la línea se calcula considerando su resistencia por unidad de longitud:
+\[
+Z_{\text{línea}} = \frac{2 \cdot \rho_{\text{Cu}} \cdot L}{S},
+\]
+donde $L = 60 \, \text{m}$ es la longitud y $S = 16 \, \text{mm}^2$ es la sección del conductor. Sustituyendo:
+\[
+Z_{\text{línea}} = \frac{2 \cdot 0.018 \cdot 60}{16} = 0.135 \, \Omega.
+\]
+
+\subsubsection*{Impedancia total}
+La impedancia equivalente en el punto A se obtiene como la suma de las impedancias:
+\[
+Z_{\text{total}} = Z_{\text{cc}} + Z_{\text{xcc}} + Z_{\text{línea}}.
+\]
+Sustituyendo los valores:
+\[
+Z_{\text{total}} = 0.012 + 0.009 + 0.135 = 0.156 \, \Omega.
+\]
+
+\subsection*{Cálculo de la corriente de cortocircuito}
+La corriente de cortocircuito en el punto A se determina como:
+\[
+I_{\text{cc}} = \frac{V_{\text{sec}}}{Z_{\text{total}}},
+\]
+donde $V_{\text{sec}} = 400 \, \text{V}$. Sustituyendo:
+\[
+I_{\text{cc}} = \frac{400}{0.156} \approx 2564 \, \text{A}.
+\]
+
+Por lo tanto, la corriente de cortocircuito en el punto A es de aproximadamente $2564 \, \text{A}$.
+
+
+\end{document}
