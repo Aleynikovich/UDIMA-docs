@@ -1,0 +1,195 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[spanish,es-tabla]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{siunitx}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage{booktabs}
+
+% Configuración de página
+\geometry{left=3cm, right=3cm, top=3cm, bottom=3cm}
+\sisetup{output-decimal-marker={,}, range-phrase={ a }, list-final-separator={ y }, list-pair-separator={ y }}
+\DeclareSIUnit{\var}{var}
+
+\begin{document}
+
+% PORTADA
+\begin{titlepage}
+    \centering
+    \vspace*{2cm}
+    {\Huge\bfseries Ejercicios Prácticos Dimensionado de Circuitos Eléctricos}\\[2cm]
+    {\Large Actividad de Evaluación Continua 2 (AEC2)}\\[0.5cm]
+    {\Large Asignatura: Tecnología Eléctrica (1526)}\\[4cm]
+    \Large Alexander Sebastian Kalis\\[1cm]
+    {\large \today}
+    \vfill
+\end{titlepage}
+
+% ÍNDICE
+\thispagestyle{plain}
+\tableofcontents
+\newpage
+
+\section*{DESCRIPCIÓN DE LA ACTIVIDAD}
+
+Para el esquema unifilar representado en la figura correspondiente a una instalación industrial en baja tensión, se pide:
+
+Red $S=350$ MVA
+
+Datos del Transformador:
+\begin{itemize}
+    \item $S_{n}=100$ KVA
+    \item $15~kV/380V$
+    \item $\epsilon_{RCC}=4\%$
+    \item $\epsilon_{Xcc}=3\%$
+\end{itemize}
+
+\section{Problema 1: Determinación de las intensidades circulantes}
+
+Para determinar la intensidad de diseño ($I_B$) de cada línea, se calcula primero la intensidad nominal ($I_n$) de los receptores y posteriormente se aplica el criterio de seguridad especificado: sumar un 25\% de la intensidad del mayor motor alimentado por la línea.
+
+\subsection{Cálculo de intensidades nominales ($I_n$)}
+Se emplea la fórmula para sistemas trifásicos, convirtiendo la potencia mecánica (CV) a eléctrica (W) mediante el rendimiento ($\eta$):
+\[ I_n = \frac{P_{(CV)} \cdot 736}{\sqrt{3} \cdot 380 \cdot \cos\varphi \cdot \eta} \]
+C1 (10 CV): \\
+\[I_{n,C1} = \frac{7360}{\sqrt{3} \cdot 380 \cdot 0,85 \cdot 0,88} = {14,95 \, A}\]
+C2 (15 CV): \\
+\[I_{n,C2} = \frac{11040}{\sqrt{3} \cdot 380 \cdot 0,86 \cdot 0,91} = {21,43 \, A}\]
+C3 (20 CV): \\
+\[I_{n,C3} = \frac{14720}{\sqrt{3} \cdot 380 \cdot 0,90 \cdot 0,89} =   {27,92 \, A}\]
+C4 (18 kW): \\
+\[I_{n,C4} = \frac{18000}{\sqrt{3} \cdot 380 \cdot 0,95 \cdot 1,0} = {28,79 \, A}\]
+
+\subsection{Cálculo de intensidades de diseño ($I_B$)}
+Aplicando la regla: $I_B = \sum I_n + (0,25 \cdot I_{n,max\_motor})$.
+
+LC1:
+$1,25 \cdot 14,95 = {18,69 \, A}$
+
+LC2:
+$1,25 \cdot 21,43 = {26,79 \, A}$
+
+LC3:
+$1,25 \cdot 27,92 = {34,90 \, A}$
+
+LC4:
+$28,79 \, A$ (Alumbrado, sin recargo de motor).\\
+
+\subsection{Líneas de Distribución}
+
+\paragraph{L2 (Alimenta C1+C2): El mayor motor es C2.
+    \[ I_{L2} = (14,95 + 21,43) + (0,25 \cdot 21,43) = 36,38 + 5,36 = {41,74 \, A} \]}
+\paragraph{L1 (Total): El mayor motor es C3.
+    \[ I_{L1} = (14,95 + 21,43 + 27,92 + 28,79) + (0,25 \cdot 27,92) = 93,09 + 6,98 = {100,07 \, A} \]}
+
+\newpage
+
+\section{Problema 2: Dimensionado por intensidad admisible}
+
+Se seleccionan las secciones utilizando la Tabla 5 del Manual (ITC-BT-19), verificando que la intensidad admisible ($I_z$) supere a la de diseño ($I_B$). Se asume temperatura ambiente de 40$^{\circ}$C.
+
+\subsection{Identificación de Métodos de Instalación (Tabla 5)}
+\begin{itemize}
+    \item \textbf{L1:} Unipolares en contacto, bandeja perforada $\rightarrow$ Fila F, columna 3x PVC.
+    \item \textbf{L2:} Multiconductor, bandeja perforada $\rightarrow$ Fila E, columna 3x PVC.
+    \item \textbf{LC1-LC4:} Multiconductor bajo tubo en pared $\rightarrow$ Fila B2, columna 3x PVC.
+\end{itemize}
+
+\subsection{Resumen del dimensionado}
+\begin{table}[H]
+    \centering
+    \begin{tabular}{lccccc}
+        \toprule
+        Línea & Método & $I_B$ (A) & Sección (mm$^2$) & $I_z$ (A)\\
+        \midrule
+        L1 & F & 100,07 & 25 & 106  \\
+        L2 & E & 41,74 & 10 & 50  \\
+        LC1 & B2 & 18,69 & 4 & 24  \\
+        LC2 & B2 & 26,79 & 6 & 32  \\
+        LC3 & B2 & 34,90 & 10 & 44  \\
+        LC4 & B2 & 28,79 & 6 & 32  \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\newpage
+
+\section{Problema 3: Comprobación de caída de tensión}
+
+Se verifica la caída de tensión según la Ecuación 5.14 del manual, usando $\rho_{40^\circ C}=0,018$. El límite para transformador propio es 6,5\% (fuerza).
+
+{Línea L1 (50 m, 25 mm$^2$, $\cos\varphi=0,89$)}
+\[ \Delta U_{L1}\% = \frac{100 \cdot \sqrt{3} \cdot 50 \cdot 100,07 \cdot 0,89 \cdot 0,018}{380 \cdot 25} = {1,46 \%} \]
+
+{Línea L2 (30 m, 10 mm$^2$, $\cos\varphi=0,85$)}
+\[ \Delta U_{L2}\% = \frac{100 \cdot \sqrt{3} \cdot 30 \cdot 41,74 \cdot 0,85 \cdot 0,018}{380 \cdot 10} = {0,87 \%} \]
+
+{Total acumulado:}
+$\Delta U_{Total} = 1,46\% + 0,87\% = {2,33 \%}$.
+Al ser $2,33\% < 6,5\%$, el dimensionado es correcto.
+
+\newpage 
+\section{Problema 4: Cálculo de corrientes de cortocircuito}
+
+Para determinar las intensidades de cortocircuito máxima y mínima en la línea de acometida L1, empleamos el método de impedancias detallado en la Unidad 6 del manual, calculando la corriente inicial simétrica ($I''_k$) y la corriente de cresta ($I_p$).
+
+\subsection{Cálculo de Impedancias ($m\Omega$)}
+
+Utilizamos $\rho_{Cu}(40^{\circ}C) = 0,018 \, \Omega \cdot mm^2/m$.
+
+\paragraph{1. Red de Distribución ($Z_L$)}
+Aplicamos la expresión 6.11 del manual, considerando $S''_k = 350$ MVA:
+\[ Z_L = 1,1 \cdot \left( \frac{U_n^2}{1.000 \cdot S''_k} \right) = 1,1 \cdot \left( \frac{380^2}{1.000 \cdot 350} \right) = {0,454 \, m\Omega} \]
+Desglosamos en parte resistiva y reactiva:
+\[ X_L = 0,995 \cdot Z_L = 0,995 \cdot 0,454 = {0,452 \, m\Omega} \]
+\[ R_L = 0,1 \cdot Z_L = 0,1 \cdot 0,454 = {0,045 \, m\Omega} \]
+
+\paragraph{2. Transformador ($Z_{cc}$)}
+Datos: $S_n = 100$ kVA, $\varepsilon_{Rcc} = 4\%$, $\varepsilon_{Xcc} = 3\%$:
+\[ R_{cc} = \left( \frac{\varepsilon_{Rcc}}{100} \right) \cdot \left( \frac{U_n^2}{S_n} \right) = \frac{4}{100} \cdot \frac{380^2}{100.000} \cdot 10^3 = {57,76 \, m\Omega} \]
+\[ X_{cc} = \left( \frac{\varepsilon_{Xcc}}{100} \right) \cdot \left( \frac{U_n^2}{S_n} \right) = \frac{3}{100} \cdot \frac{380^2}{100.000} \cdot 10^3 = {43,32 \, m\Omega} \]
+
+\paragraph{3. Línea L1 ($Z_{L1}$)}
+Datos: $L = 50$ m, $S = 25$ mm$^2$ (Sección seleccionada en Problema 2), conductores unipolares ($n_i=1$).
+\[ R_{L1} = \frac{1000 \cdot \rho \cdot L}{n_i \cdot S} = \frac{1000 \cdot 0,018 \cdot 50}{1 \cdot 25} = {36,00 \, m\Omega} \]
+\[ X_{L1} = \frac{x'_i \cdot L}{1000} = \frac{90 \cdot 50}{1000} = {4,50 \, m\Omega} \]
+\textit{*Nota: Se considera $x'_i = 90 \, m\Omega/km$ para cables unipolares en contacto (bandeja).}
+
+\subsection{Cálculo de Intensidades de Cortocircuito}
+
+\subsubsection{A. Intensidad Máxima (Inicio de L1)}
+El cortocircuito se produce en bornes del transformador. La impedancia de defecto es la suma de la red y el transformador.
+
+\textbf{1. Impedancia total de defecto ($Z_k$):}
+\[ R_k = R_L + R_{cc} = 0,045 + 57,76 = {57,805 \, m\Omega} \]
+\[ X_k = X_L + X_{cc} = 0,452 + 43,32 = {43,772 \, m\Omega} \]
+\[ Z_k = \sqrt{R_k^2 + X_k^2} = \sqrt{57,805^2 + 43,772^2} = {72,50 \, m\Omega} \]
+
+\textbf{2. Corriente inicial simétrica ($I''_k$):}
+Aplicamos la expresión 6.3:
+\[ I''_k = \frac{U_n}{\sqrt{3} \cdot Z_k} = \frac{380}{\sqrt{3} \cdot 0,0725} = {3,026 \, kA} \]
+
+\textbf{3. Corriente de cresta ($I_p$):}
+Calculamos la relación $R/X$ para determinar el factor $\kappa$:
+\[ \frac{R_k}{X_k} = \frac{57,805}{43,772} = 1,32 \]
+Entrando en la gráfica 5 del manual (o usando la ec. 6.2 $\kappa = 1,02 + 0,98 e^{-3 R/X}$):
+\[ \kappa \approx 1,04 \]
+\[ I_p = \kappa \cdot \sqrt{2} \cdot I''_k = 1,04 \cdot \sqrt{2} \cdot 3,026 = {4,45 \, kA} \]
+
+\subsubsection{B. Intensidad Mínima (Final de L1)}
+El cortocircuito se produce al final de la línea L1. Sumamos la impedancia de la línea.
+
+\textbf{1. Impedancia total de defecto ($Z_k$):}
+\[ R_{k,min} = R_{k,max} + R_{L1} = 57,805 + 36,00 = {93,805 \, m\Omega} \]
+\[ X_{k,min} = X_{k,max} + X_{L1} = 43,772 + 4,50 = {48,272 \, m\Omega} \]
+\[ Z_{k,min} = \sqrt{93,805^2 + 48,272^2} = {105,52 \, m\Omega} \]
+
+\textbf{2. Corriente inicial simétrica mínima ($I''_{k,min}$):}
+\[ I''_{k,min} = \frac{380}{\sqrt{3} \cdot 0,10552} = {2,08 \, kA} \]
+
+\end{document}
+\end{document}

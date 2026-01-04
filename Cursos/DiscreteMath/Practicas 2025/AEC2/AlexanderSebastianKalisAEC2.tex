@@ -1,0 +1,761 @@
+\documentclass[a4paper]{article}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{enumitem} % Paquete para controlar el espaciado de listas
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{booktabs}
+\usepackage{array}
+
+% Configuración de márgenes
+\geometry{left=2.5cm, right=2.5cm, top=3cm, bottom=3cm}
+
+% Configuración de Encabezado y Pie de Página (por defecto para el cuerpo del documento)
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Universidad a Distancia de Madrid (UDIMA)}
+\fancyhead[R]{AEC2 - Matemática Discreta}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+% Título del documento
+\title{{Actividad de Evaluación Continua 2}\\[0.5cm]
+\Large{Matemática Discreta}}
+\author{Alumno: Alexander Sebastian Kalis \\ Profesor: Dr. Juan José Moreno García}
+\date{\today}
+
+\begin{document}
+
+% PÁGINA 1: PORTADA
+\maketitle
+\thispagestyle{empty} % Elimina header/footer/número de página de la portada
+
+\newpage
+
+% PÁGINA 2: ÍNDICE
+\tableofcontents
+\thispagestyle{empty} % Elimina header/footer/número de página del índice
+\newpage
+
+% REINICIO DE PAGINACIÓN: El cuerpo del documento comienza aquí con la página 1 y el estilo fancy
+\setcounter{page}{1} 
+
+\section{Problema 1. Reparto de contratos (Teorema Chino del Resto)}
+\begin{quotation}
+Hace mucho tiempo, en un país de un planeta desconocido de una lejana galaxia una serie de compañías constructoras tienen sobornado a un gobierno. Hay un gran concurso de obras públicas a realizar y el ministro del ramo se reúne con las 13 compañías principales para el reparto. Pero resulta que al repartir los contratos sobran 2. Varías de las compañías se enfadan porque esperaban más al haber financiado la campaña electoral del partido en el gobierno. Así que estas 6 compañías abandonan la reunión y se van. El ministro hace un nuevo reparto y entonces sobran 6 contratos, pero 2 de las compañías también se enfadan y prometen que nunca más van a financiar al partido. El ministro vuelve a hacer un nuevo reparto y sobra un solo contrato que decide dar a su cuñado. Las empresa que quedan están contentas y prometen al ministro darle un puesto en el consejo de administración una vez acabe la legislatura. ¿Cuántos contratos como mínimo había?
+\end{quotation}
+
+\subsection*{Solución}
+
+Sea $x$ el número de contratos disponibles. Traduciendo el enunciado al lenguaje de la aritmética modular, obtenemos el siguiente sistema de congruencias lineales:
+
+\begin{enumerate}
+    \item El reparto entre 13 compañías sobra 2:
+    $$ x \equiv 2 \pmod{13} $$
+    \item Se van 6 compañías ($13 - 6 = 7$). El reparto entre 7 compañías sobra 6:
+    $$ x \equiv 6 \pmod{7} $$
+    \item Se van otras 2 compañías ($7 - 2 = 5$). El reparto entre 5 compañías sobra 1:
+    $$ x \equiv 1 \pmod{5} $$
+\end{enumerate}
+
+Nos encontramos ante un sistema de la forma:
+\begin{align*}
+x &\equiv a_1 \pmod{m_1} \\
+x &\equiv a_2 \pmod{m_2} \\
+x &\equiv a_3 \pmod{m_3}
+\end{align*}
+donde $m_1 = 13$, $m_2 = 7$, $m_3 = 5$, y $a_1 = 2$, $a_2 = 6$, $a_3 = 1$.
+
+Como los módulos $13$, $7$ y $5$ son primos entre sí dos a dos (coprimos), podemos aplicar el {Teorema Chino del Resto} para hallar una solución única módulo $M = m_1 \cdot m_2 \cdot m_3$.
+
+\subsubsection*{Cálculo de los parámetros}
+
+Seguimos los pasos del Teorema Chino del Resto:\\
+
+
+1. Calculamos el producto de los módulos:
+
+\[ M = 13 \cdot 7 \cdot 5 = 455 \]
+
+
+
+2. Calculamos los valores $M_i = M / m_i$:
+   \begin{align*}
+   M_1 &= \frac{455}{13} = 35 \\
+   M_2 &= \frac{455}{7} = 65 \\
+   M_3 &= \frac{455}{5} = 91
+   \end{align*}
+
+3. Calculamos los inversos $y_i$ de cada $M_i$ módulo $m_i$, tales que $M_i \cdot y_i \equiv 1 \pmod{m_i}$:
+
+   \begin{itemize}
+       \item Para $y_1$: $35 \cdot y_1 \equiv 1 \pmod{13}$
+       $$ 9 \cdot y_1 \equiv 1 \pmod{13} $$
+       Multiplicando por 3: $27 \cdot y_1 \equiv 3 \Rightarrow 1 \cdot y_1 \equiv 3 \pmod{13}$.
+       $$ y_1 = 3 $$
+       
+       \item Para $y_2$: $65 \cdot y_2 \equiv 1 \pmod{7}$
+       $$ 2 \cdot y_2 \equiv 1 \pmod{7} $$
+       Multiplicando por 4: $8 \cdot y_2 \equiv 4 \Rightarrow 1 \cdot y_2 \equiv 4 \pmod{7}$.
+       $$ y_2 = 4 $$
+       
+       \item Para $y_3$: $91 \cdot y_3 \equiv 1 \pmod{5}$
+       $$ 1 \cdot y_3 \equiv 1 \pmod{5} $$
+       $$ y_3 = 1 $$
+   \end{itemize}
+
+\subsubsection*{Cálculo de la solución}
+
+La solución particular $x_0$ viene dada por la fórmula:
+$$ x_0 = \sum_{i=1}^{3} a_i \cdot M_i \cdot y_i $$
+
+Sustituyendo los valores:
+\begin{align*}
+x_0 &= 2 \cdot 35 \cdot 3 + 6 \cdot 65 \cdot 4 + 1 \cdot 91 \cdot 1 \\
+x_0 &= 210 + 1560 + 91 \\
+x_0 &= 1861
+\end{align*}
+
+La solución general es $x \equiv 1861 \pmod{455}$.
+Para encontrar el mínimo número de contratos, buscamos el menor entero positivo en esa clase de congruencia:
+$$ 1861 = 4 \cdot 455 + 41 $$
+$$ x \equiv 41 \pmod{455} $$
+
+Por tanto, como mínimo había {41} contratos.
+
+\newpage
+
+\section{Problema 2. Cifrado César}
+\begin{quotation}
+En el año 52 antes de nuestra era se enfrentaron en la batalla de Alesia las legiones romanas contra una confederación de tribus galas. Al mando de Roma estaba el procónsul Cayo Julio César y el lado galo estaba dirigido por Vercingétorix, jefe de los arvernos. Al mando de la caballería romana estaba Marco Antonio. Supongamos que Julio César manda un mensaje cifrado con sistema de tipo César a Marco Antonio. Si el mensaje es ATACA\_A\_LAS\_TRES, ¿cómo es el mensaje alfabético resultante si usa la función $c(n)=n+3 \pmod{28}$?
+
+Esta batalla fue decisiva para asegurarse la victoria final de los romanos en la larga Guerra de las Galias. Las pocas tribus que continuaron resistiendo fueron vencidas al año siguiente y el territorio conquistado fue conocido como Galio Comata.
+
+Nota: Las clases de codificación son las siguientes: \_ = 00, A = 01, B = 02... del alfabeto español e incluyen la Ñ y la W.
+\end{quotation}
+
+\subsection*{Solución}
+
+Para resolver este problema, utilizamos la correspondencia biunívoca entre los caracteres del alfabeto español (incluyendo Ñ, W y el espacio en blanco) y el conjunto de enteros $Z_{28}$.
+
+La tabla de codificación proporcionada es:
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+\_ & A & B & C & D & E & F & G & H & I & J & K & L & M \\
+\hline
+00 & 01 & 02 & 03 & 04 & 05 & 06 & 07 & 08 & 09 & 10 & 11 & 12 & 13 \\
+\hline
+\hline
+N & Ñ & O & P & Q & R & S & T & U & V & W & X & Y & Z \\
+\hline
+14 & 15 & 16 & 17 & 18 & 19 & 20 & 21 & 22 & 23 & 24 & 25 & 26 & 27 \\
+\hline
+\end{tabular}
+\end{center}
+
+El mensaje original es: ATACA\_A\_LAS\_TRES.
+
+\subsubsection*{Paso 1: Conversión a numérico}
+Transformamos cada carácter en su equivalente numérico según la tabla:
+$$
+\begin{array}{cccccccccccccccc}
+A & T & A & C & A & \_ & A & \_ & L & A & S & \_ & T & R & E & S \\
+01 & 21 & 01 & 03 & 01 & 00 & 01 & 00 & 12 & 01 & 20 & 00 & 21 & 19 & 05 & 20
+\end{array}
+$$
+
+\subsubsection*{Paso 2: Cifrado}
+Aplicamos la función de cifrado $c(n) = n + 3 \pmod{28}$ a cada número de la secuencia anterior.
+
+$$
+\begin{array}{c}
+01 \xrightarrow{+3} 04, \quad 21 \xrightarrow{+3} 24, \quad 01 \xrightarrow{+3} 04, \quad 03 \xrightarrow{+3} 06, \\
+01 \xrightarrow{+3} 04, \quad 00 \xrightarrow{+3} 03, \quad 01 \xrightarrow{+3} 04, \quad 00 \xrightarrow{+3} 03, \\
+12 \xrightarrow{+3} 15, \quad 01 \xrightarrow{+3} 04, \quad 20 \xrightarrow{+3} 23, \quad 00 \xrightarrow{+3} 03, \\
+21 \xrightarrow{+3} 24, \quad 19 \xrightarrow{+3} 22, \quad 05 \xrightarrow{+3} 08, \quad 20 \xrightarrow{+3} 23
+\end{array}
+$$
+
+La secuencia cifrada numérica resultante es:
+$$04, 24, 04, 06, 04, 03, 04, 03, 15, 04, 23, 03, 24, 22, 08, 23$$
+
+\subsubsection*{Paso 3: Conversión a alfabético}
+Finalmente, transformamos los números cifrados de nuevo a caracteres usando la tabla inicial:
+
+$$
+\begin{array}{cccccccccccccccc}
+04 & 24 & 04 & 06 & 04 & 03 & 04 & 03 & 15 & 04 & 23 & 03 & 24 & 22 & 08 & 23 \\
+\downarrow & \downarrow & \downarrow & \downarrow & \downarrow & \downarrow & \downarrow & \downarrow & \downarrow & \downarrow & \downarrow & \downarrow & \downarrow & \downarrow & \downarrow & \downarrow \\
+D & W & D & F & D & C & D & C & \tilde{N} & D & V & C & W & U & H & V
+\end{array}
+$$
+
+El mensaje cifrado final es:
+\begin{center}
+\Large DWDFDCDCÑDVCWUHV
+\end{center}
+
+\newpage
+
+\section{Problema 3. Cálculo de restos y conversiones de base}
+
+
+\begin{enumerate}
+    \item[a)] Calcular el resto de dividir $6^{720040}$ entre $17$.
+    \item[b)] Pasar a hexadecimal, octal y binario el número $(2020)_{10}$. Escribir los pasos realizados; las respuestas finales tal cual no serán válidas.
+\end{enumerate}
+
+\subsection*{Solución}
+
+\subsubsection*{Parte a) Resto de $6^{720040}$ entre 17}
+
+Para resolver este ejercicio utilizaremos el Pequeño Teorema de Fermat, visto en la unidad de ampliación de teoría de números.
+
+El teorema establece que si $p$ es un número primo y $a$ es un entero tal que $p$ no divide a $a$, entonces:
+$$ a^{p-1} \equiv 1 \pmod{p} $$
+
+En este caso tenemos que la base es $a = 6$ y el módulo es $p = 17$.
+Verificamos que $17$ es un número primo y que no divide a $6$, por lo que se cumplen las condiciones.
+
+Aplicando el teorema obtenemos:
+$$ 6^{17-1} \equiv 1 \pmod{17} \Rightarrow 6^{16} \equiv 1 \pmod{17} $$
+
+El siguiente paso es reducir el exponente $720040$ módulo $16$. Realizamos la división entera:
+$$ 720040 = 16 \cdot 45002 + 8 $$
+
+El resto de la división es $8$. Por tanto, podemos reescribir la potencia original utilizando este resultado:
+$$ 6^{720040} = 6^{16 \cdot 45002 + 8} = (6^{16})^{45002} \cdot 6^8 $$
+
+Como sabemos por Fermat que $6^{16} \equiv 1$, sustituimos:
+$$ (1)^{45002} \cdot 6^8 \equiv 1 \cdot 6^8 \equiv 6^8 \pmod{17} $$
+
+El problema se ha reducido a calcular $6^8 \pmod{17}$. Lo haremos mediante exponenciación modular paso a paso:
+
+1. Calculamos $6^2$:
+   $$ 6^2 = 36 $$
+   $$ 36 = 2 \cdot 17 + 2 \Rightarrow 6^2 \equiv 2 \pmod{17} $$
+
+2. Elevamos al cuadrado el resultado anterior para obtener $6^4$:
+   $$ 6^4 = (6^2)^2 \equiv 2^2 \equiv 4 \pmod{17} $$
+
+3. Elevamos nuevamente al cuadrado para obtener $6^8$:
+   $$ 6^8 = (6^4)^2 \equiv 4^2 \equiv 16 \pmod{17} $$
+
+Observamos que $16 \equiv -1 \pmod{17}$, pero como se pide el resto positivo, el resultado es 16.
+
+
+\bigskip
+
+\subsubsection*{Parte b) Conversión de bases de $(2020)_{10}$}
+
+Para pasar de base decimal a otras bases, utilizaremos el método de divisiones sucesivas.
+
+1. Conversión a Hexadecimal (Base 16)
+
+Dividimos el número y los cocientes sucesivos por 16:
+
+$$ 2020 = 126 \cdot 16 + 4 \ (Resto \ 4)$$
+$$ 126 = 7 \cdot 16 + 14 \ (Resto \ 14) $$
+$$ 7 = 0 \cdot 16 + 7 \ (Resto \ 7)$$
+
+
+Tomamos el último cociente y los restos en orden inverso: 7, 14, 4: $(7E4)_{16}$\\
+
+
+
+2. Conversión a Octal (Base 8)
+
+Dividimos sucesivamente por 8:
+
+$$ 2020 = 252 \cdot 8 + 4 \ (Resto \ 4)$$
+$$ 252 = 31 \cdot 8 + 4 \ (Resto \ 4)$$
+$$ 31 = 3 \cdot 8 + 7 \ (Resto \ 7)$$    
+$$ 3 = 0 \cdot 8 + 3 \ (Resto \ 3)$$ 
+Tomamos los restos en orden inverso: 3, 7, 4, 4: $(3744)_8$\\
+
+
+3. Conversión a Binario (Base 2)
+
+Para convertir a binario, es más eficiente utilizar la conversión directa desde el resultado hexadecimal, ya que 16 es una potencia de 2 ($2^4$). Cada dígito hexadecimal se corresponde con un bloque de 4 bits.
+
+$$ 7_{16} = 0111_2 $$
+$$ E_{16} (14) = 1110_2 $$
+$$ 4_{16} = 0100_2 $$
+
+Concatenamos los bloques: $(11111100100)_2$ 
+
+
+\newpage
+
+\section{Problema 4. Cálculo de potencias y Teorema Chino del Resto}
+
+\subsection*{Enunciado}
+Calcular $3^{666} \pmod{p}$ con $p = 5, 11, \text{ y } 13$. Con esos resultados calcular
+$3^{666} \pmod{715}$.
+
+\subsection*{Solución}
+
+Para resolver la primera parte, utilizaremos el {Pequeño Teorema de Fermat}.
+Para la segunda parte, dado que $715 = 5 \cdot 11 \cdot 13$ y los factores son primos entre sí, utilizaremos el {Teorema Chino del Resto}.
+
+\subsubsection*{1. Cálculo de los restos parciales}
+
+{Módulo 5:}
+Aplicamos Fermat con $p=5$. Sabemos que $3^{4} \equiv 1 \pmod{5}$.
+Dividimos el exponente: $666 = 4 \cdot 166 + 2$.
+$$ 3^{666} = (3^4)^{166} \cdot 3^2 \equiv 1^{166} \cdot 9 \equiv 4 \pmod{5} $$
+
+{Módulo 11:}
+Aplicamos Fermat con $p=11$. Sabemos que $3^{10} \equiv 1 \pmod{11}$.
+Dividimos el exponente: $666 = 10 \cdot 66 + 6$.
+$$ 3^{666} = (3^{10})^{66} \cdot 3^6 \equiv 1^{66} \cdot 729 \pmod{11} $$
+Reducimos $729$ módulo $11$: $729 = 66 \cdot 11 + 3$.
+$$ 3^{666} \equiv 3 \pmod{11} $$
+
+{Módulo 13:}
+Aplicamos Fermat con $p=13$. Sabemos que $3^{12} \equiv 1 \pmod{13}$.
+Dividimos el exponente: $666 = 12 \cdot 55 + 6$.
+$$ 3^{666} = (3^{12})^{55} \cdot 3^6 \equiv 1^{55} \cdot 729 \pmod{13} $$
+Reducimos $729$ módulo $13$: $729 = 56 \cdot 13 + 1$.
+$$ 3^{666} \equiv 1 \pmod{13} $$
+
+\subsubsection*{2. Cálculo de $3^{666} \pmod{715}$}
+
+Tenemos el siguiente sistema de congruencias lineales:
+$$
+\begin{cases}
+x \equiv 4 \pmod{5} \\
+x \equiv 3 \pmod{11} \\
+x \equiv 1 \pmod{13}
+\end{cases}
+$$
+Donde $M = 5 \cdot 11 \cdot 13 = 715$.
+
+Calculamos los parámetros para el Teorema Chino del Resto:
+
+\begin{itemize}
+    \item $M_1 = 715/5 = 143$. Inverso $y_1$ tal que $143 \cdot y_1 \equiv 1 \pmod{5}$.
+    $$ 143 \equiv 3 \pmod{5} \Rightarrow 3 y_1 \equiv 1 \Rightarrow y_1 = 2 $$
+    \item $M_2 = 715/11 = 65$. Inverso $y_2$ tal que $65 \cdot y_2 \equiv 1 \pmod{11}$.
+    $$ 65 \equiv 10 \equiv -1 \pmod{11} \Rightarrow -1 y_2 \equiv 1 \Rightarrow y_2 = -1 \equiv 10 $$
+    \item $M_3 = 715/13 = 55$. Inverso $y_3$ tal que $55 \cdot y_3 \equiv 1 \pmod{13}$.
+    $$ 55 \equiv 3 \pmod{13} \Rightarrow 3 y_3 \equiv 1 \Rightarrow y_3 = 9 $$
+\end{itemize}
+
+La solución particular es:
+$$ x_0 = \sum a_i M_i y_i = 4(143)(2) + 3(65)(10) + 1(55)(9) $$
+$$ x_0 = 1144 + 1950 + 495 = 3589 $$
+
+Reducimos módulo 715:
+$$ 3589 = 5 \cdot 715 + 14 $$
+$$ x \equiv 14 \pmod{715} $$
+
+Entonces $3^{666} \equiv {14} \pmod{715}$.
+
+\newpage
+\section{Problema 5. Ecuación diofántica}
+
+\subsection*{Enunciado}
+Resolver la siguiente ecuación diofántica:
+$$ 1995x + 365y = 25 $$
+
+\subsection*{Solución}
+
+Para que una ecuación diofántica lineal de la forma $ax + by = c$ tenga solución entera, es condición necesaria y suficiente que el máximo común divisor de $a$ y $b$, denotado como $d = \text{mcd}(a, b)$, divida al término independiente $c$.
+
+\subsubsection*{1. Cálculo del mcd(1995, 365)}
+Utilizamos el algoritmo de Euclides mediante divisiones sucesivas:
+$$
+\begin{aligned}
+1995 &= 5 \cdot 365 + 170 \\
+365 &= 2 \cdot 170 + 25 \\
+170 &= 6 \cdot 25 + 20 \\
+25 &= 1 \cdot 20 + 5 \\
+20 &= 4 \cdot 5 + 0
+\end{aligned}
+$$
+El último resto no nulo es 5. Por lo tanto, $d = \text{mcd}(1995, 365) = 5$.
+
+\subsubsection*{2. Comprobación de existencia de solución}
+Verificamos si $d$ divide a $c$. En este caso, $c = 25$.
+Como $25$ es múltiplo de $5$ ($25 = 5 \cdot 5$), la ecuación admite soluciones enteras.
+
+\subsubsection*{3. Obtención de una solución particular (Identidad de Bézout)}
+Para encontrar una solución particular, expresamos el máximo común divisor (5) como combinación lineal de 1995 y 365. Despejamos los restos de las ecuaciones del algoritmo de Euclides en orden inverso:
+
+De la penúltima ecuación:
+$$ 5 = 25 - 1 \cdot 20 $$
+
+Sustituimos $20$ usando la antepenúltima ecuación ($20 = 170 - 6 \cdot 25$):
+$$ 5 = 25 - 1 \cdot (170 - 6 \cdot 25) = 7 \cdot 25 - 1 \cdot 170 $$
+
+Sustituimos $25$ usando la segunda ecuación ($25 = 365 - 2 \cdot 170$):
+$$ 5 = 7 \cdot (365 - 2 \cdot 170) - 1 \cdot 170 = 7 \cdot 365 - 15 \cdot 170 $$
+
+Sustituimos $170$ usando la primera ecuación ($170 = 1995 - 5 \cdot 365$):
+$$ 5 = 7 \cdot 365 - 15 \cdot (1995 - 5 \cdot 365) $$
+$$ 5 = 7 \cdot 365 - 15 \cdot 1995 + 75 \cdot 365 $$
+
+Agrupamos los términos:
+$$ 5 = 82 \cdot 365 - 15 \cdot 1995 $$
+
+Reordenamos para que coincida con la forma $1995x + 365y$:
+$$ 1995(-15) + 365(82) = 5 $$
+
+Esta combinación lineal nos da 5, pero nosotros buscamos 25. Multiplicamos toda la expresión por $25/5 = 5$:
+$$ 5 \cdot [1995(-15) + 365(82)] = 5 \cdot 5 $$
+$$ 1995(-75) + 365(410) = 25 $$
+
+Por tanto, una solución particular es $x_0 = -75$ e $y_0 = 410$.
+
+\subsubsection*{4. Solución general}
+Si $(x_0, y_0)$ es una solución particular, la solución general viene dada por las fórmulas:
+$$ x = x_0 + \frac{b}{d}k, \quad y = y_0 - \frac{a}{d}k \quad \forall k \in \mathbb{Z} $$
+
+Calculamos los pasos:
+$$ \frac{b}{d} = \frac{365}{5} = 73 $$
+$$ \frac{a}{d} = \frac{1995}{5} = 399 $$
+
+Sustituyendo los valores de nuestra solución particular $(-75, 410)$:
+$$ x = -75 + 73k $$
+$$ y = 410 - 399k $$
+
+Podemos simplificar la solución buscando un $k$ que nos dé números más pequeños. Si tomamos $k = 1$:
+$$ x = -75 + 73(1) = -2 $$
+$$ y = 410 - 399(1) = 11 $$
+
+Comprobación rápida: $1995(-2) + 365(11) = -3990 + 4015 = 25$. Es correcta.
+
+La solución general simplificada es:
+$$
+\begin{cases}
+x = -2 + 73k \\
+y = 11 - 399k
+\end{cases}
+\quad \forall k \in \mathbb{Z}
+$$
+
+\newpage
+
+\section{Problema 6. Cuestiones sobre grafos}
+
+\subsection*{Cuestión 1}
+{Enunciado:} Sea un grafo simple de 6 vértices de grados $\{1, 2, 3, 4, 5, 6\}$. ¿Es posible tal grafo? Si es así, ¿de cuántas aristas consta?
+
+{Solución:}
+Un grafo simple es aquel que no tiene bucles (aristas que conectan un vértice consigo mismo) ni aristas múltiples entre el mismo par de vértices.
+
+En un grafo simple con $n$ vértices, el grado máximo que puede tener cualquier vértice es $n-1$, ya que un vértice puede estar conectado, como máximo, con todos los demás vértices del grafo excepto consigo mismo.
+
+En este caso, tenemos $n=6$. Por tanto, el grado máximo posible es:
+$$ \Delta(G) \le n - 1 = 6 - 1 = 5 $$
+
+Sin embargo, el conjunto de grados propuesto incluye el grado {6}. Esto implicaría que un vértice está conectado a otros 6 vértices distintos, lo cual es imposible en un grafo simple de solo 6 vértices (solo hay otros 5 vértices disponibles).
+
+{Respuesta:} {No es posible} tal grafo.
+
+\bigskip
+
+\subsection*{Cuestión 2}
+{Enunciado:} Sea un grafo simple de 6 vértices de grados $\{3, 2, 2, 2, 2, 3\}$. ¿Es posible tal grafo? Si es así, ¿de cuántas aristas consta?
+
+{Solución:}
+Para determinar la existencia y el número de aristas, utilizamos el {Lema del Apretón de Manos} (o teorema de la suma de los grados), que establece que la suma de los grados de todos los vértices es igual al doble del número de aristas ($|A|$):
+$$ \sum_{v \in V} \text{deg}(v) = 2|A| $$
+
+1. Verificamos la condición de paridad: La suma de los grados debe ser par.
+$$ \text{Suma} = 3 + 2 + 2 + 2 + 2 + 3 = 14 $$
+Como 14 es par, la condición necesaria se cumple. Además, el grado máximo es 3, que es menor que $n-1=5$, por lo que es compatible con ser un grafo simple. (Es construible, por ejemplo, tomando un ciclo de 6 vértices y añadiendo una arista entre dos vértices no adyacentes).
+
+2. Calculamos el número de aristas:
+$$ 2|A| = 14 \implies |A| = \frac{14}{2} = 7 $$
+
+{Respuesta:} {Sí es posible}. Consta de {7 aristas}.
+
+\bigskip
+
+\subsection*{Cuestión 3}
+{Enunciado:} ¿Cuántos vértices tiene un grafo regular de grado 5 que conste de 15 aristas?
+
+{Solución:}
+Un grafo regular de grado $k$ es aquel donde todos sus vértices tienen el mismo grado $k$.
+Sabemos que:
+\begin{itemize}
+    \item Grado ($k$) = 5
+    \item Número de aristas ($|A|$) = 15
+    \item Número de vértices = $n$
+\end{itemize}
+
+Aplicando nuevamente la fórmula de la suma de grados:
+$$ \sum \text{deg}(v) = n \cdot k = 2|A| $$
+$$ n \cdot 5 = 2 \cdot 15 $$
+$$ 5n = 30 $$
+$$ n = \frac{30}{5} = 6 $$
+
+{Respuesta:} El grafo tiene {6 vértices}.
+
+\bigskip
+
+\subsection*{Cuestión 4}
+{Enunciado:} ¿Cuántos subgrafos con al menos un vértice tiene $K_3$?
+
+{Solución:}
+El grafo completo $K_3$ (un triángulo) tiene:
+\begin{itemize}
+    \item Conjunto de vértices $V = \{1, 2, 3\}$ ($n=3$).
+    \item Conjunto de aristas $A = \{(1,2), (2,3), (3,1)\}$ ($m=3$).
+\end{itemize}
+
+Un subgrafo $G'=(V', A')$ se forma eligiendo un subconjunto de vértices $V' \subseteq V$ y un subconjunto de aristas $A' \subseteq A$ tal que ambas aristas conecten vértices que estén en $V'$.
+
+Contamos los casos según el número de vértices elegidos ($k$):
+\begin{enumerate}
+    \item {Subgrafos con 1 vértice:}
+    Hay $\binom{3}{1} = 3$ formas de elegir el vértice. No puede haber aristas (en un grafo simple).
+    $$ \text{Total} = 3 $$
+    
+    \item {Subgrafos con 2 vértices:}
+    Hay $\binom{3}{2} = 3$ formas de elegir los vértices. Para cada par de vértices, la arista que los une en $K_3$ puede estar o no estar en el subgrafo ($2^1$ opciones).
+    $$ \text{Total} = 3 \times 2 = 6 $$
+    
+    \item {Subgrafos con 3 vértices:}
+    Hay $\binom{3}{3} = 1$ forma de elegir los vértices. Como hay 3 posibles aristas entre ellos en el grafo original, podemos elegir cualquier subconjunto de estas 3 aristas ($2^3$ opciones).
+    $$ \text{Total} = 1 \times 2^3 = 8 $$
+\end{enumerate}
+
+Suma total: $3 + 6 + 8 = 17$.
+
+{Respuesta:} Tiene {17} subgrafos con al menos un vértice.
+
+\bigskip
+
+\subsection*{Cuestión 5}
+{Enunciado:} ¿Para qué valores de $n$ y $m$ el grafo $K_{n,m}$ es regular?
+
+{Solución:}
+$K_{n,m}$ es un grafo bipartito completo. Sus vértices se dividen en dos conjuntos disjuntos de tamaños $n$ y $m$.
+\begin{itemize}
+    \item Los $n$ vértices del primer conjunto están conectados a todos los $m$ vértices del segundo conjunto. Por tanto, su grado es $m$.
+    \item Los $m$ vértices del segundo conjunto están conectados a todos los $n$ vértices del primer conjunto. Por tanto, su grado es $n$.
+\end{itemize}
+
+Para que un grafo sea {regular}, todos sus vértices deben tener el mismo grado. Por lo tanto, el grado de los vértices del primer conjunto debe ser igual al grado de los del segundo:
+$$ m = n $$
+
+{Respuesta:} El grafo $K_{n,m}$ es regular si y solo si {$n = m$}.
+
+\section{Problema 7. Propiedades y Optimización de Grafos}
+
+\subsection*{Cuestión 1}
+Argumentar si el grafo abajo representado es completo, regular, bipartito, euleriano, semieuleriano y hamiltoniano.
+
+
+\begin{enumerate}
+    \item {¿Es completo?}
+    Para que un grafo de $n=10$ vértices sea completo ($K_{10}$), todos los vértices deben tener grado $n-1 = 9$.
+    En este caso, los grados máximos son 6. Por tanto, no es completo.
+    
+    \item {¿Es regular?}
+    Un grafo es regular si todos sus vértices tienen el mismo grado.
+    Aquí tenemos vértices de grados diferentes (3, 4 y 6), por lo tanto, no hay regularidad.
+    
+    \item {¿Es bipartito?}
+    Un grafo bipartito no puede contener ciclos de longitud impar. Observamos el ciclo formado por $a \to h \to e \to a$.
+    $$ (a,h) \to (h,e) \to (e,a) $$
+    Es un triángulo (longitud 3). Al existir ciclos impares, es imposible dividir los vértices en dos conjuntos disjuntos independientes.
+    
+    \item {¿Es euleriano?}
+    Un grafo es euleriano si es conexo y {todos} sus vértices tienen grado par.
+    Observamos que los vértices $i$ y $j$ tienen grado 3 (impar). Por tanto, no admite un ciclo euleriano.
+    
+    \item {¿Es semieuleriano?}
+    Un grafo es semieuleriano si tiene {exactamente dos} vértices de grado impar.
+    Solo $i$ y $j$ tienen grado impar (3), y el resto son pares. Esto garantiza la existencia de un camino euleriano abierto que comienza en uno de los impares y termina en el otro.
+    
+    \item {¿Es hamiltoniano?}
+    Sí, cumple la condición si existe un ciclo que pase por todos los vértices una sola vez. Una posible ruta es:
+    $$ j \to g \to d \to i \to a \to b \to c \to f \to e \to h \to j $$
+    Verificamos las aristas existentes en los datos: $(j,g), (g,d), (d,i), (i,a), (a,b), (b,c), (c,f), (f,e), (e,h), (h,j)$. Todas existen y conectan los 10 nodos.
+\end{enumerate}
+
+\bigskip
+
+\subsection*{Cuestión 2}
+ Calcular una posible red de comunicación que tenga el mínimo coste (Árbol de Expansión Mínima). ¿Cuánto cuesta dicha red?
+
+\subsubsection*{Solución}
+Buscamos conectar los $n=10$ vértices utilizando el mínimo de aristas posible ($n-1 = 9$) con el menor peso total. Utilizamos el {Algoritmo de Kruskal}.
+
+1. {Ordenamos las aristas por peso creciente:}
+   \begin{itemize}
+       \item Peso 1: $(a,i), (a,g), (a,h), (b,h), (e,h), (e,f), (h,d), (h,j), (g,j)$.
+       \item Peso 2: $(a,e), (c,f), (f,g), (d,i), (i,d)$.
+       \item Peso 3, 4, 7... (se usarán solo si es necesario).
+   \end{itemize}
+
+2. {Selección de aristas (evitando ciclos):}
+   Seleccionamos primero todas las aristas de peso 1 que no formen bucles cerrados.
+   \begin{itemize}
+       \item Seleccionamos: $(a,i), (a,g), (a,h), (b,h), (e,h), (e,f), (h,d), (h,j)$.
+       \item \textit{Análisis de $(g,j)$ de peso 1:} Ya tenemos el camino $a-g$ y $a-h-j$. Si añadimos $(g,j)$, cerramos el ciclo $a-g-j-h-a$. {Descartamos} $(g,j)$.
+   \end{itemize}
+   
+   Hasta este punto tenemos 8 aristas seleccionadas de coste 1.
+   Nodos conectados: $\{a, b, d, e, f, g, h, i, j\}$.
+   Falta conectar el nodo {c}.
+
+3. {Conexión final:}
+   Buscamos la arista más barata que incida en $c$.
+   Las opciones son: $(c,f)$ coste 2, $(c,b)$ coste 3, $(c,a)$ coste 4, $(c,d)$ coste 4.
+   La de menor coste es $(c,f)$ con peso 2.
+   
+   \begin{itemize}
+       \item Seleccionamos: $(c,f)$.
+   \end{itemize}
+
+{Cálculo del coste:}
+$$ \text{Coste} = (8 \text{ aristas} \times 1) + (1 \text{ arista} \times 2) = 10 $$
+
+El coste mínimo de la red es de {10 mil euros}.
+
+\newpage 
+
+\section{Problema 8. Ciclos y subgrafos en grafos completos}
+
+\subsection*{Cuestión 1}
+¿Cuál es el número de ciclos hamiltonianos que tiene el grafo completo $K_n$ cuando $n > 2$?
+
+\subsubsection*{Solución}
+Un ciclo hamiltoniano es un recorrido cerrado que visita cada vértice del grafo exactamente una vez antes de volver al inicio. En un grafo completo $K_n$, cualquier par de vértices está conectado, lo que garantiza que podemos viajar de cualquier nodo a cualquier otro.
+
+Para determinar el número exacto de ciclos únicos, aplicamos un razonamiento combinatorio:
+
+\begin{itemize}
+    \item Si consideramos el orden lineal de los vértices, existen $n!$ permutaciones posibles.
+    \item Sin embargo, en un ciclo, el vértice de inicio no importa (el ciclo $1-2-3-1$ es el mismo que $2-3-1-2$). Fijando un vértice arbitrario como inicio para eliminar las rotaciones, nos quedan $(n-1)!$ permutaciones.
+    \item Además, en un grafo no dirigido, el sentido del recorrido no afecta a la identidad del ciclo (el recorrido en sentido horario es igual al antihorario). Por tanto, debemos dividir el resultado por 2.
+\end{itemize}
+
+El número de ciclos hamiltonianos distintos es:
+$$ \frac{(n-1)!}{2} $$
+
+\bigskip
+
+\subsection*{Cuestión 2}
+¿cuántos triángulos contiene $K_n$?
+
+\subsubsection*{Solución}
+Un triángulo en teoría de grafos es un ciclo de longitud 3, lo cual equivale a un subgrafo completo $K_3$.
+Dado que $K_n$ es un grafo completo, existe una arista entre cualquier par de vértices. Esto implica que cualquier selección de 3 vértices distintos del conjunto total formará inevitablemente un triángulo.
+
+Por lo tanto, el problema consiste en calcular cuántos subconjuntos de 3 elementos se pueden formar a partir de un conjunto de $n$ elementos, sin importar el orden de selección. Utilizamos el número combinatorio:
+
+$$ \binom{n}{3} = \frac{n!}{3!(n-3)!} $$
+
+Desarrollando los factoriales:
+$$ \binom{n}{3} = \frac{n(n-1)(n-2)}{3 \times 2 \times 1} $$
+
+El grafo contiene un total de triángulos igual a:
+$$ \frac{n(n-1)(n-2)}{6} $$
+
+\newpage
+
+\section{Problema 9. Grafos Eulerianos}
+
+\subsection*{Modelización del problema}
+Para resolver esta cuestión, modelamos la casa y el espacio exterior como un grafo $G = (V, A)$, donde las habitaciones y el exterior son los vértices ($V$) y las puertas son las aristas ($A$).
+
+Definimos los vértices y calculamos el grado de cada uno (número de aristas incidentes), basándonos en la descripción de las conexiones:
+
+\begin{itemize}
+    \item $a$ (Exterior): Conecta con $b, g, c, d, i$. Grado $\delta(a) = 5$ (Impar).
+    \item $b$: Conecta con $a, g, c$. Grado $\delta(b) = 3$ (Impar).
+    \item $c$: Conecta con $a, b, f, d$. Grado $\delta(c) = 4$ (Par).
+    \item $d$: Conecta con $c, a$ y tiene dos puertas hacia $e$. Grado $\delta(d) = 4$ (Par).
+    \item $e$: Conecta con $f, i$ y tiene dos puertas hacia $d$. Grado $\delta(e) = 4$ (Par).
+    \item $f$: Conecta con $c, e$. Grado $\delta(f) = 2$ (Par).
+    \item $g$: Conecta con $a, b$. Grado $\delta(g) = 2$ (Par).
+    \item $i$: Conecta con $e, a$. Grado $\delta(i) = 2$ (Par).
+\end{itemize}
+
+\subsection*{Análisis de existencia}
+El problema plantea si es posible recorrer todas las aristas (puertas) exactamente una vez sin repetir ninguna. Esto equivale a determinar si el grafo admite un camino euleriano.
+
+Según el Teorema de Euler para grafos semieulerianos (Unidad 9), un grafo conexo admite un camino euleriano (pero no un circuito cerrado) si y solo si tiene exactamente dos vértices de grado impar.
+
+En nuestro grafo:
+\begin{itemize}
+    \item Los vértices $a$ y $b$ tienen grado impar.
+    \item El resto de los vértices ($c, d, e, f, g, i$) tienen grado par.
+\end{itemize}
+
+Por tanto, la respuesta es afirmativa: Sí, es posible realizar el recorrido. Matemáticamente, el camino debe comenzar obligatoriamente en uno de los vértices impares y terminar en el otro.
+
+\subsection*{Construcción del recorrido}
+El enunciado impone la restricción de comenzar en el exterior $a$ y entrar por la puerta $b$. Esto significa que el primer movimiento es la arista $(a, b)$. Dado que comenzamos en un vértice impar ($a$), el recorrido finalizará necesariamente en el otro vértice impar ($b$).
+
+Una solución posible que cumple con pasar por todas las puertas una sola vez es la siguiente secuencia de vértices:
+
+$$ a \rightarrow b \rightarrow g \rightarrow a \rightarrow i \rightarrow e \rightarrow f \rightarrow c \rightarrow a \rightarrow d \rightarrow e \rightarrow d \rightarrow c \rightarrow b $$
+
+Al llegar a $b$, no quedan puertas disponibles sin utilizar, completando el camino euleriano.
+
+\newpage
+
+\section{Problema 10. Lógica Booleana y Operadores Universales}
+\begin{quotation}
+Resolver los siguientes problemas:
+\begin{enumerate}
+    \item[a)] Expresa las expresión booleanas $\overline{(x + \bar{y})}$ utilizando solamente los operadores producto y complemento.
+    \item[b)] Expresa la función $F(x, y, z) = x\bar{y}$ utilizando solamente el operador $\downarrow$.
+\end{enumerate}
+\end{quotation}
+
+\subsection*{Solución}
+
+\subsubsection*{Apartado a: Simplificación con De Morgan}
+
+Aplicamos la {Ley de De Morgan} para la suma nevada, la cual establece que:
+$$ \overline{A + B} = \overline{A} \cdot \overline{B} $$
+
+Sustituyendo los términos de nuestro problema ($A = x$ y $B = \bar{y}$):
+$$ \overline{(x + \bar{y})} = \overline{x} \cdot \overline{(\bar{y})} $$
+
+Aplicamos la ley de la {doble negación} ($\overline{\overline{a}} = a$) al segundo término:
+$$ \overline{x} \cdot y $$
+
+Por tanto, la expresión simplificada es: $$ \bar{x}y $$
+
+\subsubsection*{Apartado b: Función con operador NOR ($\downarrow$)}
+
+Queremos representar la función $F(x, y, z) = x\bar{y}$ utilizando exclusivamente el operador $\downarrow$ (flecha de Peirce o NOR).
+
+Recordamos la definición del operador NOR y su equivalencia mediante De Morgan:
+$$ A \downarrow B = \overline{A + B} = \overline{A} \cdot \overline{B} $$
+
+Nuestro objetivo es obtener el término $x\bar{y}$. Si comparamos nuestro objetivo con la equivalencia del NOR:
+$$ \text{Objetivo: } x \cdot \bar{y} $$
+$$ \text{Estructura NOR: } \overline{A} \cdot \overline{B} $$
+
+Para igualar ambas expresiones, asignamos valores a $A$ y $B$:
+\begin{itemize}
+    \item $\overline{A} = x \implies A = \bar{x}$
+    \item $\overline{B} = \bar{y} \implies B = y$
+\end{itemize}
+
+Esto significa que $x\bar{y}$ es equivalente a $(\bar{x}) \downarrow y$.
+Sin embargo, no podemos usar el operador $\bar{x}$ directamente, debemos construirlo con $\downarrow$. La negación con NOR se define como:
+$$ \bar{x} = x \downarrow x $$
+
+Sustituyendo $\bar{x}$ en la expresión anterior, obtenemos la solución final:
+
+$$ F(x, y, z) = (x \downarrow x) \downarrow y $$
+\end{document}

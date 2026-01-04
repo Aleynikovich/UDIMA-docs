@@ -1,0 +1,382 @@
+\documentclass[a4paper]{article}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{array}
+
+% --- PAQUETES AÑADIDOS PARA CÓDIGO C++ ---
+\usepackage{listings}
+\usepackage{xcolor}
+
+% Configuración de colores para el código
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{blue},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=4,
+    language=C++
+}
+
+\lstset{style=mystyle}
+% -----------------------------------------
+
+% Configuración de márgenes (Misma que tu plantilla)
+\geometry{left=2.5cm, right=2.5cm, top=3cm, bottom=3cm}
+
+% Configuración de Encabezado y Pie de Página
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Universidad a Distancia de Madrid (UDIMA)}
+\fancyhead[R]{Práctica 1 - Fundamentos de Programación}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+% Título del documento
+\title{{Actividad de Evaluación Continua 1}\\[0.5cm]
+\Large{Práctica 1 de programación con C++}}
+\author{Alumno: Alexander Sebastian Kalis \\ Profesor: Javier Llorente Ayuso} % He actualizado el profesor
+\date{\today}
+
+\begin{document}
+
+% PÁGINA 1: PORTADA
+\maketitle
+\thispagestyle{empty}
+
+\newpage
+
+% PÁGINA 2: ÍNDICE
+\tableofcontents
+\thispagestyle{empty}
+\newpage
+
+% REINICIO DE PAGINACIÓN
+\setcounter{page}{1} 
+
+\section{Introducción y Descripción del Algoritmo}
+
+El objetivo de esta práctica es desarrollar un programa en C++ que permita detectar patrones en series de caracteres introducidas por el usuario y generar series aleatorias basadas en patrones predefinidos. El programa ha sido diseñado siguiendo los principios de la programación estructurada y cumpliendo estrictamente con los requisitos del enunciado.
+
+\subsection{Estructura del Programa}
+El código se ha organizado en tres bloques funcionales principales, gestionados a través de un menú interactivo:
+
+\begin{itemize}
+    \item \textbf{Menú Principal:} Un bucle \texttt{do-while} que presenta las opciones al usuario y valida la entrada hasta que se selecciona la opción de salir.
+    \item \textbf{Detección de Patrones (Opción 1):} Permite al usuario introducir 4 caracteres. El algoritmo analiza si estos caracteres pertenecen exclusivamente a uno de los conjuntos definidos (vocales, números, caracteres especiales) o si forman una serie general.
+    \item \textbf{Generación de Series (Opción 2):} Utiliza la generación de números pseudoaleatorios para crear una serie de 10 elementos basada en la selección del usuario.
+\end{itemize}
+
+\subsection{Decisiones de Diseño y Funciones Empleadas}
+
+Para cumplir con las especificaciones y asegurar la robustez del código, se han tomado las siguientes decisiones de implementación:
+
+\begin{enumerate}
+    \item \textbf{Librerías Estándar:} Se han utilizado únicamente librerías básicas:
+    \begin{itemize}
+        \item \texttt{iostream}: Para la entrada y salida de datos.
+        \item \texttt{cstdlib} y \texttt{ctime}: Para la gestión de números aleatorios (\texttt{rand}, \texttt{srand}) y la semilla de tiempo.
+        \item \texttt{cctype}: Para la función \texttt{tolower}, fundamental para estandarizar la entrada del usuario.
+    \end{itemize}
+    
+    \item \textbf{Normalización de Datos:} Dado que el enunciado especifica que las vocales y consonantes deben tratarse en minúsculas, se aplica la función \texttt{tolower()} a cada carácter introducido. Además, se ha implementado un filtro para ignorar las comas (\texttt{,}) en la entrada de datos, permitiendo al usuario introducir series como "1, 2, 3, 4" sin errores.
+
+    \item \textbf{Lógica de Detección (Banderas):} Para detectar el tipo de serie en la Opción 1, se utiliza una lógica de "banderas" booleanas (\texttt{sonVocales}, \texttt{sonNumeros}, \texttt{sonEspeciales}). Se asume inicialmente que la serie cumple todas las condiciones y se descartan a medida que se analizan los caracteres. Si al final del análisis ninguna bandera específica se mantiene verdadera, o si hay una mezcla, se determina que es una \textbf{Serie General}.
+    
+    \item \textbf{Generación Aleatoria:} Se emplea \texttt{rand() \% N} para generar índices aleatorios. Para los caracteres especiales, se ha definido un array constante estricto: \texttt{\{'{\#}', '\$', '\%', '\&'\}}, evitando así generar caracteres no permitidos por el enunciado.
+\end{enumerate}
+
+\newpage
+
+\section{Código Fuente en C++}
+
+A continuación se presenta el código fuente completo desarrollado para la actividad.
+
+\begin{lstlisting}[caption={Código fuente main.cpp}]
+/*
+ * Practica 1: Fundamentos de programacion con C++
+ * Asignatura: Fundamentos de programacion (Cod. 1375)
+ * Autor: Alexander Sebastian Kalis
+ * Fecha: 14 dic 2025
+ *
+ * Descripcion:
+ * Programa para detectar patrones en series de 4 caracteres introducidos
+ * por el usuario y generar series aleatorias de 10 elementos basadas
+ * en patrones predefinidos (vocales, numericos, especiales o general).
+ */
+
+#include <iostream>
+#include <cstdlib> // Necesario para rand() y srand()
+#include <ctime>   // Necesario para time()
+#include <cctype>  // Necesario para tolower()
+
+using namespace std;
+
+// --- Prototipos de funciones ---
+void mostrarMenuPrincipal();
+void opcionDetectarPatron();
+void opcionGenerarSerie();
+bool esVocal(char c);
+bool esNumero(char c);
+bool esEspecialPermitido(char c);
+
+int main() {
+    // Inicializamos la semilla aleatoria una unica vez al principio
+    srand(time(NULL));
+
+    int opcion = 0;
+
+    do {
+        mostrarMenuPrincipal();
+        cin >> opcion;
+
+        switch (opcion) {
+            case 1:
+                opcionDetectarPatron();
+                break;
+            case 2:
+                opcionGenerarSerie();
+                break;
+            case 3:
+                cout << "Se cerrara la aplicacion ..." << endl;
+                break;
+            default:
+                cout << "Opcion incorrecta. Por favor, elija 1, 2 o 3." << endl;
+        }
+        cout << endl; // Salto de linea estetico
+
+    } while (opcion != 3);
+
+    return 0;
+}
+
+// --- Implementacion de funciones ---
+
+void mostrarMenuPrincipal() {
+    cout << "------------------------------------------------------" << endl;
+    cout << "1) Detectar un patron en una serie." << endl;
+    cout << "2) Generar una serie alfanumerica de entre las posibles." << endl;
+    cout << "3) Salir del programa" << endl;
+    cout << "Opcion elegida: ";
+}
+
+/**
+ * Opcion 1: El usuario introduce 4 caracteres.
+ * El programa determina si son vocales, numeros, especiales (#$%&) o una mezcla (General).
+ */
+void opcionDetectarPatron() {
+    char serie[4];
+    char entrada;
+    int contador = 0;
+
+    cout << "Introduce cuatro caracteres de la serie (puedes separarlos por espacios o comas):" << endl;
+
+    // Leemos 4 caracteres validos.
+    // El bucle ignora las comas ',' para que el caso de prueba 1.2 funcione correctamente.
+    while (contador < 4) {
+        cin >> entrada;
+        
+        // Convertimos a minuscula inmediatamente para estandarizar
+        entrada = tolower(entrada);
+
+        // Si es una coma, la ignoramos y pasamos al siguiente ciclo
+        if (entrada == ',') {
+            continue;
+        }
+
+        serie[contador] = entrada;
+        contador++;
+    }
+
+    // Banderas para comprobar los tipos. Asumimos que son verdaderas hasta que se demuestre lo contrario.
+    bool sonVocales = true;
+    bool sonNumeros = true;
+    bool sonEspeciales = true;
+
+    for (int i = 0; i < 4; i++) {
+        if (!esVocal(serie[i])) {
+            sonVocales = false;
+        }
+        if (!esNumero(serie[i])) {
+            sonNumeros = false;
+        }
+        if (!esEspecialPermitido(serie[i])) {
+            sonEspeciales = false;
+        }
+    }
+
+    // Resultados segun las banderas
+    if (sonVocales) {
+        cout << "La serie esta formada por vocales" << endl;
+    } else if (sonNumeros) {
+        cout << "La serie esta formada por caracteres numericos" << endl;
+    } else if (sonEspeciales) {
+        cout << "La serie esta formada por caracteres especiales" << endl;
+    } else {
+        // Si no cumple ninguno de los patrones especificos, es General por descarte.
+        cout << "La serie es general" << endl;
+    }
+}
+
+/**
+ * Opcion 2: Genera 10 caracteres aleatorios segun el tipo elegido.
+ */
+void opcionGenerarSerie() {
+    int tipo;
+    cout << "Introducir el tipo de serie que queremos generar" << endl;
+    cout << "1. Serie formada por vocales exclusivamente" << endl;
+    cout << "2. Serie formada por caracteres numericos exclusivamente" << endl;
+    cout << "3. Serie formada por caracteres especiales exclusivamente" << endl;
+    cout << "4. Serie general" << endl; // Corregida la errata "geneal" del enunciado
+    cin >> tipo;
+
+    cout << "Serie: ";
+
+    // Definimos los conjuntos de caracteres permitidos
+    char vocales[] = {'a', 'e', 'i', 'o', 'u'};
+    char especiales[] = {'#', '$', '%', '&'};
+    // Nota: Para numeros usamos aritmetica de caracteres ('0' + n)
+    // Para general usamos una mezcla
+
+    for (int i = 0; i < 10; i++) {
+        char generado;
+
+        switch (tipo) {
+            case 1: // Vocales
+                generado = vocales[rand() % 5];
+                break;
+            case 2: // Numeros ('0' a '9')
+                generado = '0' + (rand() % 10);
+                break;
+            case 3: // Especiales (#, $, %, &)
+                generado = especiales[rand() % 4];
+                break;
+            case 4: // General
+                // Estrategia: Elegimos aleatoriamente que tipo de caracter generar
+                // 0: Vocal, 1: Numero, 2: Especial, 3: Consonante
+                int subtipo = rand() % 4;
+                if (subtipo == 0) {
+                    generado = vocales[rand() % 5];
+                } else if (subtipo == 1) {
+                    generado = '0' + (rand() % 10);
+                } else if (subtipo == 2) {
+                    generado = especiales[rand() % 4];
+                } else {
+                    // Generar una letra minuscula cualquiera (a-z)
+                    // Validamos que no sea vocal para que sea estrictamente consonante (opcional, pero limpio)
+                    do {
+                        generado = 'a' + (rand() % 26);
+                    } while (esVocal(generado));
+                }
+                break;
+        }
+
+        cout << generado;
+        // Anadimos coma y espacio si no es el ultimo elemento
+        if (i < 9) {
+            cout << ", ";
+        }
+    }
+    cout << endl;
+}
+// --- Funciones auxiliares ---
+bool esVocal(char c) {
+    // Asumimos que c ya viene en minuscula
+    return (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u');
+}
+
+bool esNumero(char c) {
+    // Comprobamos rango ASCII de digitos
+    return (c >= '0' && c <= '9');
+}
+
+bool esEspecialPermitido(char c) {
+    // Los caracteres especiales que indica el enunciado
+    return (c == '#' || c == '$' || c == '%' || c == '&');
+}
+
+\end{lstlisting}
+\newpage
+
+\section{Pruebas Realizadas (Casos de Prueba)}
+
+Se ha verificado el funcionamiento del programa sometiéndolo a los casos de prueba especificados en el enunciado de la práctica. A continuación se muestran las capturas de pantalla de la ejecución.
+
+\subsection*{Caso 1.1: Detección de Vocales}
+El usuario introduce una secuencia de vocales (a, e, u, a). El programa debe detectar el patrón correctamente.
+
+% INSTRUCCIONES: Descomenta la línea de includegraphics y pon el nombre de tu archivo de imagen
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{11.png}
+
+    \caption{Ejecución del Caso 1.1}
+\end{figure}
+
+\subsection*{Caso 1.2: Detección de Números}
+El usuario introduce números separados por comas (1, 9, 8, 0). El programa filtra las comas y detecta el patrón numérico.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{12.png}
+
+    \caption{Ejecución del Caso 1.2}
+\end{figure}
+
+\subsection*{Caso 1.3: Detección de Caracteres Especiales}
+El usuario introduce los caracteres especiales permitidos (\%, \&, \$, \#).
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{13.png}
+
+    \caption{Ejecución del Caso 1.3}
+\end{figure}
+
+\subsection*{Caso 1.4: Detección de Serie General}
+El usuario introduce una mezcla de caracteres (1, a, b, 2). El programa determina que es una serie general.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{14.png}
+
+    \caption{Ejecución del Caso 1.4}
+\end{figure}
+
+\newpage
+
+\subsection*{Casos de Generación (2.1 a 2.4)}
+Pruebas de la opción 2 del menú para generar series aleatorias de los distintos tipos.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.6\textwidth]{21.png}
+
+    \caption{Ejecución de los casos de generación de series}
+\end{figure}
+
+
+\end{document}
